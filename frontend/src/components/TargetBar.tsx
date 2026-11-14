@@ -10,9 +10,13 @@ type Props = {
   error: string | null
   badge?: ReactNode
   onSubmit: (q: string) => void
+  /** quick-pick buttons (default: the test targets) */
+  quick?: string[]
+  /** extra controls after the quick picks */
+  children?: ReactNode
 }
 
-export default function TargetBar({ initial, resolved, busy, error, badge, onSubmit }: Props) {
+export default function TargetBar({ initial, resolved, busy, error, badge, onSubmit, quick = TEST_TARGETS, children }: Props) {
   const [q, setQ] = useState(initial)
   const go = (s: string) => {
     setQ(s)
@@ -21,7 +25,6 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
   const pm = resolved ? Math.hypot(resolved.pmra_masyr, resolved.pmdec_masyr) / 1000 : 0
   return (
     <div className="flex flex-wrap items-center gap-2 border-b border-slate-700 bg-slate-900 px-3 py-2">
-      <span className="mr-2 font-semibold text-sky-300">Ultracool Browser</span>
       <form
         className="flex gap-1"
         onSubmit={(e) => {
@@ -40,11 +43,12 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
           Go
         </button>
       </form>
-      {TEST_TARGETS.map((t) => (
+      {quick.map((t) => (
         <button key={t} className="rounded bg-slate-700 px-2 py-1 text-xs hover:bg-slate-600" onClick={() => go(t)}>
           {t}
         </button>
       ))}
+      {children}
       <div className="ml-auto flex items-center gap-3 text-sm">
         {busy && <span className="text-slate-400">Resolving…</span>}
         {error && <span className="text-red-400">{error}</span>}

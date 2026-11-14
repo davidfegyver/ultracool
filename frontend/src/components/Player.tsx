@@ -68,9 +68,14 @@ type Props = {
   override?: { png: string; label: string } | null
   /** extra controls; receives the frame on screen (which may not be fb.frameId before the first step) */
   children?: (cur: Frame | undefined) => React.ReactNode
+  /** crop the viewer to a size×size px window around (x, y) (grid px, PNG y-down, epoch 2018.0) and mark a source
+   * moving vx, vy px/yr instead of the target circle */
+  focus?: { x: number; y: number; size: number; vx: number; vy: number }
 }
 
-export default function Player({ seq, fb, set, aladin, override, children }: Props) {
+const year = (mjd: number) => 2000 + (mjd - 51544.5) / 365.25
+
+export default function Player({ seq, fb, set, aladin, override, children, focus }: Props) {
   const playable = filterFrames(seq, fb).filter((f) => !fb.excluded.has(f.id))
   const idx = Math.max(0, playable.findIndex((f) => f.id === fb.frameId))
   const cur: Frame | undefined = playable[idx]
@@ -91,8 +96,8 @@ export default function Player({ seq, fb, set, aladin, override, children }: Pro
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLSelectElement) return
-      if (e.key === ' ') {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLSelectElement || e.target instanceof HTMLTextAreaElement) return
+      if (e.key === ' ' && !(e.target instanceof HTMLButtonElement)) {
         e.preventDefault()
         set({ playing: !fb.playing })
       } else if (e.key === 'ArrowLeft') {
@@ -133,14 +138,34 @@ export default function Player({ seq, fb, set, aladin, override, children }: Pro
       )}
       <div className="relative mx-auto h-[360px] w-[360px] bg-black">
         {shownPng && seq ? (
-          <>
-            <img src={shownPng} alt={override?.label ?? `Frame ${cur?.date}`} className="h-full w-full [image-rendering:pixelated]" />
-            {!override && cur && (
-              <svg viewBox={`0 0 ${seq.grid.width} ${seq.grid.height}`} className="pointer-events-none absolute inset-0 h-full w-full">
-                <circle cx={cur.target_px[0] + 0.5} cy={cur.target_px[1] + 0.5} r={5} fill="none" stroke="#f472b6" strokeWidth={0.6} />
-              </svg>
+          <svg
+            role="img"
+            aria-label={override?.label ?? `Frame ${cur?.date}`}
+            viewBox={
+              focus
+                ? `${Math.min(Math.max(focus.x - focus.size / 2, 0), seq.grid.width - focus.size)} ${Math.min(Math.max(focus.y - focus.size / 2, 0), seq.grid.height - focus.size)} ${focus.size} ${focus.size}`
+                : `0 0 ${seq.grid.width} ${seq.grid.height}`
+            }
+            className="h-full w-full"
+          >
+            <image href={shownPng} width={seq.grid.width} height={seq.grid.height} preserveAspectRatio="none" style={{ imageRendering: 'pixelated' }} />
+            {focus ? (
+              <>
+                <line
+                  x1={focus.x + 0.5 - 8 * focus.vx} y1={focus.y + 0.5 - 8 * focus.vy} x2={focus.x + 0.5 + 8 * focus.vx} y2={focus.y + 0.5 + 8 * focus.vy}
+                  stroke="#38bdf8" strokeDasharray="4 4" strokeWidth={1} vectorEffect="non-scaling-stroke"
+                />
+                {cur && (
+                  <circle
+                    cx={focus.x + 0.5 + focus.vx * (year(cur.mjd) - 2018)} cy={focus.y + 0.5 + focus.vy * (year(cur.mjd) - 2018)}
+                    r={4} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke"
+                  />
+                )}
+              </>
+            ) : (
+              !override && cur && <circle cx={cur.target_px[0] + 0.5} cy={cur.target_px[1] + 0.5} r={5} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke" />
             )}
-          </>
+          </svg>
         ) : (
           <div className="flex h-full items-center justify-center text-slate-500">{seq ? 'No frames match the filters' : 'No sequence'}</div>
         )}
@@ -151,9 +176,13 @@ export default function Player({ seq, fb, set, aladin, override, children }: Pro
         ) : (
           cur && (
             <>
-              <span>{cur.date.slice(0, 10)}</span>·<span>{cur.survey === 'wise' ? 'WISE' : 'SPHEREx'}</span>·<span>{cur.band}</span>·
+              <span>{cur.kind === 'exposure' ? cur.date.slice(0, 16).replace('T', ' ') : cur.date.slice(0, 10)}</span>·<span>{cur.survey === 'wise' ? 'WISE' : 'SPHEREx'}</span>·<span>{cur.band}</span>·
               <span>{cur.wavelength_um?.toFixed(2)} µm</span>
-              {cur.flagged && <span className="rounded bg-amber-700 px-1">flagged</span>}
+              {(cur.flagged || !!cur.flag_names?.length) && (
+                <span className="truncate rounded bg-amber-700 px-1" title={cur.flag_names?.length ? `Artifact flags at the target: ${cur.flag_names.join(', ')}` : 'Bad-pixel flags at the target'}>
+                  {cur.flag_names?.length ? cur.flag_names.join(' ') : 'flagged'}
+                </span>
+              )}
             </>
           )
         )}

@@ -4,7 +4,7 @@ import createPlotlyComponent from 'react-plotly.js/factory'
 import { getSpectrum, type Sequence, type Spectrum } from '../api'
 import { ALL_BANDS } from './Player'
 
-const Plot = createPlotlyComponent(Plotly)
+export const Plot = createPlotlyComponent(Plotly)
 
 // approximate molecular absorption bands in ultracool-dwarf spectra (µm)
 const MOLECULES: [string, number, number][] = [
@@ -13,7 +13,7 @@ const MOLECULES: [string, number, number][] = [
   ['CO', 2.29, 2.4], ['CO', 4.5, 4.9], ['CO₂', 4.2, 4.35], ['NH₃', 2.9, 3.1],
 ]
 const COLORS = ['#f87171', '#fb923c', '#a78bfa', '#818cf8', '#38bdf8', '#2dd4bf', '#4ade80', '#facc15']
-const DARK = {
+export const DARK = {
   paper_bgcolor: '#0f172a',
   plot_bgcolor: '#0f172a',
   font: { color: '#cbd5e1', size: 11 },

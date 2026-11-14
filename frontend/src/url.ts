@@ -1,4 +1,9 @@
+export const MODES = ['learn', 'explore', 'research', 'discover'] as const
+export type Mode = (typeof MODES)[number]
+
 export type UrlState = {
+  mode: Mode | null
+  lesson: string | null
   target: string | null
   ra: number | null
   dec: number | null
@@ -11,7 +16,10 @@ const num = (v: string | null) => (v === null || v === '' || isNaN(Number(v)) ? 
 
 export function readUrl(): UrlState {
   const p = new URLSearchParams(location.search)
+  const mode = p.get('mode') as Mode | null
   return {
+    mode: mode && MODES.includes(mode) ? mode : null,
+    lesson: p.get('lesson'),
     target: p.get('target'),
     ra: num(p.get('ra')),
     dec: num(p.get('dec')),
@@ -21,12 +29,12 @@ export function readUrl(): UrlState {
   }
 }
 
-/** Set (string) or delete (null) query params without adding history entries. */
-export function writeUrl(patch: Record<string, string | null>) {
+/** Set (string) or delete (null) query params; replaces the history entry unless `push` (mode switches, so Back works). */
+export function writeUrl(patch: Record<string, string | null>, push = false) {
   const p = new URLSearchParams(location.search)
   for (const [k, v] of Object.entries(patch)) {
     if (v === null) p.delete(k)
     else p.set(k, v)
   }
-  history.replaceState(null, '', `${location.pathname}?${p}`)
+  history[push ? 'pushState' : 'replaceState'](null, '', `${location.pathname}?${p}`)
 }

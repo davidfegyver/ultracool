@@ -1,10 +1,6 @@
 import type { Source } from 'aladin-lite'
 import { useState } from 'react'
-
-const csvCell = (v: unknown) => {
-  const s = v === null || v === undefined ? '' : String(v)
-  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
-}
+import { downloadCsv } from '../csv'
 
 /** Sources picked with the rectangle selector: one tab per catalog, columns = source data keys, CSV export. */
 export default function SelectionTable({ groups, onClose }: { groups: Source[][]; onClose: () => void }) {
@@ -14,15 +10,8 @@ export default function SelectionTable({ groups, onClose }: { groups: Source[][]
   const cols = [...new Set(rows.flatMap((s) => Object.keys(s.data)))]
   const name = (g: Source[]) => g[0]?.catalog?.name ?? 'Catalog'
 
-  const download = () => {
-    const csv = [cols.map(csvCell).join(','), ...rows.map((s) => cols.map((c) => csvCell(s.data[c])).join(','))].join('\n')
-    const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }))
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `${name(rows).replace(/\W+/g, '_')}_selection.csv`
-    a.click()
-    URL.revokeObjectURL(url)
-  }
+  const download = () =>
+    downloadCsv(`${name(rows).replace(/\W+/g, '_')}_selection.csv`, cols, rows.map((s) => s.data))
 
   return (
     <div className="absolute inset-x-4 bottom-4 z-10 flex max-h-[60%] flex-col rounded border border-slate-600 bg-slate-900/95 text-xs shadow-xl">
