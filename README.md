@@ -72,7 +72,7 @@ A plain-language guide for non-astronomers is in [`docs/GUIDE.md`](docs/GUIDE.md
 | `IRSA_MAX_CONCURRENCY` | `2` | parallel IRSA requests (IRSA throttles above ~2) |
 | `MAX_RUNNING_SEQUENCES` | max(4, workers) | fields fetched at once; others wait in line (`queue_position`, `eta_s`) |
 
-nginx limits each visitor to ~12 new fields per minute (burst 20); full probe measurements are capped server-wide by the API (one running, four waiting). Everything else is unlimited, and requests from the host itself are exempt (`frontend/nginx.conf.template`). Behind Cloudflare the visitor address comes from `CF-Connecting-IP`; put an origin certificate in `certs/` (`ssl.conf` with `listen 443 ssl` and the certificate paths) for Cloudflare's Full mode.
+nginx limits each visitor to ~12 new fields per minute (burst 20); full probe measurements are capped server-wide by the API (one running, four waiting). Everything else is unlimited, and requests from the host itself are exempt (`frontend/nginx.conf.template`). The public site sits behind Cloudflare (SSL mode Flexible: HTTPS to visitors, plain HTTP to this server on `PUBLIC_PORT`); the visitor address comes from `CF-Connecting-IP`, trusted only from Cloudflare's ranges.
 
 ## API
 
