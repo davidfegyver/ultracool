@@ -89,8 +89,15 @@ def aperture_flux(img, x, y, r_ap=3, r_in=6, r_out=10, var=None, mask=None, bkg_
     return net, err
 
 
-def any_within(mask, x, y, r):
-    return bool(mask[_radius(mask.shape, x, y) <= r].any())
+def clipped_mean(imgs):
+    """Per-pixel 3-sigma (MAD) clipped mean of aligned exposures, NaN-aware: drops cosmic rays, latents and
+    ghosts that sit on a pixel in only some exposures, ~25% deeper than the median (unWISE-style co-add)."""
+    if len(imgs) == 1:
+        return np.asarray(imgs[0], dtype=np.float32)
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")  # all-NaN pixels at frame edges, NaN-input notices from sigma_clip
+        c = sigma_clip(np.stack(imgs), sigma=3, stdfunc="mad_std", axis=0)
+        return c.mean(axis=0).filled(np.nan).astype(np.float32)
 
 
 def render_png(img, path):
@@ -127,7 +134,7 @@ def deep_stack(imgs):
     """3-sigma-clipped mean of robust-normalised frames, in sigma units of the result.
     Mean beats median by ~25% in depth; clipping drops cosmic rays and hot pixels."""
     with warnings.catch_warnings():
-        warnings.simplefilter("ignore", RuntimeWarning)  # all-NaN pixels at frame edges
+        warnings.simplefilter("ignore")  # all-NaN pixels at frame edges, NaN-input notices from sigma_clip
         # mad_std: with plain std a lone outlier among few frames (e.g. 4 WISE visits) can never exceed 3 sigma
         clipped = sigma_clip(np.stack([_robust_norm(i) for i in imgs]), sigma=3, stdfunc="mad_std", axis=0)
         return _robust_norm(clipped.mean(axis=0).filled(np.nan))
