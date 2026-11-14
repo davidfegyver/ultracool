@@ -3,6 +3,8 @@ services:
     build: ./backend
     environment:
       CACHE_DIR: /data/cache
+      # SPHEREx section reads averaged ~12 s/frame at 16 (latency-bound), so run more in parallel
+      S3_MAX_CONCURRENCY: "32"
     volumes:
       - cache:/data/cache
     restart: unless-stopped

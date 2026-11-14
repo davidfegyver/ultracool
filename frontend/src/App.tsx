@@ -17,6 +17,8 @@ const DEFAULT_TARGET = "Barnard's Star"
 export default function App() {
   const [resolved, setResolved] = useState<Resolved | null>(null)
   const [busy, setBusy] = useState(false)
+  // name put into the target box from outside (UCD table click); remounts TargetBar with it
+  const [picked, setPicked] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [aladin, setAladin] = useState<Aladin | null>(null)
   const [seq, setSeq] = useState<Sequence | null>(null)
@@ -126,13 +128,15 @@ export default function App() {
   const pickUcd = (u: Ucd) => {
     setFlipbook({ frameId: null, playing: false, excluded: new Set() })
     writeUrl({ target: u.designation, ra: u.ra.toFixed(6), dec: u.dec.toFixed(6), frame: null })
+    setPicked(u.designation)
     setResolved({ name: u.designation, ra: u.ra, dec: u.dec, pmra_masyr: 0, pmdec_masyr: 0, epoch_yr: 2000, otype: null, sptype: u.spiff_autotype })
   }
 
   return (
     <div className="flex h-screen flex-col bg-slate-950 text-slate-100">
       <TargetBar
-        initial={initialUrl.target ?? DEFAULT_TARGET}
+        key={picked}
+        initial={picked ?? initialUrl.target ?? DEFAULT_TARGET}
         resolved={resolved}
         busy={busy}
         error={error}
