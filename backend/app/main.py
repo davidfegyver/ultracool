@@ -2,7 +2,7 @@ import logging
 
 from fastapi import FastAPI, Query, Response
 
-from . import analysis, resolve, sequences, ucd
+from . import analysis, probe, resolve, sequences, ucd
 from .sources import irsa_scs
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -12,6 +12,7 @@ app.include_router(resolve.router)
 app.include_router(sequences.router)
 app.include_router(ucd.router)
 app.include_router(analysis.router)
+app.include_router(probe.router)
 
 
 @app.get("/api/health")

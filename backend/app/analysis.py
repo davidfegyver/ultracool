@@ -759,6 +759,12 @@ def _plain(motion, color, var, spec):
                  "stars, so its motion is not measured here." + seen)
     else:
         s.append("Not enough clear detections in separate years to measure whether it moves.")
+    return s + _plain_props(color, var, spec)
+
+
+def _plain_props(color, var, spec):
+    """Colour, variability and spectrum sentences (also used by the probe)."""
+    s = []
     if color["w1_w2"] is not None:
         val = f"at least {color['w1_w2']:.1f}" if color["w1_w2_is_lower_limit"] else f"{color['w1_w2']:.2f}"
         s.append({"extremely red (Y/late-T dwarf-like)": f"Its infrared colour W1-W2 = {val} mag is extremely red, like the coldest brown dwarfs (late-T and Y).",
