@@ -7,6 +7,7 @@ import math
 import urllib.parse
 import urllib.request
 import warnings
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
@@ -70,9 +71,17 @@ CADENCE_D = 365.25  # NEOWISE visits every ~6 months: periods at 1/k yr are cade
 # (T0) through ~2 (T7) to >3 for Y dwarfs; W0855-0714 has W1-W2 ~ 3.5 or more.
 W12_EXTREME, W12_RED = 2.0, 0.6
 MOVER_MAX_PM_ARCSEC = 12.0  # Barnard's Star 10.4"/yr is the fastest known
-MOVER_SIG = 5.0
+MOVER_SIG = 5.0  # PM significance a track needs (errors inflated by sqrt(chi2_red))
+MOVER_DET_SNR = 4.5  # detection threshold in the 2-yr W2 stacks; the vetting below removes what this lets in
 MOVER_MATCH_PX = 1.5
-STATIC_PX = 1.0  # shortcut: sources slower than ~1 px per 16 yr (~0.3"/yr) count as static; upgrade = 1-yr windows
+MOVER_MAX_CHI2 = 3.0  # positions must follow a straight line within their errors
+MOVER_MIN_FRAC = 0.6  # detected in >= max(4, 60%) of the windows
+# image vetting compares each detection with stacks of windows when a real mover was >= 1.5 FWHM elsewhere:
+# what sits at the spot there is static. A mover slower than 1.5 FWHM (9.6") over the baseline (< ~0.7"/yr
+# over 14 yr) cannot be told from a static source this way and is not reported.
+MOVER_SEP_FWHM = 1.5
+DIPOLE_RATIO, ON_STATIC_RATIO = 0.3, 0.5  # per-frame flux of the static source / the detection's
+STATIC_PX = 1.0  # detections recurring within 1 px in half the windows are static
 
 
 def _num(x):
@@ -902,9 +911,10 @@ def _detect(z, fwhm_px, thresh=MOVER_SIG):
 
 
 def find_tracks(dets, years, fwhm_px=FWHM_PX["W2"]):
-    """dets: per window an array of (x, y, snr); years: window epochs. Linear tracks through >= 3 windows (and
-    at least half of them), anchored on a detection in one of the first two and one of the last two windows,
-    that are not explained by static sources -> list of dicts with the fit and the detections used."""
+    """dets: per window an array of (x, y, snr); years: window epochs. Linear tracks through >= max(4, 60%) of
+    the windows, anchored on a detection in one of the first two and one of the last two windows, not made of
+    detections that recur in place, that follow a straight line (chi2_red <= MOVER_MAX_CHI2) and move at
+    >= MOVER_SIG -> list of dicts with the fit and the detections used. Image-level vetting is _vet_track."""
     W = len(dets)
     trees = [cKDTree(d[:, :2]) if len(d) else None for d in dets]
 
@@ -916,7 +926,7 @@ def find_tracks(dets, years, fwhm_px=FWHM_PX["W2"]):
         others = [v for v in range(W) if v != w]
         static.append(np.array([sum(near(v, p[:2], STATIC_PX) for v in others) >= 0.5 * len(others) for p in d], bool))
     max_px_yr = MOVER_MAX_PM_ARCSEC / PIX_ARCSEC
-    min_n = max(3, math.ceil(W / 2))
+    min_n = max(4, math.ceil(MOVER_MIN_FRAC * W))
     cands = []
     for wa in range(min(2, W)):
         for wb in range(max(wa + 1, W - 2), W):
@@ -948,7 +958,7 @@ def find_tracks(dets, years, fwhm_px=FWHM_PX["W2"]):
                     # saturated cores (snr 1e4) are good to ~0.3 px; others sqrt(2) sigma_psf / SNR + 0.2"
                     err = np.where(pts[:, 2] >= 1e4, 0.3, np.sqrt(2) * fwhm_px / 2.355 / np.maximum(pts[:, 2], 1) + 0.07)
                     fit = fit_motion([years[w] for w in ws], -pts[:, 0] * PIX_ARCSEC, pts[:, 1] * PIX_ARCSEC, err * PIX_ARCSEC)
-                    if fit["significance"] < MOVER_SIG or fit["chi2_red"] > 10:
+                    if fit["significance"] < MOVER_SIG or fit["chi2_red"] > MOVER_MAX_CHI2:
                         continue
                     cands.append({"fit": fit, "used": used, "n": len(used)})
     cands.sort(key=lambda c: (-c["n"], c["fit"]["chi2_red"]))
@@ -969,15 +979,19 @@ def _catalogs(m):
     wcs = _grid_wcs(m)
     ra0, dec0 = (float(v) for v in wcs.wcs.crval)
     r_deg = m["grid"]["width"] * PIX_ARCSEC / 3600 / math.sqrt(2) + 0.005
-    if cached.get("catwise") is None:
+    if cached.get("catwise") is None or (cached["catwise"] and "sigpm" not in cached["catwise"][0]):
         try:
             cached["catwise"] = [{"name": r["source_name"], "ra": r["ra_pm"], "dec": r["dec_pm"],
-                                  "pmra": (r["pmra"] or 0) * 1000, "pmdec": (r["pmdec"] or 0) * 1000, "epoch": 2015.4}
+                                  "pmra": (r["pmra"] or 0) * 1000, "pmdec": (r["pmdec"] or 0) * 1000,
+                                  "sigpm": math.hypot(r["sigpmra"] or 0.1, r["sigpmdec"] or 0.1) / math.sqrt(2) * 1000,
+                                  "epoch": 2015.4}
                                  for r in _rows(irsa_gator("catwise_2020", ra0, dec0, r_deg * 3600,
-                                                           ["source_name", "ra_pm", "dec_pm", "pmra", "pmdec"]))
+                                                           ["source_name", "ra_pm", "dec_pm", "pmra", "pmdec",
+                                                            "sigpmra", "sigpmdec"]))
                                  if r["ra_pm"] is not None]
         except Exception as e:  # noqa: BLE001
             log.warning("CatWISE field query failed: %s", e)
+            cached["catwise"] = None
     if cached.get("simbad") is None:
         try:
             q = ("SELECT main_id, ra, dec, pmra, pmdec FROM basic WHERE CONTAINS(POINT('ICRS', ra, dec), "
@@ -994,19 +1008,23 @@ def _catalogs(m):
     return cached
 
 
-def _match(cat, ra, dec, pmra, pmdec, r_arcsec=5.0):
-    """Nearest catalog entry to the mover (each propagated to the catalog's epoch with the mover's PM); among
-    entries within 1" of the nearest, the shortest name, so a star wins over its planets ("... b")."""
+def _match(cat, ra, dec, pmra, pmdec, pm_err, r_arcsec=3.0):
+    """Catalog entry at the mover's position at the catalog's epoch (propagated with the mover's PM) ->
+    (entry, pm_offset_sigma) for the nearest within r_arcsec; among entries within 1" of the nearest, the
+    shortest name, so a star wins over its planets ("... b"). pm_offset_sigma compares the two motions
+    (catalog error from 'sigpm', else 10% + 20 mas/yr: SIMBAD gives none)."""
     hits = []
     for c in cat or []:
         pra, pdec = propagate(ra, dec, pmra, pmdec, REF_YR, c["epoch"])
         d = math.hypot(*_offsets_arcsec(c["ra"], c["dec"], pra, pdec))
         if d <= r_arcsec:
-            hits.append((d, c["name"]))
+            hits.append((d, c))
     if not hits:
-        return None
+        return None, None
     d0 = min(h[0] for h in hits)
-    return min((h for h in hits if h[0] <= d0 + 1.0), key=lambda h: len(h[1]))[1]
+    c = min((h for h in hits if h[0] <= d0 + 1.0), key=lambda h: len(h[1]["name"]))[1]
+    s_cat = c.get("sigpm") or 0.1 * math.hypot(c["pmra"], c["pmdec"]) + 20
+    return c, math.hypot(c["pmra"] - pmra, c["pmdec"] - pmdec) / math.hypot(pm_err, s_cat)
 
 
 def _forced_color(m, wcs, track):
@@ -1023,28 +1041,113 @@ def _forced_color(m, wcs, track):
     return measure_color(lc)
 
 
+def _vet_track(tr, dets, years, ns, snrs, cache):
+    """Image-level checks of a linked track -> rejection reason or None. snrs: per-window matched-filter S/N
+    maps, ns: frames per window. The static sky at a spot = windows when the track was >= MOVER_SEP_FWHM away.
+    (c) dipole: a real mover has left its first position by the late windows and was not yet at its last
+    position in the early ones; (d) it must not sit on a static source in most windows."""
+    fit = tr["fit"]
+    pm = fit["pm"] / 1000
+    if pm <= 0:
+        return "not moving"
+    dt_sep = MOVER_SEP_FWHM * FWHM_PX["W2"] * PIX_ARCSEC / pm
+    W = len(years)
+    ws = sorted(tr["used"])
+
+    def static_ratio(w, others):
+        """(S/N, per-frame flux ratio) of what the other windows show at detection w's position. A saturated
+        detection has no usable S/N: there, static means a saturated core at the same spot in another window."""
+        x, y, snr = dets[w][tr["used"][w]]
+        if snr >= 1e4:
+            sep = MOVER_SEP_FWHM * FWHM_PX["W2"]
+            hit = any(len(dets[v]) and np.any((dets[v][:, 2] >= 1e4)
+                                              & (np.hypot(dets[v][:, 0] - x, dets[v][:, 1] - y) < sep)) for v in others)
+            return (math.inf, math.inf) if hit else (0.0, 0.0)
+        key = tuple(others)
+        if key not in cache:
+            n = sum(ns[v] for v in others)
+            cache[key] = (sum(math.sqrt(ns[v]) * snrs[v] for v in others) / math.sqrt(n), n)
+        s, n = cache[key]
+        val = float(s[min(s.shape[0] - 1, max(0, round(y))), min(s.shape[1] - 1, max(0, round(x)))])
+        return val, (val / math.sqrt(n)) / (snr / math.sqrt(ns[w]))
+
+    first, last = ws[0], ws[-1]
+    late = [v for v in range(W) if years[v] - years[first] >= dt_sep]
+    early = [v for v in range(W) if years[last] - years[v] >= dt_sep]
+    if not late or not early:
+        return "moves too little to tell from a static source"
+    for w, others in ((first, late), (last, early)):
+        val, ratio = static_ratio(w, others)
+        if val >= 3 and ratio > DIPOLE_RATIO:
+            return "no dipole: a static source stays where the track starts or ends"
+    on_static = 0
+    for w in ws:
+        others = [v for v in range(W) if abs(years[v] - years[w]) >= dt_sep]
+        if others:
+            val, ratio = static_ratio(w, others)
+            on_static += val >= 3 and ratio > ON_STATIC_RATIO
+    if on_static >= 0.5 * len(ws):
+        return "sits on static sources along most of its track"
+    return None
+
+
+def _target_track(m, motion, wcs):
+    """The target's measured track (summary motion) as a fit in grid-pixel convention, or None."""
+    if not motion["recovered"] or motion["verdict"] != "moving":
+        return None
+    ra0, dec0 = (float(v) for v in wcs.wcs.crval)
+    pts = motion["points"]
+    xi, eta = _offsets_arcsec([p["ra"] for p in pts], [p["dec"] for p in pts], ra0, dec0)
+    cx, cy = wcs.wcs.crpix[0] - 1, wcs.wcs.crpix[1] - 1
+    # same convention as find_tracks: offsets (-x, y) * PIX_ARCSEC from the grid origin
+    return fit_motion([mjd_to_year(p["mjd"]) for p in pts], np.asarray(xi) - cx * PIX_ARCSEC,
+                      np.asarray(eta) + cy * PIX_ARCSEC, [p["err_arcsec"] for p in pts])
+
+
 def find_movers(m):
+    """Every significantly moving source in the field: tracks linked through 2-yr W2 stacks (find_tracks),
+    vetted in the images (_vet_track) and against CatWISE motions; the target's own track (summary motion)
+    is always included when it was recovered as moving."""
     sid = m["id"]
     wcs = _grid_wcs(m)
     t = m["target"]
-    fs = [f for f in m["frames"] if f["survey"] == "wise" and f["band"] == "W2"]
+    fs = [f for f in m["frames"] if f["survey"] == "wise" and f["kind"] == "visit" and f["band"] == "W2"]
     wins: dict[int, list] = {}
     for f in fs:
         wins.setdefault(int((mjd_to_year(f["mjd"]) - 2010) // WINDOW_YR), []).append(f)
     keys = sorted(wins)
     if len(keys) < 3:
-        return {"movers": [], "status": "insufficient data"}
+        return {"movers": [], "rejected": [], "vetting": {}, "status": "insufficient data"}
     years = [float(np.mean([mjd_to_year(f["mjd"]) for f in wins[k]])) for k in keys]
-    dets = [_detect(deep_stack([load_npy(sid, f["id"]) for f in wins[k]]), FWHM_PX["W2"]) for k in keys]
-    tracks = find_tracks(dets, years)
+    ns = [len(wins[k]) for k in keys]
+    stacks = [deep_stack([load_npy(sid, f["id"]) for f in wins[k]]) for k in keys]
+    snrs = [_snr_map(_fill_nan(z), FWHM_PX["W2"]) for z in stacks]
+    dets = [_detect(z, FWHM_PX["W2"], MOVER_DET_SNR) for z in stacks]
+    vetting: Counter = Counter()
+    cache: dict = {}
+    tracks = []
+    for tr in find_tracks(dets, years):
+        reason = _vet_track(tr, dets, years, ns, snrs, cache)
+        if reason:
+            vetting[reason] += 1
+        else:
+            tracks.append({**tr, "target": False})
+    motion = measure_motion(m)
+    tfit = _target_track(m, motion, wcs)
+    if tfit is not None:
+        def same(tr):
+            f = tr["fit"]
+            dx = (f["xi0"] + f["pmra"] / 1000 * (REF_YR - f["t0"])) - (tfit["xi0"] + tfit["pmra"] / 1000 * (REF_YR - tfit["t0"]))
+            dy = (f["eta0"] + f["pmdec"] / 1000 * (REF_YR - f["t0"])) - (tfit["eta0"] + tfit["pmdec"] / 1000 * (REF_YR - tfit["t0"]))
+            return math.hypot(dx, dy) <= 3 * PIX_ARCSEC
+        tracks = [tr for tr in tracks if not same(tr)]  # the target's own measurement replaces a linked copy
+        tracks.append({"fit": tfit, "n": motion["n_epochs"], "target": True})
     cats = _catalogs(m) if tracks else {}
-    tx, ty = (float(v) for v in wcs.world_to_pixel_values(
-        *propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], REF_YR)))
     ny = m["grid"]["height"]
-    movers = []
+    movers, rejected = [], []
     for tr in tracks:
         fit = tr["fit"]
-        # fit was done on (-x, y) * PIX_ARCSEC: east/north offsets from the grid origin in arcsec
+        # fit is on (-x, y) * PIX_ARCSEC: east/north offsets from the grid origin in arcsec
         x0, y0 = -fit["xi0"] / PIX_ARCSEC, fit["eta0"] / PIX_ARCSEC
 
         def track(ty_, x0=x0, y0=y0, fit=fit):
@@ -1053,19 +1156,28 @@ def find_movers(m):
 
         x, y = track(REF_YR)
         ra, dec = (float(v) for v in wcs.pixel_to_world_values(x, y))
-        col = _forced_color(m, wcs, track)
-        known = {"simbad": _match(cats.get("simbad"), ra, dec, fit["pmra"], fit["pmdec"]),
-                 "catwise": _match(cats.get("catwise"), ra, dec, fit["pmra"], fit["pmdec"]),
-                 "spiff": None}
+        entry = {"ra": ra, "dec": dec, "epoch_yr": REF_YR, "x_px": x, "y_px": ny - 1 - y,
+                 "pmra_masyr": fit["pmra"], "pmdec_masyr": fit["pmdec"], "pm_err_masyr": fit["pmra_err"],
+                 "significance_sigma": fit["significance"], "chi2_red": fit["chi2_red"], "n_epochs": tr["n"]}
+        cw, cw_d = _match(cats.get("catwise"), ra, dec, fit["pmra"], fit["pmdec"], fit["pmra_err"])
+        if cw and not tr["target"] and math.hypot(cw["pmra"], cw["pmdec"]) < max(3 * cw["sigpm"], 100) and cw_d >= 3:
+            rejected.append({**entry, "reason": f"catalog says static: CatWISE {cw['name']} moves "
+                                                f"{math.hypot(cw['pmra'], cw['pmdec']) / 1000:.2f}\"/yr"})
+            vetting["catalog says static"] += 1
+            continue
+        sb, sb_d = _match(cats.get("simbad"), ra, dec, fit["pmra"], fit["pmdec"], fit["pmra_err"])
+        known = {"simbad": sb["name"] if sb and (sb_d < 3 or not (sb["pmra"] or sb["pmdec"])) else None,
+                 "catwise": cw["name"] if cw and cw_d < 3 else None, "spiff": None}
         sp = ucd.near(ra=ra, dec=dec, radius_arcsec=5.0, pmra_masyr=fit["pmra"], pmdec_masyr=fit["pmdec"], epoch_yr=REF_YR)
         if sp:
             known["spiff"] = f"{sp[0]['designation']} ({sp[0]['spiff_autotype']})"
-        movers.append({"ra": ra, "dec": dec, "epoch_yr": REF_YR, "x_px": x, "y_px": ny - 1 - y,
-                       "pmra_masyr": fit["pmra"], "pmdec_masyr": fit["pmdec"], "pm_err_masyr": fit["pmra_err"],
-                       "significance_sigma": fit["significance"], "n_epochs": tr["n"],
-                       "w1_w2": None if col["w1_w2_is_lower_limit"] else col["w1_w2"],
+        if tr["target"]:  # same colour as /summary: neighbour light subtracted, W1 limit if astrometry missed it
+            col = measure_color(wise_lightcurve(m["frames"], static_sky_flux(m)), "W1" in motion["undetected_bands"])
+        else:
+            col = _forced_color(m, wcs, track)
+        movers.append({**entry, "w1_w2": None if col["w1_w2_is_lower_limit"] else col["w1_w2"],
                        "w1_w2_lower_limit": col["w1_w2"] if col["w1_w2_is_lower_limit"] else None,
-                       "known": known, "is_target": math.hypot(x - tx, y - ty) <= 3.0, "cpm_with": []})
+                       "known": known, "is_target": tr["target"], "cpm_with": []})
     # common proper motion: PM vectors equal within 3 sigma (e.g. eps Ind A and Ba/Bb)
     tgt = next((mv for mv in movers if mv["is_target"]), None)
     ref = ((tgt["pmra_masyr"], tgt["pmdec_masyr"], tgt["pm_err_masyr"]) if tgt else
@@ -1081,7 +1193,7 @@ def find_movers(m):
                          if j != i and cpm(va, (b["pmra_masyr"], b["pmdec_masyr"], b["pm_err_masyr"]))]
         if not a["is_target"] and ref and cpm(va, ref):
             a["cpm_with"].append("target")
-    return {"movers": movers, "status": "ok",
+    return {"movers": movers, "rejected": rejected, "vetting": dict(vetting), "status": "ok",
             "_transient": bool(tracks) and (cats.get("catwise") is None or cats.get("simbad") is None)}
 
 

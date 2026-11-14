@@ -208,3 +208,41 @@ def test_w1_not_seen_by_astrometry_gives_lower_limit():
     assert not measure_color(lc)["w1_w2_is_lower_limit"]  # W1 "detected" at 6 sigma: neighbour light
     c = measure_color(lc, w1_undetected=True)
     assert c["w1_w2_is_lower_limit"] and c["w1_w2"] < measure_color(lc)["w1_w2"]
+
+
+# ---- mover vetting: two static sources must not be linked into a track
+
+
+def _windows(moving, seed=11):
+    from app.analysis import FWHM_PX, _snr_map
+    rng = np.random.default_rng(seed)
+    years = [2010.3, 2015.1, 2017.1, 2019.1, 2021.1, 2023.1, 2024.3]
+    ns = [2, 4, 4, 4, 4, 4, 2]
+    shape = (60, 60)
+    snrs, dets = [], []
+    for t in years:
+        x = 20 + 14 * (t - years[0]) / (years[-1] - years[0])  # 1 px/yr: from (20, 30) to (34, 30)
+        z = rng.standard_normal(shape)
+        if moving:
+            z += _star(shape, x, 30, 25.0)
+        else:  # two faint static stars at the two ends, detected only intermittently by the linker
+            z += _star(shape, 20, 30, 25.0) + _star(shape, 34, 30, 25.0)
+        snrs.append(_snr_map(z, FWHM_PX["W2"]))
+        dets.append(np.array([[x, 30.0, 6.0]]))  # what the linker saw: one detection per window on the line
+    return dets, years, ns, snrs
+
+
+def test_vetting_rejects_two_static_sources_linked_into_a_track():
+    from app.analysis import _vet_track
+    dets, years, ns, snrs = _windows(moving=False)
+    tracks = find_tracks(dets, years)
+    assert len(tracks) == 1  # the linker alone is fooled
+    assert _vet_track(tracks[0], dets, years, ns, snrs, {}) is not None
+
+
+def test_vetting_keeps_a_real_mover():
+    from app.analysis import _vet_track
+    dets, years, ns, snrs = _windows(moving=True)
+    tracks = find_tracks(dets, years)
+    assert len(tracks) == 1
+    assert _vet_track(tracks[0], dets, years, ns, snrs, {}) is None
