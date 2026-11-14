@@ -20,7 +20,7 @@ from astropy.wcs import WCS, FITSFixedWarning
 from astroquery.ipac.irsa import Irsa
 from reproject import reproject_interp
 
-from .config import CACHE_DIR, IRSA_MAX_CONCURRENCY
+from .config import CACHE_DIR, IRSA_MAX_CONCURRENCY, S3_MAX_CONCURRENCY
 from .frames import PIX_ARCSEC
 
 log = logging.getLogger("ultracool.sources")
@@ -92,7 +92,9 @@ _s3_lock = threading.Lock()
 def _fs(region):
     with _s3_lock:
         if region not in _s3:
-            _s3[region] = s3fs.S3FileSystem(anon=True, client_kwargs={"region_name": region})
+            # botocore defaults to 10 pooled connections, which would cap S3_MAX_CONCURRENCY (~35% slower at 32)
+            _s3[region] = s3fs.S3FileSystem(anon=True, client_kwargs={"region_name": region},
+                                            config_kwargs={"max_pool_connections": S3_MAX_CONCURRENCY})
         return _s3[region]
 
 
