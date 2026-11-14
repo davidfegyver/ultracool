@@ -44,13 +44,15 @@ def _bin(points):
 
 
 def classify(frames):
+    # No per-frame S/N cut: for faint targets it keeps only upward noise, and the non-detections
+    # (e.g. no 1-3 um flux from a cold dwarf) are what separates the templates. S/N is judged per bin.
     pts = [f for f in frames
            if f["survey"] == "spherex" and not f["flagged"] and f["flux_ujy"] is not None
-           and f["flux_err_ujy"] and f["flux_err_ujy"] > 0 and f["flux_ujy"] / f["flux_err_ujy"] >= 3
+           and f["flux_err_ujy"] and f["flux_err_ujy"] > 0
            and f["wavelength_um"] is not None and 1.0 <= f["wavelength_um"] <= 5.0]
     lam, flx, err = _bin(pts)
     binned = [{"wavelength_um": float(a), "flambda": float(b), "err": float(c)} for a, b, c in zip(lam, flx, err)]
-    if len(lam) < MIN_BINS:
+    if int(np.sum(flx / err >= 3)) < MIN_BINS:
         return {"verdict": "insufficient data", "best": None, "ranking": [], "binned": binned, "template_curve": None}
 
     fits = []
