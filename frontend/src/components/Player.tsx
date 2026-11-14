@@ -1,8 +1,10 @@
 import A, { type Aladin } from 'aladin-lite'
 import { useEffect, useRef } from 'react'
 import type { Frame, Sequence } from '../api'
-import { mjdToIso, mjdToYear, type Mark } from '../sky'
+import type { ProbeCtl } from '../hooks'
+import { mjdToIso, mjdToYear, pxToWorld, type Mark } from '../sky'
 import { LayerRow } from './LayersPanel'
+import { ProbeMarker } from './Probe'
 
 export const ALL_BANDS = ['W1', 'W2', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6']
 const SKY_LAYER = 'Flipbook frame'
@@ -74,9 +76,11 @@ type Props = {
   marks?: (f: Frame) => Mark[]
   /** viewer edge in CSS px (default 360) */
   viewerPx?: number
+  /** draggable probe point with its apertures; right-click on the image places it there */
+  probe?: ProbeCtl
 }
 
-export default function Player({ seq, fb, set, aladin, override, children, focus, marks, viewerPx = 360 }: Props) {
+export default function Player({ seq, fb, set, aladin, override, children, focus, marks, viewerPx = 360, probe }: Props) {
   const playable = filterFrames(seq, fb).filter((f) => !fb.excluded.has(f.id))
   const idx = Math.max(0, playable.findIndex((f) => f.id === fb.frameId))
   const cur: Frame | undefined = playable[idx]
@@ -124,6 +128,12 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
   }, [aladin, seq?.id, shownPng, fb.showOnSky]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const busy = seq && (seq.status === 'querying' || seq.status === 'fetching')
+  // visible part of the grid: [x0, y0, w, h] in grid px
+  const view = !seq
+    ? [0, 0, 1, 1]
+    : focus
+      ? [Math.min(Math.max(focus.x - focus.size / 2, 0), seq.grid.width - focus.size), Math.min(Math.max(focus.y - focus.size / 2, 0), seq.grid.height - focus.size), focus.size, focus.size]
+      : [0, 0, seq.grid.width, seq.grid.height]
   return (
     <div className="space-y-2 p-2 text-xs">
       {seq?.status === 'error' && <p className="text-red-400">{seq.error}</p>}
@@ -140,14 +150,21 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
       <div className="relative mx-auto bg-black" style={{ width: viewerPx, height: viewerPx }}>
         {shownPng && seq ? (
           <svg
-            role="img"
+            role={probe ? 'group' : 'img'}
             aria-label={override?.label ?? `Frame ${cur?.date}`}
-            viewBox={
-              focus
-                ? `${Math.min(Math.max(focus.x - focus.size / 2, 0), seq.grid.width - focus.size)} ${Math.min(Math.max(focus.y - focus.size / 2, 0), seq.grid.height - focus.size)} ${focus.size} ${focus.size}`
-                : `0 0 ${seq.grid.width} ${seq.grid.height}`
-            }
+            viewBox={view.join(' ')}
             className="h-full w-full"
+            // Chrome ignores touch-action on SVG children: without this a touch drag of the probe turns into a page scroll
+            style={probe ? { touchAction: 'none' } : undefined}
+            onContextMenu={
+              probe &&
+              ((e) => {
+                e.preventDefault()
+                const pt = new DOMPoint(e.clientX, e.clientY).matrixTransform(e.currentTarget.getScreenCTM()!.inverse())
+                probe.place({ ...pxToWorld(seq.grid.wcs, seq.grid.height, pt.x - 0.5, pt.y - 0.5), pmra_masyr: 0, pmdec_masyr: 0 })
+                probe.setMenu({ x: e.clientX, y: e.clientY })
+              })
+            }
           >
             <image href={shownPng} width={seq.grid.width} height={seq.grid.height} preserveAspectRatio="none" style={{ imageRendering: 'pixelated' }} />
             {focus ? (
@@ -167,6 +184,9 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
               !override && cur && <Marks marks={marks(cur)} width={seq.grid.width} />
             ) : (
               !override && cur && <circle cx={cur.target_px[0] + 0.5} cy={cur.target_px[1] + 0.5} r={5} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke" />
+            )}
+            {probe && (
+              <ProbeMarker probe={probe} seq={seq} frame={cur} unit={view[2] / viewerPx} ghostAt={[view[0] + view[2] * (2 / 3), view[1] + view[3] / 3]} />
             )}
           </svg>
         ) : (

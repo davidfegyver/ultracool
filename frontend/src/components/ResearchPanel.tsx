@@ -62,6 +62,16 @@ export default function ResearchPanel({ seq, summary, note, busy }: { seq: Seque
           <MotionPlot motion={m} />
         </>
       )}
+      <PhotometryTables color={c} variability={v} spectrum={s} />
+      {summary?.asteroids && <AsteroidList asteroids={summary.asteroids} />}
+    </div>
+  )
+}
+
+/** Colour, variability and spectral-typing tables (target summary or probe). */
+export function PhotometryTables({ color: c, variability: v, spectrum: s }: Partial<Pick<Summary, 'color' | 'variability' | 'spectrum'>>) {
+  return (
+    <>
       {c && (
         <>
           <H>Color ({c.verdict})</H>
@@ -96,8 +106,7 @@ export default function ResearchPanel({ seq, summary, note, busy }: { seq: Seque
           <Table rows={s.ranking.map((r) => [r.label, `p=${r.prob.toFixed(2)} χ²ᵣ=${r.chi2_red.toFixed(2)} n=${r.n_bins}`])} />
         </>
       )}
-      {summary?.asteroids && <AsteroidList asteroids={summary.asteroids} />}
-    </div>
+    </>
   )
 }
 

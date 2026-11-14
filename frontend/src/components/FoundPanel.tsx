@@ -15,22 +15,29 @@ function Badge({ q, a, tone }: { q: ReactNode; a: string; tone: Tone }) {
   )
 }
 
-/** Explore mode: the summary as four yes/no badges plus the backend's plain-English sentences. */
-export default function FoundPanel({ summary, note, busy }: { summary: Summary | null; note: string | null; busy: boolean }) {
+/** Explore mode: the summary as yes/no badges plus the backend's plain-English sentences. Without `motion` (probe
+ * results) the "Moves?" badge is left out. */
+export default function FoundPanel({ summary, note, busy }: {
+  summary: (Pick<Summary, 'color' | 'variability' | 'spectrum' | 'plain'> & { motion?: Summary['motion'] }) | null
+  note: string | null
+  busy: boolean
+}) {
   if (!summary) return <Pending note={note} busy={busy} className="p-2" />
   const { motion, color, variability, spectrum } = summary
-  const pm = motion.pm_total_arcsec_yr
+  const pm = motion?.pm_total_arcsec_yr ?? null
   const spec = spectrum?.verdict === 'match' && spectrum.best ? spectrum.best.label : null
   const period = variability.period_days
   const alts = variability.period_alternatives_days ?? []
   return (
     <div className="space-y-2 p-2 text-xs">
       <div className="grid grid-cols-2 gap-1">
-        <Badge
-          q={<>Moves? (<Term k="proper motion" />)</>}
-          a={motion.verdict === 'moving' ? `Yes${pm !== null ? `, ${pm.toFixed(2)}″/yr` : ''}` : motion.verdict === 'not moving' ? 'No' : 'Not sure'}
-          tone={motion.verdict === 'moving' ? 'yes' : motion.verdict === 'not moving' ? 'no' : 'unknown'}
-        />
+        {motion && (
+          <Badge
+            q={<>Moves? (<Term k="proper motion" />)</>}
+            a={motion.verdict === 'moving' ? `Yes${pm !== null ? `, ${pm.toFixed(2)}″/yr` : ''}` : motion.verdict === 'not moving' ? 'No' : 'Not sure'}
+            tone={motion.verdict === 'moving' ? 'yes' : motion.verdict === 'not moving' ? 'no' : 'unknown'}
+          />
+        )}
         <Badge
           q={<>Cold / red? (<Term k="W1−W2" />)</>}
           a={

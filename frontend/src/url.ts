@@ -10,9 +10,16 @@ export type UrlState = {
   fov: number | null
   frame: string | null
   bands: string[] | null
+  /** probe point (ra, dec at epoch 2000) and its adopted proper motion (mas/yr) */
+  probe: [number, number] | null
+  probe_pm: [number, number] | null
 }
 
 const num = (v: string | null) => (v === null || v === '' || isNaN(Number(v)) ? null : Number(v))
+const pair = (v: string | null) => {
+  const xs = (v ?? '').split(',').map(num)
+  return xs.length === 2 && xs[0] !== null && xs[1] !== null ? ([xs[0], xs[1]] as [number, number]) : null
+}
 
 export function readUrl(): UrlState {
   const p = new URLSearchParams(location.search)
@@ -26,6 +33,8 @@ export function readUrl(): UrlState {
     fov: num(p.get('fov')),
     frame: p.get('frame'),
     bands: p.get('bands') ? p.get('bands')!.split(',') : null,
+    probe: pair(p.get('probe')),
+    probe_pm: pair(p.get('probe_pm')),
   }
 }
 

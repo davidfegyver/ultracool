@@ -23,6 +23,16 @@ export function worldToPx(wcs: Record<string, string | number>, height: number, 
   return [x, height - 1 - y]
 }
 
+/** Inverse of worldToPx: grid pixel [x, y_png] → ICRS degrees. */
+export function pxToWorld(wcs: Record<string, string | number>, height: number, x: number, yPng: number) {
+  const xi = (x - Number(wcs.CRPIX1) + 1) * Number(wcs.CDELT1) * RAD
+  const eta = (height - 1 - yPng - Number(wcs.CRPIX2) + 1) * Number(wcs.CDELT2) * RAD
+  const [a0, d0] = [Number(wcs.CRVAL1) * RAD, Number(wcs.CRVAL2) * RAD]
+  const den = Math.cos(d0) - eta * Math.sin(d0)
+  const ra = (a0 + Math.atan2(xi, den)) / RAD
+  return { ra: ((ra % 360) + 360) % 360, dec: Math.atan2(Math.sin(d0) + eta * Math.cos(d0), Math.hypot(xi, den)) / RAD }
+}
+
 /** A labelled circle drawn on the flipbook (grid px, PNG convention). `faint` = dashed (expected but not there now);
  * `small` = minor point, e.g. one step of a predicted track. */
 export type Mark = { x: number; y: number; label?: string; faint?: boolean; small?: boolean }

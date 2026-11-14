@@ -1,7 +1,7 @@
 import Plotly from 'plotly.js-dist-min'
 import { useEffect, useRef, useState } from 'react'
 import createPlotlyComponent from 'react-plotly.js/factory'
-import { getCatalogLightcurve, getSpectrum, type CatalogLightcurve, type Sequence, type Spectrum } from '../api'
+import { getCatalogLightcurve, getSpectrum, type CatalogLightcurve, type ProbeFrame, type Sequence, type Spectrum } from '../api'
 import { mjdToIso } from '../sky'
 import { ALL_BANDS } from './Player'
 
@@ -29,21 +29,24 @@ type Props = {
   periods?: number[]
   /** only plot these bands in the light curve (default: all) */
   bands?: string[]
+  /** plot a probe measurement instead of the sequence target (pass seq null): nothing is fetched */
+  probe?: { frames: ProbeFrame[]; spectrum: Spectrum | null }
 }
 
-export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS }: Props) {
+export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe }: Props) {
   const [tab, setTab] = useState<'lc' | 'spec'>('lc')
   // linear by default: faint targets have zero or negative fluxes, which a log axis silently drops
   const [logY, setLogY] = useState(false)
   const [foldAt, setFoldAt] = useState<number | null>(null)
   const [showCatalog, setShowCatalog] = useState(true)
-  const [spec, setSpec] = useState<Spectrum | null>(null)
+  const [fetched, setSpec] = useState<Spectrum | null>(null)
+  const spec = probe ? probe.spectrum : fetched
   const [catalog, setCatalog] = useState<CatalogLightcurve | null>(null)
   const last = useRef({ id: '', n: -1, t: 0 })
 
   // refetch when new frames arrive, at most every 10 s (and always once the job settles)
   const n = seq?.frames.length ?? 0
-  const settled = seq?.status === 'done' || seq?.status === 'error'
+  const settled = !!probe || seq?.status === 'done' || seq?.status === 'error'
   useEffect(() => {
     if (!seq) return setSpec(null)
     const l = last.current
@@ -66,7 +69,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS }: Pro
   }, [sid, settled])
 
   type Pt = { mjd: number; flux: number; err: number; open: boolean; text: string }
-  const own = (seq?.frames ?? []).filter((f) => f.flux_ujy !== null && bands.includes(f.band))
+  const own = (probe?.frames ?? seq?.frames ?? []).filter((f) => f.flux_ujy !== null && bands.includes(f.band))
   const cat = (catalog?.points ?? []).filter((p) => p.flux_ujy !== null && bands.includes(p.band))
   const catalogOnly = !own.length && cat.length > 0
   const useCatalog = cat.length > 0 && (catalogOnly || showCatalog)

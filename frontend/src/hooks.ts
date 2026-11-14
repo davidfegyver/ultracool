@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getSequence, isMissing, resolveTarget, startSequence, type Resolved, type SeqOptions, type Sequence } from './api'
+import { getProbe, getSequence, isMissing, resolveTarget, startSequence, type Probe, type ProbeMode, type Resolved, type SeqOptions, type Sequence } from './api'
 import type { Flipbook } from './components/Player'
+import { propagate } from './sky'
 import { readUrl, writeUrl } from './url'
 
 export const DEFAULT_TARGET = "Barnard's Star"
@@ -129,4 +130,90 @@ export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => P
   if (seq.status === 'error') return { data: null, note: 'Sequence failed', busy: false }
   if (!ready || state?.id !== ready) return { data: null, note: afterWise ? 'Waiting for the WISE frames…' : 'Waiting for all frames…', busy: true }
   return state
+}
+
+/** Probe point: ICRS degrees at epoch 2000 plus an adopted proper motion (mas/yr). */
+export type ProbePoint = { ra: number; dec: number; pmra_masyr: number; pmdec_masyr: number }
+type ProbeResult = {
+  /** last finished measurement */
+  data: Probe | null
+  /** point that `data` describes; differs from `point` once the probe is moved again */
+  measuredAt: ProbePoint | null
+  /** full measurement still running */
+  progress: { done: number; total: number } | null
+  busy: boolean
+  error: string | null
+}
+export type ProbeCtl = ProbeResult & {
+  sid: string | undefined
+  point: ProbePoint | null
+  place: (p: ProbePoint | null) => void
+  /** screen position (client px) of the open action menu */
+  menu: { x: number; y: number } | null
+  setMenu: (m: { x: number; y: number } | null) => void
+  measure: (mode: ProbeMode, p?: ProbePoint | null) => Promise<void>
+}
+const MJD_2000 = 51544.5
+const NO_RESULT: ProbeResult = { data: null, measuredAt: null, progress: null, busy: false, error: null }
+
+/** The probe point (URL `probe`/`probe_pm`, restored without measuring), its action menu and its measurement on sequence
+ * `sid`. Moving the point never sends a request: only `measure` does. */
+export function useProbe(sid: string | undefined): ProbeCtl {
+  const [point, setPoint] = useState<ProbePoint | null>(() => {
+    const u = readUrl()
+    return u.probe && { ra: u.probe[0], dec: u.probe[1], pmra_masyr: u.probe_pm?.[0] ?? 0, pmdec_masyr: u.probe_pm?.[1] ?? 0 }
+  })
+  const pointRef = useRef(point)
+  const [menu, setMenu] = useState<{ x: number; y: number } | null>(null)
+  const [result, setResult] = useState(NO_RESULT)
+  const run = useRef(0) // bumping it abandons the running measurement's polls
+
+  const place = useCallback((p: ProbePoint | null) => {
+    pointRef.current = p
+    setPoint(p)
+    writeUrl({
+      probe: p && `${p.ra.toFixed(6)},${p.dec.toFixed(6)}`,
+      probe_pm: p && (p.pmra_masyr || p.pmdec_masyr) ? `${p.pmra_masyr.toFixed(1)},${p.pmdec_masyr.toFixed(1)}` : null,
+    })
+  }, [])
+
+  // results belong to one sequence
+  useEffect(() => {
+    setResult(NO_RESULT)
+    return () => {
+      run.current++
+    }
+  }, [sid])
+
+  const measure = async (mode: ProbeMode, p = pointRef.current) => {
+    setMenu(null)
+    if (!sid || !p) return
+    const id = ++run.current
+    setResult((r) => ({ ...r, busy: true, error: null, progress: null }))
+    try {
+      for (;;) {
+        const d = await getProbe(sid, p, mode)
+        if (id !== run.current) return
+        if (d.status === 'error') throw new Error(d.error ?? 'Measurement failed')
+        if (d.status === 'ok') {
+          let at = p
+          // the marker jumps to the snapped peak and takes the adopted pm, unless it was moved meanwhile
+          if (pointRef.current === p) {
+            at = { ...propagate(d.position.ra, d.position.dec, d.pm.pmra_masyr, d.pm.pmdec_masyr, d.pm.epoch_yr, MJD_2000), pmra_masyr: d.pm.pmra_masyr, pmdec_masyr: d.pm.pmdec_masyr }
+            place(at)
+          }
+          setResult({ data: d, measuredAt: at, progress: null, busy: false, error: null })
+          return
+        }
+        setResult((r) => ({ ...r, progress: d.progress ?? { done: 0, total: 0 } }))
+        await new Promise((ok) => setTimeout(ok, 3000)) // lib is ES2023: no Promise.withResolvers
+        if (id !== run.current) return
+      }
+    } catch (e) {
+      const msg = (e as Error).message
+      if (id === run.current) setResult((r) => ({ ...r, busy: false, progress: null, error: isMissing(e) && msg === 'Not Found' ? 'Probe measurements are not available on this server yet' : msg }))
+    }
+  }
+
+  return { point, place, menu, setMenu, measure, ...result, sid }
 }

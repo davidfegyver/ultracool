@@ -8,7 +8,6 @@ declare module 'aladin-lite' {
     ra: number
     dec: number
     data: Record<string, unknown>
-    catalog?: { name: string }
   }
   export interface Catalog {
     name: string
@@ -27,7 +26,8 @@ declare module 'aladin-lite' {
     setOverlayImageLayer(layer: ImageLayer, name: string): ImageLayer
     removeImageLayer(name: string): void
     addCatalog(c: Catalog): void
-    select(mode: 'rect', cb: (shape: unknown, selection: Source[][]) => void): void
+    /** canvas px → [ra, dec]; throws or returns non-finite values off the projection */
+    pix2world(x: number, y: number): [number, number]
     on(event: string, cb: (...args: unknown[]) => void): void
   }
   const A: {

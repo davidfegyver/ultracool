@@ -19,15 +19,18 @@ type Props = {
   dec: number
   fov: number
   onReady: (a: Aladin) => void
-  /** horizontal field of view in degrees, on every zoom */
-  onFov: (fov: number) => void
+  /** right-click (without dragging: right-drag is Aladin's contrast control) or touch long-press: sky position and
+   * client px. Left-drag panning never calls it. */
+  onPick?: (ra: number, dec: number, clientX: number, clientY: number) => void
 }
 
 /** Aladin Lite sky view. Initialised once (StrictMode mounts effects twice); target changes recentre. */
-export default function SkyView({ ra, dec, fov, onReady, onFov }: Props) {
+export default function SkyView({ ra, dec, fov, onReady, onPick }: Props) {
   const div = useRef<HTMLDivElement>(null)
   const started = useRef(false)
   const aladin = useRef<Aladin | null>(null)
+  const pickRef = useRef(onPick)
+  pickRef.current = onPick
 
   useEffect(() => {
     if (started.current) return
@@ -42,12 +45,29 @@ export default function SkyView({ ra, dec, fov, onReady, onFov }: Props) {
         showReticle: true,
         showLayersControl: false,
       })
-      // Aladin keeps one callback per event, so URL sync and the fov report share this handler
-      a.on('zoomChanged', (f) => {
-        writeUrl({ fov: Number(f).toFixed(4) })
-        onFov(Number(f))
-      })
-      onFov(a.getFov()[0])
+      a.on('zoomChanged', (f) => writeUrl({ fov: Number(f).toFixed(4) }))
+      const el = div.current!
+      const pick = (e: MouseEvent) => {
+        const r = el.getBoundingClientRect()
+        let at: [number, number] | undefined
+        try {
+          at = a.pix2world(e.clientX - r.left, e.clientY - r.top)
+        } catch {
+          return // off the projection
+        }
+        if (at && Number.isFinite(at[0]) && Number.isFinite(at[1])) pickRef.current?.(at[0], at[1], e.clientX, e.clientY)
+      }
+      // capture phase: runs before Aladin's canvas handlers
+      let down: [number, number] | null = null
+      el.addEventListener('mousedown', (e) => (down = e.button === 2 ? [e.clientX, e.clientY] : null), true)
+      el.addEventListener('mouseup', (e) => {
+        if (e.button === 2 && down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 5) pick(e)
+        down = null
+      }, true)
+      el.addEventListener('contextmenu', (e) => {
+        e.preventDefault()
+        if ((e as PointerEvent).pointerType === 'touch') pick(e)
+      }, true)
       aladin.current = a
       onReady(a)
     })

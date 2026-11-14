@@ -50,6 +50,17 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
+    title: 'The cyan probe',
+    text: 'Something else caught your eye? Drag the cyan crosshair onto it, or right-click the sky map. Its circle is the measuring aperture. Nothing is measured until you pick "Measure this source" in the menu that opens.',
+    art: (
+      <Frame x={30} y={10}>
+        <circle cx={22} cy={36} r={3} fill="#f8fafc" />
+        <circle cx={22} cy={36} r={7} fill="none" stroke="#22d3ee" strokeWidth={1.5} />
+        <path d="M22 26v6M22 40v6M12 36h6M26 36h6" stroke="#22d3ee" strokeWidth={1.5} />
+      </Frame>
+    ),
+  },
+  {
     title: 'Two infrared colors',
     text: 'W1 (3.4 µm) and W2 (4.6 µm) are two infrared "colors". Ordinary stars look about the same in both. Cold brown dwarfs are much brighter in W2, so a dot that appears only in W2 is exciting.',
     art: (

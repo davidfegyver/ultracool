@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { getMovers, getSummary, type Mover, type Sequence } from '../api'
 import { downloadCsv } from '../csv'
-import { DEFAULT_TARGET, useFlipbook, useSeqResult, useSequence, useTarget } from '../hooks'
+import { DEFAULT_TARGET, useFlipbook, useProbe, useSeqResult, useSequence, useTarget, type ProbeCtl, type ProbePoint } from '../hooks'
+import { propagate } from '../sky'
 import { readUrl } from '../url'
 import Player from './Player'
 import Pending from './Pending'
+import { ProbeMenu, ProbePanel } from './Probe'
 import { AsteroidList } from './ResearchPanel'
 import TargetBar from './TargetBar'
 import Term from './Term'
@@ -47,6 +49,7 @@ export default function Discover() {
   // movers come from WISE: ask as soon as all WISE frames are in instead of waiting for SPHEREx
   const movers = useSeqResult(seq, getMovers, true)
   const summary = useSeqResult(seq, getSummary)
+  const probe = useProbe(seq?.id)
   const [sel, setSel] = useState(0)
   const [labels, setLabels] = useState(loadLabels)
   const list = movers.data?.movers ?? []
@@ -71,12 +74,13 @@ export default function Discover() {
     <div className="flex h-full flex-col">
       <TargetBar
         key={field}
-        initial={resolved?.name ?? initialUrl.target ?? DEFAULT_TARGET}
+        initial={resolved ? (resolved.name ?? `${resolved.ra.toFixed(5)} ${resolved.dec.toFixed(5)}`) : (initialUrl.target ?? DEFAULT_TARGET)}
         resolved={resolved}
         busy={busy}
         error={error ?? seqError}
         onSubmit={(q) => {
           setSel(0)
+          probe.place(null)
           lookup(q)
         }}
         quick={[]}
@@ -87,6 +91,7 @@ export default function Discover() {
           onClick={() => {
             const f = randomHighLatitude()
             setSel(0)
+            probe.place(null)
             setField(field + 1)
             goTo({ name: `Random field l=${f.l.toFixed(1)}° b=${f.b.toFixed(1)}°`, ra: f.ra, dec: f.dec, pmra_masyr: 0, pmdec_masyr: 0, epoch_yr: 2000, otype: null, sptype: null })
           }}
@@ -133,7 +138,7 @@ export default function Discover() {
         </section>
         <section aria-label="Candidate review" className="flex min-w-0 flex-1 flex-col overflow-y-auto">
           {cur && seq ? (
-            <Review key={key(cur)} seq={seq} m={cur} i={sel} label={labels[key(cur)]?.label} onLabel={(l) => classify(cur, l)} />
+            <Review key={key(cur)} seq={seq} m={cur} i={sel} label={labels[key(cur)]?.label} onLabel={(l) => classify(cur, l)} probe={probe} />
           ) : (
             <div className="space-y-2 p-4 text-sm text-slate-400">
               <p>
@@ -144,6 +149,20 @@ export default function Discover() {
               <p>For each candidate: play the flipbook, decide whether the dot really moves along the dashed track, and click Real mover, Artifact or Unsure.</p>
             </div>
           )}
+          {seq && (
+            <section aria-label="Probe" className="mx-3 mb-3 max-w-3xl rounded border border-slate-700">
+              <h3 className="bg-slate-800 px-2 py-1 text-xs font-semibold tracking-wide text-slate-300 uppercase">Probe</h3>
+              <ProbePanel probe={probe} research={false} />
+            </section>
+          )}
+          <ProbeMenu
+            probe={probe}
+            onCentre={(p: ProbePoint) => {
+              setSel(0)
+              setField(field + 1)
+              goTo({ name: null, ...p, epoch_yr: 2000, otype: null, sptype: null })
+            }}
+          />
           <div className="mt-auto flex items-center gap-2 border-t border-slate-700 p-2 text-xs">
             <span className="text-slate-400">{Object.keys(labels).length} classifications saved in this browser</span>
             <button className="rounded bg-slate-700 px-2 py-1 enabled:hover:bg-slate-600 disabled:opacity-50" disabled={!Object.keys(labels).length} onClick={exportLabels}>
@@ -177,7 +196,7 @@ function KnownBadges({ m }: { m: Mover }) {
   )
 }
 
-function Review({ seq, m, i, label, onLabel }: { seq: Sequence; m: Mover; i: number; label?: Label; onLabel: (l: Label) => void }) {
+function Review({ seq, m, i, label, onLabel, probe }: { seq: Sequence; m: Mover; i: number; label?: Label; onLabel: (l: Label) => void; probe: ProbeCtl }) {
   const [fb, setFb] = useFlipbook({ bands: ['W1', 'W2'], deep: true, frameId: null, showOnSky: false })
   const vx = -m.pmra_masyr / 1000 / PIX_ARCSEC // east = -x on the grid
   const vy = -m.pmdec_masyr / 1000 / PIX_ARCSEC // north = up = -y in PNG rows
@@ -185,7 +204,7 @@ function Review({ seq, m, i, label, onLabel }: { seq: Sequence; m: Mover; i: num
   return (
     <div className="flex flex-wrap gap-4 p-3">
       <div className="w-[376px]">
-        <Player seq={seq} fb={fb} set={setFb} aladin={null} focus={{ x: m.x_px, y: m.y_px, size, vx, vy }} />
+        <Player seq={seq} fb={fb} set={setFb} aladin={null} focus={{ x: m.x_px, y: m.y_px, size, vx, vy }} probe={probe} />
       </div>
       <div className="min-w-64 flex-1 space-y-2 text-sm">
         <h2 className="text-lg font-semibold">Candidate #{i}</h2>
@@ -221,6 +240,19 @@ function Review({ seq, m, i, label, onLabel }: { seq: Sequence; m: Mover; i: num
             </button>
           ))}
         </div>
+        <button
+          className="rounded bg-cyan-800 px-3 py-1 text-xs hover:bg-cyan-700"
+          title="Put the probe on this candidate with its proper motion and take a quick photometry preview"
+          onClick={() => {
+            // mover positions are at epoch_yr (2018.0); the probe works at epoch 2000
+            const at = propagate(m.ra, m.dec, m.pmra_masyr, m.pmdec_masyr, m.epoch_yr ?? 2018, 51544.5)
+            const p = { ...at, pmra_masyr: m.pmra_masyr, pmdec_masyr: m.pmdec_masyr }
+            probe.place(p)
+            probe.measure('preview', p)
+          }}
+        >
+          Measure
+        </button>
       </div>
     </div>
   )

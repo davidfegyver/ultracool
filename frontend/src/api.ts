@@ -190,3 +190,26 @@ export const ucdsNear = (r: Resolved) =>
   get<(Ucd & { sep_arcsec: number })[]>(
     `/api/ucds/near?${qs({ ra: r.ra, dec: r.dec, pmra_masyr: r.pmra_masyr, pmdec_masyr: r.pmdec_masyr, epoch_yr: r.epoch_yr })}`,
   )
+
+/** Photometry of one frame at the probe position (same fields as a sequence Frame's photometry). */
+export type ProbeFrame = Pick<Frame, 'survey' | 'band' | 'mjd' | 'wavelength_um' | 'flux_ujy' | 'flux_err_ujy' | 'flagged'> & { frame_id: string }
+export type ProbeMode = 'preview' | 'full'
+export type Probe = {
+  status: 'ok' | 'running' | 'error'
+  mode: ProbeMode
+  requested: { ra: number; dec: number }
+  /** x_px, y_px: grid px, PNG convention (y down) */
+  position: { ra: number; dec: number; x_px: number; y_px: number; snapped: boolean; snap_offset_arcsec: number }
+  pm: { pmra_masyr: number; pmdec_masyr: number; epoch_yr: number; source: 'none' | 'mover' | 'given' }
+  frames: ProbeFrame[]
+  color: Summary['color']
+  variability: Summary['variability']
+  spectrum: Spectrum
+  plain: string[]
+  progress?: { done: number; total: number }
+  error: string | null
+}
+/** Measure any point of the field: `preview` from the cached grid images (seconds), `full` as a background job on
+ * native pixels (the first call starts it, later calls report progress, then the result). Position at epoch 2000. */
+export const getProbe = (sid: string, p: { ra: number; dec: number; pmra_masyr: number; pmdec_masyr: number }, mode: ProbeMode) =>
+  get<Probe>(`/api/sequences/${sid}/probe?${qs({ ra: p.ra.toFixed(6), dec: p.dec.toFixed(6), pmra_masyr: p.pmra_masyr, pmdec_masyr: p.pmdec_masyr, epoch_yr: 2000, mode })}`)

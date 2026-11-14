@@ -1,15 +1,16 @@
-import A, { type Aladin, type Catalog, type Source } from 'aladin-lite'
+import A, { type Aladin, type Catalog } from 'aladin-lite'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { candidatePeriods, getSummary, ucdsNear, type SeqOptions, type Ucd } from '../api'
-import { DEFAULT_TARGET, useFlipbook, useSeqResult, useSequence, useTarget } from '../hooks'
+import { DEFAULT_TARGET, useFlipbook, useProbe, useSeqResult, useSequence, useTarget, type ProbePoint } from '../hooks'
+import { propagate } from '../sky'
 import { readUrl, writeUrl } from '../url'
 import Catalogs from './Catalogs'
 import FoundPanel from './FoundPanel'
 import LayersPanel, { Group } from './LayersPanel'
 import Player, { FrameRows, StackRows, type Flipbook } from './Player'
 import PlotsPanel from './PlotsPanel'
+import { ProbeMenu, ProbePanel } from './Probe'
 import ResearchPanel from './ResearchPanel'
-import SelectionTable from './SelectionTable'
 import SkyView from './SkyView'
 import TargetBar from './TargetBar'
 import TimeWindow from './TimeWindow'
@@ -30,12 +31,11 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
   const [known, setKnown] = useState<Ucd | null>(null)
   const [skyUcds, setSkyUcds] = useState<Ucd[]>([])
   const [spiffOn, setSpiffOn] = useState(false)
-  const [catalogCount, setCatalogCount] = useState(0)
-  const [fov, setFov] = useState(initialUrl.fov ?? 0.25)
-  const [selection, setSelection] = useState<Source[][] | null>(null)
   const [compareA, setCompareA] = useState<string | null>(null)
   const [stackBand, setStackBand] = useState<string | null>(null)
   const asteroidCat = useRef<Catalog | null>(null)
+  const probe = useProbe(seq?.id)
+  const probeCat = useRef<Catalog | null>(null)
 
   const setFlipbook = useCallback(
     (patch: Partial<Flipbook>) => {
@@ -57,12 +57,10 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
       : seq && stackBand
         ? { png: `/api/sequences/${seq.id}/stack.png?band=${stackBand}&n=${seq.frames.length}`, label: `Median stack ${stackBand}` }
         : null
-  const canSelect = catalogCount > 0 && fov < 0.5
 
   useEffect(() => {
     setCompareA(null)
     setStackBand(null)
-    setSelection(null)
     setKnown(null)
     if (resolved) ucdsNear(resolved).then((r) => setKnown(r[0] ?? null)).catch(() => setKnown(null))
   }, [resolved])
@@ -79,22 +77,49 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
     asteroidCat.current.addSources((asteroids ?? []).map((a) => A.source(a.ra, a.dec, { name: a.name, mjd: a.mjd, rate_arcsec_h: a.rate_arcsec_h })))
   }, [aladin, asteroids])
 
-  const pickUcd = (u: Ucd) => {
+  // probe point on the sky map, at the grid epoch 2018.0 like the flipbook overlay
+  const point = probe.point
+  useEffect(() => {
+    if (!aladin) return
+    if (!probeCat.current) {
+      probeCat.current = A.catalog({ name: 'Probe', color: '#22d3ee', shape: 'plus', sourceSize: 20 })
+      aladin.addCatalog(probeCat.current)
+    }
+    probeCat.current.removeAll()
+    if (point) {
+      const at = propagate(point.ra, point.dec, point.pmra_masyr, point.pmdec_masyr, 2000, 58119)
+      probeCat.current.addSources([A.source(at.ra, at.dec, { name: 'Probe' })])
+    }
+  }, [aladin, point])
+
+  const newTarget = () => {
     setFlipbook({ frameId: null, playing: false, excluded: new Set() })
+    probe.place(null)
+  }
+
+  const pickUcd = (u: Ucd) => {
+    newTarget()
     setPicked(u.designation)
     goTo({ name: u.designation, ra: u.ra, dec: u.dec, pmra_masyr: 0, pmdec_masyr: 0, epoch_yr: 2000, otype: null, sptype: u.spiff_autotype })
+  }
+  // new sequence centred on the probe, same field size, with the probe's (mover) proper motion; URL ra/dec, no target name
+  const centreOn = (p: ProbePoint) => {
+    if (seq) setOpts((o) => ({ ...o, fov_deg: (seq.grid.width * 2.75) / 3600 }))
+    setFlipbook({ frameId: null, playing: false, excluded: new Set() })
+    setPicked(`${p.ra.toFixed(5)} ${p.dec.toFixed(5)}`)
+    goTo({ name: null, ...p, epoch_yr: 2000, otype: null, sptype: null })
   }
 
   return (
     <div className="flex h-full flex-col">
       <TargetBar
         key={picked}
-        initial={picked ?? initialUrl.target ?? DEFAULT_TARGET}
+        initial={picked ?? initialUrl.target ?? (initialUrl.ra !== null && initialUrl.dec !== null ? `${initialUrl.ra} ${initialUrl.dec}` : DEFAULT_TARGET)}
         resolved={resolved}
         busy={busy}
         error={error ?? seqError}
         onSubmit={(q) => {
-          setFlipbook({ frameId: null, playing: false, excluded: new Set() })
+          newTarget()
           writeUrl({ frame: null })
           lookup(q)
         }}
@@ -122,20 +147,13 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
                 dec={seq ? Number(seq.grid.wcs.CRVAL2) : resolved.dec}
                 fov={initialUrl.fov ?? 0.25}
                 onReady={setAladin}
-                onFov={setFov}
+                onPick={(ra, dec, x, y) => {
+                  probe.place({ ra, dec, pmra_masyr: 0, pmdec_masyr: 0 })
+                  probe.setMenu({ x, y })
+                }}
               />
             )}
-            {advanced && (
-              <button
-                className="absolute top-2 left-1/2 z-10 -translate-x-1/2 rounded bg-slate-800/90 px-2 py-1 text-xs enabled:hover:bg-slate-700 disabled:text-slate-500"
-                disabled={!canSelect}
-                title="Drag a rectangle to list catalog sources inside it. Needs at least one visible catalog layer and a field of view under 0.5°."
-                onClick={() => aladin?.select('rect', (_shape, groups) => setSelection(groups))}
-              >
-                ⬚ Select region
-              </button>
-            )}
-            {selection && <SelectionTable groups={selection} onClose={() => setSelection(null)} />}
+            <ProbeMenu probe={probe} onCentre={centreOn} />
           </div>
           <div className="flex h-72 shrink-0 border-t border-slate-700 bg-slate-900">
             <div className="min-w-0 flex-1">
@@ -154,7 +172,7 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
           </div>
         </div>
         <aside className="w-96 shrink-0 overflow-y-auto border-l border-slate-700 bg-slate-900">
-          <Player seq={seq} fb={fb} set={setFlipbook} aladin={aladin} override={override}>
+          <Player seq={seq} fb={fb} set={setFlipbook} aladin={aladin} override={override} probe={probe}>
             {(cur) =>
               advanced && (
                 <div className="flex items-center gap-2">
@@ -181,20 +199,23 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
               <FoundPanel summary={summary.data} note={summary.note} busy={summary.busy} />
             </Group>
           ) : (
-            <>
-              <Group title="Measurements">
-                <ResearchPanel seq={seq} summary={summary.data} note={summary.note} busy={summary.busy} />
-              </Group>
-              <Group title="Fetch exposures for a time window">
-                <TimeWindow
-                  value={opts}
-                  onApply={(o) => {
-                    setFlipbook({ frameId: null, playing: false, excluded: new Set() })
-                    setOpts(o)
-                  }}
-                />
-              </Group>
-            </>
+            <Group title="Measurements">
+              <ResearchPanel seq={seq} summary={summary.data} note={summary.note} busy={summary.busy} />
+            </Group>
+          )}
+          <Group title="Probe">
+            <ProbePanel probe={probe} research={mode === 'research'} />
+          </Group>
+          {mode === 'research' && (
+            <Group title="Fetch exposures for a time window">
+              <TimeWindow
+                value={opts}
+                onApply={(o) => {
+                  setFlipbook({ frameId: null, playing: false, excluded: new Set() })
+                  setOpts(o)
+                }}
+              />
+            </Group>
           )}
           <div className={advanced ? '' : 'hidden'}>
             <LayersPanel
@@ -215,7 +236,7 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
               }
               catalogs={
                 aladin && (
-                  <Catalogs aladin={aladin} ucds={skyUcds} spiffOn={spiffOn} setSpiffOn={setSpiffOn} onVisibleCount={setCatalogCount} />
+                  <Catalogs aladin={aladin} ucds={skyUcds} spiffOn={spiffOn} setSpiffOn={setSpiffOn} />
                 )
               }
             />
