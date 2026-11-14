@@ -13,8 +13,9 @@ const OVERLAYS = [
 const BASES = [DEFAULT_BASE, 'CDS/P/unWISE/color-W2-W1W2-W1', 'CDS/P/SPHEREx/QR2/color', 'CDS/P/DSS2/color']
 const CUBE_URL = 'https://irsa.ipac.caltech.edu/data/hips/SPHEREx/spherex_allsky_cube'
 
-// CDS-hosted HiPS (alasky) went 404/unreachable in Nov 2026. Each layer's `properties` is probed once per browser
-// session and only answering layers are listed, so the CDS ones come back by themselves when CDS does.
+// CDS-hosted HiPS (alasky) went 404/unreachable in Nov 2026. Each layer's `properties` is probed and only answering
+// layers are listed, so the CDS ones come back by themselves when CDS does. Only successes are remembered for the
+// session: a slow moment must not hide a working layer until the tab is closed (seen with IRSA's AllWISE and DSS2).
 const CDS = 'https://alasky.cds.unistra.fr'
 const propertiesUrl = (id: string) =>
   `${HIPS_URL[id] ?? (id.startsWith('http') ? id : `${CDS}/${id.replace('CDS/P/', '').replace('SPHEREx/QR2/', 'SPHEREx/')}`)}/properties`
@@ -23,17 +24,17 @@ const UP_KEY = 'ultracool-hips-up'
 function useAvailable(ids: string[]) {
   const [up, setUp] = useState<Record<string, boolean>>(() => JSON.parse(sessionStorage.getItem(UP_KEY) ?? '{}'))
   useEffect(() => {
-    const todo = ids.filter((id) => !(id in up))
+    const todo = ids.filter((id) => !up[id])
     if (!todo.length) return
     Promise.all(
       todo.map((id) =>
-        fetch(propertiesUrl(id), { signal: AbortSignal.timeout(5000) })
+        fetch(propertiesUrl(id), { signal: AbortSignal.timeout(10000) })
           .then((r) => r.ok, () => false)
           .then((ok) => [id, ok] as const),
       ),
     ).then((res) => {
       const next = { ...up, ...Object.fromEntries(res) }
-      sessionStorage.setItem(UP_KEY, JSON.stringify(next))
+      sessionStorage.setItem(UP_KEY, JSON.stringify(Object.fromEntries(Object.entries(next).filter(([, ok]) => ok))))
       setUp(next)
     })
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
