@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { getSequence, isMissing, resolveTarget, startSequence, type Resolved, type SeqOptions, type Sequence } from './api'
 import type { Flipbook } from './components/Player'
 import { readUrl, writeUrl } from './url'
@@ -41,11 +41,14 @@ export function useTarget() {
   return { resolved, lookup, goTo, busy, error, setError }
 }
 
-/** Start the sequence for a target and poll every 2 s until it settles. */
-export function useSequence(target: Resolved | null, opts: SeqOptions = {}) {
+/** Start the sequence for a target and poll every 2 s until it settles. `priorityBands` (the bands on screen) are
+ * processed first by the backend; they are read when the request is sent and never restart the sequence. */
+export function useSequence(target: Resolved | null, opts: SeqOptions = {}, priorityBands?: string[]) {
   const [seq, setSeq] = useState<Sequence | null>(null)
   const [error, setError] = useState<string | null>(null)
   const optsKey = JSON.stringify(opts)
+  const prio = useRef(priorityBands)
+  prio.current = priorityBands
   useEffect(() => {
     setSeq(null)
     setError(null)
@@ -63,7 +66,7 @@ export function useSequence(target: Resolved | null, opts: SeqOptions = {}) {
       }
       timer = window.setTimeout(() => poll(id), 2000)
     }
-    startSequence(target, JSON.parse(optsKey))
+    startSequence(target, { ...JSON.parse(optsKey), priority_bands: prio.current })
       .then(({ id }) => {
         if (!stop) poll(id)
       })
@@ -104,11 +107,12 @@ export function useFlipbook(init: Partial<Flipbook> = {}) {
   return [fb, set] as const
 }
 
-/** Result of a per-sequence endpoint, fetched once the sequence is done. 404 = backend without that endpoint yet.
+/** Result of a per-sequence endpoint, fetched once the sequence is done (with `afterWise`: as soon as every WISE frame
+ * is in, if the backend reports `wise_done`). 404 = backend without that endpoint yet.
  * `busy`: still waiting (frames or the request), so callers can show a spinner next to `note`. */
-export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => Promise<T>) {
+export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => Promise<T>, afterWise = false) {
   const [state, setState] = useState<{ id: string; data: T | null; note: string | null; busy: boolean } | null>(null)
-  const ready = seq?.status === 'done' ? seq.id : null
+  const ready = seq && (seq.status === 'done' || (afterWise && seq.wise_done)) ? seq.id : null
   useEffect(() => {
     if (!ready) return
     let stale = false
@@ -123,6 +127,6 @@ export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => P
   }, [ready]) // eslint-disable-line react-hooks/exhaustive-deps
   if (!seq) return { data: null, note: null, busy: false }
   if (seq.status === 'error') return { data: null, note: 'Sequence failed', busy: false }
-  if (!ready || state?.id !== ready) return { data: null, note: 'Waiting for all frames…', busy: true }
+  if (!ready || state?.id !== ready) return { data: null, note: afterWise ? 'Waiting for the WISE frames…' : 'Waiting for all frames…', busy: true }
   return state
 }

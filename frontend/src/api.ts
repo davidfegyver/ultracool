@@ -65,6 +65,8 @@ export type Sequence = {
   grid: { wcs: Record<string, string | number>; width: number; height: number }
   target: { ra: number; dec: number; pmra_masyr: number; pmdec_masyr: number; epoch_yr: number }
   frames: Frame[]
+  /** all WISE frames processed (SPHEREx may still be fetching); absent on older backends */
+  wise_done?: boolean
 }
 
 /** Optional sequence parameters; wise_exposures needs mjd_max - mjd_min <= 30 (else HTTP 400). */
@@ -75,7 +77,8 @@ export type SeqOptions = {
   wise_exposures?: boolean
 }
 
-export const startSequence = (r: Resolved, opts: SeqOptions = {}) =>
+/** `priority_bands`: frames of these bands are processed first; not part of the sequence id. */
+export const startSequence = (r: Resolved, opts: SeqOptions & { priority_bands?: string[] } = {}) =>
   get<{ id: string }>('/api/sequences', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },

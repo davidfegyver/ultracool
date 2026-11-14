@@ -43,8 +43,9 @@ export default function Discover() {
   const [initialUrl] = useState(readUrl)
   const { resolved, lookup, goTo, busy, error } = useTarget()
   const [field, setField] = useState(0) // remounts TargetBar when a random field replaces the text
-  const { seq, error: seqError } = useSequence(resolved, { fov_deg: FIELD_FOV })
-  const movers = useSeqResult(seq, getMovers)
+  const { seq, error: seqError } = useSequence(resolved, { fov_deg: FIELD_FOV }, ['W2'])
+  // movers come from WISE: ask as soon as all WISE frames are in instead of waiting for SPHEREx
+  const movers = useSeqResult(seq, getMovers, true)
   const summary = useSeqResult(seq, getSummary)
   const [sel, setSel] = useState(0)
   const [labels, setLabels] = useState(loadLabels)
@@ -99,6 +100,9 @@ export default function Discover() {
             Moving candidates {list.length > 0 && `(${list.length})`}
           </h2>
           {!movers.data && (movers.note ? <Pending note={movers.note} busy={movers.busy} className="p-2" /> : <p className="p-2 text-slate-500">Pick a field to scan</p>)}
+          {seq?.wise_done && (seq.status === 'querying' || seq.status === 'fetching') && (
+            <Pending note={`SPHEREx frames still loading (${seq.done}/${seq.total})`} busy className="px-2 pt-1" />
+          )}
           {movers.data?.status === 'insufficient data' && <p className="p-2 text-slate-500">Not enough epochs in this field to measure motion.</p>}
           {movers.data?.status === 'ok' && !list.length && <p className="p-2 text-slate-500">No significant movers in this field.</p>}
           <ol>

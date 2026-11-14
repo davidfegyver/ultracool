@@ -110,12 +110,11 @@ function lessonMarks(lesson: Lesson, seq: Sequence, f: Frame): Mark[] {
 function LessonView({ lesson, n, onCorrect, onNext }: { lesson: Lesson; n: number; onCorrect: () => void; onNext?: () => void }) {
   const [target, setTarget] = useState<Resolved | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const { seq, error: seqError } = useSequence(target, {
-    fov_deg: lesson.fov_deg,
-    mjd_min: lesson.mjd_min,
-    mjd_max: lesson.mjd_max,
-    wise_exposures: lesson.wise_exposures,
-  })
+  const { seq, error: seqError } = useSequence(
+    target,
+    { fov_deg: lesson.fov_deg, mjd_min: lesson.mjd_min, mjd_max: lesson.mjd_max, wise_exposures: lesson.wise_exposures },
+    lesson.bands,
+  )
   const summary = useSeqResult(seq, getSummary)
   const [fb, setFb] = useFlipbook({ bands: lesson.bands, deep: !!lesson.deep, frameId: null })
 
