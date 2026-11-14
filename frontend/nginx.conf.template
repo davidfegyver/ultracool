@@ -40,8 +40,6 @@ limit_req_zone $seq_start_key zone=seqstart:10m rate=12r/m;
 
 server {
     listen 80;
-    # optional HTTPS for the Cloudflare->origin leg: certs/*.conf (listen 443 ssl + certificate paths), absent locally
-    include /etc/nginx/certs/*.conf;
     server_name ${PUBLIC_HOSTNAME};
     root /usr/share/nginx/html;
     limit_req_status 429;
