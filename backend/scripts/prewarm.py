@@ -11,7 +11,7 @@ import urllib.request
 
 API = os.getenv("API_URL", "http://localhost:8000")
 TARGETS = ["Barnard's Star", "eps Ind B", "WISE J085510.83-071442.5", "RW Aur", "R Dra",
-           "WISEA J153429.75-104303.3"]
+           "WISEA J153429.75-104303.3", "WISE J231728.42-665959.3"]
 _EPS_IND_PM = {"pmra_masyr": 3966.661, "pmdec_masyr": -2536.192, "epoch_yr": 2000.0}
 # Learn-mode fields whose request differs from a plain resolve; keep in sync with frontend/src/lessons.ts
 LESSONS = {
