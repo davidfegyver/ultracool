@@ -594,9 +594,9 @@ def classify_variability(lc, floor=PHOT_FLOOR):
     variable = any(v["chi2_red_without_worst"] > VAR_CHI2 for v in usable)
     if pgrams:
         period, fap, alias, alts = min(pgrams, key=lambda p: p[1])
-        out.update(fap=min(1.0, fap * len(pgrams)), period_alias_warning=alias or bool(alts))
-        if out["fap"] < LS_FAP:
-            out.update(period_days=period, period_alternatives_days=alts)
+        out["fap"] = min(1.0, fap * len(pgrams))
+        if out["fap"] < LS_FAP:  # the alias warning only qualifies a period we actually report
+            out.update(period_days=period, period_alternatives_days=alts, period_alias_warning=alias or bool(alts))
     # a period at FAP < 1% is itself a detection of variability (R Dra's catalog points scatter little
     # about the mean once the 15% saturated-star floor is applied, yet fold cleanly)
     out["verdict"] = ("periodic variable" if out["period_days"] is not None else
