@@ -15,7 +15,14 @@ const simbad = (t: string, r: number) => {
 type Spec = { name: string; make: (target: string, r: number) => Catalog }
 const SPECS: Spec[] = [
   { name: 'Gaia DR3', make: (t, r) => A.catalogFromURL(vizier('I/355/gaiadr3', t, r), { name: 'Gaia DR3', onClick: 'showTable' }) },
-  { name: 'CatWISE2020', make: (t, r) => A.catalogFromURL(vizier('II/365/catwise', t, r), { name: 'CatWISE2020', onClick: 'showTable' }) },
+  {
+    name: 'CatWISE2020',
+    // from IRSA (the CatWISE home) via our API: the VizieR mirror's CatWISE database was down
+    make: (t, r) => {
+      const [ra, dec] = t.split(' ')
+      return A.catalogFromURL(`/api/catwise?ra=${ra}&dec=${dec}&radius_deg=${r}`, { name: 'CatWISE2020', onClick: 'showTable' })
+    },
+  },
   { name: 'SIMBAD', make: (t, r) => A.catalogFromURL(simbad(t, r), { name: 'SIMBAD', onClick: 'showTable' }) },
 ]
 /** Remote catalogs: queried around the current view centre the first time the eye is turned on. */

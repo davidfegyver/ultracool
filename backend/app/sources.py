@@ -49,7 +49,7 @@ class RawFrame:
     stem: str
 
 
-def _irsa_retry(fn):
+def irsa_retry(fn):
     for i, delay in enumerate([5, 15, 45, None]):
         try:
             with IRSA_SEM:
@@ -68,7 +68,7 @@ def query_frames(ra, dec):
     pos = (SkyCoord(ra, dec, unit="deg"), 1 * u.arcsec)
     out = []
     for c in COLLECTIONS:
-        t = _irsa_retry(lambda: Irsa.query_sia(pos=pos, collection=c))
+        t = irsa_retry(lambda: Irsa.query_sia(pos=pos, collection=c))
         survey = "spherex" if c.startswith("spherex") else "wise"
         for r in t:
             if str(r["dataproduct_subtype"]) != "science":
@@ -156,6 +156,6 @@ def read_section(frame, grid_wcs, shape):
         with urllib.request.urlopen(f"{frame.access_url}?center={ra},{dec}&size={size}", timeout=120) as r:
             return r.read()
 
-    data = _irsa_retry(fetch)
+    data = irsa_retry(fetch)
     with fits.open(io.BytesIO(data)) as hdul:
         return _process(hdul, frame, grid_wcs, shape)
