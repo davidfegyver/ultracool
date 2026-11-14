@@ -60,3 +60,20 @@ def test_masked_pixel_in_aperture_keeps_total():
     mask[23, 20] = True  # a flagged pixel in the wing
     net, _ = aperture_flux(img, 20, 20, r_ap=6, mask=mask)
     assert net == pytest.approx(1000, rel=0.05)
+
+
+def test_crowded_annulus_uses_mode_sky_and_confusion_error():
+    """SOURCE flags cover the whole annulus: the fallback sky must not be pulled up by the sources, and the
+    error must include the source-to-source scatter (confusion), not just pixel noise."""
+    rng = np.random.default_rng(6)
+    img = rng.normal(0, 0.01, (61, 61))
+    for _ in range(120):  # crowded field of faint point sources
+        yy, xx = np.indices(img.shape)
+        x0, y0 = rng.uniform(0, 61, 2)
+        img += 2.0 * np.exp(-((xx - x0) ** 2 + (yy - y0) ** 2) / 2) / (2 * np.pi)
+    var = np.full(img.shape, 1e-4)
+    src = np.ones(img.shape, bool)  # SOURCE everywhere
+    _, err_plain = aperture_flux(img, 30, 30, 2, 4, 7, var=var)
+    net, err = aperture_flux(img, 30, 30, 2, 4, 7, var=var, bkg_mask=src)
+    assert err > 2 * err_plain  # confusion dominates the pixel noise
+    assert abs(net) < 4 * err

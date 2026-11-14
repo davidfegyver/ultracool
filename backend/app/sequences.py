@@ -48,7 +48,8 @@ WISE_R_AP, WISE_R_IN, WISE_R_OUT = 3.0, 50 / PIX_ARCSEC, 70 / PIX_ARCSEC
 WISE_APCORR = {"W1": 0.861, "W2": 0.846}
 MAX_EXPOSURE_WINDOW_D = 30
 # bump when photometry or frame processing changes: part of the sequence id, so old caches are not reused
-PIPELINE_VERSION = 3
+# (4: SPHEREx crowded-field background, frames.aperture_flux)
+PIPELINE_VERSION = 4
 ID_RE = re.compile(r"^[0-9a-f]{16}$")
 FRAME_RE = re.compile(r"^[\w.-]+$")
 

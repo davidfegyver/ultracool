@@ -54,6 +54,9 @@ STATIC_SEP_ARCSEC = 2 * 8.25  # target this far from its spot: its aperture ther
 VAR_MIN_SNR = 5.0  # median per-visit S/N a band needs before its scatter can mean variability
 SX_AP_ARCSEC = 2.0 * 6.15  # SPHEREx photometry aperture radius (sources.SX_R_AP native pixels)
 CONTAM_FRAC = 0.25  # neighbours adding > 25% of the target's light make a template fit describe them
+# a crowded-field sky over-subtraction drives many channels negative: for pure noise, P(z < -2.5) = 0.6%, so
+# >= 3 such channels among ~90 happens by chance ~2% of the time
+NEG_BIN_SIGMA, NEG_BINS_MAX = -2.5, 3
 REF_YR = 2018.0  # grid-centre epoch; mover positions are given at this epoch
 # Variability: per-visit repeatability floor. NEOWISE single-exposure photometry repeats to ~1-2% for bright
 # stars (Mainzer+2014); our visit co-adds with 8.25" apertures, MAGZP drifts and (for movers) subtracted
@@ -776,8 +779,12 @@ def _plain(motion, color, var, spec):
         s.append(f"Its SPHEREx spectrum looks most like a {spec['best']['label']} brown-dwarf template "
                  f"(probability {spec['best']['prob']:.0%}).")
     elif spec.get("contaminated"):
-        s.append("Other stars or galaxies share SPHEREx's large pixels at its position and add much of the light, "
+        s.append("It sits in a crowded part of the sky where SPHEREx's large pixels are full of other stars, so its "
+                 "spectrum cannot be measured reliably." if "crowded" in spec["reason"] else
+                 "Other stars or galaxies share SPHEREx's large pixels at its position and add much of the light, "
                  "so its spectrum cannot be read cleanly.")
+    elif spec.get("reason") == "no clear SPHEREx detection":
+        s.append("SPHEREx does not clearly detect it at 3.5-5 micrometres, so its spectrum cannot be typed.")
     elif spec["verdict"] == "insufficient data":
         s.append("Not enough clean SPHEREx measurements to read its spectrum.")
     else:
@@ -878,15 +885,22 @@ def spectrum_contamination(m, sky):
 
 
 def typed_spectrum(m, sky):
-    """spectral.classify, unless other sources supply a large part of the light in the SPHEREx aperture: then
-    any template 'match' would describe the neighbour (W0855-0714 typed as an M dwarf), so the verdict is
-    'insufficient data' with the ranking kept for experts."""
+    """spectral.classify, unless the photometry is contaminated: other sources supply a large part of the light
+    in the SPHEREx aperture (then any template 'match' describes the neighbour: W0855-0714 typed as an M dwarf),
+    or >= NEG_BINS_MAX channels are significantly negative (crowded field, sky over-subtracted: J1925+2901 at
+    b = +7 deg). Then the verdict is 'insufficient data' with the ranking kept for experts."""
     spec = classify(m["frames"])
     c = spectrum_contamination(m, sky)
-    spec["contamination"] = c
-    spec["contaminated"] = bool(c) and max(c.values()) > CONTAM_FRAC
-    if spec["contaminated"] and spec["verdict"] != "insufficient data":
-        spec.update(verdict="insufficient data", best=None, template_curve=None)
+    neg = sum(b["flambda"] / b["err"] < NEG_BIN_SIGMA for b in spec["binned"] if b["err"] > 0)
+    spec.update(contamination=c, negative_bins=neg)
+    reason = None
+    if c and max(c.values()) > CONTAM_FRAC:
+        reason = "other stars or galaxies add much of the light in SPHEREx's large pixels"
+    elif neg >= NEG_BINS_MAX:
+        reason = f"{neg} channels significantly negative: crowded-field background, photometry unreliable"
+    spec["contaminated"] = reason is not None
+    if reason:
+        spec.update(verdict="insufficient data", best=None, template_curve=None, reason=reason)
     return spec
 
 

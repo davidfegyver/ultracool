@@ -67,26 +67,39 @@ def aperture_flux(img, x, y, r_ap=3, r_in=6, r_out=10, var=None, mask=None, bkg_
     photutils with exact pixel overlap; background = 3-sigma-clipped annulus median.
     err = per-pixel variance (if given, else annulus scatter) plus the error of the background level.
     mask: pixels unusable everywhere (NaN always are); bkg_mask: extra pixels kept out of the annulus only
-    (e.g. other sources). More than 20% of the aperture unusable -> (nan, nan)."""
+    (e.g. other sources). More than 20% of the aperture unusable -> (nan, nan).
+    Crowded field (bkg_mask leaves < 10 annulus pixels, e.g. SPHEREx SOURCE flags covering the whole annulus
+    near the Galactic plane): the unmasked annulus is skewed by sources, so the sky is the SExtractor mode
+    estimate 2.5 median - 1.5 mean (Bertin & Arnouts 1996, A&AS 117, 393), and the error is at least the
+    scatter of aperture sums placed around the annulus (confusion noise, which the pixel variance misses)."""
     bad = ~np.isfinite(img) if mask is None else (mask | ~np.isfinite(img))
     ap = CircularAperture((x, y), r_ap)
     ann = CircularAnnulus((x, y), r_in, r_out)
     good_area = float(ap.area_overlap(img, mask=bad))
     if not good_area or good_area < 0.8 * ap.area:
         return math.nan, math.nan
-    for bm in ((bad | bkg_mask) if bkg_mask is not None else bad, bad):  # drop bkg_mask if it leaves too little sky
+    masks = ((bad | bkg_mask) if bkg_mask is not None else bad, bad)  # drop bkg_mask if it leaves too little sky
+    for i, bm in enumerate(masks):
         st = ApertureStats(img, ann, mask=bm, sigma_clip=SigmaClip(sigma=3))
         n_bkg = float(st.sum_aper_area.value)
         if n_bkg >= 10 and math.isfinite(st.median):
             break
     else:
         return math.nan, math.nan
-    phot = aperture_photometry(np.where(bad, 0.0, img - st.median), ap, mask=bad, method="exact",
+    crowded = bkg_mask is not None and i == 1
+    sky = 2.5 * st.median - 1.5 * st.mean if crowded else st.median
+    sub = np.where(bad, 0.0, img - sky)
+    phot = aperture_photometry(sub, ap, mask=bad, method="exact",
                                error=None if var is None else np.sqrt(np.where(bad, 0.0, var)))
     src_var = float(phot["aperture_sum_err"][0]) ** 2 if var is not None else st.std ** 2 * good_area
     scale = ap.area / good_area  # stand in for the few masked aperture pixels
     net = float(phot["aperture_sum"][0]) * scale
     err = math.sqrt(src_var + st.std ** 2 * good_area ** 2 / n_bkg) * scale
+    if crowded:
+        r_mid = (r_in + r_out) / 2
+        pos = [(x + r_mid * math.cos(a), y + r_mid * math.sin(a)) for a in np.linspace(0, 2 * math.pi, 8, endpoint=False)]
+        sums = np.array(aperture_photometry(sub, CircularAperture(pos, r_ap), mask=bad, method="exact")["aperture_sum"])
+        err = max(err, 1.4826 * float(np.median(np.abs(sums - np.median(sums)))))
     return net, err
 
 

@@ -30,6 +30,19 @@ MAX_CHI2_RED = 10
 # forced photometry adds EPSF-zone aperture corrections and pixel-phase effects of a few % more. 3% left
 # eps Ind B (SPIFF T3 at chi2_r 1.6) at chi2_r 10.5 with every residual a smooth few-% wiggle; 5% gives 4.5.
 SYS_FRAC = 0.05
+# A template "match" needs the target itself: inverse-variance weighted mean F_lambda over the 3.5-5.0 um bins
+# (where every ultracool dwarf is brightest relative to its 1-3 um flux) at >= 5 sigma. Noise or a static
+# diffraction spike otherwise fits *some* template at chi2_r ~1.5 (J2011-0624 typed "sdT4" at S/N 3.5).
+DET_BAND_UM = (3.5, 5.0)
+DET_MIN_SNR = 5.0
+
+
+def detection_snr(lam, flx, err):
+    sel = (lam >= DET_BAND_UM[0]) & (lam <= DET_BAND_UM[1])
+    if not sel.any():
+        return None
+    w = err[sel] ** -2
+    return float(np.sum(w * flx[sel]) / math.sqrt(np.sum(w)))
 
 
 def _bin(points):
@@ -60,7 +73,8 @@ def classify(frames):
     err = np.hypot(err, SYS_FRAC * np.abs(flx))
     binned = [{"wavelength_um": float(a), "flambda": float(b), "err": float(c)} for a, b, c in zip(lam, flx, err)]
     if int(np.sum(flx / err >= 3)) < MIN_BINS:
-        return {"verdict": "insufficient data", "best": None, "ranking": [], "binned": binned, "template_curve": None}
+        return {"verdict": "insufficient data", "best": None, "ranking": [], "binned": binned, "template_curve": None,
+                "detection_snr": detection_snr(lam, flx, err)}
 
     fits = []
     for label, t in TEMPLATES.items():
@@ -86,6 +100,10 @@ def classify(frames):
     best = ranking[0]
     _, label, a, _ = fits[0]
     t = TEMPLATES[label]
+    det = detection_snr(lam, flx, err)
+    curve = {"label": label, "wavelength_um": t[:, 0].tolist(), "flambda": (a * t[:, 1]).tolist()}
+    if det is None or det < DET_MIN_SNR:  # ranking kept for experts, no type claimed
+        return {"verdict": "insufficient data", "best": None, "ranking": ranking, "binned": binned,
+                "template_curve": None, "detection_snr": det, "reason": "no clear SPHEREx detection"}
     return {"verdict": "match" if best["chi2_red"] <= MAX_CHI2_RED else "not consistent with ultracool dwarf templates",
-            "best": best, "ranking": ranking, "binned": binned,
-            "template_curve": {"label": label, "wavelength_um": t[:, 0].tolist(), "flambda": (a * t[:, 1]).tolist()}}
+            "best": best, "ranking": ranking, "binned": binned, "template_curve": curve, "detection_snr": det}
