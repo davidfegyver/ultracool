@@ -126,7 +126,8 @@ def classify(frames):
     if int(np.sum(flx / err >= 3)) < MIN_BINS:
         det = detection_snr(lam, flx, err)
         return {"verdict": "insufficient data", "best": None, "ranking": [], "binned": binned, "template_curve": None,
-                "detection_snr": det, **({"reason": NO_DETECTION} if det is None or det < DET_MIN_SNR else {})}
+                "detection_snr": det,  # None: no 3.5-5 um channel at all (e.g. saturated): no data, not undetected
+                **({"reason": NO_DETECTION} if det is not None and det < DET_MIN_SNR else {})}
 
     fits = []
     for label, t in TEMPLATES.items():

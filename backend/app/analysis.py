@@ -71,10 +71,12 @@ VAR_CHI2 = 3.0  # irregular = chi2_red > ~3 without a significant periodogram pe
 LS_MIN_EPOCHS = 8
 LS_FAP = 0.01
 CADENCE_D = 365.25  # NEOWISE visits every ~6 months: periods at 1/k yr are cadence aliases
-# W1-W2 colour classes (Vega). Kirkpatrick et al. 2011 (ApJS 197, 19) Fig. 13 / Kirkpatrick et al. 2021
-# (ApJS 253, 7): stars and early-M dwarfs sit at W1-W2 ~ 0-0.3, L dwarfs 0.2-0.6, T dwarfs climb from ~0.5
-# (T0) through ~2 (T7) to >3 for Y dwarfs; W0855-0714 has W1-W2 ~ 3.5 or more.
-W12_EXTREME, W12_RED = 2.0, 0.6
+# W1-W2 colour classes (Vega), cut at the Kirkpatrick et al. 2021 (ApJS 253, 7; Table 13, Fig. 14h) polynomial
+# W1-W2 = 0.22668 + 0.029069 s - 0.0046379 s^2 + 0.00057825 s^3 (s = 0 at L0, 10 at T0, 20 at Y0; rms 0.28 mag):
+# L dwarfs 0.23-0.6 like stars (0-0.3), T0 0.63, T5 1.57, T8 2.62, Y0 3.58; W0855-0714 ~3.5 or more.
+W12_RED, W12_VERY_RED, W12_EXTREME = 0.6, 1.6, 2.6  # T0, T5, T8
+COLOR_CLASSES = ((W12_EXTREME, "extremely red (Y/late-T dwarf-like)"), (W12_VERY_RED, "very red (T dwarf-like)"),
+                 (W12_RED, "red (L/T dwarf-like)"))
 # W1-W2 (Vega) loci, median and star-to-star sigma: M8 0.22 +- 0.07 (2,260 dwarfs), L0-L2 0.26-0.27 +- 0.05-0.07
 # (Schmidt et al. 2015, AJ 149, 158, Table 4); T and Y dwarfs are redder still (above). Ordinary M0-M4 dwarfs sit
 # at 0.01-0.15 (dal Ponte et al. 2023, MNRAS 522, 1951), hotter stars near 0. Used by colour_doubt.
@@ -546,8 +548,7 @@ def measure_color(lc, w1_undetected=False):
 
 
 def _color_class(c):
-    return ("extremely red (Y/late-T dwarf-like)" if c >= W12_EXTREME else
-            "red (L/T dwarf-like)" if c >= W12_RED else "normal star colors")
+    return next((name for lo, name in COLOR_CLASSES if c >= lo), "normal star colors")
 
 
 def _periodogram(t, mag, dmag):
@@ -752,8 +753,11 @@ def _plain(motion, color, var, spec):
             cat = ", matching the catalog proper motion"
         elif motion["consistent_with_catalog"] is False:
             cat = ", which differs from the catalog value"
+        sig = motion["significance_sigma"]
+        conf = ("a very confident measurement" if sig > 10 else "a confident measurement" if sig >= 5 else
+                "a tentative measurement")
         s.append(f"It moves across the sky: about {motion['pm_total_arcsec_yr']:.2f} arcseconds per year, measured over "
-                 f"{motion['baseline_yr']:.0f} years ({motion['significance_sigma']:.0f} sigma){cat}.")
+                 f"{motion['baseline_yr']:.0f} years ({conf}){cat}.")
     elif motion["verdict"] == "not moving":
         s.append(f"No motion detected over {motion['baseline_yr']:.0f} years (less than about "
                  f"{3 * motion['pmra_err_masyr'] / 1000:.2f} arcseconds per year): a distant star, a galaxy, or too slow to see.")
@@ -771,13 +775,24 @@ def _plain(motion, color, var, spec):
     return s + _plain_props(color, var, spec)
 
 
+def _runner_up(ranking):
+    """How the next-best template compares: the relative weights are not probabilities of the type, so say it in
+    words. Delta chi2 < 4 (2 sigma for one parameter) counts as 'about as well'."""
+    if len(ranking) < 2:
+        return "."
+    chi2 = [r["chi2_red"] * (r["n_bins"] - 1) for r in ranking[:2]]
+    return f"; the next best ({ranking[1]['label']}) fits {'about as well' if chi2[1] - chi2[0] < 4 else 'clearly worse'}."
+
+
 def _plain_props(color, var, spec):
     """Colour, variability and spectrum sentences (also used by the probe)."""
     s = []
     if color["w1_w2"] is not None:
         val = f"at least {color['w1_w2']:.1f}" if color["w1_w2_is_lower_limit"] else f"{color['w1_w2']:.2f}"
+        hedge = "" if spec["verdict"] == "match" else " (dusty or very cool stars can look like this too)"
         s.append({"extremely red (Y/late-T dwarf-like)": f"Its infrared colour W1-W2 = {val} mag is extremely red, like the coldest brown dwarfs (late-T and Y).",
-                  "red (L/T dwarf-like)": f"Its infrared colour W1-W2 = {val} mag is red, as for L/T brown dwarfs (dusty or very cool stars can look like this too).",
+                  "very red (T dwarf-like)": f"Its infrared colour W1-W2 = {val} mag is very red, like T-type brown dwarfs.",
+                  "red (L/T dwarf-like)": f"Its infrared colour W1-W2 = {val} mag is red, as for early-T and the reddest L brown dwarfs{hedge}.",
                   "normal star colors": f"Its infrared colour W1-W2 = {val} mag is normal for a star, not a cold brown dwarf.",
                   }.get(color["verdict"], "Its infrared colour could not be pinned down."))
     else:
@@ -792,8 +807,7 @@ def _plain_props(color, var, spec):
                   }.get(var["verdict"], "Too few WISE measurements to tell whether its brightness changes."))
     label = spec["best"]["label"] if spec.get("best") else None
     if spec["verdict"] == "match":
-        s.append(f"Its SPHEREx spectrum looks most like a {label} brown-dwarf template "
-                 f"(probability {spec['best']['prob']:.0%}).")
+        s.append(f"Its SPHEREx spectrum fits a {label} brown-dwarf template best" + _runner_up(spec["ranking"]))
     elif spec["verdict"] == WARMER:
         s.append(f"Its SPHEREx spectrum is closest to one of the warmest templates ({label}), but {spec['doubt']}: "
                  "probably an ordinary star, warmer than the ultracool dwarfs.")

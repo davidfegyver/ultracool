@@ -100,6 +100,29 @@ def test_color_classes_and_lower_limit():
     assert cold["w1_w2_is_lower_limit"] and cold["w1_w2"] > 2 and cold["verdict"].startswith("extremely red")
 
 
+def test_color_bands_follow_kirkpatrick_2021():
+    from app.analysis import _color_class
+
+    # J2317 (T5-T6) 2.19, J0415 (T8) 2.87, eps Ind B (T1+T6) 1.16, L dwarfs and stars < 0.6
+    assert [_color_class(c) for c in (0.0, 0.3, 0.6, 1.16, 1.6, 2.19, 2.6, 2.87, 3.6)] == [
+        "normal star colors", "normal star colors", "red (L/T dwarf-like)", "red (L/T dwarf-like)",
+        "very red (T dwarf-like)", "very red (T dwarf-like)", "extremely red (Y/late-T dwarf-like)",
+        "extremely red (Y/late-T dwarf-like)", "extremely red (Y/late-T dwarf-like)"]
+
+
+def test_plain_sentences_use_words_not_weights():
+    from app.analysis import _plain_props, _runner_up
+
+    assert _runner_up([{"label": "T5", "chi2_red": 1.5, "n_bins": 89}, {"label": "T6", "chi2_red": 1.52, "n_bins": 89}]) \
+        == "; the next best (T6) fits about as well."
+    assert "clearly worse" in _runner_up([{"label": "T3", "chi2_red": 4.4, "n_bins": 89}, {"label": "T2", "chi2_red": 5.0, "n_bins": 89}])
+    color = {"w1_w2": 1.0, "w1_w2_is_lower_limit": False, "verdict": "red (L/T dwarf-like)"}
+    match = {"verdict": "match", "best": {"label": "T1", "prob": 0.97}, "ranking": [{"label": "T1", "chi2_red": 1, "n_bins": 50}]}
+    s = _plain_props(color, {"verdict": "constant"}, match)
+    assert "%" not in s[-1] and "dusty" not in s[0]
+    assert "dusty" in _plain_props(color, {"verdict": "constant"}, {"verdict": "insufficient data"})[0]
+
+
 def test_wise_exposures_needs_short_window():
     base = {"ra": 10.0, "dec": 5.0}
     with pytest.raises(HTTPException) as e:
