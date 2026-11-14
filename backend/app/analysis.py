@@ -22,7 +22,7 @@ from scipy.ndimage import shift as nd_shift
 from scipy.spatial import cKDTree
 
 from . import ucd
-from .frames import PIX_ARCSEC, aperture_flux, deep_stack, group_by_gap, mjd_to_year, propagate
+from .frames import PIX_ARCSEC, aperture_flux, clipped_mean, deep_stack, group_by_gap, mjd_to_year, propagate
 from .sequences import (WISE_F0_JY, WISE_R_AP, WISE_R_IN, WISE_R_OUT, get_manifest, load_npy, seq_dir,
                         wise_flux_factor)
 from .sources import irsa_gator
@@ -37,10 +37,25 @@ FWHM_PX = {"W1": 6.1 / PIX_ARCSEC, "W2": 6.4 / PIX_ARCSEC, "SPHEREx": 11.0 / PIX
 POS_FLOOR_ARCSEC = {"W1": 0.2, "W2": 0.2, "SPHEREx": 0.6}
 MIN_SNR = 4.0
 PM_PRIOR_MASYR = 300.0  # how far an object with unknown/zero catalog PM may have drifted, per year
+# Known-PM search: the catalog track, give or take the catalog's errors. Positions/PMs are anchored on ~2010-2016
+# data (WISE, Gaia), so errors grow away from CAT_EPOCH_YR; the PM error is not in the manifest, so assume
+# 3% + 20 mas/yr (SIMBAD vs CatWISE differ by 6% for W1534-1043). Detections must be S/N >= 3 within
+# max(1.5 px, 3 sigma) of the prediction: a 3-sigma peak that close to a known track is rarely noise.
+CAT_EPOCH_YR = 2015.0
+CAT_PM_FRAC, CAT_PM_FLOOR, CAT_POS_ERR = 0.03, 20.0, 0.3
+TIGHT_R_PX = 1.5
+TIGHT_MIN_SNR = 3.0
+OUTLIER_SIGMA = 4.0
+BLEND_FLUX_RATIO = 0.2  # another source carrying >= 20% of the target's flux at its spot shifts the centroid
+STATIC_SEP_ARCSEC = 2 * 8.25  # target this far from its spot: its aperture there holds only static sky
+VAR_MIN_SNR = 5.0  # median per-visit S/N a band needs before its scatter can mean variability
+SX_AP_ARCSEC = 2.0 * 6.15  # SPHEREx photometry aperture radius (sources.SX_R_AP native pixels)
+CONTAM_FRAC = 0.25  # neighbours adding > 25% of the target's light make a template fit describe them
 REF_YR = 2018.0  # grid-centre epoch; mover positions are given at this epoch
-# Variability: per-visit repeatability floor (NEOWISE single-exposure photometry repeats to ~1-2% for bright
-# stars, Mainzer+2014; visit co-adds with 8.25" apertures are a little worse)
-PHOT_FLOOR = 0.03
+# Variability: per-visit repeatability floor. NEOWISE single-exposure photometry repeats to ~1-2% for bright
+# stars (Mainzer+2014); our visit co-adds with 8.25" apertures, MAGZP drifts and (for movers) subtracted
+# neighbour light scatter more: 5% keeps faint brown dwarfs (W0855, W1534) from reading as variable.
+PHOT_FLOOR = 0.05
 # profile fits of saturated stars in the NEOWISE single-exposure catalog drift and scatter by 0.1-0.2 mag
 # between visits (Barnard's Star, a constant star, scatters 7-28% per visit in W1)
 SATURATED_FLOOR = 0.15
@@ -148,9 +163,10 @@ def _saturated_cores(z):
     return out
 
 
-def centroid(z, x0, y0, r_search, fwhm_px):
-    """Brightest point source within r_search px of (x0, y0) in a sigma-unit image ->
-    (x, y, err_px, snr) or None if nothing above MIN_SNR. err = sqrt(2) sigma_psf / SNR.
+def centroid(z, x0, y0, r_search, fwhm_px, min_snr=MIN_SNR):
+    """Brightest point source (a local maximum of the matched-filter S/N, so not the wing of a neighbour
+    outside the circle) within r_search px of (x0, y0) in a sigma-unit image -> (x, y, err_px, snr) or None
+    if nothing above min_snr. err = sqrt(2) sigma_psf / SNR.
     A saturated star (NaN core) is located by the centre of its core, good to ~0.3 px."""
     sat = [c for c in _saturated_cores(z) if math.hypot(c[0] - x0, c[1] - y0) <= r_search]
     if sat:
@@ -159,13 +175,13 @@ def centroid(z, x0, y0, r_search, fwhm_px):
     zf = _fill_nan(z)
     snr = _snr_map(zf, fwhm_px)
     yy, xx = np.indices(z.shape)
-    inside = np.hypot(xx - x0, yy - y0) <= r_search
+    inside = (np.hypot(xx - x0, yy - y0) <= r_search) & (snr >= maximum_filter(snr, size=3))
     if not inside.any():
         return None
     i = np.argmax(np.where(inside, snr, -np.inf))
     py, px = np.unravel_index(i, z.shape)
     peak = float(snr[py, px])
-    if peak < MIN_SNR:
+    if peak < min_snr:
         return None
     h = max(2, int(math.ceil(fwhm_px)))
     ya, yb, xa, xb = max(0, py - h), min(z.shape[0], py + h + 1), max(0, px - h), min(z.shape[1], px + h + 1)
@@ -242,91 +258,228 @@ def _shifted_stack(sid, fs, pm_px_yr, t_mid):
     return deep_stack(imgs)
 
 
+def _robust_fit(pts, rejected):
+    """Fit; while the worst point is > OUTLIER_SIGMA off the line (its own error, not chi2-scaled), drop it."""
+    while True:
+        fit = fit_motion([p["_t"] for p in pts], [p["_xi"] for p in pts], [p["_eta"] for p in pts],
+                         [p["err_arcsec"] for p in pts])
+        norm = fit["resid"] / np.array([p["err_arcsec"] for p in pts])
+        k = int(np.argmax(norm))
+        if norm[k] <= OUTLIER_SIGMA or len(pts) <= 3:
+            return pts, fit
+        rejected.append({**_public(pts[k]), "reason": f"off the track by {norm[k]:.0f} sigma"})
+        pts = pts[:k] + pts[k + 1:]
+
+
+def _public(p):
+    return {k: v for k, v in p.items() if not k.startswith("_")}
+
+
 def measure_motion(m):
+    """Proper motion from per-epoch centroids. With a catalog PM the target is looked for only near the
+    catalog track (a faint mover must not latch onto a static neighbour), epochs where it sits on another
+    source are dropped, bands where it is mostly undetected are dropped, then a straight line is fitted with
+    outlier rejection and a second pass searches around the fitted track (adding SPHEREx)."""
     sid = m["id"]
     t = m["target"]
     wcs = _grid_wcs(m)
     ra0, dec0 = (float(v) for v in wcs.wcs.crval)
     groups = _motion_groups(m["frames"])
     cat = {"pmra_masyr": t["pmra_masyr"], "pmdec_masyr": t["pmdec_masyr"]}
+    pm_cat = math.hypot(t["pmra_masyr"], t["pmdec_masyr"])
     out = {"status": "insufficient data", "pmra_masyr": None, "pmdec_masyr": None, "pmra_err_masyr": None,
            "pmdec_err_masyr": None, "pm_total_arcsec_yr": None, "significance_sigma": None, "baseline_yr": None,
            "n_epochs": 0, "catalog": cat, "consistent_with_catalog": None, "verdict": "insufficient data",
-           "points": []}
+           "recovered": False, "track_snr": None, "undetected_bands": [], "points": [], "rejected_points": []}
+    if pm_cat:
+        out["track_snr"] = _track_snr(m, wcs, ra0, dec0)
     if len(groups) < 3:
         return out
+    cx0, cy0 = wcs.wcs.crpix[0] - 1, wcs.wcs.crpix[1] - 1
+    blend_cache: dict = {}
 
     def predict_cat(ty):
         return _offsets_arcsec(*propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], ty),
                                ra0, dec0)
 
-    model = None
-    for _pass in range(2):
+    def measure(model, use_groups, rejected):
         pm_mas = (model["pmra"], model["pmdec"]) if model else (t["pmra_masyr"], t["pmdec_masyr"])
         pm_px = (-pm_mas[0] / 1000 / PIX_ARCSEC, pm_mas[1] / 1000 / PIX_ARCSEC)  # grid x runs west
-        pts = []
-        for band, fs in groups:
+        pts, tried = [], {}
+        for band, fs in use_groups:
             ty = float(np.mean([mjd_to_year(f["mjd"]) for f in fs]))
             if model:
                 dt = ty - model["t0"]
                 pxi, peta = model["xi0"] + model["pmra"] / 1000 * dt, model["eta0"] + model["pmdec"] / 1000 * dt
                 sig = math.hypot(model["pos_err"], model["pmra_err"] / 1000 * abs(dt))
-            else:
+                r_search, min_snr = max(TIGHT_R_PX, 3 * sig / PIX_ARCSEC), TIGHT_MIN_SNR
+            elif pm_cat:
                 pxi, peta = predict_cat(ty)
-                sig = (0.05 * math.hypot(*pm_mas) + PM_PRIOR_MASYR) / 1000 * abs(ty - t["epoch_yr"])
-            r_search = min(30.0, max(6.0, 3 * sig)) / PIX_ARCSEC
-            x0 = (wcs.wcs.crpix[0] - 1) - pxi / PIX_ARCSEC  # tangent-plane offsets -> grid px (small field)
-            y0 = (wcs.wcs.crpix[1] - 1) + peta / PIX_ARCSEC
-            c = centroid(_shifted_stack(sid, fs, pm_px, ty), x0, y0, r_search, FWHM_PX[band])
+                sig = (CAT_PM_FRAC * pm_cat + CAT_PM_FLOOR) / 1000 * abs(ty - CAT_EPOCH_YR) + CAT_POS_ERR
+                r_search, min_snr = max(TIGHT_R_PX, 3 * sig / PIX_ARCSEC), TIGHT_MIN_SNR
+            else:  # unknown motion: the brightest source near the given position
+                pxi, peta = predict_cat(ty)
+                sig = PM_PRIOR_MASYR / 1000 * abs(ty - CAT_EPOCH_YR)
+                r_search, min_snr = max(6.0, 3 * sig) / PIX_ARCSEC, MIN_SNR
+            r_search = min(r_search, 30.0 / PIX_ARCSEC)
+            tried[band] = tried.get(band, 0) + 1
+            stack = _shifted_stack(sid, fs, pm_px, ty)
+            c = centroid(stack, cx0 - pxi / PIX_ARCSEC, cy0 + peta / PIX_ARCSEC, r_search, FWHM_PX[band], min_snr)
             if c is None:
                 continue
             ra, dec = (float(v) for v in wcs.pixel_to_world_values(c[0], c[1]))
             xi, eta = _offsets_arcsec(ra, dec, ra0, dec0)
-            err = math.hypot(c[2] * PIX_ARCSEC, POS_FLOOR_ARCSEC[band])
-            pts.append({"mjd": float(np.mean([f["mjd"] for f in fs])), "band": band, "ra": ra, "dec": dec,
-                        "err_arcsec": err, "_t": ty, "_xi": float(xi), "_eta": float(eta),
-                        "_epoch": (band == "SPHEREx", round(ty / WINDOW_YR))})
-        if len(pts) < 3:
-            return out
-        fit = fit_motion([p["_t"] for p in pts], [p["_xi"] for p in pts], [p["_eta"] for p in pts],
-                         [p["err_arcsec"] for p in pts])
-        keep = [p for p, r in zip(pts, fit["resid"]) if r <= max(4 * p["err_arcsec"] * math.sqrt(max(1, fit["chi2_red"])), 1.0)]
-        if 3 <= len(keep) < len(pts):  # one confused/blended epoch must not drag the fit
-            pts = keep
-            fit = fit_motion([p["_t"] for p in pts], [p["_xi"] for p in pts], [p["_eta"] for p in pts],
-                             [p["err_arcsec"] for p in pts])
-        model = fit
+            p = {"mjd": float(np.mean([f["mjd"] for f in fs])), "band": band, "ra": ra, "dec": dec,
+                 "err_arcsec": math.hypot(c[2] * PIX_ARCSEC, POS_FLOOR_ARCSEC[band]), "snr": min(c[3], 1e4),
+                 "_t": ty, "_xi": float(xi), "_eta": float(eta), "_epoch": (band == "SPHEREx", round(ty / WINDOW_YR))}
+            ratio = None
+            if math.isfinite(c[3]) and band != "SPHEREx":
+                ratio = _blend_ratio(m, blend_cache, band, fs, ty, c, math.hypot(*pm_mas) / 1000)
+            if ratio is not None and ratio > BLEND_FLUX_RATIO:
+                rejected.append({**_public(p), "reason": f"blended: other sources at this spot carry {ratio:.0%} of its flux"})
+                continue
+            pts.append(p)
+        for band, n in tried.items():  # mostly undetected band: its few "detections" are noise or neighbours
+            got = [p for p in pts if p["band"] == band]
+            if got and len(got) < 0.5 * n:
+                rejected += [{**_public(p), "reason": f"{band}: target detected in only {len(got)} of {n} epochs"} for p in got]
+                pts = [p for p in pts if p["band"] != band]
+        return pts
+
+    rejected: list = []
+    pts = measure(None, [g for g in groups if g[0] != "SPHEREx"] if pm_cat else groups, rejected)
+    if len(pts) >= 3:
+        pts, fit = _robust_fit(pts, rejected)
+        rejected = []  # second pass re-measures every epoch around the fitted track
+        pts2 = measure(fit, groups, rejected)
+        if len(pts2) >= 3:
+            pts, fit = _robust_fit(pts2, rejected)
+    out["rejected_points"] = rejected
+    out["points"] = [_public(p) for p in pts]
+    out["n_epochs"] = n_epochs = len({p["_epoch"] for p in pts})
+    if len(pts) < 3:
+        return out
+    # WISE bands in which the track was followed in no epoch: aperture flux there belongs to neighbours
+    out["undetected_bands"] = sorted({g[0] for g in groups if g[0] in ("W1", "W2")} - {p["band"] for p in pts})
     years = [p["_t"] for p in pts]
-    n_epochs = len({p["_epoch"] for p in pts})
     baseline = max(years) - min(years)
     out.update({"status": "ok", "pmra_masyr": fit["pmra"], "pmdec_masyr": fit["pmdec"],
                 "pmra_err_masyr": fit["pmra_err"], "pmdec_err_masyr": fit["pmdec_err"],
                 "pm_total_arcsec_yr": fit["pm"] / 1000, "significance_sigma": fit["significance"],
-                "baseline_yr": baseline, "n_epochs": n_epochs, "chi2_red": fit["chi2_red"],
-                "points": [{k: v for k, v in p.items() if not k.startswith("_")} for p in pts]})
+                "baseline_yr": baseline, "chi2_red": fit["chi2_red"]})
     if n_epochs < 3 or baseline < 2:
         out["status"] = "insufficient data"
         return out
     # single-epoch dipoles are pointing-jitter artifacts (Backyard Worlds): >= 3 epochs over >= 2 yr, >= 3 sigma
-    out["verdict"] = "moving" if fit["significance"] >= 3 else "not moving"
-    if t["pmra_masyr"] or t["pmdec_masyr"]:
-        d = math.hypot((fit["pmra"] - t["pmra_masyr"]) / fit["pmra_err"], (fit["pmdec"] - t["pmdec_masyr"]) / fit["pmdec_err"])
-        out["consistent_with_catalog"] = bool(d < 3 or math.hypot(fit["pmra"] - t["pmra_masyr"], fit["pmdec"] - t["pmdec_masyr"])
-                                              < 0.03 * math.hypot(t["pmra_masyr"], t["pmdec_masyr"]))
+    moving = fit["significance"] >= 3
+    if not pm_cat:
+        out.update(recovered=True, verdict="moving" if moving else "not moving")
+        return out
+    # the catalog PM uncertainty is not in the manifest: assume CAT_PM_FRAC of it + CAT_PM_FLOOR
+    s_cat = CAT_PM_FRAC * pm_cat + CAT_PM_FLOOR
+    d = math.hypot(fit["pmra"] - t["pmra_masyr"], fit["pmdec"] - t["pmdec_masyr"]) / math.hypot(fit["pmra_err"], s_cat)
+    out.update(consistent_with_catalog=d < 3, recovered=d < 3, catalog_offset_sigma=d)
+    if moving:
+        out["verdict"] = "moving"
+    elif d < 3:
+        out["verdict"] = "not moving"
+    # else no motion measured although the catalog says there should be: we followed something else
     return out
+
+
+def _blend_ratio(m, cache, band, fs, ty, c, pm_arcsec_yr):
+    """Flux of whatever else sits at the target's spot, as a fraction of the target's flux: the same band's
+    visits from years when the target was >= 1.5 FWHM away, stacked, measured at its position. None when the
+    target moves too slowly for such years to exist."""
+    if pm_arcsec_yr <= 0:
+        return None
+    dt_min = 1.5 * FWHM_PX[band] * PIX_ARCSEC / pm_arcsec_yr
+    if dt_min > 6:
+        return None
+    others = [f for f in m["frames"] if f["survey"] == "wise" and f["kind"] == "visit" and f["band"] == band
+              and abs(mjd_to_year(f["mjd"]) - ty) >= dt_min]
+    if len(others) < 2:
+        return None
+    key = tuple(sorted(f["id"] for f in others))
+    if key not in cache:
+        cache[key] = _snr_map(_fill_nan(deep_stack([load_npy(m["id"], f["id"]) for f in others])), FWHM_PX[band])
+    snr = cache[key]
+    s = snr[min(snr.shape[0] - 1, max(0, round(c[1]))), min(snr.shape[1] - 1, max(0, round(c[0])))]
+    # stacked S/N scales as flux x sqrt(frames): compare per-frame flux
+    return max(0.0, float(s)) / math.sqrt(len(others)) / (c[3] / math.sqrt(len(fs)))
+
+
+def _track_snr(m, wcs, ra0, dec0):
+    """Shift-and-stack all W2 visits along the catalog proper motion to REF_YR: S/N of the target there.
+    Confirms a faint mover that single epochs cannot follow."""
+    t = m["target"]
+    fs = [f for f in m["frames"] if f["survey"] == "wise" and f["kind"] == "visit" and f["band"] == "W2"]
+    if len(fs) < 2:
+        return None
+    pm_px = (-t["pmra_masyr"] / 1000 / PIX_ARCSEC, t["pmdec_masyr"] / 1000 / PIX_ARCSEC)
+    snr = _snr_map(_fill_nan(_shifted_stack(m["id"], fs, pm_px, REF_YR)), FWHM_PX["W2"])
+    xi, eta = _offsets_arcsec(*propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], REF_YR),
+                              ra0, dec0)
+    x, y = wcs.wcs.crpix[0] - 1 - xi / PIX_ARCSEC, wcs.wcs.crpix[1] - 1 + eta / PIX_ARCSEC
+    yy, xx = np.indices(snr.shape)
+    near = np.hypot(xx - x, yy - y) <= TIGHT_R_PX
+    return float(snr[near].max()) if near.any() else None
 
 
 # ---------------------------------------------------------------- photometry: colour and variability
 
 
-def wise_lightcurve(frames):
-    """{band: [(mjd, flux_ujy, err_ujy)]} from unflagged WISE visit frames with a measurement."""
+def wise_lightcurve(frames, sky=None):
+    """{band: [(mjd, flux_ujy, err_ujy)]} from unflagged WISE visit frames with a measurement. sky: optional
+    {frame_id: (flux, err)} of other sources inside the aperture, subtracted where it is significant (> 3
+    sigma; elsewhere subtracting would only add noise); visits without an entry are then left out. Visits
+    whose error is > 5x the band's median are failed co-adds (few good exposures, halos) and are dropped."""
     lc: dict[str, list] = {}
     for f in frames:
         if f["survey"] == "wise" and f["kind"] == "visit" and not f["flagged"] and f["flux_ujy"] is not None \
                 and f["flux_err_ujy"] and f["flux_err_ujy"] > 0:
-            lc.setdefault(f["band"], []).append((f["mjd"], f["flux_ujy"], f["flux_err_ujy"]))
+            flux, err = f["flux_ujy"], f["flux_err_ujy"]
+            if sky:
+                if f["id"] not in sky:
+                    continue
+                s, se = sky[f["id"]]
+                if abs(s) > 3 * se:
+                    flux, err = flux - s, math.hypot(err, se)
+            lc.setdefault(f["band"], []).append((f["mjd"], flux, err))
+    for b, pts in lc.items():
+        e_med = float(np.median([p[2] for p in pts]))
+        lc[b] = [p for p in pts if p[2] <= 5 * e_med]
     return lc
+
+
+def static_sky_flux(m):
+    """For a fast mover: the flux that static sources (background stars, galaxies) put into its aperture at
+    each visit, measured on a co-add of the same band's visits from years when the target was >= STATIC_SEP
+    away -> {frame_id: (flux_ujy, err_ujy)}; {} when it moves too slowly for such years to exist. Without
+    this, a faint mover's light curve and colour track whatever it happens to pass over."""
+    t = m["target"]
+    pm = math.hypot(t["pmra_masyr"], t["pmdec_masyr"]) / 1000
+    if pm <= 0 or STATIC_SEP_ARCSEC / pm > 6:
+        return {}
+    dt_min = STATIC_SEP_ARCSEC / pm
+    visits = [f for f in m["frames"] if f["survey"] == "wise" and f["kind"] == "visit"]
+    ny = m["grid"]["height"]
+    imgs, skies, out = {}, {}, {}
+    for f in visits:
+        if f["flux_ujy"] is None or f.get("magzp") is None:
+            continue
+        ty = mjd_to_year(f["mjd"])
+        key = tuple(sorted(g["id"] for g in visits if g["band"] == f["band"] and abs(mjd_to_year(g["mjd"]) - ty) >= dt_min))
+        if len(key) < 2:
+            continue
+        if key not in skies:
+            skies[key] = clipped_mean([imgs.setdefault(i, load_npy(m["id"], i)) for i in key])
+        x, y = f["target_px"][0], ny - 1 - f["target_px"][1]
+        net, err = aperture_flux(skies[key], x, y, WISE_R_AP, WISE_R_IN, WISE_R_OUT)
+        if math.isfinite(net):
+            k = wise_flux_factor(f["band"], f["magzp"])
+            out[f["id"]] = (net * k, err * k)
+    return out
 
 
 def _wmean(fl, er):
@@ -338,9 +491,11 @@ def _wmean(fl, er):
     return mu, err
 
 
-def measure_color(lc):
+def measure_color(lc, w1_undetected=False):
     """W1-W2 (Vega). With >= 3 visits detected in both bands: median of the per-visit colours (robust for
-    variables, whose W1 and W2 rise and fall together); else from the weighted-mean fluxes."""
+    variables, whose W1 and W2 rise and fall together); else from the weighted-mean fluxes. A W1 flux below
+    3 sigma, or w1_undetected (the astrometry found no source at the target's track in W1, so any W1
+    aperture flux belongs to neighbours), gives a lower limit from the 2-sigma W1 upper limit."""
     out = {"w1_w2": None, "w1_w2_err": None, "w1_w2_is_lower_limit": False, "verdict": "insufficient data"}
     if not lc.get("W1") or not lc.get("W2"):
         return out
@@ -348,7 +503,7 @@ def measure_color(lc):
     per_visit = [(-2.5 * math.log10(p1[1] / WISE_F0_JY["W1"]) + 2.5 * math.log10(p2[1] / WISE_F0_JY["W2"]),
                   1.0857 * math.hypot(p1[2] / p1[1], p2[2] / p2[1]))
                  for p1 in lc["W1"] if (p2 := w2.get(round(p1[0]))) and p1[1] >= 3 * p1[2] and p2[1] >= 3 * p2[2]]
-    if len(per_visit) >= 3:
+    if len(per_visit) >= 3 and not w1_undetected:
         cs, es = np.array(per_visit).T
         c = float(np.median(cs))
         out.update(w1_w2=c, w1_w2_err=max(1.253 * float(np.std(cs)), float(np.median(es))) / math.sqrt(len(cs)))
@@ -356,13 +511,14 @@ def measure_color(lc):
     (f1, e1), (f2, e2) = (_wmean(np.array([p[1] for p in lc[b]]), np.array([p[2] for p in lc[b]])) for b in ("W1", "W2"))
     if f2 / e2 < 5:
         return out
-    if f1 / e1 >= 3:
+    if f1 / e1 >= 3 and not w1_undetected:
         c = -2.5 * math.log10(f1 / WISE_F0_JY["W1"]) + 2.5 * math.log10(f2 / WISE_F0_JY["W2"])
         out.update(w1_w2=c, w1_w2_err=1.0857 * math.hypot(e1 / f1, e2 / f2))
     else:  # W1 not detected: 2-sigma upper limit on W1 -> lower limit on the colour
         c = -2.5 * math.log10((max(f1, 0) + 2 * e1) / WISE_F0_JY["W1"]) + 2.5 * math.log10(f2 / WISE_F0_JY["W2"])
         out.update(w1_w2=c, w1_w2_is_lower_limit=True)
-    out["verdict"] = "insufficient data" if out["w1_w2_is_lower_limit"] and c < W12_EXTREME else _color_class(c)
+    # a lower limit only classifies when it already clears a class boundary
+    out["verdict"] = "insufficient data" if out["w1_w2_is_lower_limit"] and c < W12_RED else _color_class(c)
     return out
 
 
@@ -379,19 +535,22 @@ def _periodogram(t, mag, dmag):
     if len({round(x) for x in t}) < LS_MIN_EPOCHS or span <= 60:
         return None
     ls = LombScargle(t, mag, dmag)
-    fmin, fmax = 2 / span, 1 / 30
+    # >= 3 cycles in the span: a 2-cycle "period" is a trend, and long periods are where the half-year
+    # cadence folds real periods to (AL Boo's 166.7 d shows up at ~1900 d = 1/(1/166.7 - 2/yr))
+    fmin, fmax = 3 / span, 1 / 30
     freq, power = ls.autopower(minimum_frequency=fmin, maximum_frequency=fmax, samples_per_peak=10)
     # NEOWISE visits every ~half year: power at harmonics of 1/yr is window function and scan-direction
-    # systematics, not the star. Search outside them; warn when the overall highest peak sat there.
+    # systematics, not the star. Search outside them (one resolution element, 1/span, each side: wider
+    # zones swallowed AL Boo's true 166.7 d next to the 182.6 d harmonic); warn when the highest peak sat there.
     harmonics = np.arange(1, 13) / CADENCE_D
-    alias = np.min(np.abs(freq[:, None] - harmonics), axis=1) < 3 / span
+    alias = np.min(np.abs(freq[:, None] - harmonics), axis=1) < 1 / span
     if alias.all():
         return None
     k = int(np.argmax(np.where(alias, -np.inf, power)))
     fap = float(ls.false_alarm_probability(power[k], minimum_frequency=fmin, maximum_frequency=fmax))
     alts = []
     for fa in {abs(freq[k] + s * j / CADENCE_D) for s in (-1, 1) for j in (1, 2)}:
-        if fmin <= fa <= fmax and np.min(np.abs(fa - harmonics)) >= 3 / span:
+        if fmin <= fa <= fmax and np.min(np.abs(fa - harmonics)) >= 1 / span:
             # the partner peak, refined on a fine local grid
             fg = np.linspace(fa - 1 / span, fa + 1 / span, 41)
             pg = ls.power(fg)
@@ -410,26 +569,37 @@ def classify_variability(lc, floor=PHOT_FLOOR):
         if len(pts) < 3:
             continue
         t, f, e = (np.array(v, float) for v in zip(*pts))
+        snr = float(np.median(f / e))
         mu = float(np.sum(f / e**2) / np.sum(1 / e**2))
         e = np.hypot(e, floor * abs(mu))
         mu = float(np.sum(f / e**2) / np.sum(1 / e**2))
-        chi2 = float(np.sum(((f - mu) / e) ** 2) / (len(f) - 1))
+        z2 = ((f - mu) / e) ** 2
+        chi2 = float(np.sum(z2) / (len(f) - 1))
+        # one deviant visit (a bad co-add, an artifact, a passing neighbour) does not make a variable star:
+        # the verdict uses chi2 without the worst point (real variables deviate in many visits)
+        chi2_robust = float((np.sum(z2) - z2.max()) / (len(f) - 2)) if len(f) >= 6 else chi2
         p5, p95 = np.percentile(f, [5, 95])
-        bands[b] = {"n": len(f), "chi2_red": chi2, "amplitude_mag": 2.5 * math.log10(p95 / p5) if p5 > 0 else None}
+        bands[b] = {"n": len(f), "chi2_red": chi2, "chi2_red_without_worst": chi2_robust,
+                    "amplitude_mag": 2.5 * math.log10(p95 / p5) if p5 > 0 else None, "median_snr": snr}
         pos = f > 0
-        if pos.sum() >= LS_MIN_EPOCHS and (pg := _periodogram(t[pos], -2.5 * np.log10(f[pos]), 1.0857 * e[pos] / f[pos])):
+        if snr >= VAR_MIN_SNR and pos.sum() >= LS_MIN_EPOCHS and (
+                pg := _periodogram(t[pos], -2.5 * np.log10(f[pos]), 1.0857 * e[pos] / f[pos])):
             pgrams.append(pg)
     out = {"bands": bands, "verdict": "insufficient data", "period_days": None, "fap": None,
            "period_alias_warning": False, "period_alternatives_days": []}
-    if not any(v["n"] >= 5 for v in bands.values()):
+    # faint bands: noise, residual neighbour light and background errors dominate; judge only well-measured bands
+    usable = [v for v in bands.values() if v["n"] >= 5 and v["median_snr"] >= VAR_MIN_SNR]
+    if not usable:
         return out
-    variable = any(v["n"] >= 5 and v["chi2_red"] > VAR_CHI2 for v in bands.values())
+    variable = any(v["chi2_red_without_worst"] > VAR_CHI2 for v in usable)
     if pgrams:
         period, fap, alias, alts = min(pgrams, key=lambda p: p[1])
         out.update(fap=min(1.0, fap * len(pgrams)), period_alias_warning=alias or bool(alts))
         if out["fap"] < LS_FAP:
             out.update(period_days=period, period_alternatives_days=alts)
-    out["verdict"] = ("periodic variable" if variable and out["period_days"] is not None else
+    # a period at FAP < 1% is itself a detection of variability (R Dra's catalog points scatter little
+    # about the mean once the 15% saturated-star floor is applied, yet fold cleanly)
+    out["verdict"] = ("periodic variable" if out["period_days"] is not None else
                       "irregular variable" if variable else "constant")
     return out
 
@@ -508,13 +678,14 @@ def catalog_lightcurve_route(sid: str):
     return _catalog_lc_cached(get_manifest(sid))
 
 
-def photometry_lc(m):
+def photometry_lc(m, sky):
     """-> (lc, source, note). Our WISE visit photometry ("pipeline") when >= 5 visits per band have a flux;
     else catalog profile-fit photometry ("catalog": saturated stars, which our apertures cannot measure).
     source None: catalog needed but IRSA unavailable."""
-    lc = wise_lightcurve(m["frames"])
+    lc = wise_lightcurve(m["frames"], sky)
     if all(len(lc.get(b, [])) >= 5 for b in ("W1", "W2")):
-        return lc, "pipeline", "WISE visit co-adds, 8.25\" aperture photometry"
+        return lc, "pipeline", "WISE visit co-adds, 8.25\" aperture photometry" + (
+            "; light of static sources the target passes over subtracted" if sky else "")
     try:
         cat = _catalog_lc_cached(m)
     except Exception as e:  # noqa: BLE001 - IRSA down: say so instead of failing the summary
@@ -543,6 +714,15 @@ def _plain(motion, color, var, spec):
     elif motion["verdict"] == "not moving":
         s.append(f"No motion detected over {motion['baseline_yr']:.0f} years (less than about "
                  f"{3 * motion['pmra_err_masyr'] / 1000:.2f} arcseconds per year): a distant star, a galaxy, or too slow to see.")
+    elif motion["catalog"]["pmra_masyr"] or motion["catalog"]["pmdec_masyr"]:
+        cat_pm = math.hypot(motion["catalog"]["pmra_masyr"], motion["catalog"]["pmdec_masyr"]) / 1000
+        ts = motion.get("track_snr")
+        seen = (f" Stacking all WISE images along its catalog motion ({cat_pm:.2f} arcseconds per year) does show it "
+                f"(signal-to-noise {ts:.0f}), so it is there, just too faint to follow year by year."
+                if ts is not None and ts >= 5 else
+                " Even stacking all WISE images along its catalog motion does not show it clearly.")
+        s.append("We could not follow it from year to year: in single WISE epochs it is too faint or sits on other "
+                 "stars, so its motion is not measured here." + seen)
     else:
         s.append("Not enough clear detections in separate years to measure whether it moves.")
     if color["w1_w2"] is not None:
@@ -564,6 +744,9 @@ def _plain(motion, color, var, spec):
     if spec["verdict"] == "match":
         s.append(f"Its SPHEREx spectrum looks most like a {spec['best']['label']} brown-dwarf template "
                  f"(probability {spec['best']['prob']:.0%}).")
+    elif spec.get("contaminated"):
+        s.append("Other stars or galaxies share SPHEREx's large pixels at its position and add much of the light, "
+                 "so its spectrum cannot be read cleanly.")
     elif spec["verdict"] == "insufficient data":
         s.append("Not enough clean SPHEREx measurements to read its spectrum.")
     else:
@@ -594,7 +777,11 @@ def _skybot(jd, ra, dec, radius_arcsec):
          "-output": "basic", "-loc": "500", "-from": "UltracoolBrowser"})
     with urllib.request.urlopen(url, timeout=60) as r:
         body = r.read()
-    return json.loads(body) if body.strip() else []  # HTTP 204: nothing in the cone
+    res = json.loads(body) if body.strip() else []  # HTTP 204: nothing in the cone
+    if isinstance(res, dict):  # per-request error, e.g. "Epoch ... not available" for some early-2010 dates
+        log.info("SkyBoT at JD %.2f: %s", jd, res.get("message"))
+        return []
+    return res
 
 
 def find_asteroids(m):
@@ -622,13 +809,65 @@ def find_asteroids(m):
     return out
 
 
+def spectrum_contamination(m, sky):
+    """Light of other sources inside the SPHEREx aperture (2 native px = 12.3" radius) at the target's SPHEREx
+    position, as a fraction of the target's own WISE flux (or its 2-sigma upper limit when undetected), per
+    WISE band: measured on visits from years when the target was >= 31" away. None when the target moves too
+    slowly for that (then neighbours are in every image and nothing here can separate them)."""
+    t = m["target"]
+    pm = math.hypot(t["pmra_masyr"], t["pmdec_masyr"]) / 1000
+    sx = [mjd_to_year(f["mjd"]) for f in m["frames"] if f["survey"] == "spherex"]
+    if not sx or pm <= 0:
+        return None
+    t_sx = float(np.median(sx))
+    dt_min = (2 * SX_AP_ARCSEC + 6.4) / pm
+    x, y = (float(v) for v in _grid_wcs(m).world_to_pixel_values(
+        *propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], t_sx)))
+    lc = wise_lightcurve(m["frames"], sky)
+    out = {}
+    for band in ("W1", "W2"):
+        fs = [f for f in m["frames"] if f["survey"] == "wise" and f["kind"] == "visit" and f["band"] == band
+              and f.get("magzp") is not None and abs(mjd_to_year(f["mjd"]) - t_sx) >= dt_min]
+        if len(fs) < 2 or not lc.get(band):
+            return None
+        net, err = aperture_flux(clipped_mean([load_npy(m["id"], f["id"]) for f in fs]), x, y,
+                                 SX_AP_ARCSEC / PIX_ARCSEC, 4 * 6.15 / PIX_ARCSEC, 7 * 6.15 / PIX_ARCSEC)
+        if not math.isfinite(net):
+            return None
+        f_t, e_t = _wmean(np.array([p[1] for p in lc[band]]), np.array([p[2] for p in lc[band]]))
+        k = wise_flux_factor(band, float(np.median([f["magzp"] for f in fs])))  # DN -> uJy (8.25" apcorr: conservative)
+        out[band] = net * k / max(f_t, 2 * e_t) if net > 3 * err else 0.0
+    return out
+
+
+def typed_spectrum(m, sky):
+    """spectral.classify, unless other sources supply a large part of the light in the SPHEREx aperture: then
+    any template 'match' would describe the neighbour (W0855-0714 typed as an M dwarf), so the verdict is
+    'insufficient data' with the ranking kept for experts."""
+    spec = classify(m["frames"])
+    c = spectrum_contamination(m, sky)
+    spec["contamination"] = c
+    spec["contaminated"] = bool(c) and max(c.values()) > CONTAM_FRAC
+    if spec["contaminated"] and spec["verdict"] != "insufficient data":
+        spec.update(verdict="insufficient data", best=None, template_curve=None)
+    return spec
+
+
+@router.get("/api/sequences/{sid}/spectrum")
+def spectrum(sid: str):
+    m = get_manifest(sid)
+    return _clean(typed_spectrum(m, static_sky_flux(m)))
+
+
 def _summary(m):
     motion = measure_motion(m)
-    lc, source, note = photometry_lc(m)
+    sky = static_sky_flux(m)
+    lc, source, note = photometry_lc(m, sky)
     floor = SATURATED_FLOOR if source == "catalog" and _saturated(m) else PHOT_FLOOR
-    color = {**measure_color(lc), "source": source, "source_note": note}
+    w1_undetected = motion["recovered"] and "W1" in motion["undetected_bands"] and source == "pipeline"
+    color = {**measure_color(lc, w1_undetected), "source": source, "source_note": note}
     var = {**classify_variability(lc, floor), "source": source, "source_note": note}
-    spec = classify(m["frames"])
+    spec = typed_spectrum(m, sky)
     asteroids = find_asteroids(m)
     return {"motion": motion, "color": color, "variability": var, "spectrum": spec,
             "plain": _plain(motion, color, var, spec), "asteroids": asteroids or [],

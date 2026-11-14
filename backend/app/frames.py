@@ -7,6 +7,7 @@ from astropy.stats import SigmaClip, sigma_clip
 from astropy.wcs import WCS
 from photutils.aperture import ApertureStats, CircularAnnulus, CircularAperture, aperture_photometry
 from PIL import Image
+from scipy.ndimage import maximum_filter, uniform_filter
 
 PIX_ARCSEC = 2.75  # WISE native; every survey is resampled onto this so frames align
 
@@ -107,12 +108,27 @@ def render_png(img, path):
     finite = np.isfinite(a)
     if not finite.any():
         a = np.zeros_like(a)
-    else:
-        a[~finite] = np.nanmin(a)
-    lo, hi = np.percentile(a, [0.5, 99.5])
+        finite[:] = True
+    # cuts from real pixels only: masked/off-detector pixels (NaN) must not set the black point
+    lo, hi = np.percentile(a[finite], [0.5, 99.5])
+    a[~finite] = lo
     x = np.clip((a - lo) / (hi - lo if hi > lo else 1.0), 0, 1)
     x = np.arcsinh(10 * x) / np.arcsinh(10)
     Image.fromarray(np.flipud((x * 255).round().astype(np.uint8)), "L").save(path, format="PNG")
+
+
+def render_exposure_png(img, path):
+    """A single WISE exposure: noisy and often half off the grid, so show it in robust sigma units
+    (-1.5..6 sigma linear) like the deep stacks; an asinh stretch posterises it. Masked bad pixels inside the
+    footprint (a few % of L1b pixels, widened by resampling) are shown as background, not black specks."""
+    z = _robust_norm(np.asarray(img, dtype=np.float64))
+    finite = np.isfinite(z)
+    frac = uniform_filter(finite.astype(float), 5)
+    holes = ~finite & (frac > 0.3)
+    local_mean = uniform_filter(np.where(finite, z, 0.0), 5) / np.maximum(frac, 1e-9)
+    # inside a bright (saturated) star the hole takes the star's brightness, elsewhere the background level
+    z[holes] = np.where(local_mean[holes] > 5, maximum_filter(np.where(finite, z, -np.inf), 5)[holes], 0.0)
+    render_sigma_png(z, path)
 
 
 def _robust_norm(x):

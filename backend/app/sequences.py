@@ -22,7 +22,8 @@ from pydantic import BaseModel
 from . import sources
 from .config import CACHE_DIR, S3_MAX_CONCURRENCY, WORKER_PROCESSES
 from .frames import (PIX_ARCSEC, aperture_flux, clipped_mean, deep_stack, default_fov_deg, grid_wcs_json,
-                     group_by_gap, make_grid, mjd_to_year, propagate, render_diff_png, render_png, render_sigma_png)
+                     group_by_gap, make_grid, mjd_to_year, propagate, render_diff_png, render_exposure_png, render_png,
+                     render_sigma_png)
 from .sources import NoOverlap, query_frames, read_section
 
 log = logging.getLogger("ultracool.sequences")
@@ -279,7 +280,7 @@ def _make_frame(sid, p, wcs, shape, fid, kind, ok):
         flagged = any(c >= len(ok) / 2 for n, c in hits.items() if n != "SATURATED")
     d = seq_dir(sid)
     np.save(d / "npy" / f"{fid}.npy", img)
-    render_png(img, d / "png" / f"{fid}.png")
+    (render_exposure_png if kind == "exposure" else render_png)(img, d / "png" / f"{fid}.png")
     (d / "prov" / f"{fid}.json").write_text(json.dumps([f.key or f.access_url for f, _ in ok]))
     ny = shape[0]
     return {"id": fid, "survey": first.survey, "band": first.band, "kind": kind, "mjd": mjd,
