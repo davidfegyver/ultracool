@@ -29,7 +29,7 @@ from .frames import PIX_ARCSEC, aperture_flux, clipped_mean, deep_stack, group_b
 from .sequences import (WISE_F0_JY, WISE_R_AP, WISE_R_IN, WISE_R_OUT, get_manifest, load_npy, seq_dir,
                         wise_flux_factor)
 from .sources import irsa_gator
-from .spectral import classify
+from .spectral import DOUBTFUL, EARLY_LABELS, NO_DETECTION, WARMER, classify, demote
 
 log = logging.getLogger("ultracool.analysis")
 router = APIRouter()
@@ -75,6 +75,10 @@ CADENCE_D = 365.25  # NEOWISE visits every ~6 months: periods at 1/k yr are cade
 # (ApJS 253, 7): stars and early-M dwarfs sit at W1-W2 ~ 0-0.3, L dwarfs 0.2-0.6, T dwarfs climb from ~0.5
 # (T0) through ~2 (T7) to >3 for Y dwarfs; W0855-0714 has W1-W2 ~ 3.5 or more.
 W12_EXTREME, W12_RED = 2.0, 0.6
+# W1-W2 (Vega) loci, median and star-to-star sigma: M8 0.22 +- 0.07 (2,260 dwarfs), L0-L2 0.26-0.27 +- 0.05-0.07
+# (Schmidt et al. 2015, AJ 149, 158, Table 4); T and Y dwarfs are redder still (above). Ordinary M0-M4 dwarfs sit
+# at 0.01-0.15 (dal Ponte et al. 2023, MNRAS 522, 1951), hotter stars near 0. Used by colour_doubt.
+W12_LOCUS_M8, W12_LOCUS_L, W12_LOCUS_SIGMA, W12_DOUBT_SIGMA = 0.22, 0.26, 0.07, 2.0
 MOVER_MAX_PM_ARCSEC = 12.0  # Barnard's Star 10.4"/yr is the fastest known
 MOVER_SIG = 5.0  # PM significance a track needs (errors inflated by sqrt(chi2_red))
 MOVER_DET_SNR = 4.5  # detection threshold in the 2-yr W2 stacks; the vetting below removes what this lets in
@@ -781,15 +785,21 @@ def _plain_props(color, var, spec):
         s.append({"irregular variable": "Its brightness changes, but without a regular pattern (irregular variable).",
                   "constant": "Its infrared brightness stays constant within the measurement errors.",
                   }.get(var["verdict"], "Too few WISE measurements to tell whether its brightness changes."))
+    label = spec["best"]["label"] if spec.get("best") else None
     if spec["verdict"] == "match":
-        s.append(f"Its SPHEREx spectrum looks most like a {spec['best']['label']} brown-dwarf template "
+        s.append(f"Its SPHEREx spectrum looks most like a {label} brown-dwarf template "
                  f"(probability {spec['best']['prob']:.0%}).")
+    elif spec["verdict"] == WARMER:
+        s.append(f"Its SPHEREx spectrum is closest to one of the warmest templates ({label}), but {spec['doubt']}: "
+                 "probably an ordinary star, warmer than the ultracool dwarfs.")
+    elif spec["verdict"] == DOUBTFUL:
+        s.append(f"Its SPHEREx spectrum looks most like a {label} template, but {spec['doubt']}, so that type is doubtful.")
     elif spec.get("contaminated"):
         s.append("It sits in a crowded part of the sky where SPHEREx's large pixels are full of other stars, so its "
                  "spectrum cannot be measured reliably." if "crowded" in spec["reason"] else
                  "Other stars or galaxies share SPHEREx's large pixels at its position and add much of the light, "
                  "so its spectrum cannot be read cleanly.")
-    elif spec.get("reason") == "no clear SPHEREx detection":
+    elif spec.get("reason") == NO_DETECTION:
         s.append("SPHEREx does not clearly detect it at 3.5-5 micrometres, so its spectrum cannot be typed.")
     elif spec["verdict"] == "insufficient data":
         s.append("Not enough clean SPHEREx measurements to read its spectrum.")
@@ -890,30 +900,51 @@ def spectrum_contamination(m, sky):
     return out
 
 
-def typed_spectrum(m, sky):
-    """spectral.classify, unless the photometry is contaminated: other sources supply a large part of the light
-    in the SPHEREx aperture (then any template 'match' describes the neighbour: W0855-0714 typed as an M dwarf),
-    or >= NEG_BINS_MAX channels are significantly negative (crowded field, sky over-subtracted: J1925+2901 at
-    b = +7 deg). Then the verdict is 'insufficient data' with the ranking kept for experts."""
+def colour_doubt(spec, color):
+    """Demote a template match whose W1-W2 is > W12_DOUBT_SIGMA (measurement and locus scatter) bluer than the
+    locus of its type. A lower limit cannot argue against a type."""
+    if not color or color.get("w1_w2") is None or color.get("w1_w2_is_lower_limit") or color.get("w1_w2_err") is None:
+        return
+    early = spec["best"]["label"] in EARLY_LABELS
+    locus = W12_LOCUS_M8 if early else W12_LOCUS_L
+    c = color["w1_w2"]
+    if c < locus - W12_DOUBT_SIGMA * math.hypot(color["w1_w2_err"], W12_LOCUS_SIGMA):
+        demote(spec, f"its W1-W2 colour ({c:.2f} mag) is bluer than {'M8-M9' if early else 'L, T and Y'} dwarfs "
+                     f"(typically {locus:.2f} mag or redder)")
+
+
+def typed_spectrum(m, sky, color):
+    """spectral.classify, then: no clear SPHEREx detection stays that (there is no spectrum to be contaminated);
+    a detection is 'insufficient data' (ranking kept for experts) when the photometry is contaminated: other
+    sources supply a large part of the light in the SPHEREx aperture (then any template 'match' describes the
+    neighbour: W0855-0714 typed as an M dwarf), or >= NEG_BINS_MAX channels are significantly negative (crowded
+    field, sky over-subtracted: J1925+2901 at b = +7 deg). A remaining match must agree with the WISE colour."""
     spec = classify(m["frames"])
     c = spectrum_contamination(m, sky)
     neg = sum(b["flambda"] / b["err"] < NEG_BIN_SIGMA for b in spec["binned"] if b["err"] > 0)
     spec.update(contamination=c, negative_bins=neg)
     reason = None
-    if c and max(c.values()) > CONTAM_FRAC:
+    if spec.get("reason") == NO_DETECTION:
+        pass
+    elif c and max(c.values()) > CONTAM_FRAC:
         reason = "other stars or galaxies add much of the light in SPHEREx's large pixels"
     elif neg >= NEG_BINS_MAX:
         reason = f"{neg} channels significantly negative: crowded-field background, photometry unreliable"
     spec["contaminated"] = reason is not None
     if reason:
         spec.update(verdict="insufficient data", best=None, template_curve=None, reason=reason)
+    elif spec["verdict"] == "match":
+        colour_doubt(spec, color)
     return spec
 
 
 @router.get("/api/sequences/{sid}/spectrum")
 def spectrum(sid: str):
+    """Colour from our WISE photometry only (no catalog fallback: this is polled while frames arrive), so for
+    saturated stars the colour check of /summary may differ."""
     m = get_manifest(sid)
-    return _clean(typed_spectrum(m, static_sky_flux(m)))
+    sky = static_sky_flux(m)
+    return _clean(typed_spectrum(m, sky, measure_color(wise_lightcurve(m["frames"], sky))))
 
 
 def _summary(m):
@@ -924,7 +955,7 @@ def _summary(m):
     w1_undetected = motion["recovered"] and "W1" in motion["undetected_bands"] and source == "pipeline"
     color = {**measure_color(lc, w1_undetected), "source": source, "source_note": note}
     var = {**classify_variability(lc, floor), "source": source, "source_note": note}
-    spec = typed_spectrum(m, sky)
+    spec = typed_spectrum(m, sky, color)
     asteroids = find_asteroids(m)
     return {"motion": motion, "color": color, "variability": var, "spectrum": spec,
             "plain": _plain(motion, color, var, spec), "asteroids": asteroids or [],

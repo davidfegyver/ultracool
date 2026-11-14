@@ -248,7 +248,7 @@ def analyse(m, pos, pm, frames, mode):
     # shortcut: no saturation flags at the probe, so the catalog fallback keeps the 5% floor, not the 15% one
     color = {**measure_color(lc), "source": source, "source_note": note}
     var = {**classify_variability(lc, PHOT_FLOOR), "source": source, "source_note": note}
-    spec = typed_spectrum(seq, sky)
+    spec = typed_spectrum(seq, sky, color)
     first = ("Quick preview from resampled images; errors are approximate." if mode == "preview" else
              "Full measurement on the original SPHEREx pixels, the same method as for the target.")
     s = [first]

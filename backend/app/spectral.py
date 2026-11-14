@@ -35,6 +35,23 @@ SYS_FRAC = 0.05
 # diffraction spike otherwise fits *some* template at chi2_r ~1.5 (J2011-0624 typed "sdT4" at S/N 3.5).
 DET_BAND_UM = (3.5, 5.0)
 DET_MIN_SNR = 5.0
+NO_DETECTION = "no clear SPHEREx detection"
+# The templates start at M8, so any warmer star (most field stars) lands on the earliest ones, and blends or
+# galaxies can land anywhere. The 1.4 um water band tells them apart: it strengthens steadily from mid-M through
+# the L and T sequence (Reid et al. 2001, AJ 121, 1710; Cushing et al. 2005, ApJ 623, 1115). Depth = F_lambda in
+# 1.38-1.50 um over the continuum interpolated between 1.20-1.30 and 1.58-1.70 um (at R~40 the band is wide; a
+# plain 1.4/1.25 ratio cannot tell water from a warm star's Rayleigh-Jeans fall). Templates: M8-M9 0.72-0.77,
+# L 0.50-0.73, T0 0.49 down to T8 0.08. Measured here: LP 944-20 (M9.5) 0.68, 2MASS J0746+20 (L0+L1.5) 0.67,
+# Kelu-1 (L2+L3.5) 0.63 (each +-0.02, 0-0.05 deeper than their best templates); ordinary stars 0.91-0.99: two
+# Gaia M dwarfs (G=18.7 and 19.5, typed M8/sdM9.5 by chi2 alone) 0.93 +- 0.05 and 0.94 +- 0.07, bright field
+# stars 0.93-0.99. A "match" whose band is > WATER_SIGMA shallower than its template's (measurement error plus
+# DEPTH_SCATTER, the spread of the six M8-M9 templates) is demoted.
+EARLY_LABELS = {"M8", "M8 β", "M9", "M9 β", "M9 γ", "sdM9.5"}
+H2O_BAND_UM, H2O_CONT_UM = (1.38, 1.50), ((1.20, 1.30), (1.58, 1.70))
+DEPTH_SCATTER = 0.03
+WATER_SIGMA = 2.5
+WARMER = "warmer than M8: probably an ordinary star"
+DOUBTFUL = "doubtful match"
 
 
 def detection_snr(lam, flx, err):
@@ -62,6 +79,40 @@ def _bin(points):
     return BIN_CENTRE[ok], swf[ok] / sw[ok], 1 / np.sqrt(sw[ok])
 
 
+def _band_mean(lam, f, e, band):
+    sel = (lam >= band[0]) & (lam <= band[1])
+    if not sel.any():
+        return None
+    w = e[sel] ** -2
+    return float(np.sum(w * f[sel]) / np.sum(w)), float(1 / math.sqrt(np.sum(w))), sel
+
+
+def water_depth(lam, flx, err):
+    """F_lambda in the 1.4 um water band over the continuum interpolated from both sides -> (depth, err), or
+    None (a window without channels, or no positive continuum)."""
+    r = [_band_mean(lam, flx, err, w) for w in (H2O_BAND_UM, *H2O_CONT_UM)]
+    if any(x is None for x in r):
+        return None
+    lb, l1, l2 = (float(np.mean(lam[x[2]])) for x in r)
+    k = (lb - l1) / (l2 - l1)
+    cont = (1 - k) * r[1][0] + k * r[2][0]
+    if cont <= 0:
+        return None
+    d = r[0][0] / cont
+    return d, math.hypot(r[0][1], d * math.hypot((1 - k) * r[1][1], k * r[2][1])) / cont
+
+
+_CH = BIN_CENTRE[(BIN_CENTRE >= 1.0) & (BIN_CENTRE <= 2.0)]
+TEMPLATE_DEPTH = {label: water_depth(_CH, np.interp(_CH, t[:, 0], t[:, 1]), np.ones_like(_CH))[0]
+                  for label, t in TEMPLATES.items()}
+
+
+def demote(spec, reason):
+    """A template 'match' the object itself argues against: on one of the earliest templates it is a warmer,
+    ordinary star; otherwise the match is doubtful. Best match and ranking are kept for experts."""
+    spec.update(verdict=WARMER if spec["best"]["label"] in EARLY_LABELS else DOUBTFUL, doubt=reason)
+
+
 def classify(frames):
     # No per-frame S/N cut: for faint targets it keeps only upward noise, and the non-detections
     # (e.g. no 1-3 um flux from a cold dwarf) are what separates the templates. S/N is judged per bin.
@@ -73,8 +124,9 @@ def classify(frames):
     err = np.hypot(err, SYS_FRAC * np.abs(flx))
     binned = [{"wavelength_um": float(a), "flambda": float(b), "err": float(c)} for a, b, c in zip(lam, flx, err)]
     if int(np.sum(flx / err >= 3)) < MIN_BINS:
+        det = detection_snr(lam, flx, err)
         return {"verdict": "insufficient data", "best": None, "ranking": [], "binned": binned, "template_curve": None,
-                "detection_snr": detection_snr(lam, flx, err)}
+                "detection_snr": det, **({"reason": NO_DETECTION} if det is None or det < DET_MIN_SNR else {})}
 
     fits = []
     for label, t in TEMPLATES.items():
@@ -104,6 +156,13 @@ def classify(frames):
     curve = {"label": label, "wavelength_um": t[:, 0].tolist(), "flambda": (a * t[:, 1]).tolist()}
     if det is None or det < DET_MIN_SNR:  # ranking kept for experts, no type claimed
         return {"verdict": "insufficient data", "best": None, "ranking": ranking, "binned": binned,
-                "template_curve": None, "detection_snr": det, "reason": "no clear SPHEREx detection"}
-    return {"verdict": "match" if best["chi2_red"] <= MAX_CHI2_RED else "not consistent with ultracool dwarf templates",
-            "best": best, "ranking": ranking, "binned": binned, "template_curve": curve, "detection_snr": det}
+                "template_curve": None, "detection_snr": det, "reason": NO_DETECTION}
+    verdict = "match" if best["chi2_red"] <= MAX_CHI2_RED else "not consistent with ultracool dwarf templates"
+    out = {"verdict": verdict, "best": best, "ranking": ranking, "binned": binned, "template_curve": curve,
+           "detection_snr": det, "water_depth": None}
+    wd = water_depth(lam, flx, err)
+    if wd:
+        out["water_depth"] = {"value": wd[0], "err": wd[1], "template": TEMPLATE_DEPTH[label]}
+        if verdict == "match" and (wd[0] - TEMPLATE_DEPTH[label]) / math.hypot(wd[1], DEPTH_SCATTER) > WATER_SIGMA:
+            demote(out, f"its 1.4 micrometre water band is shallower than a {label}'s")
+    return out
