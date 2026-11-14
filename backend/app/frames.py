@@ -3,8 +3,9 @@ import math
 import warnings
 
 import numpy as np
-from astropy.stats import sigma_clip
+from astropy.stats import SigmaClip, sigma_clip
 from astropy.wcs import WCS
+from photutils.aperture import ApertureStats, CircularAnnulus, CircularAperture, aperture_photometry
 from PIL import Image
 
 PIX_ARCSEC = 2.75  # WISE native; every survey is resampled onto this so frames align
@@ -60,24 +61,32 @@ def _radius(shape, x, y):
     return np.hypot(xx - x, yy - y)
 
 
-def aperture_flux(img, x, y, r_ap=3, r_in=6, r_out=10):
-    """Annulus-subtracted aperture sum in grid pixels -> (net_sum, err).
-    shortcut: no aperture correction, absolute flux is low by a PSF-dependent factor; upgrade = PSF fit (SPIFF)."""
-    r = _radius(img.shape, x, y)
-    ap = r <= r_ap
-    n_ap = int(ap.sum())
-    vals = img[ap]
-    good = np.isfinite(vals)
-    if n_ap == 0 or good.sum() < 0.8 * n_ap:
+def aperture_flux(img, x, y, r_ap=3, r_in=6, r_out=10, var=None, mask=None, bkg_mask=None):
+    """Background-subtracted aperture sum -> (net, err), in image units x pixels.
+    photutils with exact pixel overlap; background = 3-sigma-clipped annulus median.
+    err = per-pixel variance (if given, else annulus scatter) plus the error of the background level.
+    mask: pixels unusable everywhere (NaN always are); bkg_mask: extra pixels kept out of the annulus only
+    (e.g. other sources). More than 20% of the aperture unusable -> (nan, nan)."""
+    bad = ~np.isfinite(img) if mask is None else (mask | ~np.isfinite(img))
+    ap = CircularAperture((x, y), r_ap)
+    ann = CircularAnnulus((x, y), r_in, r_out)
+    good_area = float(ap.area_overlap(img, mask=bad))
+    if not good_area or good_area < 0.8 * ap.area:
         return math.nan, math.nan
-    ann = img[(r >= r_in) & (r <= r_out)]
-    ann = ann[np.isfinite(ann)]
-    if ann.size < 5:
+    for bm in ((bad | bkg_mask) if bkg_mask is not None else bad, bad):  # drop bkg_mask if it leaves too little sky
+        st = ApertureStats(img, ann, mask=bm, sigma_clip=SigmaClip(sigma=3))
+        n_bkg = float(st.sum_aper_area.value)
+        if n_bkg >= 10 and math.isfinite(st.median):
+            break
+    else:
         return math.nan, math.nan
-    bg = float(np.median(ann))
-    # scale up for the few NaN pixels allowed in the aperture
-    net = (float(vals[good].sum()) - bg * good.sum()) * n_ap / good.sum()
-    return net, float(np.std(ann)) * math.sqrt(n_ap)
+    phot = aperture_photometry(np.where(bad, 0.0, img - st.median), ap, mask=bad, method="exact",
+                               error=None if var is None else np.sqrt(np.where(bad, 0.0, var)))
+    src_var = float(phot["aperture_sum_err"][0]) ** 2 if var is not None else st.std ** 2 * good_area
+    scale = ap.area / good_area  # stand in for the few masked aperture pixels
+    net = float(phot["aperture_sum"][0]) * scale
+    err = math.sqrt(src_var + st.std ** 2 * good_area ** 2 / n_bkg) * scale
+    return net, err
 
 
 def any_within(mask, x, y, r):

@@ -24,7 +24,8 @@ const SPECTRUM_REFRESH_MS = 10_000
 
 export default function PlotsPanel({ seq }: { seq: Sequence | null }) {
   const [tab, setTab] = useState<'lc' | 'spec'>('lc')
-  const [logY, setLogY] = useState(true)
+  // linear by default: faint targets have zero or negative fluxes, which a log axis silently drops
+  const [logY, setLogY] = useState(false)
   const [spec, setSpec] = useState<Spectrum | null>(null)
   const last = useRef({ id: '', n: -1, t: 0 })
 
@@ -85,7 +86,7 @@ export default function PlotsPanel({ seq }: { seq: Sequence | null }) {
             className="h-full w-full"
             useResizeHandler
             data={lcTraces}
-            layout={{ ...DARK, xaxis: { title: { text: 'Date' } }, yaxis: { title: { text: 'Flux (µJy, aperture)' }, type: logY ? 'log' : 'linear' } }}
+            layout={{ ...DARK, xaxis: { title: { text: 'Date' } }, yaxis: { title: { text: 'Flux (µJy, aperture-corrected)' }, type: logY ? 'log' : 'linear' } }}
             config={{ displaylogo: false, responsive: true }}
           />
         ) : (

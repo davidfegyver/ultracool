@@ -17,8 +17,8 @@ from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel
 
 from .config import CACHE_DIR, S3_MAX_CONCURRENCY
-from .frames import (PIX_ARCSEC, any_within, aperture_flux, deep_stack, default_fov_deg, grid_wcs_json,
-                     group_by_gap, make_grid, mjd_to_year, propagate, render_diff_png, render_png, render_sigma_png)
+from .frames import (PIX_ARCSEC, aperture_flux, deep_stack, default_fov_deg, grid_wcs_json, group_by_gap,
+                     make_grid, mjd_to_year, propagate, render_diff_png, render_png, render_sigma_png)
 from .sources import NoOverlap, query_frames, read_section
 
 log = logging.getLogger("ultracool.sequences")
@@ -31,7 +31,13 @@ JOBS_LOCK = threading.Lock()
 WISE_PER_VISIT = 8
 WISE_WAVELENGTH = {"W1": 3.4, "W2": 4.6}
 WISE_F0_JY = {"W1": 309.540, "W2": 171.787}
-SR_PER_PIX = (PIX_ARCSEC / 206264.806) ** 2
+# WISE standard aperture: 8.25" radius, sky annulus 50-70" (clear of the PSF wings), in 2.75" pixels
+WISE_R_AP, WISE_R_IN, WISE_R_OUT = 3.0, 50 / PIX_ARCSEC, 70 / PIX_ARCSEC
+# fraction of CatWISE profile-fit flux inside that aperture: median over 63 (W1) / 66 (W2) static, unsaturated
+# stars (10.5-13.5 mag) in NEOWISE visit stacks of 3 fields; star-to-star scatter 3% (W1), 6% (W2)
+WISE_APCORR = {"W1": 0.861, "W2": 0.846}
+# bump when photometry or frame processing changes: part of the sequence id, so old caches are not reused
+PIPELINE_VERSION = 2
 ID_RE = re.compile(r"^[0-9a-f]{16}$")
 FRAME_RE = re.compile(r"^[\w.-]+$")
 
@@ -79,7 +85,8 @@ def _params(req: SeqRequest):
     fov = req.fov_deg if req.fov_deg is not None else default_fov_deg(pm)
     fov = min(0.25, max(0.02, fov))
     return {"ra": round(req.ra, 5), "dec": round(req.dec, 5), "pmra": round(req.pmra_masyr, 1),
-            "pmdec": round(req.pmdec_masyr, 1), "epoch_yr": req.epoch_yr, "fov": round(fov, 3)}
+            "pmdec": round(req.pmdec_masyr, 1), "epoch_yr": req.epoch_yr, "fov": round(fov, 3),
+            "pipeline": PIPELINE_VERSION}
 
 
 def start(req: SeqRequest) -> str:
@@ -98,7 +105,7 @@ def start(req: SeqRequest) -> str:
                  "grid": {"wcs": grid_wcs_json(wcs, shape), "width": shape[1], "height": shape[0]},
                  "target": {"ra": p["ra"], "dec": p["dec"], "pmra_masyr": p["pmra"], "pmdec_masyr": p["pmdec"],
                             "epoch_yr": p["epoch_yr"]},
-                 "frames": []}
+                 "pipeline_version": PIPELINE_VERSION, "frames": []}
         man = Manifest(m)
         man.update(status="querying", error=None)
         JOBS[sid] = JOB_POOL.submit(_run, man, p, wcs, shape)
@@ -149,44 +156,43 @@ def _unit(man: Manifest, p, wcs, shape, fid, members):
 
 
 def _make_frame(sid, p, wcs, shape, fid, members):
+    target = lambda mjd: propagate(p["ra"], p["dec"], p["pmra"], p["pmdec"], p["epoch_yr"], mjd_to_year(mjd))
     reads, mjds = [], []
     for f in members:
         try:
-            reads.append(read_section(f, wcs, shape))
+            reads.append(read_section(f, wcs, shape, target(f.mjd)))
             mjds.append(f.mjd)
         except NoOverlap:
             continue
     if not reads:
         return None
     first = members[0]
+    mjd = float(np.median(mjds))
+    x, y = (float(v) for v in wcs.world_to_pixel_values(*target(mjd)))
+    flux = flux_err = None
+    flagged = False
     if first.survey == "spherex":
-        img, flags_bad, wl = reads[0]["img"], reads[0]["flags_bad"], reads[0]["wavelength_um"]
+        img, wl, phot = reads[0]["img"], reads[0]["wavelength_um"], reads[0]["phot"]
+        if phot:  # measured on the native frame pixels with the pipeline variance
+            flux, flux_err, flagged = phot["flux_ujy"], phot["err_ujy"], phot["flagged"]
     else:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", RuntimeWarning)  # all-NaN columns at frame edges
             img = np.nanmedian(np.stack([r["img"] for r in reads]), axis=0).astype(np.float32)
-        flags_bad, wl = None, WISE_WAVELENGTH[first.band]
-    mjd = float(np.median(mjds))
+        wl = WISE_WAVELENGTH[first.band]
+        net, err = aperture_flux(img, x, y, WISE_R_AP, WISE_R_IN, WISE_R_OUT)
+        if math.isfinite(net):
+            # linear in DN, so faint and negative measurements are kept instead of lost in a log
+            zp = float(np.median([r["magzp"] for r in reads]))
+            k = WISE_F0_JY[first.band] * 1e6 * 10 ** (-0.4 * zp) / WISE_APCORR[first.band]
+            flux, flux_err = net * k, err * k
     d = seq_dir(sid)
     np.save(d / "npy" / f"{fid}.npy", img)
     render_png(img, d / "png" / f"{fid}.png")
-
-    ra_t, dec_t = propagate(p["ra"], p["dec"], p["pmra"], p["pmdec"], p["epoch_yr"], mjd_to_year(mjd))
-    x, y = (float(v) for v in wcs.world_to_pixel_values(ra_t, dec_t))
-    net, err = aperture_flux(img, x, y)
-    flux = flux_err = None
-    if first.survey == "spherex":
-        if math.isfinite(net):
-            flux, flux_err = net * SR_PER_PIX * 1e12, err * SR_PER_PIX * 1e12
-    elif math.isfinite(net) and net > 0:
-        zp = float(np.median([r["magzp"] for r in reads]))
-        flux = WISE_F0_JY[first.band] * 10 ** (-0.4 * (zp - 2.5 * math.log10(net))) * 1e6
-        flux_err = flux * err / net
     ny = shape[0]
     return {"id": fid, "survey": first.survey, "band": first.band, "mjd": mjd,
             "date": Time(mjd, format="mjd").isot, "wavelength_um": wl, "epoch_index": 0,
-            "flux_ujy": flux, "flux_err_ujy": flux_err,
-            "flagged": bool(flags_bad is not None and any_within(flags_bad, x, y, 3)),
+            "flux_ujy": flux, "flux_err_ujy": flux_err, "flagged": bool(flagged),
             "target_px": [x, ny - 1 - y], "png": f"/api/sequences/{sid}/frames/{fid}.png"}
 
 

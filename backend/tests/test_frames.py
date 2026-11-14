@@ -40,3 +40,23 @@ def test_deep_stack_rejects_outlier_among_four_frames():
     frames = [rng.standard_normal((30, 30)) for _ in range(4)]
     frames[2][10, 10] = 80.0  # hot pixel in one of four visits
     assert abs(deep_stack(frames)[10, 10]) < 3
+
+
+def test_aperture_errors_match_real_scatter():
+    rng = np.random.default_rng(5)
+    var = np.full((60, 60), 4.0)
+    nets, errs = [], []
+    for _ in range(300):
+        net, err = aperture_flux(rng.normal(0, 2, (60, 60)), 30, 30, 3, 8, 14, var=var)
+        nets.append(net)
+        errs.append(err)
+    assert np.std(nets) == pytest.approx(np.median(errs), rel=0.15)
+
+
+def test_masked_pixel_in_aperture_keeps_total():
+    yy, xx = np.indices((41, 41))
+    img = 1000 * np.exp(-((xx - 20) ** 2 + (yy - 20) ** 2) / (2 * 1.5**2)) / (2 * np.pi * 1.5**2)
+    mask = np.zeros(img.shape, bool)
+    mask[23, 20] = True  # a flagged pixel in the wing
+    net, _ = aperture_flux(img, 20, 20, r_ap=6, mask=mask)
+    assert net == pytest.approx(1000, rel=0.05)
