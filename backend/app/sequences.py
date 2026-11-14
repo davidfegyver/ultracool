@@ -1,5 +1,6 @@
 """Aligned WISE + SPHEREx frame sequences: background job, manifest on disk, PNG frames, photometry."""
 import hashlib
+import io
 import json
 import logging
 import math
@@ -12,12 +13,12 @@ from concurrent.futures import Future, ThreadPoolExecutor
 import numpy as np
 from astropy.time import Time
 from fastapi import APIRouter, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel
 
 from .config import CACHE_DIR, S3_MAX_CONCURRENCY
 from .frames import (PIX_ARCSEC, any_within, aperture_flux, default_fov_deg, grid_wcs_json, group_by_gap,
-                     make_grid, mjd_to_year, propagate, render_png)
+                     make_grid, mjd_to_year, propagate, render_diff_png, render_png)
 from .sources import NoOverlap, query_frames, read_section
 
 log = logging.getLogger("ultracool.sequences")
@@ -218,3 +219,32 @@ def get_frame_png(sid: str, frame_id: str):
         raise HTTPException(404, "Frame not found")
     return FileResponse(path, media_type="image/png",
                         headers={"Cache-Control": "public, max-age=31536000, immutable"})
+
+
+def _load_npy(sid, frame_id):
+    path = seq_dir(sid) / "npy" / f"{frame_id}.npy"
+    if not (ID_RE.match(sid) and FRAME_RE.match(frame_id) and path.exists()):
+        raise HTTPException(404, f"Frame not found: {frame_id}")
+    return np.load(path)
+
+
+def _png(render, *args):
+    buf = io.BytesIO()
+    render(*args, buf)
+    return Response(buf.getvalue(), media_type="image/png")
+
+
+@router.get("/api/sequences/{sid}/diff.png")
+def get_diff_png(sid: str, a: str, b: str):
+    return _png(render_diff_png, _load_npy(sid, a), _load_npy(sid, b))
+
+
+@router.get("/api/sequences/{sid}/stack.png")
+def get_stack_png(sid: str, band: str):
+    ids = [f["id"] for f in get_manifest(sid)["frames"] if f["band"] == band and not f["flagged"]]
+    if not ids:
+        raise HTTPException(404, f"No unflagged frames in band {band}")
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", RuntimeWarning)  # all-NaN pixels
+        stack = np.nanmedian(np.stack([_load_npy(sid, i) for i in ids]), axis=0)
+    return _png(render_png, stack)

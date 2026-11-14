@@ -19,10 +19,12 @@ type Props = {
   dec: number
   fov: number
   onReady: (a: Aladin) => void
+  /** horizontal field of view in degrees, on every zoom */
+  onFov: (fov: number) => void
 }
 
 /** Aladin Lite sky view. Initialised once (StrictMode mounts effects twice); target changes recentre. */
-export default function SkyView({ ra, dec, fov, onReady }: Props) {
+export default function SkyView({ ra, dec, fov, onReady, onFov }: Props) {
   const div = useRef<HTMLDivElement>(null)
   const started = useRef(false)
   const aladin = useRef<Aladin | null>(null)
@@ -40,7 +42,12 @@ export default function SkyView({ ra, dec, fov, onReady }: Props) {
         showReticle: true,
         showLayersControl: false,
       })
-      a.on('zoomChanged', (f) => writeUrl({ fov: Number(f).toFixed(4) }))
+      // Aladin keeps one callback per event, so URL sync and the fov report share this handler
+      a.on('zoomChanged', (f) => {
+        writeUrl({ fov: Number(f).toFixed(4) })
+        onFov(Number(f))
+      })
+      onFov(a.getFov()[0])
       aladin.current = a
       onReady(a)
     })

@@ -8,6 +8,7 @@ declare module 'aladin-lite' {
     ra: number
     dec: number
     data: Record<string, unknown>
+    catalog?: { name: string }
   }
   export interface Catalog {
     name: string
@@ -26,7 +27,7 @@ declare module 'aladin-lite' {
     setOverlayImageLayer(layer: ImageLayer, name: string): ImageLayer
     removeImageLayer(name: string): void
     addCatalog(c: Catalog): void
-    select(mode: 'rect', cb: (selection: Source[][]) => void): void
+    select(mode: 'rect', cb: (shape: unknown, selection: Source[][]) => void): void
     on(event: string, cb: (...args: unknown[]) => void): void
   }
   const A: {
@@ -35,8 +36,7 @@ declare module 'aladin-lite' {
     image(url: string, opts: Record<string, unknown>): ImageLayer
     catalog(opts: Record<string, unknown>): Catalog
     source(ra: number, dec: number, data: Record<string, unknown>): Source
-    catalogFromVizieR(id: string, target: string, radiusDeg: number, opts: Record<string, unknown>): Catalog
-    catalogFromSimbad(target: string, radiusDeg: number, opts: Record<string, unknown>): Catalog
+    catalogFromURL(url: string, opts: Record<string, unknown>): Catalog
   }
   export default A
 }

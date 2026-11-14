@@ -1,11 +1,12 @@
-import type { Aladin } from 'aladin-lite'
+import type { Aladin, Source } from 'aladin-lite'
 import { useCallback, useEffect, useState } from 'react'
 import { getSequence, resolveTarget, startSequence, ucdsNear, type Resolved, type Sequence, type Ucd } from './api'
 import Catalogs from './components/Catalogs'
 import LayersPanel from './components/LayersPanel'
-import Player, { FrameRows, type Flipbook } from './components/Player'
+import Player, { FrameRows, StackRows, type Flipbook } from './components/Player'
 import PlotsPanel from './components/PlotsPanel'
 import SkyView from './components/SkyView'
+import SelectionTable from './components/SelectionTable'
 import TargetBar from './components/TargetBar'
 import UcdSearch from './components/UcdSearch'
 import { readUrl, writeUrl } from './url'
@@ -31,9 +32,14 @@ export default function App() {
   const [known, setKnown] = useState<Ucd | null>(null)
   const [skyUcds, setSkyUcds] = useState<Ucd[]>([])
   const [spiffOn, setSpiffOn] = useState(false)
-  const [, setCatalogCount] = useState(0)
+  const [catalogCount, setCatalogCount] = useState(0)
+  const [fov, setFov] = useState(initialUrl.fov ?? 0.25)
+  const [selection, setSelection] = useState<Source[][] | null>(null)
+  const [compareA, setCompareA] = useState<string | null>(null)
+  const [stackBand, setStackBand] = useState<string | null>(null)
 
   const setFlipbook = useCallback((patch: Partial<Flipbook>) => {
+    if (patch.frameId) setStackBand(null) // picking a frame leaves the stack view
     setFb((prev) => {
       const next = { ...prev, ...patch }
       if (patch.bands) writeUrl({ bands: next.bands.join(',') })
@@ -42,6 +48,20 @@ export default function App() {
       return next
     })
   }, [])
+
+  const frameById = (id: string | null) => seq?.frames.find((f) => f.id === id)
+  const frameA = frameById(compareA)
+  const frameB = compareA && fb.frameId !== compareA ? frameById(fb.frameId) : undefined
+  const override =
+    seq && frameA && frameB
+      ? {
+          png: `/api/sequences/${seq.id}/diff.png?a=${encodeURIComponent(frameA.id)}&b=${encodeURIComponent(frameB.id)}`,
+          label: `Difference ${frameB.date.slice(0, 10)} ${frameB.band} − ${frameA.date.slice(0, 10)} ${frameA.band} (red = new, blue = old)`,
+        }
+      : seq && stackBand
+        ? { png: `/api/sequences/${seq.id}/stack.png?band=${stackBand}&n=${seq.frames.length}`, label: `Median stack ${stackBand}` }
+        : null
+  const canSelect = catalogCount > 0 && fov < 0.5
 
   const lookup = async (q: string) => {
     setBusy(true)
@@ -71,6 +91,9 @@ export default function App() {
     let stop = false
     let timer: number | undefined
     setSeq(null)
+    setCompareA(null)
+    setStackBand(null)
+    setSelection(null)
     const poll = async (id: string) => {
       try {
         const s = await getSequence(id)
@@ -128,7 +151,7 @@ export default function App() {
       />
       <div className="flex min-h-0 flex-1">
         <div className="flex min-w-0 flex-1 flex-col">
-          <div className="min-h-0 flex-1">
+          <div className="relative min-h-0 flex-1">
             {resolved && (
               // grid centre = 2018 position, so high-PM stars sit in the middle of the flipbook overlay
               <SkyView
@@ -136,8 +159,18 @@ export default function App() {
                 dec={seq ? Number(seq.grid.wcs.CRVAL2) : resolved.dec}
                 fov={initialUrl.fov ?? 0.25}
                 onReady={setAladin}
+                onFov={setFov}
               />
             )}
+            <button
+              className="absolute top-2 left-1/2 z-10 -translate-x-1/2 rounded bg-slate-800/90 px-2 py-1 text-xs enabled:hover:bg-slate-700 disabled:text-slate-500"
+              disabled={!canSelect}
+              title="Drag a rectangle to list catalog sources inside it. Needs at least one visible catalog layer and a field of view under 0.5°."
+              onClick={() => aladin?.select('rect', (_shape, groups) => setSelection(groups))}
+            >
+              ⬚ Select region
+            </button>
+            {selection && <SelectionTable groups={selection} onClose={() => setSelection(null)} />}
           </div>
           <div className="flex h-72 shrink-0 border-t border-slate-700 bg-slate-900">
             <div className="min-w-0 flex-1">
@@ -155,10 +188,41 @@ export default function App() {
           </div>
         </div>
         <aside className="w-96 shrink-0 overflow-y-auto border-l border-slate-700 bg-slate-900">
-          <Player seq={seq} fb={fb} set={setFlipbook} aladin={aladin} />
+          <Player seq={seq} fb={fb} set={setFlipbook} aladin={aladin} override={override}>
+            {(cur) => (
+              <div className="flex items-center gap-2">
+                <button
+                  className={`rounded px-2 py-1 ${compareA ? 'bg-amber-700' : 'bg-slate-700'}`}
+                  disabled={!compareA && !cur}
+                  onClick={() => {
+                    setStackBand(null)
+                    setCompareA(compareA ? null : (cur?.id ?? null))
+                  }}
+                >
+                  {compareA ? 'Clear compare' : 'Compare'}
+                </button>
+                <span className="text-slate-500">
+                  {compareA ? (frameB ? '' : `A = ${frameA?.date.slice(0, 10)} ${frameA?.band}; pick frame B`) : 'Pin the current frame as A'}
+                </span>
+              </div>
+            )}
+          </Player>
           <LayersPanel
             aladin={aladin}
-            frames={<FrameRows seq={seq} fb={fb} set={setFlipbook} />}
+            frames={
+              <>
+                <FrameRows seq={seq} fb={fb} set={setFlipbook} />
+                <StackRows
+                  seq={seq}
+                  band={stackBand}
+                  onPick={(b) => {
+                    setCompareA(null)
+                    setFlipbook({ playing: false })
+                    setStackBand(b)
+                  }}
+                />
+              </>
+            }
             catalogs={
               aladin && (
                 <Catalogs aladin={aladin} ucds={skyUcds} spiffOn={spiffOn} setSpiffOn={setSpiffOn} onVisibleCount={setCatalogCount} />

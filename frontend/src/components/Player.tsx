@@ -27,7 +27,8 @@ type Props = {
   aladin: Aladin | null
   /** URL of an image to show instead of the current frame (diff/stack), or null. */
   override?: { png: string; label: string } | null
-  children?: React.ReactNode
+  /** extra controls; receives the frame on screen (which may not be fb.frameId before the first step) */
+  children?: (cur: Frame | undefined) => React.ReactNode
 }
 
 export default function Player({ seq, fb, set, aladin, override, children }: Props) {
@@ -164,7 +165,7 @@ export default function Player({ seq, fb, set, aladin, override, children }: Pro
           <input type="checkbox" checked={fb.showOnSky} onChange={(e) => set({ showOnSky: e.target.checked })} /> Show on sky
         </label>
       </div>
-      {children}
+      {children?.(cur)}
     </div>
   )
 }
@@ -202,6 +203,20 @@ export function FrameRows({ seq, fb, set }: { seq: Sequence | null; fb: Flipbook
             </span>
           }
         />
+      ))}
+    </div>
+  )
+}
+
+/** "Stacks" sub-group: median of all unflagged frames per band; click shows it in the viewer and on the sky. */
+export function StackRows({ seq, band, onPick }: { seq: Sequence | null; band: string | null; onPick: (b: string | null) => void }) {
+  const present = ALL_BANDS.filter((b) => seq?.frames.some((f) => f.band === b && !f.flagged))
+  if (!present.length) return null
+  return (
+    <div className="border-t border-slate-800">
+      <div className="px-2 pt-1 text-[10px] tracking-wide text-slate-500 uppercase">Stacks</div>
+      {present.map((b) => (
+        <LayerRow key={b} label={`Median stack ${b}`} on={band === b} onToggle={() => onPick(band === b ? null : b)} selected={band === b} onClick={() => onPick(b)} />
       ))}
     </div>
   )

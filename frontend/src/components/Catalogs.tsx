@@ -3,13 +3,21 @@ import { useEffect, useRef, useState } from 'react'
 import { searchUcds, type Ucd } from '../api'
 import { LayerRow } from './LayersPanel'
 
+// Harvard mirrors of VizieR/SIMBAD: vizier.unistra.fr and simbad.cds were unreachable (Nov 2026); both send CORS *
+const vizier = (src: string, t: string, r: number) =>
+  `https://vizier.cfa.harvard.edu/viz-bin/votable?-source=${src}&-c=${encodeURIComponent(t)}&-c.rd=${r}&-out.max=10000`
+const simbad = (t: string, r: number) => {
+  const [ra, dec] = t.split(' ')
+  const adql = `SELECT TOP 10000 main_id, ra, dec, otype, sp_type, pmra, pmdec FROM basic WHERE CONTAINS(POINT('ICRS', ra, dec), CIRCLE('ICRS', ${ra}, ${dec}, ${r}))=1`
+  return `https://simbad.harvard.edu/simbad/sim-tap/sync?request=doQuery&lang=adql&format=votable/td&query=${encodeURIComponent(adql)}`
+}
+
 type Spec = { name: string; make: (target: string, r: number) => Catalog }
 const SPECS: Spec[] = [
-  { name: 'Gaia DR3', make: (t, r) => A.catalogFromVizieR('I/355/gaiadr3', t, r, { name: 'Gaia DR3', onClick: 'showTable' }) },
-  { name: 'CatWISE2020', make: (t, r) => A.catalogFromVizieR('II/365/catwise', t, r, { name: 'CatWISE2020', onClick: 'showTable' }) },
-  { name: 'SIMBAD', make: (t, r) => A.catalogFromSimbad(t, r, { name: 'SIMBAD', onClick: 'showTable' }) },
+  { name: 'Gaia DR3', make: (t, r) => A.catalogFromURL(vizier('I/355/gaiadr3', t, r), { name: 'Gaia DR3', onClick: 'showTable' }) },
+  { name: 'CatWISE2020', make: (t, r) => A.catalogFromURL(vizier('II/365/catwise', t, r), { name: 'CatWISE2020', onClick: 'showTable' }) },
+  { name: 'SIMBAD', make: (t, r) => A.catalogFromURL(simbad(t, r), { name: 'SIMBAD', onClick: 'showTable' }) },
 ]
-
 /** Remote catalogs: queried around the current view centre the first time the eye is turned on. */
 function RemoteRow({ aladin, spec, onVisible }: { aladin: Aladin; spec: Spec; onVisible: (on: boolean) => void }) {
   const [on, setOn] = useState(false)

@@ -94,4 +94,19 @@ def render_png(img, path):
     lo, hi = np.percentile(a, [0.5, 99.5])
     x = np.clip((a - lo) / (hi - lo if hi > lo else 1.0), 0, 1)
     x = np.arcsinh(10 * x) / np.arcsinh(10)
-    Image.fromarray(np.flipud((x * 255).round().astype(np.uint8)), "L").save(path)
+    Image.fromarray(np.flipud((x * 255).round().astype(np.uint8)), "L").save(path, format="PNG")
+
+
+def _robust_norm(x):
+    med = np.nanmedian(x)
+    mad = 1.4826 * np.nanmedian(np.abs(x - med))
+    return (x - med) / (mad if mad > 0 else 1.0)
+
+
+def render_diff_png(a, b, path):
+    """b - a in robust sigma units, clipped to +-5: red = brighter in b, blue = brighter in a, gray = no change."""
+    v = np.nan_to_num(np.clip(_robust_norm(b) - _robust_norm(a), -5, 5) / 5)
+    pos, neg = np.clip(v, 0, 1), np.clip(-v, 0, 1)
+    dim = 128 * (1 - np.abs(v))
+    rgb = np.stack([dim + 255 * pos, dim, dim + 255 * neg], axis=-1)
+    Image.fromarray(np.flipud(np.clip(rgb, 0, 255).round().astype(np.uint8)), "RGB").save(path, format="PNG")
