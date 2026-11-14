@@ -1,6 +1,6 @@
 import A, { type Aladin, type Catalog, type Source } from 'aladin-lite'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getSummary, ucdsNear, type SeqOptions, type Ucd } from '../api'
+import { candidatePeriods, getSummary, ucdsNear, type SeqOptions, type Ucd } from '../api'
 import { DEFAULT_TARGET, useFlipbook, useSeqResult, useSequence, useTarget } from '../hooks'
 import { readUrl, writeUrl } from '../url'
 import Catalogs from './Catalogs'
@@ -139,7 +139,7 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
           </div>
           <div className="flex h-72 shrink-0 border-t border-slate-700 bg-slate-900">
             <div className="min-w-0 flex-1">
-              <PlotsPanel seq={seq} />
+              <PlotsPanel seq={seq} periods={candidatePeriods(summary.data?.variability)} />
             </div>
             {/* hidden, not unmounted, so layer/catalog toggles keep their state */}
             <div className={`w-[30rem] shrink-0 border-l border-slate-700 ${advanced ? '' : 'hidden'}`}>
@@ -178,12 +178,12 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
           </Player>
           {mode === 'explore' ? (
             <Group title="What we found">
-              <FoundPanel summary={summary.data} note={summary.note} />
+              <FoundPanel summary={summary.data} note={summary.note} busy={summary.busy} />
             </Group>
           ) : (
             <>
               <Group title="Measurements">
-                <ResearchPanel seq={seq} summary={summary.data} note={summary.note} />
+                <ResearchPanel seq={seq} summary={summary.data} note={summary.note} busy={summary.busy} />
               </Group>
               <Group title="Fetch exposures for a time window">
                 <TimeWindow

@@ -104,23 +104,25 @@ export function useFlipbook(init: Partial<Flipbook> = {}) {
   return [fb, set] as const
 }
 
-/** Result of a per-sequence endpoint, fetched once the sequence is done. 404 = backend without that endpoint yet. */
+/** Result of a per-sequence endpoint, fetched once the sequence is done. 404 = backend without that endpoint yet.
+ * `busy`: still waiting (frames or the request), so callers can show a spinner next to `note`. */
 export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => Promise<T>) {
-  const [state, setState] = useState<{ id: string; data: T | null; note: string | null } | null>(null)
+  const [state, setState] = useState<{ id: string; data: T | null; note: string | null; busy: boolean } | null>(null)
   const ready = seq?.status === 'done' ? seq.id : null
   useEffect(() => {
     if (!ready) return
     let stale = false
-    setState({ id: ready, data: null, note: 'Loading…' })
+    // first summary call queries IRSA and SkyBoT (25-45 s); no client timeout, just say what is happening
+    setState({ id: ready, data: null, note: 'Asking the archives… (the first look at a field can take up to a minute)', busy: true })
     fetcher(ready)
-      .then((data) => !stale && setState({ id: ready, data, note: null }))
-      .catch((e) => !stale && setState({ id: ready, data: null, note: isMissing(e) ? 'Not available yet on this server' : (e as Error).message }))
+      .then((data) => !stale && setState({ id: ready, data, note: null, busy: false }))
+      .catch((e) => !stale && setState({ id: ready, data: null, note: isMissing(e) ? 'Not available yet on this server' : (e as Error).message, busy: false }))
     return () => {
       stale = true
     }
   }, [ready]) // eslint-disable-line react-hooks/exhaustive-deps
-  if (!seq) return { data: null, note: null }
-  if (seq.status === 'error') return { data: null, note: 'Sequence failed' }
-  if (!ready || state?.id !== ready) return { data: null, note: 'Waiting for all frames…' }
-  return { data: state.data, note: state.note }
+  if (!seq) return { data: null, note: null, busy: false }
+  if (seq.status === 'error') return { data: null, note: 'Sequence failed', busy: false }
+  if (!ready || state?.id !== ready) return { data: null, note: 'Waiting for all frames…', busy: true }
+  return state
 }

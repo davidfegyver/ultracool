@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import type { SeqOptions } from '../api'
+import { mjdToIso } from '../sky'
 
-const isoDate = (mjd: string) => (mjd === '' || isNaN(Number(mjd)) ? '' : new Date((Number(mjd) - 40587) * 864e5).toISOString().slice(0, 10))
+const isoDate = (mjd: string) => (mjd === '' || isNaN(Number(mjd)) ? '' : mjdToIso(Number(mjd)).slice(0, 10))
 const MAX_EXPOSURE_SPAN_D = 30 // backend rejects per-exposure WISE frames over longer windows
 
 /** Re-run the sequence restricted to an MJD window, optionally with every WISE exposure (asteroids, transients). */

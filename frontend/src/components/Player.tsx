@@ -1,6 +1,7 @@
 import A, { type Aladin } from 'aladin-lite'
 import { useEffect, useRef } from 'react'
 import type { Frame, Sequence } from '../api'
+import { mjdToIso, mjdToYear, type Mark } from '../sky'
 import { LayerRow } from './LayersPanel'
 
 export const ALL_BANDS = ['W1', 'W2', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6']
@@ -17,8 +18,6 @@ export type Flipbook = {
   /** play multi-epoch deep stacks instead of single frames */
   deep: boolean
 }
-
-const mjdToIso = (mjd: number) => new Date((mjd - 40587) * 864e5).toISOString()
 
 /** One deep stack per band and time window: WISE in 2-year windows (2010 alone), SPHEREx per ~6-month survey epoch.
  * Faint movers like WISEA J1534-1043 are invisible in single frames but show at 3-5 sigma here. */
@@ -71,11 +70,13 @@ type Props = {
   /** crop the viewer to a size×size px window around (x, y) (grid px, PNG y-down, epoch 2018.0) and mark a source
    * moving vx, vy px/yr instead of the target circle */
   focus?: { x: number; y: number; size: number; vx: number; vy: number }
+  /** labelled circles for the frame on screen, drawn instead of the target circle */
+  marks?: (f: Frame) => Mark[]
+  /** viewer edge in CSS px (default 360) */
+  viewerPx?: number
 }
 
-const year = (mjd: number) => 2000 + (mjd - 51544.5) / 365.25
-
-export default function Player({ seq, fb, set, aladin, override, children, focus }: Props) {
+export default function Player({ seq, fb, set, aladin, override, children, focus, marks, viewerPx = 360 }: Props) {
   const playable = filterFrames(seq, fb).filter((f) => !fb.excluded.has(f.id))
   const idx = Math.max(0, playable.findIndex((f) => f.id === fb.frameId))
   const cur: Frame | undefined = playable[idx]
@@ -136,7 +137,7 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
           </div>
         </div>
       )}
-      <div className="relative mx-auto h-[360px] w-[360px] bg-black">
+      <div className="relative mx-auto bg-black" style={{ width: viewerPx, height: viewerPx }}>
         {shownPng && seq ? (
           <svg
             role="img"
@@ -157,11 +158,13 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
                 />
                 {cur && (
                   <circle
-                    cx={focus.x + 0.5 + focus.vx * (year(cur.mjd) - 2018)} cy={focus.y + 0.5 + focus.vy * (year(cur.mjd) - 2018)}
+                    cx={focus.x + 0.5 + focus.vx * (mjdToYear(cur.mjd) - 2018)} cy={focus.y + 0.5 + focus.vy * (mjdToYear(cur.mjd) - 2018)}
                     r={4} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke"
                   />
                 )}
               </>
+            ) : marks ? (
+              !override && cur && <Marks marks={marks(cur)} width={seq.grid.width} />
             ) : (
               !override && cur && <circle cx={cur.target_px[0] + 0.5} cy={cur.target_px[1] + 0.5} r={5} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke" />
             )}
@@ -238,6 +241,37 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
       </div>
       {children?.(cur)}
     </div>
+  )
+}
+
+/** Labelled circles in grid-pixel SVG coordinates; sizes scale with the grid so they read the same at any field of view. */
+export function Marks({ marks, width }: { marks: Mark[]; width: number }) {
+  const r = Math.max(5, width / 40)
+  const font = width / 26
+  return (
+    <>
+      {marks.map((m, i) => {
+        // keep labels inside the picture: anchor towards the centre near the edges; every other label goes below its circle
+        // (and any label near the top edge) so neighbours at the same height do not overlap
+        const anchor = m.x > 0.65 * width ? 'end' : m.x < 0.35 * width ? 'start' : 'middle'
+        const tx = m.x + 0.5 + (anchor === 'end' ? r : anchor === 'start' ? -r : 0)
+        const below = i % 2 === 1 || m.y - r * 1.3 < font
+        const ty = below ? m.y + r * 1.3 + font : m.y + 0.5 - r * 1.3
+        return (
+          <g key={i}>
+            <circle
+              cx={m.x + 0.5} cy={m.y + 0.5} r={m.small ? r / 4 : r} fill="none" stroke="#f472b6" strokeWidth={m.small ? 1 : 2}
+              strokeDasharray={m.faint ? '4 3' : undefined} opacity={m.faint ? 0.6 : 1} vectorEffect="non-scaling-stroke"
+            />
+            {m.label && (
+              <text x={tx} y={ty} fontSize={font} textAnchor={anchor} fill="#fbcfe8" stroke="#000" strokeWidth={width / 120} paintOrder="stroke" opacity={m.faint ? 0.7 : 1}>
+                {m.label}
+              </text>
+            )}
+          </g>
+        )
+      })}
+    </>
   )
 }
 

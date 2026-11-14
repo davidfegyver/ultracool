@@ -94,6 +94,14 @@ export type Spectrum = {
 }
 export const getSpectrum = (id: string) => get<Spectrum>(`/api/sequences/${id}/spectrum`)
 
+/** WISE catalog photometry (NEOWISE single-exposure catalog, per visit): the fallback light curve for saturated stars. */
+export type CatalogLightcurve = {
+  source: string
+  status: string
+  points: { mjd: number; band: string; flux_ujy: number | null; flux_err_ujy: number | null; mag: number | null; mag_err: number | null; n: number }[]
+}
+export const getCatalogLightcurve = (id: string) => get<CatalogLightcurve>(`/api/sequences/${id}/catalog_lightcurve`)
+
 export type MotionPoint = { mjd: number; band: string; ra: number; dec: number; err_arcsec: number }
 export type Summary = {
   motion: {
@@ -126,6 +134,11 @@ export type Summary = {
     period_alias_warning?: boolean
     /** Lomb-Scargle false-alarm probability of the best peak */
     fap?: number | null
+    /** periods the 6-month WISE cadence cannot tell apart from period_days */
+    period_alternatives_days?: number[]
+    /** light curve used: own pipeline photometry or WISE catalog photometry (saturated stars) */
+    source?: 'pipeline' | 'catalog'
+    source_note?: string
   }
   spectrum: Spectrum | null
   asteroids?: KnownAsteroid[]
@@ -133,6 +146,8 @@ export type Summary = {
 }
 export type KnownAsteroid = { name: string; ra: number; dec: number; mjd: number; rate_arcsec_h: number }
 export const getSummary = (id: string) => get<Summary>(`/api/sequences/${id}/summary`)
+/** best period first, then the cadence aliases: the "Fold at" choices */
+export const candidatePeriods = (v: Summary['variability'] | undefined) => (v?.period_days ? [v.period_days, ...(v.period_alternatives_days ?? [])] : [])
 
 export type Mover = {
   ra: number

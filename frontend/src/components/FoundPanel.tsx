@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import type { Summary } from '../api'
+import Pending from './Pending'
 import Term from './Term'
 
 type Tone = 'yes' | 'no' | 'unknown'
@@ -15,11 +16,13 @@ function Badge({ q, a, tone }: { q: ReactNode; a: string; tone: Tone }) {
 }
 
 /** Explore mode: the summary as four yes/no badges plus the backend's plain-English sentences. */
-export default function FoundPanel({ summary, note }: { summary: Summary | null; note: string | null }) {
-  if (!summary) return <p className="p-2 text-xs text-slate-500">{note}</p>
+export default function FoundPanel({ summary, note, busy }: { summary: Summary | null; note: string | null; busy: boolean }) {
+  if (!summary) return <Pending note={note} busy={busy} className="p-2" />
   const { motion, color, variability, spectrum } = summary
   const pm = motion.pm_total_arcsec_yr
   const spec = spectrum?.verdict === 'match' && spectrum.best ? spectrum.best.label : null
+  const period = variability.period_days
+  const alts = variability.period_alternatives_days ?? []
   return (
     <div className="space-y-2 p-2 text-xs">
       <div className="grid grid-cols-2 gap-1">
@@ -31,7 +34,7 @@ export default function FoundPanel({ summary, note }: { summary: Summary | null;
         <Badge
           q={<>Cold / red? (<Term k="W1−W2" />)</>}
           a={
-            color.verdict === 'extremely red (Y/late-T dwarf-like)' ? 'Very cold!' : color.verdict === 'red (L/T dwarf-like)' ? 'Cool, brown-dwarf-like' : color.verdict === 'normal star colors' ? 'No, normal star' : 'Not sure'
+            color.verdict === 'extremely red (Y/late-T dwarf-like)' ? 'Very cold!' : color.verdict === 'red (L/T dwarf-like)' ? 'Red, like brown dwarfs' : color.verdict === 'normal star colors' ? 'No, normal star' : 'Not sure'
           }
           tone={color.verdict.startsWith('extremely') || color.verdict.startsWith('red') ? 'yes' : color.verdict === 'normal star colors' ? 'no' : 'unknown'}
         />
@@ -39,13 +42,18 @@ export default function FoundPanel({ summary, note }: { summary: Summary | null;
           q={<>Brightness changes? (<Term k="light curve" />)</>}
           a={
             variability.verdict === 'periodic variable'
-              ? `Yes, repeats${variability.period_days ? ` every ~${Math.round(variability.period_days)} d` : ''}`
+              ? `Yes, repeats${period ? ` every ~${Math.round(period)} d${alts.length ? ` (or ${alts.map((a) => Math.round(a)).join(' or ')} d)` : ''}` : ''}`
               : variability.verdict === 'irregular variable' ? 'Yes, irregularly' : variability.verdict === 'constant' ? 'No' : 'Not sure'
           }
           tone={variability.verdict.endsWith('variable') ? 'yes' : variability.verdict === 'constant' ? 'no' : 'unknown'}
         />
         <Badge q={<><Term k="spectrum" /> type</>} a={spec ?? 'Not sure'} tone={spec ? 'yes' : 'unknown'} />
       </div>
+      {variability.source === 'catalog' && (
+        <p className="text-amber-300" title={variability.source_note}>
+          Brightness comes from the WISE catalog: this object is too bright for our own measurements.
+        </p>
+      )}
       <ul className="list-disc space-y-1 pl-4 text-slate-300">
         {summary.plain.map((s) => <li key={s}>{s}</li>)}
       </ul>

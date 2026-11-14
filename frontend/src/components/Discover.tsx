@@ -4,6 +4,7 @@ import { downloadCsv } from '../csv'
 import { DEFAULT_TARGET, useFlipbook, useSeqResult, useSequence, useTarget } from '../hooks'
 import { readUrl } from '../url'
 import Player from './Player'
+import Pending from './Pending'
 import { AsteroidList } from './ResearchPanel'
 import TargetBar from './TargetBar'
 import Term from './Term'
@@ -97,7 +98,7 @@ export default function Discover() {
           <h2 className="bg-slate-800 px-2 py-1 font-semibold tracking-wide text-slate-300 uppercase">
             Moving candidates {list.length > 0 && `(${list.length})`}
           </h2>
-          {!movers.data && <p className="p-2 text-slate-500">{movers.note ?? 'Pick a field to scan'}</p>}
+          {!movers.data && (movers.note ? <Pending note={movers.note} busy={movers.busy} className="p-2" /> : <p className="p-2 text-slate-500">Pick a field to scan</p>)}
           {movers.data?.status === 'insufficient data' && <p className="p-2 text-slate-500">Not enough epochs in this field to measure motion.</p>}
           {movers.data?.status === 'ok' && !list.length && <p className="p-2 text-slate-500">No significant movers in this field.</p>}
           <ol>

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
-import { resolveTarget, type Resolved } from '../api'
-import { useFlipbook, useSequence } from '../hooks'
+import { candidatePeriods, getSummary, resolveTarget, type Frame, type Resolved, type Sequence } from '../api'
+import { useFlipbook, useSeqResult, useSequence } from '../hooks'
 import { LESSONS, type Lesson } from '../lessons'
+import { propagate, worldToPx, type Mark } from '../sky'
 import { readUrl, writeUrl } from '../url'
 import Player from './Player'
 import PlotsPanel from './PlotsPanel'
+import StackPairs from './StackPairs'
 
 const PROGRESS_KEY = 'ultracool-learn-progress'
 const loadProgress = (): string[] => {
@@ -84,6 +86,27 @@ export default function Learn() {
   )
 }
 
+/** Lesson markers and asteroid track for the frame on screen, in grid pixels. */
+function lessonMarks(lesson: Lesson, seq: Sequence, f: Frame): Mark[] {
+  const px = (ra: number, dec: number) => {
+    const [x, y] = worldToPx(seq.grid.wcs, seq.grid.height, ra, dec)
+    return { x, y }
+  }
+  const out: Mark[] = (lesson.markers ?? []).map((m) => {
+    const p = m.pmra_masyr !== undefined ? propagate(m.ra, m.dec, m.pmra_masyr, m.pmdec_masyr ?? 0, m.epoch_yr ?? 2000, f.mjd) : m
+    // seasonal image features (ghosts) are only there at the same time of year (±60 d) as the marker date
+    const phase = m.mjd === undefined ? 0 : (((f.mjd - m.mjd) % 365.25) + 1.5 * 365.25) % 365.25 - 365.25 / 2
+    return { ...px(p.ra, p.dec), label: m.label, faint: Math.abs(phase) > 60 }
+  })
+  if (lesson.track?.length) {
+    for (const t of lesson.track) out.push({ ...px(t.ra, t.dec), small: true })
+    const near = lesson.track.reduce((a, b) => (Math.abs(b.mjd - f.mjd) < Math.abs(a.mjd - f.mjd) ? b : a))
+    // ~30 min: the ephemeris point belongs to this exposure
+    if (Math.abs(near.mjd - f.mjd) < 0.02) out.push({ ...px(near.ra, near.dec), label: lesson.object })
+  }
+  return out
+}
+
 function LessonView({ lesson, n, onCorrect, onNext }: { lesson: Lesson; n: number; onCorrect: () => void; onNext?: () => void }) {
   const [target, setTarget] = useState<Resolved | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -93,16 +116,45 @@ function LessonView({ lesson, n, onCorrect, onNext }: { lesson: Lesson; n: numbe
     mjd_max: lesson.mjd_max,
     wise_exposures: lesson.wise_exposures,
   })
+  const summary = useSeqResult(seq, getSummary)
   const [fb, setFb] = useFlipbook({ bands: lesson.bands, deep: !!lesson.deep, frameId: null })
 
   useEffect(() => {
-    if (lesson.pending) return
     if (lesson.ra !== undefined && lesson.dec !== undefined) {
-      setTarget({ name: lesson.object, ra: lesson.ra, dec: lesson.dec, pmra_masyr: 0, pmdec_masyr: 0, epoch_yr: 2000, otype: null, sptype: null })
+      const { ra, dec, pmra_masyr = 0, pmdec_masyr = 0, epoch_yr = 2000 } = lesson
+      setTarget({ name: lesson.object, ra, dec, pmra_masyr, pmdec_masyr, epoch_yr, otype: null, sptype: null })
     } else if (lesson.target) {
       resolveTarget(lesson.target).then(setTarget).catch((e) => setError((e as Error).message))
     }
   }, [lesson])
+
+  const marks = seq && (lesson.markers || lesson.track) ? (f: Frame) => lessonMarks(lesson, seq, f) : undefined
+  const flipbook =
+    lesson.stack_windows && target ? (
+      <StackPairs seq={seq} windows={lesson.stack_windows} target={target} />
+    ) : (
+      <div className="mx-auto max-w-md">
+        <Player seq={seq} fb={fb} set={setFb} aladin={null} marks={marks} viewerPx={lesson.light_curve_first ? 220 : 360} />
+      </div>
+    )
+  const plots = lesson.hide_light_curve ? (
+    <p className="border-t border-slate-700 bg-slate-900 p-3 text-sm text-slate-400">{lesson.hide_light_curve}</p>
+  ) : (
+    <div className={`${lesson.light_curve_first ? 'min-h-[22rem]' : 'min-h-64 border-t'} flex-1 border-slate-700 bg-slate-900`}>
+      <PlotsPanel
+        seq={seq}
+        bands={lesson.bands}
+        // the lesson's verified period first (the backend's search can land on a cadence alias); backend periods
+        // within 2% of it are the same cycle and would only duplicate the choice
+        periods={
+          lesson.period_days
+            ? [lesson.period_days, ...candidatePeriods(summary.data?.variability).filter((p) => Math.abs(p / lesson.period_days! - 1) > 0.02)]
+            : candidatePeriods(summary.data?.variability)
+        }
+      />
+    </div>
+  )
+  const alt = lesson.alternative
 
   return (
     <div className="flex min-w-0 flex-1">
@@ -120,28 +172,32 @@ function LessonView({ lesson, n, onCorrect, onNext }: { lesson: Lesson; n: numbe
           <p className="leading-relaxed">{lesson.look_for}</p>
         </aside>
         <Quiz key={lesson.id} quiz={lesson.quiz} onCorrect={onCorrect} />
+        {alt && (
+          <p className="text-slate-400">
+            Also try{' '}
+            <a className="text-sky-400 underline" href={`?${new URLSearchParams({ mode: 'explore', target: alt.target })}`}>
+              {alt.object}
+            </a>
+            : {alt.note}.
+          </p>
+        )}
         {onNext && (
           <button className="rounded bg-sky-700 px-3 py-1.5 hover:bg-sky-600" onClick={onNext}>
             Next lesson →
           </button>
         )}
       </article>
-      <section aria-label="Flipbook" className="flex min-w-0 flex-1 flex-col">
-        {lesson.pending ? (
-          <div className="m-auto max-w-sm rounded border border-dashed border-slate-600 p-6 text-center text-slate-400">
-            Example being prepared: we are picking the best real {lesson.object.toLowerCase()} to show here. The story and quiz already work.
-          </div>
+      <section aria-label="Flipbook" className="flex min-w-0 flex-1 flex-col overflow-y-auto">
+        {(error || seqError) && <p className="p-2 text-xs text-red-400">{error ?? seqError}</p>}
+        {lesson.light_curve_first ? (
+          <>
+            {plots}
+            <div className="shrink-0 border-t border-slate-700">{flipbook}</div>
+          </>
         ) : (
           <>
-            <div className="shrink-0 overflow-y-auto">
-              {(error || seqError) && <p className="p-2 text-xs text-red-400">{error ?? seqError}</p>}
-              <div className="mx-auto max-w-md">
-                <Player seq={seq} fb={fb} set={setFb} aladin={null} />
-              </div>
-            </div>
-            <div className="min-h-64 flex-1 border-t border-slate-700 bg-slate-900">
-              <PlotsPanel seq={seq} />
-            </div>
+            <div className="shrink-0">{flipbook}</div>
+            {plots}
           </>
         )}
       </section>

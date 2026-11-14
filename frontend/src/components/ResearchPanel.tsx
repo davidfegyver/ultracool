@@ -2,6 +2,7 @@ import { useState, type ReactNode } from 'react'
 import { exportCsvUrl, type KnownAsteroid, type Sequence, type Summary } from '../api'
 import { downloadBlob } from '../csv'
 import MotionPlot from './MotionPlot'
+import Pending from './Pending'
 
 const fmt = (v: number | null | undefined, d = 1) => (v === null || v === undefined ? '—' : v.toFixed(d))
 const pm = (v: number | null, e: number | null) => `${fmt(v)} ± ${fmt(e)}`
@@ -24,7 +25,7 @@ function Table({ rows }: { rows: [ReactNode, ReactNode][] }) {
 const H = ({ children }: { children: ReactNode }) => <h4 className="mt-2 font-semibold text-slate-300">{children}</h4>
 
 /** Research mode: summary numbers with errors, motion plot, known asteroids and the CSV export. */
-export default function ResearchPanel({ seq, summary, note }: { seq: Sequence | null; summary: Summary | null; note: string | null }) {
+export default function ResearchPanel({ seq, summary, note, busy }: { seq: Sequence | null; summary: Summary | null; note: string | null; busy: boolean }) {
   const [csvNote, setCsvNote] = useState<string | null>(null)
   const download = async () => {
     if (!seq) return
@@ -43,7 +44,7 @@ export default function ResearchPanel({ seq, summary, note }: { seq: Sequence | 
         </button>
         <span className="text-slate-500">{csvNote ?? 'per-frame photometry with provenance'}</span>
       </div>
-      {!summary && <p className="mt-2 text-slate-500">{note}</p>}
+      {!summary && <Pending note={note} busy={busy} className="mt-2" />}
       {m && (
         <>
           <H>Motion ({m.verdict})</H>
@@ -64,15 +65,22 @@ export default function ResearchPanel({ seq, summary, note }: { seq: Sequence | 
       {c && (
         <>
           <H>Color ({c.verdict})</H>
-          <Table rows={[['W1−W2 (mag)', `${c.w1_w2_is_lower_limit ? '> ' : ''}${fmt(c.w1_w2, 2)} ± ${fmt(c.w1_w2_err, 2)}`]]} />
+          <Table rows={[['W1−W2 (mag)', `${c.w1_w2_is_lower_limit ? '≥ ' : ''}${fmt(c.w1_w2, 2)} ± ${fmt(c.w1_w2_err, 2)}`]]} />
         </>
       )}
       {v && (
         <>
-          <H>Variability ({v.verdict})</H>
+          <H>
+            Variability ({v.verdict}
+            {v.source && `, ${v.source === 'catalog' ? 'WISE catalog photometry' : 'our photometry'}`})
+          </H>
+          {v.source_note && <p className="text-slate-400">{v.source_note}</p>}
           <Table
             rows={[
-              ['Period (d)', `${fmt(v.period_days)}${v.period_alias_warning ? ' ⚠' : ''}`],
+              [
+                'Period (d)',
+                `${fmt(v.period_days)}${v.period_alternatives_days?.length ? ` or ${v.period_alternatives_days.map((a) => fmt(a)).join(' or ')}` : ''}${v.period_alias_warning ? ' ⚠' : ''}`,
+              ],
               ...(v.fap !== undefined ? [['False-alarm prob.', v.fap === null ? '—' : v.fap.toExponential(1)] as [string, string]] : []),
               ...Object.entries(v.bands).map(
                 ([b, x]) => [`${b}: n, χ²ᵣ, amp (mag)`, `${x.n}, ${fmt(x.chi2_red, 2)}, ${fmt(x.amplitude_mag, 2)}`] as [string, string],
