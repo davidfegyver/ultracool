@@ -17,8 +17,8 @@ from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel
 
 from .config import CACHE_DIR, S3_MAX_CONCURRENCY
-from .frames import (PIX_ARCSEC, any_within, aperture_flux, default_fov_deg, grid_wcs_json, group_by_gap,
-                     make_grid, mjd_to_year, propagate, render_diff_png, render_png)
+from .frames import (PIX_ARCSEC, any_within, aperture_flux, deep_stack, default_fov_deg, grid_wcs_json,
+                     group_by_gap, make_grid, mjd_to_year, propagate, render_diff_png, render_png, render_sigma_png)
 from .sources import NoOverlap, query_frames, read_section
 
 log = logging.getLogger("ultracool.sequences")
@@ -240,11 +240,10 @@ def get_diff_png(sid: str, a: str, b: str):
 
 
 @router.get("/api/sequences/{sid}/stack.png")
-def get_stack_png(sid: str, band: str):
-    ids = [f["id"] for f in get_manifest(sid)["frames"] if f["band"] == band and not f["flagged"]]
+def get_stack_png(sid: str, band: str, mjd_min: float = -math.inf, mjd_max: float = math.inf):
+    """Deep stack of the unflagged frames of one band, optionally limited to an MJD window (deep epochs)."""
+    ids = [f["id"] for f in get_manifest(sid)["frames"]
+           if f["band"] == band and not f["flagged"] and mjd_min <= f["mjd"] <= mjd_max]
     if not ids:
-        raise HTTPException(404, f"No unflagged frames in band {band}")
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore", RuntimeWarning)  # all-NaN pixels
-        stack = np.nanmedian(np.stack([_load_npy(sid, i) for i in ids]), axis=0)
-    return _png(render_png, stack)
+        raise HTTPException(404, f"No unflagged {band} frames in that window")
+    return _png(render_sigma_png, deep_stack([_load_npy(sid, i) for i in ids]))

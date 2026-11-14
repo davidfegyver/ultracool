@@ -30,6 +30,7 @@ export default function App() {
     playing: false,
     fps: 1,
     showOnSky: true,
+    deep: false,
   })
   const [known, setKnown] = useState<Ucd | null>(null)
   const [skyUcds, setSkyUcds] = useState<Ucd[]>([])
@@ -197,7 +198,8 @@ export default function App() {
               <div className="flex items-center gap-2">
                 <button
                   className={`rounded px-2 py-1 ${compareA ? 'bg-amber-700' : 'bg-slate-700'}`}
-                  disabled={!compareA && !cur}
+                  disabled={(!compareA && !cur) || fb.deep}
+                  title={fb.deep ? 'Compare works on single frames; turn off Deep stacks' : undefined}
                   onClick={() => {
                     setStackBand(null)
                     setCompareA(compareA ? null : (cur?.id ?? null))

@@ -14,11 +14,50 @@ export type Flipbook = {
   playing: boolean
   fps: number
   showOnSky: boolean
+  /** play multi-epoch deep stacks instead of single frames */
+  deep: boolean
 }
 
-/** Frames passing the band + flag filters (the rows of the layers panel). */
+const mjdToIso = (mjd: number) => new Date((mjd - 40587) * 864e5).toISOString()
+
+/** One deep stack per band and time window: WISE in 2-year windows (2010 alone), SPHEREx per ~6-month survey epoch.
+ * Faint movers like WISEA J1534-1043 are invisible in single frames but show at 3-5 sigma here. */
+function deepFrames(seq: Sequence, bands: string[]): Frame[] {
+  const groups = new Map<string, Frame[]>()
+  for (const f of seq.frames) {
+    if (!bands.includes(f.band) || f.flagged) continue
+    const year = Number(f.date.slice(0, 4))
+    const win = f.survey === 'wise' ? (year < 2014 ? 2010 : 2014 + 2 * Math.floor((year - 2014) / 2)) : f.epoch_index
+    const key = `${f.band}-${win}`
+    groups.set(key, [...(groups.get(key) ?? []), f])
+  }
+  const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length
+  return [...groups.entries()]
+    .map(([key, fs]) => {
+      const mjds = fs.map((f) => f.mjd)
+      const mjd = mean(mjds)
+      return {
+        ...fs[0],
+        id: `deep-${key}`,
+        mjd,
+        date: mjdToIso(mjd),
+        wavelength_um: fs[0].wavelength_um === null ? null : mean(fs.map((f) => f.wavelength_um ?? 0)),
+        flux_ujy: null,
+        flux_err_ujy: null,
+        target_px: [mean(fs.map((f) => f.target_px[0])), mean(fs.map((f) => f.target_px[1]))] as [number, number],
+        png: `/api/sequences/${seq.id}/stack.png?band=${fs[0].band}&mjd_min=${Math.min(...mjds)}&mjd_max=${Math.max(...mjds)}`,
+      }
+    })
+    .sort((a, b) => a.mjd - b.mjd)
+}
+
+/** Frames passing the band + flag filters (the rows of the layers panel); deep stacks in deep mode. */
 export const filterFrames = (seq: Sequence | null, fb: Flipbook) =>
-  (seq?.frames ?? []).filter((f) => fb.bands.includes(f.band) && !(fb.hideFlagged && f.flagged))
+  !seq
+    ? []
+    : fb.deep
+      ? deepFrames(seq, fb.bands)
+      : seq.frames.filter((f) => fb.bands.includes(f.band) && !(fb.hideFlagged && f.flagged))
 
 type Props = {
   seq: Sequence | null
@@ -163,6 +202,9 @@ export default function Player({ seq, fb, set, aladin, override, children }: Pro
         </label>
         <label className="flex items-center gap-1">
           <input type="checkbox" checked={fb.showOnSky} onChange={(e) => set({ showOnSky: e.target.checked })} /> Show on sky
+        </label>
+        <label className="flex items-center gap-1" title="Co-add frames per band: WISE in 2-year windows, SPHEREx per survey epoch. Shows sources too faint for single frames.">
+          <input type="checkbox" checked={fb.deep} onChange={(e) => set({ deep: e.target.checked, frameId: null })} /> Deep stacks
         </label>
       </div>
       {children?.(cur)}

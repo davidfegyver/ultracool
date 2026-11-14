@@ -1,7 +1,9 @@
 """Grid geometry, photometry and PNG rendering. Pure numpy/astropy; only render_png touches disk."""
 import math
+import warnings
 
 import numpy as np
+from astropy.stats import sigma_clip
 from astropy.wcs import WCS
 from PIL import Image
 
@@ -110,3 +112,19 @@ def render_diff_png(a, b, path):
     dim = 128 * (1 - np.abs(v))
     rgb = np.stack([dim + 255 * pos, dim, dim + 255 * neg], axis=-1)
     Image.fromarray(np.flipud(np.clip(rgb, 0, 255).round().astype(np.uint8)), "RGB").save(path, format="PNG")
+
+
+def deep_stack(imgs):
+    """3-sigma-clipped mean of robust-normalised frames, in sigma units of the result.
+    Mean beats median by ~25% in depth; clipping drops cosmic rays and hot pixels."""
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", RuntimeWarning)  # all-NaN pixels at frame edges
+        # mad_std: with plain std a lone outlier among few frames (e.g. 4 WISE visits) can never exceed 3 sigma
+        clipped = sigma_clip(np.stack([_robust_norm(i) for i in imgs]), sigma=3, stdfunc="mad_std", axis=0)
+        return _robust_norm(clipped.mean(axis=0).filled(np.nan))
+
+
+def render_sigma_png(z, path, lo=-1.5, hi=6.0):
+    """Linear display of an image in sigma units: faint 3-5 sigma sources show as mid-grey blobs."""
+    x = np.clip((np.nan_to_num(z, nan=lo) - lo) / (hi - lo), 0, 1)
+    Image.fromarray(np.flipud((x * 255).round().astype(np.uint8)), "L").save(path, format="PNG")
