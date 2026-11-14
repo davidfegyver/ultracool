@@ -1,9 +1,11 @@
 """Science summary of a sequence (proper motion, W1-W2 colour, variability, spectrum) and a search for every
 moving source in the field. Works on the cached grid frames (npy) and the manifest photometry."""
+import hashlib
 import io
 import json
 import logging
 import math
+import os
 import urllib.parse
 import urllib.request
 import warnings
@@ -22,7 +24,7 @@ from scipy.ndimage import binary_dilation, gaussian_filter, label, maximum_filte
 from scipy.ndimage import shift as nd_shift
 from scipy.spatial import cKDTree
 
-from . import ucd
+from . import config, ucd
 from .frames import PIX_ARCSEC, aperture_flux, clipped_mean, deep_stack, group_by_gap, mjd_to_year, propagate
 from .sequences import (WISE_F0_JY, WISE_R_AP, WISE_R_IN, WISE_R_OUT, get_manifest, load_npy, seq_dir,
                         wise_flux_factor)
@@ -613,13 +615,38 @@ def classify_variability(lc, floor=PHOT_FLOOR):
     return out
 
 
+def _ext_cached(key, fetch):
+    """Result of an external query, shared by every sequence that asks the same physical question (lesson
+    field and plain search of one star): CACHE_DIR/ext/<sha1 of key>.json. fetch() raising (service down)
+    caches nothing, so the next call retries."""
+    path = config.CACHE_DIR / "ext" / f"{hashlib.sha1(json.dumps(key, sort_keys=True).encode()).hexdigest()}.json"
+    if path.exists():
+        return json.loads(path.read_text())
+    res = fetch()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(f".{os.getpid()}.tmp")
+    tmp.write_text(json.dumps(_clean(res)))
+    tmp.replace(path)
+    return res
+
+
+def _target_key(t):
+    """The target's track, rounded to well below what changes a query (0.36", 0.1 mas/yr)."""
+    return [round(t["ra"], 4), round(t["dec"], 4), round(t["pmra_masyr"], 1), round(t["pmdec_masyr"], 1), t["epoch_yr"]]
+
+
 def _catalog_rows(m):
     """Single-exposure profile-fit detections of the target: AllWISE multi-epoch photometry (2010-11) and
     NEOWISE (2014-24), one IRSA cone per 2-yr window around the PM-propagated position, then only detections
     within 3" of the position predicted at their own mjd."""
     t = m["target"]
-    pm = math.hypot(t["pmra_masyr"], t["pmdec_masyr"]) / 1000
     windows = sorted({int((mjd_to_year(f["mjd"]) - 2010) // WINDOW_YR) for f in m["frames"] if f["survey"] == "wise"})
+    return _ext_cached({"q": "wise_catalog_rows", "target": _target_key(t), "windows": windows},
+                       lambda: _fetch_catalog_rows(t, windows))
+
+
+def _fetch_catalog_rows(t, windows):
+    pm = math.hypot(t["pmra_masyr"], t["pmdec_masyr"]) / 1000
     rows = []
     for w in windows:
         ty = 2010 + (w + 0.5) * WINDOW_YR
@@ -673,13 +700,8 @@ def catalog_lightcurve(m):
 
 
 def _catalog_lc_cached(m):
-    path = seq_dir(m["id"]) / "catalog_lc.json"
-    if path.exists():
-        return json.loads(path.read_text())
-    res = _clean(catalog_lightcurve(m))
-    if m["status"] == "done":  # the epoch windows come from the frames
-        path.write_text(json.dumps(res))
-    return res
+    """Cheap once the IRSA rows are cached (_catalog_rows); recomputed per call so it follows the frames."""
+    return _clean(catalog_lightcurve(m))
 
 
 @router.get("/api/sequences/{sid}/catalog_lightcurve")
@@ -763,10 +785,11 @@ def _plain(motion, color, var, spec):
     return s
 
 
-def _cached(m, name, compute):
-    """Result cached in the sequence directory, recomputed when the frame set changes; results that hit an
-    unavailable external service (`_transient`) are not cached, so the next call retries."""
-    key = [m["status"], len(m["frames"])]
+def _cached(m, name, compute, key=None):
+    """Result cached in the sequence directory, recomputed when the frame set changes (key; default status +
+    frame count); results that hit an unavailable external service (`_transient`) are not cached, so the next
+    call retries."""
+    key = key or [m["status"], len(m["frames"])]
     path = seq_dir(m["id"]) / name
     if path.exists():
         c = json.loads(path.read_text())
@@ -781,6 +804,11 @@ def _cached(m, name, compute):
 
 
 def _skybot(jd, ra, dec, radius_arcsec):
+    key = {"q": "skybot", "jd": round(jd, 2), "ra": round(ra, 4), "dec": round(dec, 4), "r": round(radius_arcsec)}
+    return _ext_cached(key, lambda: _fetch_skybot(jd, ra, dec, radius_arcsec))
+
+
+def _fetch_skybot(jd, ra, dec, radius_arcsec):
     url = "https://ssp.imcce.fr/webservices/skybot/api/conesearch.php?" + urllib.parse.urlencode(
         {"-ep": f"{jd:.5f}", "-ra": ra, "-dec": dec, "-rs": round(radius_arcsec), "-mime": "json",
          "-output": "basic", "-loc": "500", "-from": "UltracoolBrowser"})
@@ -973,39 +1001,43 @@ def find_tracks(dets, years, fwhm_px=FWHM_PX["W2"]):
 
 
 def _catalogs(m):
-    """CatWISE2020 (IRSA) and SIMBAD (Harvard mirror) sources in the field, cached; None per catalog on failure."""
-    path = seq_dir(m["id"]) / "field_catalogs.json"
-    cached = json.loads(path.read_text()) if path.exists() else {}
-    wcs = _grid_wcs(m)
-    ra0, dec0 = (float(v) for v in wcs.wcs.crval)
+    """CatWISE2020 (IRSA) and SIMBAD (Harvard mirror) sources in the field, cached per cone (shared between
+    sequences); None per catalog on failure (not cached, retried next call)."""
+    ra0, dec0 = (float(v) for v in _grid_wcs(m).wcs.crval)
     r_deg = m["grid"]["width"] * PIX_ARCSEC / 3600 / math.sqrt(2) + 0.005
-    if cached.get("catwise") is None or (cached["catwise"] and "sigpm" not in cached["catwise"][0]):
-        try:
-            cached["catwise"] = [{"name": r["source_name"], "ra": r["ra_pm"], "dec": r["dec_pm"],
-                                  "pmra": (r["pmra"] or 0) * 1000, "pmdec": (r["pmdec"] or 0) * 1000,
-                                  "sigpm": math.hypot(r["sigpmra"] or 0.1, r["sigpmdec"] or 0.1) / math.sqrt(2) * 1000,
-                                  "epoch": 2015.4}
-                                 for r in _rows(irsa_gator("catwise_2020", ra0, dec0, r_deg * 3600,
-                                                           ["source_name", "ra_pm", "dec_pm", "pmra", "pmdec",
-                                                            "sigpmra", "sigpmdec"]))
-                                 if r["ra_pm"] is not None]
-        except Exception as e:  # noqa: BLE001
-            log.warning("CatWISE field query failed: %s", e)
-            cached["catwise"] = None
-    if cached.get("simbad") is None:
-        try:
-            q = ("SELECT main_id, ra, dec, pmra, pmdec FROM basic WHERE CONTAINS(POINT('ICRS', ra, dec), "
-                 f"CIRCLE('ICRS', {ra0}, {dec0}, {r_deg}))=1")
-            url = "https://simbad.harvard.edu/simbad/sim-tap/sync?" + urllib.parse.urlencode(
-                {"REQUEST": "doQuery", "LANG": "ADQL", "FORMAT": "votable", "QUERY": q})
-            with urllib.request.urlopen(url, timeout=60) as resp:
-                rows = _rows(resp.read())
-            cached["simbad"] = [{"name": r["main_id"], "ra": r["ra"], "dec": r["dec"], "pmra": r["pmra"] or 0.0,
-                                 "pmdec": r["pmdec"] or 0.0, "epoch": 2000.0} for r in rows if r["ra"] is not None]
-        except Exception as e:  # noqa: BLE001
-            log.warning("SIMBAD field query failed: %s", e)
-    path.write_text(json.dumps(cached))
-    return cached
+    cone = [round(ra0, 4), round(dec0, 4), round(r_deg, 4)]
+    out = {}
+    try:
+        out["catwise"] = _ext_cached({"q": "catwise_2020_field", "cone": cone}, lambda: _fetch_catwise(ra0, dec0, r_deg))
+    except Exception as e:  # noqa: BLE001
+        log.warning("CatWISE field query failed: %s", e)
+        out["catwise"] = None
+    try:
+        out["simbad"] = _ext_cached({"q": "simbad_field", "cone": cone}, lambda: _fetch_simbad(ra0, dec0, r_deg))
+    except Exception as e:  # noqa: BLE001
+        log.warning("SIMBAD field query failed: %s", e)
+        out["simbad"] = None
+    return out
+
+
+def _fetch_catwise(ra0, dec0, r_deg):
+    return [{"name": r["source_name"], "ra": r["ra_pm"], "dec": r["dec_pm"],
+             "pmra": (r["pmra"] or 0) * 1000, "pmdec": (r["pmdec"] or 0) * 1000,
+             "sigpm": math.hypot(r["sigpmra"] or 0.1, r["sigpmdec"] or 0.1) / math.sqrt(2) * 1000, "epoch": 2015.4}
+            for r in _rows(irsa_gator("catwise_2020", ra0, dec0, r_deg * 3600,
+                                      ["source_name", "ra_pm", "dec_pm", "pmra", "pmdec", "sigpmra", "sigpmdec"]))
+            if r["ra_pm"] is not None]
+
+
+def _fetch_simbad(ra0, dec0, r_deg):
+    q = ("SELECT main_id, ra, dec, pmra, pmdec FROM basic WHERE CONTAINS(POINT('ICRS', ra, dec), "
+         f"CIRCLE('ICRS', {ra0}, {dec0}, {r_deg}))=1")
+    url = "https://simbad.harvard.edu/simbad/sim-tap/sync?" + urllib.parse.urlencode(
+        {"REQUEST": "doQuery", "LANG": "ADQL", "FORMAT": "votable", "QUERY": q})
+    with urllib.request.urlopen(url, timeout=60) as resp:
+        rows = _rows(resp.read())
+    return [{"name": r["main_id"], "ra": r["ra"], "dec": r["dec"], "pmra": r["pmra"] or 0.0,
+             "pmdec": r["pmdec"] or 0.0, "epoch": 2000.0} for r in rows if r["ra"] is not None]
 
 
 def _match(cat, ra, dec, pmra, pmdec, pm_err, r_arcsec=3.0):
@@ -1199,4 +1231,10 @@ def find_movers(m):
 
 @router.get("/api/sequences/{sid}/movers")
 def movers(sid: str):
-    return _cached(get_manifest(sid), "movers.json", find_movers)
+    """Needs only the WISE W2 visits: computed once every WISE unit is in (manifest wise_done), even while
+    SPHEREx frames are still arriving; cached on the WISE frame set."""
+    m = get_manifest(sid)
+    if not m["wise_done"]:
+        return {"movers": [], "rejected": [], "vetting": {}, "status": "insufficient data", "pending": True}
+    wise = [f for f in m["frames"] if f["survey"] == "wise"]
+    return _cached({**m, "frames": wise}, "movers.json", find_movers, key=["wise", len(wise)])

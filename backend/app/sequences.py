@@ -63,6 +63,9 @@ class SeqRequest(BaseModel):
     mjd_min: float | None = None
     mjd_max: float | None = None
     wise_exposures: bool = False  # every WISE exposure its own frame (asteroid hunting); needs a <= 30 d window
+    # fetched first so the default flipbook (W2 + D6) plays within seconds; not part of the sequence id. A
+    # repeat POST for a running job does not re-order its queue.
+    priority_bands: list[str] = ["W2", "D6"]
 
 
 def seq_dir(sid):
@@ -128,7 +131,7 @@ def start(req: SeqRequest) -> str:
                  "pipeline_version": PIPELINE_VERSION, "frames": []}
         man = Manifest(m)
         man.update(status="querying", error=None)
-        JOBS[sid] = JOB_POOL.submit(_run, man, p, wcs, shape)
+        JOBS[sid] = JOB_POOL.submit(_run, man, p, wcs, shape, req.priority_bands)
         JOBS[sid].add_done_callback(lambda _f: JOBS.pop(sid, None))
     return sid
 
@@ -188,7 +191,15 @@ def _in_window(f, p):
     return (p["mjd_min"] is None or f.mjd >= p["mjd_min"]) and (p["mjd_max"] is None or f.mjd <= p["mjd_max"])
 
 
-def _run(man: Manifest, p, wcs, shape):
+def order_units(units, priority_bands):
+    """Fetch order: WISE visits of the priority bands, SPHEREx frames of the priority bands, other WISE, other
+    SPHEREx; chronological within each. WISE first because /movers needs only WISE (wise_done)."""
+    prio = set(priority_bands)
+    return sorted(units, key=lambda u: ((0 if u[2][0].band in prio else 2) + (u[2][0].survey == "spherex"),
+                                        min(f.mjd for f in u[2])))
+
+
+def _run(man: Manifest, p, wcs, shape, priority_bands=()):
     sid = man.data["id"]
     try:
         raw = query_frames(*wcs.wcs.crval)
@@ -198,8 +209,9 @@ def _run(man: Manifest, p, wcs, shape):
         return
     have = {f["id"] for f in man.data["frames"]}
     units = _units([f for f in raw if _in_window(f, p)], p["wise_exposures"])
-    todo = [u for u in units if u[0] not in have]
-    man.update(status="fetching", total=len(units), done=len(units) - len(todo))
+    todo = order_units([u for u in units if u[0] not in have], priority_bands)
+    wise_left = {u[0] for u in todo if u[2][0].survey == "wise"}
+    man.update(status="fetching", total=len(units), done=len(units) - len(todo), wise_done=not wise_left)
     futs = {_submit(_make_chunk, sid, p, wcs, shape, chunk): chunk for chunk in _chunks(todo)}
     for fut in as_completed(futs):
         try:
@@ -207,8 +219,9 @@ def _run(man: Manifest, p, wcs, shape):
         except Exception:  # noqa: BLE001 - e.g. a worker process died; its frames are lost, not the sequence
             log.exception("worker task failed for %s", sid)
             results = [(fid, None) for fid, *_ in futs[fut]]
-        for _fid, frame in results:
-            man.update(frame=frame, unit_done=True)
+        for fid, frame in results:
+            wise_left.discard(fid)
+            man.update(frame=frame, unit_done=True, wise_done=not wise_left)
     man.update(status="done")
     log.info("sequence %s done: %d frames", sid, len(man.data["frames"]))
 
@@ -303,6 +316,7 @@ def get_manifest(sid):
     for f in m["frames"]:  # manifests written before these fields existed
         f.setdefault("kind", "single" if f["survey"] == "spherex" else "visit")
         f.setdefault("flag_names", [])
+    m.setdefault("wise_done", m["status"] == "done")  # manifests written before the field existed
     for survey in ("spherex", "wise"):
         fs = [f for f in m["frames"] if f["survey"] == survey]
         for f, g in zip(fs, group_by_gap([f["mjd"] for f in fs], 30)):

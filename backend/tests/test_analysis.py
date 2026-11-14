@@ -246,3 +246,15 @@ def test_vetting_keeps_a_real_mover():
     tracks = find_tracks(dets, years)
     assert len(tracks) == 1
     assert _vet_track(tracks[0], dets, years, ns, snrs, {}) is None
+
+
+def test_fetch_order_puts_priority_bands_and_wise_first():
+    from app.sequences import order_units
+
+    def f(survey, band, mjd, stem):
+        return RawFrame(survey, band, mjd, "", "", "", "", stem)
+
+    raw = [f("spherex", "D1", 61000, "a"), f("spherex", "D6", 61200, "b"), f("spherex", "D6", 61100, "c"),
+           f("wise", "W1", 58000, "w1a"), f("wise", "W2", 58300, "w2b"), f("wise", "W2", 55300, "w2a")]
+    order = [u[0] for u in order_units(_units(raw), ["W2", "D6"])]
+    assert order == ["wise-W2-v00", "wise-W2-v01", "sx-c", "sx-b", "wise-W1-v00", "sx-a"]
