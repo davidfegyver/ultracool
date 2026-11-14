@@ -1,0 +1,20 @@
+services:
+  api:
+    build: ./backend
+    environment:
+      CACHE_DIR: /data/cache
+    volumes:
+      - cache:/data/cache
+    restart: unless-stopped
+
+  web:
+    build: ./frontend
+    environment:
+      PUBLIC_HOSTNAME: ${PUBLIC_HOSTNAME:-localhost}
+    ports:
+      - "${PUBLIC_PORT:-8080}:80"
+    depends_on: [api]
+    restart: unless-stopped
+
+volumes:
+  cache:
