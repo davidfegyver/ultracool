@@ -20,16 +20,19 @@ from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel
 
 from . import sources
-from .config import CACHE_DIR, S3_MAX_CONCURRENCY, WORKER_PROCESSES
+from .config import CACHE_DIR, MAX_RUNNING_SEQUENCES, S3_MAX_CONCURRENCY, WORKER_PROCESSES
 from .frames import (PIX_ARCSEC, aperture_flux, clipped_mean, deep_stack, default_fov_deg, grid_wcs_json,
-                     group_by_gap, make_grid, mjd_to_year, propagate, render_diff_png, render_exposure_png, render_png,
-                     render_sigma_png)
+                     group_by_gap, load_grid, make_grid, mjd_to_year, propagate, render_diff_png, render_exposure_png,
+                     render_png, render_sigma_png, save_grid)
 from .sources import NoOverlap, query_frames, read_section
 
 log = logging.getLogger("ultracool.sequences")
 router = APIRouter()
 
-JOB_POOL = ThreadPoolExecutor(max_workers=4)  # one orchestrator thread per running sequence
+JOB_POOL = ThreadPoolExecutor(max_workers=MAX_RUNNING_SEQUENCES)  # one orchestrator thread per running sequence
+# worker tasks one sequence keeps queued at a time: with many sequences running (batch precompute), a newly
+# opened one queues behind a bounded number of tasks instead of behind every frame of every other sequence
+INFLIGHT_PER_SEQUENCE = 2 * WORKER_PROCESSES
 JOBS: dict[str, Future] = {}
 JOBS_LOCK = threading.Lock()
 # S3 reads are I/O bound, the rest is GIL-bound: WORKER_PROCESSES processes x READ_THREADS reader threads
@@ -48,8 +51,8 @@ WISE_R_AP, WISE_R_IN, WISE_R_OUT = 3.0, 50 / PIX_ARCSEC, 70 / PIX_ARCSEC
 WISE_APCORR = {"W1": 0.861, "W2": 0.846}
 MAX_EXPOSURE_WINDOW_D = 30
 # bump when photometry or frame processing changes: part of the sequence id, so old caches are not reused
-# (4: SPHEREx crowded-field background, frames.aperture_flux)
-PIPELINE_VERSION = 4
+# (4: SPHEREx crowded-field background, frames.aperture_flux; 5: grids stored quantised, frames.save_grid)
+PIPELINE_VERSION = 5
 ID_RE = re.compile(r"^[0-9a-f]{16}$")
 FRAME_RE = re.compile(r"^[\w.-]+$")
 
@@ -213,13 +216,25 @@ def _run(man: Manifest, p, wcs, shape, priority_bands=()):
     todo = order_units([u for u in units if u[0] not in have], priority_bands)
     wise_left = {u[0] for u in todo if u[2][0].survey == "wise"}
     man.update(status="fetching", total=len(units), done=len(units) - len(todo), wise_done=not wise_left)
-    futs = {_submit(_make_chunk, sid, p, wcs, shape, chunk): chunk for chunk in _chunks(todo)}
-    for fut in as_completed(futs):
+    chunks = iter(_chunks(todo))
+    futs: dict[Future, list] = {}
+
+    def submit_next():
+        chunk = next(chunks, None)
+        if chunk is not None:
+            futs[_submit(_make_chunk, sid, p, wcs, shape, chunk)] = chunk
+
+    for _ in range(INFLIGHT_PER_SEQUENCE):
+        submit_next()
+    while futs:
+        fut = next(as_completed(futs))
+        chunk = futs.pop(fut)
+        submit_next()
         try:
             results = fut.result()
         except Exception:  # noqa: BLE001 - e.g. a worker process died; its frames are lost, not the sequence
             log.exception("worker task failed for %s", sid)
-            results = [(fid, None) for fid, *_ in futs[fut]]
+            results = [(fid, None) for fid, *_ in chunk]
         for fid, frame in results:
             wise_left.discard(fid)
             man.update(frame=frame, unit_done=True, wise_done=not wise_left)
@@ -293,7 +308,7 @@ def _make_frame(sid, p, wcs, shape, fid, kind, ok):
         # ghosts and latents move between exposures and are clipped. Saturation is a note, not a reason to hide.
         flagged = any(c >= len(ok) / 2 for n, c in hits.items() if n != "SATURATED")
     d = seq_dir(sid)
-    np.save(d / "npy" / f"{fid}.npy", img)
+    save_grid(d / "npy" / fid, img)
     (render_exposure_png if kind == "exposure" else render_png)(img, d / "png" / f"{fid}.png")
     (d / "prov" / f"{fid}.json").write_text(json.dumps([f.key or f.access_url for f, _ in ok]))
     ny = shape[0]
@@ -340,10 +355,14 @@ def get_frame_png(sid: str, frame_id: str):
 
 
 def load_npy(sid, frame_id):
-    path = seq_dir(sid) / "npy" / f"{frame_id}.npy"
-    if not (ID_RE.match(sid) and FRAME_RE.match(frame_id) and path.exists()):
+    """Grid image of a frame: quantised .npz (current) or float .npy (caches written before it)."""
+    base = seq_dir(sid) / "npy" / frame_id
+    if not (ID_RE.match(sid) and FRAME_RE.match(frame_id)):
         raise HTTPException(404, f"Frame not found: {frame_id}")
-    return np.load(path)
+    img = load_grid(base)
+    if img is None:
+        raise HTTPException(404, f"Frame not found: {frame_id}")
+    return img
 
 
 def _png(render, *args):

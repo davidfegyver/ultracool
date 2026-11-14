@@ -33,6 +33,12 @@ Pre-compute the demo targets and lesson fields (optional, ~20 min):
 docker compose exec api python -m scripts.prewarm
 ```
 
+Pre-compute many objects, e.g. every T and Y dwarf in the SPIFF catalog (resumable; scales with CPU cores):
+
+```bash
+docker compose exec api python -m scripts.batch --spt-min T0 --spt-max Y1 --movers --state /data/cache/batch_TY.jsonl
+```
+
 ## How it works
 
 ```mermaid

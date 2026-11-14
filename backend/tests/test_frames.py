@@ -77,3 +77,19 @@ def test_crowded_annulus_uses_mode_sky_and_confusion_error():
     net, err = aperture_flux(img, 30, 30, 2, 4, 7, var=var, bkg_mask=src)
     assert err > 2 * err_plain  # confusion dominates the pixel noise
     assert abs(net) < 4 * err
+
+
+def test_grid_quantisation_round_trip(tmp_path):
+    from app.frames import load_grid, save_grid
+    rng = np.random.default_rng(7)
+    img = rng.normal(100, 2.0, (50, 50)).astype(np.float32)
+    img[10, 10] = 5e6  # saturated-star level: beyond int16 steps, kept exactly
+    img[:3, :] = np.nan
+    save_grid(tmp_path / "f", img)
+    out = load_grid(tmp_path / "f")
+    assert np.array_equal(np.isnan(out), np.isnan(img))
+    assert out[10, 10] == img[10, 10]
+    fin = np.isfinite(img)
+    assert np.max(np.abs(out[fin] - img[fin])) <= 2.0 / 16 / 2 * 1.1  # half a step of sigma / 16
+    np.save(tmp_path / "old.npy", img)  # caches written before quantisation still load
+    assert np.array_equal(load_grid(tmp_path / "old"), img, equal_nan=True)
