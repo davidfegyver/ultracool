@@ -12,6 +12,9 @@ import urllib.request
 API = os.getenv("API_URL", "http://localhost:8000")
 TARGETS = ["Barnard's Star", "eps Ind B", "WISE J085510.83-071442.5", "RW Aur", "R Dra",
            "WISEA J153429.75-104303.3", "WISE J231728.42-665959.3"]
+# Discover-mode example fields (0.25 deg, the Discover field size); keep in sync with frontend Discover examples
+DISCOVER = ["WISE J231728.42-665959.3", "WISEA J153429.75-104303.3", "eps Ind B"]
+DISCOVER_FOV_DEG = 0.25
 _EPS_IND_PM = {"pmra_masyr": 3966.661, "pmdec_masyr": -2536.192, "epoch_yr": 2000.0}
 # Learn-mode fields whose request differs from a plain resolve; keep in sync with frontend/src/lessons.ts
 LESSONS = {
@@ -41,9 +44,12 @@ def call(path, body=None):
 
 def main():
     started = {}
-    for q in TARGETS:
-        r = call("/api/resolve?" + urllib.parse.urlencode({"q": q}))
+    for q in TARGETS + [f"discover: {q}" for q in DISCOVER]:
+        name = q.removeprefix("discover: ")
+        r = call("/api/resolve?" + urllib.parse.urlencode({"q": name}))
         body = {k: r[k] for k in ("ra", "dec", "pmra_masyr", "pmdec_masyr", "epoch_yr")}
+        if q.startswith("discover: "):
+            body["fov_deg"] = DISCOVER_FOV_DEG
         started[q] = (call("/api/sequences", body)["id"], time.time())
     for name, body in LESSONS.items():
         started[name] = (call("/api/sequences", body)["id"], time.time())
@@ -57,8 +63,10 @@ def main():
     for q, (sid, _) in started.items():
         try:
             call(f"/api/sequences/{sid}/summary")
+            if q.startswith("discover: "):
+                call(f"/api/sequences/{sid}/movers")
         except Exception as e:  # noqa: BLE001 - a failed warm-up only costs the first visitor time
-            print(f"summary warm-up failed for {q}: {e}", flush=True)
+            print(f"summary/movers warm-up failed for {q}: {e}", flush=True)
 
 
 if __name__ == "__main__":
