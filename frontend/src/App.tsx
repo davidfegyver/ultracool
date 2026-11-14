@@ -1,10 +1,13 @@
 import type { Aladin } from 'aladin-lite'
 import { useCallback, useEffect, useState } from 'react'
-import { getSequence, resolveTarget, startSequence, type Resolved, type Sequence } from './api'
+import { getSequence, resolveTarget, startSequence, ucdsNear, type Resolved, type Sequence, type Ucd } from './api'
+import Catalogs from './components/Catalogs'
 import LayersPanel from './components/LayersPanel'
 import Player, { FrameRows, type Flipbook } from './components/Player'
+import PlotsPanel from './components/PlotsPanel'
 import SkyView from './components/SkyView'
 import TargetBar from './components/TargetBar'
+import UcdSearch from './components/UcdSearch'
 import { readUrl, writeUrl } from './url'
 
 const initialUrl = readUrl()
@@ -25,6 +28,10 @@ export default function App() {
     fps: 1,
     showOnSky: true,
   })
+  const [known, setKnown] = useState<Ucd | null>(null)
+  const [skyUcds, setSkyUcds] = useState<Ucd[]>([])
+  const [spiffOn, setSpiffOn] = useState(false)
+  const [, setCatalogCount] = useState(0)
 
   const setFlipbook = useCallback((patch: Partial<Flipbook>) => {
     setFb((prev) => {
@@ -88,6 +95,17 @@ export default function App() {
     }
   }, [resolved])
 
+  useEffect(() => {
+    setKnown(null)
+    if (resolved) ucdsNear(resolved).then((r) => setKnown(r[0] ?? null)).catch(() => setKnown(null))
+  }, [resolved])
+
+  const pickUcd = (u: Ucd) => {
+    setFlipbook({ frameId: null, playing: false, excluded: new Set() })
+    writeUrl({ target: u.designation, ra: u.ra.toFixed(6), dec: u.dec.toFixed(6), frame: null })
+    setResolved({ name: u.designation, ra: u.ra, dec: u.dec, pmra_masyr: 0, pmdec_masyr: 0, epoch_yr: 2000, otype: null, sptype: u.spiff_autotype })
+  }
+
   return (
     <div className="flex h-screen flex-col bg-slate-950 text-slate-100">
       <TargetBar
@@ -100,22 +118,53 @@ export default function App() {
           writeUrl({ frame: null })
           lookup(q)
         }}
+        badge={
+          known && (
+            <span className="rounded bg-fuchsia-900 px-2 py-0.5 text-xs">
+              Known UCD: {known.spiff_autotype} (SPIFF){known.literature_spectral_type && `, lit. ${known.literature_spectral_type}`}
+            </span>
+          )
+        }
       />
       <div className="flex min-h-0 flex-1">
-        <div className="min-w-0 flex-1">
-          {resolved && (
-            // grid centre = 2018 position, so high-PM stars sit in the middle of the flipbook overlay
-            <SkyView
-              ra={seq ? Number(seq.grid.wcs.CRVAL1) : resolved.ra}
-              dec={seq ? Number(seq.grid.wcs.CRVAL2) : resolved.dec}
-              fov={initialUrl.fov ?? 0.25}
-              onReady={setAladin}
-            />
-          )}
+        <div className="flex min-w-0 flex-1 flex-col">
+          <div className="min-h-0 flex-1">
+            {resolved && (
+              // grid centre = 2018 position, so high-PM stars sit in the middle of the flipbook overlay
+              <SkyView
+                ra={seq ? Number(seq.grid.wcs.CRVAL1) : resolved.ra}
+                dec={seq ? Number(seq.grid.wcs.CRVAL2) : resolved.dec}
+                fov={initialUrl.fov ?? 0.25}
+                onReady={setAladin}
+              />
+            )}
+          </div>
+          <div className="flex h-72 shrink-0 border-t border-slate-700 bg-slate-900">
+            <div className="min-w-0 flex-1">
+              <PlotsPanel seq={seq} />
+            </div>
+            <div className="w-[30rem] shrink-0 border-l border-slate-700">
+              <UcdSearch
+                onPick={pickUcd}
+                onShowOnSky={(rows) => {
+                  setSkyUcds(rows)
+                  setSpiffOn(true)
+                }}
+              />
+            </div>
+          </div>
         </div>
         <aside className="w-96 shrink-0 overflow-y-auto border-l border-slate-700 bg-slate-900">
           <Player seq={seq} fb={fb} set={setFlipbook} aladin={aladin} />
-          <LayersPanel aladin={aladin} frames={<FrameRows seq={seq} fb={fb} set={setFlipbook} />} />
+          <LayersPanel
+            aladin={aladin}
+            frames={<FrameRows seq={seq} fb={fb} set={setFlipbook} />}
+            catalogs={
+              aladin && (
+                <Catalogs aladin={aladin} ucds={skyUcds} spiffOn={spiffOn} setSpiffOn={setSpiffOn} onVisibleCount={setCatalogCount} />
+              )
+            }
+          />
         </aside>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import type { Aladin, ImageLayer } from 'aladin-lite'
-import { useRef, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode, type RefObject } from 'react'
 import { DEFAULT_BASE, HIPS_URL } from './SkyView'
 
 const OVERLAYS = [
@@ -69,31 +69,84 @@ export function LayerRow(props: {
   )
 }
 
-function OverlayRow({ aladin, id }: { aladin: Aladin; id: string }) {
+type OverlayProps = {
+  aladin: Aladin
+  id: string
+  label?: ReactNode
+  opts?: Record<string, unknown>
+  layerRef?: RefObject<ImageLayer | null>
+  children?: ReactNode
+}
+
+/** HiPS overlay created lazily on first eye-on; eye off = opacity 0. */
+function OverlayRow({ aladin, id, label, opts, layerRef, children }: OverlayProps) {
   const [on, setOn] = useState(false)
   const [opacity, setOpacity] = useState(0.6)
-  const layer = useRef<ImageLayer | null>(null)
+  const own = useRef<ImageLayer | null>(null)
+  const layer = layerRef ?? own
   const apply = (nextOn: boolean, o: number) => {
     if (nextOn && !layer.current) {
-      layer.current = aladin.newImageSurvey(HIPS_URL[id] ?? id)
+      layer.current = aladin.newImageSurvey(HIPS_URL[id] ?? id, opts)
       aladin.setOverlayImageLayer(layer.current, id)
     }
     layer.current?.setOpacity(nextOn ? o : 0)
   }
   return (
-    <LayerRow
-      label={id.replace('CDS/P/', '')}
-      on={on}
-      onToggle={() => {
-        setOn(!on)
-        apply(!on, opacity)
-      }}
-      opacity={opacity}
-      onOpacity={(o) => {
-        setOpacity(o)
-        apply(on, o)
-      }}
-    />
+    <>
+      <LayerRow
+        label={label ?? id.replace('CDS/P/', '')}
+        on={on}
+        onToggle={() => {
+          setOn(!on)
+          apply(!on, opacity)
+        }}
+        opacity={opacity}
+        onOpacity={(o) => {
+          setOpacity(o)
+          apply(on, o)
+        }}
+      />
+      {on && children}
+    </>
+  )
+}
+
+const CUBE_URL = 'https://irsa.ipac.caltech.edu/data/hips/SPHEREx/spherex_allsky_cube'
+// slots 50 and 51 are the blank dichroic channels
+const CUBE_SLICES = [...Array(102).keys()].filter((i) => i !== 50 && i !== 51)
+
+/** SPHEREx DR1 102-channel all-sky cube with a wavelength slider. */
+function CubeRow({ aladin }: { aladin: Aladin }) {
+  const layer = useRef<ImageLayer | null>(null)
+  const [pos, setPos] = useState(0)
+  const [microns, setMicrons] = useState<string[]>([])
+  useEffect(() => {
+    fetch(`${CUBE_URL}/properties`)
+      .then((r) => r.text())
+      .then((t) => setMicrons(t.match(/^data_cube_crval3_arr\s*=\s*(.*)$/m)?.[1].trim().split(/\s+/) ?? []))
+      .catch(() => setMicrons([]))
+  }, [])
+  const slice = CUBE_SLICES[pos]
+  return (
+    // emMin/emMax only feed setSliceNumber's linear slice<->frequency mapping; any consistent pair works
+    <OverlayRow aladin={aladin} id={CUBE_URL} label="SPHEREx DR1 cube" opts={{ emMin: 1, emMax: 103 }} layerRef={layer}>
+      <label className="flex items-center gap-2 px-2 pb-1 pl-9 text-xs">
+        <input
+          aria-label="SPHEREx cube wavelength"
+          type="range"
+          className="flex-1"
+          min={0}
+          max={CUBE_SLICES.length - 1}
+          value={pos}
+          onChange={(e) => {
+            const p = Number(e.target.value)
+            setPos(p)
+            layer.current?.setSliceNumber(CUBE_SLICES[p])
+          }}
+        />
+        <span className="w-16 text-right">{microns[slice] ? `${microns[slice]} µm` : `#${slice}`}</span>
+      </label>
+    </OverlayRow>
   )
 }
 
@@ -101,10 +154,9 @@ type Props = {
   aladin: Aladin | null
   frames: ReactNode
   catalogs?: ReactNode
-  extraOverlays?: ReactNode
 }
 
-export default function LayersPanel({ aladin, frames, catalogs, extraOverlays }: Props) {
+export default function LayersPanel({ aladin, frames, catalogs }: Props) {
   const [base, setBase] = useState(DEFAULT_BASE)
   return (
     <div className="text-slate-200">
@@ -113,7 +165,7 @@ export default function LayersPanel({ aladin, frames, catalogs, extraOverlays }:
       {aladin && (
         <>
           <Group title="Survey overlays">
-            {extraOverlays}
+            <CubeRow aladin={aladin} />
             {OVERLAYS.map((id) => (
               <OverlayRow key={id} aladin={aladin} id={id} />
             ))}

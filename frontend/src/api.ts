@@ -61,3 +61,30 @@ export const startSequence = (r: Resolved) =>
   })
 
 export const getSequence = (id: string) => get<Sequence>(`/api/sequences/${id}`)
+
+export type SpecFit = { label: string; prob: number; chi2_red: number; n_bins: number }
+export type Spectrum = {
+  verdict: string
+  best: SpecFit | null
+  ranking: SpecFit[]
+  binned: { wavelength_um: number; flambda: number; err: number }[]
+  template_curve: { label: string; wavelength_um: number[]; flambda: number[] } | null
+}
+export const getSpectrum = (id: string) => get<Spectrum>(`/api/sequences/${id}/spectrum`)
+
+export type Ucd = {
+  designation: string
+  ra: number
+  dec: number
+  dataset: string
+  spiff_autotype: string
+  spiff_chi2_r: number | null
+  literature_spectral_type: string | null
+}
+export const searchUcds = (p: { spt_min?: string; spt_max?: string; dataset?: string; limit?: number }) =>
+  get<Ucd[]>(`/api/ucds?${qs(p)}`)
+export const ucdDatasets = () => get<string[]>('/api/ucds/datasets')
+export const ucdsNear = (r: Resolved) =>
+  get<(Ucd & { sep_arcsec: number })[]>(
+    `/api/ucds/near?${qs({ ra: r.ra, dec: r.dec, pmra_masyr: r.pmra_masyr, pmdec_masyr: r.pmdec_masyr, epoch_yr: r.epoch_yr })}`,
+  )

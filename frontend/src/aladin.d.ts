@@ -21,6 +21,7 @@ declare module 'aladin-lite' {
     setFoV(fov: number): void
     getFov(): [number, number]
     setBaseImageLayer(idOrLayer: string | ImageLayer): void
+    getRaDec(): [number, number]
     newImageSurvey(id: string, opts?: Record<string, unknown>): ImageLayer
     setOverlayImageLayer(layer: ImageLayer, name: string): ImageLayer
     removeImageLayer(name: string): void
