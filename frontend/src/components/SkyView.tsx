@@ -22,10 +22,12 @@ type Props = {
   /** right-click (without dragging: right-drag is Aladin's contrast control) or touch long-press: sky position and
    * client px. Left-drag panning never calls it. */
   onPick?: (ra: number, dec: number, clientX: number, clientY: number) => void
+  /** only zoom and fullscreen: no frame selector, projection button, coordinate or field-of-view readouts */
+  minimal?: boolean
 }
 
 /** Aladin Lite sky view. Initialised once (StrictMode mounts effects twice); target changes recentre. */
-export default function SkyView({ ra, dec, fov, onReady, onPick }: Props) {
+export default function SkyView({ ra, dec, fov, onReady, onPick, minimal }: Props) {
   const div = useRef<HTMLDivElement>(null)
   const started = useRef(false)
   const aladin = useRef<Aladin | null>(null)
@@ -44,6 +46,7 @@ export default function SkyView({ ra, dec, fov, onReady, onPick }: Props) {
         cooFrame: 'ICRS',
         showReticle: true,
         showLayersControl: false,
+        ...(minimal && { showFrame: false, showProjectionControl: false, showCooLocation: false, showFov: false }),
       })
       a.on('zoomChanged', (f) => writeUrl({ fov: Number(f).toFixed(4) }))
       const el = div.current!

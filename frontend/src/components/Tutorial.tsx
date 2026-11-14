@@ -136,6 +136,17 @@ export function TutorialSteps({ onDone }: { onDone?: () => void }) {
   )
 }
 
+const GUIDE_URL = 'https://github.com/davidfegyver/ultracool/blob/main/docs/GUIDE.md'
+
+/** "Read the full guide" (new tab) */
+export function GuideLink({ className = '' }: { className?: string }) {
+  return (
+    <a className={`text-sky-400 underline ${className}`} href={GUIDE_URL} target="_blank" rel="noreferrer">
+      Read the full guide<span className="sr-only"> (opens in a new tab)</span> ↗
+    </a>
+  )
+}
+
 /** The tutorial as a modal (Help button). Native <dialog>: focus trap and Esc come for free. */
 export default function TutorialDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null)
@@ -154,7 +165,8 @@ export default function TutorialDialog({ open, onClose }: { open: boolean; onClo
         <h2 id="tutorial-title" className="text-lg font-semibold">
           How to read a flipbook
         </h2>
-        <button className="ml-auto rounded px-2 text-slate-400 hover:bg-slate-800" aria-label="Close tutorial" onClick={onClose}>
+        <GuideLink className="ml-auto text-sm" />
+        <button className="ml-2 rounded px-2 text-slate-400 hover:bg-slate-800" aria-label="Close tutorial" onClick={onClose}>
           ✕
         </button>
       </div>

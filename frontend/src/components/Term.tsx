@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useId, useState, type ReactNode } from 'react'
 
 const GLOSSARY = {
   'proper motion': 'How fast a star slides across the sky, in arcseconds per year. Only nearby objects move enough to see.',
@@ -14,14 +14,34 @@ const GLOSSARY = {
 } as const
 export type GlossaryTerm = keyof typeof GLOSSARY
 
-/** Jargon word with a hover/focus explanation. */
+/** Jargon word with a hover/focus explanation. The tooltip is `position: fixed` at the word, so it never widens a
+ * scrolling panel (an absolute one made the sidebar scroll sideways). */
 export default function Term({ k, children }: { k: GlossaryTerm; children?: ReactNode }) {
+  const id = useId()
+  const [at, setAt] = useState<{ left: number; top: number } | null>(null)
+  const show = (e: React.SyntheticEvent<HTMLSpanElement>) => {
+    const r = e.currentTarget.getBoundingClientRect()
+    setAt({ left: Math.max(8, Math.min(r.left, innerWidth - 264)), top: r.top - 4 })
+  }
+  const hide = () => setAt(null)
   return (
-    <span tabIndex={0} className="group relative cursor-help underline decoration-dotted underline-offset-2 focus:outline-none focus-visible:ring-1 focus-visible:ring-sky-400">
+    <span
+      tabIndex={0}
+      aria-describedby={id}
+      className="cursor-help underline decoration-dotted underline-offset-2 focus:outline-none focus-visible:ring-1 focus-visible:ring-sky-400"
+      onMouseEnter={show}
+      onMouseLeave={hide}
+      onFocus={show}
+      onBlur={hide}
+      onKeyDown={(e) => e.key === 'Escape' && hide()}
+    >
       {children ?? k}
       <span
+        id={id}
         role="tooltip"
-        className="invisible absolute bottom-full left-0 z-30 mb-1 w-64 rounded bg-slate-700 p-2 text-xs font-normal text-slate-100 normal-case no-underline shadow-lg group-hover:visible group-focus:visible"
+        hidden={!at}
+        className="fixed z-50 w-64 -translate-y-full rounded bg-slate-700 p-2 text-xs font-normal text-slate-100 normal-case no-underline shadow-lg"
+        style={at ?? undefined}
       >
         {GLOSSARY[k]}
       </span>

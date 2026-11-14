@@ -13,6 +13,12 @@ export type UrlState = {
   /** probe point (ra, dec at epoch 2000) and its adopted proper motion (mas/yr) */
   probe: [number, number] | null
   probe_pm: [number, number] | null
+  /** proper motion (mas/yr) and sequence field size (deg) of a target given by ra/dec */
+  pm: [number, number] | null
+  field: number | null
+  /** time window [mjd_min, mjd_max] and single-exposure mode of the sequence */
+  win: [number, number] | null
+  exposures: boolean
 }
 
 const num = (v: string | null) => (v === null || v === '' || isNaN(Number(v)) ? null : Number(v))
@@ -35,6 +41,10 @@ export function readUrl(): UrlState {
     bands: p.get('bands') ? p.get('bands')!.split(',') : null,
     probe: pair(p.get('probe')),
     probe_pm: pair(p.get('probe_pm')),
+    pm: pair(p.get('pm')),
+    field: num(p.get('field')),
+    win: pair(p.get('win')),
+    exposures: p.get('exposures') === '1',
   }
 }
 

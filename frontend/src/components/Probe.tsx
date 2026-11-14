@@ -1,21 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Frame, Sequence } from '../api'
+import { waitText, type Frame, type Sequence } from '../api'
 import { downloadCsv } from '../csv'
 import type { ProbeCtl, ProbePoint } from '../hooks'
-import { propagate, pxToWorld, worldToPx } from '../sky'
+import { APERTURE, MJD_2018, PIX_ARCSEC, propagate, pxToWorld, worldToPx } from '../sky'
 import FoundPanel from './FoundPanel'
 import Pending from './Pending'
 import PlotsPanel from './PlotsPanel'
 import { PhotometryTables } from './ResearchPanel'
 
-const PIX_ARCSEC = 2.75
-// photometry aperture radii of the backend (SPHEREx 2 native px, WISE 3 grid px) and their sky annuli
-const APERTURE: Record<Frame['survey'], { r: number; sky: [number, number] }> = {
-  spherex: { r: 12.3, sky: [24.6, 43] },
-  wise: { r: 8.25, sky: [50, 70] },
-}
 const CYAN = '#22d3ee'
-const MJD_2018 = 58119 // grid epoch, used when no frame is on screen
+const OUTSIDE_HINT = 'Outside the measurable field (25″ in from its edge): drag the probe inside, or use Centre field here.'
 
 /** Probe point drawn inside the flipbook SVG (grid px): cyan crosshair, the frame's photometry aperture (solid) and sky
  * annulus (dashed). Drag (mouse/touch) or arrow keys (Shift = 5 px) move it; release, a click or Enter opens the action
@@ -134,7 +128,7 @@ export function ProbeMenu({ probe, onCentre }: { probe: ProbeCtl; onCentre: (p: 
   useEffect(() => {
     if (!menu) return
     back.current = document.activeElement as HTMLElement | null
-    ref.current?.querySelector('button')?.focus()
+    ref.current?.querySelector<HTMLButtonElement>('button:not(:disabled)')?.focus()
     const away = (e: PointerEvent) => !ref.current?.contains(e.target as Node) && setMenu(null)
     document.addEventListener('pointerdown', away)
     return () => document.removeEventListener('pointerdown', away)
@@ -163,9 +157,14 @@ export function ProbeMenu({ probe, onCentre }: { probe: ProbeCtl; onCentre: (p: 
         {point.ra.toFixed(5)}, {point.dec.toFixed(5)}
         {(point.pmra_masyr !== 0 || point.pmdec_masyr !== 0) && <div className="text-slate-400">μ {(Math.hypot(point.pmra_masyr, point.pmdec_masyr) / 1000).toFixed(2)}″/yr</div>}
       </div>
-      <button role="menuitem" className={item} disabled={!probe.sid} onClick={() => probe.measure('preview')}>
+      <button role="menuitem" className={item} disabled={!probe.sid || probe.outside} aria-describedby={probe.outside ? 'probe-outside-menu' : undefined} onClick={() => probe.measure('preview')}>
         Measure this source
       </button>
+      {probe.outside && (
+        <p id="probe-outside-menu" className="px-2 pb-1 text-amber-300">
+          {OUTSIDE_HINT}
+        </p>
+      )}
       <button
         role="menuitem"
         className={item}
@@ -193,7 +192,7 @@ export function ProbePanel({ probe, research }: { probe: ProbeCtl; research: boo
     if (busy) box.current?.scrollIntoView({ block: 'start' })
   }, [busy])
   if (!point && !d)
-    return <p className="p-2 text-xs text-slate-500">Drag the cyan probe in the flipbook, or right-click the sky map, to measure any source in the field.</p>
+    return <p className="p-2 text-xs text-slate-500">Drag the cyan probe in the flipbook, or right-click any spot of the field, to measure the source there.</p>
   const moved = d && point !== probe.measuredAt
   const full = d?.mode === 'full'
   const btn = 'rounded px-2 py-1 enabled:hover:bg-sky-600 disabled:opacity-50'
@@ -224,7 +223,7 @@ export function ProbePanel({ probe, research }: { probe: ProbeCtl; research: boo
       {moved && <p className="text-amber-300">The probe has moved since this measurement.</p>}
       <div className="flex flex-wrap items-center gap-2">
         {(!d || moved) && (
-          <button className={`${btn} bg-sky-700`} disabled={busy || !probe.sid} onClick={() => probe.measure('preview')}>
+          <button className={`${btn} bg-sky-700`} disabled={busy || !probe.sid || probe.outside} aria-describedby={probe.outside ? 'probe-outside-panel' : undefined} onClick={() => probe.measure('preview')}>
             Measure this source
           </button>
         )}
@@ -242,10 +241,18 @@ export function ProbePanel({ probe, research }: { probe: ProbeCtl; research: boo
           </button>
         )}
       </div>
+      {probe.outside && (
+        <p id="probe-outside-panel" className="text-amber-300">
+          {OUTSIDE_HINT}
+        </p>
+      )}
       {busy && !progress && <Pending note="Measuring…" busy />}
       {progress && (
         <div role="status" aria-label="Full measurement progress">
-          <div className="mb-1 text-slate-400">Full measurement: {progress.total ? `${progress.done}/${progress.total} frames` : 'queued…'}</div>
+          <div className="mb-1 text-slate-400">
+            Full measurement: {progress.total ? `${progress.done}/${progress.total} frames` : 'queued…'}
+            {progress.queue_position ? ` · ${waitText(progress.queue_position)}` : ''}
+          </div>
           <div className="h-1.5 rounded bg-slate-700">
             <div className="h-1.5 rounded bg-cyan-500" style={{ width: `${progress.total ? (100 * progress.done) / progress.total : 3}%` }} />
           </div>
@@ -263,7 +270,7 @@ export function ProbePanel({ probe, research }: { probe: ProbeCtl; research: boo
         ))}
       {d && (
         <div className="h-64 border border-slate-700">
-          <PlotsPanel seq={null} probe={{ frames: d.frames, spectrum: d.spectrum }} />
+          <PlotsPanel seq={null} probe={{ frames: d.frames, spectrum: d.spectrum }} research={research} />
         </div>
       )}
     </div>

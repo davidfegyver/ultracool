@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { candidatePeriods, getSummary, resolveTarget, type Frame, type Resolved, type Sequence } from '../api'
 import { useFlipbook, useSeqResult, useSequence } from '../hooks'
 import { LESSONS, type Lesson } from '../lessons'
@@ -153,7 +153,7 @@ function LessonView({ lesson, n, onCorrect, onNext }: { lesson: Lesson; n: numbe
       />
     </div>
   )
-  const alt = lesson.alternative
+  const next = lesson.try_next
 
   return (
     <div className="flex min-w-0 flex-1">
@@ -170,16 +170,17 @@ function LessonView({ lesson, n, onCorrect, onNext }: { lesson: Lesson; n: numbe
           <h3 className="mb-1 font-semibold text-pink-300">What to look for</h3>
           <p className="leading-relaxed">{lesson.look_for}</p>
         </aside>
-        <Quiz key={lesson.id} quiz={lesson.quiz} onCorrect={onCorrect} />
-        {alt && (
-          <p className="text-slate-400">
-            Also try{' '}
-            <a className="text-sky-400 underline" href={`?${new URLSearchParams({ mode: 'explore', target: alt.target })}`}>
-              {alt.object}
-            </a>
-            : {alt.note}.
-          </p>
-        )}
+        <Quiz key={lesson.id} quiz={lesson.quiz} onCorrect={onCorrect}>
+          {next && (
+            <p className="mt-2 text-slate-300">
+              Try it on another object:{' '}
+              <a className="text-sky-400 underline" href={`?${new URLSearchParams(next.params)}`}>
+                {next.object}
+              </a>
+              , {next.note}.
+            </p>
+          )}
+        </Quiz>
         {lesson.more_examples && (
           <section aria-labelledby="more-examples" className="rounded bg-slate-900 p-3">
             <h3 id="more-examples" className="font-semibold">
@@ -225,7 +226,8 @@ function LessonView({ lesson, n, onCorrect, onNext }: { lesson: Lesson; n: numbe
   )
 }
 
-function Quiz({ quiz, onCorrect }: { quiz: Lesson['quiz']; onCorrect: () => void }) {
+/** Multiple-choice quiz; `children` (the "try it" hand-off) appear once an answer has been checked. */
+function Quiz({ quiz, onCorrect, children }: { quiz: Lesson['quiz']; onCorrect: () => void; children?: ReactNode }) {
   const [choice, setChoice] = useState<number | null>(null)
   const [checked, setChecked] = useState(false)
   const right = checked && choice === quiz.answer_index
@@ -265,6 +267,7 @@ function Quiz({ quiz, onCorrect }: { quiz: Lesson['quiz']; onCorrect: () => void
           {right && quiz.explanation}
         </p>
       )}
+      {checked && children}
     </form>
   )
 }

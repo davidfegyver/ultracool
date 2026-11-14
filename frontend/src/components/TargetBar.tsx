@@ -1,7 +1,18 @@
-import { useState, type ReactNode } from 'react'
+import { useRef, useState, type ReactNode } from 'react'
 import type { Resolved } from '../api'
 
-export const TEST_TARGETS = ["Barnard's Star", 'eps Ind B', 'WISE J085510.83-071442.5', 'RW Aur', 'R Dra']
+export type Example = { q: string; label: string }
+/** pre-computed by scripts/prewarm.py (keep in sync), so they open without waiting */
+export const EXAMPLES: Example[] = [
+  { q: "Barnard's Star", label: "Barnard's Star" },
+  { q: 'eps Ind B', label: 'eps Ind B' },
+  { q: 'WISE J085510.83-071442.5', label: 'WISE 0855' },
+  { q: 'WISE J231728.42-665959.3', label: 'WISE J2317−6659 (featured)' },
+  { q: 'WISEA J153429.75-104303.3', label: 'WISEA J1534−1043' },
+  { q: 'RW Aur', label: 'RW Aur' },
+  { q: 'R Dra', label: 'R Dra' },
+  { q: 'AL Boo', label: 'AL Boo' },
+]
 
 type Props = {
   initial: string
@@ -10,14 +21,16 @@ type Props = {
   error: string | null
   badge?: ReactNode
   onSubmit: (q: string) => void
-  /** quick-pick buttons (default: the test targets) */
-  quick?: string[]
-  /** extra controls after the quick picks */
+  /** pre-computed picks in a dropdown (default: EXAMPLES) */
+  examples?: Example[]
+  examplesLabel?: string
+  /** extra controls after the examples */
   children?: ReactNode
 }
 
-export default function TargetBar({ initial, resolved, busy, error, badge, onSubmit, quick = TEST_TARGETS, children }: Props) {
+export default function TargetBar({ initial, resolved, busy, error, badge, onSubmit, examples = EXAMPLES, examplesLabel = 'Examples', children }: Props) {
   const [q, setQ] = useState(initial)
+  const menu = useRef<HTMLDetailsElement>(null)
   const go = (s: string) => {
     setQ(s)
     if (s.trim()) onSubmit(s.trim())
@@ -43,11 +56,26 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
           Go
         </button>
       </form>
-      {quick.map((t) => (
-        <button key={t} className="rounded bg-slate-700 px-2 py-1 text-xs hover:bg-slate-600" onClick={() => go(t)}>
-          {t}
-        </button>
-      ))}
+      {/* a disclosure, not a <select>: arrow keys on a closed select fire change and would load every example on the way */}
+      <details ref={menu} className="relative text-xs">
+        <summary className="cursor-pointer list-none rounded bg-slate-700 px-2 py-1 hover:bg-slate-600">{examplesLabel} ▾</summary>
+        <ul className="absolute z-40 mt-1 w-64 rounded border border-slate-600 bg-slate-900 p-1 shadow-xl">
+          {examples.map((x) => (
+            <li key={x.q}>
+              <button
+                className="flex w-full items-center justify-between gap-2 rounded px-2 py-1 text-left hover:bg-slate-700 focus:bg-slate-700 focus:outline-none"
+                onClick={() => {
+                  menu.current!.open = false
+                  go(x.q)
+                }}
+              >
+                {x.label}
+                <span className="text-[10px] text-emerald-400">ready instantly</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </details>
       {children}
       <div className="ml-auto flex items-center gap-3 text-sm">
         {busy && <span className="text-slate-400">Resolving…</span>}

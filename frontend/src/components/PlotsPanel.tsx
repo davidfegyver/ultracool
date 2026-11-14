@@ -2,7 +2,7 @@ import Plotly from 'plotly.js-dist-min'
 import { useEffect, useRef, useState } from 'react'
 import createPlotlyComponent from 'react-plotly.js/factory'
 import { getCatalogLightcurve, getSpectrum, type CatalogLightcurve, type ProbeFrame, type Sequence, type Spectrum } from '../api'
-import { mjdToIso } from '../sky'
+import { mjdToIso, mjdToYear } from '../sky'
 import { ALL_BANDS } from './Player'
 
 export const Plot = createPlotlyComponent(Plotly)
@@ -31,14 +31,36 @@ type Props = {
   bands?: string[]
   /** plot a probe measurement instead of the sequence target (pass seq null): nothing is fetched */
   probe?: { frames: ProbeFrame[]; spectrum: Spectrum | null }
+  /** Research mode: fit numbers and the per-frame "by date" spectrum; otherwise a plain-English header */
+  research?: boolean
 }
 
-export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe }: Props) {
+// /spectrum F_λ values are F_ν(µJy)/λ(µm)²; F_λ = c F_ν / λ² = 2.998e-18 W m⁻² µm⁻¹ per µJy/µm²
+const TO_FLAMBDA = 2.998
+const FLAMBDA_AXIS = 'F_λ (10⁻¹⁸ W m⁻² µm⁻¹)<br><sub>brightness at each wavelength</sub>'
+
+/** "Looks like a T5 brown dwarf (good fit)" or the verdict as a sentence (Explore and Learn). */
+function plainSpectrum(spec: Spectrum | null) {
+  if (!spec) return ''
+  const b = spec.best
+  if (spec.verdict === 'match' && b) {
+    const fit = b.chi2_red <= 2 ? 'good fit' : b.chi2_red <= 5 ? 'fair fit' : 'rough fit'
+    return `Looks like ${/^[ML]/.test(b.label) ? 'an' : 'a'} ${b.label} ${b.label.startsWith('M') ? 'dwarf' : 'brown dwarf'} (${fit})`
+  }
+  if (spec.verdict === 'insufficient data') return 'Not enough SPHEREx measurements to tell its type'
+  if (spec.verdict.startsWith('not consistent')) return 'Does not look like a brown dwarf'
+  return spec.verdict.charAt(0).toUpperCase() + spec.verdict.slice(1)
+}
+
+export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe, research = false }: Props) {
   const [tab, setTab] = useState<'lc' | 'spec'>('lc')
   // linear by default: faint targets have zero or negative fluxes, which a log axis silently drops
   const [logY, setLogY] = useState(false)
   const [foldAt, setFoldAt] = useState<number | null>(null)
   const [showCatalog, setShowCatalog] = useState(true)
+  // SPHEREx points are each at a different wavelength: not a light curve unless asked for
+  const [showSpherex, setShowSpherex] = useState(false)
+  const [byDate, setByDate] = useState(false)
   const [fetched, setSpec] = useState<Spectrum | null>(null)
   const spec = probe ? probe.spectrum : fetched
   const [catalog, setCatalog] = useState<CatalogLightcurve | null>(null)
@@ -69,7 +91,12 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
   }, [sid, settled])
 
   type Pt = { mjd: number; flux: number; err: number; open: boolean; text: string }
-  const own = (probe?.frames ?? seq?.frames ?? []).filter((f) => f.flux_ujy !== null && bands.includes(f.band))
+  const all = (probe?.frames ?? seq?.frames ?? []).filter((f) => f.flux_ujy !== null && bands.includes(f.band))
+  const sx = all.filter((f) => f.survey === 'spherex')
+  const own = showSpherex ? all : all.filter((f) => f.survey === 'wise')
+  // single SPHEREx frames as F_λ ∝ flux/λ², the units of the binned spectrum
+  const sxSpec = sx.filter((f) => !f.flagged && f.wavelength_um)
+  const lam2 = (f: (typeof sx)[number]) => f.wavelength_um! ** 2
   const cat = (catalog?.points ?? []).filter((p) => p.flux_ujy !== null && bands.includes(p.band))
   const catalogOnly = !own.length && cat.length > 0
   const useCatalog = cat.length > 0 && (catalogOnly || showCatalog)
@@ -105,10 +132,12 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
       : []),
   ].filter((t) => t.x.length)
 
-  const header = spec?.best
-    ? `Best match: ${spec.best.label} (p=${spec.best.prob.toFixed(2)}, χ²ᵣ=${spec.best.chi2_red.toFixed(2)}, ${spec.best.n_bins} bins)` +
-      (spec.verdict === 'match' ? '' : ` · ${spec.verdict}`)
-    : (spec?.verdict ?? '')
+  const header = !research
+    ? plainSpectrum(spec)
+    : spec?.best
+      ? `Best match: ${spec.best.label} (p=${spec.best.prob.toFixed(2)}, χ²ᵣ=${spec.best.chi2_red.toFixed(2)}, ${spec.best.n_bins} bins)` +
+        (spec.verdict === 'match' ? '' : ` · ${spec.verdict}`)
+      : (spec?.verdict ?? '')
 
   return (
     <div className="flex h-full flex-col text-xs">
@@ -147,10 +176,20 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
                 </label>
               )
             )}
+            {sx.length > 0 && (
+              <label className="flex items-center gap-1">
+                <input type="checkbox" checked={showSpherex} onChange={(e) => setShowSpherex(e.target.checked)} /> SPHEREx (each point a different wavelength)
+              </label>
+            )}
           </>
         )}
         {tab === 'spec' && <span className="text-slate-300">{header}</span>}
-        {tab === 'spec' && spec && spec.ranking.length > 1 && (
+        {tab === 'spec' && research && sxSpec.length > 0 && (
+          <label className="flex items-center gap-1" title="Every SPHEREx frame instead of the channel averages, coloured by observation date">
+            <input type="checkbox" checked={byDate} onChange={(e) => setByDate(e.target.checked)} /> by date
+          </label>
+        )}
+        {tab === 'spec' && research && spec && spec.ranking.length > 1 && (
           <span className="text-slate-500">
             next: {spec.ranking.slice(1, 4).map((r) => `${r.label} (${r.prob.toFixed(2)})`).join(', ')}
           </span>
@@ -165,7 +204,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
             layout={{
               ...DARK,
               xaxis: { title: { text: folded ? `Phase (period ${foldAt.toFixed(1)} d)` : 'Date' } },
-              yaxis: { title: { text: 'Flux (µJy, aperture-corrected)' }, type: logY ? 'log' : 'linear' },
+              yaxis: { title: { text: 'Brightness (µJy)<br><sub>aperture photometry, corrected for light outside the aperture</sub>' }, type: logY ? 'log' : 'linear' },
               annotations:
                 settled && !lcTraces.length
                   ? [{ x: 0.5, y: 0.5, xref: 'paper', yref: 'paper', text: 'No brightness measurements for this object', showarrow: false, font: { size: 13, color: '#94a3b8' } }]
@@ -178,22 +217,33 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
             className="h-full w-full"
             useResizeHandler
             data={[
-              {
-                type: 'scatter',
-                mode: 'markers',
-                name: 'SPHEREx (binned)',
-                x: spec?.binned.map((b) => b.wavelength_um) ?? [],
-                y: spec?.binned.map((b) => b.flambda) ?? [],
-                error_y: { type: 'data', array: spec?.binned.map((b) => b.err) ?? [], thickness: 1, width: 0 },
-                marker: { color: '#38bdf8', size: 6 },
-              },
+              byDate
+                ? {
+                    type: 'scatter',
+                    mode: 'markers',
+                    name: 'SPHEREx frames',
+                    x: sxSpec.map((f) => f.wavelength_um!),
+                    y: sxSpec.map((f) => (TO_FLAMBDA * f.flux_ujy!) / lam2(f)),
+                    error_y: { type: 'data', array: sxSpec.map((f) => (TO_FLAMBDA * (f.flux_err_ujy ?? 0)) / lam2(f)), thickness: 1, width: 0, color: '#475569' },
+                    text: sxSpec.map((f) => mjdToIso(f.mjd).slice(0, 10)),
+                    marker: { color: sxSpec.map((f) => mjdToYear(f.mjd)), colorscale: 'Viridis', size: 5, colorbar: { title: { text: 'Year' }, thickness: 10 } },
+                  }
+                : {
+                    type: 'scatter',
+                    mode: 'markers',
+                    name: 'SPHEREx (binned)',
+                    x: spec?.binned.map((b) => b.wavelength_um) ?? [],
+                    y: spec?.binned.map((b) => TO_FLAMBDA * b.flambda) ?? [],
+                    error_y: { type: 'data', array: spec?.binned.map((b) => TO_FLAMBDA * b.err) ?? [], thickness: 1, width: 0 },
+                    marker: { color: '#38bdf8', size: 6 },
+                  },
               ...(spec?.template_curve
                 ? [{
                     type: 'scatter',
                     mode: 'lines',
                     name: `Template ${spec.template_curve.label}`,
                     x: spec.template_curve.wavelength_um,
-                    y: spec.template_curve.flambda,
+                    y: spec.template_curve.flambda.map((f) => TO_FLAMBDA * f),
                     line: { color: '#f472b6' },
                   }]
                 : []),
@@ -201,17 +251,15 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
             layout={{
               ...DARK,
               xaxis: { title: { text: 'Wavelength (µm)' }, range: [0.7, 5.1] },
-              yaxis: { title: { text: 'F_λ (arbitrary)' } },
+              yaxis: { title: { text: FLAMBDA_AXIS } },
               shapes: MOLECULES.map(([, a, b], i) => ({
                 type: 'rect', xref: 'x', yref: 'paper', x0: a, x1: b, y0: 0, y1: 1,
                 fillcolor: i % 2 ? '#64748b' : '#475569', opacity: 0.18, line: { width: 0 }, layer: 'below',
               })),
-              annotations: [
-                ...MOLECULES.map(([m, a, b], i) => ({
-                  x: (a + b) / 2, y: i % 2 ? 0.98 : 0.92, xref: 'x', yref: 'paper', text: m, showarrow: false, font: { size: 10, color: '#94a3b8' },
-                })),
-                { x: 1, y: 0.02, xref: 'paper', yref: 'paper', xanchor: 'right', text: 'molecule bands approximate', showarrow: false, font: { size: 9, color: '#64748b' } },
-              ],
+              annotations: MOLECULES.map(([m, a, b], i) => ({
+                x: (a + b) / 2, y: i % 2 ? 0.98 : 0.92, xref: 'x', yref: 'paper', text: m, hovertext: `${m} absorption, ${a}–${b} µm (approximate)`,
+                showarrow: false, font: { size: 10, color: '#94a3b8' },
+              })),
             }}
             config={{ displaylogo: false, responsive: true }}
           />

@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import type { Mode } from '../url'
-import { TutorialSteps } from './Tutorial'
+import { GuideLink, TutorialSteps } from './Tutorial'
 
 const TUTORIAL_KEY = 'ultracool-tutorial-dismissed'
 
 const CARDS: { mode: Mode; title: string; who: string; text: string }[] = [
-  { mode: 'learn', title: 'Learn', who: 'New to astronomy', text: 'Seven short lessons with real objects: a runaway star, the coldest brown dwarf, a pulsating giant… each ends with a quick quiz.' },
+  { mode: 'learn', title: 'Learn', who: 'New to astronomy', text: 'Seven short lessons with real objects: the fastest-moving star in our sky, the coldest brown dwarf, a pulsating giant… each ends with a quick quiz.' },
   { mode: 'explore', title: 'Explore', who: 'Curious minds', text: 'Type any star name or coordinates. Watch 16 years of images and get plain-English answers: does it move, is it cold, does it change?' },
   { mode: 'research', title: 'Research', who: 'Astronomers & students', text: 'Measured proper motion, colors, variability and spectral typing with errors, catalogs and layers, single exposures, CSV export.' },
   { mode: 'discover', title: 'Discover', who: 'Citizen scientists', text: 'Scan a field for everything that moves, see which movers no catalog knows, and classify candidates: real, artifact or unsure.' },
@@ -97,7 +97,7 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
 
         <footer className="text-xs text-slate-500">
           Data: NASA/IPAC Infrared Science Archive (WISE, NEOWISE, SPHEREx, CatWISE2020), SIMBAD. Brown-dwarf templates and catalog: SPIFF (Gagné et al. 2026,
-          doi:10.5281/zenodo.19051216, CC-BY 4.0). Built for NASA Space Apps 2026.
+          doi:10.5281/zenodo.19051216, CC-BY 4.0). Built for NASA Space Apps 2026. <GuideLink />
         </footer>
       </div>
     </div>

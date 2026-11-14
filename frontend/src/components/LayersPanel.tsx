@@ -11,6 +11,34 @@ const OVERLAYS = [
   ...[1, 2, 3, 4].map((i) => `CDS/P/allWISE/W${i}`),
 ]
 const BASES = [DEFAULT_BASE, 'CDS/P/unWISE/color-W2-W1W2-W1', 'CDS/P/SPHEREx/QR2/color', 'CDS/P/DSS2/color']
+const CUBE_URL = 'https://irsa.ipac.caltech.edu/data/hips/SPHEREx/spherex_allsky_cube'
+
+// CDS-hosted HiPS (alasky) went 404/unreachable in Nov 2026. Each layer's `properties` is probed once per browser
+// session and only answering layers are listed, so the CDS ones come back by themselves when CDS does.
+const CDS = 'https://alasky.cds.unistra.fr'
+const propertiesUrl = (id: string) =>
+  `${HIPS_URL[id] ?? (id.startsWith('http') ? id : `${CDS}/${id.replace('CDS/P/', '').replace('SPHEREx/QR2/', 'SPHEREx/')}`)}/properties`
+const UP_KEY = 'ultracool-hips-up'
+
+function useAvailable(ids: string[]) {
+  const [up, setUp] = useState<Record<string, boolean>>(() => JSON.parse(sessionStorage.getItem(UP_KEY) ?? '{}'))
+  useEffect(() => {
+    const todo = ids.filter((id) => !(id in up))
+    if (!todo.length) return
+    Promise.all(
+      todo.map((id) =>
+        fetch(propertiesUrl(id), { signal: AbortSignal.timeout(5000) })
+          .then((r) => r.ok, () => false)
+          .then((ok) => [id, ok] as const),
+      ),
+    ).then((res) => {
+      const next = { ...up, ...Object.fromEntries(res) }
+      sessionStorage.setItem(UP_KEY, JSON.stringify(next))
+      setUp(next)
+    })
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  return up
+}
 
 export function Group({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -22,49 +50,30 @@ export function Group({ title, children }: { title: string; children: ReactNode 
 }
 
 /** Eye toggle + label + optional opacity slider: one row of the layers panel. */
-export function LayerRow(props: {
-  label: ReactNode
-  on: boolean
-  onToggle: () => void
-  opacity?: number
-  onOpacity?: (o: number) => void
-  selected?: boolean
-  onClick?: () => void
-  children?: ReactNode
-  rowRef?: (el: HTMLDivElement | null) => void
-}) {
+export function LayerRow(props: { label: string; on: boolean; onToggle: () => void; opacity?: number; onOpacity?: (o: number) => void }) {
   return (
-    <div
-      ref={props.rowRef}
-      className={`flex items-center gap-2 px-2 py-1 text-xs ${props.selected ? 'bg-sky-900' : 'hover:bg-slate-800'} ${props.onClick ? 'cursor-pointer' : ''}`}
-      onClick={props.onClick}
-    >
+    <div className="flex items-center gap-2 px-2 py-1 text-xs hover:bg-slate-800">
       <button
-        aria-label={props.on ? 'Hide layer' : 'Show layer'}
+        aria-label={`${props.on ? 'Hide' : 'Show'} ${props.label}`}
         aria-pressed={props.on}
         className={`w-5 shrink-0 text-base ${props.on ? 'text-sky-300' : 'text-slate-600'}`}
-        onClick={(e) => {
-          e.stopPropagation()
-          props.onToggle()
-        }}
+        onClick={props.onToggle}
       >
         {props.on ? '●' : '○'}
       </button>
       <div className="min-w-0 flex-1 truncate">{props.label}</div>
       {props.onOpacity && (
         <input
-          aria-label="Opacity"
+          aria-label={`${props.label} opacity`}
           type="range"
           min={0}
           max={1}
           step={0.05}
           value={props.opacity}
           className="w-20"
-          onClick={(e) => e.stopPropagation()}
           onChange={(e) => props.onOpacity!(Number(e.target.value))}
         />
       )}
-      {props.children}
     </div>
   )
 }
@@ -72,7 +81,7 @@ export function LayerRow(props: {
 type OverlayProps = {
   aladin: Aladin
   id: string
-  label?: ReactNode
+  label?: string
   opts?: Record<string, unknown>
   layerRef?: RefObject<ImageLayer | null>
   children?: ReactNode
@@ -111,7 +120,6 @@ function OverlayRow({ aladin, id, label, opts, layerRef, children }: OverlayProp
   )
 }
 
-const CUBE_URL = 'https://irsa.ipac.caltech.edu/data/hips/SPHEREx/spherex_allsky_cube'
 // slots 50 and 51 are the blank dichroic channels
 const CUBE_SLICES = [...Array(102).keys()].filter((i) => i !== 50 && i !== 51)
 
@@ -152,26 +160,25 @@ function CubeRow({ aladin }: { aladin: Aladin }) {
 
 type Props = {
   aladin: Aladin | null
-  frames: ReactNode
   catalogs?: ReactNode
 }
 
-export default function LayersPanel({ aladin, frames, catalogs }: Props) {
+export default function LayersPanel({ aladin, catalogs }: Props) {
   const [base, setBase] = useState(DEFAULT_BASE)
+  const up = useAvailable([...BASES, ...OVERLAYS, CUBE_URL])
   return (
     <div className="text-slate-200">
-      <Group title="Flipbook frames">{frames}</Group>
       {catalogs && <Group title="Catalogs">{catalogs}</Group>}
       {aladin && (
         <>
           <Group title="Survey overlays">
-            <CubeRow aladin={aladin} />
-            {OVERLAYS.map((id) => (
+            {up[CUBE_URL] && <CubeRow aladin={aladin} />}
+            {OVERLAYS.filter((id) => up[id]).map((id) => (
               <OverlayRow key={id} aladin={aladin} id={id} />
             ))}
           </Group>
           <Group title="Base">
-            {BASES.map((id) => (
+            {BASES.filter((id) => up[id] || id === base).map((id) => (
               <label key={id} className="flex items-center gap-2 px-2 py-1 text-xs hover:bg-slate-800">
                 <input
                   type="radio"

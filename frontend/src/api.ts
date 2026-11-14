@@ -67,6 +67,20 @@ export type Sequence = {
   frames: Frame[]
   /** all WISE frames processed (SPHEREx may still be fetching); absent on older backends */
   wise_done?: boolean
+  /** 1-based place in the line for a processing slot while waiting, else null */
+  queue_position?: number | null
+  /** estimated seconds until done, null when unknown */
+  eta_s?: number | null
+}
+
+/** "Waiting in line: 2 fields ahead of yours (~6 min)" / "About 4 min left"; null when the server gives neither. */
+export function waitText(queue?: number | null, eta_s?: number | null) {
+  const min = eta_s === null || eta_s === undefined ? null : Math.max(1, Math.round(eta_s / 60))
+  if (queue) {
+    const ahead = queue - 1
+    return `Waiting in line: ${ahead ? `${ahead} field${ahead === 1 ? '' : 's'} ahead of yours` : 'yours is next'}${min ? ` (~${min} min)` : ''}`
+  }
+  return min ? `About ${min} min left` : null
 }
 
 /** Optional sequence parameters; wise_exposures needs mjd_max - mjd_min <= 30 (else HTTP 400). */
@@ -127,7 +141,7 @@ export type Summary = {
     w1_w2_err: number | null
     /** W1 undetected: w1_w2 is a lower limit */
     w1_w2_is_lower_limit?: boolean
-    verdict: 'extremely red (Y/late-T dwarf-like)' | 'red (L/T dwarf-like)' | 'normal star colors' | 'insufficient data'
+    verdict: 'extremely red (Y/late-T dwarf-like)' | 'very red (T dwarf-like)' | 'red (L/T dwarf-like)' | 'normal star colors' | 'insufficient data'
   }
   variability: {
     bands: Record<string, { n: number; chi2_red: number | null; amplitude_mag: number | null }>
@@ -207,6 +221,8 @@ export type Probe = {
   spectrum: Spectrum
   plain: string[]
   progress?: { done: number; total: number }
+  /** full mode: 1-based place in the line while the job waits for a slot */
+  queue_position?: number | null
   error: string | null
 }
 /** Measure any point of the field: `preview` from the cached grid images (seconds), `full` as a background job on

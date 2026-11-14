@@ -24,8 +24,14 @@ function Table({ rows }: { rows: [ReactNode, ReactNode][] }) {
 
 const H = ({ children }: { children: ReactNode }) => <h4 className="mt-2 font-semibold text-slate-300">{children}</h4>
 
-/** Research mode: summary numbers with errors, motion plot, known asteroids and the CSV export. */
-export default function ResearchPanel({ seq, summary, note, busy }: { seq: Sequence | null; summary: Summary | null; note: string | null; busy: boolean }) {
+/** Research mode: summary numbers with errors, motion plot, known asteroids (with `showAsteroids`) and the CSV export. */
+export default function ResearchPanel({ seq, summary, note, busy, showAsteroids }: {
+  seq: Sequence | null
+  summary: Summary | null
+  note: string | null
+  busy: boolean
+  showAsteroids: boolean
+}) {
   const [csvNote, setCsvNote] = useState<string | null>(null)
   const download = async () => {
     if (!seq) return
@@ -63,7 +69,7 @@ export default function ResearchPanel({ seq, summary, note, busy }: { seq: Seque
         </>
       )}
       <PhotometryTables color={c} variability={v} spectrum={s} />
-      {summary?.asteroids && <AsteroidList asteroids={summary.asteroids} />}
+      {showAsteroids && summary?.asteroids && <AsteroidList asteroids={summary.asteroids} />}
     </div>
   )
 }
@@ -111,7 +117,7 @@ export function PhotometryTables({ color: c, variability: v, spectrum: s }: Part
 }
 
 /** Known solar-system objects in the field (from the summary). */
-export function AsteroidList({ asteroids }: { asteroids: KnownAsteroid[] }) {
+function AsteroidList({ asteroids }: { asteroids: KnownAsteroid[] }) {
   return (
     <>
       <H>Known asteroids in field</H>

@@ -1,6 +1,16 @@
 /** Small sky-geometry helpers shared by the flipbook overlays (no WCS library needed: the grid is a plain TAN/CDELT WCS). */
 
 const RAD = Math.PI / 180
+/** grid pixel scale (WISE native) of every sequence */
+export const PIX_ARCSEC = 2.75
+/** backend photometry aperture radii (SPHEREx 2 native px, WISE 3 grid px) and sky annuli, in arcsec */
+export const APERTURE: Record<'spherex' | 'wise', { r: number; sky: [number, number] }> = {
+  spherex: { r: 12.3, sky: [24.6, 43] },
+  wise: { r: 8.25, sky: [50, 70] },
+}
+/** grid-centre epoch 2018.0 of every sequence */
+export const MJD_2018 = 58119
+export const MJD_2000 = 51544.5
 
 export const mjdToYear = (mjd: number) => 2000 + (mjd - 51544.5) / 365.25
 export const mjdToIso = (mjd: number) => new Date((mjd - 40587) * 864e5).toISOString()

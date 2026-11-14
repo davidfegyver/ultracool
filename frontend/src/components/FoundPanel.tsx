@@ -41,9 +41,15 @@ export default function FoundPanel({ summary, note, busy }: {
         <Badge
           q={<>Cold / red? (<Term k="W1−W2" />)</>}
           a={
-            color.verdict === 'extremely red (Y/late-T dwarf-like)' ? 'Very cold!' : color.verdict === 'red (L/T dwarf-like)' ? 'Red, like brown dwarfs' : color.verdict === 'normal star colors' ? 'No, normal star' : 'Not sure'
+            {
+              'extremely red (Y/late-T dwarf-like)': 'Very cold!',
+              'very red (T dwarf-like)': 'Red, like T dwarfs',
+              'red (L/T dwarf-like)': 'Red, like brown dwarfs',
+              'normal star colors': 'No, normal star',
+              'insufficient data': 'Not sure',
+            }[color.verdict] ?? 'Not sure'
           }
-          tone={color.verdict.startsWith('extremely') || color.verdict.startsWith('red') ? 'yes' : color.verdict === 'normal star colors' ? 'no' : 'unknown'}
+          tone={color.verdict === 'insufficient data' ? 'unknown' : color.verdict === 'normal star colors' ? 'no' : 'yes'}
         />
         <Badge
           q={<>Brightness changes? (<Term k="light curve" />)</>}

@@ -45,8 +45,9 @@ export type Lesson = {
   light_curve_first?: boolean
   /** hide the light curve and show this sentence instead */
   hide_light_curve?: string
-  /** "also try" object, opened in Explore mode */
-  alternative?: { object: string; target: string; note: string }
+  /** "Try it on another object" after the quiz: query params of the page it opens (mode plus target or position).
+   * Names were checked against /api/resolve. */
+  try_next?: { object: string; params: Record<string, string>; note: string }
   /** more real-world examples of the lesson's point; each item opens in Explore mode at its position */
   more_examples?: { title: string; intro: string; items: { name: string; ra: number; dec: number; reason: string }[] }
   story: string
@@ -70,6 +71,7 @@ export const LESSONS: Lesson[] = [
     epoch_yr: 2000,
     fov_deg: 0.076,
     bands: ['W2', 'D6'],
+    try_next: { object: 'Proxima Centauri', params: { mode: 'explore', target: 'Proxima Cen' }, note: 'the nearest star to the Sun, crossing almost 4 arcseconds of sky every year' },
     hide_light_curve: 'Too bright for brightness measurements; this lesson is about motion.',
     story:
       "Barnard's Star is a small red star only 6 light-years away, the fastest-moving star in our sky. Most stars are so far away that they look frozen in place for a lifetime, but Barnard's Star slides about 10 arcseconds every year. Over the 16 years of WISE and SPHEREx pictures, that adds up to a jump you can see by eye.",
@@ -95,6 +97,11 @@ export const LESSONS: Lesson[] = [
     epoch_yr: 2000,
     fov_deg: 0.066,
     bands: ['W1', 'W2'],
+    try_next: {
+      object: 'WISE J2317−6659',
+      params: { mode: 'explore', target: 'WISE J231728.42-665959.3' },
+      note: 'a cold T5 brown dwarf that this app typed for the first time',
+    },
     deep: true,
     stack_windows: [
       [56658, 57388],
@@ -126,6 +133,7 @@ export const LESSONS: Lesson[] = [
     epoch_yr: 2000,
     fov_deg: 0.2,
     bands: ['W2'],
+    try_next: { object: 'Gliese 229 B', params: { mode: 'explore', target: 'Gl 229 B' }, note: 'the first brown dwarf ever seen, moving together with its red-dwarf star' },
     hide_light_curve: 'This lesson is about how things move together, not about brightness.',
     markers: [
       { label: 'eps Ind A (K5V star)', ...EPS_IND_A },
@@ -157,9 +165,9 @@ export const LESSONS: Lesson[] = [
     bands: ['W1', 'W2'],
     period_days: 166.7,
     light_curve_first: true,
-    alternative: {
+    try_next: {
       object: 'R Draconis',
-      target: 'R Dra',
+      params: { mode: 'explore', target: 'R Dra' },
       note: 'a brighter Mira (period 246 d); too bright for our own photometry, so its light curve comes from the WISE catalog',
     },
     story:
@@ -187,6 +195,7 @@ export const LESSONS: Lesson[] = [
     epoch_yr: 2000,
     fov_deg: 0.05,
     bands: ['W1', 'W2'],
+    try_next: { object: 'T Tauri', params: { mode: 'explore', target: 'T Tau' }, note: 'the young star this whole class is named after, still wrapped in its dusty disk' },
     light_curve_first: true,
     story:
       'RW Aurigae is a very young star, a few million years old, still surrounded by a disk of gas and dust where planets may be forming. Since 2010 it has suddenly dimmed several times for months, when clumps of dust drifted in front of it, and the hot dust glows brightly in the infrared.',
@@ -215,6 +224,11 @@ export const LESSONS: Lesson[] = [
     mjd_min: 56770,
     mjd_max: 57330,
     bands: ['W2'],
+    try_next: {
+      object: 'the eps Ind B field in Discover',
+      params: { mode: 'discover', target: 'eps Ind B' },
+      note: 'every moving candidate there is checked against bright-star artifacts like this ghost',
+    },
     hide_light_curve: 'This lesson is about telling real objects from camera artifacts, not about brightness.',
     // SPIFF "New Candidates" that our check (research/discovery/REPORT.md) showed to be artifacts; CatWISE positions
     more_examples: {
@@ -260,6 +274,11 @@ export const LESSONS: Lesson[] = [
     mjd_max: 58816.0,
     wise_exposures: true,
     bands: ['W2', 'W1'],
+    try_next: {
+      object: 'this field in Research',
+      params: { mode: 'research', ra: '5.9233', dec: '-17.2745', field: '0.25', win: '58814.5,58816', exposures: '1' },
+      note: 'the same exposures with the known-asteroid table and every measured number',
+    },
     hide_light_curve: 'This lesson is about a fast mover inside our Solar System, not about brightness.',
     // IRSA MOST ephemeris at each NEOWISE exposure, 2019-11-27/28
     track: [

@@ -18,7 +18,8 @@ export default function App() {
     return () => window.removeEventListener('popstate', onPop)
   }, [])
   const setMode = (m: Mode | null) => {
-    writeUrl({ mode: m, frame: null }, true)
+    // a time window is a Research tool: other modes start from the full 16 years
+    writeUrl({ mode: m, frame: null, win: null, exposures: null }, true)
     setModeState(m)
   }
 

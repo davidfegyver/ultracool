@@ -1,18 +1,20 @@
 import A, { type Aladin } from 'aladin-lite'
-import { useEffect, useRef } from 'react'
-import type { Frame, Sequence } from '../api'
+import { useEffect, useRef, useState } from 'react'
+import { waitText, type Frame, type Sequence } from '../api'
 import type { ProbeCtl } from '../hooks'
-import { mjdToIso, mjdToYear, pxToWorld, type Mark } from '../sky'
-import { LayerRow } from './LayersPanel'
+import { APERTURE, mjdToIso, mjdToYear, PIX_ARCSEC, pxToWorld, type Mark } from '../sky'
 import { ProbeMarker } from './Probe'
 
 export const ALL_BANDS = ['W1', 'W2', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6']
+// wavelength coverage per band (µm): WISE filter centres; SPHEREx detector ranges as measured in our frames
+const BAND_UM: Record<string, string> = {
+  W1: '3.4', W2: '4.6', D1: '0.75–1.1', D2: '1.1–1.6', D3: '1.6–2.4', D4: '2.4–3.8', D5: '3.8–4.4', D6: '4.4–5.0',
+}
 const SKY_LAYER = 'Flipbook frame'
 
 export type Flipbook = {
   bands: string[]
   hideFlagged: boolean
-  excluded: Set<string>
   frameId: string | null
   playing: boolean
   fps: number
@@ -52,23 +54,54 @@ function deepFrames(seq: Sequence, bands: string[]): Frame[] {
     .sort((a, b) => a.mjd - b.mjd)
 }
 
-/** Frames passing the band + flag filters (the rows of the layers panel); deep stacks in deep mode. */
-export const filterFrames = (seq: Sequence | null, fb: Flipbook) =>
+/** Frames passing the band + flag filters; deep stacks in deep mode. */
+const filterFrames = (seq: Sequence | null, fb: Flipbook) =>
   !seq
     ? []
     : fb.deep
       ? deepFrames(seq, fb.bands)
       : seq.frames.filter((f) => fb.bands.includes(f.band) && !(fb.hideFlagged && f.flagged))
 
+type Shown = { png: string; label: string }
+/** Blink pair of one band: earliest vs latest deep stack (WISE 2010–2011 vs 2022 onward, SPHEREx first vs last survey
+ * epoch), plus a difference image of the first and last single frame of those windows (diff.png takes frames). */
+function blinkPair(seq: Sequence, band: string): { a: Shown; b: Shown; diff: Shown } | null {
+  const fs = seq.frames.filter((f) => f.band === band && !f.flagged).sort((x, y) => x.mjd - y.mjd)
+  if (!fs.length) return null
+  const yr = (f: Frame) => mjdToYear(f.mjd)
+  const [first, last] = [fs[0], fs[fs.length - 1]]
+  const [early, late] =
+    first.survey === 'wise'
+      ? [fs.filter((f) => yr(f) < 2012), fs.filter((f) => yr(f) >= 2022)]
+      : [fs.filter((f) => f.epoch_index === first.epoch_index), fs.filter((f) => f.epoch_index === last.epoch_index)]
+  if (!early.length || !late.length || early[0] === late[0]) return null
+  const stack = (w: Frame[]): Shown => {
+    const [y0, y1] = [w[0], w[w.length - 1]].map((f) => f.date.slice(0, 4))
+    return {
+      png: `/api/sequences/${seq.id}/stack.png?band=${band}&mjd_min=${w[0].mjd}&mjd_max=${w[w.length - 1].mjd}`,
+      label: `${band} deep stack ${y0 === y1 ? y0 : `${y0}–${y1}`}`,
+    }
+  }
+  const [f0, f1] = [early[0], late[late.length - 1]]
+  return {
+    a: stack(early),
+    b: stack(late),
+    diff: {
+      png: `/api/sequences/${seq.id}/diff.png?a=${encodeURIComponent(f0.id)}&b=${encodeURIComponent(f1.id)}`,
+      label: `Difference ${f1.date.slice(0, 10)} − ${f0.date.slice(0, 10)} ${band} (red = new, blue = old)`,
+    },
+  }
+}
+
 type Props = {
   seq: Sequence | null
   fb: Flipbook
   set: (patch: Partial<Flipbook>) => void
   aladin: Aladin | null
-  /** URL of an image to show instead of the current frame (diff/stack), or null. */
-  override?: { png: string; label: string } | null
-  /** extra controls; receives the frame on screen (which may not be fb.frameId before the first step) */
-  children?: (cur: Frame | undefined) => React.ReactNode
+  /** offer Blink (earliest vs latest deep stack, optional difference image) */
+  blink?: boolean
+  /** band preset buttons shown instead of the per-band chips */
+  presets?: { label: string; bands: string[] }[]
   /** crop the viewer to a size×size px window around (x, y) (grid px, PNG y-down, epoch 2018.0) and mark a source
    * moving vx, vy px/yr instead of the target circle */
   focus?: { x: number; y: number; size: number; vx: number; vy: number }
@@ -80,10 +113,13 @@ type Props = {
   probe?: ProbeCtl
 }
 
-export default function Player({ seq, fb, set, aladin, override, children, focus, marks, viewerPx = 360, probe }: Props) {
-  const playable = filterFrames(seq, fb).filter((f) => !fb.excluded.has(f.id))
+export default function Player({ seq, fb, set, aladin, blink: canBlink, presets, focus, marks, viewerPx = 360, probe }: Props) {
+  const playable = filterFrames(seq, fb)
   const idx = Math.max(0, playable.findIndex((f) => f.id === fb.frameId))
   const cur: Frame | undefined = playable[idx]
+  const [blink, setBlink] = useState<{ diff: boolean; phase: 0 | 1 } | null>(null)
+  const pair = canBlink && seq ? blinkPair(seq, cur?.band ?? fb.bands[0]) : null
+  const override = blink && pair ? (blink.diff ? pair.diff : blink.phase ? pair.b : pair.a) : null
 
   const step = (d: number) => {
     if (!playable.length) return
@@ -98,6 +134,18 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
     const t = setInterval(() => stepRef.current(1), 1000 / fb.fps)
     return () => clearInterval(t)
   }, [fb.playing, fb.fps])
+
+  // blink at ~1 Hz; playing or stepping to another frame ends it
+  const blinking = !!blink && !blink.diff
+  useEffect(() => {
+    if (!blinking) return
+    const t = setInterval(() => setBlink((b) => b && { ...b, phase: b.phase ? 0 : 1 }), 1000)
+    return () => clearInterval(t)
+  }, [blinking])
+  useEffect(() => {
+    if (fb.playing) setBlink(null)
+  }, [fb.playing])
+  useEffect(() => setBlink(null), [fb.frameId, fb.deep, seq?.id])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -128,6 +176,7 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
   }, [aladin, seq?.id, shownPng, fb.showOnSky]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const busy = seq && (seq.status === 'querying' || seq.status === 'fetching')
+  const wait = seq && waitText(seq.queue_position, seq.eta_s)
   // visible part of the grid: [x0, y0, w, h] in grid px
   const view = !seq
     ? [0, 0, 1, 1]
@@ -141,6 +190,7 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
         <div>
           <div className="mb-1 text-slate-400">
             {seq.status === 'querying' ? 'Querying IRSA archive…' : `Fetching frames ${seq.done}/${seq.total}`}
+            {wait && <span className="ml-2 text-slate-300">· {wait}</span>}
           </div>
           <div className="h-1.5 rounded bg-slate-700">
             <div className="h-1.5 rounded bg-sky-500" style={{ width: `${seq.total ? (100 * seq.done) / seq.total : 3}%` }} />
@@ -176,14 +226,17 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
                 {cur && (
                   <circle
                     cx={focus.x + 0.5 + focus.vx * (mjdToYear(cur.mjd) - 2018)} cy={focus.y + 0.5 + focus.vy * (mjdToYear(cur.mjd) - 2018)}
-                    r={4} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke"
+                    r={APERTURE[cur.survey].r / PIX_ARCSEC} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke"
                   />
                 )}
               </>
             ) : marks ? (
               !override && cur && <Marks marks={marks(cur)} width={seq.grid.width} />
             ) : (
-              !override && cur && <circle cx={cur.target_px[0] + 0.5} cy={cur.target_px[1] + 0.5} r={5} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke" />
+              // the target's real photometry aperture
+              !override && cur && (
+                <circle cx={cur.target_px[0] + 0.5} cy={cur.target_px[1] + 0.5} r={APERTURE[cur.survey].r / PIX_ARCSEC} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke" />
+              )
             )}
             {probe && (
               <ProbeMarker probe={probe} seq={seq} frame={cur} unit={view[2] / viewerPx} ghostAt={[view[0] + view[2] * (2 / 3), view[1] + view[3] / 3]} />
@@ -228,20 +281,30 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
           {[0.5, 1, 2, 4].map((f) => <option key={f} value={f}>{f} fps</option>)}
         </select>
       </div>
-      <div className="flex flex-wrap gap-1">
-        {ALL_BANDS.map((b) => {
-          const on = fb.bands.includes(b)
-          return (
-            <button
-              key={b}
-              aria-pressed={on}
-              className={`rounded px-2 py-0.5 ${on ? 'bg-sky-700' : 'bg-slate-800 text-slate-400'}`}
-              onClick={() => set({ bands: on ? fb.bands.filter((x) => x !== b) : [...fb.bands, b] })}
-            >
-              {b}
-            </button>
-          )
-        })}
+      <div role="group" aria-label="Bands" className="flex flex-wrap gap-1">
+        {presets
+          ? presets.map((p) => {
+              const on = p.bands.length === fb.bands.length && p.bands.every((b) => fb.bands.includes(b))
+              return (
+                <button key={p.label} aria-pressed={on} className={`rounded px-2 py-0.5 ${on ? 'bg-sky-700' : 'bg-slate-800 text-slate-400'}`} onClick={() => set({ bands: p.bands })}>
+                  {p.label}
+                </button>
+              )
+            })
+          : ALL_BANDS.map((b) => {
+              const on = fb.bands.includes(b)
+              return (
+                <button
+                  key={b}
+                  aria-pressed={on}
+                  title={`${b.startsWith('W') ? 'WISE' : 'SPHEREx detector'} ${b}: ${BAND_UM[b]} µm`}
+                  className={`rounded px-2 py-0.5 ${on ? 'bg-sky-700' : 'bg-slate-800 text-slate-400'}`}
+                  onClick={() => set({ bands: on ? fb.bands.filter((x) => x !== b) : [...fb.bands, b] })}
+                >
+                  {b} <span className="text-[10px] opacity-70">{BAND_UM[b]} µm</span>
+                </button>
+              )
+            })}
       </div>
       <div className="flex gap-3">
         <label className="flex items-center gap-1">
@@ -259,7 +322,28 @@ export default function Player({ seq, fb, set, aladin, override, children, focus
           <input type="checkbox" checked={fb.deep} onChange={(e) => set({ deep: e.target.checked, frameId: null })} /> Deep stacks
         </label>
       </div>
-      {children?.(cur)}
+      {canBlink && (
+        <div className="flex items-center gap-2">
+          <button
+            aria-pressed={!!blink}
+            className={`rounded px-2 py-1 ${blink ? 'bg-amber-700' : 'bg-slate-700'} disabled:opacity-50`}
+            disabled={!pair}
+            title={pair ? `Alternate ${pair.a.label} and ${pair.b.label}` : 'Needs early and late frames of this band'}
+            onClick={() => {
+              set({ playing: false })
+              setBlink(blink ? null : { diff: false, phase: 0 })
+            }}
+          >
+            {blink ? '■ Stop blink' : '◐ Blink'}
+          </button>
+          {blink && (
+            <label className="flex items-center gap-1">
+              <input type="checkbox" checked={blink.diff} onChange={(e) => setBlink({ diff: e.target.checked, phase: 0 })} /> show difference
+            </label>
+          )}
+          {!blink && <span className="text-slate-500">earliest vs latest deep stack</span>}
+        </div>
+      )}
     </div>
   )
 }
@@ -292,57 +376,5 @@ export function Marks({ marks, width }: { marks: Mark[]; width: number }) {
         )
       })}
     </>
-  )
-}
-
-/** "Flipbook frames" group rows: eye = include in playback, click = pause on that frame. */
-export function FrameRows({ seq, fb, set }: { seq: Sequence | null; fb: Flipbook; set: (p: Partial<Flipbook>) => void }) {
-  const rows = useRef(new Map<string, HTMLDivElement>())
-  const frames = filterFrames(seq, fb)
-  useEffect(() => {
-    if (!fb.playing && fb.frameId) rows.current.get(fb.frameId)?.scrollIntoView({ block: 'nearest' })
-  }, [fb.playing, fb.frameId])
-  if (!frames.length) return <p className="px-2 py-1 text-xs text-slate-500">No frames yet</p>
-  return (
-    <div className="max-h-72 overflow-y-auto">
-      {frames.map((f) => (
-        <LayerRow
-          key={f.id}
-          rowRef={(el) => (el ? rows.current.set(f.id, el) : rows.current.delete(f.id))}
-          selected={f.id === fb.frameId}
-          on={!fb.excluded.has(f.id)}
-          onToggle={() => {
-            const ex = new Set(fb.excluded)
-            if (ex.has(f.id)) ex.delete(f.id)
-            else ex.add(f.id)
-            set({ excluded: ex })
-          }}
-          onClick={() => set({ playing: false, frameId: f.id })}
-          label={
-            <span className="flex items-center gap-2">
-              <img src={f.png} alt="" className="h-6 w-6 [image-rendering:pixelated]" loading="lazy" />
-              <span>{f.date.slice(0, 10)}</span>
-              <span className="text-slate-400">{f.band}</span>
-              <span className="text-slate-500">{f.wavelength_um?.toFixed(2)} µm</span>
-              {f.flagged && <span className="text-amber-500">⚑</span>}
-            </span>
-          }
-        />
-      ))}
-    </div>
-  )
-}
-
-/** "Stacks" sub-group: median of all unflagged frames per band; click shows it in the viewer and on the sky. */
-export function StackRows({ seq, band, onPick }: { seq: Sequence | null; band: string | null; onPick: (b: string | null) => void }) {
-  const present = ALL_BANDS.filter((b) => seq?.frames.some((f) => f.band === b && !f.flagged))
-  if (!present.length) return null
-  return (
-    <div className="border-t border-slate-800">
-      <div className="px-2 pt-1 text-[10px] tracking-wide text-slate-500 uppercase">Stacks</div>
-      {present.map((b) => (
-        <LayerRow key={b} label={`Median stack ${b}`} on={band === b} onToggle={() => onPick(band === b ? null : b)} selected={band === b} onClick={() => onPick(b)} />
-      ))}
-    </div>
   )
 }

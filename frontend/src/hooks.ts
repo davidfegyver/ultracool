@@ -1,41 +1,44 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getProbe, getSequence, isMissing, resolveTarget, startSequence, type Probe, type ProbeMode, type Resolved, type SeqOptions, type Sequence } from './api'
+import { getProbe, getSequence, isMissing, resolveTarget, startSequence, waitText, type Probe, type ProbeMode, type Resolved, type SeqOptions, type Sequence } from './api'
 import type { Flipbook } from './components/Player'
-import { propagate } from './sky'
+import { MJD_2000, MJD_2018, propagate, worldToPx } from './sky'
 import { readUrl, writeUrl } from './url'
 
 export const DEFAULT_TARGET = "Barnard's Star"
 
-/** Target from the URL (ra/dec, else name, else the default), name lookups, and URL sync. */
-export function useTarget() {
+/** Target from the URL (ra/dec with optional pm, else name, else `defaultTarget`), name lookups, and URL sync. */
+export function useTarget(defaultTarget = DEFAULT_TARGET) {
   const [resolved, setResolved] = useState<Resolved | null>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const lookup = async (q: string) => {
+  /** resolve a name; `fallback` (e.g. a catalog row's position) is used when the resolver does not know it (404) */
+  const lookup = async (q: string, fallback?: Resolved) => {
     setBusy(true)
     setError(null)
     try {
       setResolved(await resolveTarget(q))
-      writeUrl({ target: q, ra: null, dec: null })
+      writeUrl({ target: q, ra: null, dec: null, pm: null })
     } catch (e) {
-      setError((e as Error).message)
+      if (fallback && isMissing(e)) goTo(fallback)
+      else setError((e as Error).message)
     } finally {
       setBusy(false)
     }
   }
-  /** jump to a known position (catalog row, random field); pm 0 unless given */
+  /** jump to a known position (catalog row, random field, probe); pm 0 unless given */
   const goTo = (r: Resolved) => {
-    writeUrl({ target: r.name, ra: r.ra.toFixed(6), dec: r.dec.toFixed(6), frame: null })
+    const pm = r.pmra_masyr || r.pmdec_masyr ? `${r.pmra_masyr.toFixed(1)},${r.pmdec_masyr.toFixed(1)}` : null
+    writeUrl({ target: r.name, ra: r.ra.toFixed(6), dec: r.dec.toFixed(6), pm, frame: null })
     setResolved(r)
   }
 
   useEffect(() => {
-    const { ra, dec, target } = readUrl()
+    const { ra, dec, target, pm } = readUrl()
     if (ra !== null && dec !== null) {
-      setResolved({ name: target, ra, dec, pmra_masyr: 0, pmdec_masyr: 0, epoch_yr: 2000, otype: null, sptype: null })
+      setResolved({ name: target, ra, dec, pmra_masyr: pm?.[0] ?? 0, pmdec_masyr: pm?.[1] ?? 0, epoch_yr: 2000, otype: null, sptype: null })
     } else {
-      lookup(target ?? DEFAULT_TARGET)
+      lookup(target ?? defaultTarget)
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -88,7 +91,6 @@ export function useFlipbook(init: Partial<Flipbook> = {}) {
   const [fb, setFb] = useState<Flipbook>(() => ({
     bands: url.bands ?? ['W2', 'D6'],
     hideFlagged: true,
-    excluded: new Set(),
     frameId: url.frame,
     playing: false,
     fps: 1,
@@ -128,7 +130,10 @@ export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => P
   }, [ready]) // eslint-disable-line react-hooks/exhaustive-deps
   if (!seq) return { data: null, note: null, busy: false }
   if (seq.status === 'error') return { data: null, note: 'Sequence failed', busy: false }
-  if (!ready || state?.id !== ready) return { data: null, note: afterWise ? 'Waiting for the WISE frames…' : 'Waiting for all frames…', busy: true }
+  if (!ready || state?.id !== ready) {
+    const wait = !ready && waitText(seq.queue_position, seq.eta_s)
+    return { data: null, note: `${afterWise ? 'Waiting for the WISE frames…' : 'Waiting for all frames…'}${wait ? ` ${wait}` : ''}`, busy: true }
+  }
   return state
 }
 
@@ -140,12 +145,14 @@ type ProbeResult = {
   /** point that `data` describes; differs from `point` once the probe is moved again */
   measuredAt: ProbePoint | null
   /** full measurement still running */
-  progress: { done: number; total: number } | null
+  progress: { done: number; total: number; queue_position?: number | null } | null
   busy: boolean
   error: string | null
 }
 export type ProbeCtl = ProbeResult & {
   sid: string | undefined
+  /** the point lies outside the field (or within the photometry margin of its edge): measuring would be refused */
+  outside: boolean
   point: ProbePoint | null
   place: (p: ProbePoint | null) => void
   /** screen position (client px) of the open action menu */
@@ -153,12 +160,14 @@ export type ProbeCtl = ProbeResult & {
   setMenu: (m: { x: number; y: number } | null) => void
   measure: (mode: ProbeMode, p?: ProbePoint | null) => Promise<void>
 }
-const MJD_2000 = 51544.5
 const NO_RESULT: ProbeResult = { data: null, measuredAt: null, progress: null, busy: false, error: null }
+// backend refuses points closer than 25" (~9 grid px) to the edge: the sky annulus must fit
+const EDGE_MARGIN_PX = 9
 
-/** The probe point (URL `probe`/`probe_pm`, restored without measuring), its action menu and its measurement on sequence
- * `sid`. Moving the point never sends a request: only `measure` does. */
-export function useProbe(sid: string | undefined): ProbeCtl {
+/** The probe point (URL `probe`/`probe_pm`, restored without measuring), its action menu and its measurement on `seq`.
+ * Moving the point never sends a request: only `measure` does. */
+export function useProbe(seq: Sequence | null): ProbeCtl {
+  const sid = seq?.id
   const [point, setPoint] = useState<ProbePoint | null>(() => {
     const u = readUrl()
     return u.probe && { ra: u.probe[0], dec: u.probe[1], pmra_masyr: u.probe_pm?.[0] ?? 0, pmdec_masyr: u.probe_pm?.[1] ?? 0 }
@@ -205,7 +214,7 @@ export function useProbe(sid: string | undefined): ProbeCtl {
           setResult({ data: d, measuredAt: at, progress: null, busy: false, error: null })
           return
         }
-        setResult((r) => ({ ...r, progress: d.progress ?? { done: 0, total: 0 } }))
+        setResult((r) => ({ ...r, progress: { ...(d.progress ?? { done: 0, total: 0 }), queue_position: d.queue_position } }))
         await new Promise((ok) => setTimeout(ok, 3000)) // lib is ES2023: no Promise.withResolvers
         if (id !== run.current) return
       }
@@ -215,5 +224,13 @@ export function useProbe(sid: string | undefined): ProbeCtl {
     }
   }
 
-  return { point, place, menu, setMenu, measure, ...result, sid }
+  let outside = true
+  if (seq && point) {
+    const q = propagate(point.ra, point.dec, point.pmra_masyr, point.pmdec_masyr, 2000, MJD_2018)
+    const [x, y] = worldToPx(seq.grid.wcs, seq.grid.height, q.ra, q.dec)
+    const m = EDGE_MARGIN_PX
+    outside = !(x >= m && y >= m && x <= seq.grid.width - 1 - m && y <= seq.grid.height - 1 - m)
+  }
+
+  return { point, place, menu, setMenu, measure, ...result, sid, outside }
 }
