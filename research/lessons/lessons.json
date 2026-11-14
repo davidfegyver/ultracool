@@ -1,0 +1,462 @@
+[
+ {
+  "id": "moves",
+  "title": "Something moves",
+  "object": "Barnard's Star",
+  "ra": 269.4520769586187,
+  "dec": 4.693364966576667,
+  "pmra_masyr": -801.551,
+  "pmdec_masyr": 10362.394,
+  "epoch_yr": 2000.0,
+  "fov_deg": 0.076,
+  "mjd_min": null,
+  "mjd_max": null,
+  "wise_exposures": false,
+  "bands": [
+   "W2",
+   "D6"
+  ],
+  "deep": false,
+  "what_to_look_for": "Play the W2 frames from 2010 to 2024: the bright star slides upward (north) across the background stars, about 10 arcseconds every year. The background stars stay put.",
+  "quiz": {
+   "question": "Between 2010 and 2024 Barnard's Star moved about how far across the sky?",
+   "options": [
+    "Not at all - stars are fixed",
+    "About 2.4 arcminutes (roughly 145 arcseconds)",
+    "About 1 degree (twice the Moon)",
+    "It jumped back and forth randomly"
+   ],
+   "answer_index": 1,
+   "explanation": "It moves 10.4 arcseconds per year (the fastest-moving star in the sky), so 14 years add up to ~145 arcseconds, about 50 WISE pixels."
+  },
+  "evidence": {
+   "montage": "lesson1_barnard.png",
+   "production_sequence": "f5858e871fad2483 (default fov 0.076, 406 frames)",
+   "measured_pm_masyr": {
+    "pmra": -820,
+    "pmdec": 10417,
+    "method": "centroid of the saturated core in 22 NEOWISE/WISE W2 visit medians (4 exposures each), linear fit, 14.0 yr baseline",
+    "residual_rms_mas": [
+     814,
+     738
+    ]
+   },
+   "catalog_pm_masyr": {
+    "pmra": -801.6,
+    "pmdec": 10362.4
+   },
+   "total_arcsec_yr_measured": 10.45,
+   "caveat": "Star is saturated in WISE and SPHEREx: every frame in the production manifest has flux_ujy=null (motion lesson unaffected)."
+  }
+ },
+ {
+  "id": "color",
+  "title": "Right color",
+  "object": "WISE J085510.74-071442.5 (WISE 0855-0714)",
+  "ra": 133.81890825,
+  "dec": -7.247048,
+  "pmra_masyr": -8123.7,
+  "pmdec_masyr": 673.2,
+  "epoch_yr": 2000.0,
+  "fov_deg": 0.066,
+  "mjd_min": null,
+  "mjd_max": null,
+  "wise_exposures": false,
+  "bands": [
+   "W1",
+   "W2"
+  ],
+  "deep": true,
+  "stack_windows": [
+   [
+    56658.0,
+    57388.0
+   ],
+   [
+    58119.0,
+    58849.0
+   ],
+   [
+    59580.0,
+    60676.0
+   ]
+  ],
+  "what_to_look_for": "Compare the W1 (3.4 um) and W2 (4.6 um) deep stacks at the circle: a faint dot is there in W2 but nothing at all in W1. Ordinary stars look about equally bright in both.",
+  "quiz": {
+   "question": "The object shows up at 4.6 um (W2) but is invisible at 3.4 um (W1). What does that suggest?",
+   "options": [
+    "It is a hot blue star",
+    "It is extremely cold, so almost all its light comes out at longer wavelengths",
+    "The W1 camera was broken",
+    "It is a galaxy"
+   ],
+   "answer_index": 1,
+   "explanation": "A ~250 K brown dwarf glows mainly beyond 4 um, and methane absorbs its 3.4 um light, so W1-W2 is huge (>3.5 mag here). Normal stars have W1-W2 near 0."
+  },
+  "evidence": {
+   "montage": "lesson2_w0855_stacks.png",
+   "production_sequence": "17563049e418d9e0",
+   "w2_weighted_mean_ujy": [
+    460.8,
+    5.5
+   ],
+   "w2_vega": 13.93,
+   "w1_weighted_mean_ujy": [
+    8.3,
+    2.8
+   ],
+   "w1_vega": 18.9,
+   "w1_w2": ">=3.5 (W1 only ~3 sigma); literature CatWISE/AllWISE W2=13.9, W1 undetected",
+   "note": "Visible in 2-yr W2 stacks (stack.png?band=W2&mjd_min&mjd_max) at the PM-predicted circle, absent in matching W1 stacks; single visits are too shallow; full-span stacks smear it (8.1 arcsec/yr)."
+  }
+ },
+ {
+  "id": "together",
+  "title": "Move together",
+  "object": "Epsilon Indi A + Ba/Bb",
+  "ra": 330.94218,
+  "dec": -56.78441,
+  "pmra_masyr": 3966.661,
+  "pmdec_masyr": -2536.192,
+  "epoch_yr": 2000.0,
+  "fov_deg": 0.2,
+  "mjd_min": null,
+  "mjd_max": null,
+  "wise_exposures": false,
+  "bands": [
+   "W2"
+  ],
+  "deep": false,
+  "markers": [
+   {
+    "label": "eps Ind A (K5V star)",
+    "ra": 330.8402234423433,
+    "dec": -56.785978554364995,
+    "pmra_masyr": 3966.661,
+    "pmdec_masyr": -2536.192,
+    "epoch_yr": 2000.0
+   },
+   {
+    "label": "eps Ind Ba/Bb (T1+T6 brown dwarfs)",
+    "ra": 331.04414658852124,
+    "dec": -56.782844195116105,
+    "pmra_masyr": 3981.977,
+    "pmdec_masyr": -2466.832,
+    "epoch_yr": 2000.0
+   }
+  ],
+  "what_to_look_for": "Watch the bright star (A) and the faint dot ~400 arcseconds to its east (B): both drift the same way by the same amount (about 4.7 arcsec per year) while the background stars stay still.",
+  "quiz": {
+   "question": "Two objects 400 arcseconds apart move across the sky in exactly the same direction and speed for 14 years. Most likely they...",
+   "options": [
+    "...are a coincidence",
+    "...are bound together, travelling through space as one system",
+    "...are both asteroids",
+    "...are image artifacts"
+   ],
+   "answer_index": 1,
+   "explanation": "A shared ('common') proper motion is the classic sign of a physical pair; eps Ind B is a pair of brown dwarfs orbiting the star eps Ind A at ~1500 au."
+  },
+  "evidence": {
+   "montage": "lesson3_epsInd_A_B_W2.png",
+   "measured_pm_masyr": {
+    "A": [
+     3932,
+     -2554,
+     "+-39,+-28"
+    ],
+    "B": [
+     4006,
+     -2493,
+     "+-130,+-122"
+    ],
+    "method": "centroids in 22 W2 visit medians 2010-2024"
+   },
+   "catalog_pm_masyr": {
+    "A": [
+     3966.7,
+     -2536.2
+    ],
+    "B": [
+     3982.0,
+     -2466.8
+    ]
+   },
+   "separation_arcsec": {
+    "y2010": 402.1,
+    "y2024": 401.5
+   },
+   "position_angle_deg": 88.4,
+   "fit_check": "Centre = A-B midpoint (epoch 2000) with A's PM; both lie +-201 arcsec from centre, plus <40 arcsec drift: fits fov 0.2 deg (half-width 360 arcsec) and 0.25 deg. Target circle sits on empty sky, so the frontend should draw the two markers.",
+   "b_photometry": "production eps Ind B sequence 4852b06fe0f19cdb: W1=10.66, W2=9.50 (W1-W2=1.16)"
+  }
+ },
+ {
+  "id": "brightness",
+  "title": "Brightness changes",
+  "object": "AL Bootis (Mira variable, P=166.7 d) - replaces R Draconis, which is saturated",
+  "ra": 204.73282996689997,
+  "dec": 18.711619948339997,
+  "pmra_masyr": -1.924,
+  "pmdec_masyr": -1.836,
+  "epoch_yr": 2000.0,
+  "fov_deg": 0.05,
+  "mjd_min": null,
+  "mjd_max": null,
+  "wise_exposures": false,
+  "bands": [
+   "W1",
+   "W2"
+  ],
+  "deep": false,
+  "alternative": {
+   "object": "R Draconis (Mira, VSX P=246.12 d)",
+   "ra": 248.16761083295,
+   "dec": 66.75497941722,
+   "pmra_masyr": -20.643,
+   "pmdec_masyr": 6.149,
+   "epoch_yr": 2000.0,
+   "fov_deg": 0.05,
+   "bands": [
+    "W1",
+    "W2"
+   ],
+   "status": "NOT usable in-app today: production sequence f3e671d50fd9b36b has flux_ujy=null for all 46 WISE and all 539 SPHEREx frames (W1~0 mag, ~35% of PSF pixels saturated). Works only with a catalog-photometry fallback (NEOWISE single-exposure catalog: W1 range 1.0 mag, Lomb-Scargle best 246.4 d, FAP 7e-4)."
+  },
+  "what_to_look_for": "Open the light curve: AL Boo changes by about 1 magnitude (2.5x in brightness) at 3.4 and 4.6 um. Folded at 166.7 days, the points line up into one smooth repeating cycle.",
+  "quiz": {
+   "question": "A red giant star brightens and fades again and again, and folding the data at 167 days lines all points up into one smooth curve. What kind of variable is it?",
+   "options": [
+    "An irregular young star",
+    "A pulsating Mira variable with a regular period",
+    "An asteroid",
+    "A brown dwarf"
+   ],
+   "answer_index": 1,
+   "explanation": "Mira variables are old red giants that swell and shrink with a stable period of 100-1000 days. AL Boo's 166.7 d period is recovered from WISE data alone (best periodogram peak 166.6 d)."
+  },
+  "evidence": {
+   "montage": "lesson4_5_lightcurves.png",
+   "backend_pipeline": "ran this repo's backend (_units/_make_frame, WISE visits only, local CACHE_DIR) on AL Boo: 24 W1 + 24 W2 visits 2010-2024, all with non-null flux, none flagged; W1 7.96-8.99 (range 0.99 mag), W2 7.72-8.47 (0.75 mag); Lomb-Scargle on pipeline mags: W1 166.6 d (FAP 3e-4), W2 166.0 d (FAP 1e-4); VSX period 166.7 d",
+   "catalog_check": "IRSA neowiser_p1bs_psd per-visit medians: W1 7.99-8.97, W2 7.70-8.45, w1sat <= 0.02 (essentially unsaturated); LS best 166.7 d (W1), 166.2 d (W2)",
+   "sampling_note": "the 6-month visit cadence aliases a 166.7 d cycle into an apparent ~5.2-yr wave in the plain time plot (1/(1/166.7-1/182.6) = 1915 d); a phase fold at the known/LS period shows the true cycle, so the lesson UI should offer 'fold at period'",
+   "selection": "SIMBAD (Harvard TAP) otype Mi* with K 8.8-9.8 outside the Galactic plane, checked 2 (AL Boo, CV Vir; CV Vir also recovered: 149.8 vs VSX 149.3 d)"
+  }
+ },
+ {
+  "id": "irregular",
+  "title": "Dusty disk, no pattern",
+  "object": "RW Aurigae",
+  "ra": 76.95652603458333,
+  "dec": 30.401438173888888,
+  "pmra_masyr": 7.23,
+  "pmdec_masyr": -20.33,
+  "epoch_yr": 2000.0,
+  "fov_deg": 0.05,
+  "mjd_min": null,
+  "mjd_max": null,
+  "wise_exposures": false,
+  "bands": [
+   "W1",
+   "W2"
+  ],
+  "deep": false,
+  "what_to_look_for": "Open the light curve: RW Aur brightens and fades by more than two magnitudes in W2 over the years, but with no repeating rhythm. Dust clumps in its disk block and unblock the light.",
+  "quiz": {
+   "question": "RW Aur's light curve rises and falls by large amounts but never repeats a regular cycle. Which explanation fits best?",
+   "options": [
+    "A pulsating Mira star with a fixed period",
+    "Clumps of dust in a planet-forming disk passing in front of a young star",
+    "An eclipsing binary",
+    "A cosmic ray hit"
+   ],
+   "answer_index": 1,
+   "explanation": "RW Aur is a young T Tauri star with a messy disk; dimming events of years and month-long brightenings are irregular. A periodogram of the NEOWISE data finds no significant period."
+  },
+  "evidence": {
+   "source": "IRSA neowiser_p1bs_psd + allwise_p3as_mep (single-exposure profile-fit photometry, per-visit medians, 3 arcsec match)",
+   "w2_range_mag": [
+    2.86,
+    5.29
+   ],
+   "w1_range_mag": [
+    4.51,
+    6.31
+   ],
+   "w2_amplitude_mag_neowiser": 2.32,
+   "w1_amplitude_mag_neowiser": 1.3,
+   "brightest": "2017-09 (W2 2.86)",
+   "faintest": "2010 (W2 5.29), 2021-02 (W2 5.18)",
+   "periodogram": "Lomb-Scargle 60-1000 d: best peak 192 d (~ the 6-month sampling alias), FAP 0.056 -> no significant period",
+   "caveat": "Saturated (w2sat ~0.2-0.27): absolute mags biased, but changes of >2 mag are far beyond that. Production sequence 5486dfe3b1c770cc has flux_ujy=null for all 44 WISE frames and most SPHEREx frames (saturated), so the in-app light curve is EMPTY unless the backend falls back to catalog photometry."
+  }
+ },
+ {
+  "id": "ghost",
+  "title": "Real or ghost?",
+  "object": "Optical ghost of Epsilon Indi A (WISE W2)",
+  "ra": 330.8707,
+  "dec": -56.78598,
+  "pmra_masyr": 3966.661,
+  "pmdec_masyr": -2536.192,
+  "epoch_yr": 2000.0,
+  "fov_deg": 0.25,
+  "mjd_min": 56770.0,
+  "mjd_max": 57330.0,
+  "wise_exposures": false,
+  "bands": [
+   "W2"
+  ],
+  "deep": false,
+  "markers": [
+   {
+    "label": "ghost (spring visits)",
+    "ra": 330.72679,
+    "dec": -56.83682,
+    "mjd": 56780.3
+   },
+   {
+    "label": "ghost (autumn visits)",
+    "ra": 331.01178,
+    "dec": -56.75528,
+    "mjd": 56962.0
+   },
+   {
+    "label": "eps Ind B (real)",
+    "ra": 331.04414658852124,
+    "dec": -56.782844195116105,
+    "pmra_masyr": 3981.977,
+    "pmdec_masyr": -2466.832,
+    "epoch_yr": 2000.0
+   }
+  ],
+  "what_to_look_for": "Next to the bright star there is a fuzzy doughnut about 5 arcminutes away. Step through the visits: every six months it jumps to the opposite side of the star, while the real brown dwarf (eps Ind B) stays in place.",
+  "quiz": {
+   "question": "A faint 'companion' appears 316 arcseconds from a bright star, but six months later it is on the opposite side, and then it jumps back. What is it?",
+   "options": [
+    "A planet orbiting very fast",
+    "A reflection (optical ghost) inside the telescope, fixed to the camera, not the sky",
+    "A second brown dwarf",
+    "An asteroid"
+   ],
+   "answer_index": 1,
+   "explanation": "WISE flips its orientation on the sky every six months. A ghost always sits 114 detector pixels from the bright star in the same camera direction, so on the sky it swaps sides. Real objects don't care how the camera is turned. It also looks like a ring, not a point."
+  },
+  "evidence": {
+   "montage": "lesson6_ghost_epsInd_W2.png",
+   "prediction": "WISE Explanatory Supplement IV.4.g Table 17: W2 ghost at dx=+114, dy=0 detector px (313.5 arcsec), radius 13 px, for parent W2 <= 4.5 mag (eps Ind A W2 ~ 1.7-2, saturated)",
+   "measured": "ring present at the predicted position in all 22 W2 visit medians 2010-2024 (mean 7.0 sigma/pixel within r=8 px, range 3.1-11.3); same sky spot in the nearest opposite-season visit: 0.05 sigma median. Position angle from A: 242 deg (Apr/May) vs 62 deg (Oct/Nov), separation 316 arcsec",
+   "official_flags": "IRSA ARTID tables s3://nasa-irsa-wise/.../<frame>-art-w2-O.tbl list spurious 'O' (ghost) sources 8-18 arcsec from the predicted ghost centre (on the ring) in 11 of 13 checked NEOWISE frames",
+   "fit_check": "centre 60 arcsec east of A: offsets from centre (E,N arcsec) ghost spring (-340,-147), ghost autumn (+220,+148), A (-60,0), B (+342,+12); all inside half-width 450",
+   "second_example": "cosmic rays: NEOWISE exposure 11779r110 W2 (2019-11-27 23:32 UT, inside the South Atlantic Anomaly, saa_sep=-6 deg) has 150 compact >15 sigma blobs absent from other exposures vs 1-4 in neighbouring exposures; visible in lesson 7's field (panel 2 of lesson7 montage)"
+  }
+ },
+ {
+  "id": "asteroid",
+  "title": "Asteroid",
+  "object": "(888) Parysatis (main-belt asteroid)",
+  "ra": 5.9233,
+  "dec": -17.2745,
+  "pmra_masyr": 0.0,
+  "pmdec_masyr": 0.0,
+  "epoch_yr": 2000.0,
+  "fov_deg": 0.25,
+  "mjd_min": 58814.5,
+  "mjd_max": 58816.0,
+  "wise_exposures": true,
+  "bands": [
+   "W2",
+   "W1"
+  ],
+  "deep": false,
+  "track": [
+   {
+    "mjd": 58814.8503,
+    "ra": 5.87531,
+    "dec": -17.35335
+   },
+   {
+    "mjd": 58814.9812,
+    "ra": 5.88617,
+    "dec": -17.335
+   },
+   {
+    "mjd": 58815.112,
+    "ra": 5.89714,
+    "dec": -17.31658
+   },
+   {
+    "mjd": 58815.2429,
+    "ra": 5.90824,
+    "dec": -17.29812
+   },
+   {
+    "mjd": 58815.3082,
+    "ra": 5.91381,
+    "dec": -17.28886
+   },
+   {
+    "mjd": 58815.3084,
+    "ra": 5.91383,
+    "dec": -17.28886
+   },
+   {
+    "mjd": 58815.3737,
+    "ra": 5.91943,
+    "dec": -17.2796
+   },
+   {
+    "mjd": 58815.4391,
+    "ra": 5.92508,
+    "dec": -17.27032
+   },
+   {
+    "mjd": 58815.5045,
+    "ra": 5.93075,
+    "dec": -17.26102
+   },
+   {
+    "mjd": 58815.5046,
+    "ra": 5.93076,
+    "dec": -17.26102
+   },
+   {
+    "mjd": 58815.5699,
+    "ra": 5.93645,
+    "dec": -17.25172
+   },
+   {
+    "mjd": 58815.7008,
+    "ra": 5.94795,
+    "dec": -17.23306
+   },
+   {
+    "mjd": 58815.8316,
+    "ra": 5.95955,
+    "dec": -17.21436
+   }
+  ],
+  "what_to_look_for": "Play the single exposures of 27-28 November 2019 one by one: a bright dot crawls from bottom-right to top-left, about 77 arcseconds between exposures. In the visit median, and in every other year, that spot is empty.",
+  "quiz": {
+   "question": "A dot moves ~25 arcseconds per hour within one day and is missing in all other years. What is it?",
+   "options": [
+    "A nearby star with high proper motion",
+    "An asteroid orbiting the Sun",
+    "A ghost reflection",
+    "A variable star"
+   ],
+   "answer_index": 1,
+   "explanation": "Stars, even Barnard's Star, move at most ~10 arcseconds per YEAR. Moving that far in an hour means it's inside our Solar System: here the asteroid (888) Parysatis, 1.7 au from Earth."
+  },
+  "evidence": {
+   "montage": "lesson7_asteroid_888_parysatis_W2.png",
+   "ephemeris": "IRSA MOST (astroquery Most.query_object catalog=wise_neowiser_yr6, obj_name='888'), V=13.65, r=2.265 au, Delta=1.70 au",
+   "exposures": "13 W2 + 13 W1 NEOWISE L1b exposures 2019-11-27 20:24 to 2019-11-28 19:57 UT (scans 11775r-11805r), read from s3://nasa-irsa-wise",
+   "detection": "peak 246-505 sigma (W2), 140-301 sigma (W1) within <=1 grid px (2.75 arcsec) of the ephemeris in every exposure; same positions in the other exposures of the visit: median 1.9 sigma; template of 12 exposures from 6 other visits (2010-2021): median 0.9 sigma, max 1.5",
+   "motion_arcsec_per_hour": 24.5,
+   "motion_per_exposure_gap_arcsec": 77,
+   "track_length_deg": 0.16,
+   "app_note": "the default visit median erases the asteroid (montage panel 'median of the visit'); needs wise_exposures=true. SIA at the grid centre returns all 28 exposures of this visit."
+  }
+ }
+]
