@@ -9,7 +9,8 @@ import multiprocessing
 import os
 import re
 import threading
-from collections import Counter
+import time
+from collections import Counter, deque
 from concurrent.futures import Future, ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from concurrent.futures.process import BrokenProcessPool
 
@@ -35,6 +36,8 @@ JOB_POOL = ThreadPoolExecutor(max_workers=MAX_RUNNING_SEQUENCES)  # one orchestr
 INFLIGHT_PER_SEQUENCE = 2 * WORKER_PROCESSES
 JOBS: dict[str, Future] = {}
 JOBS_LOCK = threading.Lock()
+STARTED: dict[str, tuple[float, int]] = {}  # running fetch: (start time, units done then), for eta_s
+DURATIONS: deque = deque(maxlen=20)  # seconds of recent runs that had frames to fetch, for eta_s
 # S3 reads are I/O bound, the rest is GIL-bound: WORKER_PROCESSES processes x READ_THREADS reader threads
 READ_THREADS = max(1, math.ceil(S3_MAX_CONCURRENCY / WORKER_PROCESSES))
 CHUNK_READS = 2 * READ_THREADS  # frames per worker task: keeps its reader threads busy, progress stays live
@@ -216,6 +219,7 @@ def _run(man: Manifest, p, wcs, shape, priority_bands=()):
     todo = order_units([u for u in units if u[0] not in have], priority_bands)
     wise_left = {u[0] for u in todo if u[2][0].survey == "wise"}
     man.update(status="fetching", total=len(units), done=len(units) - len(todo), wise_done=not wise_left)
+    STARTED[sid] = (time.time(), len(units) - len(todo))
     chunks = iter(_chunks(todo))
     futs: dict[Future, list] = {}
 
@@ -239,6 +243,9 @@ def _run(man: Manifest, p, wcs, shape, priority_bands=()):
             wise_left.discard(fid)
             man.update(frame=frame, unit_done=True, wise_done=not wise_left)
     man.update(status="done")
+    t0, _ = STARTED.pop(sid)
+    if todo:
+        DURATIONS.append(time.time() - t0)
     log.info("sequence %s done: %d frames", sid, len(man.data["frames"]))
 
 
@@ -340,9 +347,28 @@ def get_manifest(sid):
     return m
 
 
+def queue_status(sid, m):
+    """-> (queue_position, eta_s). queue_position: 1-based place among sequences waiting for one of the
+    MAX_RUNNING_SEQUENCES slots, None when running, finished or not started here. eta_s (rough): running ->
+    remaining units at this run's own rate so far; queued -> (slot waves ahead + its own run) x the median
+    duration of recent runs; None without a basis."""
+    with JOBS_LOCK:
+        waiting = [s for s, f in JOBS.items() if not f.running() and not f.done()]
+    typical = float(np.median(DURATIONS)) if DURATIONS else None
+    if sid in waiting:
+        pos = waiting.index(sid) + 1
+        return pos, (math.ceil(pos / MAX_RUNNING_SEQUENCES) + 1) * typical if typical else None
+    st = STARTED.get(sid)
+    if st and m["status"] == "fetching" and m["done"] > st[1]:
+        return None, (m["total"] - m["done"]) * (time.time() - st[0]) / (m["done"] - st[1])
+    return None, None
+
+
 @router.get("/api/sequences/{sid}")
 def get_sequence(sid: str):
-    return get_manifest(sid)
+    m = get_manifest(sid)
+    pos, eta = queue_status(sid, m)
+    return {**m, "queue_position": pos, "eta_s": eta}
 
 
 @router.get("/api/sequences/{sid}/frames/{frame_id}.png")

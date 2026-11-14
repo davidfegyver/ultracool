@@ -265,11 +265,11 @@ def analyse(m, pos, pm, frames, mode):
             "plain": s + _plain_props(color, var, spec)}
 
 
-def _response(mode, ra, dec, pos, pm, status="ok", res=None, progress=None, error=None):
+def _response(mode, ra, dec, pos, pm, status="ok", res=None, progress=None, error=None, queue_position=None):
     res = res or {"frames": [], "color": None, "variability": None, "spectrum": None,
                   "plain": ["Full measurement on the original SPHEREx pixels is running."] if status == "running" else []}
     return _clean({"status": status, "mode": mode, "requested": {"ra": ra, "dec": dec}, "position": pos, "pm": pm,
-                   **res, "progress": progress, "error": error})
+                   **res, "progress": progress, "error": error, "queue_position": queue_position})
 
 
 def _cache_key(sid, pos, pm):
@@ -320,5 +320,8 @@ def probe(sid: str, ra: float = Query(ge=0, lt=360), dec: float = Query(ge=-90, 
             if len(FULL_JOBS) >= MAX_FULL_JOBS:
                 raise HTTPException(503, "Too many full measurements queued; try again in a minute")
             st = FULL_JOBS[key] = {"done": 0, "total": 0, "error": None}
-            FULL_POOL.submit(_run_full, key, m, pos, pm, st, path)
-    return _response(mode, ra, dec, pos, pm, status="running", progress={"done": st["done"], "total": st["total"]})
+            st["future"] = FULL_POOL.submit(_run_full, key, m, pos, pm, st, path)
+        # 1-based place among full jobs waiting for the single orchestrator; None once running
+        waiting = [k for k, s in FULL_JOBS.items() if not (s["future"].running() or s["future"].done())]
+    return _response(mode, ra, dec, pos, pm, status="running", progress={"done": st["done"], "total": st["total"]},
+                     queue_position=waiting.index(key) + 1 if key in waiting else None)

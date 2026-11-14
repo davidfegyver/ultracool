@@ -28,7 +28,7 @@ from . import config, ucd
 from .frames import PIX_ARCSEC, aperture_flux, clipped_mean, deep_stack, group_by_gap, mjd_to_year, propagate
 from .sequences import (WISE_F0_JY, WISE_R_AP, WISE_R_IN, WISE_R_OUT, get_manifest, load_npy, seq_dir,
                         wise_flux_factor)
-from .sources import irsa_gator
+from .sources import WISE_ART_R_ARCSEC, bright_star_artifacts, irsa_gator, query_frames
 from .spectral import DOUBTFUL, EARLY_LABELS, NO_DETECTION, WARMER, classify, demote
 
 log = logging.getLogger("ultracool.analysis")
@@ -91,6 +91,11 @@ MOVER_MIN_FRAC = 0.6  # detected in >= max(4, 60%) of the windows
 MOVER_SEP_FWHM = 1.5
 DIPOLE_RATIO, ON_STATIC_RATIO = 0.3, 0.5  # per-frame flux of the static source / the detection's
 STATIC_PX = 1.0  # detections recurring within 1 px in half the windows are static
+# A track on WISE's predicted spike/halo/ghost artifacts of a bright star in >= this fraction of the sampled
+# exposures is that star's artifact (moving with it if the star moves). eps Ind field: its 4 artifact tracks sit
+# on them in 59-80% of 44 exposures, eps Ind A itself 7%, eps Ind B 0%; a real source crossing a spike or halo
+# does so in a few visits only.
+ARTIFACT_FRAC = 0.4
 
 
 def _num(x):
@@ -1187,6 +1192,34 @@ def _target_track(m, motion, wcs):
                       np.asarray(eta) + cy * PIX_ARCSEC, [p["err_arcsec"] for p in pts])
 
 
+def _artifact_samples(m, visits):
+    """WISE spike/halo/ghost artifact positions in two W2 exposures (first, middle) of every visit ->
+    [(mjd, array of (ra, dec))], or [] if IRSA's frame list is unavailable (then nothing is vetoed)."""
+    lo, hi = min(f["mjd"] for f in visits) - 10, max(f["mjd"] for f in visits) + 10
+    try:
+        raw = sorted((r for r in query_frames(*_grid_wcs(m).wcs.crval)
+                      if r.survey == "wise" and r.band == "W2" and lo <= r.mjd <= hi), key=lambda r: r.mjd)
+    except Exception as e:  # noqa: BLE001
+        log.warning("artifact check skipped: %s", e)
+        return []
+    groups: dict[int, list] = {}
+    for r, g in zip(raw, group_by_gap([r.mjd for r in raw], 10)):
+        groups.setdefault(g, []).append(r)
+    sample = [v[i] for v in groups.values() for i in sorted({0, len(v) // 2})]
+    pts = bright_star_artifacts(sample)
+    return [(r.mjd, np.array(pts[r.stem], float).reshape(-1, 2)) for r in sample if r.stem in pts]
+
+
+def _artifact_frac(art, wcs, track):
+    """Fraction of the sampled exposures in which the track sits within WISE_ART_R_ARCSEC of a flagged artifact."""
+    hits = 0
+    for mjd, p in art:
+        if len(p):
+            ra, dec = (float(v) for v in wcs.pixel_to_world_values(*track(mjd_to_year(mjd))))
+            hits += float(np.min(np.hypot(*_offsets_arcsec(p[:, 0], p[:, 1], ra, dec)))) <= WISE_ART_R_ARCSEC
+    return hits / len(art)
+
+
 def find_movers(m):
     """Every significantly moving source in the field: tracks linked through 2-yr W2 stacks (find_tracks),
     vetted in the images (_vet_track) and against CatWISE motions; the target's own track (summary motion)
@@ -1228,6 +1261,7 @@ def find_movers(m):
     cats = _catalogs(m) if tracks else {}
     ny = m["grid"]["height"]
     movers, rejected = [], []
+    art = None  # fetched for the first candidate that needs it
     for tr in tracks:
         fit = tr["fit"]
         # fit is on (-x, y) * PIX_ARCSEC: east/north offsets from the grid origin in arcsec
@@ -1242,6 +1276,13 @@ def find_movers(m):
         entry = {"ra": ra, "dec": dec, "epoch_yr": REF_YR, "x_px": x, "y_px": ny - 1 - y,
                  "pmra_masyr": fit["pmra"], "pmdec_masyr": fit["pmdec"], "pm_err_masyr": fit["pmra_err"],
                  "significance_sigma": fit["significance"], "chi2_red": fit["chi2_red"], "n_epochs": tr["n"]}
+        if not tr["target"]:
+            if art is None:
+                art = _artifact_samples(m, fs)
+            if art and _artifact_frac(art, wcs, track) >= ARTIFACT_FRAC:
+                rejected.append({**entry, "reason": "artifact of a bright star"})
+                vetting["artifact of a bright star"] += 1
+                continue
         cw, cw_d = _match(cats.get("catwise"), ra, dec, fit["pmra"], fit["pmdec"], fit["pmra_err"])
         if cw and not tr["target"] and math.hypot(cw["pmra"], cw["pmdec"]) < max(3 * cw["sigpm"], 100) and cw_d >= 3:
             rejected.append({**entry, "reason": f"catalog says static: CatWISE {cw['name']} moves "

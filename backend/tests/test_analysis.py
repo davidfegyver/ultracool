@@ -258,3 +258,34 @@ def test_fetch_order_puts_priority_bands_and_wise_first():
            f("wise", "W1", 58000, "w1a"), f("wise", "W2", 58300, "w2b"), f("wise", "W2", 55300, "w2a")]
     order = [u[0] for u in order_units(_units(raw), ["W2", "D6"])]
     assert order == ["wise-W2-v00", "wise-W2-v01", "sx-c", "sx-b", "wise-W1-v00", "sx-a"]
+
+
+def test_track_on_bright_star_artifacts_is_flagged():
+    from app.analysis import _artifact_frac
+    from app.frames import make_grid
+
+    wcs, _ = make_grid(150.0, 0.0, 0.05)
+    track = lambda ty: (30.0 + 0.5 * (ty - 2018), 30.0)  # noqa: E731 - grid px, moving 1.4"/yr east-west
+    mjds = [51544.5 + (y - 2000) * 365.25 for y in np.linspace(2010, 2024, 20)]
+    on = [np.array([wcs.pixel_to_world_values(*track(2000 + (mjd - 51544.5) / 365.25))]) for mjd in mjds]
+    art = [(mjd, p if i % 4 else np.empty((0, 2))) for i, (mjd, p) in enumerate(zip(mjds, on))]  # on it in 15/20
+    assert _artifact_frac(art, wcs, track) == 0.75
+    far = [(mjd, p + [0.0, 20 / 3600]) for mjd, p in art]  # artifacts 20" away
+    assert _artifact_frac(far, wcs, track) == 0.0
+
+
+def test_queue_position_and_eta(monkeypatch):
+    from concurrent.futures import Future
+
+    from app import sequences
+
+    running, waiting1, waiting2 = Future(), Future(), Future()
+    running.set_running_or_notify_cancel()
+    monkeypatch.setattr(sequences, "JOBS", {"a": running, "b": waiting1, "c": waiting2})
+    monkeypatch.setattr(sequences, "MAX_RUNNING_SEQUENCES", 1)
+    monkeypatch.setattr(sequences, "DURATIONS", sequences.deque([100.0]))
+    monkeypatch.setattr(sequences, "STARTED", {"a": (sequences.time.time() - 50, 10)})
+    assert sequences.queue_status("c", {"status": "querying", "done": 0, "total": 0}) == (2, 300.0)
+    pos, eta = sequences.queue_status("a", {"status": "fetching", "done": 60, "total": 110})
+    assert pos is None and eta == pytest.approx(50, rel=0.05)  # 50 units at 1 unit/s
+    assert sequences.queue_status("z", {"status": "done", "done": 5, "total": 5}) == (None, None)

@@ -228,11 +228,32 @@ def _wise_extras(frame):
     art: dict[str, list] = {}
     for c, p in zip(WISE_ART, paths[1:]):
         if isinstance(got.get(p), bytes):
-            for line in got[p].decode().splitlines():
-                parts = line.split()
-                if len(parts) >= 2 and not line.lstrip().startswith(("|", "\\")):
-                    art.setdefault(WISE_ART[c], []).append((float(parts[0]), float(parts[1])))
+            art.setdefault(WISE_ART[c], []).extend(_art_rows(got[p]))
     return msk, art
+
+
+def _art_rows(data):
+    """IPAC table of artifact positions -> [(ra, dec)]."""
+    return [(float(p[0]), float(p[1])) for line in data.decode().splitlines()
+            if len(p := line.split()) >= 2 and not line.lstrip().startswith(("|", "\\"))]
+
+
+def bright_star_artifacts(frames):
+    """Diffraction-spike, halo and optical-ghost artifact positions that the WISE/NEOWISE pipeline predicts around
+    bright stars (the -art-*-D/H/O tables next to each L1b image) for each exposure -> {stem: [(ra, dec)]};
+    exposures without an S3 copy are left out, missing tables count as none."""
+    out = {}
+    for region in {f.region for f in frames if f.bucket}:
+        paths = {}
+        for f in frames:
+            if f.bucket and f.region == region:
+                out[f.stem] = []
+                base = f.key.removesuffix(f"-{f.band.lower()}-int-1b.fits")
+                paths.update({f"{f.bucket}/{base}-art-{f.band.lower()}-{c}.tbl": f.stem for c in ("D", "H", "O")})
+        for p, data in _fs(region).cat(list(paths), on_error="omit").items():
+            if isinstance(data, bytes):
+                out[paths[p]].extend(_art_rows(data))
+    return out
 
 
 def _wise_quality(frame, fw, sec, x0, y0, target):
