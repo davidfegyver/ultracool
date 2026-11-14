@@ -9,8 +9,8 @@ Built for NASA Space Apps 2026 ("Planet X and SPHEREx").
 | Mode | For | What you get |
 |---|---|---|
 | **Learn** | newcomers | Seven short lessons on real data, each with a quiz: something moves (Barnard's Star), right colour (WISE 0855−0714), move together (ε Indi A + B), brightness changes (AL Bootis), no pattern (RW Aurigae), real or ghost (an optical ghost of ε Indi A), asteroid ((888) Parysatis). |
-| **Explore** | curious minds | Search any name or coordinates; a "What we found" panel answers in plain English: does it move, is it cold, does it change, what type is it. |
-| **Research** | astronomers, students | Proper motion fitted from our own images with errors, W1−W2 colour, variability (χ², Lomb–Scargle with cadence-alias warnings), SPHEREx spectral typing, catalog overlays, difference images, deep stacks, single exposures, CSV export with provenance. |
+| **Explore** | curious minds | Search any name or coordinates; a "What we found" panel answers in plain English: does it move, is it cold, does it change, what type is it. Drag the cyan probe onto any other source in the field to measure it too. |
+| **Research** | astronomers, students | Proper motion fitted from our own images with errors, W1−W2 colour, variability (χ², Lomb–Scargle with cadence-alias warnings), SPHEREx spectral typing, catalog overlays, blink and difference images, deep stacks, single exposures, probe measurements of any source, CSV export with provenance. |
 | **Discover** | citizen scientists | Scan a 0.25° field for every moving source, vetted against image artifacts and CatWISE; classify candidates as real mover, artifact or unsure and export your classifications. |
 
 ## Science result
@@ -65,6 +65,9 @@ flowchart LR
 | `WORKER_PROCESSES` | CPU count | frame-processing processes |
 | `S3_MAX_CONCURRENCY` | 8 × workers | parallel S3 reads |
 | `IRSA_MAX_CONCURRENCY` | `2` | parallel IRSA requests (IRSA throttles above ~2) |
+| `MAX_RUNNING_SEQUENCES` | max(4, workers) | fields fetched at once; others wait in line (`queue_position`, `eta_s`) |
+
+nginx limits each visitor to ~12 new fields and ~4 full probe measurements per minute (with bursts); everything else is unlimited, and requests from the host itself are exempt (`frontend/nginx.conf.template`).
 
 ## API
 
@@ -72,9 +75,10 @@ flowchart LR
 |---|---|
 | `GET /api/resolve?q=` | name, designation or coordinates → position and proper motion |
 | `POST /api/sequences` | start/reuse an aligned frame sequence (`ra, dec, pmra_masyr, pmdec_masyr, epoch_yr, fov_deg, mjd_min, mjd_max, wise_exposures`) |
-| `GET /api/sequences/{id}` | manifest: status, grid WCS, frames with photometry |
+| `GET /api/sequences/{id}` | manifest: status, `queue_position`, `eta_s`, grid WCS, frames with photometry |
 | `GET /api/sequences/{id}/summary` | motion, colour, variability, spectrum, asteroids, plain-English sentences |
-| `GET /api/sequences/{id}/movers` | vetted moving sources in the field |
+| `GET /api/sequences/{id}/movers` | moving sources in the field, vetted against static sources, bright-star artifacts and CatWISE |
+| `GET /api/sequences/{id}/probe?ra&dec[&mode=full]` | measure any point in the field: quick preview from cached images, or a full re-measurement on the original pixels |
 | `GET /api/sequences/{id}/spectrum`, `/catalog_lightcurve`, `/export.csv` | spectral typing, catalog light curve, photometry export |
 | `GET /api/sequences/{id}/stack.png`, `/diff.png`, `/frames/{frame}.png` | deep stacks, difference images, frames |
 | `GET /api/ucds`, `/api/ucds/near` | SPIFF ultracool-dwarf catalog search |

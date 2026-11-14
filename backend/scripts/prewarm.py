@@ -10,8 +10,9 @@ import urllib.parse
 import urllib.request
 
 API = os.getenv("API_URL", "http://localhost:8000")
+# also the frontend's "Examples" list (TargetBar); keep in sync
 TARGETS = ["Barnard's Star", "eps Ind B", "WISE J085510.83-071442.5", "RW Aur", "R Dra",
-           "WISEA J153429.75-104303.3", "WISE J231728.42-665959.3"]
+           "WISEA J153429.75-104303.3", "WISE J231728.42-665959.3", "AL Boo"]
 # Discover-mode example fields (0.25 deg, the Discover field size); keep in sync with frontend Discover examples
 DISCOVER = ["WISE J231728.42-665959.3", "WISEA J153429.75-104303.3", "eps Ind B"]
 DISCOVER_FOV_DEG = 0.25
