@@ -180,6 +180,27 @@ function LessonView({ lesson, n, onCorrect, onNext }: { lesson: Lesson; n: numbe
             : {alt.note}.
           </p>
         )}
+        {lesson.more_examples && (
+          <section aria-labelledby="more-examples" className="rounded bg-slate-900 p-3">
+            <h3 id="more-examples" className="font-semibold">
+              {lesson.more_examples.title}
+            </h3>
+            <p className="mb-2 text-slate-400">{lesson.more_examples.intro}</p>
+            <ul className="space-y-1.5">
+              {lesson.more_examples.items.map((x) => (
+                <li key={x.name}>
+                  <a
+                    className="text-sky-400 underline"
+                    href={`?${new URLSearchParams({ mode: 'explore', target: x.name, ra: String(x.ra), dec: String(x.dec) })}`}
+                  >
+                    {x.name}
+                  </a>
+                  : {x.reason}.
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
         {onNext && (
           <button className="rounded bg-sky-700 px-3 py-1.5 hover:bg-sky-600" onClick={onNext}>
             Next lesson →

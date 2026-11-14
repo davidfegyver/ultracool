@@ -62,6 +62,39 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
           ))}
         </section>
 
+        <section aria-labelledby="featured-heading" className="rounded-lg border border-emerald-800 bg-emerald-950/30 p-4">
+          <div className="text-xs tracking-wide text-emerald-400 uppercase">Featured result</div>
+          <h2 id="featured-heading" className="text-lg font-semibold">
+            WISE J2317−6659: a brown dwarf typed for the first time
+          </h2>
+          <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-300">
+            This faint infrared source was only listed as a possible brown dwarf, with a type guessed from its colors. With this app we measured its first spectral
+            type from SPHEREx's low-resolution 0.75–5 µm spectrum: a T5–T6 brown dwarf about 28 parsecs (90 light-years) away, moving 0.48″ per year across 16 years
+            of WISE and SPHEREx images. It sits at the same distance as the star pair HD 219509/219495, once suggested as its host, but moves differently, so it is
+            most likely not their companion.
+          </p>
+          <p className="mt-1 text-xs text-slate-500">
+            SPHEREx gives a low-resolution spectrum (R ≈ 40–130), not a slit spectrum, and the distance is estimated from brightness and type: a follow-up
+            spectrum and parallax would confirm it.
+          </p>
+          <div className="mt-3 flex gap-2 text-sm">
+            {(
+              [
+                ['explore', 'See it in Explore'],
+                ['research', 'See the measurements'],
+              ] as const
+            ).map(([mode, label]) => (
+              <a
+                key={mode}
+                className="rounded bg-emerald-800 px-3 py-1 hover:bg-emerald-700"
+                href={`?${new URLSearchParams({ mode, target: 'WISE J231728.42-665959.3' })}`}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </section>
+
         <footer className="text-xs text-slate-500">
           Data: NASA/IPAC Infrared Science Archive (WISE, NEOWISE, SPHEREx, CatWISE2020), SIMBAD. Brown-dwarf templates and catalog: SPIFF (Gagné et al. 2026,
           doi:10.5281/zenodo.19051216, CC-BY 4.0). Built for NASA Space Apps 2026.

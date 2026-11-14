@@ -47,6 +47,8 @@ export type Lesson = {
   hide_light_curve?: string
   /** "also try" object, opened in Explore mode */
   alternative?: { object: string; target: string; note: string }
+  /** more real-world examples of the lesson's point; each item opens in Explore mode at its position */
+  more_examples?: { title: string; intro: string; items: { name: string; ra: number; dec: number; reason: string }[] }
   story: string
   look_for: string
   quiz: { question: string; options: string[]; answer_index: number; explanation: string }
@@ -214,6 +216,18 @@ export const LESSONS: Lesson[] = [
     mjd_max: 57330,
     bands: ['W2'],
     hide_light_curve: 'This lesson is about telling real objects from camera artifacts, not about brightness.',
+    // SPIFF "New Candidates" that our check (research/discovery/REPORT.md) showed to be artifacts; CatWISE positions
+    more_examples: {
+      title: 'More impostors',
+      intro: 'Real catalog "brown dwarf candidates" that turned out to be artifacts when we checked them with this app:',
+      items: [
+        { name: 'CWISE J201121.52-062438.1', ra: 302.83969, dec: -6.41061, reason: 'a diffraction spike of a bright star, not a source' },
+        { name: 'CWISE J010458.32+124444.5', ra: 16.243, dec: 12.7457, reason: 'another diffraction spike' },
+        { name: 'CWISE J010931.47-465245.8', ra: 17.38113, dec: -46.87939, reason: 'the wing of the bright star L 293-63; nothing is left once the star is subtracted' },
+        { name: 'CWISE J094640.40+135550.6', ra: 146.66835, dec: 13.93074, reason: 'a streak of scattered light near IRC+10216, the brightest 5 µm source in the sky' },
+        { name: 'CWISE J080741.06-344335.9', ra: 121.9211, dec: -34.72664, reason: 'a young star buried in dust: its spectrum shows ice absorption, and it does not move' },
+      ],
+    },
     markers: [
       { label: 'ghost (spring visits)', ra: 330.72679, dec: -56.83682, mjd: 56780.3 },
       { label: 'ghost (autumn visits)', ra: 331.01178, dec: -56.75528, mjd: 56962.0 },
