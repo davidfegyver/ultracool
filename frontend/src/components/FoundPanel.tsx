@@ -33,34 +33,34 @@ export default function FoundPanel({ summary, note, busy }: {
       <div className="grid grid-cols-2 gap-1">
         {motion && (
           <Badge
-            q={<>Moving? (<Term k="proper motion" />)</>}
-            a={motion.verdict === 'moving' ? `Yes${pm !== null ? `, ${pm.toFixed(2)}″/yr` : ''}` : motion.verdict === 'not moving' ? 'No' : "Can't tell"}
+            q={<Term k="proper motion">Motion</Term>}
+            a={motion.verdict === 'moving' ? (pm !== null ? `${pm.toFixed(2)}″ a year` : 'Moving') : motion.verdict === 'not moving' ? 'Not moving' : 'Not enough data'}
             tone={motion.verdict === 'moving' ? 'yes' : motion.verdict === 'not moving' ? 'no' : 'unknown'}
           />
         )}
         <Badge
-          q={<>Cold? (<Term k="W1−W2" />)</>}
+          q={<Term k="W1−W2">Colour</Term>}
           a={
             {
-              'extremely red (Y/late-T dwarf-like)': 'Very (Y or late-T colours)',
-              'very red (T dwarf-like)': 'Yes (T-dwarf colours)',
-              'red (L/T dwarf-like)': 'Maybe (L/T colours)',
-              'normal star colors': 'No, normal star',
-              'insufficient data': "Can't tell",
-            }[color.verdict] ?? "Can't tell"
+              'extremely red (Y/late-T dwarf-like)': 'Extremely red, like late-T and Y dwarfs',
+              'very red (T dwarf-like)': 'Very red, like T dwarfs',
+              'red (L/T dwarf-like)': 'Red, like L/T dwarfs',
+              'normal star colors': 'Normal star colour',
+              'insufficient data': 'Not enough data',
+            }[color.verdict] ?? 'Not enough data'
           }
           tone={color.verdict === 'insufficient data' ? 'unknown' : color.verdict === 'normal star colors' ? 'no' : 'yes'}
         />
         <Badge
-          q={<>Changing? (<Term k="light curve" />)</>}
+          q={<Term k="light curve">Brightness</Term>}
           a={
             variability.verdict === 'periodic variable'
-              ? `Yes, repeats${period ? ` every ~${Math.round(period)} d${alts.length ? ` (or ${alts.map((a) => Math.round(a)).join(' or ')} d)` : ''}` : ''}`
-              : variability.verdict === 'irregular variable' ? 'Yes, irregularly' : variability.verdict === 'constant' ? 'No' : "Can't tell"
+              ? `Repeats${period ? ` every ~${Math.round(period)} d${alts.length ? ` (or ${alts.map((a) => Math.round(a)).join(' or ')} d)` : ''}` : ''}`
+              : variability.verdict === 'irregular variable' ? 'Changes irregularly' : variability.verdict === 'constant' ? 'Steady' : 'Not enough data'
           }
           tone={variability.verdict.endsWith('variable') ? 'yes' : variability.verdict === 'constant' ? 'no' : 'unknown'}
         />
-        <Badge q={<Term k="spectrum">Spectral type</Term>} a={spec ?? "Can't tell"} tone={spec ? 'yes' : 'unknown'} />
+        <Badge q={<Term k="spectrum">Spectral type</Term>} a={spec ?? 'Not enough data'} tone={spec ? 'yes' : 'unknown'} />
       </div>
       {variability.source === 'catalog' && (
         <p className="text-amber-300" title={variability.source_note}>

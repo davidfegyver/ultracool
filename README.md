@@ -1,6 +1,6 @@
 # Ultracool Browser
 
-Ultracool Browser plays 16 years of NASA infrared images of any patch of sky as one aligned flipbook: WISE (2010), NEOWISE (2014–2024) and SPHEREx (2025–2026). It measures whether the object in the middle moves, how red it is, whether its brightness changes, and what its SPHEREx 0.75–5 µm spectrum looks like next to published brown-dwarf templates. We built it for NASA Space Apps 2026 ("Planet X and SPHEREx").
+Ultracool Browser plays 16 years of NASA infrared images of any patch of sky as one aligned flipbook: WISE (2010), NEOWISE (2014–2024) and SPHEREx (2025–2026). It measures whether the object in the middle moves, how red it is, whether its brightness changes, and what its SPHEREx 0.75–5 µm spectrum looks like next to published brown-dwarf templates. We built it for the NASA Space Apps Challenge 2026 ("Planet X and SPHEREx").
 
 Try it at **https://ultracool.earth**.
 

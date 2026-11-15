@@ -6,7 +6,7 @@ const TUTORIAL_KEY = 'ultracool-tutorial-dismissed'
 
 const CARDS: { mode: Mode; title: string; who: string; text: string }[] = [
   { mode: 'learn', title: 'Learn', who: 'Start here', text: "Seven short lessons on real objects, like Barnard's Star, a cold brown dwarf and a pulsating giant. Each ends with a quiz." },
-  { mode: 'explore', title: 'Explore', who: 'Look something up', text: 'Type a star name or coordinates. You get the flipbook and short answers: is it moving, is it cold, is it changing?' },
+  { mode: 'explore', title: 'Explore', who: 'Look something up', text: 'Search by name or coordinates. Watch 16 years of images and get short answers: is it moving, is it cold, is it changing?' },
   { mode: 'research', title: 'Research', who: 'For astronomers', text: 'The numbers behind those answers, with error bars: motion, colours, variability, spectral type. Plus catalogue overlays, single frames and CSV export.' },
   { mode: 'discover', title: 'Discover', who: 'Hunt for new ones', text: "Find everything that moves in a patch of sky, check it against known catalogues, and decide what's real." },
 ]
@@ -26,13 +26,14 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
           <p className="mt-2 max-w-3xl text-lg leading-relaxed text-slate-300">
             Type a star name or coordinates and flip through 16 years of NASA infrared images of that spot: WISE (2010), NEOWISE (2014–2024) and SPHEREx (2025–2026).
             Brown dwarfs are too cold to see well with ordinary telescopes, but they show up in infrared, and the nearby ones visibly move from one image to the next.
+            Then measure how fast they move, how red they are, whether their brightness changes and what their spectrum looks like.
           </p>
         </section>
 
         <section aria-labelledby="featured-heading" className="rounded-lg border border-emerald-800 bg-emerald-950/30 p-4">
           <div className="text-xs tracking-wide text-emerald-400 uppercase">What we found</div>
           <h2 id="featured-heading" className="text-lg font-semibold">
-            Our first result: a spectral type for WISE J2317−6659
+            WISE J2317−6659: the first spectrum-based type for a brown-dwarf candidate
           </h2>
           <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-300">
             Rothermich et al. (2024) listed this faint source as a probable T6 brown dwarf, based on its brightness alone. We measured its SPHEREx spectrum with this app,
@@ -99,7 +100,7 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
 
         <footer className="text-xs text-slate-500 max-md:order-2">
           Data: NASA/IPAC Infrared Science Archive (WISE, NEOWISE, SPHEREx, CatWISE2020), SIMBAD. Brown-dwarf templates and catalog: SPIFF (Gagné et al. 2026,
-          doi:10.5281/zenodo.19051216, CC-BY 4.0). Built for NASA Space Apps 2026. <GuideLink />
+          doi:10.5281/zenodo.19051216, CC-BY 4.0). Built for the NASA Space Apps Challenge 2026. <GuideLink />
         </footer>
       </div>
     </div>

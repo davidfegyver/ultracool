@@ -40,7 +40,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'The pink circle',
+    title: 'Predicted position',
     text: 'The pink circle is where the catalogues say your object should be on that date. If the dot stays inside it, the object moves as expected.',
     art: (
       <Frame x={30} y={10}>
@@ -50,7 +50,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Measuring something else',
+    title: 'Select and measure',
     text: 'To measure another source, drag the cyan crosshair onto it or right-click it on the sky map, then choose "Measure this source". The circle shows the area we measure.',
     art: (
       <Frame x={30} y={10}>
@@ -77,7 +77,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Brightness changes',
+    title: 'The light curve',
     text: "We set the contrast of each image separately, so you can't judge brightness by eye. Use the light curve plot instead: smooth repeating waves mean the star pulsates, sudden jumps mean dust or flares.",
     art: (
       <g transform="translate(10 10)">
@@ -88,7 +88,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Is it real?',
+    title: 'Phantom objects',
     text: "Cameras create fake sources too: spikes and rings around bright stars, afterimages, cosmic-ray hits. If something appears on only one date or in only one band, it's probably one of those. Real objects show up again.",
     art: (
       <Frame x={30} y={10}>
