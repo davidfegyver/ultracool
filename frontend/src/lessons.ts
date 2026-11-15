@@ -148,7 +148,7 @@ export const LESSONS: Lesson[] = [
       options: ['...are a coincidence', '...are bound together, travelling through space as one system', '...are both asteroids', '...are image artifacts'],
       answer_index: 1,
       explanation:
-        "A shared ('common') proper motion is the classic sign of a physical pair; eps Ind B is a pair of brown dwarfs orbiting the star eps Ind A at ~1500 au.",
+        'Moving together like this is the classic sign of a real pair. eps Ind B is a pair of brown dwarfs orbiting the star eps Ind A at ~1500 au.',
     },
   },
   {
@@ -180,7 +180,7 @@ export const LESSONS: Lesson[] = [
       options: ['An irregular young star', 'A pulsating Mira variable with a regular period', 'An asteroid', 'A brown dwarf'],
       answer_index: 1,
       explanation:
-        "Mira variables are old red giants that swell and shrink with a stable period of 100–1000 days. AL Boo's 166.7 d period is recovered from WISE data alone (best periodogram peak 166.6 d).",
+        "Mira variables are old red giants that swell and shrink with a stable period of 100–1000 days. AL Boo's 166.7 d period is recovered from WISE data alone.",
     },
   },
   {
@@ -206,7 +206,7 @@ export const LESSONS: Lesson[] = [
       options: ['A pulsating Mira star with a fixed period', 'Clumps of dust in a planet-forming disk passing in front of a young star', 'An eclipsing binary', 'A cosmic ray hit'],
       answer_index: 1,
       explanation:
-        'RW Aur is a young T Tauri star with a messy disk; dimming events of years and month-long brightenings are irregular. A periodogram of the NEOWISE data finds no significant period.',
+        'RW Aur is a young T Tauri star with a messy disk; dimming events of years and month-long brightenings are irregular. We found no repeating cycle in the NEOWISE data.',
     },
   },
   {

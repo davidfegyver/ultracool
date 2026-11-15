@@ -9,7 +9,7 @@ import PlotsPanel from './PlotsPanel'
 import { PhotometryTables } from './ResearchPanel'
 
 const CYAN = '#22d3ee'
-const OUTSIDE_HINT = 'Outside the measurable field (25″ in from its edge): drag the probe inside, or use Centre field here.'
+const OUTSIDE_HINT = 'Too close to the edge to measure. Drag the probe further in, or choose Centre field here.'
 
 /** Probe point drawn inside the flipbook SVG (grid px): cyan crosshair, the frame's photometry aperture (solid) and sky
  * annulus (dashed). Drag (mouse/touch) or arrow keys (Shift = 5 px) move it; release, a click or Enter opens the action

@@ -94,7 +94,7 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
             {resolved.sptype && <span className="ml-2 text-slate-400">{resolved.sptype}</span>}
             {pm > 0 && (
               // phones: hidden (hover-only explanation; the measured motion is under Results)
-              <span className="ml-2 text-slate-400 max-md:hidden" title="Proper motion looked up for this target (SIMBAD, or the mover the field was centred on): it places the pink circle. Not the measured value.">
+              <span className="ml-2 text-slate-400 max-md:hidden" title="Catalogue motion, used to place the pink circle. Our own measurement is under Results.">
                 PM {pm.toFixed(3)}″/yr
               </span>
             )}

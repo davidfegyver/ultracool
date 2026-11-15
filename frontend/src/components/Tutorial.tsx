@@ -31,7 +31,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
   },
   {
     title: 'Look for things that move',
-    text: "Press play and the images run from oldest to newest. Faraway stars don't move. A dot that drifts steadily is a nearby star or brown dwarf. A dot that jumps across the frame within one day is an asteroid.",
+    text: 'Press play. Faraway stars stay still, a nearby star or brown dwarf drifts slowly, and an asteroid shoots across within a day.',
     art: (
       <Frame x={30} y={10}>
         {[0, 1, 2].map((i) => <circle key={i} cx={18 + i * 12} cy={36 - i * 8} r={2.5} fill="#f8fafc" opacity={0.35 + i * 0.3} />)}
@@ -62,7 +62,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
   },
   {
     title: 'W1 and W2',
-    text: 'WISE took pictures in two infrared bands, W1 (3.4 µm) and W2 (4.6 µm). Ordinary stars look about the same in both. Cold brown dwarfs are much brighter in W2, so a dot that only shows up in W2 is worth a closer look.',
+    text: 'Ordinary stars look about the same in W1 (3.4 µm) and W2 (4.6 µm). Cold brown dwarfs are much brighter in W2, so a dot that only shows up in W2 is worth a closer look.',
     art: (
       <>
         <Frame x={6}>

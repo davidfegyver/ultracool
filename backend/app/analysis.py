@@ -718,13 +718,11 @@ def _plain(motion, color, var, spec):
     if motion["verdict"] == "moving":
         cat = ""
         if motion["consistent_with_catalog"] is True:
-            cat = ", and it matches the catalogue value"
+            cat = ", the same as the catalogue says"
         elif motion["consistent_with_catalog"] is False:
-            cat = ", but it differs from the catalogue value"
-        sig = motion["significance_sigma"]
-        conf = "are very sure of it" if sig > 10 else "are fairly sure of it" if sig >= 5 else "treat it as tentative"
-        s.append(f"It moves about {motion['pm_total_arcsec_yr']:.2f}″ a year. We measured that over "
-                 f"{motion['baseline_yr']:.0f} years and {conf}{cat}.")
+            cat = ", which differs from the catalogue value"
+        weak = ", but that's a tentative measurement" if motion["significance_sigma"] < 5 else ""
+        s.append(f"It moves {motion['pm_total_arcsec_yr']:.2f}″ a year{cat}{weak}.")
     elif motion["verdict"] == "not moving":
         s.append(f"We see no motion over {motion['baseline_yr']:.0f} years (less than about "
                  f"{3 * motion['pmra_err_masyr'] / 1000:.2f}″ a year). It's far away, a galaxy, or moving too slowly for us to notice.")
@@ -782,7 +780,7 @@ def _plain_props(color, var, spec):
         kind = "brown dwarf" if (spt_num(label) or 0) >= 13 else "ultracool dwarf"
         article = "an" if label[:1] in "ML" else "a"
         s.append(f"Its SPHEREx spectrum looks most like {article} {label} {kind}" +
-                 (f". Our method is often off by a subtype or two, so call it {rng[0]}–{rng[1]}."
+                 (f" (somewhere between {rng[0]} and {rng[1]})."
                   if rng and rng[0] != rng[1] else
                   _runner_up(spec["ranking"])))
     elif spec["verdict"] == WARMER:
@@ -812,8 +810,8 @@ def _plain_props(color, var, spec):
 
 # bump when the summary changes: cached summary.json files are recomputed on their next request (seconds per
 # field, no new image downloads; PIPELINE_VERSION is for the frames). 2: neighbour-aware SPHEREx spectrum.
-# 3: 'ultracool-dwarf' instead of 'brown-dwarf' template wording for M8-L2 matches. 4: plainer sentences.
-SUMMARY_VERSION = 4
+# 3: 'ultracool-dwarf' instead of 'brown-dwarf' template wording for M8-L2 matches. 4, 5: plainer sentences.
+SUMMARY_VERSION = 5
 
 
 def _read_keyed(path, key):

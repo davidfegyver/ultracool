@@ -24,9 +24,8 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
         <section>
           <h1 className="text-3xl font-bold text-sky-300">Ultracool Browser</h1>
           <p className="mt-2 max-w-3xl text-lg leading-relaxed text-slate-300">
-            Type a star name or coordinates and flip through 16 years of NASA infrared images of that spot: WISE (2010), NEOWISE (2014–2024) and SPHEREx (2025–2026).
-            Brown dwarfs are too cold to see well with ordinary telescopes, but they show up in infrared, and the nearby ones visibly move from one image to the next.
-            Then measure how fast they move, how red they are, whether their brightness changes and what their spectrum looks like.
+            Type a star name or coordinates and flip through 16 years of NASA infrared images of that spot. Brown dwarfs are too cold for ordinary telescopes, but they
+            glow in infrared, and here you can watch them move and measure what they are.
           </p>
         </section>
 
@@ -37,8 +36,8 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
           </h2>
           <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-300">
             Rothermich et al. (2024) listed this faint source as a probable T6 brown dwarf, based on its brightness alone. We measured its SPHEREx spectrum with this app,
-            and it agrees: it looks like a T6. It's roughly 30 parsecs (100 light-years) away and moves half an arcsecond a year, but not together with
-            the star pair HD 219509/219495 next to it, so it's a lone brown dwarf rather than their companion.
+            and it agrees: it looks like a T6. It's roughly 30 parsecs (100 light-years) away and moves half an arcsecond a year, but not together with the star pair next
+            to it, so it's on its own rather than their companion.
           </p>
           <p className="mt-1 text-xs text-slate-500">
             <a className="underline" href="https://github.com/davidfegyver/ultracool/blob/main/docs/results.md#wise-j2317-6659-gets-a-spectrum-based-type" target="_blank" rel="noreferrer">
