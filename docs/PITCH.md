@@ -1,6 +1,6 @@
 # Ultracool Browser: 3-minute pitch (NASA Space Apps 2026, "Planet X and SPHEREx")
 
-7 slides, about 420 spoken words (≈140 words/min). Times are cumulative. Every number below is checked: see the source column at the end.
+8 slides, about 410 spoken words (≈140 words/min, ~2:55). Times are cumulative. Every number below is checked: see the source column at the end. The HTML deck with speaker notes is `docs/pitch/index.html`.
 
 ---
 
@@ -27,7 +27,7 @@
 **On screen:** ultracool.earth. Type "WISE J2317". Flipbook plays → "What we found" badges: *Moves: yes, 0.5″/yr · Red, like T dwarfs · Type T5*. Spectrum plot with the template.
 
 **Say:**
-> Type any star or coordinates. We stream only the needed pixels from NASA's public cloud archive, align every image onto one grid, and measure the object ourselves: does it move, how red is it, does it change brightness. Then we match its SPHEREx spectrum against 47 brown-dwarf templates. Drag the cyan crosshair onto any other dot and it measures that too.
+> Type any star or coordinates. We stream only the needed pixels from NASA's public cloud archive, align every image onto one grid, and measure the object with well-established astronomy methods: does it move, how red is it, does it change brightness. Then we match its SPHEREx spectrum against 47 published brown-dwarf templates. Drag the cyan crosshair onto any other dot and it measures that too.
 
 ---
 
@@ -53,25 +53,36 @@
 
 ---
 
-## Slide 6 · Honest science (2:15–2:40)
+## Slide 6 · Honest science (2:15–2:30)
 
 **On screen:** two numbers, big:
 - **21 of 26** known brown dwarfs typed within 2 subtypes (validation set)
 - **7 of 7** "new brown-dwarf candidates" from an automated catalogue were not new: diffraction spikes, a scattered-light streak, a young star in ice, a galaxy source, one already known
 
 **Say:**
-> We validated on 26 known brown dwarfs: 21 typed within two subtypes. And we found that all seven automated "new candidates" we tested were artifacts or contaminants, which is exactly why a tool that lets people look at the images matters.
+> We validated on 26 known brown dwarfs: 21 typed within two subtypes. And all seven automated "new candidates" we tested were not new, which is why people need to see the images.
 
 ---
 
-## Slide 7 · What's next (2:40–3:00)
+## Slide 7 · Standing on the shoulders of giants (2:30–2:45)
+
+**On screen:** two columns.
+- *Built on the research community:* data from NASA WISE, NEOWISE, SPHEREx (IRSA), CatWISE2020, Gaia, SIMBAD/VizieR (CDS); brown-dwarf templates and typing from SPIFF (Gagné et al. 2026); colour/distance relations from Kirkpatrick et al. 2021 and Schmidt et al. 2015; photometry and statistics from Astropy, photutils, reproject (Lomb–Scargle); artifact flags from WISE, asteroids from IMCCE SkyBoT; candidate lists from Rothermich et al. 2024, Kirkpatrick et al. 2021, UltracoolSheet (Best et al.).
+- *What we added:* three missions aligned into one 16-year flipbook in one click; plain-language answers that show their uncertainty; probe, lessons, citizen-science vetting; our own validation and an adversarial check of every claim; applying it to new SPHEREx data (J2317's first spectrum-based type).
+
+**Say:**
+> We are IT students, so to be clear: the science is not ours. The data is NASA's and Gaia's, the brown-dwarf templates are the SPIFF team's, the relations come from published papers, the algorithms from open-source libraries. What we built is the bridge: one aligned 16-year view, honest plain-language answers, and a check of every claim.
+
+---
+
+## Slide 8 · What's next (2:45–3:00)
 
 **On screen:** ultracool.earth · QR code · team names.
 - Open science: every result reproducible, CSV export with provenance
 - Next: classroom pack, Backyard Worlds-style volunteer vetting, follow-up spectra for our candidates
 
 **Say:**
-> Ultracool Browser runs today on a single small server, using only open NASA data. Next: a classroom pack and a volunteer vetting network, so the next nearby neighbour can be found by a student. Try it now at ultracool.earth.
+> It runs today on one small server, using only open data. Next: a classroom pack and a volunteer vetting network, so the next nearby neighbour can be found by a student. Try it at ultracool.earth.
 
 ---
 

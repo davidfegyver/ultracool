@@ -69,6 +69,7 @@
   .qr { width: 300px; height: 300px; padding: 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; }
   .next { display: flex; flex-direction: column; gap: 18px; margin-top: 34px; font-size: 28px; }
   .next div::before { content: "→ "; color: var(--emerald); }
+  .credits { margin-top: 14px; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; font-size: 21px; line-height: 1.35; color: #cbd5e1; }
   /* chrome */
   #bar { position: fixed; left: 0; bottom: 0; height: 4px; background: var(--sky); transition: width .3s; }
   #count { position: fixed; right: 16px; bottom: 12px; font: 14px system-ui; color: #475569; }
@@ -132,7 +133,7 @@
       </div>
       <img class="shot grow" src="assets/explore.jpg" alt="Explore mode showing WISE J2317: moves 0.50 arcsec per year, red like T dwarfs, spectrum type T5" style="min-width:0">
     </div>
-    <aside class="notes">Type any star or coordinates. We stream only the needed pixels from NASA's public cloud archive, align every image onto one grid, and measure the object ourselves: does it move, how red is it, does it change brightness. Then we match its SPHEREx spectrum against 47 brown-dwarf templates. Drag the cyan crosshair onto any other dot and it measures that too. [Live: type "WISE J2317", press Play, point at the result badges, open Spectrum.]</aside>
+    <aside class="notes">Type any star or coordinates. We stream only the needed pixels from NASA's public cloud archive, align every image onto one grid, and measure the object with well-established astronomy methods: does it move, how red is it, does it change brightness. Then we match its SPHEREx spectrum against 47 published brown-dwarf templates. Drag the cyan crosshair onto any other dot and it measures that too. [Live: type "WISE J2317", press Play, point at the result badges, open Spectrum.]</aside>
   </section>
 
   <!-- 4 · For everyone -->
@@ -165,7 +166,7 @@
   </section>
 
   <!-- 6 · Honest science -->
-  <section class="slide" data-time="2:15–2:40">
+  <section class="slide" data-time="2:15–2:30">
     <div class="kicker">Honest science</div>
     <h2>We tested it before trusting it</h2>
     <div class="big">
@@ -176,11 +177,41 @@
         <div class="l">automated "new brown-dwarf candidates" were not new</div>
         <div class="s">diffraction spikes, a scattered-light streak, a young star in ice, a source in M33, one already known: why people need to see the images</div></div>
     </div>
-    <aside class="notes">We validated on 26 known brown dwarfs: 21 typed within two subtypes. And we found that all seven automated "new candidates" we tested were artifacts or contaminants, which is exactly why a tool that lets people look at the images matters.</aside>
+    <aside class="notes">We validated on 26 known brown dwarfs: 21 typed within two subtypes. And all seven automated "new candidates" we tested were not new, which is why people need to see the images.</aside>
   </section>
 
-  <!-- 7 · Next -->
-  <section class="slide" data-time="2:40–3:00">
+  <!-- 7 · Built on others' work -->
+  <section class="slide" data-time="2:30–2:45">
+    <div class="kicker">Standing on the shoulders of giants</div>
+    <h2>We are IT students: the science is not ours</h2>
+    <div class="big" style="margin-top:34px">
+      <div class="num" style="padding:30px 36px">
+        <div class="l" style="margin-top:0; color: var(--sky); font-weight:700">Built on the research community</div>
+        <ul class="credits">
+          <li><b>Data:</b> NASA WISE, NEOWISE, SPHEREx (IRSA); CatWISE2020; Gaia; SIMBAD/VizieR (CDS)</li>
+          <li><b>Brown-dwarf templates &amp; typing:</b> SPIFF, Gagné et al. 2026</li>
+          <li><b>Colour / distance relations:</b> Kirkpatrick et al. 2021; Schmidt et al. 2015</li>
+          <li><b>Photometry &amp; statistics:</b> Astropy, photutils, reproject; Lomb–Scargle</li>
+          <li><b>Artifacts &amp; asteroids:</b> WISE artifact flags; IMCCE SkyBoT</li>
+          <li><b>Candidate lists:</b> Rothermich et al. 2024; Kirkpatrick et al. 2021; UltracoolSheet (Best et al.)</li>
+        </ul>
+      </div>
+      <div class="num" style="padding:30px 36px">
+        <div class="l" style="margin-top:0; color: var(--emerald); font-weight:700">What we added</div>
+        <ul class="credits">
+          <li>Three missions aligned into <b>one 16-year flipbook</b>, in one click</li>
+          <li><b>Plain-language answers</b> that show their uncertainty</li>
+          <li>A probe for any source, lessons, and a citizen-science vetting flow</li>
+          <li>Our own <b>validation</b> and an <b>adversarial check</b> of every claim</li>
+          <li>Applying all of it to new SPHEREx data: J2317's first spectrum-based type</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">We are IT students, so to be clear: the science is not ours. The data is NASA's and Gaia's, the brown-dwarf templates are the SPIFF team's, the relations come from published papers, the algorithms from open-source libraries. What we built is the bridge: one aligned 16-year view, honest plain-language answers, and a check of every claim.</aside>
+  </section>
+
+  <!-- 8 · Next -->
+  <section class="slide" data-time="2:45–3:00">
     <div class="row grow">
       <div class="grow">
         <div class="kicker">Try it now</div>
@@ -196,7 +227,7 @@
         <div class="url" style="margin-top:18px">ultracool.earth</div>
       </div>
     </div>
-    <aside class="notes">Ultracool Browser runs today on a single small server, using only open NASA data. Next: a classroom pack and a volunteer vetting network, so the next nearby neighbour can be found by a student. Try it now at ultracool.earth.</aside>
+    <aside class="notes">It runs today on one small server, using only open data. Next: a classroom pack and a volunteer vetting network, so the next nearby neighbour can be found by a student. Try it at ultracool.earth.</aside>
   </section>
 
 </div>
