@@ -1,0 +1,2333 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:20:35 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:20:35	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fAN%2f%2a&-c=190.139497+%2b46.095738&-c.rs=20&-out.max=10	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=206	
+#  206 catalogues with potential matches were examined.
+#
+#INFO	-c=190.139497+46.095738,rs=20.	
+#Constraint -out.max=10
+
+#RESOURCE=yCat_113400386
+#Name: J/AN/340/386
+#Title: Catalogue of spectroscopic binary candidate stars (Jack, 2019)
+#INFO	ivoid=ivo://cds.vizier/j/an/340/386	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/340/386	    IVOID of underlying data collection
+#INFO	creator=Jack D.	    First author or institution
+#INFO	cites=bibcode:2019AN....340..386J	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2019	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/340/386	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113400386	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	J_AN_340_386_km_rv:
+#Name: J/AN/340/386/km_rv
+#Title: KM catalog (Sperauskas et al., 2016, Cat. J/A+A/596/A116)
+#Column	Star	(a15)	Star name	[ucd=meta.id;meta.main]
+#Column	KMRV	(F6.1)	Radial velocity of the KM catalogue	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_KMRV	(F4.1)	Error of the radial velocity	[ucd=stat.error]
+#Column	KMHJD	(F11.3)	Julian Date of observation	[ucd=time.epoch]
+#Column	GaiaRV	(F6.2)	Radial velocity of Gaia DR2	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_GaiaRV	(F5.2)	Error of the radial velocity of Gaia DR2	[ucd=stat.error]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_340_386_pulk_rv:
+#Name: J/AN/340/386/pulk_rv
+#Title: Pulkovo compilation (Gontcharov, 2006, Cat. III/252)
+#Column	HIP	(I6)	HIP number of the stars	[ucd=meta.id;meta.main]
+#Column	PRV	(F6.1)	Radial velocity of the Pulkovo catalogue	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_PRV	(F4.1)	Error of the radial velocity	[ucd=stat.error]
+#Column	GaiaRV	(F7.2)	Radial velocity of Gaia DR2	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_GaiaRV	(F5.2)	Error of the radial velocity of Gaia DR2	[ucd=stat.error]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_340_386_rave_rv:
+#Name: J/AN/340/386/rave_rv
+#Title: RAVE 5th data release (Kunder e tal., 2017, Cat. III/279)
+#Column	RAVE	(A16)	RAVE designation (JHHMMSS.S+DDMMSS)	[ucd=meta.id;meta.main]
+#Column	RAVERV	(F9.3)	Radial velocity of the RAVE catalogue	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RAVERV	(F7.3)	Error of the radial velocity	[ucd=stat.error]
+#Column	RAVEMJD	(F14.8)	Modified Julian date of observation	[ucd=time.epoch]
+#Column	GaiaRV	(F7.2)	Radial velocity of Gaia DR2	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_GaiaRV	(F5.2)	Error of the radial velocity of Gaia DR2	[ucd=stat.error]
+#Column	_RA	(F8.4)	Right ascension (derived from RAVE) for Eq=J2000	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F8.4)	Declination (derived from RAVE) for Eq=J2000	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113190201
+#Name: J/AN/319/201
+#Title: Alpha Per cluster low-mass members. I. (Prosser+, 1998)
+#INFO	ivoid=ivo://cds.vizier/j/an/319/201	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/319/201	    IVOID of underlying data collection
+#INFO	creator=Prosser C.F.	    First author or institution
+#INFO	cites=bibcode:1998AN....319..201P	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=1998	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/319/201	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113190201	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_319_201_table1:
+#Name: J/AN/319/201/table1
+#Title: Raster APX X-ray source list
+#Column	APX	(I2)	[1/73] APX number	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A10)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	MLh	(F5.1)	Hardband Maximum Likelihood value	[ucd=stat.likelihood]
+#Column	ExpTime	(I5)	Effective exposure time	[ucd=time.duration;obs.exposure]
+#Column	CountRate	(F7.4)	Count rate	[ucd=phot.count;em.X-ray]
+#Column	e_CountRate	(F7.4)	rms uncertainty on CountRate	[ucd=stat.error;phot.count]
+#Column	l_HR	(A1)	Limit flag on HR	[ucd=meta.code.error]
+#Column	HR	(F4.1)	Hardness ratio (1)	[ucd=phot.flux;arith.ratio]
+
+#RESOURCE=yCat_113160225
+#Name: J/AN/316/225
+#Title: UBVR photoelectric survey (Andruk+ 1995)
+#INFO	ivoid=ivo://cds.vizier/j/an/316/225	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/316/225	    IVOID of underlying data collection
+#INFO	creator=Andruk V.	    First author or institution
+#INFO	cites=bibcode:1995AN....316..225A	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=1995	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/316/225	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113160225	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	B1950:	eq_FK4 B1950
+#Table	J_AN_316_225_table6:
+#Name: J/AN/316/225/table6
+#Title: Catalogue of 1141 stellar magnitudes and colours in the UBVR system
+#Column	AKS95	(I4)	Sequential number	[ucd=meta.id;meta.main]
+#Column	RA1950	(A11)	Right ascension (1950)	[ucd=pos.eq.ra;meta.main]
+#Column	DE1950	(A11)	Declination (1950)	[ucd=pos.eq.dec;meta.main]
+#Column	Vmag	(F6.3)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	U-B	(F6.3)	? U-B colour index	[ucd=phot.color;em.opt.U;em.opt.B]
+#Column	B-V	(F6.3)	? B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	V-R	(F6.3)	? V-R colour index	[ucd=phot.color;em.opt.V;em.opt.R]
+#Column	Nobs	(I3)	Number of observations of the star	[ucd=meta.number]
+#Column	_RA.icrs	(A11)	Right ascension (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A11)	Declination (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.dec]
+
+#RESOURCE=
+#Name:
+#Title:
+#Table	J_AN_319_201_table2:
+#Name: J/AN/319/201/table2
+#Title: Optical counterparts
+#Column	APX	(I2)	[1/73] APX number	[ucd=meta.id;meta.main]
+#Column	Star	(A7)	Star name (1)	[ucd=meta.id]
+#Column	n_Star	(A1)	[ab] Note detailed in notes.dat (2)	[ucd=meta.note]
+#Column	RAJ2000	(A10)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Vmag	(F5.2)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	B-V	(F5.2)	? B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	log(LX/Lbol)	(F5.2)	? X-ray to bolometric luminosity ratio	[ucd=phys.luminosity;arith.ratio]
+#Column	Mem	(A2)	[YN ?] Final membership	[ucd=meta.code.member;phys.atmol.final]
+
+#RESOURCE=yCat_113250307
+#Name: J/AN/325/307
+#Title: UBVIc photometry of NGC 3077 center (Notni+, 2004)
+#INFO	ivoid=ivo://cds.vizier/j/an/325/307	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/325/307	    IVOID of underlying data collection
+#INFO	creator=Notni P.	    First author or institution
+#INFO	cites=bibcode:2004AN....325..307N	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2004	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/325/307	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113250307	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_325_307_table2:
+#Name: J/AN/325/307/table2
+#Title: UBVIc photometry of bright starlike objects in NGC 3077
+#Column	[NKM2004]	(I3)	[1/124] Sequential number	[ucd=meta.record]
+#Column	R	(I3)	Distance from dynamical centre at X=224.6,Y=107.7 (Price & Gullixson, 1989ApJ...337..658P)	[ucd=pos.angDistance;instr.det]
+#Column	Vmag	(F5.2)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	B-V	(F5.2)	? B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	V-Ic	(F5.2)	? V-Ic colour index	[ucd=phot.color;em.opt.V;em.opt.I]
+#Column	U-B	(F5.2)	? U-B colour index	[ucd=phot.color;em.opt.U;em.opt.B]
+#Column	qB	(I2)	? Quality measure on B band	[ucd=meta.code.qual;phot.mag]
+#Column	qV	(I2)	? Quality measure on V band	[ucd=meta.code.qual;phot.mag]
+#Column	qIc	(I2)	? Quality measure on Ic band	[ucd=meta.code.qual;phot.mag]
+#Column	qU	(I2)	? Quality measure on U band	[ucd=meta.code.qual;phot.mag]
+#Column	Frame	(A2)	[ca CA --] Frame (3)	[ucd=meta.id;obs.field]
+#Column	[BBD74]	(A1)	[a-m] Designation by Barbieri et al., 1974A&A....35..463B, [BBD74] Blue a in Simbad	[ucd=meta.id]
+#Column	MType	(A3)	Morphology from HST frame (5)	[ucd=src.morph]
+#Column	_RA	(F9.5)	Position, computed from Xpos and Ypos ({sigma}=0.16'') (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Position, computed from Xpos and Ypos ({sigma}=0.16'') (declination part)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113250705
+#Name: J/AN/325/705
+#Title: RIJHKs of low-mass stars in sigma Ori (Bejar+, 2004)
+#INFO	ivoid=ivo://cds.vizier/j/an/325/705	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/325/705	    IVOID of underlying data collection
+#INFO	creator=Bejar V.J.S.	    First author or institution
+#INFO	cites=bibcode:2004AN....325..705B	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2004	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/325/705	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113250705	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_325_705_table2:
+#Name: J/AN/325/705/table2
+#Title: Photometric and spectroscopic parameters for 53 Sigma Orionis candidates
+#Column	[BMZ2001]	(a22)	IAU Name (S Ori JHHMMSS.s+DDMMSS)	[ucd=]
+#Column	n_[BMZ2001]	(a5)	Note on [BMZ2001] (1)	[ucd=]
+#Column	Imag	(F5.2)	Johnson I magnitude	[ucd=]
+#Column	R-I	(F5.2)	Johnson R-I colour index	[ucd=]
+#Column	Jmag	(F5.2)	? Johnson J magnitude	[ucd=]
+#Column	I-J	(F5.2)	? Johnson I-J colour index	[ucd=]
+#Column	I-Ks	(F5.2)	? I-Ks colour index	[ucd=]
+#Column	I-J2	(F5.2)	? I-J colour index (J from 2MASS)	[ucd=]
+#Column	J-H	(F5.2)	? J-H colour index (2MASS photometry)	[ucd=]
+#Column	H-Ks	(F5.2)	? H-Ks colour index (2MASS photometry)	[ucd=]
+#Column	E(R-I)	(F5.2)	? R-I colour excess	[ucd=]
+#Column	RAJ2000	(A10)	Right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113250740
+#Name: J/AN/325/740
+#Title: Astrophysical supplements to ASCC-2.5 (Kharchenko+, 2004)
+#INFO	ivoid=ivo://cds.vizier/j/an/325/740	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/325/740	    IVOID of underlying data collection
+#INFO	creator=Kharchenko N.V.	    First author or institution
+#INFO	cites=bibcode:2004AN....325..740K	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2004	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/325/740	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113250740	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_1991.250:	eq_FK5 J2000
+#Table	J_AN_325_740_csoca:
+#Name: J/AN/325/740/csoca
+#Title: The Catalog of Stars in the Open Cluster Areas
+#Column	RAJ2000	(F13.8)	Right Ascension J2000.0, Epoch=1991.25	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F13.8)	Declination J2000.0, Epoch=1991.25	[ucd=pos.eq.dec;meta.main]
+#Column	Bmag	(F7.3)	? B magnitude in Johnson system	[ucd=]
+#Column	Vmag	(F7.3)	? V magnitude in Johnson system	[ucd=]
+#Column	SpType	(a20)	MK Spectral type (from <I/280> or <III/231>)	[ucd=]
+#Column	ASCC	(I8)	ASCC-2.5 (I/280) number	[ucd=]
+#Column	Seq	(I4)	[1-520] Cluster sequential number, in cluster.dat file	[ucd=]
+#Column	Pkin	(F7.4)	[0,1] Membership probability from proper motion	[ucd=]
+#Column	Pph	(F7.4)	[0,1] Membership probability from Photometry	[ucd=]
+#Column	Psp	(I1)	[0,1] Membership probability from position	[ucd=]
+#Table	J_AN_325_740_cluster:
+#Name: J/AN/325/740/cluster
+#Title: Cluster list
+#Column	Seq	(I4)	[1-520] Cluster sequential number	[ucd=]
+#Column	Name	(a33)	NGC, IC or other common designation	[ucd=]
+#Column	RAJ2000	(F7.2)	Right Ascension J2000.0	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F7.2)	Declination J2000.0	[ucd=pos.eq.dec;meta.main]
+#Column	COCD	(A4)	Display all parameters from the Catalogue of Open Cluster Data (J/A+A/438/1163)	[ucd=]
+
+#RESOURCE=yCat_113260321
+#Name: J/AN/326/321
+#Title: Absolute magnitudes for late-type dwarfs (Bilir+, 2005)
+#INFO	ivoid=ivo://cds.vizier/j/an/326/321	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/326/321	    IVOID of underlying data collection
+#INFO	creator=Bilir S.	    First author or institution
+#INFO	cites=bibcode:2005AN....326..321B	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2005	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/326/321	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113260321	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_326_321_table1:
+#Name: J/AN/326/321/table1
+#Title: Sloan and UBV data for standard stars
+#Column	Name	(a12)	Star name	[ucd=]
+#Column	RAJ2000	(A8)	Right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Column	gmag	(F6.3)	g magnitude	[ucd=]
+#Column	u-g	(F6.3)	u-g colour	[ucd=]
+#Column	g-r	(F6.3)	g-r colour	[ucd=]
+#Column	r-i	(F6.3)	r-i colour	[ucd=]
+#Column	Vmag	(F6.3)	V magnitude	[ucd=]
+#Column	U-B	(F6.3)	U-B colour	[ucd=]
+#Column	B-V	(F6.3)	B-V colour	[ucd=]
+#Column	Rc-Ic	(F6.3)	Cousins R-I colour	[ucd=]
+#Column	r_Name	(I1)	[1/2] References for standard star (1)	[ucd=]
+#Column	Landolt	(a7)	Display the UBVRI from Landolt (Cat. II/183)	[ucd=]
+#Column	SDSS	(A4)	Display the SDSS data for this star	[ucd=]
+
+#RESOURCE=yCat_113300223
+#Name: J/AN/330/223
+#Title: High frequency peakers. The faint sample (Stanghellini+, 2009)
+#INFO	ivoid=ivo://cds.vizier/j/an/330/223	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/330/223	    IVOID of underlying data collection
+#INFO	creator=Stanghellini C.	    First author or institution
+#INFO	cites=bibcode:2009AN....330..223S	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2009	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/330/223	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113300223	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_330_223_table2:
+#Name: J/AN/330/223/table2
+#Title: Faint sample. Optical info is based on the NED or is derived from the SDSS
+#Column	Name	(A10)	Name (JHHMM+DDMM)	[ucd=meta.id;meta.main]
+#Column	Obs	(A1)	[a-i] Code for observation date and config. (1)	[ucd=meta.code]
+#Column	OT	(A1)	[gqs] Optical identification: g=galaxy, q=quasar, s=star	[ucd=src.class]
+#Column	mag	(F5.2)	? Magnitude in band specified in n_mag	[ucd=phot.mag]
+#Column	n_mag	(A1)	[rRB] Band of magnitude	[ucd=instr.bandpass]
+#Column	u_mag	(A1)	[?] uncertainty flag on mag	[ucd=meta.code.error]
+#Column	l_z	(A1)	Limit flag on z	[ucd=meta.code.error;src.redshift]
+#Column	z	(F6.3)	? Redshift	[ucd=src.redshift]
+#Column	f_z	(A1)	[p] p for photometric redshift	[ucd=meta.code]
+#Column	RAJ2000	(A11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	l_S1.4	(A1)	[~] Limit flag on S1.4	[ucd=meta.code.error]
+#Column	S1.4	(F5.1)	Flux density at 1.4GHz	[ucd=phot.flux.density;em.radio.750-1500MHz]
+#Column	u_S1.4	(A1)	[?] uncertainty flag on S1.4	[ucd=meta.code.error]
+#Column	l_S1.7	(A1)	[~] Limit flag on S1.7	[ucd=meta.code.error]
+#Column	S1.7	(F5.1)	Flux density at 1.7GHz	[ucd=phot.flux.density;em.radio.1500-3000MHz]
+#Column	l_S4.5	(A1)	[~] Limit flag on S4.5	[ucd=meta.code.error]
+#Column	S4.5	(F5.1)	Flux density at 4.5GHz	[ucd=phot.flux.density;em.radio.3-6GHz]
+#Column	S5.0	(F5.1)	Flux density at 5.0GHz	[ucd=phot.flux.density;em.radio.3-6GHz]
+#Column	S8.1	(F5.1)	Flux density at 8.1GHz	[ucd=phot.flux.density;em.radio.6-12GHz]
+#Column	S8.5	(F5.1)	Flux density at 8.5GHz	[ucd=phot.flux.density;em.radio.6-12GHz]
+#Column	S15	(F5.1)	Flux density at 15GHz	[ucd=phot.flux.density;em.radio.12-30GHz]
+#Column	S22	(F5.1)	Flux density at 22GHz	[ucd=phot.flux.density;em.radio.12-30GHz]
+#Column	num	(F4.1)	? Spectral peak frequency	[ucd=em.freq]
+#Column	u_num	(A1)	[?] uncertainty flag on num	[ucd=meta.code.error]
+#Column	Sm	(I3)	? Spectral peak flux density	[ucd=phot.flux.density;em.radio]
+#Column	nvss	(I3)	Cross-match within 1.5" with NVSS (Condon et al., 1998, Cat. VIII/65	[ucd=meta.ref.url]
+#Column	SED	(A3)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_113330242
+#Name: J/AN/333/242
+#Title: Recent photometry of symbiotic stars (Skopal+, 2012)
+#INFO	ivoid=ivo://cds.vizier/j/an/333/242	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/333/242	    IVOID of underlying data collection
+#INFO	creator=Skopal A.	    First author or institution
+#INFO	cites=bibcode:2012AN....333..242S	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2012	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/333/242	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113330242	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_333_242_stars:
+#Name: J/AN/333/242/stars
+#Title: Studied stars
+#Column	Name	(a9)	Simbad name	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A10)	Simbad right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Simbad declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Column	Bmag	(F5.2)	Simbad B band magnitude	[ucd=phot.mag;em.opt.B]
+#Column	Vmag	(F5.2)	? Simbad V band magnitude	[ucd=phot.mag;em.opt.V]
+#Column	SpType	(a17)	Simbad MK spectral type	[ucd=src.spType]
+#Column	T1	(I2)	? Table number with U,B,V,dRc photometry	[ucd=meta.id;meta.dataset]
+#Column	T2	(I2)	? Table number with U,B,V,Rc,Ic photometry	[ucd=meta.id;meta.dataset]
+#Column	T3	(I2)	? Table number with U,B,V,Rc.Ic Rozhen photometry	[ucd=meta.id;meta.dataset]
+#Column	Plot	(A4)	Show the light curves	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_2000000005
+#Name: J/AN/347/70120
+#Title: Corrected proper motion for HIP stars (Damljanovic+, 2026)
+#INFO	ivoid=ivo://cds.vizier/j/an/347/70120	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/347/70120	    IVOID of underlying data collection
+#INFO	creator=Damljanovic G.	    First author or institution
+#INFO	cites=bibcode:2026AN....34770120D	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2026	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/347/70120	    Dataset landing page
+#INFO	publication_date=2026-09-25	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_347_70120_table2:
+#Name: J/AN/347/70120/table2
+#Title: Catalog of proper motion in declination for 642 bright stars
+#Column	HIP	(I6)	HIP number	[ucd=meta.id;meta.main]
+#Column	pmDE	(F8.2)	Proper motion along declination (1)	[ucd=pos.pm;pos.eq.dec]
+#Column	s_pmDE	(F5.2)	Standard deviation of proper motion in declination	[ucd=stat.stdev;pos.pm]
+#Column	HIPcat	(a6)	Details from the 2 versions of Hipparcos for this star	[ucd=meta.ref.url]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113530025
+#Name: J/AN/346/70025
+#Title: Gaia RVS benchmark stars. III. (Caffau+, 2025)
+#INFO	ivoid=ivo://cds.vizier/j/an/346/70025	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/346/70025	    IVOID of underlying data collection
+#INFO	creator=Caffau E.	    First author or institution
+#INFO	cites=bibcode:2025AN....34670025C	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2025	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/346/70025	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier/bk-at-24c9	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_346_70025_table12:
+#Name: J/AN/346/70025/table12
+#Title: Stars used in the paper (tables 1 and 2)
+#Column	abund	(A1)	indicates detailed abundances in rvs.dat file	[ucd=meta.ref.url]
+#Column	Name	(A7)	Name of the star as in the paper (RVSNNN)	[ucd=meta.id;meta.main]
+#Column	GaiaDR3	(I19)	Gaia DR3 source_id	[ucd=meta.id]
+#Column	Gmag	(F6.3)	Gaia G magnitude	[ucd=phot.mag;em.opt]
+#Column	RAJ2000	(A11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A12)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	A0	(F6.3)	Reddening	[ucd=phot.color.excess]
+#Column	RV	(F7.2)	Gaia radial velocity	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F5.2)	Gaia radial velocity error	[ucd=stat.error]
+#Column	Teff	(I4)	Effective temperature	[ucd=phys.temperature.effective]
+#Column	logg	(F5.2)	Surface gravity	[ucd=phys.gravity]
+#Column	micro	(F5.2)	Microturbulence	[ucd=phys.veloc.microTurb]
+#Column	[Fe/H]	(F5.2)	Metallicity, [Fe/H]	[ucd=phys.abund.Z]
+#Column	e_[Fe/H]	(F5.2)	? Metallicity error	[ucd=stat.error;phys.abund.Fe]
+
+#RESOURCE=yCat_113310474
+#Name: J/AN/331/474
+#Title: Abundances of metal-poor stars (Frebel, 2010)
+#INFO	ivoid=ivo://cds.vizier/j/an/331/474	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/331/474	    IVOID of underlying data collection
+#INFO	creator=Frebel A.	    First author or institution
+#INFO	cites=bibcode:2010AN....331..474F	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2010	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/331/474	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113310474	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-10-22	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_331_474_stars:
+#Name: J/AN/331/474/stars
+#Title: Vetted table with one entry for each star
+#Column	S	(I1)	Sequence number ("1" for vetted list)	[ucd=meta.id]
+#Column	Seq	(I4)	Running number	[ucd=meta.id;meta.main]
+#Column	Name	(a14)	Star name	[ucd=meta.id]
+#Column	SName	(a23)	Name as in Simbad	[ucd=meta.id]
+#Column	ke	(A2)	Key entry (1)	[ucd=meta.code]
+#Column	eps03	(F5.2)	? log{epsilon} for Li	[ucd=phys.abund]
+#Column	eps06	(F5.2)	? log{epsilon} for C	[ucd=phys.abund]
+#Column	eps07	(F5.2)	? log{epsilon} for N	[ucd=phys.abund]
+#Column	eps08	(F5.2)	? log{epsilon} for O	[ucd=phys.abund]
+#Column	eps11	(F5.2)	? log{epsilon} for Na	[ucd=phys.abund]
+#Column	eps12	(F5.2)	? log{epsilon} for Mg	[ucd=phys.abund]
+#Column	eps13	(F5.2)	? log{epsilon} for Al	[ucd=phys.abund]
+#Column	eps14	(F5.2)	? log{epsilon} for Si	[ucd=phys.abund]
+#Column	eps20	(F5.2)	? log{epsilon} for Ca	[ucd=phys.abund]
+#Column	eps21	(F5.2)	? log{epsilon} for Sc	[ucd=phys.abund]
+#Column	eps22	(F5.2)	? log{epsilon} for Ti	[ucd=phys.abund]
+#Column	eps11a	(F5.2)	? log{epsilon} for Na	[ucd=phys.abund]
+#Column	eps12a	(F5.2)	? log{epsilon} for Mg	[ucd=phys.abund]
+#Column	eps13a	(F5.2)	? log{epsilon} for Al	[ucd=phys.abund]
+#Column	eps14a	(F5.2)	? log{epsilon} for Si	[ucd=phys.abund]
+#Column	eps20a	(F5.2)	? log{epsilon} for Ca	[ucd=phys.abund]
+#Column	eps21a	(F5.2)	? log{epsilon} for Sc	[ucd=phys.abund]
+#Column	eps22a	(F5.2)	? log{epsilon} for Ti	[ucd=phys.abund]
+#Column	eps23	(F5.2)	? log{epsilon} for V	[ucd=phys.abund]
+#Column	eps24	(F5.2)	? log{epsilon} for Cr	[ucd=phys.abund]
+#Column	eps25	(F5.2)	? log{epsilon} for Mn	[ucd=phys.abund]
+#Column	eps26	(F5.2)	? log{epsilon} for Fe	[ucd=phys.abund]
+#Column	eps27	(F5.2)	? log{epsilon} for Co	[ucd=phys.abund]
+#Column	eps28	(F5.2)	? log{epsilon} for Ni	[ucd=phys.abund]
+#Column	eps30	(F5.2)	? log{epsilon} for Zn	[ucd=phys.abund]
+#Column	eps31	(F5.2)	? log{epsilon} for Ga	[ucd=phys.abund]
+#Column	eps32	(F5.2)	? log{epsilon} for Ge	[ucd=phys.abund]
+#Column	eps38	(F5.2)	? log{epsilon} for Sr	[ucd=phys.abund]
+#Column	eps39	(F5.2)	? log{epsilon} for Y	[ucd=phys.abund]
+#Column	eps40	(F5.2)	? log{epsilon} for Zr	[ucd=phys.abund]
+#Column	eps41	(F5.2)	? log{epsilon} for Nb	[ucd=phys.abund]
+#Column	eps42	(F5.2)	? log{epsilon} for Mo	[ucd=phys.abund]
+#Column	eps44	(F5.2)	? log{epsilon} for Ru	[ucd=phys.abund]
+#Column	eps45	(F5.2)	? log{epsilon} for Rh	[ucd=phys.abund]
+#Column	eps46	(F5.2)	? log{epsilon} for Pd	[ucd=phys.abund]
+#Column	eps47	(F5.2)	? log{epsilon} for Ag	[ucd=phys.abund]
+#Column	eps56	(F5.2)	? log{epsilon} for Ba	[ucd=phys.abund]
+#Column	eps57	(F5.2)	? log{epsilon} for La	[ucd=phys.abund]
+#Column	eps58	(F5.2)	? log{epsilon} for Ce	[ucd=phys.abund]
+#Column	eps59	(F5.2)	? log{epsilon} for Pr	[ucd=phys.abund]
+#Column	eps60	(F5.2)	? log{epsilon} for Nd	[ucd=phys.abund]
+#Column	eps62	(F5.2)	? log{epsilon} for Sm	[ucd=phys.abund]
+#Column	eps63	(F5.2)	? log{epsilon} for Eu	[ucd=phys.abund]
+#Column	eps64	(F5.2)	? log{epsilon} for Gd	[ucd=phys.abund]
+#Column	eps65	(F5.2)	? log{epsilon} for Tb	[ucd=phys.abund]
+#Column	eps66	(F5.2)	? log{epsilon} for Dy	[ucd=phys.abund]
+#Column	eps67	(F5.2)	? log{epsilon} for Ho	[ucd=phys.abund]
+#Column	eps68	(F5.2)	? log{epsilon} for Er	[ucd=phys.abund]
+#Column	eps69	(F5.2)	? log{epsilon} for Tm	[ucd=phys.abund]
+#Column	eps70	(F5.2)	? log{epsilon} for Yb	[ucd=phys.abund]
+#Column	eps71	(F5.2)	? log{epsilon} for Lu	[ucd=phys.abund]
+#Column	eps72	(F5.2)	? log{epsilon} for Hf	[ucd=phys.abund]
+#Column	eps76	(F5.2)	? log{epsilon} for Os	[ucd=phys.abund]
+#Column	eps77	(F5.2)	? log{epsilon} for Ir	[ucd=phys.abund]
+#Column	eps78	(F5.2)	? log{epsilon} for Pt	[ucd=phys.abund]
+#Column	eps79	(F5.2)	? log{epsilon} for Au	[ucd=phys.abund]
+#Column	eps82	(F5.2)	? log{epsilon} for Pb	[ucd=phys.abund]
+#Column	eps90	(F5.2)	? log{epsilon} for Th	[ucd=phys.abund]
+#Column	eps92	(F5.2)	? log{epsilon} for U	[ucd=phys.abund]
+#Column	[Fe/H]	(F5.2)	Metallicity	[ucd=phys.abund.Z]
+#Column	Ref	(a8)	Reference, in ref.dat file	[ucd=meta.ref;pos.frame;meta.file]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113410827
+#Name: J/AN/341/827
+#Title: Magnitude accuracies in pre-telescopic catalogs (Protte+, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/an/341/827	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/341/827	    IVOID of underlying data collection
+#INFO	creator=Protte P.	    First author or institution
+#INFO	cites=bibcode:2020AN....341..827P	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/341/827	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113410827	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_341_827_brahe:
+#Name: J/AN/341/827/brahe
+#Title: Conversion and correction data for brahe magnitudes
+#Column	HIP	(I6)	Number of Star in Hipparcos catalog (Cat. I/239)	[ucd=meta.id;meta.main]
+#Column	NoB	(I4)	Number of Star in Keplers 1627 version of Brahe catalogue (c.f. Verbunt & van Gent, 2010, Cat. J/A+A/516/A28)	[ucd=meta.id]
+#Column	mHIP	(F5.2)	Modern Johnson V-magnitude taken from Hipparcos catalog (Cat. I/239)	[ucd=phot.mag;em.opt.V]
+#Column	Culm	(F5.2)	Culmination height above horizon for Hven at 1601 C.E.	[ucd=meta.note]
+#Column	B-V	(F5.2)	? Colour-index B-V taken from Hipparcos catalog (Cat. I/239)	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	Back	(F5.2)	? Background brightness (as defined in the paper)	[ucd=instr.background]
+#Column	InMW?	(I1)	[0/1]? Is the star within +/-10{deg} of the galactic equator (1=yes/0=no)	[ucd=meta.code]
+#Column	mB	(I1)	[1-6] Numerical magnitude given by Brahe	[ucd=phot.mag;em.opt]
+#Column	qual	(A1)	[b/f] qualifier, added by Brahe: b(righter)/f(ainter)	[ucd=meta.code.qual]
+#Column	mOld	(F4.1)	Brahe magnitude with qualifier converted to +/-0.5mag	[ucd=phot.mag;em.opt]
+#Column	m	(F5.2)	Brahe magnitude converted to the modern scale by a linear transformation, m=(mOld-0.92)/0.75	[ucd=phot.mag;em.opt]
+#Column	d(B-V)	(F6.3)	? Corrective term for the colour-dependency linear model (only for stars FAINTER than 2.3mag): d(B-V)=0.11*(B-V)-0.06mag	[ucd=arith.factor]
+#Column	d(Ext)	(F6.3)	Corrective term for the extinction-effect non-linear model (G1)	[ucd=arith.factor]
+#Column	d(beta)	(F6.3)	Corrective term for the Background-dependency linear model: d(beta)=-0.37*Back-0.69mag	[ucd=arith.factor]
+#Column	m*	(F5.2)	Final converted magnitude including all corrective terms, m*=m-d(B-V)-d(Ext)-d(beta)	[ucd=phot.mag;em.opt]
+#Column	dm	(F5.2)	Magnitude error, dm=m-mHIP	[ucd=stat.error]
+#Column	dm*	(F5.2)	Corrected magnitude error dm*=m*-mHIP	[ucd=stat.error]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_341_827_ptolemy:
+#Name: J/AN/341/827/ptolemy
+#Title: Conversion and correction data for Ptolemy magnitude
+#Column	HIP	(I6)	Number of Star in Hipparcos catalog (Cat. I/239)	[ucd=meta.id;meta.main]
+#Column	NoP	(I4)	Number of Star in the Almagest (c.f. Verbunt & van Gent, 2012, Cat. J/A+A/544/A31)	[ucd=meta.id]
+#Column	mHIP	(F5.2)	Modern Johnson V-magnitude taken from Hipparcos catalog (Cat. I/239)	[ucd=phot.mag;em.opt.V]
+#Column	Culm	(F5.2)	Culmination height above horizon for Alexandria at 137 C.E.	[ucd=meta.note]
+#Column	B-V	(F5.2)	? Colour-index taken from Hipparcos catalogue (Cat. I/239)	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	Back	(F5.2)	? Background brightness (as defined in th paper)	[ucd=instr.background]
+#Column	InMW?	(I1)	[0/1]? Is the star within +/-10{deg} of the galactic equator (1=yes/0=no)	[ucd=meta.code]
+#Column	mP	(I1)	[1-6] Numerical magnitude given by Ptolemy	[ucd=phot.mag;em.opt]
+#Column	qual	(A1)	[b/f] qualifier, added by Ptolemy: b(righter)/f(ainter)	[ucd=meta.code.qual]
+#Column	mOld	(F4.1)	Ptolemian magnitude with qualifier converted to +/-0.5mag	[ucd=phot.mag;em.opt]
+#Column	m	(F5.2)	Ptolemian magnitude converted to the modern scale by a linear transformation, m=(mOld-0.92)/0.75	[ucd=phot.mag;em.opt]
+#Column	d(B-V)	(F6.3)	? Corrective term for the colour-dependency linear model (only for stars FAINTER than 2.3 mag): d(B-V)=0.11*(B-V)-0.06mag	[ucd=arith.factor]
+#Column	d(Ext)	(F6.3)	Corrective term for the extinction-effect non-linear model (G1)	[ucd=arith.factor]
+#Column	d(beta)	(F6.3)	Corrective term for the background-dependency linear model: d(beta)=-0.37*Back-0.69mag	[ucd=arith.factor]
+#Column	m*	(F5.2)	Final converted magnitude including all corrective terms, m*=m-d(B-V)-d(Ext)-d(beta)	[ucd=phot.mag;em.opt]
+#Column	dm	(F5.2)	Magnitude error dm=m-mHIP	[ucd=stat.error;phot.mag]
+#Column	dm*	(F5.2)	Corrected magnitude error dm*=m*-mHIP	[ucd=stat.error]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_341_827_sufi:
+#Name: J/AN/341/827/sufi
+#Title: Conversion and correction data for alSufi magnitudes
+#Column	HIP	(I6)	Number of Star in Hipparcos catalog (Cat. I/239)	[ucd=meta.id;meta.main]
+#Column	NoS	(I4)	Number of Star in Ulugh Begs catalogue (c.f. Verbunt & van Gent, 2012, Cat. J/A+A/544/A31	[ucd=meta.id]
+#Column	mHIP	(F5.2)	Modern Johnson V-magnitude taken from Hipparcos catalog (Cat. I/239)	[ucd=phot.mag;em.opt.V]
+#Column	Culm	(F5.2)	Culmination height above horizon for Shiraz at 964 C.E.	[ucd=meta.note]
+#Column	B-V	(F5.2)	? Colour-index taken from Hipparcos catalog (Cat. I/239)	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	Back	(F5.2)	? Background brightness (as defined in the paper)	[ucd=instr.background]
+#Column	InMW?	(I1)	[0/1]? Is the star within +/-10{deg} of the galactic equator (1=yes/0=no)	[ucd=meta.code]
+#Column	mS	(I1)	[1-6] Numerical magnitude given by al-Sufi	[ucd=phot.mag;em.opt]
+#Column	qual	(A1)	[b/f] qualifier, added by al-Sufi: b(righter)/f(ainter)	[ucd=meta.code.qual]
+#Column	mOld	(F4.1)	al-Sufi magnitude with qualifier converted to +/-0.5mag	[ucd=phot.mag;em.opt]
+#Column	m	(F5.2)	al-Sufi magnitude converted to the modern scale by a linear transformation, m=(mOld-0.92)/0.75	[ucd=phot.mag;em.opt]
+#Column	d(B-V)	(F6.3)	? Corrective term for the colour-dependency linear model (only for stars FAINTER than 2.3 mag): d(B-V)=0.11*(B-V)-0.06 mag	[ucd=arith.factor]
+#Column	d(Ext)	(F6.3)	Corrective term for the Extinction-effect non-linear model (G1)	[ucd=arith.factor]
+#Column	d(beta)	(F6.3)	Corrective term for the Background-dependency linear model: d(beta)=-0.37*Back-0.69mag	[ucd=arith.factor]
+#Column	m*	(F5.2)	Final converted magnitude including all corrective terms, m*=m-d(B-V)-d(Ext)-d(beta)	[ucd=phot.mag;em.opt]
+#Column	dm	(F5.2)	Magnitude error dm=m-mHIP	[ucd=stat.error]
+#Column	dm*	(F5.2)	Corrected magnitude error dm*=m*-mHIP	[ucd=stat.error]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113210277
+#Name: J/AN/321/277
+#Title: Effective temperatures of K-M giants (Strassmeier+, 2000)
+#INFO	ivoid=ivo://cds.vizier/j/an/321/277	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/321/277	    IVOID of underlying data collection
+#INFO	creator=Strassmeier K.G.	    First author or institution
+#INFO	cites=bibcode:2000AN....321..277S	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2000	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/321/277	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113210277	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_321_277_table5:
+#Name: J/AN/321/277/table5
+#Title: Program stars
+#Column	Teff	(A1)	indicates Teff in table6	[ucd=meta.ref.url]
+#Column	Name	(a10)	Star name	[ucd=meta.id;meta.main]
+#Column	SpType	(A4)	MK spectral type	[ucd=src.spType]
+#Column	r_SpType	(A4)	Reference for spectral type (1)	[ucd=meta.ref;pos.frame]
+#Column	vsini	(F4.1)	? Rotational velocity	[ucd=phys.veloc.rotat]
+#Column	B-V	(F6.3)	Hipparcos B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	V-Ic	(F5.2)	Hipparcos V-Ic colour index	[ucd=phot.color;em.opt.V;em.opt.I]
+#Column	[Fe/H]	(F5.2)	? Metallicity	[ucd=phys.abund.Z]
+#Column	RV	(F5.1)	? Radial velocity	[ucd=phys.veloc;pos.heliocentric]
+#Column	Notes	(a37)	Notes	[ucd=meta.note]
+#Column	SimbadName	(f)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113330706
+#Name: J/AN/333/706
+#Title: Bochum survey of the southern Galactic disk (Haas+, 2012)
+#INFO	ivoid=ivo://cds.vizier/j/an/333/706	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/333/706	    IVOID of underlying data collection
+#INFO	creator=Haas M.	    First author or institution
+#INFO	cites=bibcode:2012AN....333..706H	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2012	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/333/706	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113330706	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_333_706_table1:
+#Name: J/AN/333/706/table1
+#Title: List of fields in Galactic Disk Survey (GDS)
+#Column	Field	(A9)	GDS field name (NNNN-NNNN)	[ucd=obs.field]
+#Column	RAJ2000	(A10)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	NObs	(I2)	Number of observations	[ucd=meta.number]
+#Column	Obs1	(A10)	First night observation date	[ucd=time.epoch;obs]
+#Column	Obs2	(A10)	Las2 night observation date	[ucd=time.epoch;obs]
+#Column	Nsr	(I5)	Number of stars used for the analysis in r-band	[ucd=meta.number]
+#Column	Nvr	(I3)	[70/238] Number of stars identified to be variable in r-band	[ucd=meta.number]
+#Column	Nsi	(I5)	Number of stars used for the analysis in i-band	[ucd=meta.number]
+#Column	Nvi	(I3)	[91/248] Number of stars identified to be variable in i-band	[ucd=meta.number]
+#Table	J_AN_333_706_table2:
+#Name: J/AN/333/706/table2
+#Title: List of variable stars
+#Column	Field	(A9)	Field name of the data set from which the light curve is created (NNNN-NNNN)	[ucd=obs.field]
+#Column	RAJ2000	(F10.6)	Star right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F10.6)	Star declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Nr	(I2)	[14/57]? Number of data points of the light curve used in the r-band	[ucd=meta.number]
+#Column	<rmag>	(F5.2)	? Mean brightness of the light curve in rmag (AB system)	[ucd=phot.mag;em.opt.R]
+#Column	e_<rmag>	(F5.2)	? Standard deviation on <rmag>	[ucd=stat.error;phot.mag;em.opt.R]
+#Column	Trs	(F5.2)	[0.02/0.5]? Threshold at the brightness of the star to accept it as variable by means of the standard deviation in r-band	[ucd=instr.sensitivity]
+#Column	rAmp	(F5.2)	? Amplitude of the light curve in r-band	[ucd=src.var.amplitude]
+#Column	TrA	(F5.2)	[0.07/2.0]? Threshold at the brightness of the star to accept it as variable by means of the amplitude in r-band	[ucd=instr.sensitivity]
+#Column	Jr	(F5.2)	? Stetson J-Index in r-band	[ucd=src.var.index]
+#Column	Ni	(I2)	[14/42]? Number of data points of the light curve used in the i-band	[ucd=meta.number]
+#Column	<imag>	(F5.2)	? Mean brightness of the light curve in imag (AB system)	[ucd=phot.mag;em.opt.I]
+#Column	e_<imag>	(F5.2)	? Standard deviation on <imag>	[ucd=stat.error;phot.mag;em.opt.I]
+#Column	Tis	(F5.2)	[0.02/0.5]? Threshold at the brightness of the star to accept it as variable by means of the standard deviation in i-band	[ucd=instr.sensitivity]
+#Column	iAmp	(F5.2)	? Amplitude of the light curve in imag	[ucd=src.var.amplitude]
+#Column	TiA	(F5.2)	[0.07/2.0]? Threshold at the brightness of the star to accept it as variable by means of the amplitude in i-band	[ucd=instr.sensitivity]
+#Column	Ji	(F5.2)	? Stetson J-index in i-band	[ucd=src.var.index]
+
+#RESOURCE=yCat_113440055
+#Name: J/AN/344/55
+#Title: Stellar companions of (C)TOIs (Mugrauer+, 2023)
+#INFO	ivoid=ivo://cds.vizier/j/an/344/55	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/344/55	    IVOID of underlying data collection
+#INFO	creator=Mugrauer M.	    First author or institution
+#INFO	cites=bibcode:2023AN....34430055M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2023	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/344/55	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113440055	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2015.500:	ICRS
+#Table	J_AN_344_55_table3:
+#Name: J/AN/344/55/table3
+#Title: Equatorial coordinates and properties of companions
+#Column	Name	(a14)	Name of stellar companion	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F15.11)	Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	GMAG	(F5.2)	Absolute magnitude	[ucd=phys.magAbs]
+#Column	Sep	(I4)	Projected separation	[ucd=pos.angDistance]
+#Column	l_Mass	(A1)	[~] Limit flag on Mass	[ucd=meta.code.error;phys.mass]
+#Column	Mass	(F5.2)	Mass	[ucd=phys.mass]
+#Column	Teff	(I4)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	Note	(A3)	[WD NSS ] WD if Companion is a white dwarf NSS if a Non-Single-Star solution is listed for the Companion in the Gaia DR3	[ucd=meta.note]
+
+#RESOURCE=yCat_113360590
+#Name: J/AN/336/590
+#Title: Bochum Galactic Disk Survey: II (Hackstein+, 2015)
+#INFO	ivoid=ivo://cds.vizier/j/an/336/590	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/336/590	    IVOID of underlying data collection
+#INFO	creator=Hackstein M.	    First author or institution
+#INFO	cites=bibcode:2015AN....336..590H	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2015	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/336/590	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113360590	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_336_590_varsum:
+#Name: J/AN/336/590/varsum
+#Title: Summary file of variable properties
+#Column	Field	(a55)	GDS field name	[ucd=obs.field]
+#Column	LC	(A2)	Show the light curves	[ucd=meta.ref.url]
+#Column	ID	(A19)	GDS Variable ID, GDS_JHHMMSSs+DDMMSS	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F9.5)	Mean right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	Mean declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Grade	(A1)	[A-C] GDS grade (1)	[ucd=meta.note]
+#Column	rmag	(F5.2)	? Median light curve magnitude in r	[ucd=phot.mag;em.opt.R]
+#Column	imag	(F5.2)	? Median light curve magnitude in i	[ucd=phot.mag;em.opt.I]
+#Column	AmpMax	(F5.2)	Maximum amplitude (2)	[ucd=src.var.amplitude]
+#Column	JStetmax	(F6.2)	Maximum Stetson-J (2)	[ucd=src.var.index]
+#Column	sdMax	(F7.4)	Maximum standard deviation (2)	[ucd=stat.stdev;phot.mag]
+
+#RESOURCE=yCat_113410099
+#Name: J/AN/341/99
+#Title: RV of 11 spectroscopic binaries (Heyne+, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/an/341/99	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/341/99	    IVOID of underlying data collection
+#INFO	creator=Heyne T.	    First author or institution
+#INFO	cites=bibcode:2020AN....341...99H	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/341/99	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113410099	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_341_99_table1:
+#Name: J/AN/341/99/table1
+#Title: Properties of the observed targets
+#Column	VC	(A2)	Show the Radial Velocity curves	[ucd=meta.ref.url]
+#Column	Name	(A10)	Target name	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Vmag	(F5.2)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	SpType	(a7)	Spectral type	[ucd=src.spType]
+#Column	Grade	(I1)	[1/3] Grade	[ucd=meta.note]
+#Column	Per	(F7.4)	Period	[ucd=time.period]
+#Column	T0	(F9.1)	Time of periastron (JD)	[ucd=time.epoch]
+#Column	e	(F5.2)	Eccentricity	[ucd=src.orbital.eccentricity]
+#Column	omega	(F5.1)	Argumentt of periastron, {omega}	[ucd=src.orbital.periastron]
+#Column	K	(F5.1)	Radial velocity semi-amplitude	[ucd=spect.dopplerVeloc]
+#Column	n_K	(A1)	[*] Note on K (1)	[ucd=meta.note]
+#Column	gamma	(F5.1)	Systematic velocity {gamma}	[ucd=phys.veloc]
+#Column	Ref	(A1)	Reference for the listed orbital solutions from the SB9 (2)	[ucd=meta.ref;pos.frame]
+#Column	Table	(A12)	Name of the table with radial velocity measurements	[ucd=meta.id;meta.table]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_113300055
+#Name: J/AN/330/55
+#Title: PISCO speckle observations in 2006 (Scardia+, 2009)
+#INFO	ivoid=ivo://cds.vizier/j/an/330/55	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/330/55	    IVOID of underlying data collection
+#INFO	creator=Scardia M.	    First author or institution
+#INFO	cites=bibcode:2009AN....330...55S	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2009	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/330/55	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113300055	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_330_55_table1:
+#Name: J/AN/330/55/table1
+#Title: Measurements of visual binaries between July and December 2006
+#Column	WDS	(A10)	WDS name (HHMMm+DDMM)	[ucd=meta.id;meta.main]
+#Column	n_Name	(A1)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	Name	(a13)	Name	[ucd=meta.id]
+#Column	ADS	(I5)	? ADS number	[ucd=meta.id]
+#Column	Epoch	(F8.3)	Epoch, in Besselian years	[ucd=time.epoch]
+#Column	Flt	(A1)	[RVW] Filter (not explicited in the paper)	[ucd=meta.id;instr.filter]
+#Column	f	(I2)	Focal length of the eye-piece used for magnifying the image	[ucd=obs.param]
+#Column	rho	(F6.3)	? Angular separation	[ucd=pos.angDistance]
+#Column	e_rho	(F6.3)	? rms uncertainty on rho	[ucd=stat.error]
+#Column	theta	(F5.1)	? Position angle (1)	[ucd=pos.posAng]
+#Column	n_theta	(A1)	[*] * indicates that the position angle could be determined without the 180{deg} ambiguity	[ucd=meta.note]
+#Column	e_theta	(F4.1)	? rms uncertainty on theta	[ucd=stat.error;pos.posAng]
+#Column	Orb	(I1)	[0/1] 1: object for which an orbit is known	[ucd=meta.code]
+#Column	Notes	(a20)	Notes	[ucd=meta.note]
+#Column	SimbadName	(a14)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113360070
+#Name: J/AN/336/70
+#Title: Velocities and proper motions of Galactic Cepheids (Mel'nik+, 2015)
+#INFO	ivoid=ivo://cds.vizier/j/an/336/70	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/336/70	    IVOID of underlying data collection
+#INFO	creator=Mel&apos;nik A.M.	    First author or institution
+#INFO	cites=bibcode:2015AN....336...70M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2015	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/336/70	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113360070	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_336_70_table1:
+#Name: J/AN/336/70/table1
+#Title: Data for 674 classical Cepheids
+#Column	Seq	(I3)	[1/674] Running number	[ucd=meta.id]
+#Column	GCVS	(A9)	GCVS Identification	[ucd=meta.id;meta.main]
+#Column	ASAS	(A13)	ASAS Identification J name (HHMMSS+DDMM.m)	[ucd=meta.id]
+#Column	Type	(a8)	Type of the variability	[ucd=meta.note]
+#Column	PF	(F5.2)	[0.5/68.1] Fundamental period	[ucd=time.period]
+#Column	<Vmag>	(F5.2)	? Mean magnitude in the V-band	[ucd=phot.mag;em.opt.V]
+#Column	RAJ2000	(A10)	Right ascension (J2000.0)	[ucd=pos.eq.ra]
+#Column	DEJ2000	(A9)	Declination (J2000.0)	[ucd=pos.eq.dec]
+#Column	r	(F4.1)	[0.1/27.7] Heliocentric distance	[ucd=pos.distance;pos.heliocentric]
+#Column	HRV	(F6.1)	[-126/126]? Heliocentric Radial velocity	[ucd=spect.dopplerVeloc;pos.heliocentric]
+#Column	e_HRV	(F4.1)	[0.1/10]? rms uncertainty in HRV	[ucd=stat.error]
+#Column	r_HRV	(I1)	? Reference to the catalog of HRV (1)	[ucd=meta.ref;pos.frame]
+#Column	pmGLON	(F6.2)	[-13/45]? Proper motion along longitude	[ucd=pos.pm]
+#Column	e_pmGLON	(F5.2)	[0.1/11.3]? rms uncertainty in pmGLON	[ucd=stat.error]
+#Column	pmGLAT	(F6.2)	[-20/14]? Proper motion along latitude	[ucd=pos.pm]
+#Column	e_pmGLAT	(F5.2)	[0.1/09.2]? rms uncertainty in pmGLAT	[ucd=stat.error]
+#Column	HIP	(I6)	? Star Hipparcos catalog number	[ucd=meta.id]
+#Column	SimbadName	(f)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Positions from Simbad, or from ASAS name (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Positions from Simbad, or from ASAS name (declination part)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113240437
+#Name: J/AN/324/437
+#Title: H{alpha} emission stars toward Bulge (Kohoutek+, 2003)
+#INFO	ivoid=ivo://cds.vizier/j/an/324/437	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/324/437	    IVOID of underlying data collection
+#INFO	creator=Kohoutek L.	    First author or institution
+#INFO	cites=bibcode:2003AN....324..437K	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2003	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/324/437	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113240437	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_324_437_ha_new:
+#Name: J/AN/324/437/ha_new
+#Title: New H{alpha} and possible  H{alpha} emission- line stars
+#Column	p	(A1)	Simbad column added by the CDS	[ucd=meta.code]
+#Column	KW	(I3)	KW number	[ucd=meta.id;meta.main]
+#Column	n_KW	(I2)	? Note number, detailed in file "notes.dat"	[ucd=meta.note]
+#Column	Name	(a7)	Name	[ucd=meta.id]
+#Column	n_Name	(A1)	[S] S: suspected (G1)	[ucd=meta.note]
+#Column	RAJ2000	(A11)	Right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_324_437_table2:
+#Name: J/AN/324/437/table2
+#Title: Known H-alpha emission-line stars
+#Column	Name	(a10)	Name	[ucd=meta.id]
+#Column	RAJ2000	(A11)	Right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Column	n_Name	(I2)	? Note number, detailed in file "notes.dat"	[ucd=meta.note]
+
+#RESOURCE=yCat_113230139
+#Name: J/AN/323/139
+#Title: Velocities of Pop. II binary stars (Sperauskas+, 2002)
+#INFO	ivoid=ivo://cds.vizier/j/an/323/139	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/323/139	    IVOID of underlying data collection
+#INFO	creator=Sperauskas J.	    First author or institution
+#INFO	cites=bibcode:2002AN....323..139S	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2002	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/323/139	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113230139	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_323_139_table1:
+#Name: J/AN/323/139/table1
+#Title: Radial velocity mean values
+#Column	Seq	(I3)	Sequential number	[ucd=meta.record]
+#Column	n_Seq	(A1)	indicates a note for this star	[ucd=meta.note]
+#Column	Name	(a14)	Name of the star	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	SpType	(a7)	MK spectral type	[ucd=src.spType]
+#Column	Vmag	(F5.2)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	n_Vmag	(A2)	[Hp VT] Hp: Hipparcos magnitude, VT: Tycho magnitude	[ucd=meta.note]
+#Column	RV	(F7.1)	Mean radial velocity	[ucd=spect.dopplerVeloc;stat.mean]
+#Column	o_RV	(I2)	Number of measurements	[ucd=meta.number]
+#Column	e_RV	(F4.1)	rms uncertainty on RV	[ucd=stat.error]
+#Column	E_RV	(F4.1)	? External error on RV	[ucd=stat.error;stat.max]
+#Column	E/I	(F4.1)	? External-to-internal error on RV	[ucd=stat.error]
+#Column	HIP	(I5)	? HIP number	[ucd=meta.id]
+
+#RESOURCE=yCat_113380700
+#Name: J/AN/338/700
+#Title: Flux densities for 290 blazars (Mingaliev+, 2017)
+#INFO	ivoid=ivo://cds.vizier/j/an/338/700	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/338/700	    IVOID of underlying data collection
+#INFO	creator=Mingaliev M.G.	    First author or institution
+#INFO	cites=bibcode:2017AN....338..700M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2017	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/338/700	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113380700	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_338_700_table6:
+#Name: J/AN/338/700/table6
+#Title: Blazar and some parameters
+#Column	Name	(a23)	Source name	[ucd=meta.id]
+#Column	RAJ2000	(A10)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	N	(I2)	Number of observing epochs at RATAN,	[ucd=meta.number]
+#Column	z	(F6.3)	? Redshift z (BZCAT or Simbad),	[ucd=src.redshift]
+#Column	logSpeak	(F5.2)	? logarithm of the synchrotron peak frequency	[ucd=em.freq]
+#Column	SED	(A3)	SED class from BZCAT or Nieppola et al. (2006, Cat. J/A+A/445/441)	[ucd=meta.code.class]
+#Column	n_SED	(A1)	[*] we noted "*" blazars, for which the values of logSpeak were calculated using ASDC SED builder	[ucd=meta.note]
+#Column	AGN	(a12)	AGN class from BZCAT	[ucd=src.class]
+#Column	NVSS	(A13)	NVSS name (HHMMSS+-DDMMSS J2000)	[ucd=meta.id;meta.main]
+#Column	SimbadName	(f)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	NED	(A3)	NED column added by the CDS	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_113420538
+#Name: J/AN/342/538
+#Title: Frolov 1 and NGC 7510 CCD UBV photometry (Yontan+, 2021)
+#INFO	ivoid=ivo://cds.vizier/j/an/342/538	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/342/538	    IVOID of underlying data collection
+#INFO	creator=Yontan T.	    First author or institution
+#INFO	cites=bibcode:2021AN....342..538Y	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2021	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/342/538	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113420538	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_342_538_table1:
+#Name: J/AN/342/538/table1
+#Title: Photometric and astrometric catalogue Frolov 1
+#Column	ID	(I4)	Sequential number	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A12)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Vmag	(F6.3)	Johnson V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Vmag	(F6.3)	? rms uncertainty on Vmag	[ucd=stat.error;phot.mag]
+#Column	U-B	(F6.3)	? Johnson U-B colour index	[ucd=phot.color;em.opt.U;em.opt.B]
+#Column	e_U-B	(F6.3)	? rms uncertainty on U-B	[ucd=stat.error;phot.color;em.opt.U]
+#Column	B-V	(F6.3)	? Johnson B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	e_B-V	(F6.3)	? rms uncertainty on B-V	[ucd=stat.error;phot.color;em.opt.B]
+#Column	Gmag	(F6.3)	? Gaia G magnitude	[ucd=phot.mag;em.opt]
+#Column	e_Gmag	(F6.3)	? rms uncertainty on Gmag	[ucd=stat.error;phot.mag]
+#Column	BP-RP	(F6.3)	? Gaia BP-RP colour index	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	e_BP-RP	(F6.3)	? rms uncertainty on BP-RP	[ucd=stat.error]
+#Column	pmRA	(F8.3)	? proper motion components (pmRA*cosDE)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.3)	? rms uncertainty on proper motion	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F8.3)	? proper motion components (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	? rms uncertainty on proper motion	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Plx	(F8.3)	? trigonometric parallax	[ucd=pos.parallax.trig]
+#Column	e_Plx	(F6.3)	? rms uncertainty on trigonometric parallax	[ucd=stat.error;pos.parallax]
+#Column	Pmemb	(F5.2)	[0/1]? Membership probability	[ucd=stat]
+#Table	J_AN_342_538_table2:
+#Name: J/AN/342/538/table2
+#Title: Photometric and astrometric catalogue NGC 7510
+#Column	ID	(I4)	Sequential number	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A12)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Vmag	(F6.3)	Johnson V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Vmag	(F6.3)	? rms uncertainty on Vmag	[ucd=stat.error;phot.mag]
+#Column	U-B	(F6.3)	? Johnson U-B colour index	[ucd=phot.color;em.opt.U;em.opt.B]
+#Column	e_U-B	(F6.3)	? rms uncertainty on U-B	[ucd=stat.error;phot.color;em.opt.U]
+#Column	B-V	(F6.3)	? Johnson B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	e_B-V	(F6.3)	? rms uncertainty on B-V	[ucd=stat.error;phot.color;em.opt.B]
+#Column	Gmag	(F6.3)	? Gaia G magnitude	[ucd=phot.mag;em.opt]
+#Column	e_Gmag	(F6.3)	? rms uncertainty on Gmag	[ucd=stat.error;phot.mag]
+#Column	BP-RP	(F6.3)	? Gaia BP-RP colour index	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	e_BP-RP	(F6.3)	? rms uncertainty on BP-RP	[ucd=stat.error]
+#Column	pmRA	(F8.3)	? proper motion components (pmRA*cosDE)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.3)	? rms uncertainty on proper motion	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F8.3)	? proper motion components (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	? rms uncertainty on proper motion	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Plx	(F8.3)	? trigonometric parallax	[ucd=pos.parallax.trig]
+#Column	e_Plx	(F6.3)	? rms uncertainty on trigonometric parallax	[ucd=stat.error;pos.parallax]
+#Column	Pmemb	(F5.2)	[0/1]? Membership probability	[ucd=stat]
+
+#RESOURCE=yCat_113410703
+#Name: J/AN/341/703
+#Title: Radio spectral indices of active galaxies (Abrahamyan, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/an/341/703	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/341/703	    IVOID of underlying data collection
+#INFO	creator=Abrahamyan H. V.	    First author or institution
+#INFO	cites=bibcode:2020AN....341..703A	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/341/703	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113410703	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_341_703_table6:
+#Name: J/AN/341/703/table6
+#Title: Information of radio spectral indices, absolute magnitude, and luminosity
+#Column	RAJ2000	(F10.6)	Right ascension in decimal degrees (J2000) from VII/258 (VCV13)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F10.6)	Declination in decimal degrees (J2000) from VII/258 (VCV13)	[ucd=pos.eq.dec;meta.main]
+#Column	f_coo	(A1)	[a] Flag on coo (1)	[ucd=meta.code]
+#Column	z	(F6.3)	[0.001/0.42] Redshift from VII/258 (VCV13)	[ucd=src.redshift]
+#Column	ATold	(a9)	Old activity type	[ucd=src.class]
+#Column	ATnew	(a10)	New activity type	[ucd=src.class]
+#Column	Mabs	(F6.2)	[-23.52/-15.62] Absolute magnitude	[ucd=phys.magAbs]
+#Column	Lum	(F6.3)	[0.058/84] Luminosity; in 10^43^erg/s units	[ucd=phys.luminosity]
+#Column	alpha	(F8.5)	[-1.15/0.67] Radio spectral index {alpha}	[ucd=spect.index]
+#Column	e_alpha	(F6.3)	[0.012/0.11] alpha uncertainty	[ucd=stat.error;pos.eq.ra]
+#Column	PapII	(I3)	Object also in Abrahamyan+, 2020, J/other/Ap/63.322	[ucd=meta.ref.url]
+#Column	VCV13	(a5)	Display data from Veron+, 2010, VII/258 within 90"	[ucd=meta.ref.url]
+#Column	SimbadName	(f)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	NED	(A3)	NED column added by the CDS	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_113180035
+#Name: J/AN/318/35
+#Title: New and Misclassified Planetary Nebulae (Kohoutek, 1997)
+#INFO	ivoid=ivo://cds.vizier/j/an/318/35	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/318/35	    IVOID of underlying data collection
+#INFO	creator=Kohoutek L.	    First author or institution
+#INFO	cites=bibcode:1997AN....318...35K	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=1997	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/318/35	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113180035	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_318_35_newpn:
+#Name: J/AN/318/35/newpn
+#Title: New planetary nebulae (1991-1994)
+#Column	PK	(A8)	Planetary nebula designation (Perek-Kohoutek)	[ucd=meta.id;meta.main]
+#Column	n_PK	(A1)	[*] *: Possible planetary nebula	[ucd=meta.note]
+#Column	Name	(a15)	Other name	[ucd=meta.id]
+#Column	RA1950	(A8)	Right ascension (1950)	[ucd=pos.eq.ra;meta.main]
+#Column	DE1950	(A8)	Declination (1950)	[ucd=pos.eq.dec;meta.main]
+#Column	FC	(A1)	[F] F: Finding chart	[ucd=meta.note]
+#Column	Rem	(A1)	[R] Remark in notes1.dat file	[ucd=meta.note]
+#Column	Discov	(a86)	References for the discovery	[ucd=meta.ref]
+#Column	_RA.icrs	(A10)	Right ascension (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A9)	Declination (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.dec]
+#Table	J_AN_318_35_notpn:
+#Name: J/AN/318/35/notpn
+#Title: Misclassified planetary nebulae (1991-1994)
+#Column	PK	(A8)	Designation of the object in Perek-Kohoutek	[ucd=meta.id;meta.main]
+#Column	Name	(A10)	Other name of the object	[ucd=meta.id]
+#Column	Text	(a135)	Text of remark and references	[ucd=meta.note]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_318_35_prepn:
+#Name: J/AN/318/35/prepn
+#Title: Possible pre-planetary nebulae (1991-1994)
+#Column	Name	(A15)	Possible pre-planetary nebula name	[ucd=meta.id;meta.main]
+#Column	RA1950	(A10)	Right ascension (1950)	[ucd=pos.eq.ra;meta.main]
+#Column	DE1950	(A9)	Declination (1950)	[ucd=pos.eq.dec;meta.main]
+#Column	u_DE1950	(A1)	Uncertainty flag on DEs	[ucd=meta.code.error;pos.eq.dec]
+#Column	_RA.icrs	(A10)	Right ascension (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A9)	Declination (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.dec]
+#Table	J_AN_318_35_postpn:
+#Name: J/AN/318/35/postpn
+#Title: Possible post-planetary nebulae (1991-1994)
+#Column	Name	(a15)	Possible pre-planetary nebula name	[ucd=meta.id;meta.main]
+#Column	RA1950	(A10)	Right ascension (1950)	[ucd=pos.eq.ra;meta.main]
+#Column	DE1950	(A9)	Declination (1950)	[ucd=pos.eq.dec;meta.main]
+#Column	u_DE1950	(A1)	Uncertainty flag on DEs	[ucd=meta.code.error;pos.eq.dec]
+#Column	_RA.icrs	(A10)	Right ascension (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A9)	Declination (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.dec]
+
+#RESOURCE=yCat_113410770
+#Name: J/AN/341/770
+#Title: Corrected proper motion for HIP stars (Damljanovic, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/an/341/770	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/341/770	    IVOID of underlying data collection
+#INFO	creator=Damljanovic G.	    First author or institution
+#INFO	cites=bibcode:2020AN....341..770D	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/341/770	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113410770	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_341_770_table1:
+#Name: J/AN/341/770/table1
+#Title: Independent latitude stations (INDLS) catalog of proper motions in declination for 682 HIP stars
+#Column	HIP	(I6)	HIP number (Cat. I/239)	[ucd=meta.id;meta.main]
+#Column	pmDE	(F8.2)	Proper motion along Declination (1)	[ucd=pos.pm;pos.eq.dec]
+#Column	s_pmDE	(F5.2)	Standard deviation on pmDE (1)	[ucd=stat.stdev;pos.pm;pos.eq.dec]
+#Column	HIPcat	(a6)	Details from the 2 versions of Hipparcos for this star	[ucd=meta.ref.url]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113454017
+#Name: J/AN/343/24017
+#Title: Stellar companions of (C)TOIs (Mugrauer+, 2022)
+#INFO	ivoid=ivo://cds.vizier/j/an/343/24017	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/343/24017	    IVOID of underlying data collection
+#INFO	creator=Mugrauer M.	    First author or institution
+#INFO	cites=bibcode:2022AN....34324017M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2022	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/343/24017	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113454017	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_343_24017_table3:
+#Name: J/AN/343/24017/table3
+#Title: Equatorial Coordinates & Properties of Companions
+#Column	Name	(a14)	Name of stellar companion	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F15.11)	Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	GMAG	(F5.2)	? Absolute G magnitude	[ucd=phys.magAbs]
+#Column	Sep	(I4)	Projected separation	[ucd=pos.angDistance]
+#Column	l_Mass	(A1)	[~] Limit flag on Mass	[ucd=meta.code.error;phys.mass]
+#Column	Mass	(F5.2)	? Mass	[ucd=phys.mass]
+#Column	Teff	(I5)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	Note	(A2)	[WD ] WD if Companion is a white dwarf	[ucd=meta.note]
+
+#RESOURCE=yCat_113160039
+#Name: J/AN/316/39
+#Title: Diameter-limited Northern sky galaxies catalog (Bardelli+, 1995)
+#INFO	ivoid=ivo://cds.vizier/j/an/316/39	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/316/39	    IVOID of underlying data collection
+#INFO	creator=Bardelli S.	    First author or institution
+#INFO	cites=bibcode:1995AN....316...39B	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=1995	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/316/39	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113160039	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_316_39_table2:
+#Name: J/AN/316/39/table2
+#Title: The galaxy catalogue
+#Column	Gal	(A6)	UGC (Cat. VII/26) galaxy name (U00001 to U12914)	[ucd=meta.id;meta.main]
+#Column	m_Gal	(A1)	[A] Multiplicity index on Gal	[ucd=meta.code.multip]
+#Column	RAB1950	(A8)	Right ascension (B1950)	[ucd=pos.eq.ra;meta.main]
+#Column	DEB1950	(A6)	Declination (B1950)	[ucd=pos.eq.dec;meta.main]
+#Column	Bmag	(F5.2)	? B magnitude	[ucd=phot.mag;em.opt.B]
+#Column	D(0)	(F6.3)	Apparent face-on diameter	[ucd=phys.angSize]
+#Column	MType	(I4)	Morphological type (1)	[ucd=src.morph.type]
+#Column	HV	(I5)	? Heliocentric velocity	[ucd=spect.dopplerVeloc;pos.heliocentric]
+#Column	GV	(I5)	? Velocity reduced to the centroid of the Local Group	[ucd=phys.veloc;pos.lg]
+#Column	Ref	(A5)	Reference code (in refs.dat file)	[ucd=meta.note]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref]
+#Column	_RA.icrs	(A10)	Right ascension (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A9)	Declination (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.dec]
+
+#RESOURCE=yCat_113310274
+#Name: J/AN/331/274
+#Title: UBV photometry of early-type stars (Mayer+, 2010)
+#INFO	ivoid=ivo://cds.vizier/j/an/331/274	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/331/274	    IVOID of underlying data collection
+#INFO	creator=Mayer P.	    First author or institution
+#INFO	cites=bibcode:2010AN....331..274M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2010	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/331/274	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113310274	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_331_274_stars:
+#Name: J/AN/331/274/stars
+#Title: List of variable and check stars
+#Column	Name	(A10)	Star name	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A10)	Simbad Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Simbad declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	FileName	(A12)	VizieR added column, not part of original data	[ucd=meta.id;phot;meta.file]
+#Column	Per	(F9.6)	? Orbital period	[ucd=time.period]
+#Column	LC	(A2)	Display the UBV light curves	[ucd=meta.ref.url]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+
+#RESOURCE=yCat_113290609
+#Name: J/AN/329/609
+#Title: Red giant candidates in 10 open clusters (Claria+, 2008)
+#INFO	ivoid=ivo://cds.vizier/j/an/329/609	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/329/609	    IVOID of underlying data collection
+#INFO	creator=Claria J.J.	    First author or institution
+#INFO	cites=bibcode:2008AN....329..609C	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2008	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/329/609	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113290609	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_329_609_table1:
+#Name: J/AN/329/609/table1
+#Title: Observed clusters
+#Column	OCl	(a11)	Cluter name	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A7)	Right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A6)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Column	GLON	(F5.1)	Galactic longitude	[ucd=pos.galactic.lon]
+#Column	GLAT	(F4.1)	Galactic latitude	[ucd=pos.galactic.lat]
+#Column	E(B-V)	(F5.2)	B-V colour excess	[ucd=phot.color.excess]
+#Column	logAge	(F5.2)	Cluster age	[ucd=time.age]
+#Column	N	(I1)	Number of late-type stars observed in the cluster	[ucd=meta.number]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+#Table	J_AN_329_609_table34:
+#Name: J/AN/329/609/table34
+#Title: UBV and DDO photometry
+#Column	OCl	(a11)	Cluster designation	[ucd=meta.id.parent]
+#Column	No	(I4)	Star number	[ucd=meta.id]
+#Column	D	(A2)	[* ] Double star (G1)	[ucd=meta.code]
+#Column	RAJ2000	(A12)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A12)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Vmag	(F6.3)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	B-V	(F6.3)	(B-V) colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	U-B	(F6.3)	(U-B) colour index	[ucd=phot.color;em.opt.U;em.opt.B]
+#Column	45-48	(F6.3)	C45-48 colour index	[ucd=phot.color;em.opt.B;em.opt.B]
+#Column	42-45	(F6.3)	C42-45 colour index	[ucd=phot.color;em.opt.B;em.opt.B]
+#Column	41-42	(F6.3)	C41-42 colour index	[ucd=phot.color;em.opt.B;em.opt.B]
+#Column	SimbadName	(a22)	Simbad column added by the CDS	[ucd=meta.id]
+#Table	J_AN_329_609_table6:
+#Name: J/AN/329/609/table6
+#Title: Washington photometry of red giant candidates in Ruprecht 97
+#Column	OCl	(a11)	Cluster designation	[ucd=meta.id.parent]
+#Column	No	(I4)	Star number	[ucd=meta.id]
+#Column	RAJ2000	(A10)	Right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Column	C-M	(F6.3)	Washington C-M colour index (391/508nm)	[ucd=phot.color;em.opt.U;em.opt.V]
+#Column	e_C-M	(F6.3)	rms uncertainty on C-M	[ucd=stat.error]
+#Column	M-T1	(F6.3)	Washington M-T1 colour index (508/633nm)	[ucd=phot.color;em.opt.V;em.opt.R]
+#Column	e_M-T1	(F6.3)	rms uncertainty on M-T1	[ucd=stat.error]
+#Column	T1-T2	(F6.3)	Washington T1-T2 colour index (633/788nm)	[ucd=phot.color]
+#Column	e_T1-T2	(F6.3)	rms uncertainty on T1-T2	[ucd=stat.error]
+#Column	T1mag	(F6.3)	Washington T1 magnitude (633+/-80nm)	[ucd=phot.mag;em.opt.R]
+#Column	e_T1mag	(F6.3)	rms uncertainty on T1mag	[ucd=stat.error;phot.mag]
+#Column	N3	(I1)	Number of night observed	[ucd=meta.number]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+
+#RESOURCE=yCat_113330060
+#Name: J/AN/333/60
+#Title: Colour indices of selected OB stars (Krelowski+, 2012)
+#INFO	ivoid=ivo://cds.vizier/j/an/333/60	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/333/60	    IVOID of underlying data collection
+#INFO	creator=Krelowski J.	    First author or institution
+#INFO	cites=bibcode:2012AN....333...60K	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2012	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/333/60	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113330060	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_333_60_OBstars:
+#Name: J/AN/333/60/OBstars
+#Title: Colour indices of OB stars
+#Column	SpT	(A4)	MK spectral type	[ucd=src.spType]
+#Column	Name	(A11)	Star designation	[ucd=meta.id;meta.main]
+#Column	Vmag	(F5.2)	Brightness at V	[ucd=phot.mag;em.opt.V]
+#Column	B-V	(F5.2)	B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	U-V	(F5.2)	? U-V colour index	[ucd=phot.color;em.opt.U;em.opt.V]
+#Column	15-V	(F6.3)	? 15-V colour index (1)	[ucd=phot.color;em.UV;em.opt]
+#Column	18-V	(F6.3)	? 18-V colour index (1)	[ucd=phot.color;em.UV;em.opt]
+#Column	22-V	(F6.3)	? 22-V colour index (1)	[ucd=phot.color;em.UV;em.opt]
+#Column	25-V	(F6.3)	? 25-V colour index (1)	[ucd=phot.color;em.UV;em.opt]
+#Column	33-V	(F6.3)	? 33-V colour index (1)	[ucd=phot.color;em.UV;em.opt]
+#Column	J-V	(F6.3)	? J-V colour index	[ucd=phot.color;em.opt;em.IR]
+#Column	H-V	(F6.3)	? H-V colour index	[ucd=phot.color;em.opt;em.IR]
+#Column	K-V	(F6.3)	? K-V colour index	[ucd=phot.color;em.opt;em.IR]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113420840
+#Name: J/AN/342/840
+#Title: Stellar companions of (C)TOIs (Mugrauer+, 2021)
+#INFO	ivoid=ivo://cds.vizier/j/an/342/840	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/342/840	    IVOID of underlying data collection
+#INFO	creator=Mugrauer M.	    First author or institution
+#INFO	cites=bibcode:2021AN....342..840M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2021	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/342/840	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113420840	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2016.000:	ICRS
+#Table	J_AN_342_840_table3:
+#Name: J/AN/342/840/table3
+#Title: Equatorial coordinates and properties of companions
+#Column	Name	(a14)	Name of stellar companion	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F15.11)	Right Ascension (ICRS) at Ep=2016.0	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2016.0	[ucd=pos.eq.dec;meta.main]
+#Column	GMAG	(F5.2)	? Absolute G magnitude	[ucd=phys.magAbs]
+#Column	Sep	(I4)	Projected separation	[ucd=pos.angDistance;src.orbital]
+#Column	l_Mass	(A1)	[~] Limit flag on mass	[ucd=meta.code.error;phys.mass]
+#Column	Mass	(F5.2)	? Mass	[ucd=phys.mass]
+#Column	Teff	(I5)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	Note	(A2)	[WD ] WD if companion is a white dwarf	[ucd=meta.note]
+#Column	_RA.icrs	(F15.11)	Right ascension (ICRS) at Epoch=J2016. (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F15.11)	Declination (ICRS) at Epoch=J2016. (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.dec]
+
+#RESOURCE=yCat_113290790
+#Name: J/AN/329/790
+#Title: SDSS and Johnson-Cousins photometry of F-K stars (Just+, 2008)
+#INFO	ivoid=ivo://cds.vizier/j/an/329/790	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/329/790	    IVOID of underlying data collection
+#INFO	creator=Just A.	    First author or institution
+#INFO	cites=bibcode:2008AN....329..790J	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2008	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/329/790	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113290790	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_329_790_stars:
+#Name: J/AN/329/790/stars
+#Title: Luminosities and colours of the complete sample of 786 stars in the 25pc sphere
+#Column	HIP	(I6)	HIP number (0 for Sun)	[ucd=meta.id]
+#Column	g-r	(F6.3)	SDSS g-r colour index	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	r-i	(F6.3)	? SDSS r-i colour index	[ucd=phot.color;em.opt.R;em.opt.I]
+#Column	gMAG	(F6.3)	Absolute g magnitude (1)	[ucd=phys.magAbs]
+#Column	VMAG	(F5.2)	Absolute V magnitude (2)	[ucd=phys.magAbs;em.opt.V]
+#Column	B-V	(F6.3)	Johnson B-V colour index (2)	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	V-Rc	(F6.3)	? Johnson-Cousins V-R colour index (2)	[ucd=phot.color;em.opt.V;em.opt.R]
+#Column	Rc-Ic	(F6.3)	? Cousins R-I colour index (2)	[ucd=phot.color;em.opt.R;em.opt.I]
+#Column	CNS	(A5)	Catalog of Nearby Stars number (2)	[ucd=meta.id]
+#Column	m_CNS	(A1)	[ABC] Multiplicity index on CNS	[ucd=meta.code.multip]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F10.6)	Right Ascension (J2000) from I/239/hip_main	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F10.6)	Declination (J2000) from I/239/hip_main	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113330634
+#Name: J/AN/333/634
+#Title: Torun methanol source catalogue (Szymczak+, 2012)
+#INFO	ivoid=ivo://cds.vizier/j/an/333/634	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/333/634	    IVOID of underlying data collection
+#INFO	creator=Szymczak M.	    First author or institution
+#INFO	cites=bibcode:2012AN....333..634S	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2012	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/333/634	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113330634	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_333_634_tablea1:
+#Name: J/AN/333/634/tablea1
+#Title: 6.7GHz methanol maser sources
+#Column	Name	(a14)	Source name (based on galactic coordinates)	[ucd=meta.id;meta.main]
+#Column	fits	(A4)	Download the FITS file	[ucd=meta.ref.url]
+#Column	img	(A3)	Image of the spectrum	[ucd=meta.ref.url]
+#Column	ps	(A2)	Download the postscript spectrum	[ucd=meta.ref.url]
+#Column	OName	(a8)	Other name	[ucd=meta.id]
+#Column	RAJ2000	(A12)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A12)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Vmin	(F6.1)	Minimum velocity	[ucd=phys.veloc;pos.lsr]
+#Column	Vmax	(F6.1)	Maximum velocity	[ucd=phys.veloc;pos.lsr]
+#Column	Vp	(F7.2)	LSR velocity of peak flux at 6.7GHz	[ucd=phys.veloc;pos.lsr]
+#Column	Sp	(F6.1)	Peak flux density at 6.7GHz	[ucd=phot.flux.density;em.radio.6-12GHz]
+#Column	Si	(F6.1)	Integrated flux density at 6.7GHz	[ucd=phot.flux.density;em.radio.6-12GHz]
+#Column	ref1	(a5)	References for first detection	[ucd=meta.ref;pos.frame]
+#Column	refp	(a5)	References for positions	[ucd=meta.ref;pos.frame]
+#Column	Notes	(a5)	Remarks on multiplicity and/or confusion	[ucd=meta.note]
+
+#RESOURCE=yCat_113260003
+#Name: J/AN/326/3
+#Title: BVRI photometry of 4 open clusters (Ahumada+, 2005)
+#INFO	ivoid=ivo://cds.vizier/j/an/326/3	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/326/3	    IVOID of underlying data collection
+#INFO	creator=Ahumada J.A.	    First author or institution
+#INFO	cites=bibcode:2005AN....326....3A	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2005	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/326/3	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113260003	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_326_3_table8:
+#Name: J/AN/326/3/table8
+#Title: CCD BV photometry of NGC 2627
+#Column	Seq	(I4)	Star number in the cluster (1)	[ucd=meta.id;meta.main]
+#Column	Xpos	(F7.2)	X coordinate (2)	[ucd=pos.cartesian.x;instr.det]
+#Column	Ypos	(F7.2)	Y coordinate (2)	[ucd=pos.cartesian.y;instr.det]
+#Column	Vmag	(F6.3)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Vmag	(F6.3)	Error of V magnitude	[ucd=stat.error;phot.mag;em.opt.V]
+#Column	B-V	(F6.3)	B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	e_B-V	(F6.3)	Error of B-V index	[ucd=stat.error;phot.color;em.opt.B]
+#Column	N	(I1)	Number of observations	[ucd=meta.number]
+#Column	_RA	(F9.5)	Position computed from a comparison with catalog I/289 ({sigma}=0.4'') (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Position computed from a comparison with catalog I/289 ({sigma}=0.4'') (declination part)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_326_3_table9:
+#Name: J/AN/326/3/table9
+#Title: CCD BVRI photometry of NGC 5617
+#Column	Seq	(I4)	Star number in the cluster (1)	[ucd=meta.id;meta.main]
+#Column	Xpos	(F7.2)	X coordinate (2)	[ucd=pos.cartesian.x;instr.det]
+#Column	Ypos	(F7.2)	Y coordinate (2)	[ucd=pos.cartesian.y;instr.det]
+#Column	Vmag	(F6.3)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Vmag	(F6.3)	Error of V magnitude	[ucd=stat.error;phot.mag;em.opt.V]
+#Column	B-V	(F6.3)	B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	e_B-V	(F6.3)	Error of B-V index	[ucd=stat.error;phot.color;em.opt.B]
+#Column	V-Ic	(F6.3)	? V-Ic colour index	[ucd=phot.color;em.opt.V;em.opt.I]
+#Column	e_V-Ic	(F6.3)	? Error of V-Ic index	[ucd=stat.error;phot.color;em.opt.V]
+#Column	V-Rc	(F6.3)	? V-Rc colour index	[ucd=phot.color;em.opt.V;em.opt.R]
+#Column	e_V-Rc	(F6.3)	? Error of V-Rc index	[ucd=stat.error;phot.color;em.opt.V]
+#Column	N	(I1)	Number of observations	[ucd=meta.number]
+#Column	_RA	(F9.5)	Position computed from a comparison with catalog I/289 ({sigma}=0.4'') (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Position computed from a comparison with catalog I/289 ({sigma}=0.4'') (declination part)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_326_3_table10:
+#Name: J/AN/326/3/table10
+#Title: CCD BVRI photometry of Pismis 7
+#Column	Seq	(I4)	Star number in the cluster (1)	[ucd=meta.id;meta.main]
+#Column	Xpos	(F7.2)	X coordinate (2)	[ucd=pos.cartesian.x;instr.det]
+#Column	Ypos	(F7.2)	Y coordinate (2)	[ucd=pos.cartesian.y;instr.det]
+#Column	Vmag	(F6.3)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Vmag	(F6.3)	Error of V magnitude	[ucd=stat.error;phot.mag;em.opt.V]
+#Column	B-V	(F6.3)	B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	e_B-V	(F6.3)	Error of B-V index	[ucd=stat.error;phot.color;em.opt.B]
+#Column	V-Ic	(F6.3)	? V-Ic colour index	[ucd=phot.color;em.opt.V;em.opt.I]
+#Column	e_V-Ic	(F6.3)	? Error of V-Ic index	[ucd=stat.error;phot.color;em.opt.V]
+#Column	V-Rc	(F6.3)	? V-Rc colour index	[ucd=phot.color;em.opt.V;em.opt.R]
+#Column	e_V-Rc	(F6.3)	? Error of V-Rc index	[ucd=stat.error;phot.color;em.opt.V]
+#Column	N	(I1)	Number of observations	[ucd=meta.number]
+#Column	_RA	(F10.6)	Position computed from a comparison with catalog I/289 ({sigma}=0.4'') (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F10.6)	Position computed from a comparison with catalog I/289 ({sigma}=0.4'') (declination part)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_326_3_table11:
+#Name: J/AN/326/3/table11
+#Title: CCD BVRI photometry of Ruprecht 75
+#Column	Seq	(I4)	Star number in the cluster (1)	[ucd=meta.id;meta.main]
+#Column	Xpos	(F7.2)	X coordinate (2)	[ucd=pos.cartesian.x;instr.det]
+#Column	Ypos	(F7.2)	Y coordinate (2)	[ucd=pos.cartesian.y;instr.det]
+#Column	Vmag	(F6.3)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Vmag	(F6.3)	Error of V magnitude	[ucd=stat.error;phot.mag;em.opt.V]
+#Column	B-V	(F6.3)	B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	e_B-V	(F6.3)	Error of B-V index	[ucd=stat.error;phot.color;em.opt.B]
+#Column	V-Ic	(F6.3)	? V-Ic colour index	[ucd=phot.color;em.opt.V;em.opt.I]
+#Column	e_V-Ic	(F6.3)	? Error of V-Ic index	[ucd=stat.error;phot.color;em.opt.V]
+#Column	V-Rc	(F6.3)	? V-Rc colour index	[ucd=phot.color;em.opt.V;em.opt.R]
+#Column	e_V-Rc	(F6.3)	? Error of V-Rc index	[ucd=stat.error;phot.color;em.opt.V]
+#Column	N	(I1)	Number of observations	[ucd=meta.number]
+#Column	_RA	(F9.5)	Position computed from a comparison with catalog I/289 ({sigma}=0.4'') (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Position computed from a comparison with catalog I/289 ({sigma}=0.4'') (declination part)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113400437
+#Name: J/AN/340/437
+#Title: Optical variability of blazars (Abrahamyan+, 2019)
+#INFO	ivoid=ivo://cds.vizier/j/an/340/437	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/340/437	    IVOID of underlying data collection
+#INFO	creator=Abrahamyan H. V.	    First author or institution
+#INFO	cites=bibcode:2019AN....340..437A	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2019	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/340/437	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113400437	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_340_437_table8:
+#Name: J/AN/340/437/table8
+#Title: Variable blazars
+#Column	Name	(A14)	Source name (5BZQ, 5BZB, 5BZG or 5BZU JHHMM+DDMM)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F9.5)	BZCAT v5 right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	BZCAT v5 declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	z	(F6.3)	[0.006/6.9]? Redshift from BZCAT v.5	[ucd=src.redshift]
+#Column	Rmag	(F4.1)	[0/24.4]? R-band magnitude from BZCAT v.5	[ucd=phot.mag;em.opt.R]
+#Column	RMag	(F6.2)	[-28.3/-16]? R-band absolute magnitude	[ucd=phot.mag;em.opt.R]
+#Column	Lum	(F11.8)	[0.0008/66.3]? Luminosity in 10^45^erg/s	[ucd=phys.luminosity]
+#Column	B1best	(F5.2)	[8.5/22.4]? B1 Best magnitude (POSS1)	[ucd=phot.mag;em.opt.B]
+#Column	e_B1best	(F5.2)	[0/1.3]? B1 Best magnitude error	[ucd=stat.error]
+#Column	R1best	(F5.2)	[7.4/20.9]? R1 Best magnitude (POSS1)	[ucd=phot.mag;em.opt.R]
+#Column	e_R1best	(F5.2)	[0/1.1]? R1 Best magnitude error	[ucd=stat.error]
+#Column	B2best	(F5.2)	[8.7/22.2]? B2 Best magnitude (POSS2)	[ucd=phot.mag;em.opt.B]
+#Column	e_B2best	(F5.2)	[0/1.5]? B2 Best magnitude error	[ucd=stat.error]
+#Column	R2best	(F5.2)	[7.6/23.7]? R2 Best magnitude (POSS2)	[ucd=phot.mag;em.opt.R]
+#Column	e_R2best	(F5.2)	[0/1.3]? R2 Best magnitude error	[ucd=stat.error]
+#Column	delB	(F5.2)	[-6.1/5.6]? {Delta}B value (=|B_POSS2_-B_POSS1_|-3{sigma}_B_)	[ucd=phot.mag;arith.diff]
+#Column	delR	(F5.2)	[-6.3/7]? {Delta}R value (=|R_POSS2_-R_POSS1_|-3{sigma}_R_)	[ucd=phot.mag;arith.diff]
+#Column	Br	(F6.2)	[0/357]? B_r_=|B_POSS2_-B_POSS1_|/{sigma}_B_	[ucd=src.var.amplitude]
+#Column	Rr	(F6.2)	[0/563]? R_r_=|R_POSS2_-R_POSS1_|/{sigma}_R_	[ucd=src.var.amplitude]
+#Column	VardB	(I1)	[0/3]? Variability category based on {Delta}B (1)	[ucd=meta.code;src.var]
+#Column	VardR	(I1)	[0/3]? Variability category based on {Delta}R (1)	[ucd=meta.code;src.var]
+#Column	VarBr	(I1)	[0/3]? Variability category based on B_r_ (1)	[ucd=meta.code;src.var]
+#Column	VarRr	(I1)	[0/3]? Variability category based on R_r_ (1)	[ucd=meta.code;src.var]
+#Column	USNOB1	(a6)	Display the USNO-B1.0 data (I/284) within 1"	[ucd=meta.ref.url]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_112830109
+#Name: J/AN/283/109
+#Title: Star positions in the region of alpha Per (Heckmann+, 1956)
+#INFO	ivoid=ivo://cds.vizier/j/an/283/109	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/283/109	    IVOID of underlying data collection
+#INFO	creator=Heckmann O.	    First author or institution
+#INFO	cites=bibcode:1956AN....283..109H	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=1956	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/283/109	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.112830109	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_283_109_table:
+#Name: J/AN/283/109/table
+#Title: Coordinates for stars in alpha Persei cluster, version 25 Sep 2004
+#Column	Seq	(I4)	Heckmann's running number	[ucd=]
+#Column	RAJ2000	(A11)	Right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Column	r_Pos	(A1)	[MTU] Position source (1)	[ucd=]
+#Column	pgmag	(F4.1)	Photographic magnitude	[ucd=]
+#Column	SpType	(A3)	Spectral type	[ucd=]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+#Column	Rem	(a20)	Remarks (by B. Skiff)	[ucd=]
+
+#RESOURCE=yCat_113240219
+#Name: J/AN/324/219
+#Title: Extinction of OB stars (Wegner, 2003)
+#INFO	ivoid=ivo://cds.vizier/j/an/324/219	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/324/219	    IVOID of underlying data collection
+#INFO	creator=Wegner W.	    First author or institution
+#INFO	cites=bibcode:2003AN....324..219W	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2003	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/324/219	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113240219	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_324_219_table1:
+#Name: J/AN/324/219/table1
+#Title: Total-to-selective extinction ratios R and absolute magnitudes M_V_ with their errors
+#Column	Name	(a10)	Star name (1)	[ucd=meta.id;meta.main]
+#Column	Vmag	(F5.2)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	SpType	(a10)	MK spectral type	[ucd=src.spType]
+#Column	r_SpType	(A3)	References for SpType, in refs.dat file	[ucd=meta.bib]
+#Column	E(B-V)	(F6.3)	Extinction in B-V	[ucd=phot.color.excess]
+#Column	r_E(B-V)	(I3)	References for UBV data, in refs.dat file	[ucd=meta.bib]
+#Column	R	(F5.2)	Total-to-selective extinction ratio, R=A(V)/E(B-V)	[ucd=phys.absorption]
+#Column	e_R	(F5.2)	rms uncertainty on R	[ucd=stat.error]
+#Column	VMAG	(F4.1)	? Absolute V magnitude	[ucd=phys.magAbs;em.opt.V]
+#Column	e_VMAG	(F4.1)	? rms uncertainty on Vmag	[ucd=stat.error]
+#Column	u_VMAG	(A1)	Uncertainty flag on Vmag (no rms uncertainty)	[ucd=meta.code.error]
+#Column	Rem	(a6)	Remarks	[ucd=meta.note]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113380061
+#Name: J/AN/338/61
+#Title: The GSH Binary Survey (Mugrauer+, 2017)
+#INFO	ivoid=ivo://cds.vizier/j/an/338/61	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/338/61	    IVOID of underlying data collection
+#INFO	creator=Mugrauer M.	    First author or institution
+#INFO	cites=bibcode:2017AN....338...61M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2017	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/338/61	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113380061	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_338_61_gshdata:
+#Name: J/AN/338/61/gshdata
+#Title: Astrometric and photometric data
+#Column	WDS	(A10)	WDS name (based on J2000 position)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A11)	Right Ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	JD	(F9.1)	Julian Date of observation	[ucd=time.epoch]
+#Column	FWHM	(F4.1)	FWHM of the primary component (1)	[ucd=phys.angSize]
+#Column	Sep	(F6.3)	Angular separation	[ucd=pos.angDistance]
+#Column	e_Sep	(F6.3)	Uncertainty of angular separation	[ucd=stat.error]
+#Column	PA	(F6.2)	Position angle	[ucd=pos.posAng]
+#Column	e_PA	(F5.2)	Uncertainty of position angle	[ucd=stat.error]
+#Column	Dmag	(F5.2)	Magnitude difference (2)	[ucd=phot.mag;arith.diff]
+#Column	SimbadName	(f)	Simbad column added by the CDS	[ucd=meta.id]
+
+#RESOURCE=yCat_113410996
+#Name: J/AN/341/996
+#Title: Stellar companions of (C)TOIs (Mugrauer+, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/an/341/996	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/341/996	    IVOID of underlying data collection
+#INFO	creator=Mugrauer M.	    First author or institution
+#INFO	cites=bibcode:2020AN....341..996M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/341/996	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113410996	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_341_996_table1:
+#Name: J/AN/341/996/table1
+#Title: Astro- & Photometry of (C)TOIs & Companions
+#Column	more	(A1)	indicates Relative Astrometry (table 4) and Equatorial Coordinates & Properties (table 5) of Companions	[ucd=meta.ref.url]
+#Column	Name	(a14)	Star name	[ucd=meta.id;meta.main]
+#Column	n_Name	(A1)	[*] * for (C)TOIs	[ucd=meta.note]
+#Column	Plx	(F7.4)	Parallax	[ucd=pos.parallax]
+#Column	e_Plx	(F7.4)	Error of parallax	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F8.3)	Proper motion in right ascension	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.3)	Error of Proper motion in right ascension	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F8.3)	Proper motion in declination	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	Error of proper motion in declination	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	epsi	(F6.3)	Astrometric excess noise	[ucd=stat.fit.param]
+#Column	Gmag	(F7.4)	G-band mean magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Gmag	(F7.4)	Error of G-band mean magnitude	[ucd=stat.error;phot.mag]
+#Column	AG	(F7.4)	? Estimate of G-band extinction	[ucd=phys.absorption]
+#Column	e_AG	(F7.4)	[]? Lower Error of G-band extinction	[ucd=stat.error]
+#Column	E_AG	(F7.4)	? Upper Error of G-band extinction	[ucd=stat.error;stat.max]
+#Column	Note1	(A1)	[x] x if AG is derived from AV	[ucd=meta.note]
+#Column	Note2	(A3)	[SHC ] SHC if AG is from the Starhorse catalogue	[ucd=meta.note]
+#Column	RA_ICRS	(F15.11)	Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	_RA.icrs	(F15.11)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F15.11)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_AN_341_996_table3:
+#Name: J/AN/341/996/table3
+#Title: Equatorial Coordinates & Properties of Companions
+#Column	Name	(a14)	Name of stellar companion	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F15.11)	Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	GMAG	(F5.2)	Absolute magnitude	[ucd=phys.magAbs]
+#Column	Sep	(I4)	Projected separation	[ucd=pos.angDistance;src.orbital]
+#Column	l_Mass	(A1)	[~] Limit flag on Mass	[ucd=meta.code.error;phys.mass]
+#Column	Mass	(F5.2)	Mass	[ucd=phys.mass]
+#Column	Teff	(I5)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	Note	(A2)	[WD ] WD if Companion is a white dwarf	[ucd=meta.note]
+#Column	_RA.icrs	(F15.11)	Right ascension (ICRS) at Epoch=J2015.5 (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F15.11)	Declination (ICRS) at Epoch=J2015.5 (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.dec]
+
+#RESOURCE=yCat_113340673
+#Name: J/AN/334/673
+#Title: The stellar content of Trumpler 37 (Errmann+, 2013)
+#INFO	ivoid=ivo://cds.vizier/j/an/334/673	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/334/673	    IVOID of underlying data collection
+#INFO	creator=Errmann R.	    First author or institution
+#INFO	cites=bibcode:2013AN....334..673E	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2013	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/334/673	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113340673	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_334_673_stars:
+#Name: J/AN/334/673/stars
+#Title: Literature data and membership  estimations for Trumpler 37 stars
+#Column	Seq	(I4)	[1/1891] Star sequential number in Catalog	[ucd=meta.record]
+#Column	RAJ2000	(A11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Umag	(F5.2)	? U-band magnitude	[ucd=phot.mag;em.opt.U]
+#Column	Bmag	(F5.2)	? B-band magnitude	[ucd=phot.mag;em.opt.B]
+#Column	Vmag	(F5.2)	? V-band magnitude (2)	[ucd=phot.mag;em.opt.V]
+#Column	Rmag	(F5.2)	? R-band magnitude	[ucd=phot.mag;em.opt.R]
+#Column	Imag	(F5.2)	? I-band magnitude	[ucd=phot.mag;em.opt.I]
+#Column	Jmag	(F6.3)	? 2MASS J-band magnitude	[ucd=phot.mag;em.IR.J]
+#Column	Hmag	(F6.3)	? 2MASS H-band magnitude	[ucd=phot.mag;em.IR.H]
+#Column	Kmag	(F6.3)	? 2MASS Ks-band magnitude	[ucd=phot.mag;em.IR.K]
+#Column	SpType	(a9)	Spectral type	[ucd=src.spType]
+#Column	Lum	(a6)	Luminosity class	[ucd=src.class.luminosity]
+#Column	AV	(F5.2)	? V-band extinction	[ucd=phys.absorption;em.opt.V]
+#Column	pmRA1	(F6.1)	? PPMXL proper motion in RA(*cos(Dec)) (4)	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE1	(F6.1)	? PPMXL proper motion in Dec (4)	[ucd=pos.pm;pos.eq.dec]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	Mpr	(I2)	[0/100]? Membership probability from proper motion (G2)	[ucd=stat]
+#Column	TType	(a11)	T Tauri type (classical/weak)	[ucd=meta.note;src.morph.type]
+#Column	AVi	(F5.2)	? Visual extinction from JHK (13)	[ucd=phys.absorption]
+#Column	Mass	(F4.1)	? Mass of the star	[ucd=phys.mass]
+
+#RESOURCE=yCat_113230484
+#Name: J/AN/323/484
+#Title: Accurate coordinates of Planetary Nebulae (Kohoutek+, 2002)
+#INFO	ivoid=ivo://cds.vizier/j/an/323/484	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/323/484	    IVOID of underlying data collection
+#INFO	creator=Kohoutek L.	    First author or institution
+#INFO	cites=bibcode:2002AN....323..484K	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2002	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/323/484	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113230484	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J1950:	eq_FK5 J1950
+#Table	J_AN_323_484_table1:
+#Name: J/AN/323/484/table1
+#Title: Accurate coordinates
+#Column	n_PK	(A1)	[*M] Possible (*) or Misclassified (M) PN.	[ucd=meta.note]
+#Column	PK	(A9)	PK Designation	[ucd=meta.id;meta.main]
+#Column	Name	(a21)	Other name of the PN	[ucd=meta.id]
+#Column	n_Name	(A3)	[old ] old for old coordinates	[ucd=meta.note]
+#Column	RAJ1950	(A11)	Right Ascension J1950	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ1950	(A11)	Declination J1950	[ucd=pos.eq.dec;meta.main]
+#Column	C	(I1)	[1,5] Positional accuracy category (1)	[ucd=meta.code.qual]
+#Column	Cs	(A1)	[s] s: suspected central star measured (see Table 3)	[ucd=meta.note]
+#Column	Rem	(I2)	[1/39]? Remarks, in remarks.dat file	[ucd=meta.note]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA.icrs	(A11)	Right ascension (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A11)	Declination (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.dec]
+#Table	J_AN_323_484_table3:
+#Name: J/AN/323/484/table3
+#Title: Central star candidates
+#Column	n_PK	(A1)	[*M] Possible (*) or Misclassified (M) PN.	[ucd=meta.note]
+#Column	PK	(A9)	PK Designation	[ucd=meta.id;meta.main]
+#Column	PNG	(A10)	Designation in PNG (V/84) catalog	[ucd=meta.id]
+#Column	Name	(a10)	Other name of the PN	[ucd=meta.id]
+#Column	RAJ2000	(A11)	Right Ascension J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination J2000	[ucd=pos.eq.dec;meta.main]
+#Column	GLon	(F6.2)	Galactic longitude	[ucd=pos.galactic.lon]
+#Column	GLat	(F6.2)	Galactic latitude	[ucd=pos.galactic.lat]
+#Column	Rem	(I2)	[40,50]? Remarks, in remarks.dat file	[ucd=meta.note]
+
+#RESOURCE=yCat_113380686
+#Name: J/AN/338/686
+#Title: Pristine survey II. Bright stars abundances (Caffau+, 2017)
+#INFO	ivoid=ivo://cds.vizier/j/an/338/686	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/338/686	    IVOID of underlying data collection
+#INFO	creator=Caffau E.	    First author or institution
+#INFO	cites=bibcode:2017AN....338..686C	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2017	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/338/686	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113380686	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_338_686_atmpar:
+#Name: J/AN/338/686/atmpar
+#Title: Coordinates, atmospheric parameters and radial velocities (table 2)
+#Column	Abund	(A1)	indicates abundances in abund file	[ucd=meta.ref.url]
+#Column	Name	(A25)	Name (Pristine DDD.dddd+DD.dddd)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F11.7)	Right Ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F12.8)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Column	g0mag	(F4.1)	Dereddened SDSS g magnitude	[ucd=phot.mag;em.opt.B]
+#Column	BRV	(F6.1)	Barycentric radial velocities	[ucd=phys.veloc;pos.barycenter]
+#Column	Teff	(I4)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	logg	(F5.2)	? logarithmic surface gravity	[ucd=phys.gravity]
+#Column	Vturb	(F5.2)	? microturbulent velocity	[ucd=phys.veloc]
+#Column	[Fe/H]	(F5.2)	? logarithmic iron abundance with respect to the Sun	[ucd=phys.abund.Fe]
+#Column	Com	(a29)	Comments (1)	[ucd=meta.note]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_113410908
+#Name: J/AN/341/908
+#Title: 308 Hipparcos stars EW Li and spectra (Bischoff+, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/an/341/908	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/341/908	    IVOID of underlying data collection
+#INFO	creator=Bischoff R.	    First author or institution
+#INFO	cites=bibcode:2020AN....341..908B	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/341/908	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113410908	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_341_908_table:
+#Name: J/AN/341/908/table
+#Title: Equivalent width measurements and spectra
+#Column	HIP	(I6)	Hipparcos Identifier	[ucd=meta.id;meta.main]
+#Column	EWLi	(A3)	Equivalent width of the lithium 6708{AA} line	[ucd=spect.line.eqWidth]
+#Column	e_EWLi	(I2)	? Error of equivalent width	[ucd=stat.error]
+#Column	sp	(A2)	Show the spectrum	[ucd=meta.ref.url]
+#Column	FileName	(A14)	Name of the fits spectrum file in subdirectory fits	[ucd=meta.id;meta.fits]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113210101
+#Name: J/AN/321/101
+#Title: Compact groups of galaxies in LCRS (Allam+, 2000)
+#INFO	ivoid=ivo://cds.vizier/j/an/321/101	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/321/101	    IVOID of underlying data collection
+#INFO	creator=Allam S.S.	    First author or institution
+#INFO	cites=bibcode:2000AN....321..101A	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2000	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/321/101	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113210101	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_321_101_table2:
+#Name: J/AN/321/101/table2
+#Title: The main properties of the Las Campanas Compact Groups (LCCGs)
+#Column	LCCG	(I2)	Group identification number	[ucd=meta.id;meta.main]
+#Column	RA1950	(A11)	Group's right ascension (1950)	[ucd=pos.eq.ra;meta.main]
+#Column	DE1950	(A11)	Group's declination (1950)	[ucd=pos.eq.dec;meta.main]
+#Column	zcmb	(F7.4)	Group's redshift	[ucd=src.redshift;pos.heliocentric]
+#Column	Ntot	(I1)	Group's number of group member galaxies	[ucd=meta.number]
+#Column	RP	(F5.2)	Group's mean pairwise separation (in Mpc/h)	[ucd=pos.distance;phys.size;stat.mean]
+#Column	Rh	(F5.2)	Group's harmonic radius (in Mpc/h)	[ucd=phys.size.radius;pos.lg]
+#Column	Ltot	(E8.1)	Group's LCRS R-band total luminosity (1)	[ucd=phys.luminosity]
+#Column	Lrat	(F5.2)	Observed-to-total luminosity correction factor	[ucd=phys.luminosity;arith.ratio]
+#Column	_RA.icrs	(A11)	Right ascension (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A11)	Declination (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.dec]
+#Table	J_AN_321_101_table3:
+#Name: J/AN/321/101/table3
+#Title: Compact Group Members
+#Column	LCCG	(I2)	Group identification number	[ucd=meta.id;meta.main]
+#Column	m_LCCG	(A1)	Member designation (1)	[ucd=meta.code.multip]
+#Column	RA1950	(A11)	Member's right ascension (1950)	[ucd=pos.eq.ra;meta.main]
+#Column	DE1950	(A11)	Member's declination (1950)	[ucd=pos.eq.dec;meta.main]
+#Column	Rmag	(F5.2)	Member's LCRS R-band isophotal magnitude	[ucd=phot.mag;em.opt.R]
+#Column	Vel	(I5)	Member's velocity (2)	[ucd=spect.dopplerVeloc;pos.heliocentric]
+#Column	zphot	(F5.2)	Photometric redshift	[ucd=src.redshift;pos.heliocentric]
+#Column	Spectrum	(A1)	[cebm] Qualitative description of the group member's spectrum (3)	[ucd=src.spType]
+#Column	_RA.icrs	(A11)	Right ascension (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A11)	Declination (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.dec]
+
+#RESOURCE=yCat_113200105
+#Name: J/AN/320/105
+#Title: Spectrophotometry of 26 supergiants in the LMC (Oestreicher+ 1999)
+#INFO	ivoid=ivo://cds.vizier/j/an/320/105	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/320/105	    IVOID of underlying data collection
+#INFO	creator=Oestreicher M.O.	    First author or institution
+#INFO	cites=bibcode:1999AN....320..105O	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=1999	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/320/105	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113200105	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_320_105_targets:
+#Name: J/AN/320/105/targets
+#Title: List of observed targets
+#Column	RAJ2000	(A8)	Right Ascension J2000 (1)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A8)	Declination J2000 (1)	[ucd=pos.eq.dec;meta.main]
+#Column	ID	(a16)	Main identifier (2)	[ucd=meta.id;meta.main]
+#Column	SpType	(A7)	MK spectral type	[ucd=src.spType]
+#Column	Vmag	(F5.2)	? V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	B-V	(F5.2)	? B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	RAori	(A10)	Right Ascension at Equinox	[ucd=pos.eq.ra]
+#Column	DEori	(A9)	Declination at Equinox	[ucd=pos.eq.dec]
+#Column	Equinox	(I4)	[1950,1975] Equinox of position	[ucd=time.equinox;pos]
+#Column	sp	(A2)	Plot of the spectrum	[ucd=meta.ref.url]
+#Column	FileName	(A12)	Name of the spectrum file in subdirectory sp	[ucd=meta.id;meta.file]
+#Column	SimbadName	(f)	Simbad column added by the CDS	[ucd=meta.id]
+
+#RESOURCE=yCat_113280938
+#Name: J/AN/328/938
+#Title: Teff/line-depth ratio for ELODIE spectra (Biazzo+, 2007)
+#INFO	ivoid=ivo://cds.vizier/j/an/328/938	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/328/938	    IVOID of underlying data collection
+#INFO	creator=Biazzo K.	    First author or institution
+#INFO	cites=bibcode:2007AN....328..938B	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2007	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/328/938	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113280938	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_328_938_table5:
+#Name: J/AN/328/938/table5
+#Title: Temperature, luminosity, and line-depth ratios of the stellar standard spectra not rotationally broadened
+#Column	HD	(I6)	HD number of the standard stars	[ucd=meta.id;meta.main]
+#Column	Teff	(I4)	Effective temperature of the standard stars	[ucd=phys.temperature.effective]
+#Column	logL	(F5.2)	Logarithm of the standard star luminosity	[ucd=phys.luminosity]
+#Column	LDR1/2	(F6.3)	? Line-depth ratio {lambda}6199.19 VI-{lambda}6200.32 FeI	[ucd=phot.flux.density;arith.ratio]
+#Column	LDR5/4	(F6.3)	? Line-depth ratio {lambda}6213.83 VI-{lambda}6213.44 FeI	[ucd=phot.flux.density;arith.ratio]
+#Column	LDR7/6	(F6.3)	? Line-depth ratio {lambda}6216.36 VI-{lambda}6215.2 FeI+TiI	[ucd=phot.flux.density;arith.ratio]
+#Column	LDR9/8	(F6.3)	? Line-depth ratio {lambda}6224.51 VI-{lambda}6223.99 NiI	[ucd=phot.flux.density;arith.ratio]
+#Column	LDR12/14	(F6.3)	? Line-depth ratio {lambda}6242.84 VI-{lambda}6243.82 SiI	[ucd=phot.flux.density;arith.ratio]
+#Column	LDR13/15	(F6.3)	? Line-depth ratio {lambda}6243.11 VI-{lambda}6246.33 FeI	[ucd=phot.flux.density;arith.ratio]
+#Column	LDR13/16	(F6.3)	? Line-depth ratio {lambda}6243.11 VI-{lambda}6247.56 FeII	[ucd=phot.flux.density;arith.ratio]
+#Column	LDR17/18	(F6.3)	? Line-depth ratio {lambda}6251.83 VI-{lambda}6252.57 FeI	[ucd=phot.flux.density;arith.ratio]
+#Column	ELODIE	(a6)	Display the ELODIE data and spectrum	[ucd=meta.ref.url]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113290801
+#Name: J/AN/329/801
+#Title: Agglomerate of early-type Hipparcos stars (Caballero+, 2008)
+#INFO	ivoid=ivo://cds.vizier/j/an/329/801	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/329/801	    IVOID of underlying data collection
+#INFO	creator=Caballero J.A.	    First author or institution
+#INFO	cites=bibcode:2008AN....329..801C	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2008	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/329/801	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113290801	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	G:	galactic
+#Table	J_AN_329_801_table1:
+#Name: J/AN/329/801/table1
+#Title: Agglomerates of early-type Hipparcos stars
+#Column	Escorial	(I2)	Agglomerate designation (Escorial NN)	[ucd=meta.id;meta.main]
+#Column	Star	(a13)	Reference star	[ucd=meta.id.assoc]
+#Column	GLON	(F5.1)	Galactic longitude	[ucd=pos.galactic.lon]
+#Column	GLAT	(F5.1)	Galactic latitude	[ucd=pos.galactic.lat]
+#Column	Sup-Aggl	(A7)	Super-Agglomerate designation	[ucd=meta.id.parent]
+#Column	Assoc	(a26)	Cluster/Association/Complex/Region	[ucd=meta.id.parent]
+#Column	Nstar	(I2)	Number of star in the agglomerate	[ucd=meta.number]
+#Column	Cont	(a33)	Possible contaminant(s)	[ucd=meta.note]
+#Column	_RA.icrs	(F8.4)	Right ascension (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F8.4)	Declination (ICRS) (computed by VizieR, not part of the original data)	[ucd=pos.eq.dec]
+#Table	J_AN_329_801_tablea1:
+#Name: J/AN/329/801/tablea1
+#Title: Early-type Hipparcos stars in aggregates
+#Column	Escorial	(I2)	Agglomerate designation (Escorial NN)	[ucd=meta.id.parent]
+#Column	HIP	(I6)	HIP number	[ucd=meta.id;meta.main]
+#Column	Name	(a14)	Other name	[ucd=meta.id]
+#Column	SpType	(a11)	MK spectral type	[ucd=src.spType]
+#Column	Dist	(I4)	? Heliocentric distance	[ucd=pos.distance]
+#Column	e_Dist	(I3)	? rms uncertainty on Dist	[ucd=stat.error]
+#Column	n_Dist	(A1)	[:h] Note on Dist (1)	[ucd=meta.note]
+#Column	RAJ2000	(A11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F6.2)	? Proper motion along RA, pmRA*cosDE	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F5.2)	? rms uncertainty on pmRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	n_pmRA	(A1)	[)] Difference in pmRA (2)	[ucd=meta.note]
+#Column	pmDE	(F6.2)	? Proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F5.2)	? rms uncertainty on pmDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	n_pmDE	(A1)	[)] Difference in pmDE (2)	[ucd=meta.note]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref]
+
+#RESOURCE=yCat_113310349
+#Name: J/AN/331/349
+#Title: O, B-type & red supergiant masses and luminosities (Hohle+, 2010)
+#INFO	ivoid=ivo://cds.vizier/j/an/331/349	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/331/349	    IVOID of underlying data collection
+#INFO	creator=Hohle M.M.	    First author or institution
+#INFO	cites=bibcode:2010AN....331..349H	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2010	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/331/349	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113310349	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_331_349_single:
+#Name: J/AN/331/349/single
+#Title: Input data and derived mass and luminosity for single stars
+#Column	M	(A1)	Simbad column added by the CDS	[ucd=meta.code.multip]
+#Column	HIP	(I6)	Hipparcos identification number (Cat. I/311)	[ucd=meta.id;meta.main]
+#Column	Bmag	(F6.3)	? B magnitude	[ucd=phot.mag;em.opt.B]
+#Column	Vmag	(F6.3)	? V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Jmag	(F6.3)	? 2MASS J magnitude	[ucd=phot.mag;em.IR.J]
+#Column	Hmag	(F6.3)	? 2MASS H magnitude	[ucd=phot.mag;em.IR.H]
+#Column	Kmag	(F6.3)	? 2MASS K magnitude	[ucd=phot.mag;em.IR.K]
+#Column	plx	(F5.2)	New reduced Hipparcos parallax	[ucd=pos.parallax.phot]
+#Column	pcor	(F6.3)	Parallax correction (1)	[ucd=arith.factor]
+#Column	SpType	(a8)	MK spectral type	[ucd=src.spType]
+#Column	Teff	(F6)	? Input effective temperature	[ucd=phys.temperature.effective]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+#Column	Mmed	(F6.2)	? Median mass	[ucd=phys.mass]
+#Column	e_Mmed	(F5.2)	? Standard deviation for Median mass	[ucd=stat.error]
+#Column	Lbol	(F8)	? Calculated bolometric luminosity (2)	[ucd=phys.luminosity]
+#Column	Teffc	(F6)	? Calculated Effective temperature	[ucd=phys.temperature.effective;meta.modelled]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_331_349_mult1:
+#Name: J/AN/331/349/mult1
+#Title: Input data and derived mass and luminosity for primaries of Pourbaix multiple stars
+#Column	HIP	(I6)	Hipparcos identification number (Cat. I/311)	[ucd=meta.id;meta.main]
+#Column	Bmag	(F6.3)	? B magnitude	[ucd=phot.mag;em.opt.B]
+#Column	Vmag	(F6.3)	? V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Jmag	(F6.3)	? 2MASS J magnitude	[ucd=phot.mag;em.IR.J]
+#Column	Hmag	(F6.3)	? 2MASS H magnitude	[ucd=phot.mag;em.IR.H]
+#Column	Kmag	(F6.3)	? 2MASS K magnitude	[ucd=phot.mag;em.IR.K]
+#Column	plx	(F5.2)	New reduced Hipparcos parallax	[ucd=pos.parallax.phot]
+#Column	pcor	(F6.3)	Parallax correction (1)	[ucd=arith.factor]
+#Column	SpType	(a8)	MK spectral type	[ucd=src.spType]
+#Column	Teff	(F6)	? Input effective temperature	[ucd=phys.temperature.effective]
+#Column	M	(A1)	Details on components of this multiple star	[ucd=meta.ref.url]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+#Column	Mmed	(F6.2)	? Median mass	[ucd=phys.mass]
+#Column	e_Mmed	(F5.2)	? Standard deviation for Median mass	[ucd=stat.error]
+#Column	Lbol	(F8)	? Calculated bolometric luminosity (2)	[ucd=phys.luminosity]
+#Column	Teffc	(F6)	? Calculated Effective temperature	[ucd=phys.temperature.effective;meta.modelled]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_331_349_table2:
+#Name: J/AN/331/349/table2
+#Title: All values obtained from the catalogues cited in the paper
+#Column	HIP	(I6)	Hipparcos identification number (1)	[ucd=meta.id;meta.main]
+#Column	M1	(F5.2)	Mass of the primary	[ucd=phys.mass]
+#Column	M2	(F7.4)	Mass of the secondary	[ucd=phys.mass]
+#Column	Lbol1	(F8)	Bolometric luminosity of the primary	[ucd=phys.luminosity]
+#Column	Lbol2	(F8)	Bolometric luminosity of the secondary	[ucd=phys.luminosity]
+#Column	Teff1	(I5)	Effective temperature of the primary	[ucd=phys.temperature.effective]
+#Column	Teff2	(I5)	Effective temperature of the secondary	[ucd=phys.temperature.effective]
+#Column	M	(A1)	Details on components of this multiple star	[ucd=meta.ref.url]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113380671
+#Name: J/AN/338/671
+#Title: RV measurements of eight spectroscopic binaries (Bischoff+, 2017)
+#INFO	ivoid=ivo://cds.vizier/j/an/338/671	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/338/671	    IVOID of underlying data collection
+#INFO	creator=Bischoff R.	    First author or institution
+#INFO	cites=bibcode:2017AN....338..671B	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2017	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/338/671	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113380671	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_338_671_stars:
+#Name: J/AN/338/671/stars
+#Title: List of studied stars
+#Column	Star	(A9)	Star name	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A10)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Per	(F7.3)	Period (from tables 3 and 4 of the paper)	[ucd=time.period]
+#Column	e_Per	(F6.3)	rms uncertainty on Per	[ucd=stat.error]
+#Column	FileName	(A12)	Name of the table with radial velocity measurements	[ucd=meta.id;meta.table]
+#Column	VC	(A2)	Show the Radial Velocity curves	[ucd=meta.ref.url]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_113270365
+#Name: J/AN/327/365
+#Title: Clusters and groups of galaxies in 2dF (Tago+, 2006)
+#INFO	ivoid=ivo://cds.vizier/j/an/327/365	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/327/365	    IVOID of underlying data collection
+#INFO	creator=Tago E.	    First author or institution
+#INFO	cites=bibcode:2006AN....327..365T	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2006	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/327/365	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113270365	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_327_365_groups:
+#Name: J/AN/327/365/groups
+#Title: Catalogue of the 2dF GRS Groups
+#Column	n_Group	(A1)	Simbad column added by the CDS	[ucd=meta.id.part;meta.main]
+#Column	Group	(I5)	Group number	[ucd=meta.id;meta.main]
+#Column	Rich	(I3)	Rrichness (number of member galaxies)	[ucd=meta.note]
+#Column	RAJ2000	(F8.4)	Right ascension, in decimal degrees (J2000) (mean of member galaxies)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F8.4)	Declination, in decimal degrees (J2000) (mean of member galaxies)	[ucd=pos.eq.dec;meta.main]
+#Column	cdist	(F8.4)	Comoving distance in Mpc/h (mean of member galaxies)	[ucd=pos.distance]
+#Column	SizeSky	(F7.4)	Maximum projected size (in Mpc/h)	[ucd=phys.angSize]
+#Column	sigma	(F5.1)	rms radial velocity (velocity dispersion)	[ucd=stat.stdev;spect.dopplerVeloc]
+#Column	Rvir	(F5.3)	Virial radius in Mpc/h	[ucd=phys.size.radius]
+#Column	Lgal1	(E9.2)	Luminosity of the main galaxy (G1)	[ucd=phys.luminosity]
+#Column	Lgalv	(E9.2)	Total observed luminosity of galaxies in the visibility window (G1)	[ucd=phys.luminosity]
+#Column	Ltot1	(E9.2)	Estimated total luminosity of the group using param. set 1 (G1)	[ucd=phys.luminosity]
+#Column	Ltot2	(E9.2)	Estimated total luminosity of the group using param. set 2 (G1)	[ucd=phys.luminosity]
+#Table	J_AN_327_365_grGal:
+#Name: J/AN/327/365/grGal
+#Title: Catalogue of the 2dF GRS galaxies in the groups
+#Column	n_Galaxy	(A1)	Simbad column added by the CDS	[ucd=meta.id.part;meta.main]
+#Column	Galaxy	(I6)	Galaxy ID number	[ucd=meta.id]
+#Column	Group	(I5)	Group ID number	[ucd=meta.id;meta.main]
+#Column	Rich	(I3)	Group richness	[ucd=src.class.richness]
+#Column	RAJ2000	(F8.4)	Right ascension, in decimal degrees (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F8.4)	Declination, in decimal degrees (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	z	(F9.6)	Original redshift	[ucd=src.redshift]
+#Column	cdist	(F8.4)	Co-moving distance in Mpc/h, corrected for the CMB	[ucd=pos.distance]
+#Column	bjmag	(F6.3)	bj magnitude	[ucd=phot.mag;em.opt.B]
+#Column	bjMAG	(F7.3)	Absolute magnitude	[ucd=phys.magAbs]
+#Column	bj-br	(F6.3)	Colour bj-br	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	SpClass	(F8.4)	? spectral classification (if -99 then absent) (eta)	[ucd=spect.index]
+#Column	Vpec	(F8.2)	Peculiar velocity	[ucd=phys.veloc]
+#Column	Lobs	(E9.2)	Observed luminosity	[ucd=phys.luminosity]
+#Column	Ltot	(E9.2)	Estimated total luminosity	[ucd=phys.luminosity]
+#Table	J_AN_327_365_isoGal:
+#Name: J/AN/327/365/isoGal
+#Title: Catalogue of isolated galaxies in the 2dF GRS
+#Column	n_Galaxy	(A1)	Simbad column added by the CDS	[ucd=meta.id.part;meta.main]
+#Column	Galaxy	(I6)	Galaxy ID number	[ucd=meta.id]
+#Column	RAJ2000	(F8.4)	Right ascension, in decimal degrees (J2000) (mean of member galaxies)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F8.4)	Declination (J2000), in decimal degrees (mean of member galaxies)	[ucd=pos.eq.dec;meta.main]
+#Column	cdist	(F8.4)	Comoving distance in Mpc/h (mean of member galaxies)	[ucd=pos.distance]
+#Column	Lgal	(E9.2)	Luminosity of the cluster main galaxy (G1)	[ucd=phys.luminosity]
+#Column	Lgalv	(E9.2)	Total observed luminosity of galaxies in the visibility window (G1)	[ucd=phys.luminosity]
+#Column	Ltot	(E9.2)	Estimated total luminosity of the group (G1)	[ucd=phys.luminosity]
+
+#RESOURCE=yCat_113290418
+#Name: J/AN/329/418
+#Title: UBVRcIc photometry in fields of Seyfert galaxies (Mihov+, 2008)
+#INFO	ivoid=ivo://cds.vizier/j/an/329/418	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/329/418	    IVOID of underlying data collection
+#INFO	creator=Mihov B.M.	    First author or institution
+#INFO	cites=bibcode:2008AN....329..418M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2008	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/329/418	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113290418	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_329_418_table1:
+#Name: J/AN/329/418/table1
+#Title: List of selected Seyfert galaxies
+#Column	Gal	(a8)	Galaxy name (1)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A12)	Right ascension (J2000) (1)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A12)	Declination (J2000) (1)	[ucd=pos.eq.dec;meta.main]
+#Column	z	(F8.5)	Redshift (1)	[ucd=src.redshift]
+#Column	SyType	(F4.1)	Seyfert type (1)	[ucd=src.morph.type]
+#Column	N	(A1)	Number of different observing nights	[ucd=meta.number]
+#Column	n	(I1)	? Number of nights used in the internal check for variability of the newly calibrated stars (2)	[ucd=meta.number]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=]
+#Column	NED	(A3)	Simbad column added by the CDS	[ucd=]
+#Column	ONames	(a38)	Other name(s) (1)	[ucd=meta.id]
+#Table	J_AN_329_418_table2:
+#Name: J/AN/329/418/table2
+#Title: Apparent Johnson-Cousins UBVRcIc magnitudes of the comparison stars
+#Column	Gal	(a8)	Galaxy name	[ucd=obs.field]
+#Column	Star	(A1)	[A-G] Star designation (1)	[ucd=meta.id;meta.main]
+#Column	OName1	(A1)	Other name	[ucd=meta.id]
+#Column	r_OName1	(A3)	Reference for OName1 (2)	[ucd=meta.ref;pos.frame]
+#Column	RAJ2000	(A12)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A12)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Umag	(F5.2)	? Johnson U magnitude	[ucd=phot.mag;em.opt.U]
+#Column	Bmag	(F5.2)	Johnson B magnitude	[ucd=phot.mag;em.opt.B]
+#Column	Vmag	(F5.2)	Johnson V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Rcmag	(F5.2)	? Cousins R magnitude	[ucd=phot.mag;em.opt.R]
+#Column	Icmag	(F5.2)	? Cousins I magnitude	[ucd=phot.mag;em.opt.I]
+
+#RESOURCE=yCat_113530005
+#Name: J/AN/346/70005
+#Title: Stellar companions of (C)TOIs (Mugrauer+, 2025)
+#INFO	ivoid=ivo://cds.vizier/j/an/346/70005	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/346/70005	    IVOID of underlying data collection
+#INFO	creator=Mugrauer M.	    First author or institution
+#INFO	cites=bibcode:2025AN....34670005M	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2025	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/346/70005	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113530005	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_346_70005_table1:
+#Name: J/AN/346/70005/table1
+#Title: Astrometry and Photometry of (C)TOIs & Companions
+#Column	Name	(a14)	Star name	[ucd=meta.id;meta.main]
+#Column	n_Name	(A1)	[*] * for (C)TOIs	[ucd=meta.note]
+#Column	Plx	(F7.4)	Parallax	[ucd=pos.parallax]
+#Column	e_Plx	(F7.4)	Error of parallax	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F8.3)	Proper motion in right ascension	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.3)	Error of Proper motion in right ascension	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F8.3)	Proper motion in declination	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	Error of proper motion in declination	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	epsi	(F6.3)	Astrometric excess noise	[ucd=stat.fit.param]
+#Column	Gmag	(F7.4)	? G-band mean magnitude	[ucd=phot.mag;em.opt]
+#Column	e_Gmag	(F7.4)	? Error of G-band mean magnitude	[ucd=stat.error;phot.mag]
+#Column	AG	(F7.4)	? Estimate of G-band extinction	[ucd=phys.absorption]
+#Column	e_AG	(F7.4)	[]? Lower Error of G-band extinction	[ucd=stat.error]
+#Column	E_AG	(F7.4)	? Upper Error of G-band extinction	[ucd=stat.error;stat.max]
+#Column	Note	(A4)	[x SHC2 ] x if AG is derived from AV SHC2 if AG is derived from the Starhorse2 catalogue	[ucd=meta.note]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Table	J_AN_346_70005_table3:
+#Name: J/AN/346/70005/table3
+#Title: Equatorial Coordinates and Properties of Companions
+#Column	Name	(a14)	Name of stellar companion	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F15.11)	Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	GMAG	(F5.2)	? Absolute magnitude	[ucd=phys.magAbs]
+#Column	Sep	(I4)	Projected separation	[ucd=pos.angDistance]
+#Column	Mass	(F5.2)	? Mass	[ucd=phys.mass]
+#Column	Teff	(I4)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	Note	(A3)	[WD NSS ] WD if Companion is a white dwarf NSS if a Non-Single-Star solution is listed for the Companion in the Gaia DR3	[ucd=meta.note]
+
+#RESOURCE=yCat_113210081
+#Name: J/AN/321/81
+#Title: Orion Trapezium area ROSAT PSPC obs. II. (Lohother/mann+, 2000)
+#INFO	ivoid=ivo://cds.vizier/j/an/321/81	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/321/81	    IVOID of underlying data collection
+#INFO	creator=Lohmann P.	    First author or institution
+#INFO	cites=bibcode:2000AN....321...81L	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2000	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/321/81	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113210081	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_321_81_table1:
+#Name: J/AN/321/81/table1
+#Title: Properties of ROSAT PSPC X-ray sources in the Orion Trapezium area
+#Column	ROS-ORI	(I3)	[1/316]+ Sequential number (1)	[ucd=meta.id;meta.main]
+#Column	n_ROS-ORI	(A1)	[*] indicates a note in notes.dat file	[ucd=meta.note]
+#Column	RAJ2000	(A10)	Right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Column	phi	(F5.2)	Off-axis angle	[ucd=instr.offset]
+#Column	eta	(F7.2)	Source count rate	[ucd=phot.count;em.X-ray]
+#Column	S/N	(F5.1)	Signal to noise ratio	[ucd=stat.snr]
+#Column	RX	(F5.1)	Apparent source radius (2)	[ucd=phys.angSize]
+#Column	HR2	(F5.2)	Hardness ratio HR2 (3)	[ucd=phot.flux;arith.ratio]
+#Column	e_HR2	(F5.2)	rms uncertainty on HR2	[ucd=stat.error]
+#Column	Var	(A1)	[PV] Variablity type (4)	[ucd=meta.note]
+#Column	Rem	(a40)	Remarks (5)	[ucd=meta.note]
+
+#RESOURCE=yCat_113280889
+#Name: J/AN/328/889
+#Title: Mean Radial Velocities of open clusters (Kharchenko+, 2007)
+#INFO	ivoid=ivo://cds.vizier/j/an/328/889	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/328/889	    IVOID of underlying data collection
+#INFO	creator=Kharchenko N.V.	    First author or institution
+#INFO	cites=bibcode:2007AN....328..889K	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2007	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/328/889	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113280889	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_328_889_crvoca:
+#Name: J/AN/328/889/crvoca
+#Title: The catalogue of radial velocities of Galactic Open Clusters and Associations (CRVOCA)
+#Column	Ncl	(I4)	COCD 1,2 cluster number (0, 1-520, 1001-1130)	[ucd=meta.id]
+#Column	Name	(a17)	NGC, IC or other common designation	[ucd=meta.id]
+#Column	RAdeg	(F6.2)	Cluster center in RA J2000.0	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F6.2)	Cluster center in Dec J2000.0	[ucd=pos.eq.dec;meta.main]
+#Column	Radcl	(F7.2)	Angular radius of the cluster	[ucd=phys.angSize]
+#Column	RV	(F8.2)	? Average radial velocity	[ucd=spect.dopplerVeloc;pos.heliocentric;stat.mean]
+#Column	e_RV	(F6.2)	? Standard error in RV	[ucd=stat.error]
+#Column	n_RV	(I4)	? Number of stars used for RV calculation	[ucd=meta.note]
+#Column	RVl	(F8.2)	? Radial velocity from literature	[ucd=spect.dopplerVeloc]
+#Column	e_RVl	(F6.2)	? Standard error in RVl	[ucd=stat.error]
+#Column	n_RVl	(I4)	? Number of stars used for RVl calculation	[ucd=meta.note]
+#Column	r_RVl	(A4)	Identifier of reference, in refs.dat file	[ucd=meta.ref;pos.frame]
+#Column	SimbadName	(a20)	Simbad column added by the CDS	[ucd=meta.id]
+
+#RESOURCE=yCat_113190215
+#Name: J/AN/319/215
+#Title: Alpha Per cluster low-mass members. II. (Prosser+, 1998)
+#INFO	ivoid=ivo://cds.vizier/j/an/319/215	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/319/215	    IVOID of underlying data collection
+#INFO	creator=Prosser C.F.	    First author or institution
+#INFO	cites=bibcode:1998AN....319..215P	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=1998	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/319/215	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113190215	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-09-29	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_319_215_table1:
+#Name: J/AN/319/215/table1
+#Title: Recovered APX X-ray sources
+#Column	APX	(I3)	[1/203] APX (Alpha Per, X-ray) number	[ucd=meta.id;meta.main]
+#Column	f_APX	(A1)	[a] Note on APX 5 (1)	[ucd=meta.code.error]
+#Column	n_APX	(A1)	[*] Note in appena.dat file	[ucd=meta.note]
+#Column	RAJ2000	(A10)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	MLh	(F6.1)	Hardband Maximum Likelihood value	[ucd=stat.likelihood]
+#Column	Exp	(I5)	Effective exposure time	[ucd=time.duration;obs.exposure]
+#Column	CountRate	(F7.4)	? PSCP count rate	[ucd=phot.count;em.X-ray]
+#Column	n_CountRate	(A1)	[)] ): estimated hardband count rate	[ucd=meta.note]
+#Column	e_CountRate	(F7.4)	? rms uncertainty on CountRate	[ucd=stat.error]
+#Column	Offax	(F4.1)	Off-axis	[ucd=instr.offset]
+#Column	l_HR	(A1)	Limit flag on HR	[ucd=meta.code.error]
+#Column	HR	(F4.1)	Hardness ratio (2)	[ucd=phot.flux;arith.ratio]
+#Column	PSPC	(a5)	PSPC field (only in table1.dat)	[ucd=obs.field]
+#Table	J_AN_319_215_table2:
+#Name: J/AN/319/215/table2
+#Title: PSPC APX X-ray source list
+#Column	APX	(I3)	[1/203] APX (Alpha Per, X-ray) number	[ucd=meta.id;meta.main]
+#Column	f_APX	(A1)	[a] Note on APX 5 (1)	[ucd=meta.code.error]
+#Column	n_APX	(A1)	[*] Note in appena.dat file	[ucd=meta.note]
+#Column	RAJ2000	(A10)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	MLh	(F6.1)	Hardband Maximum Likelihood value	[ucd=stat.likelihood]
+#Column	Exp	(I5)	Effective exposure time	[ucd=time.duration;obs.exposure]
+#Column	CountRate	(F7.4)	? PSCP count rate	[ucd=phot.count;em.X-ray]
+#Column	n_CountRate	(A1)	[)] ): estimated hardband count rate	[ucd=meta.note]
+#Column	e_CountRate	(F7.4)	? rms uncertainty on CountRate	[ucd=stat.error]
+#Column	Offax	(F4.1)	Off-axis	[ucd=instr.offset]
+#Column	l_HR	(A1)	Limit flag on HR	[ucd=meta.code.error]
+#Column	HR	(F4.1)	Hardness ratio (2)	[ucd=phot.flux;arith.ratio]
+#Column	PSPC	(a5)	PSPC field (only in table1.dat)	[ucd=obs.field]
+#Table	J_AN_319_215_table4:
+#Name: J/AN/319/215/table4
+#Title: Members/Candidate members associated with X-ray sources
+#Column	APX	(I3)	? APX number	[ucd=meta.id;meta.main]
+#Column	m_APX	(A1)	Multiplicity index on APX	[ucd=meta.code.multip]
+#Column	n_APX	(A1)	[*] Membership note (1)	[ucd=meta.note]
+#Column	Name	(a6)	Other name	[ucd=meta.id]
+#Column	RA2000	(A10)	Right ascension (2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DE2000	(A9)	Declination (2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Vmag	(F5.2)	V magnitude	[ucd=phot.mag;em.opt.V]
+#Column	B-V	(F5.2)	? B-V colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	V-IK	(F5.2)	V-I_K_ colour index	[ucd=phot.color;em.opt.V;em.opt.I]
+#Column	u_V-IK	(A1)	rms uncertainty on V-IK	[ucd=meta.code.error]
+#Column	Mem	(A2)	[YN ?] Membership	[ucd=meta.code.member]
+
+#RESOURCE=yCat_2000000007
+#Name: J/AN/347/70121
+#Title: Compact emission line nebulae (Stecklum+, 2026)
+#INFO	ivoid=ivo://cds.vizier/j/an/347/70121	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/347/70121	    IVOID of underlying data collection
+#INFO	creator=Stecklum B.	    First author or institution
+#INFO	cites=bibcode:2026AN....34770121S	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2026	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/347/70121	    Dataset landing page
+#INFO	publication_date=2026-10-08	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_347_70121_table1:
+#Name: J/AN/347/70121/table1
+#Title: The "Bres" catalog of compact emission line nebulae
+#Column	ID	(A8)	Catalog object designation (Bres ID)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A10)	Right Ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination sign (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	T	(A1)	[+-] Selection tracer flag	[ucd=meta.code.error]
+#Column	HH	(A3)	[+-((+) ] Herbig-Haro object/candidate flag	[ucd=meta.code]
+#Column	Simbad	(a23)	Simbad identifier cross-identification	[ucd=meta.id.cross]
+
+#RESOURCE=yCat_113340860
+#Name: J/AN/334/860
+#Title: Catalogue of eclipsing variables. Version 2 (Avvakumova+, 2013)
+#INFO	ivoid=ivo://cds.vizier/j/an/334/860	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/334/860	    IVOID of underlying data collection
+#INFO	creator=Avvakumova E.A.	    First author or institution
+#INFO	cites=bibcode:2013AN....334..860A	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2013	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/334/860	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113340860	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-11-11	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_334_860_catalogf:
+#Name: J/AN/334/860/catalogf
+#Title: Catalogue main table - extended format version
+#Column	f_GCVS	(A1)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+#Column	GCVS	(A9)	! Variable star GCVS designation	[ucd=meta.id;meta.main]
+#Column	n_GCVS	(A1)	[*] Indicates a remark in refs.dat file	[ucd=meta.note]
+#Column	OClass	(a7)	Evolutionary class of the system, determined in the original investigations (G1)	[ucd=meta.code;src.var]
+#Column	n_OClass	(A1)	[UML] Indicates a remark in lists (G3)	[ucd=meta.note]
+#Column	PClass	(A3)	? Evolutionary class of the system, determined by classification procedure (G1)	[ucd=src.class]
+#Column	CMP	(I3)	[0/100]? Class membership probability (G2)	[ucd=stat]
+#Column	n_CMP	(A1)	[*] * if classification is unique	[ucd=meta.note]
+#Column	CType	(A2)	Morphological type of the light curve	[ucd=meta.code;src.var]
+#Column	u_CType	(A1)	[:] Uncertainty flag on C	[ucd=meta.note]
+#Column	Max	(F5.2)	Magnitude at maximum brightness	[ucd=phot.mag]
+#Column	u_Max	(A1)	[:] Flag on photometry accuracy	[ucd=meta.code.error]
+#Column	MinI	(F5.2)	Magnitude at the primary minimum	[ucd=phot.mag;stat.min]
+#Column	A1	(F5.2)	Depth of the primary minimum	[ucd=phot.mag;stat.min]
+#Column	MinII	(F5.2)	? Magnitude at the secondary minimum	[ucd=phot.mag;stat.min]
+#Column	A2	(F5.2)	? Depth of the secondary minimum	[ucd=phot.mag;stat.min]
+#Column	flt	(A2)	The photometric system for mags (G4)	[ucd=instr.bandpass]
+#Column	Per	(F15.10)	? Period of the variable star	[ucd=time.period]
+#Column	u_Per	(A1)	[:] Uncertainty flag on Period	[ucd=meta.code.error]
+#Column	f_Per	(A1)	[vdiu] Flag on the variability of Period (G5)	[ucd=meta.code]
+#Column	SpType	(a19)	MK spectral type	[ucd=src.spType]
+#Column	RAJ2000	(A10)	Right ascension (J2000.0)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination (J2000.0)	[ucd=pos.eq.dec;meta.main]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Table	J_AN_334_860_non_eb:
+#Name: J/AN/334/860/non_eb
+#Title: List of non eclipsing stars (not included in the main table)
+#Column	f_GCVS	(A1)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+#Column	GCVS	(a9)	Variable star GCVS designation	[ucd=meta.id;meta.main]
+#Column	VarType	(a9)	Type of variability	[ucd=meta.note]
+#Column	Ref	(I3)	Reference in bib.dat file	[ucd=meta.bib]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_113490054
+#Name: J/AN/345/40054
+#Title: Ruprecht 1 and Ruprecht 171 members (Cakmak+, 2024)
+#INFO	ivoid=ivo://cds.vizier/j/an/345/40054	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/an/345/40054	    IVOID of underlying data collection
+#INFO	creator=Cakmak H.	    First author or institution
+#INFO	cites=bibcode:2024AN....34540054C	    Article or Data origin sources
+#INFO	journal=AN	    Journal name
+#INFO	original_date=2024	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AN/345/40054	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.113490054	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-11-27	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AN_345_40054_table:
+#Name: J/AN/345/40054/table
+#Title: Catalogues for Rup-1 and Rup-171
+#Column	Cluster	(A12)	Cluster identifier	[ucd=meta.id.parent]
+#Column	Seq	(I3)	[1/2474] Sequential identifier in Cluster	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(A11)	Right Ascension (ICRS) at Ep=2016	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(A12)	Declination (ICRS) at Ep=2016	[ucd=pos.eq.dec;meta.main]
+#Column	Vmag	(F6.3)	San Pedro Martir Observatory/84cm V band magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Vmag	(F6.3)	Uncertainty in Vmag	[ucd=stat.error;phot.mag]
+#Column	U-B	(F6.3)	? San Pedro Martir Observatory/84cm U-B Color	[ucd=phot.color;em.opt.U;em.opt.B]
+#Column	e_U-B	(F6.3)	? Uncertainty in U-B	[ucd=stat.error;phot.color;em.opt.U]
+#Column	B-V	(F6.3)	San Pedro Martir Observatory/84cm B-V Color	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	e_B-V	(F6.3)	? Uncertainty in B-V	[ucd=stat.error;phot.color;em.opt.B]
+#Column	Gmag	(F6.3)	Gaia DR3 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	e_Gmag	(F6.3)	Uncertainty in Gmag	[ucd=stat.error;phot.mag]
+#Column	BP-RP	(F6.3)	? Gaia DR3 GBP-GRP color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	e_BP-RP	(F6.3)	? Uncertainty in GBP-GRP	[ucd=stat.error]
+#Column	pmRA	(F6.3)	Gaia DR3 proper motion in Right Ascension	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.3)	Uncertainty in pmRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F6.3)	Gaia DR3 proper motion in Declination	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	Uncertainty in pmDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	plx	(F6.3)	Gaia DR3 parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F6.3)	Uncertainty in plx	[ucd=stat.error;pos.parallax]
+#Column	Pmemb	(F5.2)	[0/1] Membership probability	[ucd=stat.probability]
+#Column	_RA.icrs	(A11)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A12)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]

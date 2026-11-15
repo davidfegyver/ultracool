@@ -1,0 +1,80 @@
+{
+ "tag": "J0049+4236",
+ "seq_id": "231e6c964225723a",
+ "pipeline_used": "neighbour-subtracted PSF fit",
+ "aperture": {
+  "verdict": "warmer than M8: probably an ordinary star",
+  "best": "M8",
+  "chi2_red": 3.558854460092669,
+  "type_range": [
+   "M8",
+   "M9"
+  ],
+  "detection_snr": 41.770805648773646,
+  "doubt": "its 1.4 micrometre water band is shallower than a M8's",
+  "top5": [
+   [
+    "M8",
+    3.56
+   ],
+   [
+    "M8 \u03b2",
+    3.88
+   ],
+   [
+    "M9 \u03b2",
+    3.95
+   ],
+   [
+    "sdM9.5",
+    4.98
+   ],
+   [
+    "L0",
+    5.22
+   ]
+  ]
+ },
+ "psf": {
+  "verdict": "match",
+  "best": "L7",
+  "chi2_red": 0.17615118150090742,
+  "type_range": [
+   "L6",
+   "T1"
+  ],
+  "detection_snr": 16.887431127744453,
+  "doubt": null,
+  "top5": [
+   [
+    "L7",
+    0.18
+   ],
+   [
+    "L8",
+    0.18
+   ],
+   [
+    "L9",
+    0.18
+   ],
+   [
+    "T0",
+    0.19
+   ],
+   [
+    "L6",
+    0.22
+   ]
+  ]
+ },
+ "neighbour_frac": {
+  "D1": 2.4598742066131005,
+  "D2": 3.1819295405874883,
+  "D3": 3.6128473559915895,
+  "D4": 3.722848008134347,
+  "D5": 1.6188128818158778,
+  "D6": 2.655296632139269
+ },
+ "blends_arcsec": []
+}

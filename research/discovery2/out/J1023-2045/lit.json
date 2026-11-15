@@ -1,0 +1,56 @@
+{
+ "tag": "J1023-2045",
+ "name": "CWISE J102322.00-204549.9",
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=155.841661-20.763871&-c.rs=20&-out.max=50",
+ "vizier_status": "ok",
+ "utc": "2026-11-15T07:13:29Z",
+ "vizier_tables_with_rows": {
+  "I_284_out": 2,
+  "I_297_out": 3,
+  "I_305_out": 1,
+  "I_317_sample": 1,
+  "I_347_gaia2dis": 1,
+  "I_352_gedr3dis": 1,
+  "I_355_gaiadr3": 1,
+  "II_246_out": 1,
+  "II_328_allwise": 1,
+  "II_381_hlsp_ps1_tm": 1,
+  "II_385_vst_atlas4": 1,
+  "II_389_ps1_dr2": 1,
+  "IV_39_tic82": 1,
+  "VI_42_out": 1,
+  "J_A_A_649_A6_table1c": 1,
+  "J_A_A_657_A7_tablea3": 1,
+  "J_AJ_161_234_table2": 1,
+  "J_AJ_161_234_table3": 1,
+  "J_AJ_161_234_table4": 1,
+  "J_AJ_165_267_table1": 1,
+  "J_other_JDSO_15_21_hpms3": 1
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "J_A_A_657_A7_tablea3",
+   "values": [
+    {
+     "SpType": ""
+    }
+   ]
+  }
+ ],
+ "simbad": [
+  {
+   "oid": 23334796,
+   "main_id": "2MASS J10232199-2045473",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 2,
+   "sep": 2.324401600881695,
+   "mesSpT": [],
+   "bibcodes": [
+    "2021A&A...649A...6G",
+    "2024AJ....167..253R"
+   ]
+  }
+ ]
+}

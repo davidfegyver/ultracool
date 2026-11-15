@@ -1,0 +1,739 @@
+{
+ "tag": "J1023-2045",
+ "name": "CWISE J102322.00-204549.9",
+ "seq_id": "af06100b68c08423",
+ "rothermich_type": "(L3)",
+ "table": "T3 low-prob",
+ "prob": 0,
+ "variants": {
+  "all": [
+   [
+    "M8",
+    0.82
+   ],
+   [
+    "M9 \u03b2",
+    1.03
+   ],
+   [
+    "M8 \u03b2",
+    1.09
+   ],
+   [
+    "M9",
+    1.75
+   ],
+   [
+    "L0",
+    1.76
+   ]
+  ],
+  "all_no_template_spread": [
+   [
+    "M8 \u03b2",
+    1.32
+   ],
+   [
+    "M9 \u03b2",
+    1.4
+   ],
+   [
+    "M8",
+    2.02
+   ],
+   [
+    "M9",
+    2.04
+   ],
+   [
+    "L0",
+    2.7
+   ]
+  ],
+  "1.0-2.5um": [
+   [
+    "M8",
+    1.0
+   ],
+   [
+    "M9 \u03b2",
+    1.06
+   ],
+   [
+    "M8 \u03b2",
+    1.26
+   ],
+   [
+    "M9",
+    2.71
+   ],
+   [
+    "L0",
+    2.92
+   ]
+  ],
+  "2.5-5.0um": [
+   [
+    "L0",
+    0.48
+   ],
+   [
+    "M8",
+    0.48
+   ],
+   [
+    "L0 \u03b3",
+    0.64
+   ],
+   [
+    "L2",
+    0.69
+   ],
+   [
+    "L0 \u03b2",
+    0.73
+   ]
+  ],
+  "errors_x1.5": [
+   [
+    "M8",
+    0.48
+   ],
+   [
+    "M9 \u03b2",
+    0.52
+   ],
+   [
+    "M8 \u03b2",
+    0.52
+   ],
+   [
+    "M9",
+    0.83
+   ],
+   [
+    "L0",
+    0.9
+   ]
+  ]
+ },
+ "photometric_type_check": {
+  "rothermich_label": "L3",
+  "chi2_best": 73.2,
+  "scale": 1.0,
+  "dchi2_rescaled": 489.7,
+  "dchi2_rescaled_by_template": {
+   "M8": 0.0,
+   "M9 \u03b2": 18.5,
+   "M8 \u03b2": 23.5,
+   "M9": 82.6,
+   "L0": 83.6,
+   "L1": 131.3,
+   "L0 \u03b4": 163.2,
+   "L1 \u03b2": 243.1,
+   "L2": 251.0,
+   "L0 \u03b2": 269.6,
+   "d_sdL8": 294.3,
+   "L2 \u03b2": 371.9,
+   "sdM9.5": 396.4,
+   "M9 \u03b3": 417.6,
+   "T1": 474.2,
+   "L3": 489.7,
+   "L0 \u03b3": 547.3,
+   "L4": 577.3,
+   "L7": 580.3,
+   "L1 \u03b3": 629.4,
+   "T0": 755.2,
+   "T2": 777.7,
+   "T3": 812.2,
+   "L6": 855.9,
+   "L3 \u03b2": 904.2,
+   "sdT4": 904.9,
+   "L5": 988.7,
+   "L9": 1060.7,
+   "d_sdT1": 1129.8,
+   "T4": 1157.8,
+   "L3 \u03b3": 1203.8,
+   "L2 \u03b3": 1218.6,
+   "L8": 1225.9,
+   "esdL8": 1236.0,
+   "L4 \u03b2": 1378.3,
+   "sdL3.5": 1434.5,
+   "T5": 1858.5,
+   "L5 \u03b2_\u03b3": 1942.9,
+   "L4 \u03b3": 2451.3,
+   "L7 \u03b3": 3954.8,
+   "T6": 6033.1,
+   "T7": 7349.4,
+   "T8": 8416.3,
+   "d_sdT8": 8416.3,
+   "T9": 9970.9,
+   "Y0": 10695.8,
+   "Y1": 11183.6
+  }
+ },
+ "spectrum": {
+  "verdict": "match",
+  "best": {
+   "label": "M8",
+   "prob": 0.9998966043050468,
+   "chi2_red": 0.8220289743355245,
+   "n_bins": 90
+  },
+  "type_range": [
+   "M8",
+   "M9"
+  ],
+  "ranking": [
+   {
+    "label": "M8",
+    "prob": 0.9998966043050468,
+    "chi2_red": 0.8220289743355245,
+    "n_bins": 90
+   },
+   {
+    "label": "M9 \u03b2",
+    "prob": 9.5607155794088e-05,
+    "chi2_red": 1.0300100864313648,
+    "n_bins": 90
+   },
+   {
+    "label": "M8 \u03b2",
+    "prob": 7.78853915914851e-06,
+    "chi2_red": 1.0863605213542946,
+    "n_bins": 90
+   },
+   {
+    "label": "M9",
+    "prob": 1.1582230332845694e-18,
+    "chi2_red": 1.7501085543377988,
+    "n_bins": 90
+   },
+   {
+    "label": "L0",
+    "prob": 7.074143914236905e-19,
+    "chi2_red": 1.7611877817773103,
+    "n_bins": 90
+   }
+  ],
+  "detection_snr": 41.23620397713529,
+  "n_bins": 90,
+  "n_bins_snr_gt3": 83,
+  "n_bins_snr_gt5": 75,
+  "photometry": "aperture",
+  "neighbour_frac": {
+   "D1": -0.00015357497072497113,
+   "D2": 0.000247619807867865,
+   "D3": -0.0001636897675534616,
+   "D4": -0.0012036633312064932,
+   "D5": 1.2646792224378456e-05,
+   "D6": 0.00013904930464520363
+  },
+  "contaminated": false,
+  "negative_bins": 0,
+  "blends_arcsec": [],
+  "reason": null,
+  "doubt": null,
+  "water_depth": {
+   "value": 0.6860521736518159,
+   "err": 0.03344102721670008,
+   "template": 0.7329729169209664
+  }
+ },
+ "type_range_num": [
+  8.0,
+  9.0
+ ],
+ "variant_bests": {
+  "all": "M8",
+  "all_no_template_spread": "M8 \u03b2",
+  "1.0-2.5um": "M8",
+  "2.5-5.0um": "L0",
+  "errors_x1.5": "M8"
+ },
+ "variants_inside_range": false,
+ "colour": {
+  "W1-W2_CatWISE": [
+   0.295,
+   0.021
+  ],
+  "J_2MASS": [
+   15.647000312805176,
+   0.07800000160932541
+  ],
+  "J-W2": [
+   1.528,
+   0.079
+  ],
+  "J_VHS": [
+   15.7004,
+   0.0132
+  ],
+  "J_VHS-W2": [
+   1.581,
+   0.02
+  ],
+  "our_W1-W2": [
+   0.25729707135165614,
+   0.038890566698716725
+  ],
+  "W1-W2_types_68": [
+   "M9",
+   "L0",
+   "L1",
+   "L2",
+   "L3",
+   "L4",
+   "L5",
+   "L6"
+  ],
+  "W1-W2_consistent_68": true,
+  "W1-W2_types_95": [
+   "M6",
+   "M7",
+   "M8",
+   "M9",
+   "L0",
+   "L1",
+   "L2",
+   "L3",
+   "L4",
+   "L5",
+   "L6",
+   "L7",
+   "L8",
+   "L9",
+   "T3",
+   "T4"
+  ],
+  "W1-W2_consistent_95": true,
+  "W1-W2_consistent": true,
+  "J-W2_types_68": [
+   "M7",
+   "M8",
+   "M9",
+   "L0"
+  ],
+  "J-W2_consistent_68": true,
+  "J-W2_types_95": [
+   "M6",
+   "M7",
+   "M8",
+   "M9",
+   "L0",
+   "L1"
+  ],
+  "J-W2_consistent_95": true,
+  "J-W2_consistent": true,
+  "J_VHS-W2_types_68": [
+   "M8",
+   "M9",
+   "L0",
+   "T4"
+  ],
+  "J_VHS-W2_consistent_68": true,
+  "J_VHS-W2_types_95": [
+   "M6",
+   "M7",
+   "M8",
+   "M9",
+   "L0",
+   "L1",
+   "T3",
+   "T4",
+   "T5"
+  ],
+  "J_VHS-W2_consistent_95": true,
+  "J_VHS-W2_consistent": true
+ },
+ "host": {
+  "name": "CWISE J102244.48-204204.5",
+  "gaia": {
+   "_r": 2.702,
+   "Source": 5667977669477544832,
+   "RA_ICRS": 155.68534245991,
+   "DE_ICRS": -20.70131166048,
+   "Plx": 10.585,
+   "e_Plx": 0.04270000010728836,
+   "pmRA": -3.001,
+   "e_pmRA": 0.04100000113248825,
+   "pmDE": -169.868,
+   "e_pmDE": 0.04500000178813934,
+   "Gmag": 15.50602,
+   "BPmag": 17.02454,
+   "RPmag": 14.30464,
+   "RUWE": 1.126,
+   "RV": null,
+   "e_RV": null
+  },
+  "dist_pc": 94.47,
+  "sep_arcsec": 573,
+  "sep_au_projected": 54133,
+  "mtot_msun": 0.6
+ },
+ "target_gaia_plx": [
+  13.0639,
+  0.8428999781608582
+ ],
+ "own_parallax_check": {
+  "M_W2": [
+   9.7,
+   0.14
+  ],
+  "M_W2_types_2mad": [
+   "M7",
+   "M8",
+   "M9",
+   "L0"
+  ],
+  "G-RP": 1.578,
+  "G-RP_types_95": [
+   "M6",
+   "M7",
+   "M8",
+   "M9",
+   "L0",
+   "L1",
+   "L2",
+   "L3",
+   "L4",
+   "L5",
+   "L6",
+   "L7",
+   "L8"
+  ],
+  "M_W2_by_subtype": {
+   "M6": 8.81,
+   "M7": 9.08,
+   "M8": 9.37,
+   "M9": 9.65,
+   "L0": 9.77,
+   "L1": 10.16,
+   "L2": 10.31,
+   "L3": 10.48,
+   "L4": 10.55,
+   "L5": 10.83,
+   "L6": 11.16,
+   "L7": 11.28,
+   "L8": 11.6,
+   "L9": 11.69,
+   "T0": 11.53,
+   "T1": 12.19
+  },
+  "G-RP_by_subtype": {
+   "M6": 1.45,
+   "M7": 1.52,
+   "M8": 1.55,
+   "M9": 1.57,
+   "L0": 1.57,
+   "L1": 1.59,
+   "L2": 1.58,
+   "L3": 1.58,
+   "L4": 1.59,
+   "L5": 1.62,
+   "L6": 1.64,
+   "L7": 1.66,
+   "L8": 1.69
+  }
+ },
+ "motion_ours": {
+  "verdict": "moving",
+  "pmra_masyr": 1.2763570351852394,
+  "pmdec_masyr": -155.2976497163062,
+  "pmra_err_masyr": 11.87681702934295,
+  "pmdec_err_masyr": 11.87681702934295,
+  "significance_sigma": 13.076137679997146,
+  "n_epochs": 8,
+  "baseline_yr": 15.981425662667561,
+  "recovered": true,
+  "consistent_with_catalog": true
+ },
+ "pm_vs_host": [
+  {
+   "source": "ours (dev API /summary, +20 mas/yr floor)",
+   "pmra": 1.3,
+   "pmdec": -155.3,
+   "err": [
+    23.3,
+    23.3
+   ],
+   "dmu_ra": 4.3,
+   "dmu_dec": 14.6,
+   "dmu_total": 15.2,
+   "chi2_2dof": 0.43,
+   "p_value": 0.808,
+   "dv_tan_kms": 6.8,
+   "dv_tan_err_kms": 10.42,
+   "bound_limit_kms": 0.14,
+   "bound_limit_masyr": 0.31
+  },
+  {
+   "source": "CatWISE2020 II/365 offset-corrected",
+   "pmra": 7.8,
+   "pmdec": -166.8,
+   "err": [
+    8.8,
+    10.1
+   ],
+   "dmu_ra": 10.8,
+   "dmu_dec": 3.1,
+   "dmu_total": 11.2,
+   "chi2_2dof": 1.6,
+   "p_value": 0.448,
+   "dv_tan_kms": 5.04,
+   "dv_tan_err_kms": 3.99,
+   "bound_limit_kms": 0.14,
+   "bound_limit_masyr": 0.31
+  },
+  {
+   "source": "2MASS (1999.32) -> CatWISE (2015.4), 16.1 yr",
+   "pmra": 6.5,
+   "pmdec": -153.9,
+   "err": [
+    4.8,
+    4.8
+   ],
+   "dmu_ra": 9.5,
+   "dmu_dec": 16.0,
+   "dmu_total": 18.6,
+   "chi2_2dof": 14.95,
+   "p_value": 0.000566,
+   "dv_tan_kms": 8.31,
+   "dv_tan_err_kms": 2.15,
+   "bound_limit_kms": 0.14,
+   "bound_limit_masyr": 0.31
+  },
+  {
+   "source": "Gaia DR3 5667969698017693056 (G=20.22, plx 13.06+-0.84)",
+   "pmra": 0.5,
+   "pmdec": -151.1,
+   "err": [
+    0.6,
+    0.8
+   ],
+   "dmu_ra": 3.5,
+   "dmu_dec": 18.8,
+   "dmu_total": 19.1,
+   "chi2_2dof": 604.43,
+   "p_value": 5.61e-132,
+   "dv_tan_kms": 8.56,
+   "dv_tan_err_kms": 0.35,
+   "bound_limit_kms": 0.14,
+   "bound_limit_masyr": 0.31
+  }
+ ],
+ "photometry_check": {
+  "tag": "J1023-2045",
+  "seq_id": "af06100b68c08423",
+  "pipeline_used": "aperture",
+  "aperture": {
+   "verdict": "match",
+   "best": "M8",
+   "chi2_red": 0.8220289743355245,
+   "type_range": [
+    "M8",
+    "M9"
+   ],
+   "detection_snr": 41.2362039771353,
+   "doubt": null,
+   "top5": [
+    [
+     "M8",
+     0.82
+    ],
+    [
+     "M9 \u03b2",
+     1.03
+    ],
+    [
+     "M8 \u03b2",
+     1.09
+    ],
+    [
+     "M9",
+     1.75
+    ],
+    [
+     "L0",
+     1.76
+    ]
+   ]
+  },
+  "psf": {
+   "verdict": "match",
+   "best": "M9 \u03b2",
+   "chi2_red": 0.4539059403211075,
+   "type_range": [
+    "M8",
+    "L2"
+   ],
+   "detection_snr": 15.097488129794435,
+   "doubt": null,
+   "top5": [
+    [
+     "M9 \u03b2",
+     0.45
+    ],
+    [
+     "sdM9.5",
+     0.48
+    ],
+    [
+     "M8",
+     0.49
+    ],
+    [
+     "L0",
+     0.49
+    ],
+    [
+     "M9",
+     0.49
+    ]
+   ]
+  },
+  "neighbour_frac": {
+   "D1": -0.00015357497072497113,
+   "D2": 0.000247619807867865,
+   "D3": -0.0001636897675534616,
+   "D4": -0.0012036633312064932,
+   "D5": 1.2646792224378456e-05,
+   "D6": 0.00013904930464520363
+  },
+  "blends_arcsec": []
+ },
+ "type_points": {
+  "values": [
+   "M8",
+   "M8",
+   "M8",
+   "M8",
+   "L0",
+   "M8",
+   "M9"
+  ],
+  "spread_subtypes": 2.0
+ },
+ "sed_check": {
+  "W2": 14.119000434875488,
+  "ratio_W2": 1.095,
+  "ratio_W2_err": 0.07,
+  "J": 15.647000312805176,
+  "J_source": "2MASS",
+  "ratio_J": 1.062,
+  "ratio_J_err": 0.031,
+  "J_over_W2": 0.97,
+  "J_over_W2_err": 0.068
+ },
+ "adopted_type_range": [
+  "M8",
+  "L0"
+ ],
+ "template_floor_M8": true,
+ "phot_distance": {
+  "per_subtype": {
+   "M8": {
+    "UCS": {
+     "M_W2": 9.37,
+     "sig": 0.36,
+     "n": 201,
+     "d_pc": 89.2,
+     "d_1sig": [
+      75.6,
+      105.3
+     ],
+     "d_2sig": [
+      64.0,
+      124.3
+     ],
+     "z_vs_host": -0.35
+    }
+   },
+   "M9": {
+    "UCS": {
+     "M_W2": 9.65,
+     "sig": 0.35,
+     "n": 78,
+     "d_pc": 78.3,
+     "d_1sig": [
+      66.6,
+      92.0
+     ],
+     "d_2sig": [
+      56.7,
+      108.0
+     ],
+     "z_vs_host": -1.17
+    }
+   },
+   "L0": {
+    "UCS": {
+     "M_W2": 9.77,
+     "sig": 0.38,
+     "n": 307,
+     "d_pc": 74.1,
+     "d_1sig": [
+      62.2,
+      88.3
+     ],
+     "d_2sig": [
+      52.2,
+      105.2
+     ],
+     "z_vs_host": -1.39
+    },
+    "K21": {
+     "M_ch2": 10.07,
+     "sig": 0.31,
+     "d_pc": 63.5,
+     "d_1sig": [
+      55.1,
+      73.3
+     ],
+     "d_2sig": [
+      47.8,
+      84.5
+     ],
+     "z_vs_host": -2.78
+    }
+   }
+  },
+  "range_1sig_pc": [
+   55.1,
+   105.3
+  ],
+  "range_2sig_pc": [
+   47.8,
+   124.3
+  ],
+  "host_dist_pc": 94.5,
+  "host_dist_err_pc": 0.4,
+  "consistent": true
+ },
+ "companion": {
+  "status": "refuted",
+  "distance_at_best_type": {
+   "UCS": {
+    "M_W2": 9.37,
+    "sig": 0.36,
+    "n": 201,
+    "d_pc": 89.2,
+    "d_1sig": [
+     75.6,
+     105.3
+    ],
+    "d_2sig": [
+     64.0,
+     124.3
+    ],
+    "z_vs_host": -0.35
+   }
+  },
+  "distance_at_best_type_ok_2sig": true,
+  "decisive_pm": "Gaia DR3 5667969698017693056 (G=20.22, plx 13.06+-0.84)",
+  "independent_pm_ok": false,
+  "independent_pm_bad": true,
+  "distance_consistent_2sig": true
+ },
+ "classification": "first spectrum-based type, companion refuted"
+}

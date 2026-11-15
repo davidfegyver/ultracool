@@ -1,0 +1,122 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T06:55:31 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T06:55:31	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J/AJ/167/253&-out.all&-out.max=3	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+
+#RESOURCE=yCat_51670253
+#Name: J/AJ/167/253
+#Title: 89 new utlra cool dwarfs comoving companions (Rothermich+, 2024)
+#INFO	ivoid=ivo://cds.vizier/j/aj/167/253	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/aj/167/253	    IVOID of underlying data collection
+#INFO	creator=Rothermich A.	    First author or institution
+#INFO	cites=bibcode:2024AJ....167..253R	    Article or Data origin sources
+#INFO	journal=AJ	    Journal name
+#INFO	original_date=2024	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AJ/167/253	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier/be-57-7x	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-07-02	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AJ_167_253_table1:
+#Name: J/AJ/167/253/table1
+#Title: High-probability comoving systems
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Syst	(I2)	[1/89] System number; column and numbers added by CDS	[ucd=meta.id]
+#Column	ID	(a26)	Object identifier	[ucd=meta.id;meta.main]
+#Column	m_ID	(A1)	[A/B] Component of the object identifier	[ucd=meta.code.multip]
+#Column	Coord	(A11)	Truncated coordinates (HHMM+DDMM) or alternative ID	[ucd=meta.id]
+#Column	SpType	(a12)	Spectral type (1)	[ucd=src.spType]
+#Column	r_SpType	(I2)	[1/34] Reference on SpType (2)	[ucd=meta.ref;src.spType]
+#Column	pmRA	(F7.2)	[-556/367]? Proper motion in right ascension ({mu}_{alpha}_) from Gaia EDR3/DR3 (I/357)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.2)	[0.01/119]? Uncertainty in pmRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F7.2)	[-490/185]? Proper motion in declination ({mu}_{delta}_) from Gaia EDR3/DR3 (I/357)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.2)	[0.01/123]? Uncertainty in pmDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	RVel	(F6.2)	[-79/76]? Radial velocity	[ucd=spect.dopplerVeloc]
+#Column	e_RVel	(F5.2)	[0.1/20]? Uncertainty in Rvel	[ucd=stat.error;spect.dopplerVeloc]
+#Column	vsini	(F5.2)	[5/25]? Projected rotational velocity	[ucd=phys.veloc.rotat]
+#Column	e_vsini	(F5.2)	[0.5/25]? Uncertainty in vsini	[ucd=stat.error;phys.veloc.rotat]
+#Column	f_plx	(A1)	[*] *: plx measurement from Kirkpatrick+2021 (J/ApJS/253/7)	[ucd=meta.code;pos.parallax]
+#Column	plx	(F5.2)	[3/57]? Parallax from Gaia EDR3/DR3 (I/357)	[ucd=pos.parallax.trig]
+#Column	e_plx	(F5.2)	[0.01/5]? Uncertainty in plx	[ucd=stat.error;pos.parallax]
+#Column	r_plx	(I1)	[2/7]? References for plx measurement (2)	[ucd=meta.ref;pos.parallax]
+#Column	SepA	(F6.1)	[0.3/1124]? Angular separation from host star	[ucd=pos.angDistance]
+#Column	SepL	(I5)	[5/4e4]? Linear separation from host star (3)	[ucd=pos.distance;phys.size]
+#Column	Prob	(F5.1)	[91/100]? Probability	[ucd=stat.probability]
+#Column	GaiaDR3Cat	(I3)	Display data from Gaia DR3 (I/355) within 10" (added by CDS)	[ucd=meta.ref.url]
+#Column	2MASSCat	(I3)	Display data from 2MASS-PSC (II/246) within 5" (added by CDS)	[ucd=meta.ref.url]
+#Column	CWISECat	(I3)	Display data from CatWISE2020 (II/365) within 5" (added by CDS)	[ucd=meta.ref.url]
+#Column	SimbadName	(a28)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+recno	Syst	ID	m_ID	Coord	SpType	r_SpType	pmRA	e_pmRA	pmDE	e_pmDE	RVel	e_RVel	vsini	e_vsini	f_plx	plx	e_plx	r_plx	SepA	SepL	Prob	GaiaDR3Cat	2MASSCat	CWISECat	SimbadName	_RA	_DE
+ 	 	 	 	 	 	 	mas/yr	mas/yr	mas/yr	mas/yr	km/s	km/s	km/s	km/s	 	mas	mas	 	arcsec	AU	 	 	 	 	 	deg	deg
+--------	--	--------------------------	-	-----------	------------	--	-------	------	-------	------	------	-----	-----	-----	-	-----	-----	-	------	-----	-----	---	---	---	----------------------------	---------	---------
+       1	 1	TYC 8025-428-1            	 	(0000-4812)	G5          	 8	 166.67	  0.01	 -54.58	  0.01	  2.84	 0.16	 6.85	 3.05	 	11.42	 0.01	2	      	     	100.0	  1	  1	  1	TYC 8025-428-1              	000.06560	-48.21612
+       2	 1	CWISE J000021.45-481314.9 	 	           	(L4)        	 1	 172.91	 20.50	 -67.03	 19.20	      	     	     	     	 	     	     	3	  57.0	 5000	     	  0	  0	  1	CWISE J000021.45-481314.9   	000.08941	-48.22082
+       3	 2	WDJ002027.83-153546.50    	 	           	(WD)        	 9	 173.66	  0.30	   6.55	  6.64	      	     	     	     	 	10.52	 0.32	2	      	     	100.0	  1	  0	  1	SDSS J002027.91-153546.4    	005.11595	-15.59625
+
+#Table	J_AJ_167_253_table2:
+#Name: J/AJ/167/253/table2
+#Title: Photometry of high-probability comoving systems
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Syst	(I2)	[1/89] System number; column and numbers added by CDS	[ucd=meta.id]
+#Column	ID	(a26)	Object identifier	[ucd=meta.id;meta.main]
+#Column	m_ID	(A1)	[A/B] Component of the object identifier	[ucd=meta.code.multip]
+#Column	Coord	(A11)	Truncated coordinates (HHMM+DDMM) or alternative ID	[ucd=meta.id]
+#Column	Gmag	(F6.3)	[6.7/21]? Gaia DR3 (I/357) G (673nm) magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Gmag	(F6.3)	[3e-3/0.02]? Uncertainty in Gmag	[ucd=stat.error;phot.mag;em.opt.V]
+#Column	BPmag	(F6.3)	[6.9/22]? Gaia DR3 (I/357) BP (532nm) magnitude	[ucd=phot.mag;em.opt.B]
+#Column	e_BPmag	(F6.3)	[3e-3/0.31]? Uncertainty in BPmag	[ucd=stat.error;phot.mag;em.opt.B]
+#Column	RPmag	(F6.3)	[6.3/20]? Gaia DR3 (I/357) RP (797nm) magnitude	[ucd=phot.mag;em.opt.R]
+#Column	e_RPmag	(F6.3)	[4e-3/0.11]? Uncertainty in RPmag	[ucd=stat.error;phot.mag;em.opt.R]
+#Column	Jmag	(F5.2)	[6/21.4]? J-band (1.25um) magnitude (1)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag	(F5.2)	[0/0.33]? Uncertainty in Jmag	[ucd=stat.error;phot.mag;em.IR.J]
+#Column	l_Hmag	(A1)	Lower limit >= on Hmag	[ucd=meta.code.error]
+#Column	Hmag	(F6.3)	[5.8/19.7]? H-band (1.65um) magnitude	[ucd=phot.mag;em.IR.H]
+#Column	e_Hmag	(F5.2)	[0.01/0.25]? Uncertainty in Hmag	[ucd=stat.error;phot.mag;em.IR.H]
+#Column	Kmag	(F6.3)	[5.7/18.3]? K- and Ks-bands (2.20-2.17um) magnitude (1)	[ucd=phot.mag;em.IR.K]
+#Column	e_Kmag	(F5.2)	[0/0.31]? Uncertainty in Kmag	[ucd=stat.error;phot.mag;em.IR.K]
+#Column	RefNIR	(a5)	Near infrared references (2)	[ucd=meta.ref;phot.mag;em.IR.NIR]
+#Column	l_W1mag	(A1)	Lower limit >= on W1mag	[ucd=meta.code;phot.mag;em.IR.3-4um]
+#Column	W1mag	(F6.3)	[5.9/20]? CatWISE2020 (II/365) W1 (3.35um) magnitude	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1mag	(F5.2)	[0.01/0.33]? Uncertainty in W1mag	[ucd=stat.error;phot.mag;em.IR.3-4um]
+#Column	W2mag	(F5.2)	[5.7/18.3]? CatWISE2020 (II/365) W2 (4.6um) magnitude	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2mag	(F5.2)	[0.01/0.54]? Uncertainty in W2mag	[ucd=stat.error;phot.mag;em.IR.4-8um]
+recno	Syst	ID	m_ID	Coord	Gmag	e_Gmag	BPmag	e_BPmag	RPmag	e_RPmag	Jmag	e_Jmag	l_Hmag	Hmag	e_Hmag	Kmag	e_Kmag	RefNIR	l_W1mag	W1mag	e_W1mag	W2mag	e_W2mag
+ 	 	 	 	 	mag	mag	mag	mag	mag	mag	mag	mag	 	mag	mag	mag	mag	 	 	mag	mag	mag	mag
+--------	--	--------------------------	-	-----------	------	------	------	------	------	------	-----	-----	-	------	-----	------	-----	-----	-	------	-----	-----	-----
+       1	 1	TYC 8025-428-1            	 	(0000-4812)	10.235	 0.003	10.649	 0.003	 9.656	 0.004	 9.02	 0.03	 	 8.590	 0.03	 8.580	 0.02	1    	 	 8.510	 0.01	 8.56	 0.01
+       2	 1	CWISE J000021.45-481314.9 	 	           	      	      	      	      	      	      	17.89	 0.04	 	17.000	 0.04	16.370	 0.04	3    	 	15.720	 0.02	15.51	 0.04
+       3	 2	WDJ002027.83-153546.50    	 	           	19.199	 0.004	19.557	 0.031	18.721	 0.027	     	     	 	      	     	      	     	     	 	18.220	 0.16	18.25	 0.54
+
+#Table	J_AJ_167_253_table11:
+#Name: J/AJ/167/253/table11
+#Title: Binding energies and masses of high-probability comoving systems
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Syst	(I2)	[1/89] System number; column and numbers added by CDS	[ucd=meta.id]
+#Column	Host1	(a26)	First host identifier	[ucd=meta.id;meta.main]
+#Column	m_Host1	(A2)	[AB] Composant of first host identifier	[ucd=meta.code.multip]
+#Column	Host2	(a22)	Second host identifier	[ucd=meta.id]
+#Column	Comp	(A25)	Companion identifier	[ucd=meta.id]
+#Column	Mhost	(F5.2)	[0.05/1.53] Mass of the host M_Host_ (1)	[ucd=phys.mass]
+#Column	Mcomp	(F5.2)	[0.01/0.11] Mass of the companion M_Comp_	[ucd=phys.mass]
+#Column	Mtot	(F5.2)	[0.09/1.64] Total mass of the system	[ucd=phys.mass]
+#Column	Mrat	(F5.2)	[0.01/1] Mass ratio M_Comp_/M_Host_	[ucd=phys.mass;arith.ratio]
+#Column	Ebind	(F5.2)	[0.1/21]? Binding energy (in units of 10^41^ erg)	[ucd=phys.energy]
+#Column	l_tau	(A1)	Limit flag on tau	[ucd=meta.code.error;time.lifetime]
+#Column	tau	(I2)	[2/14]? Estimated dissipation lifetime of the system {tau} (2)	[ucd=time.lifetime]
+recno	Syst	Host1	m_Host1	Host2	Comp	Mhost	Mcomp	Mtot	Mrat	Ebind	l_tau	tau
+ 	 	 	 	 	 	Msun	Msun	Msun	Msun	2.4e30W.h	 	Gyr
+--------	--	--------------------------	--	----------------------	-------------------------	-----	-----	-----	-----	-----	-	--
+       1	 1	TYC 8025-428-1            	  	                      	CWISE J000021.45-481314.9	 0.89	 0.06	 0.95	 0.06	 1.00	>	14
+       2	 2	WDJ002027.83-153546.50    	  	                      	CWISE J002029.72-153527.5	 0.64	 0.08	 0.71	 0.12	 2.00	>	14
+       3	 3	UCAC3 113-933             	  	                      	CWISE J002101.45-334631.5	 0.61	 0.02	 0.63	 0.03	 0.30	>	14
+

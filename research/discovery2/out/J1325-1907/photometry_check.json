@@ -1,0 +1,80 @@
+{
+ "tag": "J1325-1907",
+ "seq_id": "2dfff4b8bb89c1aa",
+ "pipeline_used": "neighbour-subtracted PSF fit",
+ "aperture": {
+  "verdict": "match",
+  "best": "L3",
+  "chi2_red": 0.7483590474437587,
+  "type_range": [
+   "L2",
+   "L4"
+  ],
+  "detection_snr": 25.535142214289962,
+  "doubt": null,
+  "top5": [
+   [
+    "L3",
+    0.75
+   ],
+   [
+    "L2",
+    0.87
+   ],
+   [
+    "L1 \u03b3",
+    0.89
+   ],
+   [
+    "L2 \u03b2",
+    0.94
+   ],
+   [
+    "L0 \u03b3",
+    0.94
+   ]
+  ]
+ },
+ "psf": {
+  "verdict": "doubtful match",
+  "best": "L4",
+  "chi2_red": 2.0178415500915583,
+  "type_range": [
+   "L3",
+   "L5"
+  ],
+  "detection_snr": 37.23279258915782,
+  "doubt": "its 1.4 micrometre water band is shallower than a L4's",
+  "top5": [
+   [
+    "L4",
+    2.02
+   ],
+   [
+    "L6",
+    2.22
+   ],
+   [
+    "L7",
+    2.39
+   ],
+   [
+    "L1 \u03b3",
+    2.46
+   ],
+   [
+    "L3",
+    2.48
+   ]
+  ]
+ },
+ "neighbour_frac": {
+  "D1": 0.5693168110651958,
+  "D2": 0.22396292377100777,
+  "D3": 0.1568526844996688,
+  "D4": 0.1334402740351546,
+  "D5": 0.02309375100946724,
+  "D6": -0.1067588613508748
+ },
+ "blends_arcsec": []
+}

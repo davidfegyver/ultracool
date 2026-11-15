@@ -1,0 +1,131 @@
+{
+ "tag": "J1325-1907",
+ "name": "CWISE J132520.42-190701.2",
+ "request": {
+  "ra": 201.3350884,
+  "dec": -19.1170138,
+  "pmra_masyr": 61.35,
+  "pmdec_masyr": -126.92999999999999,
+  "epoch_yr": 2015.4
+ },
+ "api": "http://127.0.0.1:8004",
+ "seq_id": "2dfff4b8bb89c1aa",
+ "status": "done",
+ "pipeline_version": 5,
+ "n_spherex": 344,
+ "n_wise": 48,
+ "seconds_sequence": 150,
+ "fetched_utc": "2026-11-15T07:22:55Z",
+ "summary_transient": null,
+ "spectrum": {
+  "verdict": "doubtful match",
+  "best": {
+   "label": "L4",
+   "prob": 0.9998884186408735,
+   "chi2_red": 2.0178415500915583,
+   "n_bins": 89
+  },
+  "type_range": [
+   "L3",
+   "L5"
+  ],
+  "detection_snr": 37.23279258915781,
+  "photometry": "neighbour-subtracted PSF fit",
+  "neighbour_frac": {
+   "D1": 0.5693168110651958,
+   "D2": 0.22396292377100777,
+   "D3": 0.1568526844996688,
+   "D4": 0.1334402740351546,
+   "D5": 0.02309375100946724,
+   "D6": -0.1067588613508748
+  },
+  "contamination": null,
+  "contaminated": false,
+  "negative_bins": 0,
+  "blends_arcsec": [],
+  "reason": null,
+  "doubt": "its 1.4 micrometre water band is shallower than a L4's",
+  "water_depth": {
+   "value": 0.8046805864291596,
+   "err": 0.05248018658228398,
+   "template": 0.580296595478874
+  }
+ },
+ "ranking": [
+  {
+   "label": "L4",
+   "prob": 0.9998884186408735,
+   "chi2_red": 2.0178415500915583,
+   "n_bins": 89
+  },
+  {
+   "label": "L6",
+   "prob": 0.00011149904576175293,
+   "chi2_red": 2.22469116231216,
+   "n_bins": 89
+  },
+  {
+   "label": "L7",
+   "prob": 7.748867770377679e-08,
+   "chi2_red": 2.389955695951102,
+   "n_bins": 89
+  },
+  {
+   "label": "L1 \u03b3",
+   "prob": 3.1753407173201472e-09,
+   "chi2_red": 2.462562898051394,
+   "n_bins": 89
+  },
+  {
+   "label": "L3",
+   "prob": 1.4406018943817539e-09,
+   "chi2_red": 2.4805254873846128,
+   "n_bins": 89
+  }
+ ],
+ "n_bins": 89,
+ "n_bins_snr_gt3": 79,
+ "n_bins_snr_gt5": 65,
+ "max_bin_snr": 17.890350919843907,
+ "median_bin_snr": 7.585195449803421,
+ "snr_3p5_5um": 37.23279258915781,
+ "neighbour_psf_used": true,
+ "spectrum_endpoint_verdict": "doubtful match",
+ "spectrum_endpoint_best": {
+  "label": "L4",
+  "prob": 0.9998884186408735,
+  "chi2_red": 2.0178415500915583,
+  "n_bins": 89
+ },
+ "motion": {
+  "verdict": "moving",
+  "pmra_masyr": 35.797154529893405,
+  "pmdec_masyr": -113.48354585571869,
+  "pm_err_masyr": null,
+  "pmra_err_masyr": 13.928265843867743,
+  "pmdec_err_masyr": 13.928265843867743,
+  "significance_sigma": 8.54346087232029,
+  "n_epochs": 8,
+  "baseline_yr": 16.17141960484446,
+  "recovered": true,
+  "undetected_bands": [],
+  "catalog_offset_sigma": 1.0342732280002818
+ },
+ "color": {
+  "verdict": "normal star colors",
+  "w1_w2": 0.2824532023979067,
+  "w1_w2_err": 0.10088159463167862,
+  "w1_w2_is_lower_limit": false,
+  "w1": null,
+  "w2": null,
+  "source": "pipeline",
+  "note": null
+ },
+ "plain": [
+  "It moves across the sky: about 0.12 arcseconds per year, measured over 16 years (a confident measurement), matching the catalog proper motion.",
+  "Its infrared colour W1-W2 = 0.28 mag is normal for a star, not a cold brown dwarf.",
+  "Its infrared brightness stays constant within the measurement errors.",
+  "Its SPHEREx spectrum looks most like a L4 template, but its 1.4 micrometre water band is shallower than a L4's, so that type is doubtful.",
+  "Nearby stars share SPHEREx's large pixels here; their light was fitted and removed first."
+ ]
+}

@@ -1,0 +1,14 @@
+J/AJ/* exit=0 bytes=7354135 tables=4131 error=0
+J/ApJ/* exit=0 bytes=12507683 tables=6116 error=0
+J/ApJS/* exit=0 bytes=5890623 tables=2791 error=0
+J/A+A/* exit=0 bytes=17456603 tables=9361 error=0
+J/MNRAS/* exit=0 bytes=10736933 tables=5610 error=0
+J/PASP/* exit=0 bytes=316276 tables=184 error=0
+J/other/* exit=0 bytes=1439619 tables=777 error=0
+J/AN/* exit=0 bytes=155698 tables=90 error=0
+J/PASJ/* exit=0 bytes=218763 tables=124 error=0
+J/A+AS/* exit=0 bytes=985602 tables=722 error=0
+B/* exit=18 bytes=57041 tables=38 error=0
+IX/* exit=0 bytes=214262 tables=121 error=0
+X/* exit=0 bytes=719 tables=0 error=0
+XI/* exit=0 bytes=721 tables=0 error=0

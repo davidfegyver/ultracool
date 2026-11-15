@@ -1,0 +1,612 @@
+{
+ "tag": "J1325+0223",
+ "name": "CWISE J132539.70+022309.4",
+ "seq_id": "a27e20b8b401c219",
+ "rothermich_type": "(M9)",
+ "table": "T1 high-prob",
+ "prob": "100.0",
+ "variants": {
+  "all": [
+   [
+    "M8",
+    1.27
+   ],
+   [
+    "M8 \u03b2",
+    1.41
+   ],
+   [
+    "M9 \u03b2",
+    1.51
+   ],
+   [
+    "L0",
+    1.82
+   ],
+   [
+    "sdM9.5",
+    1.96
+   ]
+  ],
+  "all_no_template_spread": [
+   [
+    "M8 \u03b2",
+    1.69
+   ],
+   [
+    "M9 \u03b2",
+    1.79
+   ],
+   [
+    "M9",
+    2.19
+   ],
+   [
+    "M8",
+    2.25
+   ],
+   [
+    "sdM9.5",
+    2.33
+   ]
+  ],
+  "1.0-2.5um": [
+   [
+    "M8 \u03b2",
+    1.18
+   ],
+   [
+    "M8",
+    1.21
+   ],
+   [
+    "M9 \u03b2",
+    1.24
+   ],
+   [
+    "M9",
+    2.27
+   ],
+   [
+    "L0",
+    2.45
+   ]
+  ],
+  "2.5-5.0um": [
+   [
+    "L0",
+    1.07
+   ],
+   [
+    "M8",
+    1.08
+   ],
+   [
+    "L0 \u03b3",
+    1.17
+   ],
+   [
+    "L0 \u03b2",
+    1.28
+   ],
+   [
+    "L2",
+    1.33
+   ]
+  ],
+  "errors_x1.5": [
+   [
+    "M8 \u03b2",
+    0.68
+   ],
+   [
+    "M8",
+    0.71
+   ],
+   [
+    "M9 \u03b2",
+    0.73
+   ],
+   [
+    "M9",
+    0.93
+   ],
+   [
+    "sdM9.5",
+    0.93
+   ]
+  ]
+ },
+ "photometric_type_check": {
+  "rothermich_label": "M9",
+  "chi2_best": 111.4,
+  "scale": 1.27,
+  "dchi2_rescaled": 50.5,
+  "dchi2_rescaled_by_template": {
+   "M8": 0.0,
+   "M8 \u03b2": 10.0,
+   "M9 \u03b2": 16.9,
+   "L0": 38.6,
+   "sdM9.5": 48.0,
+   "M9": 50.5,
+   "L1": 66.8,
+   "L0 \u03b4": 82.4,
+   "L1 \u03b2": 102.3,
+   "L0 \u03b2": 104.4,
+   "L2": 110.7,
+   "d_sdL8": 144.5,
+   "L2 \u03b2": 154.5,
+   "L0 \u03b3": 182.2,
+   "L3": 194.6,
+   "M9 \u03b3": 206.5,
+   "L1 \u03b3": 223.9,
+   "T1": 237.2,
+   "L4": 243.4,
+   "T3": 256.6,
+   "L7": 281.1,
+   "L3 \u03b2": 298.5,
+   "T2": 305.1,
+   "L6": 324.7,
+   "sdT4": 325.9,
+   "T0": 343.2,
+   "T4": 351.0,
+   "L2 \u03b3": 368.7,
+   "L5": 369.6,
+   "sdL3.5": 384.9,
+   "L3 \u03b3": 390.8,
+   "L4 \u03b2": 431.3,
+   "esdL8": 485.5,
+   "T5": 490.5,
+   "L9": 491.6,
+   "L8": 502.8,
+   "d_sdT1": 538.6,
+   "L5 \u03b2_\u03b3": 619.6,
+   "L4 \u03b3": 719.0,
+   "L7 \u03b3": 1123.1,
+   "T6": 2117.4,
+   "T7": 2557.8,
+   "T8": 2852.1,
+   "d_sdT8": 2852.1,
+   "T9": 3224.8,
+   "Y0": 3365.3,
+   "Y1": 3468.1
+  }
+ },
+ "spectrum": {
+  "verdict": "match",
+  "best": {
+   "label": "M8",
+   "prob": 0.9981402003648869,
+   "chi2_red": 1.2658375643665862,
+   "n_bins": 89
+  },
+  "type_range": [
+   "M8",
+   "M9"
+  ],
+  "ranking": [
+   {
+    "label": "M8",
+    "prob": 0.9981402003648869,
+    "chi2_red": 1.2658375643665862,
+    "n_bins": 89
+   },
+   {
+    "label": "M8 \u03b2",
+    "prob": 0.0018367019585233298,
+    "chi2_red": 1.4089721597823444,
+    "n_bins": 89
+   },
+   {
+    "label": "M9 \u03b2",
+    "prob": 2.309765139461098e-05,
+    "chi2_red": 1.5084266117671463,
+    "n_bins": 89
+   },
+   {
+    "label": "L0",
+    "prob": 2.5118558130174684e-11,
+    "chi2_red": 1.8205092153675573,
+    "n_bins": 89
+   },
+   {
+    "label": "sdM9.5",
+    "prob": 6.323674702349136e-14,
+    "chi2_red": 1.9565200482591756,
+    "n_bins": 89
+   }
+  ],
+  "detection_snr": 22.940641961946195,
+  "n_bins": 89,
+  "n_bins_snr_gt3": 73,
+  "n_bins_snr_gt5": 53,
+  "photometry": "aperture",
+  "neighbour_frac": {
+   "D1": 0.0003418986605484159,
+   "D2": -3.3690966076120886e-05,
+   "D3": -4.116713914339696e-05,
+   "D4": -9.548705512236214e-05,
+   "D5": -0.00016893397911299334,
+   "D6": 1.874873187742544e-05
+  },
+  "contaminated": false,
+  "negative_bins": 0,
+  "blends_arcsec": [],
+  "reason": null,
+  "doubt": null,
+  "water_depth": {
+   "value": 0.7685742881982324,
+   "err": 0.08860119881346522,
+   "template": 0.7329729169209664
+  }
+ },
+ "type_range_num": [
+  8.0,
+  9.0
+ ],
+ "variant_bests": {
+  "all": "M8",
+  "all_no_template_spread": "M8 \u03b2",
+  "1.0-2.5um": "M8 \u03b2",
+  "2.5-5.0um": "L0",
+  "errors_x1.5": "M8 \u03b2"
+ },
+ "variants_inside_range": false,
+ "colour": {
+  "W1-W2_CatWISE": [
+   0.304,
+   0.04
+  ],
+  "J_2MASS": [
+   16.69499969482422,
+   0.1720000058412552
+  ],
+  "J-W2": [
+   1.654,
+   0.175
+  ],
+  "our_W1-W2": [
+   0.2180870042177293,
+   0.049710060145959835
+  ],
+  "W1-W2_types_68": [
+   "M8",
+   "M9",
+   "L0",
+   "L1",
+   "L2",
+   "L3",
+   "L4",
+   "L5",
+   "L6",
+   "L7",
+   "L8"
+  ],
+  "W1-W2_consistent_68": true,
+  "W1-W2_types_95": [
+   "M6",
+   "M7",
+   "M8",
+   "M9",
+   "L0",
+   "L1",
+   "L2",
+   "L3",
+   "L4",
+   "L5",
+   "L6",
+   "L7",
+   "L8",
+   "L9",
+   "T0",
+   "T3",
+   "T4"
+  ],
+  "W1-W2_consistent_95": true,
+  "W1-W2_consistent": true,
+  "J-W2_types_68": [
+   "M7",
+   "M8",
+   "M9",
+   "L0",
+   "L1"
+  ],
+  "J-W2_consistent_68": true,
+  "J-W2_types_95": [
+   "M6",
+   "M7",
+   "M8",
+   "M9",
+   "L0",
+   "L1",
+   "L2",
+   "L4",
+   "T4",
+   "T5"
+  ],
+  "J-W2_consistent_95": true,
+  "J-W2_consistent": true
+ },
+ "host": {
+  "name": "LP 617-58",
+  "gaia": {
+   "_r": 3.89,
+   "Source": 3712323650512000000,
+   "RA_ICRS": 201.40720591579,
+   "DE_ICRS": 2.38822810747,
+   "Plx": 8.4354,
+   "e_Plx": 0.026799999177455902,
+   "pmRA": -187.477,
+   "e_pmRA": 0.029999999329447746,
+   "pmDE": -153.172,
+   "e_pmDE": 0.01600000075995922,
+   "Gmag": 11.01846,
+   "BPmag": 11.431487,
+   "RPmag": 10.435918,
+   "RUWE": 1.128,
+   "RV": -14.33,
+   "e_RV": 0.23999999463558197
+  },
+  "dist_pc": 118.55,
+  "sep_arcsec": "31.0",
+  "sep_au_projected": 3675,
+  "mtot_msun": 0.92
+ },
+ "motion_ours": {
+  "verdict": "moving",
+  "pmra_masyr": -197.22908734940413,
+  "pmdec_masyr": -147.79621780270156,
+  "pmra_err_masyr": 17.789599043208742,
+  "pmdec_err_masyr": 17.789599043208742,
+  "significance_sigma": 13.854220122903422,
+  "n_epochs": 7,
+  "baseline_yr": 13.974645460643387,
+  "recovered": true,
+  "consistent_with_catalog": true
+ },
+ "pm_vs_host": [
+  {
+   "source": "ours (dev API /summary, +20 mas/yr floor)",
+   "pmra": -197.2,
+   "pmdec": -147.8,
+   "err": [
+    26.8,
+    26.8
+   ],
+   "dmu_ra": -9.8,
+   "dmu_dec": 5.4,
+   "dmu_total": 11.1,
+   "chi2_2dof": 0.17,
+   "p_value": 0.917,
+   "dv_tan_kms": 6.26,
+   "dv_tan_err_kms": 15.04,
+   "bound_limit_kms": 0.67,
+   "bound_limit_masyr": 1.19
+  },
+  {
+   "source": "CatWISE2020 II/365 offset-corrected",
+   "pmra": -162.5,
+   "pmdec": -181.2,
+   "err": [
+    15.6,
+    18.4
+   ],
+   "dmu_ra": 25.0,
+   "dmu_dec": -28.1,
+   "dmu_total": 37.6,
+   "chi2_2dof": 4.9,
+   "p_value": 0.0863,
+   "dv_tan_kms": 21.13,
+   "dv_tan_err_kms": 9.67,
+   "bound_limit_kms": 0.67,
+   "bound_limit_masyr": 1.19
+  },
+  {
+   "source": "2MASS (2000.16) -> CatWISE (2015.4), 15.2 yr",
+   "pmra": -207.8,
+   "pmdec": -162.5,
+   "err": [
+    19.3,
+    19.3
+   ],
+   "dmu_ra": -20.3,
+   "dmu_dec": -9.4,
+   "dmu_total": 22.3,
+   "chi2_2dof": 1.33,
+   "p_value": 0.513,
+   "dv_tan_kms": 12.55,
+   "dv_tan_err_kms": 10.87,
+   "bound_limit_kms": 0.67,
+   "bound_limit_masyr": 1.19
+  }
+ ],
+ "photometry_check": {
+  "tag": "J1325+0223",
+  "seq_id": "a27e20b8b401c219",
+  "pipeline_used": "aperture",
+  "aperture": {
+   "verdict": "match",
+   "best": "M8",
+   "chi2_red": 1.2658375643665862,
+   "type_range": [
+    "M8",
+    "M9"
+   ],
+   "detection_snr": 22.9406419619462,
+   "doubt": null,
+   "top5": [
+    [
+     "M8",
+     1.27
+    ],
+    [
+     "M8 \u03b2",
+     1.41
+    ],
+    [
+     "M9 \u03b2",
+     1.51
+    ],
+    [
+     "L0",
+     1.82
+    ],
+    [
+     "sdM9.5",
+     1.96
+    ]
+   ]
+  },
+  "psf": {
+   "verdict": "insufficient data",
+   "best": null,
+   "chi2_red": null,
+   "type_range": null,
+   "detection_snr": 2.742714571579309,
+   "doubt": null,
+   "top5": []
+  },
+  "neighbour_frac": {
+   "D1": 0.0003418986605484159,
+   "D2": -3.3690966076120886e-05,
+   "D3": -4.116713914339696e-05,
+   "D4": -9.548705512236214e-05,
+   "D5": -0.00016893397911299334,
+   "D6": 1.874873187742544e-05
+  },
+  "blends_arcsec": []
+ },
+ "type_points": {
+  "values": [
+   "M8",
+   "M8",
+   "M8",
+   "M8",
+   "L0",
+   "M8"
+  ],
+  "spread_subtypes": 2.0
+ },
+ "sed_check": {
+  "W2": 15.041000366210938,
+  "ratio_W2": 1.35,
+  "ratio_W2_err": 0.159,
+  "J": 16.69499969482422,
+  "J_source": "2MASS",
+  "ratio_J": 2.048,
+  "ratio_J_err": 0.136,
+  "J_over_W2": 1.517,
+  "J_over_W2_err": 0.206
+ },
+ "adopted_type_range": [
+  "M8",
+  "L0"
+ ],
+ "template_floor_M8": true,
+ "phot_distance": {
+  "per_subtype": {
+   "M8": {
+    "UCS": {
+     "M_W2": 9.37,
+     "sig": 0.36,
+     "n": 201,
+     "d_pc": 136.4,
+     "d_1sig": [
+      115.6,
+      161.0
+     ],
+     "d_2sig": [
+      97.9,
+      190.0
+     ],
+     "z_vs_host": 0.85
+    }
+   },
+   "M9": {
+    "UCS": {
+     "M_W2": 9.65,
+     "sig": 0.35,
+     "n": 78,
+     "d_pc": 119.7,
+     "d_1sig": [
+      101.9,
+      140.6
+     ],
+     "d_2sig": [
+      86.7,
+      165.2
+     ],
+     "z_vs_host": 0.06
+    }
+   },
+   "L0": {
+    "UCS": {
+     "M_W2": 9.77,
+     "sig": 0.38,
+     "n": 307,
+     "d_pc": 113.3,
+     "d_1sig": [
+      95.1,
+      135.0
+     ],
+     "d_2sig": [
+      79.9,
+      160.8
+     ],
+     "z_vs_host": -0.26
+    },
+    "K21": {
+     "M_ch2": 10.07,
+     "sig": 0.31,
+     "d_pc": 96.9,
+     "d_1sig": [
+      84.0,
+      111.7
+     ],
+     "d_2sig": [
+      72.8,
+      128.9
+     ],
+     "z_vs_host": -1.41
+    }
+   }
+  },
+  "range_1sig_pc": [
+   84.0,
+   161.0
+  ],
+  "range_2sig_pc": [
+   72.8,
+   190.0
+  ],
+  "host_dist_pc": 118.5,
+  "host_dist_err_pc": 0.4,
+  "consistent": true
+ },
+ "companion": {
+  "status": "confirmed",
+  "distance_at_best_type": {
+   "UCS": {
+    "M_W2": 9.37,
+    "sig": 0.36,
+    "n": 201,
+    "d_pc": 136.4,
+    "d_1sig": [
+     115.6,
+     161.0
+    ],
+    "d_2sig": [
+     97.9,
+     190.0
+    ],
+    "z_vs_host": 0.85
+   }
+  },
+  "distance_at_best_type_ok_2sig": true,
+  "decisive_pm": "CatWISE2020 + 2MASS->CatWISE",
+  "independent_pm_ok": true,
+  "independent_pm_bad": false,
+  "distance_consistent_2sig": true
+ },
+ "classification": "inconclusive (SPHEREx 1.15-1.32 um flux is 2.05x the catalogue 2MASS J (isolated objects: 1.06-1.09): extra light, probably the bright host)"
+}

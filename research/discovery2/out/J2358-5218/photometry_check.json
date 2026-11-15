@@ -1,0 +1,56 @@
+{
+ "tag": "J2358-5218",
+ "seq_id": "10cd5c77eacd8c7d",
+ "pipeline_used": "aperture",
+ "aperture": {
+  "verdict": "match",
+  "best": "L0",
+  "chi2_red": 1.0385446673619687,
+  "type_range": [
+   "M9",
+   "L1"
+  ],
+  "detection_snr": 37.85887470122351,
+  "doubt": null,
+  "top5": [
+   [
+    "L0",
+    1.04
+   ],
+   [
+    "M8",
+    1.23
+   ],
+   [
+    "M9",
+    1.31
+   ],
+   [
+    "L1",
+    1.41
+   ],
+   [
+    "M8 \u03b2",
+    1.49
+   ]
+  ]
+ },
+ "psf": {
+  "verdict": "insufficient data",
+  "best": null,
+  "chi2_red": null,
+  "type_range": null,
+  "detection_snr": 4.189285713230743,
+  "doubt": null,
+  "top5": []
+ },
+ "neighbour_frac": {
+  "D1": -0.026476573229004603,
+  "D2": -0.013633345276593233,
+  "D3": -0.022881047565759392,
+  "D4": -0.10880486802650159,
+  "D5": -0.05298417469732119,
+  "D6": -0.08047778610824591
+ },
+ "blends_arcsec": []
+}

@@ -1,0 +1,17 @@
+dev API :8004 started 2026-11-15T07:01:13Z from working tree backend/ (CACHE_DIR=/data/devcache/discovery2)
+HEAD 04b83c4ef96dfaa44f0865c73bc947c3fedd626a Pitch draft: 3-minute Space Apps slides with jury notes and sources
+ M backend/tests/test_analysis.py
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  backend/app/__init__.py
+7eb2fddb3a3d79cc4739cbd25bf2763f96d7f4754c2986c421bb14e7cf9af74d  backend/app/analysis.py
+e995f7b513bd30d284aadd829c16ba76b9d293f8303b88a578d460b48798519b  backend/app/config.py
+226cddf5d5bbac7993fe70ba3c6b1c76dc5811cc8a59687fbae12d2c83c34871  backend/app/frames.py
+f3f5cb7a47fdee5639a58f3d1661e7a3266f5a8d4345f50763fdadf00b40e57f  backend/app/main.py
+866e49bf4b02abbd2c9ae34533f07463465d1bae94cc29df335a07155f3bd733  backend/app/probe.py
+bf765d61d07ed54bc5603bc0a4829a9ca65c105608f1504480b2a3dfbefb5bee  backend/app/psfphot.py
+aff9bb42d8ad9949ddc3de3eda6881a42d780094e98f795c3c0d61657dd9774d  backend/app/resolve.py
+9f7375e7458d4740999330f985ed59fec4314d1998c9200f832cd18a378d6e7d  backend/app/sequences.py
+99ce727aad1712fba6993d2b0877e6f5b914ddf5d39ae45adb5e5d87ef9b75cf  backend/app/sources.py
+49aa0ac37bd17f47486b78c1f71be651871b3d73956202d0d5eb8ad8f3268c84  backend/app/spectral.py
+43efcd4233630d13d66c355ca21ece2141e3ef1125e74baabf09fa6340efa7cd  backend/app/ucd.py
+backend/app/analysis.py:849:SUMMARY_VERSION = 2
+backend/app/sequences.py:58:PIPELINE_VERSION = 5

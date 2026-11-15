@@ -1,0 +1,93 @@
+{
+ "tag": "J2358-5218",
+ "name": "CWISE J235827.96-521813.4",
+ "vizier_url": "see scripts/vizier_split.sh + https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=359.616553-52.303748&-c.rs=20&-out.max=10",
+ "vizier_status": "split queries: J/AJ/* exit=0 bytes=7354135 tables=4131 error=0 ; J/ApJ/* exit=0 bytes=12507683 tables=6116 error=0 ; J/ApJS/* exit=0 bytes=5890623 tables=2791 error=0 ; J/A+A/* exit=0 bytes=17456603 tables=9361 error=0 ; J/MNRAS/* exit=0 bytes=10736933 tables=5610 error=0 ; J/PASP/* exit=0 bytes=316276 tables=184 error=0 ; J/other/* exit=0 bytes=1439619 tables=777 error=0 ; J/AN/* exit=0 bytes=155698 tables=90 error=0 ; J/PASJ/* exit=0 bytes=218763 tables=124 error=0 ; J/A+AS/* exit=0 bytes=985602 tables=722 error=0 ; B/* exit=18 bytes=57041 tables=38 error=0 ; IX/* exit=0 bytes=214262 tables=121 error=0 ; X/* exit=0 bytes=719 tables=0 error=0 ; XI/* exit=0 bytes=721 tables=0 error=0",
+ "utc": "2026-11-15T07:51:52Z",
+ "vizier_tables_with_rows": {
+  "J_A_A_649_A6_table1c": 1,
+  "J_A_A_657_A7_tablea3": 1,
+  "J_A_A_665_A78_bkgev": 1,
+  "J_AJ_161_234_table2": 1,
+  "J_AJ_161_234_table3": 1,
+  "J_AJ_161_234_table4": 1,
+  "J_AJ_167_253_table1": 1,
+  "J_ApJ_798_73_table6": 1,
+  "J_ApJS_209_22_table6a": 3,
+  "J_ApJS_209_22_table6b": 2,
+  "J_ApJS_247_66_table8": 1,
+  "J_MNRAS_522_1951_table": 1,
+  "I_284_out": 1,
+  "I_297_out": 2,
+  "I_305_out": 3,
+  "I_320_spm4": 1,
+  "I_347_gaia2dis": 1,
+  "I_352_gedr3dis": 1,
+  "I_355_gaiadr3": 1,
+  "II_246_out": 1,
+  "II_328_allwise": 1,
+  "IV_39_tic82": 1,
+  "VI_42_out": 1,
+  "VII_285_gdr2ext": 1,
+  "VII_292_south": 4
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "J_A_A_657_A7_tablea3",
+   "values": [
+    {
+     "SpType": ""
+    }
+   ]
+  },
+  {
+   "table": "J_AJ_167_253_table1",
+   "values": [
+    {
+     "SpType": "(M9)"
+    }
+   ]
+  },
+  {
+   "table": "J_MNRAS_522_1951_table",
+   "values": [
+    {
+     "SPType": "10"
+    }
+   ]
+  },
+  {
+   "table": "VII_292_south",
+   "values": [
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    }
+   ]
+  }
+ ],
+ "simbad": [
+  {
+   "oid": 27204472,
+   "main_id": "2MASS J23582773-5218133",
+   "otype": "LM*",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 2,
+   "sep": 1.957214560380385,
+   "mesSpT": [],
+   "bibcodes": [
+    "2021A&A...649A...6G",
+    "2024AJ....167..253R"
+   ]
+  }
+ ]
+}

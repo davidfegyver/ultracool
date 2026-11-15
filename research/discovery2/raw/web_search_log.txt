@@ -1,0 +1,7 @@
+2026-11-15 web_search: "2MASS J10232199-2045473" OR "CWISE J102322.00-204549.9" OR "J1023-2045" brown dwarf
+  -> 10 results, none mentions the object (generic brown-dwarf lists, NEOWISE PM survey, Backyard Worlds papers). No relevant hit.
+2026-11-15 web_search: "2MASS J23582773-5218133" OR "CWISE J235827.96-521813.4" OR "UCAC4 189-203856"
+  -> 10 results: 2MASS/UCAC4 catalogue service pages only. No paper or spectrum mentions the object.
+2026-11-15 web_search: "CWISE J011003.61-592650.8" OR "WISE J011003.46-592651.7" OR "WDJ011001.84-592642.22" -> 10 results, none about the object (other CWISE objects, Backyard Worlds press).
+2026-11-15 web_search: "CWISE J124033.48+460544.7" OR "2MASS J12403374+4605437" brown dwarf -> no relevant hit. Hit [10]: Majaess+2026 (Ap&SS 371, 85) "Ultracool and brown dwarf candidates identified via CatWISE-2MASS-Gaia DR3": photometric types (M_G-M_W1 sigmoid) for Gaia-parallax candidates; paywalled, table not checked (would only hold photometric types; needs a Gaia parallax, which J1240 and J0110 lack).
+2026-11-15 web_search (recency month): SPHEREx brown dwarf companions spectral types arXiv 2026 -> SPIFF (2604.22012, ApJ), SUDA (2604.26771), 2607.00543 (ApJ 1009, 185), SMDET-1 (2608.00046), NASA 2026-10-08 press release, AAS abstract 2026AAS...24723004R. No new paper on Rothermich companions.

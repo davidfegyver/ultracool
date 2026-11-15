@@ -1,0 +1,130 @@
+{
+ "tag": "J0127-3002",
+ "name": "CWISE J012715.52-300246.9",
+ "request": {
+  "ra": 21.8146925,
+  "dec": -30.0463847,
+  "pmra_masyr": 103.8,
+  "pmdec_masyr": 3.8400000000000003,
+  "epoch_yr": 2015.4
+ },
+ "api": "http://127.0.0.1:8004",
+ "seq_id": "79e59cb7d92ee1ab",
+ "status": "done",
+ "pipeline_version": 5,
+ "n_spherex": 443,
+ "n_wise": 46,
+ "seconds_sequence": 150,
+ "fetched_utc": "2026-11-15T07:50:17Z",
+ "summary_transient": null,
+ "spectrum": {
+  "verdict": "doubtful match",
+  "best": {
+   "label": "L2",
+   "prob": 0.8886106999749629,
+   "chi2_red": 0.6477785128294876,
+   "n_bins": 90
+  },
+  "type_range": [
+   "L1",
+   "L3"
+  ],
+  "detection_snr": 18.451808671621546,
+  "photometry": "aperture",
+  "neighbour_frac": {
+   "D1": 0.0743702481073561,
+   "D2": 0.0066344272012348925,
+   "D3": 0.015704148828734815,
+   "D4": 0.076865212760634,
+   "D5": 0.005247286553362457,
+   "D6": -0.16356354059803332
+  },
+  "contamination": null,
+  "contaminated": false,
+  "negative_bins": 0,
+  "blends_arcsec": [],
+  "reason": null,
+  "doubt": "its W1-W2 colour (-0.01 mag) is bluer than L, T and Y dwarfs (typically 0.26 mag or redder)",
+  "water_depth": {
+   "value": 0.8419284208066423,
+   "err": 0.1202262767698119,
+   "template": 0.6668737214721961
+  }
+ },
+ "ranking": [
+  {
+   "label": "L2",
+   "prob": 0.8886106999749629,
+   "chi2_red": 0.6477785128294876,
+   "n_bins": 90
+  },
+  {
+   "label": "L3",
+   "prob": 0.10211767647514187,
+   "chi2_red": 0.6963972407528028,
+   "n_bins": 90
+  },
+  {
+   "label": "L2 \u03b2",
+   "prob": 0.0065386073079194045,
+   "chi2_red": 0.7581590755009919,
+   "n_bins": 90
+  },
+  {
+   "label": "L4",
+   "prob": 0.002509568036617766,
+   "chi2_red": 0.779678481154124,
+   "n_bins": 90
+  },
+  {
+   "label": "L1",
+   "prob": 0.00012274650037987013,
+   "chi2_red": 0.8474929679906594,
+   "n_bins": 90
+  }
+ ],
+ "n_bins": 90,
+ "n_bins_snr_gt3": 57,
+ "n_bins_snr_gt5": 39,
+ "max_bin_snr": 12.659539974888492,
+ "median_bin_snr": 4.3374895789121135,
+ "snr_3p5_5um": 18.451808671621546,
+ "neighbour_psf_used": false,
+ "spectrum_endpoint_verdict": "doubtful match",
+ "spectrum_endpoint_best": {
+  "label": "L2",
+  "prob": 0.8886106999749629,
+  "chi2_red": 0.6477785128294876,
+  "n_bins": 90
+ },
+ "motion": {
+  "verdict": "moving",
+  "pmra_masyr": 91.47466890558172,
+  "pmdec_masyr": 3.4395722280155248,
+  "pm_err_masyr": null,
+  "pmra_err_masyr": 17.828981088003275,
+  "pmdec_err_masyr": 17.828981088003275,
+  "significance_sigma": 5.134298584673937,
+  "n_epochs": 8,
+  "baseline_yr": 15.992281150690815,
+  "recovered": true,
+  "undetected_bands": [],
+  "catalog_offset_sigma": 0.42238337671273796
+ },
+ "color": {
+  "verdict": "normal star colors",
+  "w1_w2": -0.005901556795896101,
+  "w1_w2_err": 0.07634874753168348,
+  "w1_w2_is_lower_limit": false,
+  "w1": null,
+  "w2": null,
+  "source": "pipeline",
+  "note": null
+ },
+ "plain": [
+  "It moves across the sky: about 0.09 arcseconds per year, measured over 16 years (a confident measurement), matching the catalog proper motion.",
+  "Its infrared colour W1-W2 = -0.01 mag is normal for a star, not a cold brown dwarf.",
+  "Its infrared brightness stays constant within the measurement errors.",
+  "Its SPHEREx spectrum looks most like a L2 template, but its W1-W2 colour (-0.01 mag) is bluer than L, T and Y dwarfs (typically 0.26 mag or redder), so that type is doubtful."
+ ]
+}

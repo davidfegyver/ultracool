@@ -1,0 +1,1 @@
+['2026ApJ..1008...67P', 'Benchmark Brown Dwarf Systems. I. Chemical Abundance Analysis of FGK Stars with Wide-separation Brown Dwarf Companions Using PEPSI.', 'ApJ']

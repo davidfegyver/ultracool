@@ -1,0 +1,136 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T06:55:35 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T06:55:35	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J/AJ/167/253/table11&-out.all&-out.max=unlimited	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+
+#RESOURCE=yCat_51670253
+#Name: J/AJ/167/253
+#Title: 89 new utlra cool dwarfs comoving companions (Rothermich+, 2024)
+#INFO	ivoid=ivo://cds.vizier/j/aj/167/253	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/aj/167/253	    IVOID of underlying data collection
+#INFO	creator=Rothermich A.	    First author or institution
+#INFO	cites=bibcode:2024AJ....167..253R	    Article or Data origin sources
+#INFO	journal=AJ	    Journal name
+#INFO	original_date=2024	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AJ/167/253	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier/be-57-7x	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-07-02	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AJ_167_253_table11:
+#Name: J/AJ/167/253/table11
+#Title: Binding energies and masses of high-probability comoving systems
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Syst	(I2)	[1/89] System number; column and numbers added by CDS	[ucd=meta.id]
+#Column	Host1	(a26)	First host identifier	[ucd=meta.id;meta.main]
+#Column	m_Host1	(A2)	[AB] Composant of first host identifier	[ucd=meta.code.multip]
+#Column	Host2	(a22)	Second host identifier	[ucd=meta.id]
+#Column	Comp	(A25)	Companion identifier	[ucd=meta.id]
+#Column	Mhost	(F5.2)	[0.05/1.53] Mass of the host M_Host_ (1)	[ucd=phys.mass]
+#Column	Mcomp	(F5.2)	[0.01/0.11] Mass of the companion M_Comp_	[ucd=phys.mass]
+#Column	Mtot	(F5.2)	[0.09/1.64] Total mass of the system	[ucd=phys.mass]
+#Column	Mrat	(F5.2)	[0.01/1] Mass ratio M_Comp_/M_Host_	[ucd=phys.mass;arith.ratio]
+#Column	Ebind	(F5.2)	[0.1/21]? Binding energy (in units of 10^41^ erg)	[ucd=phys.energy]
+#Column	l_tau	(A1)	Limit flag on tau	[ucd=meta.code.error;time.lifetime]
+#Column	tau	(I2)	[2/14]? Estimated dissipation lifetime of the system {tau} (2)	[ucd=time.lifetime]
+recno	Syst	Host1	m_Host1	Host2	Comp	Mhost	Mcomp	Mtot	Mrat	Ebind	l_tau	tau
+ 	 	 	 	 	 	Msun	Msun	Msun	Msun	2.4e30W.h	 	Gyr
+--------	--	--------------------------	--	----------------------	-------------------------	-----	-----	-----	-----	-----	-	--
+       1	 1	TYC 8025-428-1            	  	                      	CWISE J000021.45-481314.9	 0.89	 0.06	 0.95	 0.06	 1.00	>	14
+       2	 2	WDJ002027.83-153546.50    	  	                      	CWISE J002029.72-153527.5	 0.64	 0.08	 0.71	 0.12	 2.00	>	14
+       3	 3	UCAC3 113-933             	  	                      	CWISE J002101.45-334631.5	 0.61	 0.02	 0.63	 0.03	 0.30	>	14
+       4	 4	2MASS J00215427-4514590   	  	                      	CWISE J002159.02-451434.4	 0.15	 0.03	 0.18	 0.23	 0.30	 	13
+       5	 5	WT 5                      	AB	                      	CWISE J002414.30-403053.7	 0.37	 0.06	 0.42	 0.15	 0.70	>	14
+       6	 6	CD-26 134                 	  	                      	CWISE J002658.73-260859.6	 0.80	 0.06	 0.86	 0.07	 2.00	>	14
+       7	 7	TYC 1744-123-1            	  	                      	CWISE J004218.67+291730.6	 0.63	 0.06	 0.69	 0.09	 0.70	>	14
+       8	 8	LAMOST J004950.95+423653.6	  	                      	CWISE J004945.38+423619.3	 0.37	 0.06	 0.43	 0.15	 0.70	>	14
+       9	 9	CD-24 407                 	  	                      	CWISE J005635.48-240401.9	 0.87	 0.05	 0.91	 0.05	 0.80	>	14
+      10	10	LP 466-214                	  	                      	CWISE J010424.50+133949.8	 0.16	 0.05	 0.21	 0.29	 0.10	 	 4
+      11	11	WDJ011001.84-592642.22    	  	                      	CWISE J011003.61-592650.8	 0.43	 0.07	 0.50	 0.17	 3.00	>	14
+      12	12	LP 883-372                	  	                      	CWISE J012715.52-300246.9	 0.45	 0.05	 0.49	 0.10	 1.10	>	14
+      13	13	CWISE J013716.34+342352.7 	  	                      	CWISE J013719.04+342837.6	 0.43	 0.06	 0.49	 0.13	 0.20	 	 6
+      14	14	CWISE J015905.30+105543.2 	  	                      	CWISE J015905.58+105551.5	 0.21	 0.08	 0.29	 0.37	 2.00	>	14
+      15	15	NLTT 6937                 	  	                      	CWISE J020538.20+594452.2	 0.31	 0.09	 0.40	 0.29	21.00	>	14
+      16	16	CWISE J022454.10+152633.8 	  	                      	CWISE J022454.80+152629.5	 0.05	 0.05	 0.09	 1.00	     	 	
+      17	17	G 73-59                   	  	                      	CWISE J022737.75+083008.8	 0.25	 0.06	 0.30	 0.22	 4.00	>	14
+      18	18	CWISE J025638.42-335454.9 	  	                      	CWISE J025645.16-335008.9	 0.51	 0.07	 0.58	 0.14	 0.30	 	 7
+      19	19	BPS CS 22963-0014         	  	                      	CWISE J030005.73-062218.6	 0.65	 0.05	 0.70	 0.07	 1.00	>	14
+      20	20	CWISE J032852.72-112345.6 	  	                      	CWISE J032853.32-112332.6	 0.28	 0.07	 0.36	 0.26	 2.00	>	14
+      21	21	UCAC4 204-003910          	  	                      	CWISE J040351.12-491605.4	 0.55	 0.03	 0.58	 0.05	 2.00	>	14
+      22	22	LSPM J0407+1911           	AB	                      	CWISE J040702.50+190944.6	 0.46	 0.05	 0.51	 0.10	 0.20	 	 6
+      23	23	G 192-8                   	  	                      	CWISE J055515.83+510514.0	 0.26	 0.10	 0.36	 0.37	 3.00	>	14
+      24	24	HD 40781                  	  	                      	CWISE J055909.00-384219.8	 1.09	 0.06	 1.15	 0.05	 3.00	>	14
+      25	25	WDJ060159.98-462534.40    	  	                      	CWISE J060202.17-462447.8	 0.54	 0.05	 0.58	 0.09	 1.00	>	14
+      26	26	CWISE J061959.56+344631.3 	  	                      	CWISE J062000.01+344641.3	 0.26	 0.06	 0.32	 0.21	 5.00	>	14
+      27	27	LAMOST J062631.15+593341.3	AB	                      	CWISE J062648.96+594129.2	 0.94	 0.07	 1.01	 0.08	 0.40	 	 7
+      28	28	CWISE J062725.95-002843.8 	  	                      	CWISE J062727.34-002826.8	 0.05	 0.05	 0.09	 1.00	     	 	
+      29	29	CWISE J062911.12+395632.8 	  	                      	CWISE J062909.21+395701.6	 0.34	 0.06	 0.40	 0.16	 1.00	>	14
+      30	30	HD 51400                  	  	                      	CWISE J065752.45+163350.2	 1.00	 0.06	 1.05	 0.06	 3.00	>	14
+      31	31	LSPM J0738+5254           	  	                      	CWISE J073831.31+525453.7	 0.28	 0.06	 0.33	 0.20	 4.00	>	14
+      32	32	LP 17-276                 	  	                      	CWISE J080912.95+741704.3	 0.18	 0.06	 0.24	 0.30	 0.10	 	 3
+      33	33	TYC 8927-2833-1           	  	                      	CWISE J085131.24-603056.2	 0.60	 0.06	 0.66	 0.10	 2.00	>	14
+      34	34	G 194-47                  	AB	                      	CWISE J085938.91+534908.4	 0.31	 0.03	 0.34	 0.09	 0.20	 	12
+      35	35	StKM 1-760                	  	LP 369-22             	CWISE J091558.53+254713.0	 1.10	 0.03	 1.14	 0.03	 0.20	 	 8
+      36	36	WISEA J091900.48-574847.1 	  	                      	CWISE J091902.55-574837.3	 0.25	 0.03	 0.28	 0.14	 1.00	>	14
+      37	37	CWISE J094350.43+335655.1 	  	                      	CWISE J094352.22+335639.1	 0.33	 0.07	 0.41	 0.22	 2.00	>	14
+      38	38	2MASS J09530410-5055203   	  	                      	CWISE J095259.54-505418.9	 0.25	 0.03	 0.28	 0.14	 0.60	>	14
+      39	39	UCAC4 328-061594          	  	                      	CWISE J101017.43-242300.4	 1.19	 0.02	 1.21	 0.02	 0.20	 	12
+      40	40	LP 609-46                 	  	                      	CWISE J101317.51-010313.6	 0.22	 0.10	 0.31	 0.45	 1.00	>	14
+      41	41	CWISE J101533.05-111501.0 	AB	                      	CWISE J101523.92-111539.6	 0.32	 0.06	 0.38	 0.17	 0.40	 	13
+      42	42	BD+13 2269                	  	                      	ULAS J103131.49+123736.4 	 0.94	 0.08	 1.02	 0.08	 2.00	>	14
+      43	43	LP 670-45                 	  	                      	CWISE J103734.29-050749.8	 0.34	 0.07	 0.41	 0.21	 1.00	>	14
+      44	44	UPM J1040-3551            	  	                      	CWISE J104053.42-355029.7	 0.24	 0.03	 0.26	 0.12	 0.60	>	14
+      45	45	LP 961-51                 	  	                      	CWISE J115229.05-351105.9	 0.46	 0.05	 0.51	 0.10	 0.60	>	14
+      46	46	CWISE J124032.46+460559.9 	  	                      	CWISE J124033.48+460544.7	 0.11	 0.08	 0.18	 0.73	 0.50	>	14
+      47	47	LP 616-93                 	  	                      	CWISE J125858.20+001133.2	 0.90	 0.11	 1.01	 0.13	 5.00	>	14
+      48	48	CWISE J130329.64+512758.6 	  	                      	CWISE J130329.90+512754.0	 0.10	 0.07	 0.17	 0.76	 4.00	>	14
+      49	49	CWISE J130446.94-120024.4 	  	                      	CWISE J130446.64-120023.6	 0.31	 0.10	 0.41	 0.31	12.00	>	14
+      50	50	LP 378-789                	  	                      	CWISE J131355.15+223005.6	 0.10	 0.07	 0.18	 0.71	 0.50	>	14
+      51	51	LP 617-58                 	  	                      	CWISE J132539.70+022309.4	 0.84	 0.08	 0.92	 0.09	 3.00	>	14
+      52	52	LP 677-81                 	  	                      	CWISE J132857.58-063747.4	 0.36	 0.07	 0.43	 0.20	 3.00	>	14
+      53	53	CWISE J133211.59-374953.3 	  	                      	CWISE J133211.93-374837.9	 0.12	 0.06	 0.18	 0.46	 0.20	 	 6
+      54	54	HD 117987                 	  	                      	CWISE J133427.70-273053.1	 0.78	 0.08	 1.64	 0.10	 5.00	>	14
+      55	55	NLTT 35024                	  	                      	SDSS J134403.83+083950.9 	 0.13	 0.05	 0.22	 0.35	 0.10	 	 2
+      56	56	LSPM J1417+0418           	  	                      	CWISE J141737.21+041847.2	 0.50	 0.09	 0.59	 0.18	 4.00	>	14
+      57	57	WISEA J143934.77-804838.8 	  	                      	CWISE J143935.94-804851.5	 0.24	 0.07	 0.31	 0.31	 4.00	>	14
+      58	58	CWISE J143951.66+255944.8 	  	                      	CWISE J143951.51+260000.3	 0.15	 0.03	 0.18	 0.23	 1.00	>	14
+      59	59	CWISE J144058.48+380422.1 	  	                      	CWISE J144057.87+380432.8	 0.12	 0.06	 0.18	 0.46	 0.80	>	14
+      60	60	CWISE J151940.47-485810.2 	  	                      	CWISE J151939.68-485820.4	 0.06	 0.06	 0.11	 1.00	     	 	
+      61	61	CWISE J152740.12-121551.7 	  	                      	CWISE J152742.44-121528.2	 0.36	 0.08	 0.43	 0.22	 1.00	>	14
+      62	62	LSPM J1539+7227           	  	                      	CWISE J153910.07+722757.2	 0.24	 0.09	 0.33	 0.37	 0.70	>	14
+      63	63	CWISE J160653.16-103210.6 	  	                      	CWISE J160654.19-103214.7	 0.10	 0.06	 0.15	 0.58	 1.00	>	14
+      64	64	UCAC4 840-013771          	  	                      	CWISE J162511.27+774946.8	 0.68	 0.06	 0.73	 0.08	 0.30	 	 8
+      65	65	CWISE J165141.67+695306.6 	  	                      	CWISE J165143.63+695259.4	 0.08	 0.05	 0.12	 0.59	 0.70	>	14
+      66	66	BD+49 2561                	AB	                      	CWISE J165325.10+490439.7	 1.25	 0.06	 1.31	 0.04	 3.00	>	14
+      67	67	LP 70-189                 	  	                      	CWISE J171308.00+644220.8	 0.22	 0.08	 0.29	 0.36	 0.70	>	14
+      68	68	CWISE J171701.09+724449.2 	  	                      	CWISE J171700.57+724437.3	 0.21	 0.08	 0.29	 0.36	 2.00	>	14
+      69	69	CWISE J173859.73+200501.2 	  	                      	CWISE J173859.73+200501.2	 0.12	 0.10	 0.22	 0.85	16.00	>	14
+      70	70	LP 389-13                 	  	                      	CWISE J174426.85+230355.1	 0.58	 0.09	 0.67	 0.16	19.00	>	14
+      71	71	StKM 1-1526               	  	                      	CWISE J174509.03+380733.2	 0.74	 0.06	 1.17	 0.05	 2.00	>	14
+      72	72	HD 170573                 	  	                      	CWISE J183207.94-540943.3	 0.72	 0.03	 0.75	 0.04	 0.20	 	13
+      73	73	CWISE J190907.63+553037.3 	  	                      	CWISE J190909.62+553027.1	 0.06	 0.06	 0.11	 1.00	     	 	
+      74	74	UPM J1924-5328            	  	                      	CWISE J192425.03-532837.1	 0.51	 0.09	 0.60	 0.18	 3.00	>	14
+      75	75	HD188769                  	  	DENIS J200057.2-644827	CWISE J195956.16-644318.1	 1.53	 0.03	 1.56	 0.02	 0.30	 	13
+      76	76	CWISE J200301.62-142230.0 	  	                      	CWISE J200304.70-142228.9	 0.19	 0.08	 0.46	 0.41	 1.00	>	14
+      77	77	LP 754-21                 	  	                      	CWISE J200813.66-124502.4	 0.50	 0.06	 0.55	 0.11	 0.80	>	14
+      78	78	SCR J2029-7910            	  	                      	CWISE J202934.80-791013.1	 0.25	 0.07	 0.33	 0.29	 2.00	>	14
+      79	79	LSPM J2052+0539           	  	                      	CWISE J205247.07+053855.7	 0.38	 0.06	 0.43	 0.15	 4.00	>	14
+      80	80	BD+24 4329                	  	                      	CWISE J210640.16+250729.0	 0.70	 0.03	 0.73	 0.05	 0.10	 	 4
+      81	81	WDJ212231.86+660043.69    	  	                      	CWISE J212342.88+655615.6	 0.63	 0.06	 0.69	 0.10	 0.20	 	 5
+      82	82	TYC 5213-545-1            	  	                      	CWISE J214129.80-024623.6	 0.81	 0.07	 0.88	 0.09	 0.90	>	14
+      83	83	CWISE J214209.46-204646.1 	  	                      	CWISE J214213.99-204659.8	 0.34	 0.09	 0.43	 0.26	 0.40	 	 8
+      84	84	LSPM J2214+2534           	  	                      	CWISE J221418.15+253432.2	 0.18	 0.03	 0.40	 0.08	 1.00	>	14
+      85	85	LEHPM 5083                	  	                      	CWISE J224452.18-362946.0	 0.28	 0.05	 0.32	 0.17	 0.50	>	14
+      86	86	LP 933-24                 	AB	                      	CWISE J225525.22-302320.8	 0.70	 0.03	 0.73	 0.04	 0.30	>	14
+      87	87	WISEA J231825.63+052141.6 	  	                      	CWISE J231824.58+052142.3	 0.16	 0.06	 0.22	 0.34	 1.00	>	14
+      88	88	GJ 900                    	  	                      	CWISE J233531.55+014219.6	 1.08	 0.01	 1.09	 0.01	 0.10	>	14
+      89	89	UCAC4 189-203856          	  	                      	CWISE J235827.96-521813.4	 0.69	 0.08	 0.77	 0.11	 3.00	>	14
+

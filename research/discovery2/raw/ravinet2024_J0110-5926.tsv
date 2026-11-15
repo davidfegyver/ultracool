@@ -1,0 +1,23 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:00:26 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:00:26	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fA%2bA%2f685%2f%2a&-c=17.515010+-59.447457&-c.rs=20	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	CatalogsExamined=35	
+#  35 catalogues with potential matches were examined.
+#
+#INFO	-c=017.515010-59.447457,rs=20.	
+#Constraint -c.rs=20
+
+#RESOURCE=
+#Name:
+#Title:

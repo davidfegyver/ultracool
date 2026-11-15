@@ -1,0 +1,115 @@
+{
+ "tag": "J0110-5926",
+ "name": "CWISE J011003.61-592650.8",
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=17.515047-59.447441&-c.rs=20&-out.max=10",
+ "vizier_status": "ok",
+ "utc": "2026-11-15T08:01:23Z",
+ "vizier_tables_with_rows": {
+  "I_243_out": 1,
+  "I_252_out": 1,
+  "I_284_out": 2,
+  "I_297_out": 2,
+  "I_305_out": 2,
+  "I_317_sample": 1,
+  "I_347_gaia2dis": 1,
+  "I_352_gedr3dis": 1,
+  "I_355_gaiadr3": 2,
+  "II_328_allwise": 5,
+  "II_391_ks4dr1": 5,
+  "IV_39_tic82": 1,
+  "VI_42_out": 1,
+  "VII_292_south": 10,
+  "B_denis_denis": 3,
+  "B_gemini_obscore": 8,
+  "J_ApJS_234_23_c75cat": 2,
+  "J_ApJS_264_9_skewt": 1,
+  "J_A_A_649_A6_table1c": 1,
+  "J_A_A_674_A22_catalog": 1,
+  "J_AJ_161_234_table2": 1,
+  "J_AJ_161_234_table4": 3,
+  "J_AJ_167_253_table1": 2,
+  "J_MNRAS_482_4570_gaia2wd": 1,
+  "J_MNRAS_489_5301_desy3-m": 1,
+  "J_MNRAS_508_3877_maincat": 1,
+  "J_other_JDSO_15_21_hpms3": 1
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "VII_292_south",
+   "values": [
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "REX"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    }
+   ]
+  },
+  {
+   "table": "J_AJ_167_253_table1",
+   "values": [
+    {
+     "SpType": "(WD)"
+    },
+    {
+     "SpType": "(L2)"
+    }
+   ]
+  },
+  {
+   "table": "J_MNRAS_482_4570_gaia2wd",
+   "values": [
+    {
+     "Sp": ""
+    }
+   ]
+  },
+  {
+   "table": "J_MNRAS_489_5301_desy3-m",
+   "values": [
+    {
+     "SpTypePh": "9.0"
+    }
+   ]
+  }
+ ],
+ "simbad": [
+  {
+   "oid": 27204355,
+   "main_id": "WISE J011003.46-592651.7",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 1,
+   "sep": 0.0,
+   "mesSpT": [],
+   "bibcodes": [
+    "2024AJ....167..253R"
+   ]
+  }
+ ]
+}

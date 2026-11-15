@@ -1,0 +1,131 @@
+{
+ "tag": "J0110-5926",
+ "name": "CWISE J011003.61-592650.8",
+ "request": {
+  "ra": 17.5150101,
+  "dec": -59.4474573,
+  "pmra_masyr": 189.95000000000002,
+  "pmdec_masyr": 182.54000000000002,
+  "epoch_yr": 2015.4
+ },
+ "api": "http://127.0.0.1:8004",
+ "seq_id": "ccd53cf653caf406",
+ "status": "done",
+ "pipeline_version": 5,
+ "n_spherex": 454,
+ "n_wise": 44,
+ "seconds_sequence": 180,
+ "fetched_utc": "2026-11-15T07:53:23Z",
+ "summary_transient": null,
+ "spectrum": {
+  "verdict": "match",
+  "best": {
+   "label": "M8 \u03b2",
+   "prob": 0.7647967169235894,
+   "chi2_red": 1.3199908825997617,
+   "n_bins": 90
+  },
+  "type_range": [
+   "M8",
+   "M9"
+  ],
+  "detection_snr": 28.071448362079053,
+  "photometry": "neighbour-subtracted PSF fit",
+  "neighbour_frac": {
+   "D1": 0.41951443591573323,
+   "D2": 0.24482761748624182,
+   "D3": 0.2865048639534556,
+   "D4": 0.4635430038760274,
+   "D5": 0.24671558128798007,
+   "D6": 0.16992705736017066
+  },
+  "contamination": null,
+  "contaminated": false,
+  "negative_bins": 0,
+  "blends_arcsec": [],
+  "reason": null,
+  "doubt": null,
+  "water_depth": {
+   "value": 0.6363125442042161,
+   "err": 0.03381940896586181,
+   "template": 0.7550696293128693
+  }
+ },
+ "ranking": [
+  {
+   "label": "M8 \u03b2",
+   "prob": 0.7647967169235894,
+   "chi2_red": 1.3199908825997617,
+   "n_bins": 90
+  },
+  {
+   "label": "M8",
+   "prob": 0.23520318591171846,
+   "chi2_red": 1.3464888670385662,
+   "n_bins": 90
+  },
+  {
+   "label": "M9 \u03b2",
+   "prob": 9.7164692139923e-08,
+   "chi2_red": 1.676815899028544,
+   "n_bins": 90
+  },
+  {
+   "label": "L0",
+   "prob": 1.6051114444747818e-19,
+   "chi2_red": 2.2864578121936048,
+   "n_bins": 90
+  },
+  {
+   "label": "M9",
+   "prob": 8.146942435978517e-21,
+   "chi2_red": 2.3534402993921844,
+   "n_bins": 90
+  }
+ ],
+ "n_bins": 90,
+ "n_bins_snr_gt3": 61,
+ "n_bins_snr_gt5": 58,
+ "max_bin_snr": 16.114384384149183,
+ "median_bin_snr": 7.504907143312755,
+ "snr_3p5_5um": 28.07144836207905,
+ "neighbour_psf_used": true,
+ "spectrum_endpoint_verdict": "match",
+ "spectrum_endpoint_best": {
+  "label": "M8 \u03b2",
+  "prob": 0.7647967169235894,
+  "chi2_red": 1.3199908825997617,
+  "n_bins": 90
+ },
+ "motion": {
+  "verdict": "moving",
+  "pmra_masyr": 197.76651958654625,
+  "pmdec_masyr": 192.37581730680878,
+  "pm_err_masyr": null,
+  "pmra_err_masyr": 14.180462114697225,
+  "pmdec_err_masyr": 14.180462114697225,
+  "significance_sigma": 19.456250643164623,
+  "n_epochs": 7,
+  "baseline_yr": 15.997904766830743,
+  "recovered": true,
+  "undetected_bands": [],
+  "catalog_offset_sigma": 0.40140090434295445
+ },
+ "color": {
+  "verdict": "normal star colors",
+  "w1_w2": 0.3411515914427764,
+  "w1_w2_err": 0.03597233742916322,
+  "w1_w2_is_lower_limit": false,
+  "w1": null,
+  "w2": null,
+  "source": "pipeline",
+  "note": null
+ },
+ "plain": [
+  "It moves across the sky: about 0.28 arcseconds per year, measured over 16 years (a very confident measurement), matching the catalog proper motion.",
+  "Its infrared colour W1-W2 = 0.34 mag is normal for a star, not a cold brown dwarf.",
+  "Its infrared brightness stays constant within the measurement errors.",
+  "Its SPHEREx spectrum fits a M8 \u03b2 brown-dwarf template best; allowing for this method's typical error, its type lies between M8 and M9.",
+  "Nearby stars share SPHEREx's large pixels here; their light was fitted and removed first."
+ ]
+}

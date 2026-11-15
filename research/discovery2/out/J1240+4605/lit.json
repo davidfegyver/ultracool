@@ -1,0 +1,106 @@
+{
+ "tag": "J1240+4605",
+ "name": "CWISE J124033.48+460544.7",
+ "vizier_url": "see scripts/vizier_split.sh + https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=190.139497+46.095738&-c.rs=20&-out.max=10",
+ "vizier_status": "split queries: J/AJ/* exit=0 bytes=1327 tables=0 error=1 ; J/ApJ/* exit=0 bytes=12501485 tables=6114 error=0 ; J/ApJS/* exit=0 bytes=5888927 tables=2791 error=0 ; J/A+A/* exit=0 bytes=17455332 tables=9361 error=0 ; J/MNRAS/* exit=0 bytes=10736440 tables=5610 error=0 ; J/PASP/* exit=0 bytes=298851 tables=173 error=0 ; J/other/* exit=0 bytes=1440214 tables=777 error=0 ; J/AN/* exit=0 bytes=155700 tables=90 error=0 ; J/PASJ/* exit=0 bytes=218765 tables=124 error=0 ; J/A+AS/* exit=0 bytes=985604 tables=722 error=0 ; B/* exit=18 bytes=57041 tables=38 error=0 ; IX/* exit=0 bytes=214264 tables=121 error=0 ; X/* exit=0 bytes=721 tables=0 error=0 ; XI/* exit=0 bytes=723 tables=0 error=0 ; J/AJ/* retry exit=0 bytes=7356479 tables=4131 error=0",
+ "utc": "2026-11-15T08:24:00Z",
+ "vizier_tables_with_rows": {
+  "J_A_A_649_A6_table1r": 1,
+  "J_AJ_161_234_table2": 1,
+  "J_AJ_161_234_table3": 1,
+  "J_AJ_161_234_table4": 1,
+  "J_AJ_161_234_table7": 1,
+  "J_AJ_153_92_lmovers": 1,
+  "J_AJ_167_253_table1": 2,
+  "J_AJ_151_41_movers": 1,
+  "J_ApJ_798_73_table6": 1,
+  "J_MNRAS_506_1651_bass_dr3": 2,
+  "J_other_PASA_43_89_srdr2": 1,
+  "J_other_PASA_43_89_comp": 1,
+  "I_267_out": 1,
+  "I_284_out": 1,
+  "I_297_out": 3,
+  "I_305_out": 1,
+  "I_317_sample": 1,
+  "I_347_gaia2dis": 1,
+  "I_352_gedr3dis": 1,
+  "I_355_gaiadr3": 1,
+  "II_246_out": 2,
+  "II_328_allwise": 3,
+  "II_381_hlsp_ps1_tm": 3,
+  "II_389_ps1_dr2": 3,
+  "IV_39_tic82": 2,
+  "V_139_sdss9": 4,
+  "V_154_sdss16": 5,
+  "VI_42_out": 1,
+  "VII_289_superset": 1,
+  "VII_292_north": 5
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "J_AJ_167_253_table1",
+   "values": [
+    {
+     "SpType": "(M7)"
+    },
+    {
+     "SpType": "(M9)"
+    }
+   ]
+  },
+  {
+   "table": "J_MNRAS_506_1651_bass_dr3",
+   "values": [
+    {
+     "Type": "1"
+    },
+    {
+     "Type": "0"
+    }
+   ]
+  },
+  {
+   "table": "VII_289_superset",
+   "values": [
+    {
+     "Sp": "Sp"
+    }
+   ]
+  },
+  {
+   "table": "VII_292_north",
+   "values": [
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "REX"
+    },
+    {
+     "type": "DEV"
+    }
+   ]
+  }
+ ],
+ "simbad": [
+  {
+   "oid": 27204425,
+   "main_id": "2MASS J12403374+4605437",
+   "otype": "LM*",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 1,
+   "sep": 2.8735671118090607,
+   "mesSpT": [],
+   "bibcodes": [
+    "2024AJ....167..253R"
+   ]
+  }
+ ]
+}
