@@ -11,7 +11,8 @@ export const Plot = createPlotlyComponent(Plotly)
 const MOLECULES: [string, number, number][] = [
   ['H₂O', 1.1, 1.2], ['H₂O', 1.33, 1.5], ['H₂O', 1.75, 2.05], ['H₂O', 2.5, 3.0],
   ['CH₄', 1.6, 1.8], ['CH₄', 2.15, 2.5], ['CH₄', 3.2, 3.5],
-  ['CO', 2.29, 2.4], ['CO', 4.5, 4.9], ['CO₂', 4.2, 4.35], ['NH₃', 2.9, 3.1],
+  // labels alternate between two heights by index: CO 2.29–2.4 at an even index so it does not overprint CH₄ 2.15–2.5
+  ['CO', 4.5, 4.9], ['CO', 2.29, 2.4], ['CO₂', 4.2, 4.35], ['NH₃', 2.9, 3.1],
 ]
 const COLORS = ['#f87171', '#fb923c', '#a78bfa', '#818cf8', '#38bdf8', '#2dd4bf', '#4ade80', '#facc15']
 export const DARK = {
@@ -141,6 +142,13 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
       ? `Best match: ${spec.best.label} (p=${spec.best.prob.toFixed(2)}, χ²ᵣ=${spec.best.chi2_red.toFixed(2)}, ${spec.best.n_bins} bins)` +
         (spec.verdict === 'match' ? '' : ` · ${spec.verdict}`)
       : (spec?.verdict ?? '')
+  // y range from the plotted values, not their error bars: one noisy edge channel would otherwise flatten the spectrum
+  const specY = [
+    ...(byDate ? sxSpec.map((f) => (TO_FLAMBDA * f.flux_ujy!) / lam2(f)) : (spec?.binned.map((b) => TO_FLAMBDA * b.flambda) ?? [])),
+    ...(spec?.template_curve?.flambda.map((f) => TO_FLAMBDA * f) ?? []),
+  ]
+  const [yLo, yHi] = [Math.min(...specY), Math.max(...specY)]
+  const yPad = 0.1 * (yHi - yLo || 1)
 
   return (
     <div className="flex h-full flex-col text-xs">
@@ -264,7 +272,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
             layout={{
               ...DARK,
               xaxis: { title: { text: 'Wavelength (µm)' }, range: [0.7, 5.1] },
-              yaxis: { title: { text: 'F_λ (10⁻¹⁸ W m⁻² µm⁻¹)' } },
+              yaxis: { title: { text: 'F_λ (10⁻¹⁸ W m⁻² µm⁻¹)' }, range: specY.length ? [yLo - yPad, yHi + yPad] : undefined },
               shapes: MOLECULES.map(([, a, b], i) => ({
                 type: 'rect', xref: 'x', yref: 'paper', x0: a, x1: b, y0: 0, y1: 1,
                 fillcolor: i % 2 ? '#64748b' : '#475569', opacity: 0.18, line: { width: 0 }, layer: 'below',

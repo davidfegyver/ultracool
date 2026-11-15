@@ -123,7 +123,7 @@ export default function Discover() {
                   onClick={() => setSel(i)}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-slate-500">#{i}</span>
+                    <span className="text-slate-500">#{i + 1}</span>
                     <span>{(Math.hypot(m.pmra_masyr, m.pmdec_masyr) / 1000).toFixed(2)}″/yr</span>
                     <span className="text-slate-400">{m.significance_sigma.toFixed(1)}σ</span>
                     {m.w1_w2 !== null && <span className="text-slate-400">W1−W2 {m.w1_w2.toFixed(2)}</span>}
@@ -164,7 +164,9 @@ export default function Discover() {
             }}
           />
           <div className="mt-auto flex items-center gap-2 border-t border-slate-700 p-2 text-xs">
-            <span className="text-slate-400">{Object.keys(labels).length} classifications saved in this browser</span>
+            <span className="text-slate-400">
+              {Object.keys(labels).length} classification{Object.keys(labels).length === 1 ? '' : 's'} saved in this browser
+            </span>
             <button className="rounded bg-slate-700 px-2 py-1 enabled:hover:bg-slate-600 disabled:opacity-50" disabled={!Object.keys(labels).length} onClick={exportLabels}>
               ⤓ Export CSV
             </button>
@@ -190,7 +192,7 @@ function KnownBadges({ m }: { m: Mover }) {
         <span className="rounded bg-amber-700 px-1 text-white">Unknown: not in SIMBAD, CatWISE or SPIFF</span>
       )}
       {m.cpm_with?.length ? (
-        <span className="rounded bg-violet-800 px-1">moves together with {m.cpm_with.map((c) => (c === 'target' ? 'the target' : `#${c}`)).join(', ')}</span>
+        <span className="rounded bg-violet-800 px-1">moves together with {m.cpm_with.map((c) => (c === 'target' ? 'the target' : `#${c + 1}`)).join(', ')}</span>
       ) : null}
     </div>
   )
@@ -207,7 +209,7 @@ function Review({ seq, m, i, label, onLabel, probe }: { seq: Sequence; m: Mover;
         <Player seq={seq} fb={fb} set={setFb} aladin={null} focus={{ x: m.x_px, y: m.y_px, size, vx, vy }} probe={probe} />
       </div>
       <div className="min-w-64 flex-1 space-y-2 text-sm">
-        <h2 className="text-lg font-semibold">Candidate #{i}</h2>
+        <h2 className="text-lg font-semibold">Candidate #{i + 1}</h2>
         <KnownBadges m={m} />
         <table className="text-xs">
           <tbody>

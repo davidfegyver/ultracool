@@ -22,7 +22,7 @@ const EXPLORE_PRESETS = [
   { label: 'All 16 years', bands: ['W2', 'D6'], title: 'WISE 4.6 µm 2010–2024 + SPHEREx 4.4–5 µm 2025–26' },
   { label: 'WISE 2010–2024', bands: ['W2'], title: '4.6 µm' },
   { label: 'SPHEREx 2025–26', bands: ['D6'], title: '4.4–5.0 µm' },
-  { label: 'All colours', bands: ALL_BANDS, title: 'every WISE and SPHEREx band; SPHEREx frames are different wavelengths' },
+  { label: 'All colors', bands: ALL_BANDS, title: 'every WISE and SPHEREx band; SPHEREx frames are different wavelengths' },
 ]
 
 /** Explore (plain findings, expert tools behind "Show advanced") and Research (everything + numbers) share this layout. */

@@ -11,6 +11,13 @@ const BAND_UM: Record<string, string> = {
   W1: '3.4', W2: '4.6', D1: '0.75–1.1', D2: '1.1–1.6', D3: '1.6–2.4', D4: '2.4–3.8', D5: '3.8–4.4', D6: '4.4–5.0',
 }
 const SKY_LAYER = 'Flipbook frame'
+// media icons as SVG paths: the ⏮ ⏭ ⏸ glyphs are missing from common Chromium/Linux fonts and render as empty boxes
+const ICON = { prev: 'M3 2h2v12H3zM14 2v12L6 8z', next: 'M11 2h2v12h-2zM2 2v12l8-6z', play: 'M4 2v12l10-6z', pause: 'M3 2h4v12H3zM9 2h4v12H9z' }
+const Icon = ({ d }: { d: string }) => (
+  <svg viewBox="0 0 16 16" className="h-3 w-3 fill-current" aria-hidden>
+    <path d={d} />
+  </svg>
+)
 
 export type Flipbook = {
   bands: string[]
@@ -249,7 +256,7 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
       {probe && shownPng && !localStorage.getItem(PROBE_USED_KEY) && (
         <p className="text-cyan-300/80">Tip: drag the cyan crosshair from the corner onto any source (or right-click it) to measure it.</p>
       )}
-      <div className="flex h-5 items-center gap-2">
+      <div className="flex min-h-5 items-center gap-2">
         {override ? (
           <span>{override.label}</span>
         ) : (
@@ -268,9 +275,12 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
         <span className="ml-auto text-slate-500">{playable.length ? `${idx + 1}/${playable.length}` : ''}</span>
       </div>
       <div className="flex items-center gap-1">
-        <button className="rounded bg-slate-700 px-2 py-1" aria-label="Previous frame" onClick={() => { set({ playing: false }); step(-1) }}>⏮</button>
-        <button className="w-16 rounded bg-sky-700 px-2 py-1" onClick={() => set({ playing: !fb.playing })}>{fb.playing ? '⏸ Pause' : '▶ Play'}</button>
-        <button className="rounded bg-slate-700 px-2 py-1" aria-label="Next frame" onClick={() => { set({ playing: false }); step(1) }}>⏭</button>
+        <button className="flex h-6 items-center rounded bg-slate-700 px-2" aria-label="Previous frame" onClick={() => { set({ playing: false }); step(-1) }}><Icon d={ICON.prev} /></button>
+        <button className="flex h-6 w-16 items-center justify-center gap-1 rounded bg-sky-700 px-2" onClick={() => set({ playing: !fb.playing })}>
+          <Icon d={fb.playing ? ICON.pause : ICON.play} />
+          {fb.playing ? 'Pause' : 'Play'}
+        </button>
+        <button className="flex h-6 items-center rounded bg-slate-700 px-2" aria-label="Next frame" onClick={() => { set({ playing: false }); step(1) }}><Icon d={ICON.next} /></button>
         <input
           aria-label="Scrub"
           type="range"
@@ -320,9 +330,12 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
           <input type="checkbox" checked={fb.hideFlagged} onChange={(e) => set({ hideFlagged: e.target.checked })} /> Hide flagged
           {fb.hideFlagged && seq && <span className="text-slate-500">({seq.frames.filter((f) => f.flagged && fb.bands.includes(f.band)).length})</span>}
         </label>
-        <label className="flex items-center gap-1">
-          <input type="checkbox" checked={fb.showOnSky} onChange={(e) => set({ showOnSky: e.target.checked })} /> Show on sky
-        </label>
+        {/* no sky map in Learn and Discover */}
+        {aladin && (
+          <label className="flex items-center gap-1">
+            <input type="checkbox" checked={fb.showOnSky} onChange={(e) => set({ showOnSky: e.target.checked })} /> Show on sky
+          </label>
+        )}
         <label className="flex items-center gap-1" title="Co-add frames per band: WISE in 2-year windows, SPHEREx per survey epoch. Shows sources too faint for single frames.">
           <input type="checkbox" checked={fb.deep} onChange={(e) => set({ deep: e.target.checked, frameId: null })} /> Deep stacks
         </label>
@@ -339,7 +352,7 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
               setBlink(blink ? null : { diff: false, phase: 0 })
             }}
           >
-            {blink ? '■ Stop blink' : '◐ Blink'}
+            {blink ? 'Stop blink' : 'Blink'}
           </button>
           {blink && (
             <label className="flex items-center gap-1">

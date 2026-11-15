@@ -57,7 +57,12 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
         </button>
       </form>
       {/* a disclosure, not a <select>: arrow keys on a closed select fire change and would load every example on the way */}
-      <details ref={menu} className="relative text-xs">
+      <details
+        ref={menu}
+        className="relative text-xs"
+        onKeyDown={(e) => e.key === 'Escape' && (e.currentTarget.open = false)}
+        onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && (e.currentTarget.open = false)}
+      >
         <summary className="cursor-pointer list-none rounded bg-slate-700 px-2 py-1 hover:bg-slate-600">{examplesLabel} ▾</summary>
         <ul className="absolute z-40 mt-1 w-64 rounded border border-slate-600 bg-slate-900 p-1 shadow-xl">
           {examples.map((x) => (
@@ -82,10 +87,15 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
         {error && <span className="text-red-400">{error}</span>}
         {resolved && (
           <span>
-            <b>{resolved.name ?? `${resolved.ra.toFixed(5)} ${resolved.dec.toFixed(5)}`}</b>
+            {/* SIMBAD ids carry catalogue prefixes: "NAME Barnard's star", "* eps Ind B", "V* R Dra" */}
+            <b>{resolved.name?.replace(/^(NAME|V\*|\*+) /, '') ?? `${resolved.ra.toFixed(5)} ${resolved.dec.toFixed(5)}`}</b>
             {resolved.otype && <span className="ml-2 text-slate-400">{resolved.otype}</span>}
             {resolved.sptype && <span className="ml-2 text-slate-400">{resolved.sptype}</span>}
-            <span className="ml-2 text-slate-400">PM {pm.toFixed(3)}″/yr</span>
+            {pm > 0 && (
+              <span className="ml-2 text-slate-400" title="Proper motion looked up for this target (SIMBAD, or the mover the field was centred on): it places the pink circle. Not the measured value.">
+                PM {pm.toFixed(3)}″/yr
+              </span>
+            )}
           </span>
         )}
         {badge}
