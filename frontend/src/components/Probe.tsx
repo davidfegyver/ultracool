@@ -227,8 +227,8 @@ export function ProbeMenu({ probe, onCentre }: { probe: ProbeCtl; onCentre: (p: 
 }
 
 /** Probe results: position, snapping and pm source, preview/full status, then badges + sentences (Explore) or tables
- * (Research), and light-curve/spectrum plots. */
-export function ProbePanel({ probe, research }: { probe: ProbeCtl; research: boolean }) {
+ * (Research), and light-curve/spectrum plots unless the page shows them elsewhere (`plots={false}`). */
+export function ProbePanel({ probe, research, plots = true }: { probe: ProbeCtl; research: boolean; plots?: boolean }) {
   const { data: d, point, busy, progress, error } = probe
   const box = useRef<HTMLDivElement>(null)
   // a measurement started from the menu: bring its progress and result into view
@@ -312,7 +312,7 @@ export function ProbePanel({ probe, research }: { probe: ProbeCtl; research: boo
         ) : (
           <FoundPanel summary={d} note={null} busy={false} />
         ))}
-      {d && (
+      {d && plots && (
         <div className="h-64 border border-slate-700">
           <PlotsPanel seq={null} probe={{ frames: d.frames, spectrum: d.spectrum }} research={research} />
         </div>

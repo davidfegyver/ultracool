@@ -139,7 +139,9 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
   const header = !research
     ? plainSpectrum(spec)
     : spec?.best
-      ? `Best match: ${spec.best.label} (p=${spec.best.prob.toFixed(2)}, χ²ᵣ=${spec.best.chi2_red.toFixed(2)}, ${spec.best.n_bins} bins)` +
+      ? `Best match: ${spec.best.label}` +
+        (spec.type_range ? ` (range ${spec.type_range[0] === spec.type_range[1] ? spec.type_range[0] : spec.type_range.join('–')})` : '') +
+        `, χ²ᵣ ${spec.best.chi2_red.toFixed(2)}, ${spec.best.n_bins} channels` +
         (spec.verdict === 'match' ? '' : ` · ${spec.verdict}`)
       : (spec?.verdict ?? '')
   // y range from the plotted values, not their error bars: one noisy edge channel would otherwise flatten the spectrum
@@ -211,7 +213,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
         )}
         {tab === 'spec' && research && spec && spec.ranking.length > 1 && (
           <span className="text-slate-500">
-            next: {spec.ranking.slice(1, 4).map((r) => `${r.label} (${r.prob.toFixed(2)})`).join(', ')}
+            next: {spec.ranking.slice(1, 4).map((r) => `${r.label} (χ²ᵣ ${r.chi2_red.toFixed(2)})`).join(', ')}
           </span>
         )}
       </div>

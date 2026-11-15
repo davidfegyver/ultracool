@@ -29,39 +29,6 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
           </p>
         </section>
 
-        {showTutorial ? (
-          <section aria-labelledby="tutorial-heading" className="rounded-lg border border-slate-700 bg-slate-900 p-4">
-            <div className="mb-3 flex items-center">
-              <h2 id="tutorial-heading" className="text-lg font-semibold">
-                How to read a flipbook
-              </h2>
-              <button className="ml-auto rounded px-2 text-sm text-slate-400 hover:bg-slate-800" onClick={dismiss}>
-                Dismiss ✕
-              </button>
-            </div>
-            <TutorialSteps onDone={dismiss} />
-          </section>
-        ) : (
-          <button className="text-sm text-sky-400 underline" onClick={() => setShowTutorial(true)}>
-            Show "How to read a flipbook"
-          </button>
-        )}
-
-        <section aria-label="Choose a mode" className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {CARDS.map((c) => (
-            <button
-              key={c.mode}
-              className="flex flex-col rounded-lg border border-slate-700 bg-slate-900 p-4 text-left hover:border-sky-500 hover:bg-slate-800 focus-visible:border-sky-400"
-              onClick={() => onMode(c.mode)}
-            >
-              <span className="text-xs tracking-wide text-slate-400 uppercase">{c.who}</span>
-              <span className="text-xl font-semibold text-sky-300">{c.title}</span>
-              <span className="mt-1 text-sm leading-relaxed text-slate-300">{c.text}</span>
-              <span className="mt-auto pt-3 text-sm text-sky-400">Start →</span>
-            </button>
-          ))}
-        </section>
-
         <section aria-labelledby="featured-heading" className="rounded-lg border border-emerald-800 bg-emerald-950/30 p-4">
           <div className="text-xs tracking-wide text-emerald-400 uppercase">Featured result</div>
           <h2 id="featured-heading" className="text-lg font-semibold">
@@ -97,6 +64,39 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
               </a>
             ))}
           </div>
+        </section>
+
+        {showTutorial ? (
+          <section aria-labelledby="tutorial-heading" className="rounded-lg border border-slate-700 bg-slate-900 p-4">
+            <div className="mb-3 flex items-center">
+              <h2 id="tutorial-heading" className="text-lg font-semibold">
+                How to read a flipbook
+              </h2>
+              <button className="ml-auto rounded px-2 text-sm text-slate-400 hover:bg-slate-800" onClick={dismiss}>
+                Dismiss ✕
+              </button>
+            </div>
+            <TutorialSteps onDone={dismiss} />
+          </section>
+        ) : (
+          <button className="text-sm text-sky-400 underline" onClick={() => setShowTutorial(true)}>
+            Show "How to read a flipbook"
+          </button>
+        )}
+
+        <section aria-label="Choose a mode" className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {CARDS.map((c) => (
+            <button
+              key={c.mode}
+              className="flex flex-col rounded-lg border border-slate-700 bg-slate-900 p-4 text-left hover:border-sky-500 hover:bg-slate-800 focus-visible:border-sky-400"
+              onClick={() => onMode(c.mode)}
+            >
+              <span className="text-xs tracking-wide text-slate-400 uppercase">{c.who}</span>
+              <span className="text-xl font-semibold text-sky-300">{c.title}</span>
+              <span className="mt-1 text-sm leading-relaxed text-slate-300">{c.text}</span>
+              <span className="mt-auto pt-3 text-sm text-sky-400">Start →</span>
+            </button>
+          ))}
         </section>
 
         <footer className="text-xs text-slate-500">

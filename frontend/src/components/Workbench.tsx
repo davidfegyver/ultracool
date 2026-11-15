@@ -212,7 +212,18 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
             </div>
           </div>
           <div className="h-72 shrink-0 border-t border-slate-700 bg-slate-900">
-            <PlotsPanel seq={seq} periods={candidatePeriods(summary.data?.variability)} research={mode === 'research'} />
+            {/* one plot panel: it follows the Results tab; keys remount it so fold/tab state does not carry over */}
+            {shownTab === 'probe' && probe.data ? (
+              <PlotsPanel
+                key="probe"
+                seq={null}
+                probe={{ frames: probe.data.frames, spectrum: probe.data.spectrum }}
+                periods={candidatePeriods(probe.data.variability)}
+                research={mode === 'research'}
+              />
+            ) : (
+              <PlotsPanel key="target" seq={seq} periods={candidatePeriods(summary.data?.variability)} research={mode === 'research'} />
+            )}
           </div>
         </div>
         <aside className="w-96 shrink-0 overflow-y-auto border-l border-slate-700 bg-slate-900">
@@ -237,7 +248,7 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
             )}
             <div id="results-panel" role={hasProbe ? 'tabpanel' : undefined} aria-labelledby={hasProbe ? `results-tab-${shownTab}` : undefined}>
               {shownTab === 'probe' ? (
-                <ProbePanel probe={probe} research={mode === 'research'} />
+                <ProbePanel probe={probe} research={mode === 'research'} plots={false} />
               ) : mode === 'explore' ? (
                 <FoundPanel summary={summary.data} note={summary.note} busy={summary.busy} />
               ) : (

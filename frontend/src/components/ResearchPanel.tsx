@@ -109,7 +109,12 @@ export function PhotometryTables({ color: c, variability: v, spectrum: s }: Part
       {s && (
         <>
           <H>Spectrum ({s.verdict})</H>
-          <Table rows={s.ranking.map((r) => [r.label, `p=${r.prob.toFixed(2)} χ²ᵣ=${r.chi2_red.toFixed(2)} n=${r.n_bins}`])} />
+          <Table
+            rows={[
+              ...(s.type_range ? [['Type range', s.type_range[0] === s.type_range[1] ? s.type_range[0] : s.type_range.join('–')] as [string, string]] : []),
+              ...s.ranking.map((r): [string, string] => [r.label, `χ²ᵣ=${r.chi2_red.toFixed(2)} n=${r.n_bins}`]),
+            ]}
+          />
         </>
       )}
     </>

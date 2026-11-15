@@ -108,6 +108,8 @@ export type Spectrum = {
   ranking: SpecFit[]
   binned: { wavelength_um: number; flambda: number; err: number }[]
   template_curve: { label: string; wavelength_um: number[]; flambda: number[] } | null
+  /** [earliest, latest] spectral type consistent with the fit (incl. the method's typical error); absent without a fit */
+  type_range?: [string, string] | null
 }
 export const getSpectrum = (id: string) => get<Spectrum>(`/api/sequences/${id}/spectrum`)
 
