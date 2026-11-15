@@ -1,0 +1,83 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T07:46:41 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T07:46:41	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2f355%2fepphot&-c=359.6165529+-52.303748&-c.rs=3&-out.all&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=359.616553-52.303748,rs=3.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_1355
+#Name: I/355
+#Title: Gaia DR3 Part 1. Main source (Gaia Collaboration, 2022)
+#INFO	ivoid=ivo://cds.vizier/i/355	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/i/355	    IVOID of underlying data collection
+#INFO	creator=Gaia collaboration	    First author or institution
+#INFO	cites=bibcode:2022yCat.1355....0G	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2022	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/I/355	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.1355	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-12-12	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2016.000:	ICRS
+#Table	I_355_epphot:
+#Name: I/355/epphot
+#Title: Light curves for a given object in bands G, BP and RP (555868797 rows) (epoch_photometry)
+#Column	_r	(F5.3)	Distance from center (359.61655290000-52.30374800000)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	Source	(I19)	Unique source identifier (unique within a particular Data Release) (source_id)	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F15.11)	Right ascension (ICRS) at Ep=2016.0 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2016.0 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	TransitID	(I17)	Transit unique identifier (transit_id)	[ucd=meta.id]
+#Column	TimeG	(F11.6)	? Transit averaged G band observing time JD-2455197.5 (g_transit_time)	[ucd=time.epoch;stat.mean]
+#Column	FG	(D14.7)	? Transit averaged G band flux (g_transit_flux)	[ucd=phot.flux;em.opt]
+#Column	e_FG	(D14.7)	? Transit averaged G band flux error (g_transit_flux_error)	[ucd=stat.error;phot.flux;em.opt]
+#Column	RFG	(D12.5)	? Transit averaged G band flux divided by its error (g_transit_flux_over_error)	[ucd=stat.snr;phot.flux;em.opt]
+#Column	Gmag	(F9.6)	? Transit averaged G band Vega magnitude (g_transit_mag)	[ucd=phot.mag;em.opt]
+#Column	NG	(I1)	[0-9] Number of CCD observations contributing to transit averaged G band flux (g_transit_n_obs)	[ucd=meta.number]
+#Column	TimeBP	(F9.4)	? BP CCD transit observing time JD-2455197.5 (bp_obs_time)	[ucd=time.epoch;stat.mean]
+#Column	FBP	(D14.7)	? BP band flux (bp_flux)	[ucd=phot.flux;em.opt.B]
+#Column	e_FBP	(D14.7)	? BP band flux error (bp_flux_error)	[ucd=stat.error;phot.flux;em.opt.B]
+#Column	RFBP	(D12.5)	? BP band flux divided by its error (bp_flux_over_error)	[ucd=stat.snr;phot.flux;em.opt.B]
+#Column	BPmag	(F9.6)	? BP band Vega magnitude (bp_mag)	[ucd=phot.mag;em.opt.B]
+#Column	TimeRP	(F9.4)	? RP CCD transit observing time JD-2455197.5 (rp_obs_time)	[ucd=time.epoch;stat.mean]
+#Column	FRP	(D14.7)	? RP band flux (rp_flux)	[ucd=phot.flux;em.opt.R]
+#Column	e_FRP	(D14.7)	? RP band flux error (rp_flux_error)	[ucd=stat.error;phot.flux;em.opt.R]
+#Column	RFRP	(D12.5)	? RP band flux divided by its error (rp_flux_over_error)	[ucd=stat.snr;phot.flux;em.opt.R]
+#Column	RPmag	(F9.6)	? RP band Vega magnitude (rp_mag)	[ucd=phot.mag;em.opt.R]
+#Column	noisyFlag	(I1)	[0/1] G band flux scatter larger than expected by photometry processing (all CCDs considered) (photometry_flag_noisy_data)	[ucd=meta.code.status]
+#Column	SMuFlag	(I1)	[0/1] SM transit unavailable by photometry processing (photometry_flag_sm_unavailable)	[ucd=meta.code.status]
+#Column	AF1uFlag	(I1)	[0/1] AF1 transit unavailable by photometry processing (photometry_flag_af1_unavailable)	[ucd=meta.code.status]
+#Column	AF2uFlag	(I1)	[0/1] AF2 transit unavailable by photometry processing (photometry_flag_af2_unavailable)	[ucd=meta.code.status]
+#Column	AF3uFlag	(I1)	[0/1] AF3 transit unavailable by photometry processing (photometry_flag_af3_unavailable)	[ucd=meta.code.status]
+#Column	AF4uFlag	(I1)	[0/1] AF4 transit unavailable by photometry processing (photometry_flag_af4_unavailable)	[ucd=meta.code.status]
+#Column	AF5uFlag	(I1)	[0/1] AF5 transit unavailable by photometry processing (photometry_flag_af5_unavailable)	[ucd=meta.code.status]
+#Column	AF6uFlag	(I1)	[0/1] AF6 transit unavailable by photometry processing (photometry_flag_af6_unavailable)	[ucd=meta.code.status]
+#Column	AF7uFlag	(I1)	[0/1] AF7 transit unavailable by photometry processing (photometry_flag_af7_unavailable)	[ucd=meta.code.status]
+#Column	AF8uFlag	(I1)	[0/1] AF8 transit unavailable by photometry processing (photometry_flag_af8_unavailable)	[ucd=meta.code.status]
+#Column	AF9uFlag	(I1)	[0/1] AF9 transit unavailable by photometry processing (photometry_flag_af9_unavailable)	[ucd=meta.code.status]
+#Column	BPuFlag	(I1)	[0/1] BP transit unavailable by photometry processing (photometry_flag_bp_unavailable)	[ucd=meta.code.status]
+#Column	RPuFlag	(I1)	[0/1] RP transit unavailable by photometry processing (photometry_flag_rp_unavailable)	[ucd=meta.code.status]
+#Column	SMrFlag	(I1)	[1] SM transit rejected by photometry processing (photometry_flag_sm_reject)	[ucd=meta.code.status]
+#Column	AF1rFlag	(I1)	[0/1] AF1 transit rejected by photometry processing (photometry_flag_af1_reject)	[ucd=meta.code.status]
+#Column	AF2rFlag	(I1)	[0/1] AF2 transit rejected by photometry processing (photometry_flag_af2_reject)	[ucd=meta.code.status]
+#Column	AF3rFlag	(I1)	[0/1] AF3 transit rejected by photometry processing (photometry_flag_af3_reject)	[ucd=meta.code.status]
+#Column	AF4rFlag	(I1)	[0/1] AF4 transit rejected by photometry processing (photometry_flag_af4_reject)	[ucd=meta.code.status]
+#Column	AF5rFlag	(I1)	[0/1] AF5 transit rejected by photometry processing (photometry_flag_af5_reject)	[ucd=meta.code.status]
+#Column	AF6rFlag	(I1)	[0/1] AF6 transit rejected by photometry processing (photometry_flag_af6_reject)	[ucd=meta.code.status]
+#Column	AF7rFlag	(I1)	[0/1] AF7 transit rejected by photometry processing (photometry_flag_af7_reject)	[ucd=meta.code.status]
+#Column	AF8rFlag	(I1)	[0/1] AF8 transit rejected by photometry processing (photometry_flag_af8_reject)	[ucd=meta.code.status]
+#Column	AF9rFlag	(I1)	[0/1] AF9 transit rejected by photometry processing (photometry_flag_af9_reject)	[ucd=meta.code.status]
+#Column	BPrFlag	(I1)	[0/1] BP transit rejected by photometry processing (photometry_flag_bp_reject)	[ucd=meta.code.status]
+#Column	RPrFlag	(I1)	[0/1] RP transit rejected by photometry processing (photometry_flag_rp_reject)	[ucd=meta.code.status]
+#Column	GrVFlag	(I1)	[0/1] Average G transit photometry rejected by variability processing (variability_flag_g_reject)	[ucd=meta.code.status]
+#Column	BPrVFlag	(I1)	[0/1] BP transit photometry rejected by variability processing (variability_flag_bp_reject)	[ucd=meta.code.status]
+#Column	RPrVFlag	(I1)	[0/1] RP transit photometry rejected by variability processing (variability_flag_rp_reject)	[ucd=meta.code.status]

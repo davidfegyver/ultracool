@@ -1,0 +1,17 @@
+# mirror vizier.idia.ac.za, 20" cone on 359.6165529 -52.303748; rows = data lines
+08:05:18 J/A+A/657/A7/tablea3 rows=1
+08:05:19 J/MNRAS/522/1951/table rows=0
+08:05:21 J/MNRAS/489/5301 rows=0
+08:05:23 J/A+A/619/L8 rows=0
+08:05:25 J/A+A/669/A139 rows=0
+08:05:26 J/MNRAS/485/4423 rows=0
+08:05:28 J/A+A/674/A39 rows=0
+08:05:32 J/ApJS/271/55 rows=0
+08:05:34 J/ApJS/253/7 rows=0
+08:05:36 J/AJ/167/253 rows=1
+08:05:39 J/ApJS/247/66 rows=1
+08:05:40 II/365/catwise rows=0
+08:05:41 II/367/vhs_dr5 rows=0
+08:05:42 II/371/des_dr2 rows=0
+08:05:43 I/355/paramp rows=0
+08:05:48 B/vsx/vsx rows=0

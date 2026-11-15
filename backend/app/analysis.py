@@ -29,7 +29,7 @@ from .sequences import (WISE_F0_JY, WISE_R_AP, WISE_R_IN, WISE_R_OUT, get_manife
                         wise_flux_factor)
 from .sources import (SX_GRID_R, SX_PIX_ARCSEC, SX_R_AP, WISE_ART_R_ARCSEC, _num, _rows, bright_star_artifacts,
                       catwise_cone, irsa_gator, query_frames)
-from .spectral import DOUBTFUL, EARLY_LABELS, NO_DETECTION, WARMER, classify, demote
+from .spectral import DOUBTFUL, EARLY_LABELS, NO_DETECTION, WARMER, classify, demote, spt_num
 
 log = logging.getLogger("ultracool.analysis")
 router = APIRouter()
@@ -780,7 +780,9 @@ def _plain_props(color, var, spec):
     label = spec["best"]["label"] if spec.get("best") else None
     if spec["verdict"] == "match":
         rng = spec.get("type_range")
-        s.append(f"Its SPHEREx spectrum fits a {label} brown-dwarf template best" +
+        # M8-L2 can be stars at the hydrogen-burning limit; only call L3 and later "brown-dwarf"
+        kind = "brown-dwarf" if (spt_num(label) or 0) >= 13 else "ultracool-dwarf"
+        s.append(f"Its SPHEREx spectrum fits a {label} {kind} template best" +
                  (f"; allowing for this method's typical error, its type lies between {rng[0]} and {rng[1]}."
                   if rng and rng[0] != rng[1] else
                   _runner_up(spec["ranking"])))
@@ -811,7 +813,8 @@ def _plain_props(color, var, spec):
 
 # bump when the summary changes: cached summary.json files are recomputed on their next request (seconds per
 # field, no new image downloads; PIPELINE_VERSION is for the frames). 2: neighbour-aware SPHEREx spectrum.
-SUMMARY_VERSION = 2
+# 3: 'ultracool-dwarf' instead of 'brown-dwarf' template wording for M8-L2 matches.
+SUMMARY_VERSION = 3
 
 
 def _read_keyed(path, key):

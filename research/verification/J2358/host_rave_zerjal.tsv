@@ -1,0 +1,252 @@
+## III/283/*
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T07:53:35 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T07:53:35	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=III%2f283%2f%2a&-c=359.62973049+-52.30166686&-c.rs=5&-out.all&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	CatalogsExamined=19	
+#  19 catalogues with potential matches were examined.
+#
+#INFO	-c=359.629730-52.301667,rs=5.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_3283
+#Name: III/283
+#Title: RAVE 6th data release (Steinmetz+, 2020)
+#INFO	ivoid=ivo://cds.vizier/iii/283	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/iii/283	    IVOID of underlying data collection
+#INFO	creator=Steinmetz M.	    First author or institution
+#INFO	cites=bibcode:2020yCat.3283....0S	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/III/283	    Dataset landing page
+#INFO	publication_date=2021-10-21	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	III_283_ravedr6:
+#Name: III/283/ravedr6
+#Title: RAVE DR6 master file and classification and observation diagnostic data (ravedr6.dr6_sparv, ravedr6.dr6_classification and ravedr6.dr6_obsdata)
+#Column	_r	(F5.3)	Distance from center (359.62973049-52.30166686)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Sp	(I3)	Display the spectrum data for this source if any	[ucd=meta.ref.url]
+#Column	ObsID	(A21)	Unique Identifier for RAVE objects, Observation Date, Fieldname, Fibernumber (rave_obs_id)	[ucd=meta.id;obs]
+#Column	IRFM	(I3)	Display IR data if any (link to irfm table)	[ucd=meta.ref.url]
+#Column	ID	(A16)	Identifier (J2000 GCS) (raveid)	[ucd=meta.id;meta.main]
+#Column	objID	(A16)	Object identifier (objectid)	[ucd=meta.id]
+#Column	HRV	(F8.2)	[-3687/3010] Heliocentric radial velocity (hrv_sparv)	[ucd=spect.dopplerVeloc;pos.heliocentric]
+#Column	e_HRV	(F7.2)	[0/1207] HRV uncertainty (hrv_error_sparv)	[ucd=stat.error]
+#Column	R	(F6.2)	[0/205] Tonry-Davis R correlation coefficient (correlation_coeff_sparv)	[ucd=stat.correlation]
+#Column	cHRV	(F6.2)	[-37.7/49.3] Zero point correction applied Heliocentric Radial Velocity (correction_rv_sparv)	[ucd=phys.veloc;arith.diff]
+#Column	Chi2	(F9.2)	[59/596615] Chi square from SPARV pipeline (chisq_sparv)	[ucd=stat.fit.chi2]
+#Column	S/N	(F6.2)	[1/764] Signal/Noise Ratio (snr_med_sparv)	[ucd=stat.snr]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	P	(A1)	Primary classification flag (flag1_class) (1)	[ucd=meta.code]
+#Column	S	(A1)	Secondary classification flag (flag2_class) (1)	[ucd=meta.code]
+#Column	T	(A1)	Tertiary classification flag (flag3_class) (1)	[ucd=meta.code]
+#Column	w_P	(F7.4)	[0.16/1]? Weight of the primary classification flag (w1_class)	[ucd=stat.weight]
+#Column	w_S	(E11.4)	[0/0.5]? Weight of the secondary classification flag (w2_class)	[ucd=stat.weight]
+#Column	w_T	(E11.4)	[0/0.33]? Weight of the tertiary classification flag (w3_class)	[ucd=stat.weight]
+#Column	RAJ2000	(F12.8)	Right ascension (J2000) (ra_input)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F12.8)	[-87.6/27.8] Declination (J2000) (dec_input)	[ucd=pos.eq.dec;meta.main]
+#Column	Field	(A16)	Observed area of one ECHIDNA observation	[ucd=phys.area;obs]
+#Column	Obs.date	(A10)	Observation Date (obsdate)	[ucd=time.epoch;obs]
+#Column	FName	(A7)	Field name, derived from center of observed Field (RA/Dec) (fieldname)	[ucd=obs.field]
+#Column	Fiber	(I3)	[1/150] Instrument fiber number (2df) (fibernumber)	[ucd=meta.number;instr]
+#Column	Obs.st	(A10)	Universal time, start of observation (ut_start)	[ucd=time.epoch]
+#Column	Obs.end	(A10)	Universal time, end of observation (ut_end)	[ucd=time.epoch]
+#Column	Stsid	(A10)	Local Sideral Time at start of exposure (lst_start)	[ucd=time.epoch]
+#Column	Endsid	(A10)	Local Sideral Time at end of exposure (lst_end)	[ucd=time.epoch]
+#Column	Exp	(F10.4)	[20/14871] Time duration (exposure_time)	[ucd=time.duration]
+#Column	RAPdeg	(F9.5)	Field plate center right ascension (ra_plate)	[ucd=pos.eq.ra]
+#Column	DEPdeg	(F12.8)	Field plate center declination (dec_plate)	[ucd=pos.eq.dec]
+#Column	Plate	(I1)	[1/3] Number of fieldplate on instrument (platenumber)	[ucd=meta.number]
+#Column	Airmass	(F7.4)	[1/13.4] Airmass	[ucd=obs.airMass]
+#Column	LPhase	(F9.4)	[0/1]? Lunar phase (lunar_phase)	[ucd=time.phase]
+#Column	Pix	(I9)	[491/201326160] Hierarchical Equal-Area iso-Latitude Pixelisation value (N_side=4096) (healpix4096)	[ucd=meta.number]
+#Column	Cluster	(a12)	Cluster flag	[ucd=meta.id.parent]
+#Column	Nrep	(I2)	[1/13] Number of repeat observation of a stellar object (n_repeats)	[ucd=meta.number]
+#Column	Ftpr	(I1)	[0/1] From (tbd) (1=star in the RAVE footprint, NULL otherwise) (footprint_flag)	[ucd=meta.code]
+#Column	posX	(D14.7)	Spoint provides quick positional matches, especially for cone searches (pos1)	[ucd=pos]
+#Column	posY	(D14.7)	Spoint provides quick positional matches, especially for cone searches (pos2)	[ucd=pos]
+_r	recno	Sp	ObsID	IRFM	ID	objID	HRV	e_HRV	R	cHRV	Chi2	S/N	Simbad	P	S	T	w_P	w_S	w_T	RAJ2000	DEJ2000	Field	Obs.date	FName	Fiber	Obs.st	Obs.end	Stsid	Endsid	Exp	RAPdeg	DEPdeg	Plate	Airmass	LPhase	Pix	Cluster	Nrep	Ftpr	posX	posY
+arcsec	 	 	 	 	 	 	km/s	km/s	 	km/s	 	 	 	 	 	 	 	 	 	deg	deg	 	"Y:M:D"	 	 	"h:m:s"	"h:m:s"	"h:m:s"	"h:m:s"	s	deg	deg	 	 	 	 	 	 	 	arcsec	arcsec
+-----	--------	---	---------------------	---	----------------	----------------	--------	-------	------	------	---------	------	------	-	-	-	-------	-----------	-----------	------------	------------	----------------	----------	-------	---	----------	----------	----------	----------	----------	---------	------------	-	-------	---------	---------	------------	--	-	--------------	--------------
+1.700	   44692	  1	20041025_2351m52_125 	  1	J235830.9-521806	C2358309-521806 	   -8.04	   1.00	 65.58	 -0.35	   935.70	 48.99	Simbad	n	e	 	 0.7887	 2.1126e-01	           	359.62895833	-52.30166667	20041025_2351m52	2004-10-25	2351m52	125	11:14:58.0	12:48:01.0	23:27:38.9	01:05:09.7	 3899.8140	357.95000	-52.02722222	2	 1.1000	   0.9000	189809138	            	 1	1	 6.2767094e+00	-9.1283629e-01
+
+#Coosys	H_2015.500:	ICRS
+#Table	III_283_xgaia2:
+#Name: III/283/xgaia2
+#Title: Rave DR6 cross-match with Gaia DR2 (ravedr6.dr6_x_gaiadr2)
+#Column	_r	(F5.3)	Distance from center (359.62973049000-52.30166686000)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	ObsID	(A21)	Unique Identifier for RAVE objects, Observation Date, Fieldname, Fibernumber (rave_obs_id)	[ucd=meta.id;meta.main]
+#Column	Gaia	(I19)	Gaia DR2 identifier (source_id)	[ucd=meta.id.cross]
+#Column	ID	(A28)	Unique source designation (designation)	[ucd=meta.id]
+#Column	Epoch	(F6.1)	[2015.5] Epoch of observation (ref_epoch)	[ucd=time.epoch]
+#Column	RA_ICRS	(F15.11)	Gaia DR2 barycentric right ascension (ICRS) at Epoch=2015.5 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F8.5)	[0.006/73] RAdeg uncertainty (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F15.11)	[-87.6/27.8] Gaia DR2 barycentric declination (ICRS) at Epoch=2015.5 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F8.5)	[0.007/79.5] DEdeg uncertainty (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	plx	(E10.3)	[-47.3/312.3]? Gaia DR2 parallax (parallax)	[ucd=pos.parallax.trig]
+#Column	e_plx	(F6.3)	[0.009/2.1]? Parallax uncertainty (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(E10.3)	[-1730/1459]? Gaia DR2 proper motion in right ascension direction	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.3)	[0.01/3]? pmRA uncertainty (pmra_error)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(E10.3)	[-2697/1253]? Gaia DR2 proper motion in declination direction (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	[0.013/2.5]? pmDE uncertainty (pmdec_error)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Nmatch	(I3)	[5/340] Amount of observations matched to this source (matched_observations)	[ucd=meta.number]
+#Column	Dup	(A5)	Gaia DR2 source with duplicate sources note (duplicated_source)	[ucd=meta.code]
+#Column	NG	(I4)	[26/2310] Gaia DR2 number of observations contributing to G photometry (phot_g_n_obs)	[ucd=meta.number]
+#Column	FG	(F14.3)	[108/2e+09] Gaia DR2 G-band mean flux (phot_g_mean_flux)	[ucd=phot.flux.density;em.opt]
+#Column	e_FG	(F12.3)	[0.8/1.1e+07] FG uncertainty (phot_g_mean_flux_error)	[ucd=stat.error]
+#Column	Gmag	(F6.3)	[2.4/20.6] Gaia DR2 G-band mean magnitude (phot_g_mean_mag)	[ucd=phot.mag;em.opt]
+#Column	HRV	(E9.2)	[-490/587]? Heliocentric radial velocity (radial_velocity)	[ucd=spect.dopplerVeloc;pos.heliocentric]
+#Column	e_HRV	(F5.2)	[0.1/20]? HRV uncertainty (radial_velocity_error)	[ucd=stat.error]
+#Column	Nrv	(I3)	[0/151] Number of transits used to compute radial velocity (rv_nb_transits)	[ucd=meta.number]
+#Column	Teff	(I4)	[3600/6750]? Effective temperature f the template used to compute radial velocity (rv_template_teff)	[ucd=spect.dopplerVeloc]
+#Column	logg	(F4.1)	[0/5]? Log of surface gravity of the template used to compute radial velocity (rv_template_logg)	[ucd=spect.dopplerVeloc]
+#Column	[Fe/H]	(F5.2)	[-5/0.5]? Log of Fe/H of the template used to compute radial velocity (rv_template_fe_h)	[ucd=spect.dopplerVeloc]
+#Column	Var	(A13)	Photometric variability flag ("VARIABLE"=4498 occurrences) (phot_variable_flag)	[ucd=meta.code;src.var]
+#Column	_RA.icrs	(F24.20)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F25.21)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+_r	recno	ObsID	Gaia	ID	Epoch	RA_ICRS	e_RA_ICRS	DE_ICRS	e_DE_ICRS	plx	e_plx	pmRA	e_pmRA	pmDE	e_pmDE	Nmatch	Dup	NG	FG	e_FG	Gmag	HRV	e_HRV	Nrv	Teff	logg	[Fe/H]	Var	_RA.icrs	_DE.icrs
+arcsec	 	 	 	 	yr	deg	deg	deg	deg	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	 	 	 	e/s	e/s	mag	km/s	km/s	 	K	[cm/s2]	[Sun]	 	deg	deg
+-----	--------	---------------------	-------------------	----------------------------	------	---------------	--------	---------------	--------	----------	------	----------	------	----------	------	---	-----	----	--------------	------------	------	---------	-----	---	----	----	-----	-------------	------------------------	-------------------------
+0.052	   44771	20041025_2351m52_125 	6521792325832957440	Gaia DR2 6521792325832957440	2015.5	359.62970680797	 0.01694	-52.30166768023	 0.01854	 1.279e+01	 0.028	 1.038e+02	 0.035	 6.237e+00	 0.036	 57	False	 429	    526022.731	     392.556	11.386	-7.13e+00	 0.33	 23	4500	 4.5	 0.00	NOT_AVAILABLE	359.62897590008901715919	-52.301694530298000529456
+
+#Coosys	H_2016.000:	ICRS
+#Table	III_283_xgaiae3:
+#Name: III/283/xgaiae3
+#Title: Crossmatch RAVE DR6 to Gaia EDR3 (ravedr6.dr6_x_gaiaedr3)
+#Column	_r	(F5.3)	Distance from center (359.62973049000-52.30166686000)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	ObsID	(A21)	Unique Identifier for RAVE objects, Observation Date, Fieldname, Fibernumber (rave_obs_id)	[ucd=meta.id;meta.main]
+#Column	Gaiae3	(I19)	Gaia EDR3 source identifier (source_id)	[ucd=meta.id.cross]
+#Column	ID	(A29)	Identifier (designation)	[ucd=meta.id]
+#Column	Epoch	(I4)	[2016] Epoch of observation (ref_epoch)	[ucd=time.epoch]
+#Column	RA_ICRS	(F15.11)	Gaia EDR3 barycentric right ascension (ICRS) at Epoch=2016.0 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F8.5)	[0.003/98.6] RAdeg uncertainty (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F15.11)	[-87.6/27.8] Gaia EDR3 barycentric declination (ICRS) at Epoch=2016.0 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F8.5)	[0.004/98] DEdeg uncertainty (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	plx	(F7.3)	[-4.9/122]? Gaia EDR3 parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F6.3)	[0.007/1.8]? Gaia parallax uncertainty (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(E10.3)	[-702/469]? Gaia EDR3 proper motion in right ascension direction (pmRA*cosDE)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.3)	[0.005/2.5]? PmRA uncertainty (pmra_error)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(E10.3)	[-540/829]? Gaia EDR3 proper motion in declination direction (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	[0.005/2.4]? PmDE uncertainty (pmdec_error)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Dup	(A5)	Gaia EDR3 source with duplicate sources note (duplicated_source)	[ucd=meta.code]
+#Column	NG	(I4)	[0/2241] Gaia EDR3 number of observations contributing to G photometry (phot_g_n_obs)	[ucd=meta.number]
+#Column	FG	(F14.3)	[54/1.7e+09]? Gaia EDR3 G-band mean flux (phot_g_mean_flux)	[ucd=phot.flux.density;em.opt]
+#Column	e_FG	(F11.3)	[0.5/5.4e+06]? FG uncertainty (phot_g_mean_flux_error)	[ucd=stat.error]
+#Column	Gmag	(F7.3)	[2.6/21.4]? Gaia EDR3 G-band mean magnitude (phot_g_mean_mag)	[ucd=phot.mag;em.opt]
+#Column	_RA.icrs	(F24.20)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F25.21)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+_r	recno	ObsID	Gaiae3	ID	Epoch	RA_ICRS	e_RA_ICRS	DE_ICRS	e_DE_ICRS	plx	e_plx	pmRA	e_pmRA	pmDE	e_pmDE	Dup	NG	FG	e_FG	Gmag	_RA.icrs	_DE.icrs
+arcsec	 	 	 	 	yr	deg	deg	deg	deg	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	 	 	e/s	e/s	mag	deg	deg
+-----	--------	---------------------	-------------------	-----------------------------	----	---------------	--------	---------------	--------	-------	------	----------	------	----------	------	-----	----	--------------	-----------	-------	------------------------	-------------------------
+0.000	   44771	20041025_2351m52_125 	6521792325832957440	Gaia EDR3 6521792325832957440	2016	359.62973049085	 0.00998	-52.30166686192	 0.01269	 12.845	 0.018	 1.038e+02	 0.013	 6.091e+00	 0.016	false	 660	    524548.432	    243.025	 11.388	359.62897578989901603563	-52.301693928482997364426
+
+#Table	III_283_fields:
+#Name: III/283/fields
+#Title: RAVE observation field (ravedr6.dr6_fields)
+#Column	_r	(F5.3)	Distance from center (359.629730-52.301667)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	ID	(I5)	[13017/19524] Identification number	[ucd=meta.id]
+#Column	FID	(A17)	Observation set (field)	[ucd=meta.id;meta.main]
+#Column	DOI	(A43)	Observation set DOI	[ucd=meta.id]
+#Column	Obs.date	(A10)	Observation date (obsdate)	[ucd=time.epoch;obs]
+#Column	Field	(A8)	Field name (fieldname)	[ucd=obs.field]
+#Column	Obs.start	(A10)	Observation starting time (UT) (ut_start)	[ucd=time.epoch]
+#Column	Obs.end	(A10)	Observation ending time (UT) (ut_end)	[ucd=time.epoch]
+#Column	Exp	(F9.3)	[20/14870.1] Exposure time (exposure_time)	[ucd=time.duration;obs.exposure]
+#Column	RAJ2000	(F10.6)	Field plate right ascension (J2000) (ra_plate)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F10.6)	Field plate declination (J2000) (dec_plate)	[ucd=pos.eq.dec;meta.main]
+#Column	Plate	(I1)	[1/3] Plate number (platenumber)	[ucd=meta.id;instr.plate]
+#Column	Airmass	(F6.3)	[1/13.4] Airmass	[ucd=obs.airMass]
+#Column	LPhase	(F6.3)	[0/1]? Lunar phase (lunar_phase)	[ucd=time.phase]
+## J/ApJ/835/61/*
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T07:53:37 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T07:53:37	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fApJ%2f835%2f61%2f%2a&-c=359.62973049+-52.30166686&-c.rs=5&-out.all&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	CatalogsExamined=2	
+#  2 catalogues with potential matches were examined.
+#
+#INFO	-c=359.629730-52.301667,rs=5.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_18350061
+#Name: J/ApJ/835/61
+#Title: Chromospherically active stars in RAVE. II. (Zerjal+, 2017)
+#INFO	ivoid=ivo://cds.vizier/j/apj/835/61	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/apj/835/61	    IVOID of underlying data collection
+#INFO	creator=Zerjal M.	    First author or institution
+#INFO	cites=bibcode:2017ApJ...835...61Z	    Article or Data origin sources
+#INFO	journal=ApJ	    Journal name
+#INFO	original_date=2017	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJ/835/61	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.18350061	    Dataset identifier that can be used for citation
+#INFO	publication_date=2017-10-10	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_ApJ_835_61_table4:
+#Name: J/ApJ/835/61/table4
+#Title: *List of young active RAVE dwarfs with CaII infrared triplet (CaII IRT; 8498, 8542 and 8662{AA}) emission levels and ages
+#Column	_r	(F5.3)	Distance from center (359.629730-52.301667)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	N	(I3)	Number of EWirt measurements for this star	[ucd=meta.number]
+#Column	K	(I3)	Display data for this star with known ages from literature (table 6)	[ucd=meta.ref.url]
+#Column	RAJ2000	(F10.6)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F10.6)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	SNR	(I4)	[21/2031] Signal-to-noise ratio of spectrum	[ucd=stat.snr]
+#Column	EWirt	(F5.2)	[-1.1/4] Equivalent width of CaII IRT excess emission	[ucd=spect.line.eqWidth]
+#Column	e_EWirt	(F5.2)	[0.01/0.5] EWirt uncertainty	[ucd=stat.error]
+#Column	LogAge	(F5.2)	[7/12.2] Log10 of stellar age (1)	[ucd=time.age]
+#Column	Gaia	(I3)	Display the Gaia DR1 TGAS data (I/337) within 1" if any	[ucd=meta.ref.url]
+#Column	RAVE	(A4)	Display data from RAVE DR5 (Kunder+, 2017, III/279) within 0.1"	[ucd=meta.ref.url]
+_r	recno	N	K	RAJ2000	DEJ2000	SNR	EWirt	e_EWirt	LogAge	Gaia	RAVE
+arcsec	 	 	 	deg	deg	 	0.1nm	0.1nm	 	 	
+-----	--------	---	---	----------	----------	----	-----	-----	-----	---	----
+1.700	   34752	  1	  0	359.628958	-52.301667	  69	 0.29	 0.11	 8.86	  0	RAVE
+
+#Table	J_ApJ_835_61_table6:
+#Name: J/ApJ/835/61/table6
+#Title: Table of 137 stars with known ages from the literature
+#Column	_r	(F4.2)	Distance from center (359.62973-52.30167)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	A	(I3)	Display data from the active dwarf catalog (table 4)	[ucd=meta.ref.url]
+#Column	RAJ2000	(F9.5)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	SNR	(I3)	[20/238] Signal to noise ratio per pixel	[ucd=stat.snr;instr.pixel]
+#Column	EWirt	(F5.2)	[-0.2/3.3] Equivalent width of CaII IRT excess emission	[ucd=spect.line.eqWidth]
+#Column	Age1	(F7.1)	First value of age	[ucd=time.age]
+#Column	Age2	(I4)	? Second value of age	[ucd=time.age]
+#Column	r_Age1	(A3)	Reference(s) for Age1 (and Age2) (1)	[ucd=meta.ref;pos.frame]
+#Column	Group	(a14)	Group	[ucd=meta.id.parent]
+#Column	r_Group	(A3)	Reference(s) for cluster or moving group membership (1)	[ucd=meta.ref;pos.frame]
+#Column	logR'HK1	(F5.2)	? logR'_HK_ (2)	[ucd=phot.flux;arith.ratio]
+#Column	logR'HK2	(F5.2)	? Second value of logR'_HK_ (2)	[ucd=phot.flux;arith.ratio]
+#Column	NUV-V	(F4.1)	[4.7/8.4]? NUV-V color index	[ucd=phot.color;em.UV;em.opt]
+#Column	B-V	(F5.2)	[0.1/1.6]? B-V color index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	J-K	(F5.2)	[0.2/1.1] 2MASS J-K color index	[ucd=phot.color;em.IR.J;em.IR.K]
+#Column	W1-W2	(F6.3)	[-0.2/0.5]? WISE W1-W2 color index	[ucd=phot.color;em.IR;em.IR]
+#Column	SpT	(a6)	MK spectral type	[ucd=src.spType]
+#Column	Type	(a32)	SIMBAD object type(s)	[ucd=src.class]
+#Column	WISE	(A4)	Display data from AllWISE (II/328) within 1"	[ucd=meta.ref.url]
+#Column	2M	(A2)	Display the 2MASS data (Cutri+ 2003, II/246) within 1"	[ucd=meta.ref.url]

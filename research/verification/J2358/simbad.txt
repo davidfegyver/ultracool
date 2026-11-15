@@ -1,0 +1,138 @@
+## SIMBAD cone 60" around UCD
+main_id	otype	sp_type	ra	dec	plx_value	pmra	pmdec	rvz_radvel	nbref	sep
+"2MASS J23582773-5218133"	"LM*"		359.61566380793585	-52.30374425938	11.98	103.807	6.127		2	1.957214560380385
+"UCAC4 189-203856"	"PM*"		359.62897579103	-52.30169392844001	12.8445	103.838	6.091	-6.66	11	28.32939718065165
+
+## SIMBAD ident for 2MASS J23582773-5218133
+id
+"Gaia DR3 6521791947874851968"
+"2MASS J23582773-5218133"
+"WISE J235827.88-521813.4"
+"WISEA J235827.90-521813.5"
+"CWISE J235827.96-521813.4"
+
+## SIMBAD bibcodes for 2MASS J23582773-5218133
+<?xml version="1.0" encoding="utf-8"?>
+<VOTABLE version="1.3" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/votable-1.3.xsd">
+<RESOURCE type="results">
+<INFO name="QUERY_STATUS" value="ERROR">Incorrect ADQL query: 1 unresolved identifiers: oidbibref [l.1 c.90 - l.1 c.101]!
+  - Unknown column "r.oidbibref" !</INFO>
+<INFO name="PROVIDER" value="CDS">SIMBAD TAP Service</INFO>
+<INFO  name="REQ_ID" value="S1794728037808"/>
+<INFO  name="ERROR_TYPE" value="fatal"/>
+<INFO  name="USER" value="172.234.40.166 (anonymous)"/>
+<INFO  name="ACTION" value="sync"/>
+</RESOURCE>
+</VOTABLE>
+
+## SIMBAD otypes for 2MASS J23582773-5218133
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+
+## SIMBAD mesSpT for 2MASS J23582773-5218133
+bibcode	dispsystem	mssnote	sptype	oidref	mespos
+
+## SIMBAD flux for 2MASS J23582773-5218133
+filter	flux	flux_err	bibcode
+"G"	20.922476	0.010342	"2022yCat.1355....0G"
+"J"	16.279	0.119	"2003yCat.2246....0C"
+"H"	15.526	0.169	"2003yCat.2246....0C"
+"K"	14.826	0.124	"2003yCat.2246....0C"
+
+## SIMBAD ident for UCAC4 189-203856
+id
+"TIC 201234567"
+"UCAC4 189-203856"
+"RAVE J235830.9-521806"
+"Gaia DR3 6521792325832957440"
+"WISE J235831.05-521805.9"
+"2MASS J23583095-5218061"
+"RAVE J235831.0-521806"
+"USNO-B1.0 0376-01124228"
+"Gaia DR2 6521792325832957440"
+
+## SIMBAD bibcodes for UCAC4 189-203856
+<?xml version="1.0" encoding="utf-8"?>
+<VOTABLE version="1.3" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/votable-1.3.xsd">
+<RESOURCE type="results">
+<INFO name="QUERY_STATUS" value="ERROR">Incorrect ADQL query: 1 unresolved identifiers: oidbibref [l.1 c.90 - l.1 c.101]!
+  - Unknown column "r.oidbibref" !</INFO>
+<INFO name="PROVIDER" value="CDS">SIMBAD TAP Service</INFO>
+<INFO  name="REQ_ID" value="S1794728285691"/>
+<INFO  name="ERROR_TYPE" value="fatal"/>
+<INFO  name="USER" value="172.234.40.166 (anonymous)"/>
+<INFO  name="ACTION" value="sync"/>
+</RESOURCE>
+</VOTABLE>
+
+## SIMBAD otypes for UCAC4 189-203856
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+
+## SIMBAD mesSpT for UCAC4 189-203856
+bibcode	dispsystem	mssnote	sptype	oidref	mespos
+
+## SIMBAD flux for UCAC4 189-203856
+filter	flux	flux_err	bibcode
+"R"	11.466	0.02	"2012yCat.1322....0Z"
+"B"	12.964	0.04	"2012yCat.1322....0Z"
+"V"	11.821	0.04	"2012yCat.1322....0Z"
+"g"	12.435	0.02	"2012yCat.1322....0Z"
+"r"	11.324	0.04	"2012yCat.1322....0Z"
+"i"	10.961	0.02	"2012yCat.1322....0Z"
+"J"	9.688	0.025	"2003yCat.2246....0C"
+"H"	9.094	0.023	"2003yCat.2246....0C"
+"K"	8.979	0.021	"2003yCat.2246....0C"
+"G"	11.387903	0.002801	"2022yCat.1355....0G"

@@ -1,0 +1,194 @@
+
+######## evidence_spectrum_json: {'n_bins': 86, 'lam_range': [1.028, 4.967], 'snr_median': 8.2, 'snr_max': 17.1, 'n_snr_gt3': 85, 'n_snr_gt5': 70, 'n_negative': 0}
+
+== all: 86 bins, template spread on
+  L0      chi2   88.3  chi2_red  1.04  dchi2    0.0
+  M8      chi2  104.8  chi2_red  1.23  dchi2   16.6
+  M9      chi2  111.4  chi2_red  1.31  dchi2   23.1
+  L1      chi2  120.1  chi2_red  1.41  dchi2   31.8
+  M8 β    chi2  126.3  chi2_red  1.49  dchi2   38.0
+  M9 β    chi2  134.4  chi2_red  1.58  dchi2   46.1
+  L1 β    chi2  145.0  chi2_red  1.71  dchi2   56.7
+  L0 δ    chi2  154.7  chi2_red  1.82  dchi2   66.4
+
+== all: 86 bins, template spread off
+  M9      chi2  137.9  chi2_red  1.62  dchi2    0.0
+  L0      chi2  139.9  chi2_red  1.65  dchi2    2.0
+  M9 β    chi2  164.8  chi2_red  1.94  dchi2   26.9
+  M8 β    chi2  168.2  chi2_red  1.98  dchi2   30.3
+  L1 β    chi2  178.4  chi2_red  2.10  dchi2   40.5
+  L1      chi2  178.8  chi2_red  2.10  dchi2   40.8
+  L0 δ    chi2  179.7  chi2_red  2.11  dchi2   41.8
+  M8      chi2  182.4  chi2_red  2.15  dchi2   44.4
+
+== 1.0-2.5 um: 38 bins, template spread on
+  M9      chi2   63.3  chi2_red  1.71  dchi2    0.0
+  L0      chi2   65.1  chi2_red  1.76  dchi2    1.8
+  M9 γ    chi2   65.5  chi2_red  1.77  dchi2    2.2
+  M8 β    chi2   68.8  chi2_red  1.86  dchi2    5.5
+  M8      chi2   71.2  chi2_red  1.92  dchi2    7.9
+  M9 β    chi2   73.4  chi2_red  1.98  dchi2   10.2
+  L1      chi2   79.7  chi2_red  2.15  dchi2   16.4
+  L0 δ    chi2   91.6  chi2_red  2.47  dchi2   28.3
+
+== 1.0-2.5 um: 38 bins, template spread off
+  M9      chi2   63.3  chi2_red  1.71  dchi2    0.0
+  L0      chi2   65.3  chi2_red  1.77  dchi2    2.0
+  M9 γ    chi2   66.0  chi2_red  1.78  dchi2    2.7
+  M8 β    chi2   70.5  chi2_red  1.90  dchi2    7.1
+  M8      chi2   71.9  chi2_red  1.94  dchi2    8.6
+  M9 β    chi2   74.3  chi2_red  2.01  dchi2   11.0
+  L1      chi2   80.0  chi2_red  2.16  dchi2   16.7
+  L0 δ    chi2   93.3  chi2_red  2.52  dchi2   29.9
+
+== 2.5-5.0 um: 48 bins, template spread on
+  L0      chi2   23.2  chi2_red  0.49  dchi2    0.0
+  L0 γ    chi2   24.3  chi2_red  0.52  dchi2    1.1
+  M8      chi2   33.0  chi2_red  0.70  dchi2    9.8
+  L0 β    chi2   36.1  chi2_red  0.77  dchi2   12.9
+  L1 β    chi2   37.3  chi2_red  0.79  dchi2   14.1
+  L2      chi2   38.2  chi2_red  0.81  dchi2   15.0
+  L1      chi2   40.6  chi2_red  0.86  dchi2   17.4
+  M9      chi2   42.0  chi2_red  0.89  dchi2   18.7
+
+== 2.5-5.0 um: 48 bins, template spread off
+  L0 γ    chi2   53.3  chi2_red  1.14  dchi2    0.0
+  L0 β    chi2   60.9  chi2_red  1.30  dchi2    7.6
+  M9      chi2   65.9  chi2_red  1.40  dchi2   12.5
+  L1 β    chi2   66.1  chi2_red  1.41  dchi2   12.8
+  L0      chi2   74.4  chi2_red  1.58  dchi2   21.0
+  M9 β    chi2   81.1  chi2_red  1.72  dchi2   27.7
+  M8 β    chi2   82.5  chi2_red  1.76  dchi2   29.2
+  L0 δ    chi2   86.4  chi2_red  1.84  dchi2   33.1
+
+== errors x1.5: 86 bins, template spread on
+  L0      chi2   45.3  chi2_red  0.53  dchi2    0.0
+  M9      chi2   54.4  chi2_red  0.64  dchi2    9.0
+  M8      chi2   55.1  chi2_red  0.65  dchi2    9.7
+  L1      chi2   61.9  chi2_red  0.73  dchi2   16.5
+  M8 β    chi2   63.2  chi2_red  0.74  dchi2   17.9
+  M9 β    chi2   65.4  chi2_red  0.77  dchi2   20.0
+  L1 β    chi2   70.2  chi2_red  0.83  dchi2   24.8
+  L0 δ    chi2   72.8  chi2_red  0.86  dchi2   27.5
+
+== field-gravity standards only: 86 bins, template spread on
+  L0      chi2   88.3  chi2_red  1.04  dchi2    0.0
+  M8      chi2  104.8  chi2_red  1.23  dchi2   16.6
+  M9      chi2  111.4  chi2_red  1.31  dchi2   23.1
+  L1      chi2  120.1  chi2_red  1.41  dchi2   31.8
+  L2      chi2  159.6  chi2_red  1.88  dchi2   71.3
+  L3      chi2  252.4  chi2_red  2.97  dchi2  164.1
+  L4      chi2  320.5  chi2_red  3.77  dchi2  232.2
+  L7      chi2  384.2  chi2_red  4.52  dchi2  295.9
+
+== S/N>5 bins only: 70 bins, template spread on
+  L0      chi2   81.2  chi2_red  1.18  dchi2    0.0
+  M8      chi2   93.9  chi2_red  1.36  dchi2   12.6
+  M9      chi2  102.3  chi2_red  1.48  dchi2   21.1
+  L1      chi2  113.2  chi2_red  1.64  dchi2   32.0
+  M8 β    chi2  114.9  chi2_red  1.67  dchi2   33.7
+  M9 β    chi2  123.5  chi2_red  1.79  dchi2   42.2
+  L1 β    chi2  134.1  chi2_red  1.94  dchi2   52.8
+  L0 δ    chi2  137.9  chi2_red  2.00  dchi2   56.6
+
+chi2 curve (spread on):  {'M8': 104.8, 'M9': 111.4, 'L0': 88.3, 'L1': 120.1, 'L2': 159.6, 'L3': 252.4, 'L4': 320.5, 'L5': 512.8, 'L6': 427.2, 'L7': 384.2, 'L8': 674.6, 'L9': 697.1, 'T0': 499.6, 'T1': 420.9, 'T2': 627.8}
+chi2 curve (spread off): {'M8': 182.4, 'M9': 137.9, 'L0': 139.9, 'L1': 178.8, 'L2': 280.3, 'L3': 404.4, 'L4': 661.4, 'L5': 856.2, 'L6': 769.3, 'L7': 1185.6, 'L8': 1407.7, 'L9': 1696.8, 'T0': 1483.6, 'T1': 1714.6, 'T2': 2006.4}
+bootstrap best field standard (spread on):  {'L0': 442, 'M8': 57, 'M9': 1}
+bootstrap best field standard (spread off): {'M9': 296, 'L0': 203, 'M8': 1}
+
+######## dev_api_now: {'n_bins': 86, 'lam_range': [1.028, 4.967], 'snr_median': 8.2, 'snr_max': 17.1, 'n_snr_gt3': 85, 'n_snr_gt5': 70, 'n_negative': 0}
+
+== all: 86 bins, template spread on
+  L0      chi2   88.3  chi2_red  1.04  dchi2    0.0
+  M8      chi2  104.8  chi2_red  1.23  dchi2   16.6
+  M9      chi2  111.4  chi2_red  1.31  dchi2   23.1
+  L1      chi2  120.1  chi2_red  1.41  dchi2   31.8
+  M8 β    chi2  126.3  chi2_red  1.49  dchi2   38.0
+  M9 β    chi2  134.4  chi2_red  1.58  dchi2   46.1
+  L1 β    chi2  145.0  chi2_red  1.71  dchi2   56.7
+  L0 δ    chi2  154.7  chi2_red  1.82  dchi2   66.4
+
+== all: 86 bins, template spread off
+  M9      chi2  137.9  chi2_red  1.62  dchi2    0.0
+  L0      chi2  139.9  chi2_red  1.65  dchi2    2.0
+  M9 β    chi2  164.8  chi2_red  1.94  dchi2   26.9
+  M8 β    chi2  168.2  chi2_red  1.98  dchi2   30.3
+  L1 β    chi2  178.4  chi2_red  2.10  dchi2   40.5
+  L1      chi2  178.8  chi2_red  2.10  dchi2   40.8
+  L0 δ    chi2  179.7  chi2_red  2.11  dchi2   41.8
+  M8      chi2  182.4  chi2_red  2.15  dchi2   44.4
+
+== 1.0-2.5 um: 38 bins, template spread on
+  M9      chi2   63.3  chi2_red  1.71  dchi2    0.0
+  L0      chi2   65.1  chi2_red  1.76  dchi2    1.8
+  M9 γ    chi2   65.5  chi2_red  1.77  dchi2    2.2
+  M8 β    chi2   68.8  chi2_red  1.86  dchi2    5.5
+  M8      chi2   71.2  chi2_red  1.92  dchi2    7.9
+  M9 β    chi2   73.4  chi2_red  1.98  dchi2   10.2
+  L1      chi2   79.7  chi2_red  2.15  dchi2   16.4
+  L0 δ    chi2   91.6  chi2_red  2.47  dchi2   28.3
+
+== 1.0-2.5 um: 38 bins, template spread off
+  M9      chi2   63.3  chi2_red  1.71  dchi2    0.0
+  L0      chi2   65.3  chi2_red  1.77  dchi2    2.0
+  M9 γ    chi2   66.0  chi2_red  1.78  dchi2    2.7
+  M8 β    chi2   70.5  chi2_red  1.90  dchi2    7.1
+  M8      chi2   71.9  chi2_red  1.94  dchi2    8.6
+  M9 β    chi2   74.3  chi2_red  2.01  dchi2   11.0
+  L1      chi2   80.0  chi2_red  2.16  dchi2   16.7
+  L0 δ    chi2   93.3  chi2_red  2.52  dchi2   29.9
+
+== 2.5-5.0 um: 48 bins, template spread on
+  L0      chi2   23.2  chi2_red  0.49  dchi2    0.0
+  L0 γ    chi2   24.3  chi2_red  0.52  dchi2    1.1
+  M8      chi2   33.0  chi2_red  0.70  dchi2    9.8
+  L0 β    chi2   36.1  chi2_red  0.77  dchi2   12.9
+  L1 β    chi2   37.3  chi2_red  0.79  dchi2   14.1
+  L2      chi2   38.2  chi2_red  0.81  dchi2   15.0
+  L1      chi2   40.6  chi2_red  0.86  dchi2   17.4
+  M9      chi2   42.0  chi2_red  0.89  dchi2   18.7
+
+== 2.5-5.0 um: 48 bins, template spread off
+  L0 γ    chi2   53.3  chi2_red  1.14  dchi2    0.0
+  L0 β    chi2   60.9  chi2_red  1.30  dchi2    7.6
+  M9      chi2   65.9  chi2_red  1.40  dchi2   12.5
+  L1 β    chi2   66.1  chi2_red  1.41  dchi2   12.8
+  L0      chi2   74.4  chi2_red  1.58  dchi2   21.0
+  M9 β    chi2   81.1  chi2_red  1.72  dchi2   27.7
+  M8 β    chi2   82.5  chi2_red  1.76  dchi2   29.2
+  L0 δ    chi2   86.4  chi2_red  1.84  dchi2   33.1
+
+== errors x1.5: 86 bins, template spread on
+  L0      chi2   45.3  chi2_red  0.53  dchi2    0.0
+  M9      chi2   54.4  chi2_red  0.64  dchi2    9.0
+  M8      chi2   55.1  chi2_red  0.65  dchi2    9.7
+  L1      chi2   61.9  chi2_red  0.73  dchi2   16.5
+  M8 β    chi2   63.2  chi2_red  0.74  dchi2   17.9
+  M9 β    chi2   65.4  chi2_red  0.77  dchi2   20.0
+  L1 β    chi2   70.2  chi2_red  0.83  dchi2   24.8
+  L0 δ    chi2   72.8  chi2_red  0.86  dchi2   27.5
+
+== field-gravity standards only: 86 bins, template spread on
+  L0      chi2   88.3  chi2_red  1.04  dchi2    0.0
+  M8      chi2  104.8  chi2_red  1.23  dchi2   16.6
+  M9      chi2  111.4  chi2_red  1.31  dchi2   23.1
+  L1      chi2  120.1  chi2_red  1.41  dchi2   31.8
+  L2      chi2  159.6  chi2_red  1.88  dchi2   71.3
+  L3      chi2  252.4  chi2_red  2.97  dchi2  164.1
+  L4      chi2  320.5  chi2_red  3.77  dchi2  232.2
+  L7      chi2  384.2  chi2_red  4.52  dchi2  295.9
+
+== S/N>5 bins only: 70 bins, template spread on
+  L0      chi2   81.2  chi2_red  1.18  dchi2    0.0
+  M8      chi2   93.9  chi2_red  1.36  dchi2   12.6
+  M9      chi2  102.3  chi2_red  1.48  dchi2   21.1
+  L1      chi2  113.2  chi2_red  1.64  dchi2   32.0
+  M8 β    chi2  114.9  chi2_red  1.67  dchi2   33.7
+  M9 β    chi2  123.5  chi2_red  1.79  dchi2   42.2
+  L1 β    chi2  134.1  chi2_red  1.94  dchi2   52.8
+  L0 δ    chi2  137.9  chi2_red  2.00  dchi2   56.6
+
+chi2 curve (spread on):  {'M8': 104.8, 'M9': 111.4, 'L0': 88.3, 'L1': 120.1, 'L2': 159.6, 'L3': 252.4, 'L4': 320.5, 'L5': 512.8, 'L6': 427.2, 'L7': 384.2, 'L8': 674.6, 'L9': 697.1, 'T0': 499.6, 'T1': 420.9, 'T2': 627.8}
+chi2 curve (spread off): {'M8': 182.4, 'M9': 137.9, 'L0': 139.9, 'L1': 178.8, 'L2': 280.3, 'L3': 404.4, 'L4': 661.4, 'L5': 856.2, 'L6': 769.3, 'L7': 1185.6, 'L8': 1407.7, 'L9': 1696.8, 'T0': 1483.6, 'T1': 1714.6, 'T2': 2006.4}
+bootstrap best field standard (spread on):  {'L0': 442, 'M8': 57, 'M9': 1}
+bootstrap best field standard (spread off): {'M9': 296, 'L0': 203, 'M8': 1}

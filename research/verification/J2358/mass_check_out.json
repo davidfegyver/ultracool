@@ -1,0 +1,67 @@
+{
+ "M_Ks": 10.37,
+ "M_J": 11.82,
+ "0.1 Gyr (iso 0.1)": {
+  "from_M_Ks": 0.035,
+  "from_M_J": 0.033,
+  "from_Teff2295": 0.04,
+  "from_Teff2039": 0.033,
+  "from_Teff2551": 0.052
+ },
+ "0.2 Gyr (iso 0.2)": {
+  "from_M_Ks": 0.049,
+  "from_M_J": 0.045,
+  "from_Teff2295": 0.051,
+  "from_Teff2039": 0.043,
+  "from_Teff2551": 0.064
+ },
+ "0.3 Gyr (iso 0.3)": {
+  "from_M_Ks": 0.06,
+  "from_M_J": 0.052,
+  "from_Teff2295": 0.059,
+  "from_Teff2039": 0.049,
+  "from_Teff2551": 0.072
+ },
+ "0.5 Gyr (iso 0.5)": {
+  "from_M_Ks": 0.073,
+  "from_M_J": 0.063,
+  "from_Teff2295": 0.068,
+  "from_Teff2039": 0.059,
+  "from_Teff2551": 0.081
+ },
+ "0.8 Gyr (iso 0.8)": {
+  "from_M_Ks": 0.08,
+  "from_M_J": 0.073,
+  "from_Teff2295": 0.075,
+  "from_Teff2039": 0.068,
+  "from_Teff2551": 0.085
+ },
+ "1.0 Gyr (iso 1.0)": {
+  "from_M_Ks": 0.082,
+  "from_M_J": 0.075,
+  "from_Teff2295": 0.077,
+  "from_Teff2039": 0.07,
+  "from_Teff2551": 0.086
+ },
+ "2.0 Gyr (iso 2.0)": {
+  "from_M_Ks": 0.083,
+  "from_M_J": 0.077,
+  "from_Teff2295": 0.079,
+  "from_Teff2039": 0.075,
+  "from_Teff2551": 0.087
+ },
+ "5.0 Gyr (iso 5.0)": {
+  "from_M_Ks": 0.084,
+  "from_M_J": 0.078,
+  "from_Teff2295": 0.079,
+  "from_Teff2039": 0.075,
+  "from_Teff2551": 0.087
+ },
+ "10.0 Gyr (iso 10.0)": {
+  "from_M_Ks": 0.083,
+  "from_M_J": 0.078,
+  "from_Teff2295": 0.079,
+  "from_Teff2039": 0.075,
+  "from_Teff2551": 0.087
+ }
+}

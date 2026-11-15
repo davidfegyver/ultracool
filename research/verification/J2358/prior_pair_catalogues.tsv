@@ -1,0 +1,695 @@
+## J/A+A/657/A7/* @ 359.62973049 -52.30166686
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T07:54:26 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T07:54:26	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fA%2bA%2f657%2fA7%2f%2a&-c=359.62973049+-52.30166686&-c.rs=3&-out.all&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	CatalogsExamined=3	
+#  3 catalogues with potential matches were examined.
+#
+#INFO	-c=359.629730-52.301667,rs=3.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_36570007
+#Name: J/A+A/657/A7
+#Title: Stellar and substellar companions from Gaia EDR3 (Kervella+, 2022)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/657/a7	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/657/a7	    IVOID of underlying data collection
+#INFO	creator=Kervella P.	    First author or institution
+#INFO	cites=bibcode:2022A&A...657A...7K	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2022	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/657/A7	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36570007	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-07-15	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	J_A_A_657_A7_tablea1:
+#Name: J/A+A/657/A7/tablea1
+#Title: Proper motion anomaly of Hipparcos stars
+#Column	_r	(F4.2)	Distance from center (359.62973-52.30167)[FK5/J2000], at Epoch=J2000.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	HIP	(I6)	Hipparcos catalog number	[ucd=meta.id;meta.main]
+#Column	GaiaDR2	(I19)	? Gaia DR2 source number	[ucd=meta.id]
+#Column	GaiaEDR3	(I19)	? Gaia EDR3 source number	[ucd=meta.id]
+#Column	Name	(a23)	Common name	[ucd=meta.id]
+#Column	RAdeg	(F15.11)	? Right ascension (ICRS)	[ucd=pos.eq.ra]
+#Column	DEdeg	(F15.11)	? Declination (ICRS)	[ucd=pos.eq.dec]
+#Column	DMS	(I1)	[0/1]? Set to 1 for stars in the Hipparcos Double and Multiple cat. (I/239/h_dm_com)	[ucd=meta.code]
+#Column	DT	(A1)	[FIL] Type of DMS catalog solution (1)	[ucd=meta.code]
+#Column	DQ	(A1)	[ABCD] Quality of DMS catalog solution (2)	[ucd=meta.code.qual]
+#Column	W	(I1)	[0/1]? Set to 1 if in the WDS catalog (B/wds)	[ucd=meta.code]
+#Column	Vmag	(F6.3)	? V band magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Hpmag	(F7.4)	? Hipparcos Hp magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Hpmag	(F7.4)	? Standard error on Hp magnitude	[ucd=stat.error;phot.mag]
+#Column	Gmag	(F7.4)	? Gaia G band magnitude	[ucd=phot.mag;em.opt]
+#Column	e_Gmag	(F7.4)	? Standard error on Gaia G band magnitude	[ucd=stat.error;phot.mag]
+#Column	Kmag	(F6.3)	? 2MASS K band magnitude	[ucd=phot.mag;em.IR.K]
+#Column	e_Kmag	(F6.3)	? Standard error on 2MASS K band magnitude	[ucd=stat.error;phot.mag]
+#Column	E(B-V)	(F6.3)	? E(B-V) color excess	[ucd=phot.color.excess]
+#Column	r_E(B-V)	(A1)	[BS] Reference for E(B-V) color excess (3)	[ucd=meta.ref;pos.frame]
+#Column	SpType	(a22)	Spectral type from CDS Simbad	[ucd=src.spType]
+#Column	PlxH2	(F7.2)	? Hipparcos 2 (van Leeuwen 2007) parallax	[ucd=pos.parallax.trig]
+#Column	e_PlxH2	(F6.2)	? Standard error on Hip2 parallax	[ucd=stat.error]
+#Column	PlxG3	(F7.3)	? Gaia EDR3 parallax (ZP corrected)	[ucd=pos.parallax.trig]
+#Column	e_PlxG3	(F6.3)	? Standard error on Gaia EDR3 parallax	[ucd=stat.error]
+#Column	epsi	(F7.3)	? Gaia EDR3 excess noise (epsilon)	[ucd=stat.fit.param]
+#Column	RUWE	(F6.3)	? Gaia EDR3 renormalized unit weight error	[ucd=stat.error]
+#Column	RV	(F7.2)	Radial velocity	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F6.2)	Standard error on radial velocity	[ucd=stat.error]
+#Column	r_RV	(A3)	Reference of radial velocity (4)	[ucd=meta.ref;pos.frame]
+#Column	snrPMaHG1	(F6.2)	? Hipparcos-Gaia DR1 PMa S/N	[ucd=stat.snr]
+#Column	BinHG1	(I1)	[0/1]? Hipparcos-Gaia DR1 binary flag	[ucd=meta.code]
+#Column	pmRAH2G2	(F9.3)	? Hip2-Gaia DR2 proper motion in RA direction (pmRA*cosDE) at epoch 2015.5	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRAH2G2	(F6.3)	? Standard error on HipG2 PM in RA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDEH2G2	(F9.3)	? Hip2-Gaia DR2 proper motion in Dec direction at epoch 2015.5	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDEH2G2	(F6.3)	? Standard error on HipG2 PM in Dec	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	PMaRAH2G2	(F8.3)	? G2-HipG2 proper motion anomaly in RA direction at epoch 2015.5	[ucd=pos.pm;arith.diff]
+#Column	e_PMaRAH2G2	(F6.3)	? Standard error on G2-HG2 PMa in RA direction at epoch 2015.5	[ucd=stat.error]
+#Column	PMaDEH2G2	(F8.3)	? G2-HipG2 proper motion anomaly in Dec direction at epoch 2015.5	[ucd=pos.pm;arith.diff]
+#Column	e_PMaDEH2G2	(F6.3)	? Standard error on G2-HG2 PMa in Dec direction at epoch 2015.5	[ucd=stat.error]
+#Column	snrPMaH2G2	(F6.2)	? Signal-to-noise ratio of G2-HipG2 PMa	[ucd=stat.snr]
+#Column	BinH2G2	(I1)	[0/1]? G2-HipG2 binary flag (1 for snrPMaH2G2>3)	[ucd=meta.code]
+#Column	pmRAH2EG3a	(F9.3)	? Hip2-Gaia EDR3 proper motion in RA direction (pmRA*cosDE) at epoch 1991.25	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRAH2EG3a	(F6.3)	? Standard error on HipG3 PM in RA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDEH2EG3a	(F9.3)	? Hip2-Gaia EDR3 proper motion in Dec direction at epoch 1991.25	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDEH2EG3a	(F6.3)	? Standard error on HipG3 PM in Dec	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	PMaRAH2EG3a	(F8.3)	? Hip2-HipG3 proper motion anomaly in RA direction at epoch 1991.25	[ucd=pos.pm;arith.diff]
+#Column	e_PMaRAH2EG3a	(F7.3)	? Standard error on Hip-HG3 PMa in RA direction at epoch 1991.25	[ucd=stat.error]
+#Column	PMaDEH2EG3a	(F8.3)	? Hip2-HipG3 proper motion anomaly in Dec direction at epoch 1991.25	[ucd=pos.pm;arith.diff]
+#Column	e_PMaDEH2EG3a	(F7.3)	? Standard error on Hip-HG3 PMa in Dec direction at epoch 1991.25	[ucd=stat.error]
+#Column	snrPMaH2EG3a	(F6.2)	? Signal-to-noise ratio of Hip2-HipG3 PMa	[ucd=stat.snr]
+#Column	BinH2EG3a	(I1)	[0/1]? Hip2-HipG3 binary flag (1 for snrPMaH2EG3>3)	[ucd=meta.code]
+#Column	pmRAH2EG3b	(F9.3)	? Hip2-Gaia EDR3 proper motion in RA direction (pmRA*cosDE) at epoch 2016.0	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRAH2EG3b	(F6.3)	? Standard error on HipG3 PM in RA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDEH2EG3b	(F9.3)	? Hip2-Gaia EDR3 proper motion in Dec direction at epoch 2016.0	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDEH2EG3b	(F6.3)	? Standard error on HipG3 PM in Dec	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	PMaRAH2EG3b	(F7.3)	? G3-HipG3 proper motion anomaly in RA direction at epoch 2016.0	[ucd=pos.pm;arith.diff]
+#Column	e_PMaRAH2EG3b	(F6.3)	? Standard error on G3-HG3 PMa in RA	[ucd=stat.error]
+#Column	PMaDEH2EG3b	(F7.3)	? G3-HipG3 proper motion anomaly in Dec direction at epoch 2016.0	[ucd=pos.pm;arith.diff]
+#Column	e_PMaDEH2EG3b	(F6.3)	? Standard error on G3-HG3 PMa in Dec	[ucd=stat.error]
+#Column	snrPMaH2EG3b	(F7.2)	? Signal-to-noise ratio of G3-HipG3 PMa	[ucd=stat.snr]
+#Column	BinH2EG3b	(I1)	[0/1]? G3-HipG3 binary flag (1 for snrPMaH2EG3b>3)	[ucd=meta.code]
+#Column	dVt	(F9.2)	? Tangential velocity anomaly	[ucd=phys.veloc.transverse]
+#Column	e_dVt	(F9.2)	? Standard error on tangential velocity dVt	[ucd=stat.error]
+#Column	dVtPA	(F6.2)	? Position angle of velocity anomaly vector	[ucd=pos.posAng]
+#Column	e_dVtPA	(F5.2)	? Standard error on PA of dVt vector	[ucd=stat.error]
+#Column	OrbG3Dt	(F5.2)	? Radius of orbit with period corresponding to Gaia EDR3 observing window duration	[ucd=phys.size.radius]
+#Column	R1	(F8.2)	? Radius of primary star	[ucd=phys.size.radius]
+#Column	n_R1	(A1)	[I] I for infinity	[ucd=meta.note]
+#Column	e_R1	(F9.2)	? Standard error on radius of primary star	[ucd=stat.error]
+#Column	r_R1	(A4)	Reference for radius of primary (5)	[ucd=meta.ref;pos.frame]
+#Column	LDang	(F8.4)	? Limb darkened angular diameter	[ucd=phys.angSize]
+#Column	n_LDang	(A1)	[I] I for infinity	[ucd=meta.note]
+#Column	e_LDang	(F9.4)	? Standard error on LD angular diameter	[ucd=stat.error]
+#Column	M1	(F6.2)	? Mass of primary star	[ucd=phys.mass]
+#Column	e_M1	(F5.2)	? Standard error on mass of primary	[ucd=stat.error]
+#Column	r_M1	(A3)	Reference for mass of primary (6)	[ucd=meta.ref;pos.frame]
+#Column	M23au	(F12.2)	? Mass of companion assuming 3au orbit	[ucd=phys.mass]
+#Column	M25au	(F10.2)	? Mass of companion assuming 5au orbit	[ucd=phys.mass]
+#Column	E_M25au	(F10.2)	? Positive error bar on M2_5au	[ucd=stat.error;stat.max]
+#Column	e_M25au	(F9.2)	? Negative error bar on M2_5au	[ucd=stat.error]
+#Column	M210au	(F10.2)	? Mass of companion assuming 10au orbit	[ucd=phys.mass]
+#Column	M230au	(F9.2)	? Mass of companion assuming 30au orbit	[ucd=phys.mass]
+#Column	L	(I3)	Number of low velocity resolved companions	[ucd=meta.number]
+#Column	B	(I2)	Number of bound resolved companions	[ucd=meta.number]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Coosys	H:	ICRS
+#Table	J_A_A_657_A7_tablea2:
+#Name: J/A+A/657/A7/tablea2
+#Title: CPM candidate companions for Hipparcos stars
+#Column	_r	(F5.3)	Distance from center (359.62973049000-52.30166686000)[ICRS]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	T	(I1)	[0/1] Flag for parent (=1) or companion (=0)	[ucd=meta.code.error]
+#Column	HIP-Parent	(I6)	? Hipparcos number of parent star	[ucd=meta.id.parent]
+#Column	HIP	(I6)	? Hipparcos number of star	[ucd=meta.id;meta.main]
+#Column	EDR3-Parent	(I19)	? Gaia EDR3 source number of parent	[ucd=meta.id.parent]
+#Column	EDR3-Source	(I19)	? Gaia EDR3 source number of star	[ucd=meta.id]
+#Column	Name	(a31)	Common name	[ucd=meta.id]
+#Column	RA_ICRS	(F15.11)	Right ascension (ICRS)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS)	[ucd=pos.eq.dec;meta.main]
+#Column	rPos	(a5)	[H G PPMXL] Reference of position (H = Hip Ep=1991.25, G = EDR3 Ep=2016.0, PPMXL = PPMXL Ep=2000)	[ucd=meta.ref;pos]
+#Column	DMS	(I1)	[0/1]? Set to 1 for stars in the Hipparcos Double and Multiple cat. (I/239/h_dm_com)	[ucd=meta.code]
+#Column	W	(I1)	[0/1]? Set to 1 if in the WDS catalog (B/wds)	[ucd=meta.code]
+#Column	Vmag	(F6.3)	? V band magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Hpmag	(F7.4)	? Hipparcos Hp magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Gmag	(F7.4)	? Gaia G band magnitude	[ucd=phot.mag;em.opt]
+#Column	Kmag	(F6.3)	? 2MASS K band magnitude	[ucd=phot.mag;em.IR.K]
+#Column	E(B-V)	(F6.3)	? E(B-V) color excess	[ucd=phot.color.excess]
+#Column	r_E(B-V)	(A1)	Reference for E(B-V) color excess (1)	[ucd=meta.ref;pos.frame]
+#Column	SpType	(a23)	Spectral type from CDS Simbad	[ucd=src.spType]
+#Column	Plx	(F7.3)	? Parallax	[ucd=pos.parallax.trig]
+#Column	e_Plx	(F6.3)	? Standard error on parallax	[ucd=stat.error;pos.parallax]
+#Column	r_Plx	(A4)	Reference for parallax (2)	[ucd=meta.ref;pos.frame]
+#Column	RUWE	(F6.3)	? Gaia EDR3 renormalized unit weight error	[ucd=stat.error]
+#Column	RV	(F7.2)	? Radial velocity	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F6.2)	? Standard error on radial velocity	[ucd=stat.error]
+#Column	r_RV	(A3)	Reference of radial velocity (3)	[ucd=meta.ref;pos.frame]
+#Column	pmRA	(F9.3)	? Proper motion in right ascension	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F7.3)	? Standard error on PMRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	? Proper motion in declination	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	? Standard error on PMDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	r_pm	(a5)	Reference of proper motion (4)	[ucd=meta.ref;pos.frame]
+#Column	snrPMaG3	(F7.2)	? Signal-to-noise ratio of G3-HipG3 PMa	[ucd=stat.snr]
+#Column	BinG3	(I1)	? G3-HipG3 binary flag (1 for snrPMaG3>3)	[ucd=meta.code]
+#Column	Mass	(F6.2)	? Mass	[ucd=phys.mass]
+#Column	Radius	(F7.2)	? Radius	[ucd=phys.angSize;src]
+#Column	N	(I4)	? Number of near candidate companions	[ucd=meta.number]
+#Column	L	(I3)	? Number of low velocity companions	[ucd=meta.number]
+#Column	B	(I2)	? Number of bound candidate companions	[ucd=meta.number]
+#Column	Sep	(F7.2)	? Angular separation from parent star	[ucd=pos.angDistance]
+#Column	PA	(F6.2)	[0/360]? Position angle of candidate companion	[ucd=pos.posAng]
+#Column	LinSep	(E9.2)	? Linear separation with parent star	[ucd=pos.distance;src.orbital]
+#Column	dVtan	(F6.2)	? Differential tangential velocity with respect to parent star	[ucd=phys.veloc.transverse]
+#Column	e_dVtan	(F6.2)	? Standard error on dVtan	[ucd=stat.error]
+#Column	Vesc	(F5.2)	? Escape velocity at projected location of candidate companion	[ucd=phys.veloc.escape]
+#Column	dpmPA	(F5.2)	? Difference in position angle of PM vectors between parent and candidate	[ucd=meta.id.parent;pos.posAng;arith.diff]
+#Column	PlxSc	(F6.3)	? Parallax score of candidate companion	[ucd=pos.parallax.trig]
+#Column	BndSc	(F6.3)	? Gravitationally bound score of candidate	[ucd=stat.fit.param]
+#Column	TotSc	(F6.3)	? Total score of candidate companion	[ucd=stat.fit.param]
+#Column	LowV	(I1)	? Low tangential velocity flag	[ucd=meta.code]
+#Column	Bnd	(I1)	? Gravitationally bound candidate flag	[ucd=meta.code]
+#Table	J_A_A_657_A7_tablea3:
+#Name: J/A+A/657/A7/tablea3
+#Title: CPM candidate companions for Gaia stars within 100 pc
+#Column	_r	(F5.3)	Distance from center (359.62973049000-52.30166686000)[ICRS]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	T	(I1)	[0/1] Flag for parent (=1) or companion (=0)	[ucd=meta.code.error]
+#Column	HIP-Parent	(I6)	? Hipparcos number of parent star	[ucd=meta.id.parent]
+#Column	HIP	(I6)	? Hipparcos number of star	[ucd=meta.id;meta.main]
+#Column	EDR3-Parent	(I19)	? Gaia EDR3 source number of parent	[ucd=meta.id.parent]
+#Column	EDR3-Source	(I19)	? Gaia EDR3 source number of star	[ucd=meta.id]
+#Column	Name	(a31)	Common name	[ucd=meta.id]
+#Column	RA_ICRS	(F15.11)	Right ascension (ICRS)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS)	[ucd=pos.eq.dec;meta.main]
+#Column	rPos	(a5)	[H G PPMXL] Reference of position (H = Hip Ep=1991.25, G = EDR3 Ep=2016.0, PPMXL = PPMXL Ep=2000)	[ucd=meta.ref;pos]
+#Column	DMS	(I1)	[0/1]? Set to 1 for stars in the Hipparcos Double and Multiple cat. (I/239/h_dm_com)	[ucd=meta.code]
+#Column	W	(I1)	[0/1]? Set to 1 if in the WDS catalog (B/wds)	[ucd=meta.code]
+#Column	Vmag	(F6.3)	? V band magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Hpmag	(F7.4)	? Hipparcos Hp magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Gmag	(F7.4)	? Gaia G band magnitude	[ucd=phot.mag;em.opt]
+#Column	Kmag	(F6.3)	? 2MASS K band magnitude	[ucd=phot.mag;em.IR.K]
+#Column	E(B-V)	(F6.3)	? E(B-V) color excess	[ucd=phot.color.excess]
+#Column	r_E(B-V)	(A1)	Reference for E(B-V) color excess (1)	[ucd=meta.ref;pos.frame]
+#Column	SpType	(a23)	Spectral type from CDS Simbad	[ucd=src.spType]
+#Column	Plx	(F7.3)	? Parallax	[ucd=pos.parallax.trig]
+#Column	e_Plx	(F6.3)	? Standard error on parallax	[ucd=stat.error;pos.parallax]
+#Column	r_Plx	(A4)	Reference for parallax (2)	[ucd=meta.ref;pos.frame]
+#Column	RUWE	(F6.3)	? Gaia EDR3 renormalized unit weight error	[ucd=stat.error]
+#Column	RV	(F7.2)	? Radial velocity	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F6.2)	? Standard error on radial velocity	[ucd=stat.error]
+#Column	r_RV	(A3)	Reference of radial velocity (3)	[ucd=meta.ref;pos.frame]
+#Column	pmRA	(F9.3)	? Proper motion in right ascension	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F7.3)	? Standard error on PMRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	? Proper motion in declination	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	? Standard error on PMDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	r_pm	(a5)	Reference of proper motion (4)	[ucd=meta.ref;pos.frame]
+#Column	snrPMaG3	(F7.2)	? Signal-to-noise ratio of G3-HipG3 PMa	[ucd=stat.snr]
+#Column	BinG3	(I1)	? G3-HipG3 binary flag (1 for snrPMaG3>3)	[ucd=meta.code]
+#Column	Mass	(F6.2)	? Mass	[ucd=phys.mass]
+#Column	Radius	(F7.2)	? Radius	[ucd=phys.angSize;src]
+#Column	N	(I4)	? Number of near candidate companions	[ucd=meta.number]
+#Column	L	(I3)	? Number of low velocity companions	[ucd=meta.number]
+#Column	B	(I2)	? Number of bound candidate companions	[ucd=meta.number]
+#Column	Sep	(F7.2)	? Angular separation from parent star	[ucd=pos.angDistance]
+#Column	PA	(F6.2)	[0/360]? Position angle of candidate companion	[ucd=pos.posAng]
+#Column	LinSep	(E9.2)	? Linear separation with parent star	[ucd=pos.distance;src.orbital]
+#Column	dVtan	(F6.2)	? Differential tangential velocity with respect to parent star	[ucd=phys.veloc.transverse]
+#Column	e_dVtan	(F6.2)	? Standard error on dVtan	[ucd=stat.error]
+#Column	Vesc	(F5.2)	? Escape velocity at projected location of candidate companion	[ucd=phys.veloc.escape]
+#Column	dpmPA	(F5.2)	? Difference in position angle of PM vectors between parent and candidate	[ucd=meta.id.parent;pos.posAng;arith.diff]
+#Column	PlxSc	(F6.3)	? Parallax score of candidate companion	[ucd=pos.parallax.trig]
+#Column	BndSc	(F6.3)	? Gravitationally bound score of candidate	[ucd=stat.fit.param]
+#Column	TotSc	(F6.3)	? Total score of candidate companion	[ucd=stat.fit.param]
+#Column	LowV	(I1)	? Low tangential velocity flag	[ucd=meta.code]
+#Column	Bnd	(I1)	? Gravitationally bound candidate flag	[ucd=meta.code]
+_r	recno	T	HIP-Parent	HIP	EDR3-Parent	EDR3-Source	Name	RA_ICRS	DE_ICRS	rPos	DMS	W	Vmag	Hpmag	Gmag	Kmag	E(B-V)	r_E(B-V)	SpType	Plx	e_Plx	r_Plx	RUWE	RV	e_RV	r_RV	pmRA	e_pmRA	pmDE	e_pmDE	r_pm	snrPMaG3	BinG3	Mass	Radius	N	L	B	Sep	PA	LinSep	dVtan	e_dVtan	Vesc	dpmPA	PlxSc	BndSc	TotSc	LowV	Bnd
+arcsec	 	 	 	 	 	 	 	deg	deg	 	 	 	mag	mag	mag	mag	mag	 	 	mas	mas	 	 	km/s	km/s	 	mas/a	mas/a	mas/a	mas/a	 	 	 	Msun	Rsun	 	 	 	arcsec	deg	au	km/s	km/s	km/s	deg	 	 	 	 	
+-----	--------	-	------	------	-------------------	-------------------	-------------------------------	---------------	---------------	-----	-	-	------	-------	-------	------	------	-	-----------------------	-------	------	----	------	-------	------	---	---------	-------	---------	------	-----	-------	-	------	-------	----	---	--	-------	------	---------	------	------	-----	-----	------	------	------	-	-
+0.000	 2704911	1	      	      	6521792325832957440	6521792325832957440	2MASS J23583095-5218061        	359.62973049085	-52.30166686192	G    	0	0	17.740	       	11.3879	 8.979	 0.002	S	                       	 12.845	 0.018	G   	 1.270	  -7.14	  0.33	DR2	  103.838	  0.013	    6.091	 0.016	G    	       	 	  0.71	   0.70	   0	  0	 0	       	      	         	      	      	     	     	      	      	      	 	
+0.000	 3783445	0	      	      	6521791947874851968	6521792325832957440	2MASS J23583095-5218061        	359.62973049085	-52.30166686192	G    	 	 	17.740	       	11.3879	 8.979	 0.002	S	                       	 12.862	 0.020	G   	 1.270	  -7.14	  0.33	DR2	  103.823	  0.013	    6.151	 0.016	G    	       	 	  0.71	   0.70	    	   	  	  30.22	 75.87	 2.52e+03	  0.01	  1.19	 0.73	 0.01	 0.979	 0.000	 0.000	1	0
+
+## J/A+A/657/A7/* @ 359.6164183 -52.3037170
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T07:54:26 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T07:54:26	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fA%2bA%2f657%2fA7%2f%2a&-c=359.6164183+-52.3037170&-c.rs=3&-out.all&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	CatalogsExamined=3	
+#  3 catalogues with potential matches were examined.
+#
+#INFO	-c=359.616418-52.303717,rs=3.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_36570007
+#Name: J/A+A/657/A7
+#Title: Stellar and substellar companions from Gaia EDR3 (Kervella+, 2022)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/657/a7	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/657/a7	    IVOID of underlying data collection
+#INFO	creator=Kervella P.	    First author or institution
+#INFO	cites=bibcode:2022A&A...657A...7K	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2022	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/657/A7	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36570007	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-07-15	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	J_A_A_657_A7_tablea1:
+#Name: J/A+A/657/A7/tablea1
+#Title: Proper motion anomaly of Hipparcos stars
+#Column	_r	(F4.2)	Distance from center (359.61642-52.30372)[FK5/J2000], at Epoch=J2000.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	HIP	(I6)	Hipparcos catalog number	[ucd=meta.id;meta.main]
+#Column	GaiaDR2	(I19)	? Gaia DR2 source number	[ucd=meta.id]
+#Column	GaiaEDR3	(I19)	? Gaia EDR3 source number	[ucd=meta.id]
+#Column	Name	(a23)	Common name	[ucd=meta.id]
+#Column	RAdeg	(F15.11)	? Right ascension (ICRS)	[ucd=pos.eq.ra]
+#Column	DEdeg	(F15.11)	? Declination (ICRS)	[ucd=pos.eq.dec]
+#Column	DMS	(I1)	[0/1]? Set to 1 for stars in the Hipparcos Double and Multiple cat. (I/239/h_dm_com)	[ucd=meta.code]
+#Column	DT	(A1)	[FIL] Type of DMS catalog solution (1)	[ucd=meta.code]
+#Column	DQ	(A1)	[ABCD] Quality of DMS catalog solution (2)	[ucd=meta.code.qual]
+#Column	W	(I1)	[0/1]? Set to 1 if in the WDS catalog (B/wds)	[ucd=meta.code]
+#Column	Vmag	(F6.3)	? V band magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Hpmag	(F7.4)	? Hipparcos Hp magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Hpmag	(F7.4)	? Standard error on Hp magnitude	[ucd=stat.error;phot.mag]
+#Column	Gmag	(F7.4)	? Gaia G band magnitude	[ucd=phot.mag;em.opt]
+#Column	e_Gmag	(F7.4)	? Standard error on Gaia G band magnitude	[ucd=stat.error;phot.mag]
+#Column	Kmag	(F6.3)	? 2MASS K band magnitude	[ucd=phot.mag;em.IR.K]
+#Column	e_Kmag	(F6.3)	? Standard error on 2MASS K band magnitude	[ucd=stat.error;phot.mag]
+#Column	E(B-V)	(F6.3)	? E(B-V) color excess	[ucd=phot.color.excess]
+#Column	r_E(B-V)	(A1)	[BS] Reference for E(B-V) color excess (3)	[ucd=meta.ref;pos.frame]
+#Column	SpType	(a22)	Spectral type from CDS Simbad	[ucd=src.spType]
+#Column	PlxH2	(F7.2)	? Hipparcos 2 (van Leeuwen 2007) parallax	[ucd=pos.parallax.trig]
+#Column	e_PlxH2	(F6.2)	? Standard error on Hip2 parallax	[ucd=stat.error]
+#Column	PlxG3	(F7.3)	? Gaia EDR3 parallax (ZP corrected)	[ucd=pos.parallax.trig]
+#Column	e_PlxG3	(F6.3)	? Standard error on Gaia EDR3 parallax	[ucd=stat.error]
+#Column	epsi	(F7.3)	? Gaia EDR3 excess noise (epsilon)	[ucd=stat.fit.param]
+#Column	RUWE	(F6.3)	? Gaia EDR3 renormalized unit weight error	[ucd=stat.error]
+#Column	RV	(F7.2)	Radial velocity	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F6.2)	Standard error on radial velocity	[ucd=stat.error]
+#Column	r_RV	(A3)	Reference of radial velocity (4)	[ucd=meta.ref;pos.frame]
+#Column	snrPMaHG1	(F6.2)	? Hipparcos-Gaia DR1 PMa S/N	[ucd=stat.snr]
+#Column	BinHG1	(I1)	[0/1]? Hipparcos-Gaia DR1 binary flag	[ucd=meta.code]
+#Column	pmRAH2G2	(F9.3)	? Hip2-Gaia DR2 proper motion in RA direction (pmRA*cosDE) at epoch 2015.5	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRAH2G2	(F6.3)	? Standard error on HipG2 PM in RA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDEH2G2	(F9.3)	? Hip2-Gaia DR2 proper motion in Dec direction at epoch 2015.5	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDEH2G2	(F6.3)	? Standard error on HipG2 PM in Dec	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	PMaRAH2G2	(F8.3)	? G2-HipG2 proper motion anomaly in RA direction at epoch 2015.5	[ucd=pos.pm;arith.diff]
+#Column	e_PMaRAH2G2	(F6.3)	? Standard error on G2-HG2 PMa in RA direction at epoch 2015.5	[ucd=stat.error]
+#Column	PMaDEH2G2	(F8.3)	? G2-HipG2 proper motion anomaly in Dec direction at epoch 2015.5	[ucd=pos.pm;arith.diff]
+#Column	e_PMaDEH2G2	(F6.3)	? Standard error on G2-HG2 PMa in Dec direction at epoch 2015.5	[ucd=stat.error]
+#Column	snrPMaH2G2	(F6.2)	? Signal-to-noise ratio of G2-HipG2 PMa	[ucd=stat.snr]
+#Column	BinH2G2	(I1)	[0/1]? G2-HipG2 binary flag (1 for snrPMaH2G2>3)	[ucd=meta.code]
+#Column	pmRAH2EG3a	(F9.3)	? Hip2-Gaia EDR3 proper motion in RA direction (pmRA*cosDE) at epoch 1991.25	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRAH2EG3a	(F6.3)	? Standard error on HipG3 PM in RA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDEH2EG3a	(F9.3)	? Hip2-Gaia EDR3 proper motion in Dec direction at epoch 1991.25	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDEH2EG3a	(F6.3)	? Standard error on HipG3 PM in Dec	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	PMaRAH2EG3a	(F8.3)	? Hip2-HipG3 proper motion anomaly in RA direction at epoch 1991.25	[ucd=pos.pm;arith.diff]
+#Column	e_PMaRAH2EG3a	(F7.3)	? Standard error on Hip-HG3 PMa in RA direction at epoch 1991.25	[ucd=stat.error]
+#Column	PMaDEH2EG3a	(F8.3)	? Hip2-HipG3 proper motion anomaly in Dec direction at epoch 1991.25	[ucd=pos.pm;arith.diff]
+#Column	e_PMaDEH2EG3a	(F7.3)	? Standard error on Hip-HG3 PMa in Dec direction at epoch 1991.25	[ucd=stat.error]
+#Column	snrPMaH2EG3a	(F6.2)	? Signal-to-noise ratio of Hip2-HipG3 PMa	[ucd=stat.snr]
+#Column	BinH2EG3a	(I1)	[0/1]? Hip2-HipG3 binary flag (1 for snrPMaH2EG3>3)	[ucd=meta.code]
+#Column	pmRAH2EG3b	(F9.3)	? Hip2-Gaia EDR3 proper motion in RA direction (pmRA*cosDE) at epoch 2016.0	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRAH2EG3b	(F6.3)	? Standard error on HipG3 PM in RA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDEH2EG3b	(F9.3)	? Hip2-Gaia EDR3 proper motion in Dec direction at epoch 2016.0	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDEH2EG3b	(F6.3)	? Standard error on HipG3 PM in Dec	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	PMaRAH2EG3b	(F7.3)	? G3-HipG3 proper motion anomaly in RA direction at epoch 2016.0	[ucd=pos.pm;arith.diff]
+#Column	e_PMaRAH2EG3b	(F6.3)	? Standard error on G3-HG3 PMa in RA	[ucd=stat.error]
+#Column	PMaDEH2EG3b	(F7.3)	? G3-HipG3 proper motion anomaly in Dec direction at epoch 2016.0	[ucd=pos.pm;arith.diff]
+#Column	e_PMaDEH2EG3b	(F6.3)	? Standard error on G3-HG3 PMa in Dec	[ucd=stat.error]
+#Column	snrPMaH2EG3b	(F7.2)	? Signal-to-noise ratio of G3-HipG3 PMa	[ucd=stat.snr]
+#Column	BinH2EG3b	(I1)	[0/1]? G3-HipG3 binary flag (1 for snrPMaH2EG3b>3)	[ucd=meta.code]
+#Column	dVt	(F9.2)	? Tangential velocity anomaly	[ucd=phys.veloc.transverse]
+#Column	e_dVt	(F9.2)	? Standard error on tangential velocity dVt	[ucd=stat.error]
+#Column	dVtPA	(F6.2)	? Position angle of velocity anomaly vector	[ucd=pos.posAng]
+#Column	e_dVtPA	(F5.2)	? Standard error on PA of dVt vector	[ucd=stat.error]
+#Column	OrbG3Dt	(F5.2)	? Radius of orbit with period corresponding to Gaia EDR3 observing window duration	[ucd=phys.size.radius]
+#Column	R1	(F8.2)	? Radius of primary star	[ucd=phys.size.radius]
+#Column	n_R1	(A1)	[I] I for infinity	[ucd=meta.note]
+#Column	e_R1	(F9.2)	? Standard error on radius of primary star	[ucd=stat.error]
+#Column	r_R1	(A4)	Reference for radius of primary (5)	[ucd=meta.ref;pos.frame]
+#Column	LDang	(F8.4)	? Limb darkened angular diameter	[ucd=phys.angSize]
+#Column	n_LDang	(A1)	[I] I for infinity	[ucd=meta.note]
+#Column	e_LDang	(F9.4)	? Standard error on LD angular diameter	[ucd=stat.error]
+#Column	M1	(F6.2)	? Mass of primary star	[ucd=phys.mass]
+#Column	e_M1	(F5.2)	? Standard error on mass of primary	[ucd=stat.error]
+#Column	r_M1	(A3)	Reference for mass of primary (6)	[ucd=meta.ref;pos.frame]
+#Column	M23au	(F12.2)	? Mass of companion assuming 3au orbit	[ucd=phys.mass]
+#Column	M25au	(F10.2)	? Mass of companion assuming 5au orbit	[ucd=phys.mass]
+#Column	E_M25au	(F10.2)	? Positive error bar on M2_5au	[ucd=stat.error;stat.max]
+#Column	e_M25au	(F9.2)	? Negative error bar on M2_5au	[ucd=stat.error]
+#Column	M210au	(F10.2)	? Mass of companion assuming 10au orbit	[ucd=phys.mass]
+#Column	M230au	(F9.2)	? Mass of companion assuming 30au orbit	[ucd=phys.mass]
+#Column	L	(I3)	Number of low velocity resolved companions	[ucd=meta.number]
+#Column	B	(I2)	Number of bound resolved companions	[ucd=meta.number]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Coosys	H:	ICRS
+#Table	J_A_A_657_A7_tablea2:
+#Name: J/A+A/657/A7/tablea2
+#Title: CPM candidate companions for Hipparcos stars
+#Column	_r	(F5.3)	Distance from center (359.61641830000-52.30371700000)[ICRS]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	T	(I1)	[0/1] Flag for parent (=1) or companion (=0)	[ucd=meta.code.error]
+#Column	HIP-Parent	(I6)	? Hipparcos number of parent star	[ucd=meta.id.parent]
+#Column	HIP	(I6)	? Hipparcos number of star	[ucd=meta.id;meta.main]
+#Column	EDR3-Parent	(I19)	? Gaia EDR3 source number of parent	[ucd=meta.id.parent]
+#Column	EDR3-Source	(I19)	? Gaia EDR3 source number of star	[ucd=meta.id]
+#Column	Name	(a31)	Common name	[ucd=meta.id]
+#Column	RA_ICRS	(F15.11)	Right ascension (ICRS)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS)	[ucd=pos.eq.dec;meta.main]
+#Column	rPos	(a5)	[H G PPMXL] Reference of position (H = Hip Ep=1991.25, G = EDR3 Ep=2016.0, PPMXL = PPMXL Ep=2000)	[ucd=meta.ref;pos]
+#Column	DMS	(I1)	[0/1]? Set to 1 for stars in the Hipparcos Double and Multiple cat. (I/239/h_dm_com)	[ucd=meta.code]
+#Column	W	(I1)	[0/1]? Set to 1 if in the WDS catalog (B/wds)	[ucd=meta.code]
+#Column	Vmag	(F6.3)	? V band magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Hpmag	(F7.4)	? Hipparcos Hp magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Gmag	(F7.4)	? Gaia G band magnitude	[ucd=phot.mag;em.opt]
+#Column	Kmag	(F6.3)	? 2MASS K band magnitude	[ucd=phot.mag;em.IR.K]
+#Column	E(B-V)	(F6.3)	? E(B-V) color excess	[ucd=phot.color.excess]
+#Column	r_E(B-V)	(A1)	Reference for E(B-V) color excess (1)	[ucd=meta.ref;pos.frame]
+#Column	SpType	(a23)	Spectral type from CDS Simbad	[ucd=src.spType]
+#Column	Plx	(F7.3)	? Parallax	[ucd=pos.parallax.trig]
+#Column	e_Plx	(F6.3)	? Standard error on parallax	[ucd=stat.error;pos.parallax]
+#Column	r_Plx	(A4)	Reference for parallax (2)	[ucd=meta.ref;pos.frame]
+#Column	RUWE	(F6.3)	? Gaia EDR3 renormalized unit weight error	[ucd=stat.error]
+#Column	RV	(F7.2)	? Radial velocity	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F6.2)	? Standard error on radial velocity	[ucd=stat.error]
+#Column	r_RV	(A3)	Reference of radial velocity (3)	[ucd=meta.ref;pos.frame]
+#Column	pmRA	(F9.3)	? Proper motion in right ascension	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F7.3)	? Standard error on PMRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	? Proper motion in declination	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	? Standard error on PMDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	r_pm	(a5)	Reference of proper motion (4)	[ucd=meta.ref;pos.frame]
+#Column	snrPMaG3	(F7.2)	? Signal-to-noise ratio of G3-HipG3 PMa	[ucd=stat.snr]
+#Column	BinG3	(I1)	? G3-HipG3 binary flag (1 for snrPMaG3>3)	[ucd=meta.code]
+#Column	Mass	(F6.2)	? Mass	[ucd=phys.mass]
+#Column	Radius	(F7.2)	? Radius	[ucd=phys.angSize;src]
+#Column	N	(I4)	? Number of near candidate companions	[ucd=meta.number]
+#Column	L	(I3)	? Number of low velocity companions	[ucd=meta.number]
+#Column	B	(I2)	? Number of bound candidate companions	[ucd=meta.number]
+#Column	Sep	(F7.2)	? Angular separation from parent star	[ucd=pos.angDistance]
+#Column	PA	(F6.2)	[0/360]? Position angle of candidate companion	[ucd=pos.posAng]
+#Column	LinSep	(E9.2)	? Linear separation with parent star	[ucd=pos.distance;src.orbital]
+#Column	dVtan	(F6.2)	? Differential tangential velocity with respect to parent star	[ucd=phys.veloc.transverse]
+#Column	e_dVtan	(F6.2)	? Standard error on dVtan	[ucd=stat.error]
+#Column	Vesc	(F5.2)	? Escape velocity at projected location of candidate companion	[ucd=phys.veloc.escape]
+#Column	dpmPA	(F5.2)	? Difference in position angle of PM vectors between parent and candidate	[ucd=meta.id.parent;pos.posAng;arith.diff]
+#Column	PlxSc	(F6.3)	? Parallax score of candidate companion	[ucd=pos.parallax.trig]
+#Column	BndSc	(F6.3)	? Gravitationally bound score of candidate	[ucd=stat.fit.param]
+#Column	TotSc	(F6.3)	? Total score of candidate companion	[ucd=stat.fit.param]
+#Column	LowV	(I1)	? Low tangential velocity flag	[ucd=meta.code]
+#Column	Bnd	(I1)	? Gravitationally bound candidate flag	[ucd=meta.code]
+#Table	J_A_A_657_A7_tablea3:
+#Name: J/A+A/657/A7/tablea3
+#Title: CPM candidate companions for Gaia stars within 100 pc
+#Column	_r	(F5.3)	Distance from center (359.61641830000-52.30371700000)[ICRS]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	T	(I1)	[0/1] Flag for parent (=1) or companion (=0)	[ucd=meta.code.error]
+#Column	HIP-Parent	(I6)	? Hipparcos number of parent star	[ucd=meta.id.parent]
+#Column	HIP	(I6)	? Hipparcos number of star	[ucd=meta.id;meta.main]
+#Column	EDR3-Parent	(I19)	? Gaia EDR3 source number of parent	[ucd=meta.id.parent]
+#Column	EDR3-Source	(I19)	? Gaia EDR3 source number of star	[ucd=meta.id]
+#Column	Name	(a31)	Common name	[ucd=meta.id]
+#Column	RA_ICRS	(F15.11)	Right ascension (ICRS)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS)	[ucd=pos.eq.dec;meta.main]
+#Column	rPos	(a5)	[H G PPMXL] Reference of position (H = Hip Ep=1991.25, G = EDR3 Ep=2016.0, PPMXL = PPMXL Ep=2000)	[ucd=meta.ref;pos]
+#Column	DMS	(I1)	[0/1]? Set to 1 for stars in the Hipparcos Double and Multiple cat. (I/239/h_dm_com)	[ucd=meta.code]
+#Column	W	(I1)	[0/1]? Set to 1 if in the WDS catalog (B/wds)	[ucd=meta.code]
+#Column	Vmag	(F6.3)	? V band magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Hpmag	(F7.4)	? Hipparcos Hp magnitude	[ucd=phot.mag;em.opt.V]
+#Column	Gmag	(F7.4)	? Gaia G band magnitude	[ucd=phot.mag;em.opt]
+#Column	Kmag	(F6.3)	? 2MASS K band magnitude	[ucd=phot.mag;em.IR.K]
+#Column	E(B-V)	(F6.3)	? E(B-V) color excess	[ucd=phot.color.excess]
+#Column	r_E(B-V)	(A1)	Reference for E(B-V) color excess (1)	[ucd=meta.ref;pos.frame]
+#Column	SpType	(a23)	Spectral type from CDS Simbad	[ucd=src.spType]
+#Column	Plx	(F7.3)	? Parallax	[ucd=pos.parallax.trig]
+#Column	e_Plx	(F6.3)	? Standard error on parallax	[ucd=stat.error;pos.parallax]
+#Column	r_Plx	(A4)	Reference for parallax (2)	[ucd=meta.ref;pos.frame]
+#Column	RUWE	(F6.3)	? Gaia EDR3 renormalized unit weight error	[ucd=stat.error]
+#Column	RV	(F7.2)	? Radial velocity	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F6.2)	? Standard error on radial velocity	[ucd=stat.error]
+#Column	r_RV	(A3)	Reference of radial velocity (3)	[ucd=meta.ref;pos.frame]
+#Column	pmRA	(F9.3)	? Proper motion in right ascension	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F7.3)	? Standard error on PMRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	? Proper motion in declination	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	? Standard error on PMDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	r_pm	(a5)	Reference of proper motion (4)	[ucd=meta.ref;pos.frame]
+#Column	snrPMaG3	(F7.2)	? Signal-to-noise ratio of G3-HipG3 PMa	[ucd=stat.snr]
+#Column	BinG3	(I1)	? G3-HipG3 binary flag (1 for snrPMaG3>3)	[ucd=meta.code]
+#Column	Mass	(F6.2)	? Mass	[ucd=phys.mass]
+#Column	Radius	(F7.2)	? Radius	[ucd=phys.angSize;src]
+#Column	N	(I4)	? Number of near candidate companions	[ucd=meta.number]
+#Column	L	(I3)	? Number of low velocity companions	[ucd=meta.number]
+#Column	B	(I2)	? Number of bound candidate companions	[ucd=meta.number]
+#Column	Sep	(F7.2)	? Angular separation from parent star	[ucd=pos.angDistance]
+#Column	PA	(F6.2)	[0/360]? Position angle of candidate companion	[ucd=pos.posAng]
+#Column	LinSep	(E9.2)	? Linear separation with parent star	[ucd=pos.distance;src.orbital]
+#Column	dVtan	(F6.2)	? Differential tangential velocity with respect to parent star	[ucd=phys.veloc.transverse]
+#Column	e_dVtan	(F6.2)	? Standard error on dVtan	[ucd=stat.error]
+#Column	Vesc	(F5.2)	? Escape velocity at projected location of candidate companion	[ucd=phys.veloc.escape]
+#Column	dpmPA	(F5.2)	? Difference in position angle of PM vectors between parent and candidate	[ucd=meta.id.parent;pos.posAng;arith.diff]
+#Column	PlxSc	(F6.3)	? Parallax score of candidate companion	[ucd=pos.parallax.trig]
+#Column	BndSc	(F6.3)	? Gravitationally bound score of candidate	[ucd=stat.fit.param]
+#Column	TotSc	(F6.3)	? Total score of candidate companion	[ucd=stat.fit.param]
+#Column	LowV	(I1)	? Low tangential velocity flag	[ucd=meta.code]
+#Column	Bnd	(I1)	? Gravitationally bound candidate flag	[ucd=meta.code]
+_r	recno	T	HIP-Parent	HIP	EDR3-Parent	EDR3-Source	Name	RA_ICRS	DE_ICRS	rPos	DMS	W	Vmag	Hpmag	Gmag	Kmag	E(B-V)	r_E(B-V)	SpType	Plx	e_Plx	r_Plx	RUWE	RV	e_RV	r_RV	pmRA	e_pmRA	pmDE	e_pmDE	r_pm	snrPMaG3	BinG3	Mass	Radius	N	L	B	Sep	PA	LinSep	dVtan	e_dVtan	Vesc	dpmPA	PlxSc	BndSc	TotSc	LowV	Bnd
+arcsec	 	 	 	 	 	 	 	deg	deg	 	 	 	mag	mag	mag	mag	mag	 	 	mas	mas	 	 	km/s	km/s	 	mas/a	mas/a	mas/a	mas/a	 	 	 	Msun	Rsun	 	 	 	arcsec	deg	au	km/s	km/s	km/s	deg	 	 	 	 	
+-----	--------	-	------	------	-------------------	-------------------	-------------------------------	---------------	---------------	-----	-	-	------	-------	-------	------	------	-	-----------------------	-------	------	----	------	-------	------	---	---------	-------	---------	------	-----	-------	-	------	-------	----	---	--	-------	------	---------	------	------	-----	-----	------	------	------	-	-
+0.000	 3783444	1	      	      	6521791947874851968	6521791947874851968	Gaia EDR3 6521791947874851968  	359.61641832139	-52.30371703230	G    	0	0	      	       	20.9304	14.826	 0.002	S	                       	 11.980	 1.426	G   	 1.208	       	      	   	  103.807	  2.112	    6.127	 2.148	G    	       	 	  0.04	       	   1	  2	 0	       	      	         	      	      	     	     	      	      	      	 	
+
+## J/ApJS/247/66/* @ 359.62973049 -52.30166686
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T07:54:27 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T07:54:27	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fApJS%2f247%2f66%2f%2a&-c=359.62973049+-52.30166686&-c.rs=3&-out.all&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	CatalogsExamined=6	
+#  6 catalogues with potential matches were examined.
+#
+#INFO	-c=359.629730-52.301667,rs=3.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_22470066
+#Name: J/ApJS/247/66
+#Title: SUPERWIDE: wide binaries in Gaia & SUPERBLINK (Hartman+, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/apjs/247/66	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/apjs/247/66	    IVOID of underlying data collection
+#INFO	creator=Hartman Z.D.	    First author or institution
+#INFO	cites=bibcode:2020ApJS..247...66H	    Article or Data origin sources
+#INFO	journal=ApJS	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJS/247/66	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.22470066	    Dataset identifier that can be used for citation
+#INFO	publication_date=2021-09-08	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2015.500:	ICRS
+#Table	J_ApJS_247_66_table4:
+#Name: J/ApJS/247/66/table4
+#Title: Data on primary stars in pairs that have probabilities greater than 10% from the first pass probabilities and have parallax errors less than 10% of the parallax
+#Column	_r	(F4.2)	Distance from center (359.62973-52.30167)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Seq	(I6)	[1/119390] Running sequence number	[ucd=meta.id;meta.main]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F9.3)	[-2251/1802] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-3543/10363] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[0.4/637.2] Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[0.08/21.3]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-93/91.5] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-767/569]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table5:
+#Name: J/ApJS/247/66/table5
+#Title: Data on secondary stars in pairs that have probabilities greater than 10% from the first pass probabilities and have parallax errors less than 10% of the parallax
+#Column	_r	(F4.2)	Distance from center (359.62973-52.30167)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Seq	(I6)	[1/119390] Running sequence number	[ucd=meta.id;meta.main]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F9.3)	[-2251/1802] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-3543/10363] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[0.4/637.2] Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[0.08/21.3]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-93/91.5] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-767/569]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table7:
+#Name: J/ApJS/247/66/table7
+#Title: Data on primary stars in pairs that have probabilities greater than 10% from the first pass probabilities but have parallax errors >10% of the parallax itself
+#Column	_r	(F4.2)	Distance from center (359.62973-52.30167)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F8.3)	[-904/1019] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-1196/510] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[-597/537]? Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[2.1/21.9]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-87.3/90] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-340/554]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+_r	recno	Gaia	RA_ICRS	DE_ICRS	pmRA	pmDE	plx	Gmag	BP-RP	RV	_RA.icrs	_DE.icrs
+arcsec	 	 	deg	deg	mas/yr	mas/yr	mas	mag	mag	km/s	deg	deg
+----	--------	-------------------	---------	---------	--------	---------	----------	-------	--------	--------	---------	---------
+0.05	   56824	6521792325832957440	359.62971	-52.30167	 103.808	    6.237	   12.7911	11.3859	  1.4587	   -7.13	359.62898	-52.30170
+
+#Table	J_ApJS_247_66_table8:
+#Name: J/ApJS/247/66/table8
+#Title: Data on secondary stars in pairs that have probabilities greater than 10% from the first pass probabilities but have parallax errors >10% of the parallax itself
+#Column	_r	(F4.2)	Distance from center (359.62973-52.30167)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F8.3)	[-904/1019] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-1196/510] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[-597/537]? Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[2.1/21.9]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-87.3/90] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-340/554]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+## J/ApJS/247/66/* @ 359.6164183 -52.3037170
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T07:54:28 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T07:54:28	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fApJS%2f247%2f66%2f%2a&-c=359.6164183+-52.3037170&-c.rs=3&-out.all&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	CatalogsExamined=6	
+#  6 catalogues with potential matches were examined.
+#
+#INFO	-c=359.616418-52.303717,rs=3.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_22470066
+#Name: J/ApJS/247/66
+#Title: SUPERWIDE: wide binaries in Gaia & SUPERBLINK (Hartman+, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/apjs/247/66	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/apjs/247/66	    IVOID of underlying data collection
+#INFO	creator=Hartman Z.D.	    First author or institution
+#INFO	cites=bibcode:2020ApJS..247...66H	    Article or Data origin sources
+#INFO	journal=ApJS	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJS/247/66	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.22470066	    Dataset identifier that can be used for citation
+#INFO	publication_date=2021-09-08	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2015.500:	ICRS
+#Table	J_ApJS_247_66_table4:
+#Name: J/ApJS/247/66/table4
+#Title: Data on primary stars in pairs that have probabilities greater than 10% from the first pass probabilities and have parallax errors less than 10% of the parallax
+#Column	_r	(F4.2)	Distance from center (359.61642-52.30372)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Seq	(I6)	[1/119390] Running sequence number	[ucd=meta.id;meta.main]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F9.3)	[-2251/1802] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-3543/10363] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[0.4/637.2] Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[0.08/21.3]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-93/91.5] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-767/569]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table5:
+#Name: J/ApJS/247/66/table5
+#Title: Data on secondary stars in pairs that have probabilities greater than 10% from the first pass probabilities and have parallax errors less than 10% of the parallax
+#Column	_r	(F4.2)	Distance from center (359.61642-52.30372)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Seq	(I6)	[1/119390] Running sequence number	[ucd=meta.id;meta.main]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F9.3)	[-2251/1802] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-3543/10363] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[0.4/637.2] Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[0.08/21.3]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-93/91.5] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-767/569]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table7:
+#Name: J/ApJS/247/66/table7
+#Title: Data on primary stars in pairs that have probabilities greater than 10% from the first pass probabilities but have parallax errors >10% of the parallax itself
+#Column	_r	(F4.2)	Distance from center (359.61642-52.30372)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F8.3)	[-904/1019] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-1196/510] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[-597/537]? Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[2.1/21.9]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-87.3/90] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-340/554]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table8:
+#Name: J/ApJS/247/66/table8
+#Title: Data on secondary stars in pairs that have probabilities greater than 10% from the first pass probabilities but have parallax errors >10% of the parallax itself
+#Column	_r	(F4.2)	Distance from center (359.61642-52.30372)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F8.3)	[-904/1019] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-1196/510] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[-597/537]? Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[2.1/21.9]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-87.3/90] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-340/554]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+_r	recno	Gaia	RA_ICRS	DE_ICRS	pmRA	pmDE	plx	Gmag	BP-RP	RV	_RA.icrs	_DE.icrs
+arcsec	 	 	deg	deg	mas/yr	mas/yr	mas	mag	mag	km/s	deg	deg
+----	--------	-------------------	---------	---------	--------	---------	----------	-------	--------	--------	---------	---------
+0.04	   56824	6521791947874851968	359.61640	-52.30372	 101.636	    6.604	   12.4140	20.9951	  1.7099	        	359.61568	-52.30375
+

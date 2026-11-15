@@ -1,0 +1,83 @@
+{
+ "spherex_band_means": {
+  "J": [
+   571.97,
+   24.85,
+   8
+  ],
+  "H": [
+   351.93,
+   11.53,
+   8
+  ],
+  "Ks": [
+   230.91,
+   7.16,
+   6
+  ],
+  "W1": [
+   64.14,
+   1.83,
+   10
+  ],
+  "W2": [
+   27.58,
+   1.08,
+   25
+  ]
+ },
+ "2MASS+CatWISE": {
+  "J": {
+   "ratio_to_J_spherex": 1.0,
+   "ratio_to_J_catalog": 1.0,
+   "spherex_minus_catalog_mag": -0.0
+  },
+  "H": {
+   "ratio_to_J_spherex": 0.615,
+   "ratio_to_J_catalog": 0.724,
+   "spherex_minus_catalog_mag": 0.18
+  },
+  "Ks": {
+   "ratio_to_J_spherex": 0.404,
+   "ratio_to_J_catalog": 0.522,
+   "spherex_minus_catalog_mag": 0.28
+  },
+  "W1": {
+   "ratio_to_J_spherex": 0.112,
+   "ratio_to_J_catalog": 0.13,
+   "spherex_minus_catalog_mag": 0.16
+  },
+  "W2": {
+   "ratio_to_J_spherex": 0.048,
+   "ratio_to_J_catalog": 0.052,
+   "spherex_minus_catalog_mag": 0.09
+  }
+ },
+ "VHS+CatWISE (VISTA J,H,Ks ~ 2MASS within ~0.05-0.1 mag)": {
+  "J": {
+   "ratio_to_J_spherex": 1.0,
+   "ratio_to_J_catalog": 1.0,
+   "spherex_minus_catalog_mag": -0.0
+  },
+  "H": {
+   "ratio_to_J_spherex": 0.615,
+   "ratio_to_J_catalog": 0.609,
+   "spherex_minus_catalog_mag": -0.01
+  },
+  "Ks": {
+   "ratio_to_J_spherex": 0.404,
+   "ratio_to_J_catalog": 0.378,
+   "spherex_minus_catalog_mag": -0.07
+  },
+  "W1": {
+   "ratio_to_J_spherex": 0.112,
+   "ratio_to_J_catalog": 0.111,
+   "spherex_minus_catalog_mag": -0.01
+  },
+  "W2": {
+   "ratio_to_J_spherex": 0.048,
+   "ratio_to_J_catalog": 0.045,
+   "spherex_minus_catalog_mag": -0.09
+  }
+ }
+}

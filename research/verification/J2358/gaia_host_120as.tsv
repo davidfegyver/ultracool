@@ -1,0 +1,76 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T07:46:26 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T07:46:26	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2f355%2fgaiadr3&-c=359.62973049+-52.30166686&-c.rs=120&-out=Source%2cRA_ICRS%2cDE_ICRS%2cPlx%2ce_Plx%2cpmRA%2ce_pmRA%2cpmDE%2ce_pmDE%2cGmag%2cBP-RP%2cRUWE&-out.max=unlimited&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=359.629730-52.301667,rs=120.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_1355
+#Name: I/355
+#Title: Gaia DR3 Part 1. Main source (Gaia Collaboration, 2022)
+#INFO	ivoid=ivo://cds.vizier/i/355	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/i/355	    IVOID of underlying data collection
+#INFO	creator=Gaia collaboration	    First author or institution
+#INFO	cites=bibcode:2022yCat.1355....0G	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2022	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/I/355	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.1355	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-12-12	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2016.000:	ICRS
+#Table	I_355_gaiadr3:
+#Name: I/355/gaiadr3
+#Title: Gaia DR3 source catalog (1811709771 sources)
+#Column	_r	(F7.3)	Distance from center (359.62973049000-52.30166686000)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	Source	(I19)	Unique source identifier (unique within a particular Data Release) (source_id)	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F15.11)	Right ascension (ICRS) at Ep=2016.0 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2016.0 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	Plx	(F9.4)	? Parallax (parallax)	[ucd=pos.parallax.trig]
+#Column	e_Plx	(F7.4)	? Standard error of parallax (parallax_error)	[ucd=stat.error;pos.parallax.trig]
+#Column	pmRA	(F9.3)	? Proper motion in right ascension direction, pmRA*cosDE (pmra)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.3)	? Standard error of proper motion in right ascension direction (pmra_error)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	? Proper motion in declination direction (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.3)	? Standard error of proper motion in declination direction (pmdec_error)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Gmag	(F9.6)	? G-band mean magnitude (phot_g_mean_mag)	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F9.6)	? BP-RP colour (bp_rp)	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RUWE	(F7.3)	? Renormalised unit weight error (ruwe)	[ucd=stat.error]
+_r	Source	RA_ICRS	DE_ICRS	Plx	e_Plx	pmRA	e_pmRA	pmDE	e_pmDE	Gmag	BP-RP	RUWE
+arcsec	 	deg	deg	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	mag	mag	
+-------	-------------------	---------------	---------------	---------	-------	---------	------	---------	------	---------	---------	-------
+ 98.036	6521791496902455936	359.66687445853	-52.31669562005	         	       	         	      	         	      	20.936771	 1.707069	
+ 92.930	6521791531262197376	359.67175829770	-52.30409382735	   0.4049	 0.3696	    4.481	 0.274	    3.655	 0.318	19.923277	 1.723190	  0.981
+ 87.479	6521791810435503488	359.62554057976	-52.32583122964	         	       	         	      	         	      	21.548933	 1.831776	
+118.657	6521791874859571456	359.66117726162	-52.32844032129	   0.4284	 0.1738	    7.720	 0.134	   -6.197	 0.153	18.855228	 1.680765	  0.989
+114.712	6521791874859572352	359.66442409983	-52.32544710641	  -0.1339	 0.4221	    4.066	 0.341	   -2.141	 0.374	20.057707	 0.854427	  1.029
+ 69.752	6521791879156358912	359.64210946269	-52.31950318641	   0.4316	 0.0254	   19.609	 0.018	   -0.252	 0.022	15.286940	 0.827585	  0.999
+ 90.506	6521791909219310208	359.63891897095	-52.32617192388	   0.0321	 0.4729	    2.706	 0.356	   -3.211	 0.389	20.135490	 0.786001	  1.017
+ 77.454	6521791909219440384	359.63280640065	-52.32309958712	         	       	         	      	         	      	20.966250	 0.801714	
+ 30.220	6521791947874851968	359.61641832139	-52.30371703230	  11.9800	 1.4259	  103.807	 2.112	    6.127	 2.148	20.922476	 1.950966	  1.208
+109.615	6521792188394005376	359.58043157473	-52.30595675572	   2.3923	 0.0339	   12.745	 0.024	   36.475	 0.029	15.714914	 1.724076	  1.154
+ 45.609	6521792252816700160	359.64526750329	-52.31004885536	   4.9566	 0.1373	  -22.069	 0.097	  -15.031	 0.126	18.320007	 2.930355	  1.044
+ 42.630	6521792257112101632	359.64845904685	-52.30467851967	   0.3082	 0.9892	    8.224	 0.770	    8.084	 0.978	20.770483	 1.711704	  1.050
+ 71.683	6521792257112207360	359.66002116926	-52.30897731965	         	       	         	      	         	      	21.095882	 1.757706	
+ 89.277	6521792257113480064	359.66623436228	-52.31247623006	   1.3218	 0.0113	   18.050	 0.009	    3.135	 0.010	13.202314	 0.662179	  0.916
+ 89.343	6521792257113636352	359.66412573474	-52.31484472065	         	       	         	      	         	      	21.510921	 1.797342	
+ 77.951	6521792287176440448	359.66471525889	-52.30501528759	   1.1199	 0.5598	    4.836	 0.430	   -5.967	 0.485	20.293802	 1.710405	  1.094
+ 71.219	6521792291473217792	359.66001577301	-52.29471395454	   0.3556	 0.0624	    2.259	 0.047	  -17.207	 0.056	17.179445	 0.747026	  1.006
+ 54.664	6521792291473751936	359.65103629544	-52.29387009464	   0.3410	 0.0924	   20.709	 0.068	   -4.694	 0.085	17.788288	 0.706383	  1.007
+ 36.860	6521792321536183552	359.62135945826	-52.29279964598	         	       	         	      	         	      	20.933355	 0.487482	
+  0.000	6521792325832957440	359.62973049085	-52.30166686192	  12.8445	 0.0179	  103.838	 0.013	    6.091	 0.016	11.387903	 1.445306	  1.270
+ 69.845	6521792355896043776	359.62280939181	-52.28273292550	         	       	         	      	         	      	21.026268	 1.101732	
+ 46.973	6521792360191319168	359.63585858066	-52.28916876615	   2.7387	 0.6775	   29.287	 0.527	   -8.610	 0.622	20.498034	 2.142254	  1.088
+ 76.333	6521792360192695040	359.62775971607	-52.28049762764	   1.3442	 0.0171	    7.756	 0.012	   -2.361	 0.016	14.420628	 0.933903	  1.026
+ 72.878	6521792394551161728	359.65121424714	-52.28626687406	         	       	         	      	         	      	21.118927	 2.605967	
+ 83.215	6521792463269705088	359.63766656076	-52.27906695391	   0.0455	 0.2296	   -0.076	 0.168	    0.086	 0.204	19.314919	 0.618853	  1.003
+ 83.633	6521792463271909760	359.63870585744	-52.27909355149	  -0.6754	 0.3645	   -0.157	 0.297	   -0.224	 0.355	19.960010	 0.658991	  1.006
+

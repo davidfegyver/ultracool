@@ -1,0 +1,45 @@
+### vizier_part_B__.tsv.gz: 66 tables/catalogues listed, 0 with rows
+### vizier_part_III__.tsv.gz: 418 tables/catalogues listed, 0 with rows
+### vizier_part_II__.tsv.gz: 642 tables/catalogues listed, 3 with rows
+  II/252/denis                     n= 1 min_r=  2.223  [The DENIS database, 2nd Release (DENIS Consortium, 2003)] {}
+  II/328/allwise                   n= 1 min_r=  0.595  [AllWISE Data Release (Cutri+ 2013)] {}
+  II/246/out                       n= 1 min_r=  2.164  [2MASS All-Sky Catalog of Point Sources (Cutri+ 2003)] {'2MASS': '23582773-5218133'}
+### vizier_part_IV__.tsv.gz: 41 tables/catalogues listed, 1 with rows
+  IV/39/tic82                      n= 1 min_r=  0.364  [TESS Input Catalog version 8.2 (TIC v8.2) (Paegert+, 2021)] {'2MASS': '23582773-5218133'}
+### vizier_part_IX__.tsv.gz: 177 tables/catalogues listed, 0 with rows
+### vizier_part_I__.tsv.gz: 555 tables/catalogues listed, 7 with rows
+  I/355/gaiadr3                    n= 1 min_r=  0.317  [Gaia DR3 Part 1. Main source (Gaia Collaboration, 2022)] {'MCMCGSP': '0', '2MASS': '23582773-5218133'}
+  I/347/gaia2dis                   n= 1 min_r=  0.364  [Distances to 1.33 billion stars in Gaia DR2 (Bailer-Jones+, 2018)] {}
+  I/352/gedr3dis                   n= 1 min_r=  0.317  [Distances to 1.47 billion stars in Gaia EDR3 (Bailer-Jones+, 2021)] {}
+  I/320/spm4                       n= 1 min_r= 14.502  [SPM 4.0 Catalog (Girard+, 2011)] {'SPMID': '1580012877'}
+  I/297/out                        n= 2 min_r=  2.164  [NOMAD Catalog (Zacharias+ 2005)] {}
+  I/284/out                        n= 1 min_r= 16.986  [The USNO-B1.0 Catalog (Monet+ 2003)] {}
+  I/305/out                        n= 2 min_r=  7.604  [The Guide Star Catalog, Version 2.3.2 (GSC2.3) (STScI, 2006)] {'Class': '3'}
+### vizier_part_J_AJ__.tsv.gz: 6784 tables/catalogues listed, 4 with rows
+  J/AJ/161/234/table2              n= 1 min_r=  0.364  [1.7 million K and M dwarfs cross-matching (Medan+, 2021)] {'2MASS': '23582773-5218133', '2MASSProb': '0.9799792', '2MASSSep': '0.1213537'}
+  J/AJ/161/234/table3              n= 1 min_r=  0.364  [1.7 million K and M dwarfs cross-matching (Medan+, 2021)] {'2MASS': '23582773-5218133', '2MASSProb': '0.9799792', '2MASSSep': '0.1213537'}
+  J/AJ/161/234/table4              n= 1 min_r=  0.364  [1.7 million K and M dwarfs cross-matching (Medan+, 2021)] {}
+  J/AJ/167/253/table1              n= 1 min_r=   1.96  [89 new utlra cool dwarfs comoving companions (Rothermich+, 2024)] {'SpType': '(M9)', 'r_SpType': '1', '2MASSCat': '1'}
+### vizier_part_J_AN__.tsv.gz: 150 tables/catalogues listed, 0 with rows
+### vizier_part_J_ApA__.tsv.gz: 15718 tables/catalogues listed, 3 with rows
+  J/A+A/649/A6/table1c             n= 1 min_r=  0.317  [Gaia Catalogue of Nearby Stars - GCNS (Gaia collaboration, 2021)] {}
+  J/A+A/657/A7/tablea3             n= 1 min_r=  0.317  [Stellar and substellar companions from Gaia EDR3 (Kervella+, 2022)] {'Mass': '0.04'}
+  J/A+A/665/A78/bkgev              n= 1 min_r= 10.939  [First eROSITA all sky survey (eRASS1) simulation (Seppi+, 2022)] {}
+### vizier_part_J_ApJS__.tsv.gz: 4451 tables/catalogues listed, 3 with rows
+  J/ApJS/209/22/table6a            n= 3 min_r=  0.418  [SSDF survey: IRAC catalogs (Ashby+, 2013)] {}
+  J/ApJS/209/22/table6b            n= 2 min_r=  0.558  [SSDF survey: IRAC catalogs (Ashby+, 2013)] {}
+  J/ApJS/247/66/table8             n= 1 min_r=   0.35  [SUPERWIDE: wide binaries in Gaia & SUPERBLINK (Hartman+, 2020)] {}
+### vizier_part_J_ApJ__.tsv.gz: 10287 tables/catalogues listed, 1 with rows
+  J/ApJ/798/73/table6              n= 1 min_r=   2.23  [BANYAN All-Sky Survey (BASS) catalog. V. Nearby YMGs (Gagne+, 2015)] {'2MASS': '23582773-5218133'}
+### vizier_part_J_MNRAS__.tsv.gz: 9048 tables/catalogues listed, 1 with rows
+  J/MNRAS/522/1951/table           n= 1 min_r=  0.254  [DES Y6 ultracool dwarfs candidates (Dal Ponte+, 2023)] {'SPType': '10'}
+### vizier_part_J_PASJ__.tsv.gz: 213 tables/catalogues listed, 0 with rows
+### vizier_part_J_PASP__.tsv.gz: 321 tables/catalogues listed, 0 with rows
+### vizier_part_J_RNAAS__.tsv.gz: 0 tables/catalogues listed, 0 with rows
+### vizier_part_J_other__.tsv.gz: 1306 tables/catalogues listed, 0 with rows
+### vizier_part_VII__.tsv.gz: 505 tables/catalogues listed, 2 with rows
+  VII/292/south                    n= 4 min_r=  0.364  [DESI Legacy Imaging Surveys DR8 photometric redshifts (Duncan, 2022)] {'type': 'PSF'}
+  VII/285/gdr2ext                  n= 1 min_r=  0.364  [Gaia DR2 quasar and galaxy classification (Bailer-Jones+, 2019)] {}
+### vizier_part_VI__.tsv.gz: 74 tables/catalogues listed, 1 with rows
+  VI/42/out                        n= 1 min_r=    0.1  [Identification of a Constellation From Position (Roman 1987)] {}
+### vizier_part_V__.tsv.gz: 297 tables/catalogues listed, 0 with rows

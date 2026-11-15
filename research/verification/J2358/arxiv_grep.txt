@@ -1,0 +1,44 @@
+### all:SPHEREx AND all:"brown dwarf": 5 entries
+  2608.25993 2026-08-26 JWST color sequence of transiting exoplanets and directly imaged substellar objects
+  2607.00543 2026-07-01 SPHEREx 0.75 to 5 $μ$m Spectra for a Sequence of Nearby Brown Dwarfs
+  2604.22012 2026-04-23 A SPHEREx Pipeline and Spectral Library for Ultracool Dwarfs
+  2512.12098 2025-12-13 Identifying and Characterizing Very Low Mass Spectral Blend Binaries with Machine Learning Methods
+  2508.09370 2025-08-12 Classifying Cool Dwarfs: Comprehensive Spectral Typing of Field and Peculiar Dwarfs Using Machine Learning
+### all:SPHEREx AND all:"ultracool": 4 entries
+  2608.25993 2026-08-26 JWST color sequence of transiting exoplanets and directly imaged substellar objects
+  2604.26771 2026-04-29 SPHEREx Ultracool Dwarf spectrophotometric Atlas (SUDA): Atmospheric and Fundamental Parameters of Ultracool D
+  2604.22983 2026-04-24 The POKEMON Speckle Survey of Nearby M dwarfs. IV. Distance-Limited Catalog (POKEMON-DLC)
+  2604.22012 2026-04-23 A SPHEREx Pipeline and Spectral Library for Ultracool Dwarfs
+### all:SPHEREx AND all:"L dwarf": 2 entries
+  2608.25993 2026-08-26 JWST color sequence of transiting exoplanets and directly imaged substellar objects
+  2608.08908 2026-08-09 Atmospheric Diversity of Giant Planet Analogs from 3-5um with SPHEREx
+### all:SPHEREx AND all:"M dwarf": 1 entries
+  2604.22983 2026-04-24 The POKEMON Speckle Survey of Nearby M dwarfs. IV. Distance-Limited Catalog (POKEMON-DLC)
+### all:"Backyard Worlds" AND all:companion: 16 entries
+  2604.09845 2026-04-10 Spectroscopic Characterization of WD J000801.25-350450 and its Two Co-Moving Companions
+  2604.01323 2026-04-01 Three Thousand Motion-Confirmed L and T Dwarf Candidates from the Backyard Worlds:~Planet 9 Citizen Science Pr
+  2503.06004 2025-03-08 Unveiling the Infrared Excess of SIPS J2045-6332: Evidence for a Young Stellar Object with Potential Low-Mass 
+  2411.01378 2024-11-02 New Cold Subdwarf Discoveries from Backyard Worlds and a Metallicity Classification System for T Subdwarfs
+  2407.08578 2024-07-11 Discovery of a Hypervelocity L Subdwarf at the Star/Brown Dwarf Mass Limit
+  2404.14324 2024-04-22 Thirteen New M Dwarf + T Dwarf Pairs Identified with WISE/NEOWISE
+  2403.04592 2024-03-07 89 New Ultracool Dwarf Co-Moving Companions Identified With The Backyard Worlds: Planet 9 Citizen Science Proj
+### all:"wide companion" AND all:"ultracool" AND all:Gaia: 2 entries
+  2407.19219 2024-07-27 Primeval very low-mass stars and brown dwarfs -- VIII. The first age benchmark L subdwarf, a wide companion to
+
+### full-text grep of 16 papers (arxiv.org/html, falling back to /abs)
+2608.25993 [html, 601087 chars] hits=[] :: JWST color sequence of transiting exoplanets and directly imaged substellar objects
+2607.00543 [html, 373354 chars] hits=[] :: SPHEREx 0.75 to 5 $μ$m Spectra for a Sequence of Nearby Brown Dwarfs
+2604.22012 [html, 584235 chars] hits=[] :: A SPHEREx Pipeline and Spectral Library for Ultracool Dwarfs
+2512.12098 [html, 1044658 chars] hits=[] :: Identifying and Characterizing Very Low Mass Spectral Blend Binaries with Machine Learning
+2508.09370 [html, 519617 chars] hits=[] :: Classifying Cool Dwarfs: Comprehensive Spectral Typing of Field and Peculiar Dwarfs Using 
+2604.26771 [html, 469878 chars] hits=[] :: SPHEREx Ultracool Dwarf spectrophotometric Atlas (SUDA): Atmospheric and Fundamental Param
+2604.22983 [html, 467435 chars] hits=[] :: The POKEMON Speckle Survey of Nearby M dwarfs. IV. Distance-Limited Catalog (POKEMON-DLC)
+2608.08908 [html, 536061 chars] hits=[] :: Atmospheric Diversity of Giant Planet Analogs from 3-5um with SPHEREx
+2604.09845 [html, 235388 chars] hits=[] :: Spectroscopic Characterization of WD J000801.25-350450 and its Two Co-Moving Companions
+2604.01323 [html, 823673 chars] hits=[] :: Three Thousand Motion-Confirmed L and T Dwarf Candidates from the Backyard Worlds:~Planet 
+2503.06004 [html, 175397 chars] hits=[] :: Unveiling the Infrared Excess of SIPS J2045-6332: Evidence for a Young Stellar Object with
+2411.01378 [html, 2798861 chars] hits=[] :: New Cold Subdwarf Discoveries from Backyard Worlds and a Metallicity Classification System
+2407.08578 [html, 224192 chars] hits=[] :: Discovery of a Hypervelocity L Subdwarf at the Star/Brown Dwarf Mass Limit
+2404.14324 [abs-only (HTTPError), 48302 chars] hits=[] :: Thirteen New M Dwarf + T Dwarf Pairs Identified with WISE/NEOWISE
+2403.04592 [html, 1652949 chars] hits=['189-203856', '2358-5218', '235827', 'J2358'] :: 89 New Ultracool Dwarf Co-Moving Companions Identified With The Backyard Worlds: Planet 9 
+2407.19219 [html, 326985 chars] hits=[] :: Primeval very low-mass stars and brown dwarfs -- VIII. The first age benchmark L subdwarf,

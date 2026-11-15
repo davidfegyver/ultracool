@@ -1,0 +1,67 @@
+## SIMBAD bibcodes for 2MASS J23582773-5218133
+bibcode	title
+"2024AJ....167..253R"	"89 New Ultracool Dwarf Comoving Companions Identified with the Backyard Worlds: Planet 9 Citizen Science Project."
+"2021A&A...649A...6G"	"Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+
+## SIMBAD otypes for 2MASS J23582773-5218133
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+<html>
+<head><title>504 Gateway Time-out</title></head>
+<body>
+<center><h1>504 Gateway Time-out</h1></center>
+<hr><center>nginx/1.29.0</center>
+</body>
+</html>
+
+## SIMBAD bibcodes for UCAC4 189-203856
+bibcode	title
+"2020AJ....160...83S"	"The sixth Data Release of the Radial Velocity Experiment (RAVE). II. Stellar atmospheric parameters, chemical abundances, and distances."
+"2008AJ....136..421Z"	"The radial velocity experiment (RAVE): second data release."
+"2011AJ....141..187S"	"The RAdial velocity experiment (RAVE): third data release."
+"2013AJ....146..134K"	"The radial velocity experiment (RAVE): fourth data release."
+"2017AJ....153...75K"	"The Radial Velocity Experiment (RAVE): fifth data release."
+"2024AJ....167..253R"	"89 New Ultracool Dwarf Comoving Companions Identified with the Backyard Worlds: Planet 9 Citizen Science Project."
+"2021A&A...649A...6G"	"Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+"2010A&A...511A..90B"	"Distance determination for RAVE stars using stellar models."
+"2010A&A...522A..54Z"	"Distance determination for RAVE stars using stellar models. II. Most  likely values assuming a standard stellar evolution scenario."
+"2011AJ....142..193B"	"The RAVE catalog of stellar elemental abundances: first data release."
+"2013MNRAS.436.1343F"	"Calibration of RAVE distances to a large sample of Hipparcos stars."
+
+## SIMBAD otypes for UCAC4 189-203856
+otype	origin
+"*"	"from id USNO-B1.0 0376-01124228"
+"MIR"	"from id WISE J235831.05-521805.9"
+"NIR"	"from id 2MASS J23583095-5218061"
+"PM*"	"from bibcode ; bibcode=2010A&A...522A..54Z"
+
+## SIMBAD ident for UCAC4 189-203856
+id
+"TIC 201234567"
+"UCAC4 189-203856"
+"RAVE J235830.9-521806"
+"Gaia DR3 6521792325832957440"
+"WISE J235831.05-521805.9"
+"2MASS J23583095-5218061"
+"RAVE J235831.0-521806"
+"USNO-B1.0 0376-01124228"
+"Gaia DR2 6521792325832957440"

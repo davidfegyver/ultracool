@@ -1,0 +1,9 @@
+2026-11-15 web_search (this review)
+1. "J2358-5218" OR "J235827.96-521813.4" OR "J23582773-5218133" brown dwarf spectrum
+   -> 10 results; generic brown-dwarf spectroscopy papers (JWST NIRSpec samples, SPHEREx sequence paper 2607.00543, NIRSPEC BDSS). None mentions the object.
+2. "UCAC4 189-203856"
+   -> 10 results; UCAC4 catalogue service pages only.
+3. "6521791947874851968" OR "CWISE J235827.96-521813.4" OR "2MASS J23582773-5218133"
+   -> 10 results; only SIMBAD's page for 2024AJ....167..253R (Rothermich+2024) plus unrelated SIMBAD object pages.
+Earlier (Discovery2 agent, research/discovery2/raw/web_search_log.txt): "2MASS J23582773-5218133" OR "CWISE J235827.96-521813.4" OR "UCAC4 189-203856" -> catalogue pages only.
+NASA ADS API: HTTP 401 "Missing Authorization" (ads_probe.txt); no token in the environment -> ADS full text NOT searched.
