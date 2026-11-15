@@ -17,8 +17,8 @@ const Label = ({ x, y, children }: { x: number; y: number; children: ReactNode }
 
 const STEPS: { title: string; text: string; art: ReactNode }[] = [
   {
-    title: 'One patch of sky, many dates',
-    text: 'A flipbook is a pile of infrared pictures of the same small patch of sky, taken between 2010 and 2026 by WISE, NEOWISE and SPHEREx, lined up pixel by pixel.',
+    title: 'A small region in a flipbook',
+    text: 'A flipbook is a stack of infrared images of one small patch of sky, taken between 2010 and 2026 by WISE, NEOWISE and SPHEREx and lined up pixel by pixel.',
     art: (
       <>
         <Frame x={10} y={14} />
@@ -30,8 +30,8 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Press play, watch for movement',
-    text: 'Pictures play oldest first. Distant stars stay frozen. A dot that slides steadily is a nearby star or brown dwarf; one that jumps around in a single day is an asteroid.',
+    title: 'Look for things that move',
+    text: "Press play and the images run from oldest to newest. Faraway stars don't move. A dot that drifts steadily is a nearby star or brown dwarf. A dot that jumps across the frame within one day is an asteroid.",
     art: (
       <Frame x={30} y={10}>
         {[0, 1, 2].map((i) => <circle key={i} cx={18 + i * 12} cy={36 - i * 8} r={2.5} fill="#f8fafc" opacity={0.35 + i * 0.3} />)}
@@ -41,7 +41,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
   },
   {
     title: 'The pink circle',
-    text: 'The pink circle shows where catalogs predict your object on that date. If the dot sits in the circle on every date, the object is moving just as expected.',
+    text: 'The pink circle is where the catalogues say your object should be on that date. If the dot stays inside it, the object moves as expected.',
     art: (
       <Frame x={30} y={10}>
         <circle cx={30} cy={30} r={3} fill="#f8fafc" />
@@ -50,8 +50,8 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'The cyan probe',
-    text: 'Something else caught your eye? Drag the cyan crosshair onto it, or right-click the sky map. Its circle is the measuring aperture. Nothing is measured until you pick "Measure this source" in the menu that opens.',
+    title: 'Measuring something else',
+    text: 'To measure another source, drag the cyan crosshair onto it or right-click it on the sky map, then choose "Measure this source". The circle shows the area we measure.',
     art: (
       <Frame x={30} y={10}>
         <circle cx={22} cy={36} r={3} fill="#f8fafc" />
@@ -61,8 +61,8 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Two infrared colors',
-    text: 'W1 (3.4 µm) and W2 (4.6 µm) are two infrared "colors". Ordinary stars look about the same in both. Cold brown dwarfs are much brighter in W2, so a dot that appears only in W2 is exciting.',
+    title: 'W1 and W2',
+    text: 'WISE took pictures in two infrared bands, W1 (3.4 µm) and W2 (4.6 µm). Ordinary stars look about the same in both. Cold brown dwarfs are much brighter in W2, so a dot that only shows up in W2 is worth a closer look.',
     art: (
       <>
         <Frame x={6}>
@@ -77,8 +77,8 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Brightness lives in the light curve',
-    text: 'Each picture has its contrast adjusted on its own, so brightness changes hide in the images. The light curve plot shows brightness against time: regular waves mean pulsation, random jumps mean dust or flares.',
+    title: 'Brightness changes',
+    text: "We set the contrast of each image separately, so you can't judge brightness by eye. Use the light curve plot instead: smooth repeating waves mean the star pulsates, sudden jumps mean dust or flares.",
     art: (
       <g transform="translate(10 10)">
         <path d="M0 60 H120 M0 60 V0" stroke="#475569" />
@@ -88,8 +88,8 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Real or ghost?',
-    text: 'Cameras make fake objects: spikes and rings around bright stars, afterimages, cosmic-ray hits. Something seen on only one date or in only one band is usually an artifact. Real objects come back.',
+    title: 'Is it real?',
+    text: "Cameras create fake sources too: spikes and rings around bright stars, afterimages, cosmic-ray hits. If something appears on only one date or in only one band, it's probably one of those. Real objects show up again.",
     art: (
       <Frame x={30} y={10}>
         <circle cx={26} cy={28} r={3} fill="#f8fafc" />

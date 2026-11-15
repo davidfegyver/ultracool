@@ -718,28 +718,26 @@ def _plain(motion, color, var, spec):
     if motion["verdict"] == "moving":
         cat = ""
         if motion["consistent_with_catalog"] is True:
-            cat = ", matching the catalog proper motion"
+            cat = ", and it matches the catalogue value"
         elif motion["consistent_with_catalog"] is False:
-            cat = ", which differs from the catalog value"
+            cat = ", but it differs from the catalogue value"
         sig = motion["significance_sigma"]
-        conf = ("a very confident measurement" if sig > 10 else "a confident measurement" if sig >= 5 else
-                "a tentative measurement")
-        s.append(f"It moves across the sky: about {motion['pm_total_arcsec_yr']:.2f} arcseconds per year, measured over "
-                 f"{motion['baseline_yr']:.0f} years ({conf}){cat}.")
+        conf = "are very sure of it" if sig > 10 else "are fairly sure of it" if sig >= 5 else "treat it as tentative"
+        s.append(f"It moves about {motion['pm_total_arcsec_yr']:.2f}″ a year. We measured that over "
+                 f"{motion['baseline_yr']:.0f} years and {conf}{cat}.")
     elif motion["verdict"] == "not moving":
-        s.append(f"No motion detected over {motion['baseline_yr']:.0f} years (less than about "
-                 f"{3 * motion['pmra_err_masyr'] / 1000:.2f} arcseconds per year): a distant star, a galaxy, or too slow to see.")
+        s.append(f"We see no motion over {motion['baseline_yr']:.0f} years (less than about "
+                 f"{3 * motion['pmra_err_masyr'] / 1000:.2f}″ a year). It's far away, a galaxy, or moving too slowly for us to notice.")
     elif motion["catalog"]["pmra_masyr"] or motion["catalog"]["pmdec_masyr"]:
         cat_pm = math.hypot(motion["catalog"]["pmra_masyr"], motion["catalog"]["pmdec_masyr"]) / 1000
         ts = motion.get("track_snr")
-        seen = (f" Stacking all WISE images along its catalog motion ({cat_pm:.2f} arcseconds per year) does show it "
-                f"(signal-to-noise {ts:.0f}), so it is there, just too faint to follow year by year."
+        seen = (f" Stacking all WISE images along its catalogue motion ({cat_pm:.2f}″ a year) does show it "
+                f"(signal-to-noise {ts:.0f}), so it's there, just faint."
                 if ts is not None and ts >= 5 else
-                " Even stacking all WISE images along its catalog motion does not show it clearly.")
-        s.append("We could not follow it from year to year: in single WISE epochs it is too faint or sits on other "
-                 "stars, so its motion is not measured here." + seen)
+                " Even stacking all WISE images along its catalogue motion doesn't show it clearly.")
+        s.append("It's too faint or too crowded to follow in single WISE images, so we can't measure its motion here." + seen)
     else:
-        s.append("Not enough clear detections in separate years to measure whether it moves.")
+        s.append("Not enough clear detections in separate years to tell whether it moves.")
     return s + _plain_props(color, var, spec)
 
 
@@ -749,7 +747,7 @@ def _runner_up(ranking):
     if len(ranking) < 2:
         return "."
     chi2 = [r["chi2_red"] * (r["n_bins"] - 1) for r in ranking[:2]]
-    return f"; the next best ({ranking[1]['label']}) fits {'about as well' if chi2[1] - chi2[0] < 4 else 'clearly worse'}."
+    return f"; {ranking[1]['label']} fits {'about as well' if chi2[1] - chi2[0] < 4 else 'clearly worse'}."
 
 
 def _plain_props(color, var, spec):
@@ -758,32 +756,33 @@ def _plain_props(color, var, spec):
     if color["w1_w2"] is not None:
         val = f"at least {color['w1_w2']:.1f}" if color["w1_w2_is_lower_limit"] else f"{color['w1_w2']:.2f}"
         hedge = "" if spec["verdict"] == "match" else " (dusty or very cool stars can look like this too)"
-        s.append({"extremely red (Y/late-T dwarf-like)": f"Its infrared colour W1-W2 = {val} mag is extremely red, like the coldest brown dwarfs (late-T and Y).",
-                  "very red (T dwarf-like)": f"Its infrared colour W1-W2 = {val} mag is very red, like T-type brown dwarfs.",
-                  "red (L/T dwarf-like)": f"Its infrared colour W1-W2 = {val} mag is red, as for early-T and the reddest L brown dwarfs{hedge}.",
-                  "normal star colors": f"Its infrared colour W1-W2 = {val} mag is normal for a star, not a cold brown dwarf.",
-                  }.get(color["verdict"], "Its infrared colour could not be pinned down."))
+        s.append({"extremely red (Y/late-T dwarf-like)": f"W1−W2 = {val} mag. That's extremely red, the colour of the coldest brown dwarfs (late-T and Y).",
+                  "very red (T dwarf-like)": f"W1−W2 = {val} mag. That's very red, the colour of a T-type brown dwarf.",
+                  "red (L/T dwarf-like)": f"W1−W2 = {val} mag. That's red, like early-T and the reddest L brown dwarfs{hedge}.",
+                  "normal star colors": f"W1−W2 = {val} mag, an ordinary star colour, not a cold brown dwarf.",
+                  }.get(color["verdict"], "We couldn't pin down its infrared colour."))
     elif color.get("note"):
-        s.append(f"Its WISE W1-W2 colour is not given: {color['note']}.")
+        s.append(f"No WISE W1−W2 colour: {color['note']}.")
     else:
-        s.append("Its WISE W1-W2 colour could not be measured (too faint or not covered).")
+        s.append("We couldn't measure its WISE W1−W2 colour (too faint or not covered).")
     if var["verdict"] == "periodic variable":
         alts = " or ".join(f"~{p:.0f}" for p in var["period_alternatives_days"])
-        s.append(f"Its brightness rises and falls regularly, every ~{var['period_days']:.0f} days"
-                 + (f" ({alts} days fit the twice-yearly WISE visits equally well)." if alts else "."))
+        s.append(f"It brightens and fades every ~{var['period_days']:.0f} days"
+                 + (f". WISE only visited twice a year, so {alts} days fit just as well." if alts else "."))
     elif var.get("note"):
-        s.append(f"Whether its brightness changes cannot be told: {var['note']}.")
+        s.append(f"We can't tell whether its brightness changes: {var['note']}.")
     else:
-        s.append({"irregular variable": "Its brightness changes, but without a regular pattern (irregular variable).",
-                  "constant": "Its infrared brightness stays constant within the measurement errors.",
+        s.append({"irregular variable": "Its brightness changes, but not on a regular schedule.",
+                  "constant": "Its brightness doesn't change by more than our measurement errors.",
                   }.get(var["verdict"], "Too few WISE measurements to tell whether its brightness changes."))
     label = spec["best"]["label"] if spec.get("best") else None
     if spec["verdict"] == "match":
         rng = spec.get("type_range")
         # M8-L2 can be stars at the hydrogen-burning limit; only call L3 and later "brown-dwarf"
-        kind = "brown-dwarf" if (spt_num(label) or 0) >= 13 else "ultracool-dwarf"
-        s.append(f"Its SPHEREx spectrum fits a {label} {kind} template best" +
-                 (f"; allowing for this method's typical error, its type lies between {rng[0]} and {rng[1]}."
+        kind = "brown dwarf" if (spt_num(label) or 0) >= 13 else "ultracool dwarf"
+        article = "an" if label[:1] in "ML" else "a"
+        s.append(f"Its SPHEREx spectrum looks most like {article} {label} {kind}" +
+                 (f". Our method is often off by a subtype or two, so call it {rng[0]}–{rng[1]}."
                   if rng and rng[0] != rng[1] else
                   _runner_up(spec["ranking"])))
     elif spec["verdict"] == WARMER:
@@ -803,18 +802,18 @@ def _plain_props(color, var, spec):
     else:
         s.append("Its SPHEREx spectrum does not look like an ultracool dwarf (no template fits well).")
     if spec.get("photometry", "").startswith("neighbour") and spec["verdict"] != "insufficient data":
-        s.append("Nearby stars share SPHEREx's large pixels here; their light was fitted and removed first.")
+        s.append("SPHEREx pixels are big, so nearby stars overlap with it here. We subtracted their light before reading the spectrum.")
     if spec.get("blends_arcsec") and spec["verdict"] != "insufficient data":
         n = len(spec["blends_arcsec"])
-        s.append(f"{n} other catalogued source{'s lie' if n > 1 else ' lies'} within 5 arcseconds of it; SPHEREx "
-                 "cannot separate that light, so the spectrum includes it.")
+        s.append(f"{n} other known source{'s are' if n > 1 else ' is'} within 5″. SPHEREx can't separate "
+                 f"{'them' if n > 1 else 'it'}, so {'their' if n > 1 else 'its'} light is mixed into this spectrum.")
     return s
 
 
 # bump when the summary changes: cached summary.json files are recomputed on their next request (seconds per
 # field, no new image downloads; PIPELINE_VERSION is for the frames). 2: neighbour-aware SPHEREx spectrum.
-# 3: 'ultracool-dwarf' instead of 'brown-dwarf' template wording for M8-L2 matches.
-SUMMARY_VERSION = 3
+# 3: 'ultracool-dwarf' instead of 'brown-dwarf' template wording for M8-L2 matches. 4: plainer sentences.
+SUMMARY_VERSION = 4
 
 
 def _read_keyed(path, key):

@@ -61,7 +61,7 @@ const EPS_IND_B = { ra: 331.04414658852124, dec: -56.782844195116105, pmra_masyr
 export const LESSONS: Lesson[] = [
   {
     id: 'moves',
-    title: 'Something moves',
+    title: 'A moving star',
     skill: 'Spot a moving star',
     object: "Barnard's Star",
     ra: 269.4520769586187,
@@ -74,7 +74,7 @@ export const LESSONS: Lesson[] = [
     try_next: { object: 'Proxima Centauri', params: { mode: 'explore', target: 'Proxima Cen' }, note: 'the nearest star to the Sun, crossing almost 4 arcseconds of sky every year' },
     hide_light_curve: 'Too bright for brightness measurements; this lesson is about motion.',
     story:
-      "Barnard's Star is a small red star only 6 light-years away, the fastest-moving star in our sky. Most stars are so far away that they look frozen in place for a lifetime, but Barnard's Star slides about 10 arcseconds every year. Over the 16 years of WISE and SPHEREx pictures, that adds up to a jump you can see by eye.",
+      "Barnard's Star is a small red star only 6 light-years away, the fastest-moving star in our sky. Most stars are so far away that they look frozen in place for a lifetime, but Barnard's Star slides about 10 arcseconds every year. Over the 16 years of WISE and SPHEREx pictures, that adds up to a shift you can see by eye.",
     look_for:
       'Play the W2 frames from 2010 to 2024: the bright star slides upward (north) across the background stars, about 10 arcseconds every year, staying inside the pink circle. The background stars stay put.',
     quiz: {
@@ -87,7 +87,7 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 'color',
-    title: 'Right color',
+    title: 'A very cold brown dwarf',
     skill: 'Recognize a cold brown dwarf by its infrared color',
     object: 'WISE 0855−0714',
     ra: 133.81890825,
@@ -100,7 +100,7 @@ export const LESSONS: Lesson[] = [
     try_next: {
       object: 'WISE J2317−6659',
       params: { mode: 'explore', target: 'WISE J231728.42-665959.3' },
-      note: 'a cold T5 brown dwarf that this app typed for the first time',
+      note: 'a T dwarf about 30 parsecs away; this app gave it its first spectrum-based type (about T6)',
     },
     deep: true,
     stack_windows: [
@@ -109,7 +109,7 @@ export const LESSONS: Lesson[] = [
       [59580, 60676],
     ],
     story:
-      'WISE 0855−0714 is the coldest brown dwarf known: about 250–285 kelvin, roughly the temperature of a chilly day on Earth. It was found in 2014 only 7.4 light-years away. Something that cold gives off almost no visible light, and even in the infrared it is much brighter at 4.6 µm (WISE W2) than at 3.4 µm (W1), because methane and water in its atmosphere swallow the shorter wavelengths.',
+      'WISE 0855−0714 is the coldest brown dwarf known: about 250–285 kelvin, roughly the temperature of a chilly day on Earth. It was found in 2014 only 7.4 light-years away. Something that cold gives off almost no visible light, and even in the infrared it is much brighter at 4.6 µm (WISE W2) than at 3.4 µm (W1), because methane and water in its atmosphere absorb the shorter wavelengths.',
     look_for:
       'Compare the W1 (3.4 µm) and W2 (4.6 µm) deep stacks at the circle: a faint dot is there in W2 but nothing at all in W1. Ordinary stars look about equally bright in both. Each stack adds up two years of pictures; switch periods to see it move too.',
     quiz: {
@@ -122,7 +122,7 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 'together',
-    title: 'Move together',
+    title: 'Moving as a pair',
     skill: 'Find companions by common proper motion',
     object: 'Epsilon Indi A + Ba/Bb',
     // A-B midpoint (epoch 2000) moving with A's proper motion, so both stay in the 0.2° field
@@ -153,7 +153,7 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 'brightness',
-    title: 'Brightness changes',
+    title: 'A pulsating star',
     skill: 'Read a periodic light curve',
     object: 'AL Bootis (Mira variable)',
     ra: 204.73282996689997,
@@ -185,7 +185,7 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 'irregular',
-    title: 'Dusty disk, no pattern',
+    title: 'An irregular young star',
     skill: 'Tell irregular variability from periodic',
     object: 'RW Aurigae',
     ra: 76.95652603458333,
@@ -211,7 +211,7 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 'ghost',
-    title: 'Real or ghost?',
+    title: 'Camera ghosts',
     skill: 'Recognize image artifacts',
     object: 'Optical ghost of Epsilon Indi A',
     // 60″ east of A, moving with A: ghost (both seasons), A and B all fit in 0.25°
@@ -248,7 +248,7 @@ export const LESSONS: Lesson[] = [
       { label: 'eps Ind B (real)', ...EPS_IND_B },
     ],
     story:
-      'Telescopes make fake objects too. Light from a very bright star bounces inside the optics and makes a faint out-of-focus copy, a ghost. Detectors also keep afterimages of bright stars, and cosmic rays leave single sharp hits. Here the bright star Epsilon Indi A makes a ghost in WISE W2 images.',
+      'Telescopes also create fake objects. Light from a very bright star bounces inside the optics and makes a faint out-of-focus copy, a ghost. Detectors also keep afterimages of bright stars, and cosmic rays leave single sharp hits. Here the bright star Epsilon Indi A makes a ghost in WISE W2 images.',
     look_for:
       'Next to the bright star there is a fuzzy doughnut about 5 arcminutes away. Step through the visits: every six months it jumps to the opposite side of the star (solid circle = where it is now, dashed = the other season), while the real brown dwarf (eps Ind B) stays in place.',
     quiz: {
@@ -261,7 +261,7 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 'asteroid',
-    title: 'Asteroid',
+    title: 'An asteroid',
     skill: 'Catch a solar-system object',
     object: '(888) Parysatis',
     ra: 5.9233,

@@ -33,38 +33,38 @@ export default function FoundPanel({ summary, note, busy }: {
       <div className="grid grid-cols-2 gap-1">
         {motion && (
           <Badge
-            q={<>Moves? (<Term k="proper motion" />)</>}
-            a={motion.verdict === 'moving' ? `Yes${pm !== null ? `, ${pm.toFixed(2)}″/yr` : ''}` : motion.verdict === 'not moving' ? 'No' : 'Not sure'}
+            q={<>Moving? (<Term k="proper motion" />)</>}
+            a={motion.verdict === 'moving' ? `Yes${pm !== null ? `, ${pm.toFixed(2)}″/yr` : ''}` : motion.verdict === 'not moving' ? 'No' : "Can't tell"}
             tone={motion.verdict === 'moving' ? 'yes' : motion.verdict === 'not moving' ? 'no' : 'unknown'}
           />
         )}
         <Badge
-          q={<>Cold / red? (<Term k="W1−W2" />)</>}
+          q={<>Cold? (<Term k="W1−W2" />)</>}
           a={
             {
-              'extremely red (Y/late-T dwarf-like)': 'Very cold!',
-              'very red (T dwarf-like)': 'Red, like T dwarfs',
-              'red (L/T dwarf-like)': 'Red, like brown dwarfs',
+              'extremely red (Y/late-T dwarf-like)': 'Very (Y or late-T colours)',
+              'very red (T dwarf-like)': 'Yes (T-dwarf colours)',
+              'red (L/T dwarf-like)': 'Maybe (L/T colours)',
               'normal star colors': 'No, normal star',
-              'insufficient data': 'Not sure',
-            }[color.verdict] ?? 'Not sure'
+              'insufficient data': "Can't tell",
+            }[color.verdict] ?? "Can't tell"
           }
           tone={color.verdict === 'insufficient data' ? 'unknown' : color.verdict === 'normal star colors' ? 'no' : 'yes'}
         />
         <Badge
-          q={<>Brightness changes? (<Term k="light curve" />)</>}
+          q={<>Changing? (<Term k="light curve" />)</>}
           a={
             variability.verdict === 'periodic variable'
               ? `Yes, repeats${period ? ` every ~${Math.round(period)} d${alts.length ? ` (or ${alts.map((a) => Math.round(a)).join(' or ')} d)` : ''}` : ''}`
-              : variability.verdict === 'irregular variable' ? 'Yes, irregularly' : variability.verdict === 'constant' ? 'No' : 'Not sure'
+              : variability.verdict === 'irregular variable' ? 'Yes, irregularly' : variability.verdict === 'constant' ? 'No' : "Can't tell"
           }
           tone={variability.verdict.endsWith('variable') ? 'yes' : variability.verdict === 'constant' ? 'no' : 'unknown'}
         />
-        <Badge q={<><Term k="spectrum" /> type</>} a={spec ?? 'Not sure'} tone={spec ? 'yes' : 'unknown'} />
+        <Badge q={<Term k="spectrum">Spectral type</Term>} a={spec ?? "Can't tell"} tone={spec ? 'yes' : 'unknown'} />
       </div>
       {variability.source === 'catalog' && (
         <p className="text-amber-300" title={variability.source_note}>
-          Brightness comes from the WISE catalog: this object is too bright for our own measurements.
+          It's too bright for our own measurements, so these brightness values come from the WISE catalogue.
           {/* phones: the hover note as text */}
           {variability.source_note && <span className="block text-slate-400 md:hidden">{variability.source_note}</span>}
         </p>

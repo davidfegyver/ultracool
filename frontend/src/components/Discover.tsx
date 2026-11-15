@@ -13,7 +13,7 @@ import Term from './Term'
 const FIELD_FOV = 0.25 // widest grid the backend allows: most candidates per run
 // pre-computed at FIELD_FOV by scripts/prewarm.py (DISCOVER, keep in sync): a plain search for the same name hits them
 const EXAMPLE_FIELDS: Example[] = [
-  { q: 'WISE J231728.42-665959.3', label: 'WISE J2317−6659 (featured T5 brown dwarf)' },
+  { q: 'WISE J231728.42-665959.3', label: 'WISE J2317−6659 (featured T6 brown dwarf)' },
   { q: 'WISEA J153429.75-104303.3', label: '"The Accident" (faint fast mover)' },
   { q: 'eps Ind B', label: 'eps Ind B (brown dwarf pair moving with eps Ind A)' },
 ]
@@ -91,7 +91,7 @@ export default function Discover() {
       >
         <button
           className="rounded bg-emerald-800 px-2 py-1 text-xs hover:bg-emerald-700"
-          title="A random spot more than 30° from the Milky Way plane, where background stars are sparse. Not pre-computed: the first scan takes 3–10 minutes."
+          title="A random spot more than 30° from the Milky Way, where there are fewer background stars. We haven't scanned it before, so the first scan takes 3–10 minutes."
           onClick={() => {
             const f = randomHighLatitude()
             setSel(0)
@@ -100,7 +100,7 @@ export default function Discover() {
             goTo({ name: `Random field l=${f.l.toFixed(1)}° b=${f.b.toFixed(1)}°`, ra: f.ra, dec: f.dec, pmra_masyr: 0, pmdec_masyr: 0, epoch_yr: 2000, otype: null, sptype: null })
           }}
         >
-          Random high-latitude field (new field: 3–10 min)
+          Random field away from the Milky Way (3–10 min)
         </button>
       </TargetBar>
       <div className="flex min-h-0 flex-1">
@@ -141,11 +141,11 @@ export default function Discover() {
           ) : (
             <div className="space-y-2 p-4 text-sm text-slate-400">
               <p>
-                Discover scans a {FIELD_FOV}° patch of sky for everything that moves over 16 years. Nearby stars and{' '}
-                <Term k="brown dwarf">brown dwarfs</Term> drift a little every year (<Term k="proper motion" />). Candidates nobody has catalogued yet are marked{' '}
-                <span className="rounded bg-amber-700 px-1 text-xs text-white">Unknown</span>.
+                Discover looks for everything that moved in a {FIELD_FOV}° patch of sky over 16 years. Nearby stars and{' '}
+                <Term k="brown dwarf">brown dwarfs</Term> shift a little each year (<Term k="proper motion" />). Anything not in SIMBAD, CatWISE or SPIFF gets an{' '}
+                <span className="rounded bg-amber-700 px-1 text-xs text-white">Unknown</span> tag.
               </p>
-              <p>For each candidate: play the flipbook, decide whether the dot really moves along the dashed track, and click Real mover, Artifact or Unsure.</p>
+              <p>Pick a candidate, play the flipbook and check whether the dot follows the dashed track. Then mark it Real mover, Artifact or Unsure.</p>
             </div>
           )}
           {/* the viewer's corner crosshair and tip explain the probe; the results box appears once there is one */}
@@ -227,8 +227,8 @@ function Review({ seq, m, i, label, onLabel, probe }: { seq: Sequence; m: Mover;
           </tbody>
         </table>
         <p className="text-xs text-slate-400">
-          The dashed line is the fitted 16-year track; the pink circle is where the fit puts the source on each date. A real mover stays inside the circle in every
-          stack; an <Term k="artifact" /> appears in only one stack or band.
+          The dashed line is the fitted 16-year path, and the pink circle is where the fit expects the source on each date. A real mover stays in the circle in every
+          stack. An <Term k="artifact" /> shows up in only one stack or one band.
         </p>
         <div role="group" aria-label="Classify candidate" className="flex gap-2">
           {LABELS.map((l) => (

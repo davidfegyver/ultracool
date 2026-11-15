@@ -115,7 +115,7 @@ def test_plain_sentences_use_words_not_weights():
     from app.analysis import _plain_props, _runner_up
 
     assert _runner_up([{"label": "T5", "chi2_red": 1.5, "n_bins": 89}, {"label": "T6", "chi2_red": 1.52, "n_bins": 89}]) \
-        == "; the next best (T6) fits about as well."
+        == "; T6 fits about as well."
     assert "clearly worse" in _runner_up([{"label": "T3", "chi2_red": 4.4, "n_bins": 89}, {"label": "T2", "chi2_red": 5.0, "n_bins": 89}])
     color = {"w1_w2": 1.0, "w1_w2_is_lower_limit": False, "verdict": "red (L/T dwarf-like)"}
     match = {"verdict": "match", "best": {"label": "T1", "prob": 0.97}, "ranking": [{"label": "T1", "chi2_red": 1, "n_bins": 50}]}

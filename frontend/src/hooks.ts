@@ -134,7 +134,7 @@ export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => P
     if (!ready) return
     let stale = false
     // first summary call queries IRSA and SkyBoT (25-45 s); no client timeout, just say what is happening
-    setState({ id: ready, data: null, note: 'Asking the archives… (the first look at a field can take up to a minute)', busy: true })
+    setState({ id: ready, data: null, note: "Querying NASA's archives. The first time anyone opens a field this can take a minute.", busy: true })
     fetcher(ready)
       .then((data) => !stale && setState({ id: ready, data, note: null, busy: false }))
       .catch((e) => !stale && setState({ id: ready, data: null, note: (e as Error).message, busy: false }))
@@ -143,10 +143,10 @@ export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => P
     }
   }, [ready]) // eslint-disable-line react-hooks/exhaustive-deps
   if (!seq) return { data: null, note: null, busy: false }
-  if (seq.status === 'error') return { data: null, note: 'Sequence failed', busy: false }
+  if (seq.status === 'error') return { data: null, note: "Couldn't load the images for this field", busy: false }
   if (!ready || state?.id !== ready) {
     const wait = !ready && waitText(seq.queue_position, seq.eta_s)
-    return { data: null, note: `${afterWise ? 'Waiting for the WISE frames…' : 'Waiting for all frames…'}${wait ? ` ${wait}` : ''}`, busy: true }
+    return { data: null, note: `${afterWise ? 'Waiting for the WISE images…' : 'Waiting for the images…'}${wait ? ` ${wait}` : ''}`, busy: true }
   }
   return state
 }

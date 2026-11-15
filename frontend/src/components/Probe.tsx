@@ -238,8 +238,7 @@ export function ProbePanel({ probe, research, plots = true }: { probe: ProbeCtl;
   if (!point && !d)
     return (
       <p className="p-2 text-xs text-slate-500">
-        Drag the cyan crosshair from the flipbook's corner onto any source<span className="max-md:hidden">, or right-click any spot of the field,</span> to measure
-        it.
+        To measure another source, drag the cyan crosshair from the flipbook's corner onto it<span className="max-md:hidden">, or right-click it</span>.
       </p>
     )
   const moved = d && point !== probe.measuredAt
@@ -251,7 +250,7 @@ export function ProbePanel({ probe, research, plots = true }: { probe: ProbeCtl;
         <table className="w-full">
           <tbody>
             {[
-              ['Measured', full ? 'full (native pixels)' : 'quick preview (resampled images)'],
+              ['Measured', full ? 'full (native pixels)' : 'quick preview (from the resampled images)'],
               ['RA, Dec (2000)', `${d.position.ra.toFixed(5)}, ${d.position.dec.toFixed(5)}`],
               ['Snapped to peak', d.position.snapped ? `yes, ${d.position.snap_offset_arcsec.toFixed(1)}″ from the click` : 'no peak ≥3σ within 4″'],
               [
@@ -269,7 +268,7 @@ export function ProbePanel({ probe, research, plots = true }: { probe: ProbeCtl;
           </tbody>
         </table>
       )}
-      {moved && <p className="text-amber-300">The probe has moved since this measurement.</p>}
+      {moved && <p className="text-amber-300">You moved the probe after this measurement.</p>}
       <div className="flex flex-wrap items-center gap-2">
         {(!d || moved) && (
           <button className={`${btn} bg-sky-700`} disabled={busy || !probe.sid || probe.outside} aria-describedby={probe.outside ? 'probe-outside-panel' : undefined} onClick={() => probe.measure('preview')}>
@@ -277,7 +276,7 @@ export function ProbePanel({ probe, research, plots = true }: { probe: ProbeCtl;
           </button>
         )}
         {d && !full && !moved && (
-          <button className={`${btn} bg-sky-700`} disabled={busy} onClick={() => probe.measure('full')} title="Re-measures the native SPHEREx pixels and WISE co-adds exactly like the target">
+          <button className={`${btn} bg-sky-700`} disabled={busy} onClick={() => probe.measure('full')} title="Measures the original SPHEREx pixels and WISE stacks, the same way as the main target">
             Full measurement (~1-2 min)
           </button>
         )}

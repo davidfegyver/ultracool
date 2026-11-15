@@ -43,18 +43,18 @@ const AXIS_NOTE = {
   lc: 'Brightness: aperture photometry, corrected for light outside the aperture',
   spec: 'F_λ: brightness at each wavelength, in 10⁻¹⁸ W m⁻² µm⁻¹',
 }
-const FOLD_NOTE = "Plot brightness against the phase of the cycle instead of the date. WISE's 6-month visits cannot tell some periods apart: try each."
+const FOLD_NOTE = 'Plot brightness against the cycle phase instead of the date. Because WISE visited every 6 months, some periods look the same, so try each one.'
 
-/** "Looks like a T5 brown dwarf (good fit)" or the verdict as a sentence (Explore and Learn). */
+/** "Closest match: T5 brown dwarf (good fit)" or the verdict as a sentence (Explore and Learn). */
 function plainSpectrum(spec: Spectrum | null) {
   if (!spec) return ''
   const b = spec.best
   if (spec.verdict === 'match' && b) {
     const fit = b.chi2_red <= 2 ? 'good fit' : b.chi2_red <= 5 ? 'fair fit' : 'rough fit'
-    return `Looks like ${/^[ML]/.test(b.label) ? 'an' : 'a'} ${b.label} ${b.label.startsWith('M') ? 'dwarf' : 'brown dwarf'} (${fit})`
+    return `Closest match: ${b.label} ${b.label.startsWith('M') ? 'dwarf' : 'brown dwarf'} (${fit})`
   }
-  if (spec.verdict === 'insufficient data') return 'Not enough SPHEREx measurements to tell its type'
-  if (spec.verdict.startsWith('not consistent')) return 'Does not look like a brown dwarf'
+  if (spec.verdict === 'insufficient data') return 'Too few SPHEREx measurements to tell its type'
+  if (spec.verdict.startsWith('not consistent')) return "Doesn't match any brown-dwarf template"
   return spec.verdict.charAt(0).toUpperCase() + spec.verdict.slice(1)
 }
 

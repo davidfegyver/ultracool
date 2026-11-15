@@ -43,7 +43,7 @@ export default function ResearchPanel({ seq, summary, note, busy, showAsteroids 
         >
           ⤓ Download CSV
         </a>
-        <span className="text-slate-500">per-frame photometry with provenance</span>
+        <span className="text-slate-500">brightness for every frame, with the source file of each</span>
       </div>
       {!summary && <Pending note={note} busy={busy} className="mt-2" />}
       {m && (
@@ -98,7 +98,7 @@ export function PhotometryTables({ color: c, variability: v, spectrum: s }: Part
               ),
             ]}
           />
-          {v.period_alias_warning && <p className="text-amber-400">⚠ The period may be an alias of WISE's 6-month / 1-year visit cadence.</p>}
+          {v.period_alias_warning && <p className="text-amber-400">⚠ This period might be an artefact of WISE visiting only every 6 months.</p>}
         </>
       )}
       {s && (

@@ -348,7 +348,7 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
             <input type="checkbox" checked={fb.showOnSky} onChange={(e) => set({ showOnSky: e.target.checked })} /> Show on sky
           </label>
         )}
-        <label className="flex items-center gap-1 max-md:min-h-11" title="Co-add frames per band: WISE in 2-year windows, SPHEREx per survey epoch. Shows sources too faint for single frames.">
+        <label className="flex items-center gap-1 max-md:min-h-11" title="Adds up frames per band (WISE in 2-year windows, SPHEREx per survey pass) to show sources too faint for single frames.">
           <input type="checkbox" checked={fb.deep} onChange={(e) => set({ deep: e.target.checked, frameId: null })} /> Deep stacks
         </label>
       </div>

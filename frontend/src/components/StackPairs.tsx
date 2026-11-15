@@ -10,7 +10,7 @@ export default function StackPairs({ seq, windows, target }: { seq: Sequence | n
   const [w, setW] = useState(0)
   // stacks are cached by URL: request them only once every frame is in
   if (!seq || seq.status !== 'done')
-    return <p className="p-4 text-xs text-slate-400">{seq?.status === 'error' ? seq.error : `Collecting pictures… ${seq ? `${seq.done}/${seq.total}` : ''}`}</p>
+    return <p className="p-4 text-xs text-slate-400">{seq?.status === 'error' ? seq.error : `Downloading images… ${seq ? `${seq.done}/${seq.total}` : ''}`}</p>
   const [lo, hi] = windows[w]
   const p = propagate(target.ra, target.dec, target.pmra_masyr, target.pmdec_masyr, target.epoch_yr, (lo + hi) / 2)
   const [x, y] = worldToPx(seq.grid.wcs, seq.grid.height, p.ra, p.dec)

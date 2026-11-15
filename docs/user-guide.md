@@ -70,7 +70,7 @@ This compares brightness in W2 with W1 (the "W1−W2 colour"). Colder objects ar
 
 The SPHEREx rainbow is compared with 47 reference brown dwarfs. The app gives a range of types, not a single label, because the method is good to about one or two subclasses. A type is only given when the object is clearly detected. Ordinary stars, which are warmer than any reference, are called "probably an ordinary star". If neighbouring stars spoil the measurement, the app says so instead of guessing.
 
-## Real or ghost?
+## Is it real?
 
 Cameras make fake objects: spikes and rings around bright stars, reflections ("ghosts"), afterimages and cosmic-ray hits. The app uses the missions' own artifact lists to hide most of them, but stay sceptical. Something seen on only one date, or only near a very bright star, is usually not real. Lesson 6 shows a real example.
 
