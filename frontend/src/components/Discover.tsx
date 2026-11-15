@@ -148,7 +148,8 @@ export default function Discover() {
               <p>For each candidate: play the flipbook, decide whether the dot really moves along the dashed track, and click Real mover, Artifact or Unsure.</p>
             </div>
           )}
-          {seq && (
+          {/* the viewer's corner crosshair and tip explain the probe; the results box appears once there is one */}
+          {seq && (probe.point || probe.data) && (
             <section aria-label="Probe" className="mx-3 mb-3 max-w-3xl rounded border border-slate-700">
               <h3 className="bg-slate-800 px-2 py-1 text-xs font-semibold tracking-wide text-slate-300 uppercase">Probe</h3>
               <ProbePanel probe={probe} research={false} />

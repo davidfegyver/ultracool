@@ -163,6 +163,8 @@ export type ProbeCtl = ProbeResult & {
 const NO_RESULT: ProbeResult = { data: null, measuredAt: null, progress: null, busy: false, error: null }
 // backend refuses points closer than 25" (~9 grid px) to the edge: the sky annulus must fit
 const EDGE_MARGIN_PX = 9
+/** set once the probe has been placed in this browser; the viewer's how-to hint goes away after that */
+export const PROBE_USED_KEY = 'ultracool-probe-used'
 
 /** The probe point (URL `probe`/`probe_pm`, restored without measuring), its action menu and its measurement on `seq`.
  * Moving the point never sends a request: only `measure` does. */
@@ -179,6 +181,7 @@ export function useProbe(seq: Sequence | null): ProbeCtl {
 
   const place = useCallback((p: ProbePoint | null) => {
     pointRef.current = p
+    if (p) localStorage.setItem(PROBE_USED_KEY, '1')
     setPoint(p)
     writeUrl({
       probe: p && `${p.ra.toFixed(6)},${p.dec.toFixed(6)}`,

@@ -1,9 +1,9 @@
 import A, { type Aladin } from 'aladin-lite'
 import { useEffect, useRef, useState } from 'react'
 import { waitText, type Frame, type Sequence } from '../api'
-import type { ProbeCtl } from '../hooks'
+import { PROBE_USED_KEY, type ProbeCtl } from '../hooks'
 import { APERTURE, mjdToIso, mjdToYear, PIX_ARCSEC, pxToWorld, type Mark } from '../sky'
-import { ProbeMarker } from './Probe'
+import { ProbeDock, ProbeMarker } from './Probe'
 
 export const ALL_BANDS = ['W1', 'W2', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6']
 // wavelength coverage per band (µm): WISE filter centres; SPHEREx detector ranges as measured in our frames
@@ -101,7 +101,7 @@ type Props = {
   /** offer Blink (earliest vs latest deep stack, optional difference image) */
   blink?: boolean
   /** band preset buttons shown instead of the per-band chips */
-  presets?: { label: string; bands: string[] }[]
+  presets?: { label: string; bands: string[]; title?: string }[]
   /** crop the viewer to a size×size px window around (x, y) (grid px, PNG y-down, epoch 2018.0) and mark a source
    * moving vx, vy px/yr instead of the target circle */
   focus?: { x: number; y: number; size: number; vx: number; vy: number }
@@ -197,7 +197,8 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
           </div>
         </div>
       )}
-      <div className="relative mx-auto bg-black" style={{ width: viewerPx, height: viewerPx }}>
+      {/* overflow-hidden: probe annuli and focus crops reach far past the picture */}
+      <div className="relative mx-auto overflow-hidden bg-black" style={{ width: viewerPx, height: viewerPx }}>
         {shownPng && seq ? (
           <svg
             role={probe ? 'group' : 'img'}
@@ -238,14 +239,16 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
                 <circle cx={cur.target_px[0] + 0.5} cy={cur.target_px[1] + 0.5} r={APERTURE[cur.survey].r / PIX_ARCSEC} fill="none" stroke="#f472b6" strokeWidth={2} vectorEffect="non-scaling-stroke" />
               )
             )}
-            {probe && (
-              <ProbeMarker probe={probe} seq={seq} frame={cur} unit={view[2] / viewerPx} ghostAt={[view[0] + view[2] * (2 / 3), view[1] + view[3] / 3]} />
-            )}
+            {probe?.point && <ProbeMarker probe={probe} point={probe.point} seq={seq} frame={cur} unit={view[2] / viewerPx} />}
           </svg>
         ) : (
           <div className="flex h-full items-center justify-center text-slate-500">{seq ? 'No frames match the filters' : 'No sequence'}</div>
         )}
+        {probe && !probe.point && shownPng && seq && <ProbeDock probe={probe} seq={seq} />}
       </div>
+      {probe && shownPng && !localStorage.getItem(PROBE_USED_KEY) && (
+        <p className="text-cyan-300/80">Tip: drag the cyan crosshair from the corner onto any source (or right-click it) to measure it.</p>
+      )}
       <div className="flex h-5 items-center gap-2">
         {override ? (
           <span>{override.label}</span>
@@ -286,7 +289,13 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
           ? presets.map((p) => {
               const on = p.bands.length === fb.bands.length && p.bands.every((b) => fb.bands.includes(b))
               return (
-                <button key={p.label} aria-pressed={on} className={`rounded px-2 py-0.5 ${on ? 'bg-sky-700' : 'bg-slate-800 text-slate-400'}`} onClick={() => set({ bands: p.bands })}>
+                <button
+                  key={p.label}
+                  aria-pressed={on}
+                  title={p.title}
+                  className={`rounded px-2 py-0.5 ${on ? 'bg-sky-700' : 'bg-slate-800 text-slate-400'}`}
+                  onClick={() => set({ bands: p.bands })}
+                >
                   {p.label}
                 </button>
               )
@@ -306,14 +315,10 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
               )
             })}
       </div>
-      <div className="flex gap-3">
-        <label className="flex items-center gap-1">
-          <input type="checkbox" checked={fb.hideFlagged} onChange={(e) => set({ hideFlagged: e.target.checked })} /> Hide flagged frames
-          {fb.hideFlagged && seq && (
-            <span className="text-slate-500">
-              ({seq.frames.filter((f) => f.flagged && fb.bands.includes(f.band)).length} hidden)
-            </span>
-          )}
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 whitespace-nowrap">
+        <label className="flex items-center gap-1" title="Leave out frames with artifact flags (ghosts, latents, cosmic rays) at the target">
+          <input type="checkbox" checked={fb.hideFlagged} onChange={(e) => set({ hideFlagged: e.target.checked })} /> Hide flagged
+          {fb.hideFlagged && seq && <span className="text-slate-500">({seq.frames.filter((f) => f.flagged && fb.bands.includes(f.band)).length})</span>}
         </label>
         <label className="flex items-center gap-1">
           <input type="checkbox" checked={fb.showOnSky} onChange={(e) => set({ showOnSky: e.target.checked })} /> Show on sky

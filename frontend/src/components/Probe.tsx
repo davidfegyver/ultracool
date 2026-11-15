@@ -13,21 +13,20 @@ const OUTSIDE_HINT = 'Outside the measurable field (25″ in from its edge): dra
 
 /** Probe point drawn inside the flipbook SVG (grid px): cyan crosshair, the frame's photometry aperture (solid) and sky
  * annulus (dashed). Drag (mouse/touch) or arrow keys (Shift = 5 px) move it; release, a click or Enter opens the action
- * menu. Moving never measures. Without a point yet, a faint "drag me" marker sits at `ghostAt`. */
-export function ProbeMarker({ probe, seq, frame, ghostAt, unit }: {
+ * menu. Moving never measures. Only drawn once a point exists (see ProbeDock). */
+export function ProbeMarker({ probe, point: p, seq, frame, unit }: {
   probe: ProbeCtl
+  point: ProbePoint
   seq: Sequence
   frame: Frame | undefined
-  ghostAt: [number, number]
   /** grid px per CSS px, so the crosshair and hit area keep their on-screen size */
   unit: number
 }) {
   const [drag, setDrag] = useState<{ at: [number, number]; moved: boolean } | null>(null)
   const [focused, setFocused] = useState(false)
   const { wcs, height } = seq.grid
-  const p = probe.point
-  const q = p && propagate(p.ra, p.dec, p.pmra_masyr, p.pmdec_masyr, 2000, frame?.mjd ?? MJD_2018)
-  const at = q ? worldToPx(wcs, height, q.ra, q.dec) : ghostAt
+  const q = propagate(p.ra, p.dec, p.pmra_masyr, p.pmdec_masyr, 2000, frame?.mjd ?? MJD_2018)
+  const at = worldToPx(wcs, height, q.ra, q.dec)
   const [x, y] = drag?.at ?? at
   const ap = APERTURE[frame?.survey ?? 'wise']
 
@@ -37,12 +36,9 @@ export function ProbeMarker({ probe, seq, frame, ghostAt, unit }: {
     const pt = new DOMPoint(e.clientX, e.clientY).matrixTransform(e.currentTarget.ownerSVGElement!.getScreenCTM()!.inverse())
     return [pt.x - 0.5, pt.y - 0.5]
   }
-  const label = p
-    ? `Probe at RA ${p.ra.toFixed(5)}, Dec ${p.dec.toFixed(5)}. Drag or use arrow keys to move; Enter for actions`
-    : 'Probe: drag onto a source, or press Enter for actions'
 
   return (
-    <g opacity={p || drag ? 1 : 0.55}>
+    <g>
       {/* apertures stay out of the focus/hit box, so neighbours inside them remain right-clickable */}
       <g pointerEvents="none">
         <circle cx={x + 0.5} cy={y + 0.5} r={ap.r / PIX_ARCSEC} fill="none" stroke={CYAN} strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
@@ -51,9 +47,10 @@ export function ProbeMarker({ probe, seq, frame, ghostAt, unit }: {
         ))}
       </g>
       <g
+        data-probe-marker
         role="button"
         tabIndex={0}
-        aria-label={label}
+        aria-label={`Probe at RA ${p.ra.toFixed(5)}, Dec ${p.dec.toFixed(5)}. Drag or use arrow keys to move; Enter for actions`}
         aria-haspopup="menu"
         className="cursor-move outline-none"
         onFocus={() => setFocused(true)}
@@ -70,7 +67,7 @@ export function ProbeMarker({ probe, seq, frame, ghostAt, unit }: {
         onPointerMove={(e) => drag && setDrag({ at: toGrid(e), moved: true })}
         onPointerUp={(e) => {
           if (!drag) return
-          if (drag.moved || !p) commit(drag.at)
+          if (drag.moved) commit(drag.at)
           setDrag(null)
           probe.setMenu({ x: e.clientX, y: e.clientY })
         }}
@@ -78,7 +75,6 @@ export function ProbeMarker({ probe, seq, frame, ghostAt, unit }: {
         onContextMenu={(e) => {
           e.preventDefault()
           e.stopPropagation()
-          if (!p) commit(at)
           probe.setMenu({ x: e.clientX, y: e.clientY })
         }}
         onKeyDown={(e) => {
@@ -87,7 +83,6 @@ export function ProbeMarker({ probe, seq, frame, ghostAt, unit }: {
             const s = e.shiftKey ? 5 : 1
             commit([at[0] + d[0] * s, at[1] + d[1] * s])
           } else if (e.key === 'Enter') {
-            if (!p) commit(at)
             const r = e.currentTarget.getBoundingClientRect()
             probe.setMenu({ x: r.left + r.width / 2, y: r.top + r.height / 2 })
           } else return
@@ -105,13 +100,59 @@ export function ProbeMarker({ probe, seq, frame, ghostAt, unit }: {
             stroke={CYAN} strokeWidth={2} vectorEffect="non-scaling-stroke"
           />
         ))}
-        {!p && !drag && (
-          <text x={x + 0.5} y={y + 0.5 - 13 * unit} fontSize={11 * unit} textAnchor="middle" fill={CYAN} stroke="#000" strokeWidth={3 * unit} paintOrder="stroke">
-            drag me
-          </text>
-        )}
       </g>
     </g>
+  )
+}
+
+/** Faint cyan crosshair docked in the viewer's top-left corner while there is no probe: drag it onto a source to start
+ * one; a click or Enter puts it in the middle of the view. Either way the action menu opens; nothing is measured yet. */
+export function ProbeDock({ probe, seq }: { probe: ProbeCtl; seq: Sequence }) {
+  const [drag, setDrag] = useState<{ x0: number; y0: number; dx: number; dy: number } | null>(null)
+  const placeAt = (dock: HTMLElement, cx: number, cy: number) => {
+    const svg = dock.parentElement!.querySelector<SVGSVGElement>(':scope > svg')!
+    const r = svg.getBoundingClientRect()
+    if (cx < r.left || cx > r.right || cy < r.top || cy > r.bottom) return // dropped outside the picture
+    const pt = new DOMPoint(cx, cy).matrixTransform(svg.getScreenCTM()!.inverse())
+    probe.place({ ...pxToWorld(seq.grid.wcs, seq.grid.height, pt.x - 0.5, pt.y - 0.5), pmra_masyr: 0, pmdec_masyr: 0 })
+    probe.setMenu({ x: cx, y: cy })
+  }
+  const centreOf = (el: HTMLElement) => {
+    const r = el.parentElement!.querySelector(':scope > svg')!.getBoundingClientRect()
+    return [r.left + r.width / 2, r.top + r.height / 2] as const
+  }
+  const label = 'Drag onto any source to measure it'
+  return (
+    <button
+      aria-label={label}
+      title={label}
+      aria-haspopup="menu"
+      className={`absolute top-1 left-1 z-10 flex h-7 w-7 items-center justify-center rounded-full ${drag ? 'cursor-grabbing' : 'cursor-grab bg-black/40 opacity-60 hover:opacity-100 focus-visible:opacity-100'}`}
+      style={{ touchAction: 'none', transform: drag ? `translate(${drag.dx}px, ${drag.dy}px)` : undefined }}
+      onPointerDown={(e) => {
+        if (e.button !== 0) return
+        e.preventDefault()
+        e.currentTarget.setPointerCapture(e.pointerId)
+        setDrag({ x0: e.clientX, y0: e.clientY, dx: 0, dy: 0 })
+      }}
+      onPointerMove={(e) => drag && setDrag({ ...drag, dx: e.clientX - drag.x0, dy: e.clientY - drag.y0 })}
+      onPointerUp={(e) => {
+        if (!drag) return
+        setDrag(null)
+        if (Math.hypot(drag.dx, drag.dy) < 4) return placeAt(e.currentTarget, ...centreOf(e.currentTarget))
+        // where the crosshair is drawn, not where it was grabbed
+        const b = e.currentTarget.getBoundingClientRect()
+        placeAt(e.currentTarget, b.left + b.width / 2, b.top + b.height / 2)
+      }}
+      onPointerCancel={() => setDrag(null)}
+      // keyboard activation (pointer clicks are handled on pointerup)
+      onClick={(e) => e.detail === 0 && placeAt(e.currentTarget, ...centreOf(e.currentTarget))}
+    >
+      <svg viewBox="-12 -12 24 24" className="h-6 w-6" aria-hidden>
+        <circle r={7} fill="none" stroke={CYAN} strokeWidth={1.5} />
+        <path d="M0 -11v6M0 5v6M-11 0h6M5 0h6" stroke={CYAN} strokeWidth={2} />
+      </svg>
+    </button>
   )
 }
 
@@ -123,7 +164,10 @@ export function ProbeMenu({ probe, onCentre }: { probe: ProbeCtl; onCentre: (p: 
   const back = useRef<HTMLElement | null>(null)
   const close = () => {
     setMenu(null)
-    back.current?.focus()
+    // the dock that opened the menu is gone once a probe exists (and a mouse drag focuses nothing): go to the probe
+    const b = back.current
+    const to = b && b !== document.body && b.isConnected ? b : document.querySelector<SVGGElement>('[data-probe-marker]')
+    to?.focus()
   }
   useEffect(() => {
     if (!menu) return
@@ -192,7 +236,7 @@ export function ProbePanel({ probe, research }: { probe: ProbeCtl; research: boo
     if (busy) box.current?.scrollIntoView({ block: 'start' })
   }, [busy])
   if (!point && !d)
-    return <p className="p-2 text-xs text-slate-500">Drag the cyan probe in the flipbook, or right-click any spot of the field, to measure the source there.</p>
+    return <p className="p-2 text-xs text-slate-500">Drag the cyan crosshair from the flipbook's corner onto any source, or right-click any spot of the field, to measure it.</p>
   const moved = d && point !== probe.measuredAt
   const full = d?.mode === 'full'
   const btn = 'rounded px-2 py-1 enabled:hover:bg-sky-600 disabled:opacity-50'

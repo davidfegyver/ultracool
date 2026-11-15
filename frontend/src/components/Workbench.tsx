@@ -16,13 +16,13 @@ import TargetBar from './TargetBar'
 import TimeWindow from './TimeWindow'
 import UcdSearch from './UcdSearch'
 
-// Explore shows band presets instead of per-band chips; the first is the default 16-year story
+// Explore shows band presets instead of per-band chips, named by time and mission; wavelengths in the hover text.
+// The first is the default 16-year story.
 const EXPLORE_PRESETS = [
-  { label: '4.6 µm, 2010–2026', bands: ['W2', 'D6'] },
-  { label: 'WISE 4.6 µm', bands: ['W2'] },
-  { label: 'WISE both', bands: ['W1', 'W2'] },
-  { label: 'SPHEREx 4.4–5 µm', bands: ['D6'] },
-  { label: 'Everything', bands: ALL_BANDS },
+  { label: 'All 16 years', bands: ['W2', 'D6'], title: 'WISE 4.6 µm 2010–2024 + SPHEREx 4.4–5 µm 2025–26' },
+  { label: 'WISE 2010–2024', bands: ['W2'], title: '4.6 µm' },
+  { label: 'SPHEREx 2025–26', bands: ['D6'], title: '4.4–5.0 µm' },
+  { label: 'All colours', bands: ALL_BANDS, title: 'every WISE and SPHEREx band; SPHEREx frames are different wavelengths' },
 ]
 
 /** Explore (plain findings, expert tools behind "Show advanced") and Research (everything + numbers) share this layout. */

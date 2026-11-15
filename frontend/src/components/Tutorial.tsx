@@ -141,7 +141,8 @@ const GUIDE_URL = 'https://github.com/davidfegyver/ultracool/blob/main/docs/GUID
 /** "Read the full guide" (new tab) */
 export function GuideLink({ className = '' }: { className?: string }) {
   return (
-    <a className={`text-sky-400 underline ${className}`} href={GUIDE_URL} target="_blank" rel="noreferrer">
+    // relative: keeps the absolutely positioned sr-only text inside the scrolling page instead of stretching the document
+    <a className={`relative text-sky-400 underline ${className}`} href={GUIDE_URL} target="_blank" rel="noreferrer">
       Read the full guide<span className="sr-only"> (opens in a new tab)</span> ↗
     </a>
   )

@@ -37,7 +37,10 @@ type Props = {
 
 // /spectrum F_λ values are F_ν(µJy)/λ(µm)²; F_λ = c F_ν / λ² = 2.998e-18 W m⁻² µm⁻¹ per µJy/µm²
 const TO_FLAMBDA = 2.998
-const FLAMBDA_AXIS = 'F_λ (10⁻¹⁸ W m⁻² µm⁻¹)<br><sub>brightness at each wavelength</sub>'
+const AXIS_NOTE = {
+  lc: 'Brightness: aperture photometry, corrected for light outside the aperture',
+  spec: 'F_λ: brightness at each wavelength, in 10⁻¹⁸ W m⁻² µm⁻¹',
+}
 
 /** "Looks like a T5 brown dwarf (good fit)" or the verdict as a sentence (Explore and Learn). */
 function plainSpectrum(spec: Spectrum | null) {
@@ -147,6 +150,15 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
             {t === 'lc' ? 'Light curve' : 'Spectrum'}
           </button>
         ))}
+        <span
+          tabIndex={0}
+          role="img"
+          aria-label={AXIS_NOTE[tab]}
+          title={AXIS_NOTE[tab]}
+          className="inline-flex h-4 w-4 cursor-help items-center justify-center rounded-full border border-slate-500 font-serif text-[10px] text-slate-300 italic focus:outline-none focus-visible:ring-1 focus-visible:ring-sky-400"
+        >
+          i
+        </span>
         {tab === 'lc' && (
           <>
             <label className="flex items-center gap-1">
@@ -195,7 +207,8 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
           </span>
         )}
       </div>
-      <div className="min-h-0 flex-1">
+      {/* overflow-hidden: Plotly's svg comes out a few px taller than its box and would scroll the page */}
+      <div className="min-h-0 flex-1 overflow-hidden">
         {tab === 'lc' ? (
           <Plot
             className="h-full w-full"
@@ -204,7 +217,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
             layout={{
               ...DARK,
               xaxis: { title: { text: folded ? `Phase (period ${foldAt.toFixed(1)} d)` : 'Date' } },
-              yaxis: { title: { text: 'Brightness (µJy)<br><sub>aperture photometry, corrected for light outside the aperture</sub>' }, type: logY ? 'log' : 'linear' },
+              yaxis: { title: { text: 'Brightness (µJy)' }, type: logY ? 'log' : 'linear' },
               annotations:
                 settled && !lcTraces.length
                   ? [{ x: 0.5, y: 0.5, xref: 'paper', yref: 'paper', text: 'No brightness measurements for this object', showarrow: false, font: { size: 13, color: '#94a3b8' } }]
@@ -251,7 +264,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
             layout={{
               ...DARK,
               xaxis: { title: { text: 'Wavelength (µm)' }, range: [0.7, 5.1] },
-              yaxis: { title: { text: FLAMBDA_AXIS } },
+              yaxis: { title: { text: 'F_λ (10⁻¹⁸ W m⁻² µm⁻¹)' } },
               shapes: MOLECULES.map(([, a, b], i) => ({
                 type: 'rect', xref: 'x', yref: 'paper', x0: a, x1: b, y0: 0, y1: 1,
                 fillcolor: i % 2 ? '#64748b' : '#475569', opacity: 0.18, line: { width: 0 }, layer: 'below',
