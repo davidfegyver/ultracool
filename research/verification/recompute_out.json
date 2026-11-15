@@ -1,0 +1,592 @@
+{
+ "W1-W2": {
+  "CatWISE": [
+   1.825,
+   0.054
+  ],
+  "AllWISE": [
+   2.0,
+   0.126
+  ],
+  "unWISE": [
+   1.794,
+   0.056
+  ],
+  "ours_research": [
+   2.08,
+   0.118
+  ],
+  "ours_production": [
+   2.187,
+   0.113
+  ]
+ },
+ "J-W2 (VHS J, CatWISE W2)": [
+  1.686,
+  0.045
+ ],
+ "J-Ks VHS pmag": [
+  -0.139,
+  0.232
+ ],
+ "J-Ks VHS pnt": [
+  -0.2514,
+  0.1215
+ ],
+ "UltracoolSheet_nearest": [
+  {
+   "name": "CWISEP J230158.30-645858.3",
+   "sep_arcsec": 9220.4
+  },
+  {
+   "name": "WISE J230228.68-713441.6",
+   "sep_arcsec": 17150.4
+  },
+  {
+   "name": "2MASS J23225299-6151275",
+   "sep_arcsec": 18631.2
+  }
+ ],
+ "UCS_sptnum_T0_code": 20.0,
+ "UCS_empirical_MW2_and_distance(W2_CatWISE=15.295)": {
+  "T3": {
+   "n": 9,
+   "M_W2_median": 11.7,
+   "M_W2_scatter": 0.13,
+   "W1-W2_median": 1.03,
+   "W1-W2_16_84": [
+    0.76,
+    1.18
+   ],
+   "dist_pc": 52.3,
+   "dist_range_pc": [
+    49.3,
+    55.5
+   ]
+  },
+  "T4": {
+   "n": 8,
+   "M_W2_median": 12.57,
+   "M_W2_scatter": 0.32,
+   "W1-W2_median": 1.26,
+   "W1-W2_16_84": [
+    1.1,
+    1.32
+   ],
+   "dist_pc": 35.1,
+   "dist_range_pc": [
+    30.2,
+    40.7
+   ]
+  },
+  "T5": {
+   "n": 28,
+   "M_W2_median": 12.7,
+   "M_W2_scatter": 0.33,
+   "W1-W2_median": 1.68,
+   "W1-W2_16_84": [
+    1.48,
+    1.85
+   ],
+   "dist_pc": 33.1,
+   "dist_range_pc": [
+    28.4,
+    38.6
+   ]
+  },
+  "T6": {
+   "n": 32,
+   "M_W2_median": 12.88,
+   "M_W2_scatter": 0.37,
+   "W1-W2_median": 2.01,
+   "W1-W2_16_84": [
+    1.69,
+    2.3
+   ],
+   "dist_pc": 30.4,
+   "dist_range_pc": [
+    25.7,
+    36.0
+   ]
+  },
+  "T7": {
+   "n": 31,
+   "M_W2_median": 13.19,
+   "M_W2_scatter": 0.28,
+   "W1-W2_median": 2.25,
+   "W1-W2_16_84": [
+    1.94,
+    2.39
+   ],
+   "dist_pc": 26.4,
+   "dist_range_pc": [
+    23.2,
+    29.9
+   ]
+  },
+  "T8": {
+   "n": 48,
+   "M_W2_median": 13.51,
+   "M_W2_scatter": 0.29,
+   "W1-W2_median": 2.79,
+   "W1-W2_16_84": [
+    2.31,
+    3.12
+   ],
+   "dist_pc": 22.7,
+   "dist_range_pc": [
+    19.9,
+    26.0
+   ]
+  }
+ },
+ "UCS_NIR_colours_median[16,84] (MKO)": {
+  "T3": {
+   "J-W2": [
+    2.12,
+    1.75,
+    2.44,
+    32
+   ],
+   "J-K": [
+    0.42,
+    0.23,
+    0.77,
+    28
+   ]
+  },
+  "T4": {
+   "J-W2": [
+    1.81,
+    1.53,
+    2.16,
+    29
+   ],
+   "J-K": [
+    0.1,
+    -0.06,
+    0.3,
+    21
+   ]
+  },
+  "T5": {
+   "J-W2": [
+    1.91,
+    1.66,
+    2.27,
+    65
+   ],
+   "J-K": [
+    -0.26,
+    -0.47,
+    -0.02,
+    47
+   ]
+  },
+  "T6": {
+   "J-W2": [
+    2.1,
+    1.92,
+    2.42,
+    70
+   ],
+   "J-K": [
+    -0.39,
+    -0.63,
+    -0.16,
+    45
+   ]
+  },
+  "T7": {
+   "J-W2": [
+    2.41,
+    2.15,
+    2.84,
+    66
+   ],
+   "J-K": [
+    -0.28,
+    -0.45,
+    -0.1,
+    31
+   ]
+  },
+  "T8": {
+   "J-W2": [
+    3.24,
+    2.56,
+    3.75,
+    75
+   ],
+   "J-K": [
+    -0.49,
+    -0.85,
+    -0.18,
+    25
+   ]
+  }
+ },
+ "PM_AllWISE_to_VHS": {
+  "dt_yr": 4.83,
+  "pmra": 423.0,
+  "pmdec": -266.0,
+  "err_per_axis": 44.0
+ },
+ "K21_distance_and_colours(W2=15.295 -> ch2=15.254)": {
+  "T4": {
+   "Mch2": 12.38,
+   "dist_pc": 37.6,
+   "dist_pc_1sig(0.31mag)": [
+    32.6,
+    43.3
+   ],
+   "W1-W2_pred": 1.31,
+   "J-ch2_pred": 1.9
+  },
+  "T5": {
+   "Mch2": 12.57,
+   "dist_pc": 34.4,
+   "dist_pc_1sig(0.31mag)": [
+    29.8,
+    39.7
+   ],
+   "W1-W2_pred": 1.57,
+   "J-ch2_pred": 1.89
+  },
+  "T5.5": {
+   "Mch2": 12.69,
+   "dist_pc": 32.6,
+   "dist_pc_1sig(0.31mag)": [
+    28.3,
+    37.6
+   ],
+   "W1-W2_pred": 1.72,
+   "J-ch2_pred": 1.95
+  },
+  "T6": {
+   "Mch2": 12.83,
+   "dist_pc": 30.6,
+   "dist_pc_1sig(0.31mag)": [
+    26.5,
+    35.3
+   ],
+   "W1-W2_pred": 1.87,
+   "J-ch2_pred": 2.07
+  },
+  "T7": {
+   "Mch2": 13.17,
+   "dist_pc": 26.1,
+   "dist_pc_1sig(0.31mag)": [
+    22.7,
+    30.1
+   ],
+   "W1-W2_pred": 2.22,
+   "J-ch2_pred": 2.47
+  }
+ },
+ "K21_SpT_from_W1-W2": {
+  "CatWISE": 6.0,
+  "AllWISE": 6.5,
+  "unWISE": 6.0,
+  "ours_research": 6.6,
+  "ours_production": 6.9
+ },
+ "J(VHS)-ch2": 1.73,
+ "Rothermich_style_phot_type": {
+  "M_W2_at_host_distance": 13.02,
+  "SpT_T": 6.1
+ },
+ "companion": {
+  "ours_visit vs HD 219509 (GJ 4321)": {
+   "dmu_ra": 55.3,
+   "dmu_dec": 174.1,
+   "sig_ra": 1.84,
+   "sig_dec": 5.8,
+   "dmu_total": 182.7,
+   "chi2_2dof": 37.1,
+   "p_2dof": 8.85e-09,
+   "dv_tan_kms_at_28.46pc": 24.6
+  },
+  "ours_visit vs HD 219495 (GJ 4322)": {
+   "dmu_ra": 64.2,
+   "dmu_dec": 171.2,
+   "sig_ra": 2.14,
+   "sig_dec": 5.71,
+   "dmu_total": 182.8,
+   "chi2_2dof": 37.1,
+   "p_2dof": 8.58e-09,
+   "dv_tan_kms_at_28.46pc": 24.7
+  },
+  "ours_deep vs HD 219509 (GJ 4321)": {
+   "dmu_ra": 51.5,
+   "dmu_dec": 162.4,
+   "sig_ra": 1.66,
+   "sig_dec": 5.24,
+   "dmu_total": 170.4,
+   "chi2_2dof": 30.2,
+   "p_2dof": 2.75e-07,
+   "dv_tan_kms_at_28.46pc": 23.0
+  },
+  "ours_deep vs HD 219495 (GJ 4322)": {
+   "dmu_ra": 60.4,
+   "dmu_dec": 159.5,
+   "sig_ra": 1.95,
+   "sig_dec": 5.15,
+   "dmu_total": 170.6,
+   "chi2_2dof": 30.3,
+   "p_2dof": 2.67e-07,
+   "dv_tan_kms_at_28.46pc": 23.0
+  },
+  "ours_allpoints_incl_SPHEREx vs HD 219509 (GJ 4321)": {
+   "dmu_ra": 50.2,
+   "dmu_dec": 166.1,
+   "sig_ra": 2.65,
+   "sig_dec": 8.79,
+   "dmu_total": 173.5,
+   "chi2_2dof": 84.3,
+   "p_2dof": 4.92e-19,
+   "dv_tan_kms_at_28.46pc": 23.4
+  },
+  "ours_allpoints_incl_SPHEREx vs HD 219495 (GJ 4322)": {
+   "dmu_ra": 59.1,
+   "dmu_dec": 163.2,
+   "sig_ra": 3.13,
+   "sig_dec": 8.64,
+   "dmu_total": 173.6,
+   "chi2_2dof": 84.3,
+   "p_2dof": 4.84e-19,
+   "dv_tan_kms_at_28.46pc": 23.4
+  },
+  "production vs HD 219509 (GJ 4321)": {
+   "dmu_ra": 67.2,
+   "dmu_dec": 158.7,
+   "sig_ra": 2.93,
+   "sig_dec": 6.93,
+   "dmu_total": 172.4,
+   "chi2_2dof": 56.7,
+   "p_2dof": 4.99e-13,
+   "dv_tan_kms_at_28.46pc": 23.3
+  },
+  "production vs HD 219495 (GJ 4322)": {
+   "dmu_ra": 76.1,
+   "dmu_dec": 155.8,
+   "sig_ra": 3.32,
+   "sig_dec": 6.8,
+   "dmu_total": 173.4,
+   "chi2_2dof": 57.3,
+   "p_2dof": 3.55e-13,
+   "dv_tan_kms_at_28.46pc": 23.4
+  },
+  "CatWISE_IRSA_uncorrected vs HD 219509 (GJ 4321)": {
+   "dmu_ra": 98.3,
+   "dmu_dec": 111.2,
+   "sig_ra": 3.17,
+   "sig_dec": 3.81,
+   "dmu_total": 148.4,
+   "chi2_2dof": 24.6,
+   "p_2dof": 4.63e-06,
+   "dv_tan_kms_at_28.46pc": 20.0
+  },
+  "CatWISE_IRSA_uncorrected vs HD 219495 (GJ 4322)": {
+   "dmu_ra": 107.2,
+   "dmu_dec": 108.3,
+   "sig_ra": 3.46,
+   "sig_dec": 3.71,
+   "dmu_total": 152.4,
+   "chi2_2dof": 25.7,
+   "p_2dof": 2.6e-06,
+   "dv_tan_kms_at_28.46pc": 20.6
+  },
+  "CatWISE_VizieR_corrected(=Rothermich) vs HD 219509 (GJ 4321)": {
+   "dmu_ra": 72.7,
+   "dmu_dec": 121.9,
+   "sig_ra": 2.35,
+   "sig_dec": 4.17,
+   "dmu_total": 141.9,
+   "chi2_2dof": 22.9,
+   "p_2dof": 1.05e-05,
+   "dv_tan_kms_at_28.46pc": 19.1
+  },
+  "CatWISE_VizieR_corrected(=Rothermich) vs HD 219495 (GJ 4322)": {
+   "dmu_ra": 81.6,
+   "dmu_dec": 118.9,
+   "sig_ra": 2.63,
+   "sig_dec": 4.07,
+   "dmu_total": 144.3,
+   "chi2_2dof": 23.5,
+   "p_2dof": 7.78e-06,
+   "dv_tan_kms_at_28.46pc": 19.5
+  },
+  "AllWISE_to_VHS vs HD 219509 (GJ 4321)": {
+   "dmu_ra": 59.2,
+   "dmu_dec": 144.0,
+   "sig_ra": 1.33,
+   "sig_dec": 3.24,
+   "dmu_total": 155.7,
+   "chi2_2dof": 12.3,
+   "p_2dof": 0.00217,
+   "dv_tan_kms_at_28.46pc": 21.0
+  },
+  "AllWISE_to_VHS vs HD 219495 (GJ 4322)": {
+   "dmu_ra": 68.1,
+   "dmu_dec": 141.1,
+   "sig_ra": 1.53,
+   "sig_dec": 3.17,
+   "dmu_total": 156.7,
+   "chi2_2dof": 12.4,
+   "p_2dof": 0.00201,
+   "dv_tan_kms_at_28.46pc": 21.1
+  }
+ },
+ "separation": {
+  "HD 219509 (GJ 4321)": {
+   "sep_arcsec": 295.4,
+   "proj_au": 8407
+  },
+  "HD 219495 (GJ 4322)": {
+   "sep_arcsec": 234.7,
+   "proj_au": 6678
+  }
+ },
+ "v_orb_kms_at_6500au_1.5Msun": 0.45,
+ "pm_differences [dRA, dDec, sigRA, sigDec]": {
+  "ours_visit - CatWISE_VizieR_corrected(=Rothermich)": [
+   -17.5,
+   52.3,
+   -0.4,
+   1.25
+  ],
+  "ours_visit - CatWISE_IRSA_uncorrected": [
+   -43.0,
+   62.9,
+   -1.0,
+   1.5
+  ],
+  "ours_deep - CatWISE_VizieR_corrected(=Rothermich)": [
+   -21.3,
+   40.6,
+   -0.48,
+   0.95
+  ],
+  "ours_deep - CatWISE_IRSA_uncorrected": [
+   -46.8,
+   51.2,
+   -1.07,
+   1.2
+  ],
+  "production - CatWISE_VizieR_corrected(=Rothermich)": [
+   -5.6,
+   36.9,
+   -0.14,
+   0.99
+  ],
+  "production - CatWISE_IRSA_uncorrected": [
+   -31.1,
+   47.5,
+   -0.81,
+   1.28
+  ]
+ },
+ "pm_total": {
+  "ours_visit": [
+   480.9,
+   30.0
+  ],
+  "ours_deep": [
+   483.5,
+   31.0
+  ],
+  "ours_allpoints_incl_SPHEREx": [
+   480.5,
+   18.9
+  ],
+  "production": [
+   498.9,
+   22.9
+  ],
+  "CatWISE_IRSA_uncorrected": [
+   550.3,
+   30.5
+  ],
+  "CatWISE_VizieR_corrected(=Rothermich)": [
+   523.1,
+   30.5
+  ],
+  "AllWISE_to_VHS": [
+   499.7,
+   44.5
+  ]
+ },
+ "spectrum_bins": {
+  "n_bins": 89,
+  "n_snr_gt3": 35,
+  "n_snr_gt5": 17,
+  "max_snr": 10.4,
+  "median_snr": 2.11,
+  "n_negative_flux": 23
+ },
+ "typing_research": [
+  {
+   "label": "T6",
+   "chi2_red": 1.688,
+   "dchi2": 0.0,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 0.0
+  },
+  {
+   "label": "T7",
+   "chi2_red": 2.169,
+   "dchi2": 42.4,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 25.1
+  },
+  {
+   "label": "T5",
+   "chi2_red": 2.31,
+   "dchi2": 54.8,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 32.4
+  },
+  {
+   "label": "T4",
+   "chi2_red": 3.158,
+   "dchi2": 129.4,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 76.6
+  },
+  {
+   "label": "T8",
+   "chi2_red": 3.749,
+   "dchi2": 181.4,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 107.5
+  }
+ ],
+ "typing_production": [
+  {
+   "label": "T5",
+   "chi2_red": 1.56,
+   "dchi2": 0.0,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 0.0
+  },
+  {
+   "label": "T6",
+   "chi2_red": 1.642,
+   "dchi2": 7.2,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 4.6
+  },
+  {
+   "label": "T7",
+   "chi2_red": 2.082,
+   "dchi2": 46.0,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 29.5
+  },
+  {
+   "label": "T4",
+   "chi2_red": 2.591,
+   "dchi2": 90.8,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 58.2
+  },
+  {
+   "label": "T3",
+   "chi2_red": 3.065,
+   "dchi2": 132.5,
+   "dchi2_if_errors_rescaled_by_sqrt_chi2r": 85.0
+  }
+ ]
+}

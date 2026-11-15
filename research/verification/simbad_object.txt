@@ -1,0 +1,64 @@
+## identifiers
+            id             
+---------------------------
+"WISE J231728.42-665959.3" 
+"WISEA J231728.49-665959.7"
+"CWISE J231728.89-670001.1"
+
+## bibcodes (has_ref)
+<?xml version="1.0" encoding="utf-8"?>
+<VOTABLE version="1.3" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/votable-1.3.xsd">
+<RESOURCE type="results">
+<INFO name="QUERY_STATUS" value="ERROR">Incorrect ADQL query: 1 unresolved identifiers: oidbibref [l.1 c.68 - l.1 c.79]!
+  - Unknown column "r.oidbibref" !</INFO>
+<INFO name="PROVIDER" value="CDS">SIMBAD TAP Service</INFO>
+<INFO  name="REQ_ID" value="S1794700572965"/>
+<INFO  name="ERROR_TYPE" value="fatal"/>
+<INFO  name="USER" value="172.234.40.166 (anonymous)"/>
+<INFO  name="ACTION" value="sync"/>
+</RESOURCE>
+</VOTABLE>
+
+## otypes
+otype|                   origin                   
+-----|--------------------------------------------
+"BD?"|"from bibcode ; bibcode=2024AJ....167..253R"
+"MIR"|"from id WISE J231728.42-665959.3"          
+
+## mesSpT/mesPM/mesPLX/flux
+bibcode|dispsystem|mssnote|sptype|oidref|mespos
+-------|----------|-------|------|------|------
+
+bibcode|coosystem|pmde|pmde_err|pmde_err_prec|pmde_prec|pmra|pmra_err|pmra_err_prec|pmra_prec|oidref|mespos
+-------|---------|----|--------|-------------|---------|----|--------|-------------|---------|------|------
+
+filter|flux|flux_err|bibcode
+------|----|--------|-------
+
+## hosts
+<?xml version="1.0" encoding="utf-8"?>
+<VOTABLE version="1.3" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/votable-1.3.xsd">
+<RESOURCE type="results">
+<INFO name="QUERY_STATUS" value="ERROR">Incorrect ADQL query: 1 unresolved identifiers: pm_err_maja [l.1 c.58 - l.1 c.71]!
+  - Unknown column "b.pm_err_maja" !</INFO>
+<INFO name="PROVIDER" value="CDS">SIMBAD TAP Service</INFO>
+<INFO  name="REQ_ID" value="S1794700573645"/>
+<INFO  name="ERROR_TYPE" value="fatal"/>
+<INFO  name="USER" value="172.234.40.166 (anonymous)"/>
+<INFO  name="ACTION" value="sync"/>
+</RESOURCE>
+</VOTABLE>
+
+## bibcodes (has_ref)
+       bibcode       |                                                       title                                                       
+---------------------|-------------------------------------------------------------------------------------------------------------------
+"2024AJ....167..253R"|"89 New Ultracool Dwarf Comoving Companions Identified with the Backyard Worlds: Planet 9 Citizen Science Project."
+
+## hosts
+  oid  |  main_id  |otype|       ra        |       dec        | pmra  | pmdec  |plx_value|plx_err|rvz_radvel|sp_type
+-------|-----------|-----|-----------------|------------------|-------|--------|---------|-------|----------|-------
+3306150|"HD 219509"|"PM*"|349.3366964372421|-66.91931511051722|363.824|-410.031|35.1409  |0.0223 |65.96     |"K3.5V"
+3306149|"HD 219495"|"PM*"|349.3223197803505|-66.93789905623139|354.926|-407.115|35.1521  |0.0124 |67.121    |"K4Vk" 
+3306149|"HD 219495"|"PM*"|349.3223197803505|-66.93789905623139|354.926|-407.115|35.1521  |0.0124 |67.121    |"K4Vk" 
+3306150|"HD 219509"|"PM*"|349.3366964372421|-66.91931511051722|363.824|-410.031|35.1409  |0.0223 |65.96     |"K3.5V"
+

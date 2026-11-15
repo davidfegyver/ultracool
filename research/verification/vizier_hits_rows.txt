@@ -1,0 +1,87 @@
+
+### I_284_out: #Title: data (around 0+0)
+USNO-B1.0	RAJ2000	DEJ2000	e_RAJ2000	e_DEJ2000	Epoch	pmRA	pmDE	Ndet	B1mag	R1mag	B2mag	R2mag	Imag
+ 	deg	deg	mas	mas	yr	mas/yr	mas/yr	 	mag	mag	mag	mag	mag
+------------	----------	----------	---	---	------	-----	-----	-	-----	-----	-----	-----	-----
+0229-0866076	349.357392	-67.002406	120	115	1992.6	    0	    0	3	     	19.69	     	19.60	19.65
+0229-0866077	349.358481	-67.003212	999	999	1979.7	    0	    0	2	     	     	21.28	     	18.90
+
+### I_297_out: #Title: Example of the an output of NOMAD-1
+NOMAD1	RAJ2000	DEJ2000	YM	r	pmRA	e_pmRA	pmDE	e_pmDE	Bmag	r_Bmag	Vmag	r_Vmag	Rmag	r_Rmag	Jmag	Hmag	Kmag	R
+ 	deg	deg	 	 	mas/yr	mas/yr	mas/yr	mas/yr	mag	 	mag	 	mag	 	mag	mag	mag	
+------------	-----------	-----------	--	-	-------	-----	--------	-----	------	-	------	-	------	-	------	------	------	-
+0229-0879124	349.3573917	-67.0024056	..	B	    0.0	  0.0	     0.0	  0.0	      	 	      	 	19.600	B	      	      	      	
+0229-0879125	349.3584806	-67.0032111	..	B	    0.0	  0.0	     0.0	  0.0	21.280	B	      	 	      	 	      	      	      	
+
+### I_305_out: #Title: records of GSC2.3.2 (near 0+0)
+GSC2.3	RAJ2000	DEJ2000	Epoch	Fmag	jmag	Vmag	Nmag	Class	a	e
+ 	deg	deg	yr	mag	mag	mag	mag	 	pix	
+----------	----------	----------	--------	-----	-----	-----	-----	-	--------	-----
+SAYU009181	349.357529	-67.002343	1996.617	20.02	     	     	18.92	3	    2.65	 0.15
+
+### I_317_sample: #Title: Example of formatted output
+RAJ2000	DEJ2000	pmRA	pmDE	Jmag	Kmag	b1mag	b2mag	r1mag	r2mag	imag	No	fl
+deg	deg	mas/yr	mas/yr	mag	mag	mag	mag	mag	mag	mag	 	
+----------	----------	-------	-------	------	------	-----	-----	-----	-----	-----	--	--
+349.357528	-67.002418	   10.3	  -12.4	      	      	     	     	19.69	19.60	19.65	 3	 0
+
+### I_347_gaia2dis: #Title: Estimating distances from parallaxes (1331909727 sources)
+Source	RA_ICRS	DE_ICRS	rest	b_rest	B_rest	rlen	ResFlag	ModFlag
+ 	deg	deg	pc	pc	pc	pc	 	
+-------------------	---------------	---------------	---------------------	---------------------	---------------------	----------------	-	-
+6388326556409907584	349.35762280118	-67.00242859078	 1241.548643539629893	  756.814057715359013	 2248.254406849830048	634.566601530551	1	1
+
+### I_352_gedr3dis: #Title: Estimating distances from parallaxes (1467744818 sources)
+Source	RA_ICRS	DE_ICRS	rgeo	b_rgeo	B_rgeo	rpgeo	b_rpgeo	B_rpgeo	Flag
+ 	deg	deg	pc	pc	pc	pc	pc	pc	
+-------------------	---------------	---------------	---------------	--------------	--------------	---------------	--------------	--------------	-----
+6388326556409907584	349.35762726487	-67.00242973650	   862.56488000	  648.69000200	 1338.10413000	  1546.52612000	 1175.97656000	 2287.01001000	10033
+
+### I_355_gaiadr3: #Title: Gaia DR3 source catalog (1811709771 sources)
+RA_ICRS	DE_ICRS	Source	e_RA_ICRS	e_DE_ICRS	Plx	e_Plx	PM	pmRA	e_pmRA	pmDE	e_pmDE	RUWE	FG	e_FG	Gmag	FBP	e_FBP	BPmag	FRP	e_FRP	RPmag	BP-RP	RV	e_RV	Vbroad	GRVSmag	QSO	Gal	NSS	XPcont	XPsamp	RVS	EpochPh	EpochRV	MCMCGSP	MCMCMSC	And	Teff	logg	[Fe/H]	Dist	A0	HIP	PS1	SDSS13	SKYM2	TYC2	URAT1	AllWISE	APASS9	GSC23	RAVE5	2MASS	RAVE6	RAJ2000	DEJ2000
+deg	deg	 	mas	mas	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	mas/yr	 	e-/s	e-/s	mag	e-/s	e-/s	mag	e-/s	e-/s	mag	mag	km/s	km/s	km/s	mag	 	 	 	 	 	 	 	 	 	 	 	K	[cm/s2]	[-]	pc	mag	 	 	 	 	 	 	 	 	 	 	 	 	deg	deg
+---------------	---------------	-------------------	-------	-------	---------	-------	---------	---------	------	---------	------	-------	----------------	-----------	---------	-----------	-----------	---------	-----------	-----------	---------	---------	-------	-----	--------	---------	-	-	-	-	-	-	-	-	-	-	-	-------	-------	-------	----------	-------	------	------------------	-------------------	-
+349.35762726487	-67.00242973650	6388326556409907584	 0.3292	 0.3783	   1.4756	 0.4273	   14.576	   12.444	 0.468	   -7.591	 0.500	  1.030	       155.16823	 6.7180e-01	20.210360	 5.1854e+01	 4.5375e+00	21.051577	 1.8182e+02	 7.3968e+00	19.098820	 1.952757	       	     	        	         	0	0	0	0	0	0	0	0	0	0	0	       	       	       	          	       	      	                  	                   	4
+
+### II_328_allwise: #Title: *the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)
+AllWISE	RAJ2000	DEJ2000	Im	W1mag	e_W1mag	W2mag	e_W2mag	W3mag	e_W3mag	W4mag	e_W4mag	Jmag	e_Jmag	Hmag	e_Hmag	Kmag	e_Kmag	ccf	ex	var	pmRA	e_pmRA	pmDE	e_pmDE	qph	d2M	2M
+ 	deg	deg	 	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	 	 	 	mas/yr	mas/yr	mas/yr	mas/yr	 	arcsec	
+-------------------	-----------	-----------	--	------	------	------	------	------	------	------	------	------	------	------	------	------	------	----	-	----	-------	-------	-------	-------	----	------	--
+J231725.79-670008.4	349.3574824	-67.0023357	Im	16.845	 0.083	16.545	 0.214	12.803	      	 9.079	      	      	      	      	      	      	      	0000	0	nnnn	   -350	    990	    165	    954	ABUU	      	2M
+J231728.49-665959.7	349.3687305	-66.9999274	Im	17.222	 0.107	15.222	 0.067	12.811	      	 9.032	      	      	      	      	      	      	      	0000	0	n1nn	   1425	    774	   -522	    764	AAUU	      	2M
+
+### II_391_ks4dr1: #Title: *the band-merged single_master catalog (1000 among 279,909,360 sources)
+CoaddID	RAJ2000	DEJ2000	Ndet	GLON	GLAT	E(B-V)	MJD-B	MJD-V	MJD-R	MJD-I	Bmag	e_Bmag	Vmag	e_Vmag	Rmag	e_Rmag	Imag	e_Imag	Bmag3	e_Bmag3	Vmag3	e_Vmag3	Rmag3	e_Rmag3	Imag3	e_Imag3	Bmag5	e_Bmag5	Vmag5	e_Vmag5	Rmag5	e_Rmag5	Imag5	e_Imag5	Bmag10	e_Bmag10	Vmag10	e_Vmag10	Rmag10	e_Rmag10	Imag10	e_Imag10	FWHM-B	S/G-B	Rh-B	Krad-B	Fmax-B	PA-B	Ell-B	Aimg-B	Bimg-B	FWHM-V	S/G-V	Rh-V	Krad-V	Fmax-V	PA-V	Ell-V	Aimg-V
+ 	deg	deg	 	deg	deg	mag	d	d	d	d	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	arcsec	 	arcsec	 	ct	deg	 	pix	pix	arcsec	 	arcsec	 	ct	deg	 	pix	pix	arcsec	 	arcsec	 	ct	deg	 	pix	pix	arcsec	 	arcsec	 	ct	deg	 	pix	pix	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	
+-------------------	-----------	-----------	--	-----------	-----------	--------	------------	------------	------------	------------	--------	-------	-------	-------	--------	-------	--------	-------	--------	-------	-------	-------	--------	-------	--------	-------	--------	-------	-------	-------	--------	-------	--------	-------	--------	-------	-------	-------	--------	-------	--------	-------	
+6388326556409790976	349.3579144	-67.0024817	 1	316.2942567	-47.6132040	 0.02802	59493.944913	59493.944913	59493.941597	59142.567465	 23.3292	 0.3020	21.3245	 0.0902	 20.5419	 0.0660	 19.4053	 0.0310	 22.7295	 0.2164	21.2614	 0.0706	 20.3472	 0.0313	 19.2468	 0.0190	 22.8551	 0.2579	21.2031	 0.0702	 20.4720	 0.0394	 19.2827	 0.0211	        	       	21.3800	 0.1407	 20.4334	 0.0701	 19.3515	 0.0354	
+
+### IV_39_tic82: #Title: Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC-8.2), outpout (on a total of 1,727,987,580 sources)
+TIC	RAJ2000	DEJ2000	TYC	UCAC4	2MASS	GAIA	S/G	Ref	pmRA	e_pmRA	pmDE	e_pmDE	r_pm	Teff	s_Teff	logg	s_logg	[M/H]	e_[M/H]	Rad	s_Rad	Mass	s_Mass	LClass	Dist	s_Dist	Ncont	Rcont	e_Mass	E_Mass	e_Rad	E_Rad	e_logg	E_logg	e_Dist	E_Dist	r_Dist	e_Teff	E_Teff	r_Teff	e_RAJ2000	e_DEJ2000	RAOdeg	DEOdeg	e_RAOdeg	e_DEOdeg	Sloan
+ 	deg	deg	 	 	 	 	 	 	mas/yr	mas/yr	mas/yr	mas/yr	 	K	K	[cm/s2]	[cm/s2]	[Sun]	[Sun]	Rsun	Rsun	Msun	Msun	 	pc	pc	 	 	Msun	Msun	Rsun	Rsun	[cm/s2]	[cm/s2]	pc	pc	 	K	K	 	mas	mas	deg	deg	mas	mas	
+-----------	---------------	---------------	------------	----------	-----------------	-------------------	--------	-----------	---------	-------	---------	------	------	-------	-------	-------	-------	-------	-------	--------	------	------	------	--------	------------	------------	-----	----------	------	------	------	------	-------	-------	----------	--------------	------	------	------	------	---
+ 2054869047	349.35747889464	-67.00239242250	            	          	                 	6388326556409907584	STAR    	gaia2      	   13.058	  0.892	   -8.400	 0.926	gaia2 	       	       	       	       	       	       	        	      	      	      	        	   1241.5500	    745.7180	     	          	      	      	      	      	       	       	  484.7360	     1006.7000	bj2018	      	      	      	   
+
+### VI_42_out: #Title: Compute constellation name from position
+RA1875	DE1875	Cst
+deg	deg	
+--------	--------	---
+347.4342	-67.6823	Ind
+
+### J_ApJS_234_23_r90cat: #Title: R90 final AGN candidates catalog (table 1)
+WISEA	RAJ2000	DEJ2000	W1mag	e_W1mag	W2mag	e_W2mag	W3mag	e_W3mag	W4mag	e_W4mag	MS	SigPix
+ 	deg	deg	mag	mag	mag	mag	mag	mag	mag	mag	 	deg-2
+-------------------	-----------	-----------	------	------	------	------	------	------	------	------	-	----
+J231728.49-665959.7	349.3687305	-66.9999274	17.222	 0.107	15.222	 0.067	12.811	      	 9.032	      	0	 124
+
+### J_ApJS_234_23_c75cat: #Title: C75 final AGN candidates catalog (table 2)
+WISEA	RAJ2000	DEJ2000	W1mag	e_W1mag	W2mag	e_W2mag	W3mag	e_W3mag	W4mag	e_W4mag	MS	SigPix
+ 	deg	deg	mag	mag	mag	mag	mag	mag	mag	mag	 	deg-2
+-------------------	-----------	-----------	------	------	------	------	------	------	------	------	-	----
+J231728.49-665959.7	349.3687305	-66.9999274	17.222	 0.107	15.222	 0.067	12.811	      	 9.032	      	0	 853
+
+### J_A_A_672_A65_class: #Title: SMC/MW classification
+GaiaDR3	P	_RA	_DE
+ 	 	deg	deg
+-------------------	-----------------------	---------	---------
+6388326556409907584	 2.2668246071891460e-49	349.35763	-67.00243

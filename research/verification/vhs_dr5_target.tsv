@@ -1,0 +1,168 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-14T23:59:09 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-14T23:59:09	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/367&-c=349.37038+-67.00031&-c.rs=2&-out.all&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=349.370380-67.000310,rs=2.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_2367
+#Name: II/367
+#Title: The VISTA Hemisphere Survey (VHS) catalog DR5 (McMahon+, 2020)
+#INFO	ivoid=ivo://cds.vizier/ii/367	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/ii/367	    IVOID of underlying data collection
+#INFO	creator=McMahon	    First author or institution
+#INFO	cites=bibcode:2013Msngr.154...35M	    Article or Data origin sources
+#INFO	journal=Msng	    Journal name
+#INFO	original_date=2013	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/II/367	    Dataset landing page
+#INFO	publication_date=2024-01-12	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	II_367_vhs_dr5:
+#Name: II/367/vhs_dr5
+#Title: VISTA Hemisphere Survey band-merged multi-waveband catalogues (VHS) DR5 (version 3); output (on a total of 1,374,207,485 sources)
+#Column	_r	(F5.3)	Distance from center (349.370380-67.000310)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	SrcID	(I12)	Unique ID of this merged detection as assigned by merge algorithm unless PrioOrSec!=0 (SOURCEID)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F10.6)	Celestial Right Ascension (J2000) (RA2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F10.6)	[-90/1.5] Celestial Declination (J2000) (DEC2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Name	(a23)	Source name in IAU convention (VHS JHHMMSS.ss+DDMMSS.s) (SOURCENAME)	[ucd=meta.id]
+#Column	cuEventID	(I6)	[587931] UID of curation event giving rise to this record (always "587931")	[ucd=meta.id]
+#Column	FrameID	(I12)	UID of the set of frames that this merged source comes from (FRAMESETID)	[ucd=meta.id]
+#Column	GLON	(F10.6)	Galactic longitude (L)	[ucd=pos.galactic.lon]
+#Column	GLAT	(F10.6)	Galactic latitude (B)	[ucd=pos.galactic.lat]
+#Column	PriOrSec	(I12)	Seam code for a unique (=0) or duplicated (!=0) source (5)	[ucd=meta.code]
+#Column	Y-Jpnt	(F8.4)	[-12.1/10.3]? Point source color Y-J (using aperMag3) (YMJPNT)	[ucd=phot.color;em.IR;em.IR]
+#Column	e_Y-Jpnt	(F9.4)	[4E-4/5999]? Error on point source color Y-J (YMJPNTERR)	[ucd=stat.error]
+#Column	J-Hpnt	(F8.4)	[-11.3/9.7]? Point source color J-H (using aperMag3) (JMHPNT)	[ucd=phot.color;em.IR;em.IR]
+#Column	e_J-Hpnt	(F8.4)	[5E-4/744]? Error on point source color J-H (JMHPNTERR)	[ucd=stat.error;phot.color;em.IR.J]
+#Column	H-Kspnt	(F8.4)	[-10.7/11.3]? Point source color H-Ks (using aperMag3) (HMKSPNT)	[ucd=phot.color;em.IR;em.IR]
+#Column	e_H-Kspnt	(F8.4)	[5E-4/627]? Error on point source color H-Ks (HMKSPNTERR)	[ucd=stat.error;phot.color;em.IR.H]
+#Column	J-Kspnt	(F8.4)	[-12/21.4]? Point source color J-Ks (using aperMag3) (JMKSPNT)	[ucd=phot.color;em.IR;em.IR]
+#Column	e_J-Kspnt	(F10.4)	[5E-4/13621]? Error on point source color J-Ks (JMKSPNTERR)	[ucd=stat.error;phot.color;em.IR.J]
+#Column	Y-Jext	(F8.4)	[-12/10.3]? Extended source color Y-J (using aperMagNoAperCorr3) (YMJEXT)	[ucd=phot.color;em.IR;em.IR]
+#Column	e_Y-Jext	(F9.4)	[4E-4/5999]? Error on extended source color Y-J (YMJEXTERR)	[ucd=stat.error]
+#Column	J-Hext	(F8.4)	[-11.2/9.8]? Extended source color J-H (using aperMagNoAperCorr3) (JMHEXT)	[ucd=phot.color;em.IR;em.IR]
+#Column	e_J-Hext	(F8.4)	[5E-4/744]? Error on extended source color J-H (JMHEXTERR)	[ucd=stat.error;phot.color;em.IR.J]
+#Column	H-Ksext	(F8.4)	[-10.6/11.2]? Extended source color H-Ks (using aperMagNoAperCorr3) (HMKSEXT)	[ucd=phot.color;em.IR;em.IR]
+#Column	e_H-Ksext	(F8.4)	[5E-4/627]? Error on extended source color H-Ks (HMKSEXTERR)	[ucd=stat.error;phot.color;em.IR.H]
+#Column	J-Ksext	(F8.4)	[-11.8/22.1]? Extended source color J-Ks (using aperMagNoAperCorr3) (JMKSEXT)	[ucd=phot.color;em.IR;em.IR]
+#Column	e_J-Ksext	(F10.4)	[5E-4/13621]? Error on extended source color J-Ks (JMKSEXTERR)	[ucd=stat.error;phot.color;em.IR.J]
+#Column	Mstat	(F9.4)	[-373/538] Merged N(0,1) stellarness-of-profile statistic (MERGEDCLASSSTAT) (1)	[ucd=meta.code.class]
+#Column	Mclass	(I2)	[-3/1] Class flag (MERGEDCLASS) (2)	[ucd=meta.code.class]
+#Column	pStar	(F9.6)	[0/1] Probability that the source is a star	[ucd=stat.fit.goodness]
+#Column	pGal	(F9.6)	[0/1] Probability that the source is a galaxy (PGALAXY)	[ucd=stat.fit.goodness]
+#Column	pNoise	(F9.6)	[0/1] Probability that the source is noise	[ucd=stat.fit.goodness]
+#Column	E(B-V)	(F7.4)	[4E-4/41] The galactic dust extinction value measured from the Schlegel (1998ApJ...500..525S) maps (EBV)	[ucd=phot.color.excess]
+#Column	AY	(F7.4)	[5E-4/53] The galactic extinction correction in the Y band	[ucd=phys.absorption.gal]
+#Column	AJ	(F7.4)	[4E-4/38] The galactic extinction correction in the J band	[ucd=phys.absorption.gal]
+#Column	AH	(F7.4)	[2E-4/24] The galactic extinction correction in the H band	[ucd=phys.absorption.gal]
+#Column	AKs	(F7.4)	[1E-4/16] The galactic extinction correction in the Ks band	[ucd=phys.absorption.gal]
+#Column	YMJD	(F12.6)	[55160.2/57811.2]? Modified Julian Day in Y band	[ucd=time.epoch]
+#Column	Ypmag	(F7.4)	[3.6/37]? Extended source Y (Vega) mag (Petrosian) (YPETROMAG) (3)	[ucd=phot.mag;em.IR.NIR]
+#Column	e_Ypmag	(F7.4)	[0/100]? Error in extended source Y mag (Petrosian) (YPETROMAGERR) (3)	[ucd=stat.error;phot.mag]
+#Column	Yap3	(F7.4)	[4.2/34]? Default point source Y aperture corrected Vega mag (2.0" diam) (YAPERMAG3) (3)	[ucd=phot.mag;em.IR.NIR]
+#Column	e_Yap3	(F7.4)	[1E-4/100]? Error in default point/extended source Y mag (YAPERMAG3ERR) (3)	[ucd=stat.error]
+#Column	Yap4	(F7.4)	[4.1/34]? Point source Y aperture corrected Vega mag (2.8" aperture diam) (YAPERMAG4) (3)	[ucd=phot.mag;em.IR.NIR]
+#Column	e_Yap4	(F7.4)	[1E-4/100]? Error in point/extended source Y mag (2.8 arcsec aperture diam) (YAPERMAG4ERR) (3)	[ucd=stat.error]
+#Column	Yap6	(F7.4)	[3.1/38]? Point source Y aperture corrected Vega mag (5.7" aperture diam) (YAPERMAG6) (3)	[ucd=phot.mag;em.IR.NIR]
+#Column	e_Yap6	(F7.4)	[1E-4/100]? Error in point/extended source Y mag (5.7 arcsec aperture diam) (YAPERMAG6ERR) (3)	[ucd=stat.error]
+#Column	Yapc3	(F7.4)	[4.6/35]? Default extended source Y aperture Vega mag (2.0 arcsec diam) (YAPERMAGNOAPERCORR3)	[ucd=phot.mag;em.IR.NIR]
+#Column	Yapc4	(F7.4)	[4.4/35]? Extended source Y aperture Vega mag (2.8 arcsec aperture diameter) (YAPERMAGNOAPERCORR4)	[ucd=phot.mag;em.IR.NIR]
+#Column	Yapc6	(F7.4)	[3.2/39]? Extended source Y aperture Vega mag (5.7 arcsec aperture diameter) (YAPERMAGNOAPERCORR6)	[ucd=phot.mag;em.IR.NIR]
+#Column	Yamaj	(F7.4)	[0/19]? Seeing corrected half-light, semi-major axis in Y band (YHLCORSMJRADAS)	[ucd=phys.angSize]
+#Column	Yrms	(F8.4)	[0.7/530]? RMS of axes of ellipse fit in Y (YGAUSIG)	[ucd=src.morph.param;em.IR.NIR]
+#Column	Yell	(F7.4)	[0/1]? 1-b/a, where a/b=semi-major/minor axes in Y	[ucd=src.ellipticity;em.IR.NIR]
+#Column	YPA	(F5.1)	[0/180]? Ellipse fit celestial orientation in Y	[ucd=pos.posAng;em.IR.NIR]
+#Column	Yerrbits	(I2)	[-1/28] Processing warning/error bitwise flags in Y	[ucd=meta.code]
+#Column	Yavgap3	(F7.3)	[0/112]? Average confidence in 2 arcsec diam default aperture 3 Y (YAVERAGECONF)	[ucd=stat.likelihood]
+#Column	Yclass	(I2)	[-2/1] Discrete image classification flag in Y	[ucd=meta.code.class]
+#Column	YclasSt	(F8.3)	[-156/444]? N(0,1) stellarness-of-profile statistic in Y (YCLASSSTAT)	[ucd=stat]
+#Column	Yperrbits	(I8)	[0/12587216] Additional WFAU post-processing error bits in Y (4)	[ucd=meta.code]
+#Column	Yseq	(I7)	[0/1413053]? The running number of the Y detection (YSEQNUM)	[ucd=meta.id]
+#Column	JMJD	(F12.6)	[55139/57844.2]? Modified Julian Day in J band	[ucd=time.epoch]
+#Column	Jpmag	(F8.4)	[-24/38]? Extended source J (Vega) mag (Petrosian) (JPETROMAG) (3)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jpmag	(F7.4)	[0/100]? Error in extended source J mag (Petrosian) (JPETROMAGERR) (3)	[ucd=stat.error;phot.mag]
+#Column	Jap3	(F8.4)	[-21.1/34.1]? Default point source J aperture corrected Vega mag (2.0" diam) (JAPERMAG3) (3)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jap3	(F7.4)	[0/100]? Error in default point/extended source J mag (JAPERMAG3ERR) (3)	[ucd=stat.error]
+#Column	Jap4	(F8.4)	[-21.2/39]? Point source J aperture corrected Vega mag (2.8" aperture diam) (JAPERMAG4) (3)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jap4	(F7.4)	[0/100]? Error in point/extended source J mag (2.8 arcsec aperture diam) (JAPERMAG4ERR) (3)	[ucd=stat.error]
+#Column	Jap6	(F8.4)	[-21.7/39]? Point source J aperture corrected Vega mag (5.7" aperture diam) (JAPERMAG6) (3)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jap6	(F7.4)	[0/100]? Error in point/extended source J mag (5.7 arcsec aperture diam) (JAPERMAG6ERR) (3)	[ucd=stat.error]
+#Column	Japc3	(F8.4)	[-20.5/35]? Default extended source J aperture Vega mag (2.0 arcsec diam) (JAPERMAGNOAPERCORR3)	[ucd=phot.mag;em.IR.J]
+#Column	Japc4	(F8.4)	[-21/39]? Extended source J aperture Vega mag (2.8 arcsec aperture diameter) (JAPERMAGNOAPERCORR4)	[ucd=phot.mag;em.IR.J]
+#Column	Japc6	(F8.4)	[-22/39]? Extended source J aperture Vega mag (5.7 arcsec aperture diameter) (JAPERMAGNOAPERCORR6)	[ucd=phot.mag;em.IR.J]
+#Column	Jamaj	(F7.4)	[0/19]? Seeing corrected half-light, semi-major axis in J band (JHLCORSMJRADAS)	[ucd=phys.angSize]
+#Column	Jrms	(F8.4)	[0.7/584]? RMS of axes of ellipse fit in J (JGAUSIG)	[ucd=stat.error]
+#Column	Jell	(F7.4)	[0/1]? 1-b/a, where a/b=semi-major/minor axes in J	[ucd=src.ellipticity]
+#Column	JPA	(F5.1)	[0/180]? Ellipse fit celestial orientation in J	[ucd=pos.posAng]
+#Column	Jerrbits	(I2)	[-1/28]? Processing warning/error bitwise flags in J	[ucd=meta.code]
+#Column	Javgap3	(F7.3)	[0/112]? Average confidence in 2 arcsec diam default aperture 3 J (JAVERAGECONF)	[ucd=stat.likelihood]
+#Column	Jclass	(I2)	[-2/1]? Discrete image classification flag in J	[ucd=meta.code.class]
+#Column	JclasStat	(F8.3)	[-373/458]? N(0,1) stellarness-of-profile statistic in J (JCLASSSTAT)	[ucd=stat]
+#Column	Jperrbits	(I8)	[0/12587216]? Additional WFAU post-processing error bits in J (4)	[ucd=meta.code]
+#Column	Jseq	(I7)	[1/1661208]? The running number of the J detection (JSEQNUM)	[ucd=meta.id]
+#Column	Jxi	(F9.6)	[-2/2]? Offset of J detection from master position (+east/-west)	[ucd=pos.eq.ra;arith.diff;em.IR.NIR]
+#Column	Jeta	(F9.6)	[-2/2]? Offset of J detection from master position (+north/-south)	[ucd=pos.eq.ra;arith.diff;em.IR.NIR]
+#Column	HMJD	(F12.6)	[55139/56074.2]? Modified Julian Day in H band	[ucd=time.epoch]
+#Column	Hpmag	(F8.4)	[-24/36]? Extended source H (Vega) mag (Petrosian) (HPETROMAG) (3)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hpmag	(F7.4)	[0/100]? Error in extended source H mag (Petrosian) (HPETROMAGERR) (3)	[ucd=stat.error;phot.mag]
+#Column	Hap3	(F8.4)	[-21.5/29]? Default point source H aperture corrected Vega mag (2.0" diam) (HAPERMAG3) (3)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hap3	(F7.4)	[0/100]? Error in default point/extended source H mag (HAPERMAG3ERR) (3)	[ucd=stat.error]
+#Column	Hap4	(F8.4)	[-22/30.1]? Point source H aperture corrected Vega mag (2.8" aperture diam) (HAPERMAG4) (3)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hap4	(F7.4)	[0/100]? Error in point/extended source H mag (2.8 arcsec aperture diam) (HAPERMAG4ERR) (3)	[ucd=stat.error]
+#Column	Hap6	(F8.4)	[-22.2/35]? Point source H aperture corrected Vega mag (5.7" aperture diam) (HAPERMAG6) (3)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hap6	(F7.4)	[0/100]? Error in point/extended source H mag (5.7 arcsec aperture diam) (HAPERMAG6ERR) (3)	[ucd=stat.error]
+#Column	Hapc3	(F8.4)	[-21/29.1]? Default extended source H aperture Vega mag (2.0 arcsec diam) (HAPERMAGNOAPERCORR3)	[ucd=phot.mag;em.IR.H]
+#Column	Hapc4	(F8.4)	[-21.4/30.3]? Extended source H aperture Vega mag (2.8 arcsec aperture diameter) (HAPERMAGNOAPERCORR4)	[ucd=phot.mag;em.IR.H]
+#Column	Hapc6	(F8.4)	[-22.2/35]? Extended source H aperture Vega mag (5.7 arcsec aperture diameter) (HAPERMAGNOAPERCORR6)	[ucd=phot.mag;em.IR.H]
+#Column	Hamaj	(F7.4)	[0/19]? Seeing corrected half-light, semi-major axis in H band (HHLCORSMJRADAS)	[ucd=phys.angSize]
+#Column	Hrms	(F8.4)	[0.7/584]? RMS of axes of ellipse fit in H (HGAUSIG)	[ucd=stat.error]
+#Column	Hell	(F7.4)	[0/1]? 1-b/a, where a/b=semi-major/minor axes in H	[ucd=src.ellipticity]
+#Column	HPA	(F5.1)	[0/180]? Ellipse fit celestial orientation in H	[ucd=pos.posAng]
+#Column	Herrbits	(I2)	[-1/28]? Processing warning/error bitwise flags in H	[ucd=meta.code]
+#Column	Havgap3	(F7.3)	[0/112]? Average confidence in 2 arcsec diam default aperture 3 H (HAVERAGECONF)	[ucd=stat.likelihood]
+#Column	Hclass	(I2)	[-2/1]? Discrete image classification flag in H	[ucd=meta.code.class]
+#Column	HclasSt	(F7.3)	[-96/383]? N(0,1) stellarness-of-profile statistic in H (HCLASSSTAT)	[ucd=stat]
+#Column	Hperrbits	(I8)	[0/12587216]? Additional WFAU post-processing error bits in H (4)	[ucd=meta.code]
+#Column	Hseq	(I6)	[1/125514]? The running number of the H detection (HSEQNUM)	[ucd=meta.id]
+#Column	Hxi	(F9.6)	[-2/2]? Offset of H detection from master position (+east/-west)	[ucd=pos.eq.ra;arith.diff;em.IR.NIR]
+#Column	Heta	(F9.6)	[-2/2]? Offset of H detection from master position (+north/-south)	[ucd=pos.eq.ra;arith.diff;em.IR.NIR]
+#Column	KsMJD	(F12.6)	[55139/57844.2]? Modified Julian Day in Ks band	[ucd=time.epoch]
+#Column	Kspmag	(F8.4)	[-20.3/34]? Extended source Ks (Vega) mag (Petrosian) (KSPETROMAG) (3)	[ucd=phot.mag;em.IR.K]
+#Column	e_Kspmag	(F7.4)	[0/100]? Error in extended source Ks mag (Petrosian) (KSPETROMAGERR) (3)	[ucd=stat.error;phot.mag]
+#Column	Ksap3	(F8.4)	[-33.5/31]? Default point source Ks aperture corrected Vega mag (2.0" diam) (KSAPERMAG3) (3)	[ucd=phot.mag;em.IR.K]
+#Column	e_Ksap3	(F7.4)	[0/96]? Error in default point/extended source Ks mag (KSAPERMAG3ERR) (3)	[ucd=stat.error]
+#Column	Ksap4	(F8.4)	[-33.4/36]? Point source Ks aperture corrected Vega mag (2.8" aperture diam) (KSAPERMAG4) (3)	[ucd=phot.mag;em.IR.K]
+#Column	e_Ksap4	(F7.4)	[0/100]? Error in point/extended source Ks mag (2.8 arcsec aperture diam) (KSAPERMAG4ERR) (3)	[ucd=stat.error]
+#Column	Ksap6	(F8.4)	[-33.3/37]? Point source Ks aperture corrected Vega mag (5.7" aperture diam) (KSAPERMAG6) (3)	[ucd=phot.mag;em.IR.K]
+#Column	e_Ksap6	(F7.4)	[0/100]? Error in point/extended source Ks mag (5.7 arcsec aperture diam) (KSAPERMAG6ERR) (3)	[ucd=stat.error]
+#Column	Ksapc3	(F8.4)	[-33.4/32]? Default extended source Ks aperture Vega mag (2.0 arcsec diam) (KSAPERMAGNOAPERCORR3)	[ucd=phot.mag;em.IR.K]
+#Column	Ksapc4	(F8.4)	[-33.3/36]? Extended source Ks aperture Vega mag (2.8 arcsec aperture diameter) (KSAPERMAGNOAPERCORR4)	[ucd=phot.mag;em.IR.K]
+#Column	Ksapc6	(F8.4)	[-33.3/37.1]? Extended source Ks aperture Vega mag (5.7 arcsec aperture diameter) (KSAPERMAGNOAPERCORR6)	[ucd=phot.mag;em.IR.K]
+#Column	Ksamaj	(F7.4)	[0/19]? Seeing corrected half-light, semi-major axis in Ks band (KSHLCORSMJRADAS)	[ucd=phys.angSize]
+#Column	Ksrms	(F8.4)	[0.7/549]? RMS of axes of ellipse fit in Ks (KSGAUSIG)	[ucd=stat.error]
+#Column	Ksell	(F7.4)	[0/1]? 1-b/a, where a/b=semi-major/minor axes in Ks	[ucd=src.ellipticity]
+#Column	KsPA	(F5.1)	[0/180]? Ellipse fit celestial orientation in Ks	[ucd=pos.posAng]
+#Column	Kserrbits	(I2)	[-1/28]? Processing warning/error bitwise flags in Ks	[ucd=meta.code]
+#Column	Ksavgap3	(F7.3)	[0/112]? Average confidence in 2 arcsec diam default aperture 3 Ks (KSAVERAGECONF)	[ucd=stat.likelihood]
+#Column	Ksclass	(I2)	[-2/1]? Discrete image classification flag in Ks	[ucd=meta.code.class]
+#Column	KsclasSt	(F8.3)	[-108/385]? N(0,1) stellarness-of-profile statistic in Ks (KSCLASSSTAT)	[ucd=stat]
+#Column	Ksperrbits	(I8)	[0/12587216]? Additional WFAU post-processing error bits in Ks (4)	[ucd=meta.code]
+#Column	Ksseq	(I7)	[1/1455550]? The running number of the Ks detection (KSSEQNUM)	[ucd=meta.number]
+#Column	Ksxi	(F9.6)	[-2/2]? Offset of Ks detection from master position (+east/-west)	[ucd=pos.eq.ra;arith.diff;em.IR.NIR]
+#Column	Kseta	(F9.6)	[-2/2]? Offset of Ks detection from master position (+north/-south)	[ucd=pos.eq.ra;arith.diff;em.IR.NIR]
+#Column	prim	(F4.1)	[0/1]? Flag indicates primary sources (=1), otherwise (=0) (PRIMARY_SOURCE)	[ucd=meta.code]
+_r	SrcID	RAJ2000	DEJ2000	Name	cuEventID	FrameID	GLON	GLAT	PriOrSec	Y-Jpnt	e_Y-Jpnt	J-Hpnt	e_J-Hpnt	H-Kspnt	e_H-Kspnt	J-Kspnt	e_J-Kspnt	Y-Jext	e_Y-Jext	J-Hext	e_J-Hext	H-Ksext	e_H-Ksext	J-Ksext	e_J-Ksext	Mstat	Mclass	pStar	pGal	pNoise	E(B-V)	AY	AJ	AH	AKs	YMJD	Ypmag	e_Ypmag	Yap3	e_Yap3	Yap4	e_Yap4	Yap6	e_Yap6	Yapc3	Yapc4	Yapc6	Yamaj	Yrms	Yell	YPA	Yerrbits	Yavgap3	Yclass	YclasSt	Yperrbits	Yseq	JMJD	Jpmag	e_Jpmag	Jap3	e_Jap3	Jap4	e_Jap4	Jap6	e_Jap6	Japc3	Japc4	Japc6	Jamaj	Jrms	Jell	JPA	Jerrbits	Javgap3	Jclass	JclasStat	Jperrbits	Jseq	Jxi	Jeta	HMJD	Hpmag	e_Hpmag	Hap3	e_Hap3	Hap4	e_Hap4	Hap6	e_Hap6	Hapc3	Hapc4	Hapc6	Hamaj	Hrms	Hell	HPA	Herrbits	Havgap3	Hclass	HclasSt	Hperrbits	Hseq	Hxi	Heta	KsMJD	Kspmag	e_Kspmag	Ksap3	e_Ksap3	Ksap4	e_Ksap4	Ksap6	e_Ksap6	Ksapc3	Ksapc4	Ksapc6	Ksamaj	Ksrms	Ksell	KsPA	Kserrbits	Ksavgap3	Ksclass	KsclasSt	Ksperrbits	Ksseq	Ksxi	Kseta	prim
+arcsec	 	deg	deg	 	 	 	deg	deg	 	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	 	 	 	 	 	mag	mag	mag	mag	mag	d	mag	mag	mag	mag	mag	mag	mag	mag	 	mag	mag	arcsec	pix	 	deg	 	 	 	 	 	 	d	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	arcsec	pix	 	deg	 	 	 	 	 	 	arcsec	arcsec	d	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	arcsec	pix	 	deg	 	 	 	 	 	 	arcsec	arcsec	d	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	arcsec	pix	 	deg	 	 	 	 	 	 	arcsec	arcsec	
+-----	------------	----------	----------	-----------------------	------	------------	----------	----------	------------	--------	---------	--------	--------	--------	--------	--------	----------	--------	---------	--------	--------	--------	--------	--------	----------	---------	--	---------	---------	---------	-------	-------	-------	-------	-------	------------	-------	-------	-------	-------	-------	-------	-------	-------	-------	-------	-------	-------	--------	-------	-----	--	-------	--	--------	--------	-------	------------	--------	-------	--------	-------	--------	-------	--------	-------	--------	--------	--------	-------	--------	-------	-----	--	-------	--	--------	--------	-------	---------	---------	------------	--------	-------	--------	-------	--------	-------	--------	-------	--------	--------	--------	-------	--------	-------	-----	--	-------	--	-------	--------	------	---------	---------	------------	--------	-------	--------	-------	--------	-------	--------	-------	--------	--------	--------	-------	--------	-------	-----	--	-------	--	--------	--------	-------	---------	---------	----
+0.293	472550793658	349.370182	-67.000284	VHS J231728.84-670001.0	587931	472446403343	316.289921	-47.617594	           0	  1.3001	   0.0355	        	        	        	        	 -0.2514	    0.1215	  1.3725	   0.0355	        	        	        	        	 -0.1757	    0.1215	   0.0456	-1	 0.999657	 0.000171	 0.000171	 0.0281	 0.0369	 0.0261	 0.0167	 0.0109	57177.384849	18.3864	 0.0654	18.2783	 0.0309	18.3129	 0.0368	18.3430	 0.0613	18.6641	18.5247	18.3822	 0.2647	  1.9278	 0.1206	102.8	 0	100.891	-1	  -2.148	       0	  41759	57177.379115	 16.9814	 0.0354	 16.9781	 0.0175	 16.9615	 0.0211	 16.9460	 0.0356	 17.2916	 17.1328	 16.9781	 0.3685	  2.0212	 0.0346	 80.0	 0	101.147	-1	   2.011	       0	  30260	 0.014091	-0.037714	            	        	       	        	       	        	       	        	       	        	        	        	       	        	       	     	-1	       	-1	       	       0	      	         	         	57177.374597	 17.1204	 0.2294	 17.2296	 0.1203	 17.1861	 0.1471	 17.0856	 0.2459	 17.4673	 17.3051	 17.1163	 0.3445	  1.3430	 0.0305	 93.8	 0	 99.087	-1	   0.216	       0	  18376	 0.051796	-0.050375	 1.0
+

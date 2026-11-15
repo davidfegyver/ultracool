@@ -1,0 +1,12 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-14T23:59:11 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#RESOURCE=yCat_51670253
+#Name: J/AJ/167/253
+#Title: 89 new utlra cool dwarfs comoving companions (Rothermich+, 2024)
+#Table	J_AJ_167_253_table1:
+#Name: J/AJ/167/253/table1
+#Title: High-probability comoving systems

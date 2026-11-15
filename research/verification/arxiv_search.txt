@@ -1,0 +1,31 @@
+### arxiv.org/search: SPHEREx brown dwarf
+2608.25993 26 August, 2026 JWST color sequence of transiting exoplanets and directly imaged substellar objects
+2607.00543 1 July, 2026 SPHEREx 0.75 to 5 $μ$m Spectra for a Sequence of Nearby Brown Dwarfs
+2604.22012 8 May, 2026 A SPHEREx Pipeline and Spectral Library for Ultracool Dwarfs
+2512.12098 12 December, 2025 Identifying and Characterizing Very Low Mass Spectral Blend Binaries with Machine Learning Methods
+2508.09370 12 August, 2025 Classifying Cool Dwarfs: Comprehensive Spectral Typing of Field and Peculiar Dwarfs Using Machine Learning
+### arxiv.org/search: SPHEREx T dwarf
+2608.25993 26 August, 2026 JWST color sequence of transiting exoplanets and directly imaged substellar objects
+2608.08908 9 August, 2026 Atmospheric Diversity of Giant Planet Analogs from 3-5um with SPHEREx
+2607.00543 1 July, 2026 SPHEREx 0.75 to 5 $μ$m Spectra for a Sequence of Nearby Brown Dwarfs
+2604.22983 8 September, 2026 The POKEMON Speckle Survey of Nearby M dwarfs. IV. Distance-Limited Catalog (POKEMON-DLC)
+2604.22012 8 May, 2026 A SPHEREx Pipeline and Spectral Library for Ultracool Dwarfs
+2512.12098 12 December, 2025 Identifying and Characterizing Very Low Mass Spectral Blend Binaries with Machine Learning Methods
+2412.12286 5 November, 2026 Searching for axion-like particles with SPHEREx
+### arxiv.org/search: SPHEREx ultracool dwarf
+2608.25993 26 August, 2026 JWST color sequence of transiting exoplanets and directly imaged substellar objects
+2604.26771 13 July, 2026 SPHEREx Ultracool Dwarf spectrophotometric Atlas (SUDA): Atmospheric and Fundamental Parameters of Ultracool Dwarfs
+2604.22983 8 September, 2026 The POKEMON Speckle Survey of Nearby M dwarfs. IV. Distance-Limited Catalog (POKEMON-DLC)
+2604.22012 8 May, 2026 A SPHEREx Pipeline and Spectral Library for Ultracool Dwarfs
+### arxiv.org/search: SPHEREx spectral type
+2608.08908 9 August, 2026 Atmospheric Diversity of Giant Planet Analogs from 3-5um with SPHEREx
+2607.10282 11 July, 2026 A UV-to-Near-infrared QSO Composite Spectrum from the SPHEREx All-Sky Survey
+2607.00543 1 July, 2026 SPHEREx 0.75 to 5 $μ$m Spectra for a Sequence of Nearby Brown Dwarfs
+2604.22012 8 May, 2026 A SPHEREx Pipeline and Spectral Library for Ultracool Dwarfs
+2603.12390 12 March, 2026 SPHEREx Wide-Field Infrared Spectral Mapping of Interstellar Ices and Polycyclic Aromatic Hydrocarbons
+2603.10952 11 March, 2026 Gaia-GIC-1: An Evolving Catastrophic Planetesimal Collision Candidate
+2603.09976 10 March, 2026 Black Hole Properties of Type-1 Active Galactic Nuclei in the North Ecliptic Pole Wide Field: I. Mid-infrared Sources with Optical Counterpa
+2512.12098 12 December, 2025 Identifying and Characterizing Very Low Mass Spectral Blend Binaries with Machine Learning Methods
+2508.09370 12 August, 2025 Classifying Cool Dwarfs: Comprehensive Spectral Typing of Field and Peculiar Dwarfs Using Machine Learning
+2408.03228 8 August, 2024 Red Type-1 Quasars after Cosmic Noon and Impact on $L_{\rm UV}$-related Quasar Statistics
+1906.06691 23 September, 2019 Dynamically Generated Inflation from Non-Riemannian Volume Forms

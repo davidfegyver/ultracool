@@ -1,0 +1,87 @@
+\                                                                               
+\fixlen = T
+\RowsRetrieved =                 3
+\ORIGIN  = 'IPAC Infrared Science Archive (IRSA), Caltech/JPL'
+\SIMULATED_TABLE  = 'n'
+\DATETIME= '2026-11-14 15:57:58'
+\DATABASE= 'CatWISE2020 Catalog (catwise_2020)'
+\EQUINOX = 'J2000'
+\SKYAREA = 'within 20 arcsec of  ra=349.37038 dec=-67.00031 Eq J2000 '
+\StatusFile = '/workspace/TMP_Mv1KBk_2822393/Gator/irsa/2822393/log.2822393.html'
+\SQL     = 'WHERE (no constraints) 
+\SQL     = 'SELECT (31 column names follow in next row.)'
+\ 
+\ source_name 
+\ ___ source hexagesimal designation
+\ ra (deg) 
+\ ___ right ascension (J2000)
+\ dec (deg) 
+\ ___ declination (J2000)
+\ clon 
+\ ___ Right ascention in Sexagesimal format.
+\ clat 
+\ ___ Declination in Sexagesimal format.
+\ sigra (arcsec) 
+\ ___ uncertainty in RA
+\ sigdec (arcsec) 
+\ ___ uncertainty in DEC
+\ w1mpro (mag) 
+\ ___ instrumental profile-fit photometry magnitude, band 1
+\ w1sigmpro (mag) 
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 1
+\ w2mpro (mag) 
+\ ___ instrumental profile-fit photometry magnitude, band 2
+\ w2sigmpro (mag) 
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 2
+\ w1snr 
+\ ___ instrumental profile-fit photometry S/N ratio, band 1
+\ w2snr 
+\ ___ instrumental profile-fit photometry S/N ratio, band 2
+\ pmra (arcsec/yr) 
+\ ___ Apparent motion in RA
+\ pmdec (arcsec/yr) 
+\ ___ Apparent motion in Dec
+\ sigpmra (arcsec/yr) 
+\ ___ Uncertainty in the RA motion estimate
+\ sigpmdec (arcsec/yr) 
+\ ___ Uncertainty in the Dec motion estimate
+\ meanobsmjd (d) 
+\ ___ mean observation epoch
+\ ab_flags 
+\ ___ unWISE artifact bitmask contamination flags
+\ cc_flags 
+\ ___ worst case 4 character cc_flag from AllWISE
+\ nb 
+\ ___ number of blend components used in each fit
+\ na 
+\ ___ number of actively deblended components
+\ w1mpro_pm (mag) 
+\ ___ W1 magnitude from profile-fit photometry including motion
+\ w1sigmpro_pm (mag) 
+\ ___ W1 flux uncertainty in mag units from  profile-fit photometry including motion
+\ w2mpro_pm (mag) 
+\ ___ W2 magnitude from profile-fit photometry including motion
+\ w2sigmpro_pm (mag) 
+\ ___ W2 flux uncertainty in mag units from  profile-fit photometry including motion
+\ ra_pm (deg) 
+\ ___ Right ascension at epoch MJD=57170 (2015.405) from psf model incl. motion
+\ dec_pm (deg) 
+\ ___ Declination at epoch MJD=57170 (2015.405) from psf model incl. motion
+\ par_pm (arcsec) 
+\ ___ parallax from PM desc-asce elon
+\ par_sigma (arcsec) 
+\ ___ one-sigma uncertainty in par_stat
+\ par_stat (arcsec) 
+\ ___ parallax estimate from stationary solution
+\ dist (arcsec) 
+\ ___ Distance between the target position and each source in arcsec.
+\ angle (deg) 
+\ ___ Position Angle in degree.
+\ 
+|                source_name|           ra|          dec|          clon|          clat|     sigra|    sigdec|  w1mpro|  w1sigmpro|  w2mpro|  w2sigmpro|   w1snr|   w2snr|       pmra|      pmdec|   sigpmra|  sigpmdec|    meanobsmjd|         ab_flags|         cc_flags|   nb|   na|  w1mpro_pm|  w1sigmpro_pm|  w2mpro_pm|  w2sigmpro_pm|        ra_pm|       dec_pm|      par_pm|   par_sigma|    par_stat|           dist|       angle|
+|                       char|       double|       double|          char|          char|    double|    double|  double|     double|  double|     double|  double|  double|     double|     double|    double|    double|        double|             char|             char|  int|  int|     double|        double|     double|        double|       double|       double|      double|      double|      double|         double|      double|
+|                           |          deg|          deg|              |              |    arcsec|    arcsec|     mag|        mag|     mag|        mag|        |        |  arcsec/yr|  arcsec/yr| arcsec/yr| arcsec/yr|             d|                 |                 |     |     |        mag|           mag|        mag|           mag|          deg|          deg|      arcsec|      arcsec|      arcsec|         arcsec|         deg|
+|                       null|         null|         null|          null|          null|      null|      null|    null|       null|    null|       null|    null|    null|       null|       null|      null|      null|          null|             null|             null| null| null|       null|          null|       null|          null|         null|         null|        null|        null|        null|           null|        null|
+         J231728.89-670001.1   349.3703834   -67.0003097   23h17m28.89s  -67d00m01.11s     0.0870     0.0828   17.120       0.046   15.295       0.028     23.7     38.4     0.46214    -0.29881     0.0310     0.0292   57294.312845                00              0000     1     0      17.042          0.043      15.235          0.027   349.3702704   -67.0002825        0.020        0.079       -0.054        0.005324    77.274697 
+         J231726.16-670001.6   349.3590281   -67.0004647   23h17m26.17s  -67d00m01.67s     0.2636     0.2350   17.727       0.081   17.682       0.245     13.4      4.4     0.10298    -0.20606     0.1024     0.0873   57189.954342                00              null     1     0      17.687          0.078      17.525          0.212   349.3590554   -67.0004718       -0.256        0.232       -0.228       15.977401   267.997227 
+         J231725.84-670008.8   349.3577057   -67.0024506   23h17m25.85s  -67d00m08.82s     0.1214     0.1066   16.737       0.037   16.742       0.101     29.1     10.7     0.02377     0.00031     0.0432     0.0406   57204.904949                00              0000     1     0      16.736          0.037      16.653          0.093   349.3576895   -67.0024463       -0.028        0.110       -0.040       19.421358   246.616639 

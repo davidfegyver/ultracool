@@ -65,17 +65,21 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
         <section aria-labelledby="featured-heading" className="rounded-lg border border-emerald-800 bg-emerald-950/30 p-4">
           <div className="text-xs tracking-wide text-emerald-400 uppercase">Featured result</div>
           <h2 id="featured-heading" className="text-lg font-semibold">
-            WISE J2317−6659: a brown dwarf typed for the first time
+            WISE J2317−6659: the first spectrum-based type for a candidate brown dwarf
           </h2>
           <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-300">
-            This faint infrared source was only listed as a possible brown dwarf, with a type guessed from its colors. With this app we measured its first spectral
-            type from SPHEREx's low-resolution 0.75–5 µm spectrum: a T5–T6 brown dwarf about 28 parsecs (90 light-years) away, moving 0.48″ per year across 16 years
-            of WISE and SPHEREx images. It sits at the same distance as the star pair HD 219509/219495, once suggested as its host, but moves differently, so it is
-            most likely not their companion.
+            This faint infrared source was listed only as a possible brown dwarf, its type (T6) estimated from its brightness. With this app we measured its
+            SPHEREx 0.75–5 µm spectrum for the first time: it matches mid-T brown dwarfs (about T6, give or take one subtype), confirming that estimate. It moves
+            about 0.5″ per year across 16 years of WISE and SPHEREx images and lies about 30 parsecs (100 light-years) away, consistent with the distance of the
+            star pair HD 219509/219495, but it moves about 0.15″ per year differently, so it is not their companion, as Rothermich et al. (2024) had judged likely.
           </p>
           <p className="mt-1 text-xs text-slate-500">
-            SPHEREx gives a low-resolution spectrum (R ≈ 40–130), not a slit spectrum, and the distance is estimated from brightness and type: a follow-up
-            spectrum and parallax would confirm it.
+            SPHEREx gives low-resolution spectrophotometry (R ≈ 40–130), not a slit spectrum; the distance (25–40 pc) is estimated from brightness and type.
+            "First" means the first we found in catalogues and papers as of November 2026.{' '}
+            <a className="underline" href="https://github.com/davidfegyver/ultracool/blob/main/research/verification/J2317_ADVERSARIAL.md" target="_blank" rel="noreferrer">
+              Claim-by-claim check
+            </a>
+            .
           </p>
           <div className="mt-3 flex gap-2 text-sm">
             {(

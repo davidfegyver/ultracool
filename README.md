@@ -15,7 +15,7 @@ Built for NASA Space Apps 2026 ("Planet X and SPHEREx").
 
 ## Science result
 
-Using this pipeline, **WISE J231728.42−665959.3 was typed for the first time: a T5–T6 brown dwarf at ~28 pc**, co-distant with the star pair HD 219509/219495 but not moving with it. Details, the candidate table and the methods are in [`research/`](research/README.md).
+Using this pipeline, **WISE J231728.42−665959.3 got its first spectrum-based type: a mid-T brown dwarf (≈T6 ± 1) at ~30 pc (25–40 pc)**, confirming the photometric (T6) estimate of Rothermich et al. 2024; it is consistent with the distance of the star pair HD 219509/219495 but moves ~150 mas/yr differently, so it is not their companion. An adversarial review of every claim is in [`research/verification/J2317_ADVERSARIAL.md`](research/verification/J2317_ADVERSARIAL.md); details, the candidate table and the methods are in [`research/`](research/README.md).
 
 ## Quick start
 
