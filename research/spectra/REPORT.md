@@ -82,7 +82,7 @@ Our W1/W2 (weighted mean of the visit fluxes `/summary` uses) vs AllWISE (2010.5
 
 ## Not done
 
-- No ice-band (3.05 µm H₂O ice, 4.27 µm CO₂ ice) test, which would catch the YSO false match above.
+- No ice-band veto. Tested 2026-11-15 on the 30 validation spectra: the inverse-variance-weighted data − template residual in 2.95–3.15 µm (H₂O ice) and 4.22–4.32 µm (CO₂ ice) is −3.7σ and −5.3σ for IRAS 08057−3434, but real brown dwarfs reach the same or worse (2M0559 T4.5: −3.1σ, −23.4σ; 2M1507 L5: −3.1σ, −7.3σ; DENIS J0817 T6: +1.3σ, −8.8σ) because bright objects show template mismatch there. A residual-based ice veto would mislabel real brown dwarfs, so the YSO false match stays; a proper test needs ice-band templates or the 2.5–3.5 µm continuum shape.
 - No point-source detection test in the SPHEREx stack beyond the existing 3.5–5 µm S/N ≥ 5 rule.
 - No leave-one-out check of `TYPE_SYS`, `PSF_CAL` or `NB_FRAC`: these were tuned on the same 24 typed objects they are scored on.
 - No ADS full-text search for literature types.
