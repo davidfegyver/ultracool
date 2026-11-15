@@ -100,7 +100,7 @@ export const LESSONS: Lesson[] = [
     try_next: {
       object: 'WISE J2317−6659',
       params: { mode: 'explore', target: 'WISE J231728.42-665959.3' },
-      note: 'a T dwarf about 30 parsecs away; this app gave it its first spectrum-based type (about T6)',
+      note: 'a T dwarf about 30 parsecs away; this app gave it its first spectrum-based type (mid-T, T5 or T6)',
     },
     deep: true,
     stack_windows: [

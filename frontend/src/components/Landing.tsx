@@ -36,7 +36,7 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
           </h2>
           <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-300">
             Rothermich et al. (2024) listed this faint source as a probable T6 brown dwarf, based on its brightness alone. We measured its SPHEREx spectrum with this app,
-            and it agrees: it looks like a T6. It's roughly 30 parsecs (100 light-years) away and moves half an arcsecond a year, but not together with the star pair next
+            and it agrees: it looks like a mid-T dwarf, T5 or T6. It's roughly 30 parsecs (100 light-years) away and moves half an arcsecond a year, but not together with the star pair next
             to it, so it's on its own rather than their companion.
           </p>
           <p className="mt-1 text-xs text-slate-500">

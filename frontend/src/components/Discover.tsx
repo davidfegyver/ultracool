@@ -13,7 +13,7 @@ import Term from './Term'
 const FIELD_FOV = 0.25 // widest grid the backend allows: most candidates per run
 // pre-computed at FIELD_FOV by scripts/prewarm.py (DISCOVER, keep in sync): a plain search for the same name hits them
 const EXAMPLE_FIELDS: Example[] = [
-  { q: 'WISE J231728.42-665959.3', label: 'WISE J2317−6659 (featured T6 brown dwarf)' },
+  { q: 'WISE J231728.42-665959.3', label: 'WISE J2317−6659 (featured mid-T brown dwarf)' },
   { q: 'WISEA J153429.75-104303.3', label: '"The Accident" (faint fast mover)' },
   { q: 'eps Ind B', label: 'eps Ind B (brown dwarf pair moving with eps Ind A)' },
 ]
