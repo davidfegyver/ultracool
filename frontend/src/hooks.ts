@@ -6,6 +6,20 @@ import { readUrl, writeUrl } from './url'
 
 export const DEFAULT_TARGET = "Barnard's Star"
 
+/** Phones: below Tailwind's `md` breakpoint (48rem), the same line as the `max-md:` classes. */
+export const PHONE_QUERY = '(max-width: 47.99rem)'
+
+export function useIsPhone() {
+  const [phone, setPhone] = useState(() => matchMedia(PHONE_QUERY).matches)
+  useEffect(() => {
+    const m = matchMedia(PHONE_QUERY)
+    const on = () => setPhone(m.matches)
+    m.addEventListener('change', on)
+    return () => m.removeEventListener('change', on)
+  }, [])
+  return phone
+}
+
 /** Target from the URL (ra/dec with optional pm, else name, else `defaultTarget`), name lookups, and URL sync. */
 export function useTarget(defaultTarget = DEFAULT_TARGET) {
   const [resolved, setResolved] = useState<Resolved | null>(null)

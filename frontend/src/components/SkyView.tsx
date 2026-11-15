@@ -48,8 +48,9 @@ export default function SkyView({ ra, dec, fov, onReady, onPick, minimal }: Prop
         showLayersControl: false,
         ...(minimal && { showFrame: false, showProjectionControl: false, showCooLocation: false, showFov: false }),
       })
-      a.on('zoomChanged', (f) => writeUrl({ fov: Number(f).toFixed(4) }))
       const el = div.current!
+      // an unmounted map (mode switch) keeps its resize observer and reports a near-zero field: not the user's zoom
+      a.on('zoomChanged', (f) => el.isConnected && writeUrl({ fov: Number(f).toFixed(4) }))
       const pick = (e: MouseEvent) => {
         const r = el.getBoundingClientRect()
         let at: [number, number] | undefined

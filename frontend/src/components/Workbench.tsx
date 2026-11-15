@@ -1,7 +1,7 @@
 import A, { type Aladin, type Catalog } from 'aladin-lite'
 import { useEffect, useRef, useState } from 'react'
 import { candidatePeriods, getSummary, ucdsNear, type SeqOptions, type Ucd } from '../api'
-import { DEFAULT_TARGET, useFlipbook, useProbe, useSeqResult, useSequence, useTarget, type ProbePoint } from '../hooks'
+import { DEFAULT_TARGET, useFlipbook, useIsPhone, useProbe, useSeqResult, useSequence, useTarget, type ProbePoint } from '../hooks'
 import { MJD_2018, PIX_ARCSEC, propagate } from '../sky'
 import { readUrl, writeUrl } from '../url'
 import Catalogs from './Catalogs'
@@ -39,7 +39,12 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
   const [fb, setFlipbook] = useFlipbook()
   const { seq, error: seqError } = useSequence(resolved, opts, fb.bands)
   const summary = useSeqResult(seq, getSummary)
-  const [advanced, setAdvanced] = useState(mode === 'research')
+  const [advancedOn, setAdvanced] = useState(mode === 'research')
+  // phones: Explore only, no expert tools; the sky map is loaded on first "Show sky map" (WebGL, tiles, and it traps
+  // page scrolling under the finger)
+  const phone = useIsPhone()
+  const advanced = advancedOn && !phone
+  const [sky, setSky] = useState<'never' | 'open' | 'closed'>('never')
   // name put into the target box from outside (UCD table click); remounts TargetBar with it
   const [picked, setPicked] = useState<string | null>(null)
   const [aladin, setAladin] = useState<Aladin | null>(null)
@@ -162,15 +167,16 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
           </button>
         )}
         {mode === 'explore' && (
-          <label className="ml-2 flex items-center gap-1 text-xs text-slate-300">
+          <label className="ml-2 flex items-center gap-1 text-xs text-slate-300 max-md:hidden">
             <input type="checkbox" checked={advanced} onChange={(e) => setAdvanced(e.target.checked)} /> Show advanced
           </label>
         )}
       </TargetBar>
-      <div className="flex min-h-0 flex-1">
-        <div className="flex min-w-0 flex-1 flex-col">
-          <div className="relative min-h-0 flex-1">
-            {resolved && (
+      <div className="flex min-h-0 flex-1 max-md:flex-col">
+        {/* phones: flipbook and results (aside) first, then plots, then the sky map */}
+        <div className="flex min-w-0 flex-1 flex-col max-md:flex-col-reverse">
+          <div className={`relative min-h-0 flex-1 max-md:flex-none ${sky === 'open' ? 'max-md:h-80' : 'max-md:h-0 max-md:overflow-hidden'}`}>
+            {resolved && (!phone || sky !== 'never') && (
               // grid centre = 2018 position, so high-PM stars sit in the middle of the flipbook overlay
               <SkyView
                 ra={seq ? Number(seq.grid.wcs.CRVAL1) : resolved.ra}
@@ -211,7 +217,14 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
               </div>
             </div>
           </div>
-          <div className="h-72 shrink-0 border-t border-slate-700 bg-slate-900">
+          <button
+            className="mx-2 my-2 min-h-11 rounded bg-slate-800 px-3 text-sm text-slate-200 md:hidden"
+            aria-expanded={sky === 'open'}
+            onClick={() => setSky(sky === 'open' ? 'closed' : 'open')}
+          >
+            {sky === 'open' ? 'Hide sky map' : 'Show sky map'}
+          </button>
+          <div className="h-72 shrink-0 border-t border-slate-700 bg-slate-900 max-md:h-[28rem]">
             {/* one plot panel: it follows the Results tab; keys remount it so fold/tab state does not carry over */}
             {shownTab === 'probe' && probe.data ? (
               <PlotsPanel
@@ -226,7 +239,7 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
             )}
           </div>
         </div>
-        <aside className="w-96 shrink-0 overflow-y-auto border-l border-slate-700 bg-slate-900">
+        <aside className="w-96 shrink-0 overflow-y-auto border-l border-slate-700 bg-slate-900 max-md:order-first max-md:w-full max-md:overflow-visible max-md:border-l-0">
           <Player seq={seq} fb={fb} set={setFlipbook} aladin={aladin} probe={probe} blink presets={mode === 'explore' ? EXPLORE_PRESETS : undefined} />
           <Group title="Results">
             {hasProbe && (
@@ -238,7 +251,7 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
                     id={`results-tab-${t}`}
                     aria-selected={shownTab === t}
                     aria-controls="results-panel"
-                    className={`rounded px-3 py-0.5 ${shownTab === t ? (t === 'probe' ? 'bg-cyan-800' : 'bg-sky-700') : 'bg-slate-800 hover:bg-slate-700'}`}
+                    className={`rounded px-3 py-0.5 max-md:min-h-11 max-md:px-5 ${shownTab === t ? (t === 'probe' ? 'bg-cyan-800' : 'bg-sky-700') : 'bg-slate-800 hover:bg-slate-700'}`}
                     onClick={() => setTab(t)}
                   >
                     {t === 'target' ? 'Target' : 'Probe'}

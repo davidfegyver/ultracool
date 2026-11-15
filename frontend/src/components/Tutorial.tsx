@@ -106,7 +106,7 @@ export function TutorialSteps({ onDone }: { onDone?: () => void }) {
   const s = STEPS[i]
   return (
     <div className="flex flex-col gap-3 sm:flex-row">
-      <svg viewBox="0 0 140 90" role="img" aria-label={s.title} className="h-36 w-56 shrink-0 rounded bg-slate-950">
+      <svg viewBox="0 0 140 90" role="img" aria-label={s.title} className="h-36 w-56 shrink-0 rounded bg-slate-950 max-md:self-center">
         {s.art}
       </svg>
       <div className="flex min-w-0 flex-1 flex-col">
@@ -116,16 +116,16 @@ export function TutorialSteps({ onDone }: { onDone?: () => void }) {
         <h3 className="font-semibold">{s.title}</h3>
         <p className="mt-1 text-sm leading-relaxed text-slate-300">{s.text}</p>
         <div className="mt-auto flex gap-2 pt-2">
-          <button className="rounded bg-slate-700 px-3 py-1 text-sm disabled:opacity-40" disabled={i === 0} onClick={() => setI(i - 1)}>
+          <button className="rounded bg-slate-700 px-3 py-1 text-sm disabled:opacity-40 max-md:min-h-11" disabled={i === 0} onClick={() => setI(i - 1)}>
             ← Back
           </button>
           {i < STEPS.length - 1 ? (
-            <button className="rounded bg-sky-700 px-3 py-1 text-sm hover:bg-sky-600" onClick={() => setI(i + 1)}>
+            <button className="rounded bg-sky-700 px-3 py-1 text-sm hover:bg-sky-600 max-md:min-h-11" onClick={() => setI(i + 1)}>
               Next →
             </button>
           ) : (
             onDone && (
-              <button className="rounded bg-emerald-700 px-3 py-1 text-sm hover:bg-emerald-600" onClick={onDone}>
+              <button className="rounded bg-emerald-700 px-3 py-1 text-sm hover:bg-emerald-600 max-md:min-h-11" onClick={onDone}>
                 Got it
               </button>
             )
@@ -162,12 +162,13 @@ export default function TutorialDialog({ open, onClose }: { open: boolean; onClo
       aria-labelledby="tutorial-title"
       className="m-auto w-[44rem] max-w-[95vw] rounded-lg border border-slate-600 bg-slate-900 p-4 text-slate-100 backdrop:bg-black/60"
     >
-      <div className="mb-3 flex items-center">
+      <div className="mb-3 flex items-center max-md:flex-wrap">
         <h2 id="tutorial-title" className="text-lg font-semibold">
           How to read a flipbook
         </h2>
-        <GuideLink className="ml-auto text-sm" />
-        <button className="ml-2 rounded px-2 text-slate-400 hover:bg-slate-800" aria-label="Close tutorial" onClick={onClose}>
+        {/* phones: ✕ stays on the title row, the guide link wraps below */}
+        <GuideLink className="ml-auto text-sm max-md:order-last max-md:ml-0 max-md:basis-full" />
+        <button className="ml-2 rounded px-2 text-slate-400 hover:bg-slate-800 max-md:ml-auto max-md:min-h-11 max-md:min-w-11" aria-label="Close tutorial" onClick={onClose}>
           ✕
         </button>
       </div>

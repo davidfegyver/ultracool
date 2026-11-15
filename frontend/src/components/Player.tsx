@@ -205,15 +205,18 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
         </div>
       )}
       {/* overflow-hidden: probe annuli and focus crops reach far past the picture */}
-      <div className="relative mx-auto overflow-hidden bg-black" style={{ width: viewerPx, height: viewerPx }}>
+      {/* phones: full width, square */}
+      <div className="relative mx-auto overflow-hidden bg-black max-md:aspect-square max-md:h-auto! max-md:w-full!" style={{ width: viewerPx, height: viewerPx }}>
         {shownPng && seq ? (
           <svg
             role={probe ? 'group' : 'img'}
             aria-label={override?.label ?? `Frame ${cur?.date}`}
             viewBox={view.join(' ')}
             className="h-full w-full"
-            // Chrome ignores touch-action on SVG children: without this a touch drag of the probe turns into a page scroll
-            style={probe ? { touchAction: 'none' } : undefined}
+            // Chrome ignores touch-action on SVG children: without this a touch drag of the probe turns into a page scroll.
+            // Only while a probe point exists, so on phones the picture still scrolls the page otherwise (the corner dock
+            // has its own touch-action).
+            style={probe?.point ? { touchAction: 'none' } : undefined}
             onContextMenu={
               probe &&
               ((e) => {
@@ -254,11 +257,13 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
         {probe && !probe.point && shownPng && seq && <ProbeDock probe={probe} seq={seq} />}
       </div>
       {probe && shownPng && !localStorage.getItem(PROBE_USED_KEY) && (
-        <p className="text-cyan-300/80">Tip: drag the cyan crosshair from the corner onto any source (or right-click it) to measure it.</p>
+        <p className="text-cyan-300/80">
+          Tip: drag the cyan crosshair from the corner onto any source<span className="max-md:hidden"> (or right-click it)</span> to measure it.
+        </p>
       )}
-      <div className="flex min-h-5 items-center gap-2">
+      <div className="flex min-h-5 items-center gap-2 max-md:flex-wrap max-md:gap-x-1.5 max-md:whitespace-nowrap">
         {override ? (
-          <span>{override.label}</span>
+          <span className="max-md:whitespace-normal">{override.label}</span>
         ) : (
           cur && (
             <>
@@ -274,23 +279,24 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
         )}
         <span className="ml-auto text-slate-500">{playable.length ? `${idx + 1}/${playable.length}` : ''}</span>
       </div>
-      <div className="flex items-center gap-1">
-        <button className="flex h-6 items-center rounded bg-slate-700 px-2" aria-label="Previous frame" onClick={() => { set({ playing: false }); step(-1) }}><Icon d={ICON.prev} /></button>
-        <button className="flex h-6 w-16 items-center justify-center gap-1 rounded bg-sky-700 px-2" onClick={() => set({ playing: !fb.playing })}>
+      <div className="flex items-center gap-1 max-md:flex-wrap">
+        <button className="flex h-6 items-center rounded bg-slate-700 px-2 max-md:h-11 max-md:w-11 max-md:justify-center" aria-label="Previous frame" onClick={() => { set({ playing: false }); step(-1) }}><Icon d={ICON.prev} /></button>
+        <button className="flex h-6 w-16 items-center justify-center gap-1 rounded bg-sky-700 px-2 max-md:h-11 max-md:w-24" onClick={() => set({ playing: !fb.playing })}>
           <Icon d={fb.playing ? ICON.pause : ICON.play} />
           {fb.playing ? 'Pause' : 'Play'}
         </button>
-        <button className="flex h-6 items-center rounded bg-slate-700 px-2" aria-label="Next frame" onClick={() => { set({ playing: false }); step(1) }}><Icon d={ICON.next} /></button>
+        <button className="flex h-6 items-center rounded bg-slate-700 px-2 max-md:h-11 max-md:w-11 max-md:justify-center" aria-label="Next frame" onClick={() => { set({ playing: false }); step(1) }}><Icon d={ICON.next} /></button>
         <input
           aria-label="Scrub"
           type="range"
-          className="flex-1"
+          // phones: a row of its own under the buttons
+          className="flex-1 max-md:order-last max-md:h-11 max-md:basis-full"
           min={0}
           max={Math.max(0, playable.length - 1)}
           value={idx}
           onChange={(e) => set({ playing: false, frameId: playable[Number(e.target.value)]?.id ?? null })}
         />
-        <select aria-label="Frames per second" className="rounded bg-slate-800 px-1 py-1" value={fb.fps} onChange={(e) => set({ fps: Number(e.target.value) })}>
+        <select aria-label="Frames per second" className="rounded bg-slate-800 px-1 py-1 max-md:ml-auto max-md:h-11 max-md:px-2" value={fb.fps} onChange={(e) => set({ fps: Number(e.target.value) })}>
           {[0.5, 1, 2, 4].map((f) => <option key={f} value={f}>{f} fps</option>)}
         </select>
       </div>
@@ -303,7 +309,7 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
                   key={p.label}
                   aria-pressed={on}
                   title={p.title}
-                  className={`rounded px-2 py-0.5 ${on ? 'bg-sky-700' : 'bg-slate-800 text-slate-400'}`}
+                  className={`rounded px-2 py-0.5 max-md:min-h-11 max-md:px-3 ${on ? 'bg-sky-700' : 'bg-slate-800 text-slate-400'}`}
                   onClick={() => set({ bands: p.bands })}
                 >
                   {p.label}
@@ -317,7 +323,7 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
                   key={b}
                   aria-pressed={on}
                   title={`${b.startsWith('W') ? 'WISE' : 'SPHEREx detector'} ${b}: ${BAND_UM[b]} µm`}
-                  className={`rounded px-2 py-0.5 ${on ? 'bg-sky-700' : 'bg-slate-800 text-slate-400'}`}
+                  className={`rounded px-2 py-0.5 max-md:min-h-11 ${on ? 'bg-sky-700' : 'bg-slate-800 text-slate-400'}`}
                   onClick={() => set({ bands: on ? fb.bands.filter((x) => x !== b) : [...fb.bands, b] })}
                 >
                   {b} <span className="text-[10px] opacity-70">{BAND_UM[b]} µm</span>
@@ -325,18 +331,24 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
               )
             })}
       </div>
+      {/* phones have no hover: the chosen preset's wavelengths as text */}
+      {presets && <p className="text-slate-400 md:hidden">{presets.find((p) => p.bands.length === fb.bands.length && p.bands.every((b) => fb.bands.includes(b)))?.title}</p>}
+      <p className="text-slate-400 md:hidden">
+        Flagged frames have artifacts (ghosts, afterimages, cosmic rays) at the target. Deep stacks add up 2 years of WISE or one SPHEREx survey to show
+        fainter sources.
+      </p>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 whitespace-nowrap">
-        <label className="flex items-center gap-1" title="Leave out frames with artifact flags (ghosts, latents, cosmic rays) at the target">
+        <label className="flex items-center gap-1 max-md:min-h-11" title="Leave out frames with artifact flags (ghosts, latents, cosmic rays) at the target">
           <input type="checkbox" checked={fb.hideFlagged} onChange={(e) => set({ hideFlagged: e.target.checked })} /> Hide flagged
           {fb.hideFlagged && seq && <span className="text-slate-500">({seq.frames.filter((f) => f.flagged && fb.bands.includes(f.band)).length})</span>}
         </label>
         {/* no sky map in Learn and Discover */}
         {aladin && (
-          <label className="flex items-center gap-1">
+          <label className="flex items-center gap-1 max-md:min-h-11">
             <input type="checkbox" checked={fb.showOnSky} onChange={(e) => set({ showOnSky: e.target.checked })} /> Show on sky
           </label>
         )}
-        <label className="flex items-center gap-1" title="Co-add frames per band: WISE in 2-year windows, SPHEREx per survey epoch. Shows sources too faint for single frames.">
+        <label className="flex items-center gap-1 max-md:min-h-11" title="Co-add frames per band: WISE in 2-year windows, SPHEREx per survey epoch. Shows sources too faint for single frames.">
           <input type="checkbox" checked={fb.deep} onChange={(e) => set({ deep: e.target.checked, frameId: null })} /> Deep stacks
         </label>
       </div>
@@ -344,7 +356,7 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
         <div className="flex items-center gap-2">
           <button
             aria-pressed={!!blink}
-            className={`rounded px-2 py-1 ${blink ? 'bg-amber-700' : 'bg-slate-700'} disabled:opacity-50`}
+            className={`rounded px-2 py-1 max-md:min-h-11 max-md:px-3 ${blink ? 'bg-amber-700' : 'bg-slate-700'} disabled:opacity-50`}
             disabled={!pair}
             title={pair ? `Alternate ${pair.a.label} and ${pair.b.label}` : 'Needs early and late frames of this band'}
             onClick={() => {
@@ -355,7 +367,7 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
             {blink ? 'Stop blink' : 'Blink'}
           </button>
           {blink && (
-            <label className="flex items-center gap-1">
+            <label className="flex items-center gap-1 max-md:min-h-11">
               <input type="checkbox" checked={blink.diff} onChange={(e) => setBlink({ diff: e.target.checked, phase: 0 })} /> show difference
             </label>
           )}

@@ -39,7 +39,7 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
   return (
     <div className="flex flex-wrap items-center gap-2 border-b border-slate-700 bg-slate-900 px-3 py-2">
       <form
-        className="flex gap-1"
+        className="flex gap-1 max-md:w-full"
         onSubmit={(e) => {
           e.preventDefault()
           go(q)
@@ -47,12 +47,13 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
       >
         <input
           aria-label="Object name or coordinates"
-          className="w-72 rounded bg-slate-800 px-2 py-1 text-sm"
+          // phones: 16 px text, or iOS zooms the page on focus
+          className="w-72 rounded bg-slate-800 px-2 py-1 text-sm max-md:min-h-11 max-md:w-auto max-md:min-w-0 max-md:flex-1 max-md:text-base"
           placeholder="Name or RA Dec (deg or hms dms)"
           value={q}
           onChange={(e) => setQ(e.target.value)}
         />
-        <button className="rounded bg-sky-700 px-3 py-1 text-sm hover:bg-sky-600" disabled={busy}>
+        <button className="rounded bg-sky-700 px-3 py-1 text-sm hover:bg-sky-600 max-md:min-h-11 max-md:px-4" disabled={busy}>
           Go
         </button>
       </form>
@@ -63,12 +64,12 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
         onKeyDown={(e) => e.key === 'Escape' && (e.currentTarget.open = false)}
         onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && (e.currentTarget.open = false)}
       >
-        <summary className="cursor-pointer list-none rounded bg-slate-700 px-2 py-1 hover:bg-slate-600">{examplesLabel} ▾</summary>
+        <summary className="cursor-pointer list-none rounded bg-slate-700 px-2 py-1 hover:bg-slate-600 max-md:flex max-md:min-h-11 max-md:items-center max-md:px-3">{examplesLabel} ▾</summary>
         <ul className="absolute z-40 mt-1 w-64 rounded border border-slate-600 bg-slate-900 p-1 shadow-xl">
           {examples.map((x) => (
             <li key={x.q}>
               <button
-                className="flex w-full items-center justify-between gap-2 rounded px-2 py-1 text-left hover:bg-slate-700 focus:bg-slate-700 focus:outline-none"
+                className="flex w-full items-center justify-between gap-2 rounded px-2 py-1 text-left hover:bg-slate-700 focus:bg-slate-700 focus:outline-none max-md:min-h-11"
                 onClick={() => {
                   menu.current!.open = false
                   go(x.q)
@@ -82,7 +83,7 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
         </ul>
       </details>
       {children}
-      <div className="ml-auto flex items-center gap-3 text-sm">
+      <div className="ml-auto flex items-center gap-3 text-sm max-md:ml-0 max-md:flex-wrap">
         {busy && <span className="text-slate-400">Resolving…</span>}
         {error && <span className="text-red-400">{error}</span>}
         {resolved && (
@@ -92,7 +93,8 @@ export default function TargetBar({ initial, resolved, busy, error, badge, onSub
             {resolved.otype && <span className="ml-2 text-slate-400">{resolved.otype}</span>}
             {resolved.sptype && <span className="ml-2 text-slate-400">{resolved.sptype}</span>}
             {pm > 0 && (
-              <span className="ml-2 text-slate-400" title="Proper motion looked up for this target (SIMBAD, or the mover the field was centred on): it places the pink circle. Not the measured value.">
+              // phones: hidden (hover-only explanation; the measured motion is under Results)
+              <span className="ml-2 text-slate-400 max-md:hidden" title="Proper motion looked up for this target (SIMBAD, or the mover the field was centred on): it places the pink circle. Not the measured value.">
                 PM {pm.toFixed(3)}″/yr
               </span>
             )}

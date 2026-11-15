@@ -19,7 +19,8 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
   }
   return (
     <div className="h-full overflow-y-auto">
-      <div className="mx-auto max-w-5xl space-y-6 p-6">
+      {/* phones: Learn/Explore cards right after the featured result, tutorial below them */}
+      <div className="mx-auto max-w-5xl space-y-6 p-6 max-md:flex max-md:flex-col max-md:gap-6 max-md:space-y-0 max-md:p-4">
         <section>
           <h1 className="text-3xl font-bold text-sky-300">Ultracool Browser</h1>
           <p className="mt-2 max-w-3xl text-lg leading-relaxed text-slate-300">
@@ -57,7 +58,7 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
             ).map(([mode, label]) => (
               <a
                 key={mode}
-                className="rounded bg-emerald-800 px-3 py-1 hover:bg-emerald-700"
+                className={`rounded bg-emerald-800 px-3 py-1 hover:bg-emerald-700 ${mode === 'research' ? 'max-md:hidden' : 'max-md:inline-flex max-md:min-h-11 max-md:items-center'}`}
                 href={`?${new URLSearchParams({ mode, target: 'WISE J231728.42-665959.3' })}`}
               >
                 {label}
@@ -67,19 +68,19 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
         </section>
 
         {showTutorial ? (
-          <section aria-labelledby="tutorial-heading" className="rounded-lg border border-slate-700 bg-slate-900 p-4">
+          <section aria-labelledby="tutorial-heading" className="rounded-lg border border-slate-700 bg-slate-900 p-4 max-md:order-1">
             <div className="mb-3 flex items-center">
               <h2 id="tutorial-heading" className="text-lg font-semibold">
                 How to read a flipbook
               </h2>
-              <button className="ml-auto rounded px-2 text-sm text-slate-400 hover:bg-slate-800" onClick={dismiss}>
+              <button className="ml-auto rounded px-2 text-sm text-slate-400 hover:bg-slate-800 max-md:min-h-11" onClick={dismiss}>
                 Dismiss ✕
               </button>
             </div>
             <TutorialSteps onDone={dismiss} />
           </section>
         ) : (
-          <button className="text-sm text-sky-400 underline" onClick={() => setShowTutorial(true)}>
+          <button className="text-sm text-sky-400 underline max-md:order-1 max-md:min-h-11 max-md:self-start" onClick={() => setShowTutorial(true)}>
             Show "How to read a flipbook"
           </button>
         )}
@@ -88,7 +89,7 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
           {CARDS.map((c) => (
             <button
               key={c.mode}
-              className="flex flex-col rounded-lg border border-slate-700 bg-slate-900 p-4 text-left hover:border-sky-500 hover:bg-slate-800 focus-visible:border-sky-400"
+              className={`flex flex-col rounded-lg border border-slate-700 bg-slate-900 p-4 text-left hover:border-sky-500 hover:bg-slate-800 focus-visible:border-sky-400 ${c.mode === 'research' || c.mode === 'discover' ? 'max-md:hidden' : ''}`}
               onClick={() => onMode(c.mode)}
             >
               <span className="text-xs tracking-wide text-slate-400 uppercase">{c.who}</span>
@@ -99,7 +100,7 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
           ))}
         </section>
 
-        <footer className="text-xs text-slate-500">
+        <footer className="text-xs text-slate-500 max-md:order-2">
           Data: NASA/IPAC Infrared Science Archive (WISE, NEOWISE, SPHEREx, CatWISE2020), SIMBAD. Brown-dwarf templates and catalog: SPIFF (Gagné et al. 2026,
           doi:10.5281/zenodo.19051216, CC-BY 4.0). Built for NASA Space Apps 2026. <GuideLink />
         </footer>

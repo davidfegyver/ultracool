@@ -65,6 +65,8 @@ export default function FoundPanel({ summary, note, busy }: {
       {variability.source === 'catalog' && (
         <p className="text-amber-300" title={variability.source_note}>
           Brightness comes from the WISE catalog: this object is too bright for our own measurements.
+          {/* phones: the hover note as text */}
+          {variability.source_note && <span className="block text-slate-400 md:hidden">{variability.source_note}</span>}
         </p>
       )}
       <ul className="list-disc space-y-1 pl-4 text-slate-300">

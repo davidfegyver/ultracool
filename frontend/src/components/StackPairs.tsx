@@ -17,18 +17,19 @@ export default function StackPairs({ seq, windows, target }: { seq: Sequence | n
   const years = (m: number) => mjdToIso(m).slice(0, 4)
   return (
     <div className="space-y-2 p-2 text-xs">
-      <div role="group" aria-label="Time window" className="flex items-center justify-center gap-1">
+      <div role="group" aria-label="Time window" className="flex flex-wrap items-center justify-center gap-1">
         <span className="text-slate-400">Deep stack of</span>
         {windows.map(([a, b], i) => (
-          <button key={a} aria-pressed={i === w} className={`rounded px-2 py-0.5 ${i === w ? 'bg-sky-700' : 'bg-slate-800 hover:bg-slate-700'}`} onClick={() => setW(i)}>
+          <button key={a} aria-pressed={i === w} className={`rounded px-2 py-0.5 max-md:min-h-11 ${i === w ? 'bg-sky-700' : 'bg-slate-800 hover:bg-slate-700'}`} onClick={() => setW(i)}>
             {years(a)}–{years(b)}
           </button>
         ))}
       </div>
       <div className="flex justify-center gap-3">
         {BANDS.map((b) => (
-          <figure key={b} className="text-center">
-            <svg role="img" aria-label={`${b} deep stack ${years(lo)}–${years(hi)}`} viewBox={`0 0 ${seq.grid.width} ${seq.grid.height}`} className="h-[260px] w-[260px] bg-black">
+          // phones: the two stacks share the width, side by side
+          <figure key={b} className="text-center max-md:min-w-0 max-md:flex-1">
+            <svg role="img" aria-label={`${b} deep stack ${years(lo)}–${years(hi)}`} viewBox={`0 0 ${seq.grid.width} ${seq.grid.height}`} className="h-[260px] w-[260px] bg-black max-md:aspect-square max-md:h-auto max-md:w-full">
               <image
                 href={`/api/sequences/${seq.id}/stack.png?band=${b}&mjd_min=${lo}&mjd_max=${hi}`}
                 width={seq.grid.width}

@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+/* Phones (below md): no text under 14 px. One floor here instead of a max-md:text-sm next to every text-xs. */
+@media (width < 48rem) {
+  .text-xs,
+  .text-\[10px\] {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}

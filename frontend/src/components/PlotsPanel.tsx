@@ -2,6 +2,7 @@ import Plotly from 'plotly.js-dist-min'
 import { useEffect, useRef, useState } from 'react'
 import createPlotlyComponent from 'react-plotly.js/factory'
 import { getCatalogLightcurve, getSpectrum, type CatalogLightcurve, type ProbeFrame, type Sequence, type Spectrum } from '../api'
+import { useIsPhone } from '../hooks'
 import { mjdToIso, mjdToYear } from '../sky'
 import { ALL_BANDS } from './Player'
 
@@ -42,6 +43,7 @@ const AXIS_NOTE = {
   lc: 'Brightness: aperture photometry, corrected for light outside the aperture',
   spec: 'F_λ: brightness at each wavelength, in 10⁻¹⁸ W m⁻² µm⁻¹',
 }
+const FOLD_NOTE = "Plot brightness against the phase of the cycle instead of the date. WISE's 6-month visits cannot tell some periods apart: try each."
 
 /** "Looks like a T5 brown dwarf (good fit)" or the verdict as a sentence (Explore and Learn). */
 function plainSpectrum(spec: Spectrum | null) {
@@ -58,6 +60,14 @@ function plainSpectrum(spec: Spectrum | null) {
 
 export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe, research = false }: Props) {
   const [tab, setTab] = useState<'lc' | 'spec'>('lc')
+  // phones: no hover, so the ⓘ toggles its notes inline; no modebar and no drag-zoom (a drag scrolls the page)
+  const phone = useIsPhone()
+  const [notesOpen, setNotesOpen] = useState(false)
+  const config = { displaylogo: false, responsive: true, ...(phone && { displayModeBar: false, scrollZoom: false }) }
+  // legend anchored above the plot area, so Plotly grows the top margin for its rows instead of drawing over the points
+  const phoneLayout = phone
+    ? { dragmode: false as const, font: { ...DARK.font, size: 14 }, margin: { l: 56, r: 8, t: 8, b: 44 }, legend: { orientation: 'h' as const, x: 0, y: 1.02, yanchor: 'bottom' as const } }
+    : {}
   // linear by default: faint targets have zero or negative fluxes, which a log axis silently drops
   const [logY, setLogY] = useState(false)
   const [foldAt, setFoldAt] = useState<number | null>(null)
@@ -154,30 +164,33 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
 
   return (
     <div className="flex h-full flex-col text-xs">
-      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 border-b border-slate-700 px-2 py-1 whitespace-nowrap">
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 border-b border-slate-700 px-2 py-1 whitespace-nowrap max-md:whitespace-normal">
         {(['lc', 'spec'] as const).map((t) => (
-          <button key={t} className={`rounded px-2 py-0.5 ${tab === t ? 'bg-sky-700' : 'bg-slate-800'}`} onClick={() => setTab(t)}>
+          <button key={t} className={`rounded px-2 py-0.5 max-md:min-h-11 max-md:px-4 ${tab === t ? 'bg-sky-700' : 'bg-slate-800'}`} onClick={() => setTab(t)}>
             {t === 'lc' ? 'Light curve' : 'Spectrum'}
           </button>
         ))}
-        <span
-          tabIndex={0}
-          role="img"
+        <button
+          type="button"
           aria-label={AXIS_NOTE[tab]}
+          aria-expanded={phone ? notesOpen : undefined}
           title={AXIS_NOTE[tab]}
-          className="inline-flex h-4 w-4 cursor-help items-center justify-center rounded-full border border-slate-500 font-serif text-[10px] text-slate-300 italic focus:outline-none focus-visible:ring-1 focus-visible:ring-sky-400"
+          className="inline-flex cursor-help items-center justify-center focus:outline-none focus-visible:ring-1 focus-visible:ring-sky-400 max-md:h-11 max-md:w-11"
+          onClick={() => setNotesOpen(!notesOpen)}
         >
-          i
-        </span>
+          <span className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-slate-500 font-serif text-[10px] text-slate-300 italic max-md:h-6 max-md:w-6">
+            i
+          </span>
+        </button>
         {tab === 'lc' && (
           <>
-            <label className="flex items-center gap-1">
+            <label className="flex items-center gap-1 max-md:min-h-11">
               <input type="checkbox" checked={logY} onChange={(e) => setLogY(e.target.checked)} /> log y
             </label>
             {periods.length > 0 && (
-              <label className="flex items-center gap-1" title="Plot brightness against the phase of the cycle instead of the date. WISE's 6-month visits cannot tell some periods apart: try each.">
+              <label className="flex items-center gap-1 max-md:min-h-11" title={FOLD_NOTE}>
                 Fold at
-                <select className="rounded bg-slate-800 px-1" value={foldAt ?? ''} onChange={(e) => setFoldAt(e.target.value === '' ? null : Number(e.target.value))}>
+                <select className="rounded bg-slate-800 px-1 max-md:min-h-11" value={foldAt ?? ''} onChange={(e) => setFoldAt(e.target.value === '' ? null : Number(e.target.value))}>
                   <option value="">off (time)</option>
                   {periods.map((p) => (
                     <option key={p} value={p}>
@@ -193,13 +206,13 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
               </span>
             ) : (
               cat.length > 0 && (
-                <label className="flex items-center gap-1" title={catalog?.source}>
+                <label className="flex items-center gap-1 max-md:min-h-11" title={catalog?.source}>
                   <input type="checkbox" checked={showCatalog} onChange={(e) => setShowCatalog(e.target.checked)} /> WISE catalog photometry
                 </label>
               )
             )}
             {sx.length > 0 && (
-              <label className="flex items-center gap-1">
+              <label className="flex items-center gap-1 max-md:min-h-11">
                 <input type="checkbox" checked={showSpherex} onChange={(e) => setShowSpherex(e.target.checked)} /> SPHEREx (each point a different wavelength)
               </label>
             )}
@@ -207,7 +220,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
         )}
         {tab === 'spec' && <span className="text-slate-300">{header}</span>}
         {tab === 'spec' && research && sxSpec.length > 0 && (
-          <label className="flex items-center gap-1" title="Every SPHEREx frame instead of the channel averages, coloured by observation date">
+          <label className="flex items-center gap-1 max-md:min-h-11" title="Every SPHEREx frame instead of the channel averages, coloured by observation date">
             <input type="checkbox" checked={byDate} onChange={(e) => setByDate(e.target.checked)} /> by date
           </label>
         )}
@@ -217,6 +230,13 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
           </span>
         )}
       </div>
+      {phone && notesOpen && (
+        <ul className="space-y-1 border-b border-slate-700 px-2 py-1 text-slate-300">
+          <li>{AXIS_NOTE[tab]}</li>
+          {tab === 'lc' && periods.length > 0 && <li>Fold at: {FOLD_NOTE}</li>}
+          {tab === 'lc' && cat.length > 0 && <li>WISE catalog photometry: {catalog?.source}</li>}
+        </ul>
+      )}
       {/* overflow-hidden: Plotly's svg comes out a few px taller than its box and would scroll the page */}
       <div className="min-h-0 flex-1 overflow-hidden">
         {tab === 'lc' ? (
@@ -226,6 +246,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
             data={lcTraces}
             layout={{
               ...DARK,
+              ...phoneLayout,
               xaxis: { title: { text: folded ? `Phase (period ${foldAt.toFixed(1)} d)` : 'Date' } },
               yaxis: { title: { text: 'Brightness (µJy)' }, type: logY ? 'log' : 'linear' },
               annotations:
@@ -233,7 +254,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
                   ? [{ x: 0.5, y: 0.5, xref: 'paper', yref: 'paper', text: 'No brightness measurements for this object', showarrow: false, font: { size: 13, color: '#94a3b8' } }]
                   : [],
             }}
-            config={{ displaylogo: false, responsive: true }}
+            config={config}
           />
         ) : (
           <Plot
@@ -273,6 +294,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
             ]}
             layout={{
               ...DARK,
+              ...phoneLayout,
               xaxis: { title: { text: 'Wavelength (µm)' }, range: [0.7, 5.1] },
               yaxis: { title: { text: 'F_λ (10⁻¹⁸ W m⁻² µm⁻¹)' }, range: specY.length ? [yLo - yPad, yHi + yPad] : undefined },
               shapes: MOLECULES.map(([, a, b], i) => ({
@@ -284,7 +306,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
                 showarrow: false, font: { size: 10, color: '#94a3b8' },
               })),
             }}
-            config={{ displaylogo: false, responsive: true }}
+            config={config}
           />
         )}
       </div>

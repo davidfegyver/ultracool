@@ -127,7 +127,7 @@ export function ProbeDock({ probe, seq }: { probe: ProbeCtl; seq: Sequence }) {
       aria-label={label}
       title={label}
       aria-haspopup="menu"
-      className={`absolute top-1 left-1 z-10 flex h-7 w-7 items-center justify-center rounded-full ${drag ? 'cursor-grabbing' : 'cursor-grab bg-black/40 opacity-60 hover:opacity-100 focus-visible:opacity-100'}`}
+      className={`absolute top-1 left-1 z-10 flex h-7 w-7 items-center justify-center rounded-full max-md:h-11 max-md:w-11 max-md:opacity-90 ${drag ? 'cursor-grabbing' : 'cursor-grab bg-black/40 opacity-60 hover:opacity-100 focus-visible:opacity-100'}`}
       style={{ touchAction: 'none', transform: drag ? `translate(${drag.dx}px, ${drag.dy}px)` : undefined }}
       onPointerDown={(e) => {
         if (e.button !== 0) return
@@ -179,7 +179,7 @@ export function ProbeMenu({ probe, onCentre }: { probe: ProbeCtl; onCentre: (p: 
   }, [menu, setMenu])
   if (!menu || !point) return null
 
-  const item = 'block w-full rounded px-2 py-1 text-left hover:bg-slate-700 focus:bg-slate-700 focus:outline-none disabled:text-slate-500'
+  const item = 'block w-full rounded px-2 py-1 text-left hover:bg-slate-700 focus:bg-slate-700 focus:outline-none disabled:text-slate-500 max-md:min-h-11'
   return (
     <div
       ref={ref}
@@ -236,10 +236,15 @@ export function ProbePanel({ probe, research, plots = true }: { probe: ProbeCtl;
     if (busy) box.current?.scrollIntoView({ block: 'start' })
   }, [busy])
   if (!point && !d)
-    return <p className="p-2 text-xs text-slate-500">Drag the cyan crosshair from the flipbook's corner onto any source, or right-click any spot of the field, to measure it.</p>
+    return (
+      <p className="p-2 text-xs text-slate-500">
+        Drag the cyan crosshair from the flipbook's corner onto any source<span className="max-md:hidden">, or right-click any spot of the field,</span> to measure
+        it.
+      </p>
+    )
   const moved = d && point !== probe.measuredAt
   const full = d?.mode === 'full'
-  const btn = 'rounded px-2 py-1 enabled:hover:bg-sky-600 disabled:opacity-50'
+  const btn = 'rounded px-2 py-1 enabled:hover:bg-sky-600 disabled:opacity-50 max-md:min-h-11'
   return (
     <div ref={box} className="space-y-2 p-2 text-xs">
       {d && (
