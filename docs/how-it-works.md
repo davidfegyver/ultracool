@@ -1,6 +1,6 @@
 # How it works
 
-This page follows one field through the pipeline, from the archive query to the plain-English answers. For each step we name the published method or tool it comes from. How well each step works is measured in [validation.md](validation.md).
+This page follows one field through the pipeline, from the archive query to the answers shown in Explore. For each step we name the published method or tool it comes from. How well each step works is measured in [validation.md](validation.md).
 
 ```mermaid
 flowchart LR
@@ -92,10 +92,10 @@ From others:
 
 What we added:
 
-- The integration: three missions, two archives and several catalogues put on one aligned 16-year grid, reachable from one search box.
-- Plain-language answers that carry their uncertainty, such as a type range instead of a single label and "insufficient data" instead of a guess.
+- Code that puts three missions, two archives and several catalogues on one aligned 16-year grid, searchable by name or position.
+- Short answers that include their uncertainty: a type range instead of a single label, and "insufficient data" instead of a guess.
 - The neighbour-aware photometry and the demotion rules that stop a spectral match from being reported when the data cannot support it.
-- Validation on known objects and controls, and an independent adversarial review of every science claim we make (see [validation.md](validation.md) and [results.md](results.md)).
+- Validation on known objects and controls, and a review of every science claim by an AI model (see [validation.md](validation.md#ai-review) and [results.md](results.md)).
 
 ## References
 

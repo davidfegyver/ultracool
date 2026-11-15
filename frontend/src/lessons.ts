@@ -100,7 +100,7 @@ export const LESSONS: Lesson[] = [
     try_next: {
       object: 'WISE J2317−6659',
       params: { mode: 'explore', target: 'WISE J231728.42-665959.3' },
-      note: 'a T dwarf about 30 parsecs away; this app gave it its first spectrum-based type (mid-T, T5 or T6)',
+      note: 'a T dwarf about 30 parsecs away; this app gave it its first spectrum-based type (mid-T, most likely T6)',
     },
     deep: true,
     stack_windows: [
@@ -206,7 +206,7 @@ export const LESSONS: Lesson[] = [
       options: ['A pulsating Mira star with a fixed period', 'Clumps of dust in a planet-forming disk passing in front of a young star', 'An eclipsing binary', 'A cosmic ray hit'],
       answer_index: 1,
       explanation:
-        'RW Aur is a young T Tauri star with a messy disk; dimming events of years and month-long brightenings are irregular. We found no repeating cycle in the NEOWISE data.',
+        'RW Aur is a young T Tauri star with a messy disk. Its dimmings last from months to years and come at irregular times. We found no repeating cycle in the NEOWISE data.',
     },
   },
   {

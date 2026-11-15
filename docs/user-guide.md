@@ -13,14 +13,14 @@ The app takes all the pictures of one small patch of sky (usually 3 arcminutes a
 
 ## Why brown dwarfs
 
-A brown dwarf sits between a planet and a star. It is too small to burn hydrogen like the Sun, so it slowly cools down. Cold brown dwarfs are almost invisible to ordinary telescopes but glow in the infrared, especially in W2. The nearby ones also drift across the sky from year to year. That is what this app is built to see.
+A brown dwarf sits between a planet and a star. It is too small to burn hydrogen like the Sun, so it slowly cools down. Cold brown dwarfs are almost invisible to ordinary telescopes but glow in the infrared, especially in W2. The nearby ones also drift across the sky from year to year.
 
 ## The four modes
 
 | Mode | Use it to |
 |---|---|
 | Learn | take seven short lessons with real objects, each ending in a quiz. Start here. |
-| Explore | type any star name or coordinates and get plain-English answers: does it move, is it cold, does its brightness change, what kind of object is it? |
+| Explore | type any star name or coordinates and get short answers: does it move, is it cold, does its brightness change, what kind of object is it? |
 | Research | see the same answers as numbers with error bars, plus catalogues, single exposures and data export. |
 | Discover | scan a wider patch of sky for everything that moves and judge each candidate yourself. |
 
@@ -74,7 +74,7 @@ The SPHEREx rainbow is compared with 47 reference brown dwarfs. The app gives a 
 
 Cameras make fake objects: spikes and rings around bright stars, reflections ("ghosts"), afterimages and cosmic-ray hits. The app uses the missions' own artifact lists to hide most of them, but stay sceptical. Something seen on only one date, or only near a very bright star, is usually not real. Lesson 6 shows a real example.
 
-This matters in practice. When we checked seven "new brown dwarf" candidates from an automated catalogue, none of them was new: they were diffraction spikes, scattered light, a young star in a dust cloud, a source in another galaxy and one brown dwarf that was already known. See [results.md](results.md#what-did-not-work).
+When we checked seven "new brown dwarf" candidates from an automated catalogue, none of them was new: they were diffraction spikes, scattered light, a young star in a dust cloud, a source in another galaxy and one brown dwarf that was already known. See [results.md](results.md#what-did-not-work).
 
 ## Discover mode
 

@@ -1,8 +1,8 @@
 # Results
 
-We used the app on real candidates during and after the hackathon. This page lists what came out, how sure we are, and what would confirm each result. Every claim here was put through an independent adversarial review: a separate check that tried to break each number against raw data, catalogues and the original papers. Where that review changed our wording, we say so.
+We used the app on real candidates during and after the hackathon. This page lists what came out, how sure we are, and what would confirm each result. Before publishing, we asked an AI model to try to break every claim: it recomputed the numbers from raw data and catalogues, re-read the original papers and searched for prior work (see [validation.md](validation.md#ai-review)). Where that review changed our wording, we say so.
 
-A note that applies to every spectral type below: SPHEREx gives low-resolution spectrophotometry (R ≈ 40–130), not a slit spectrum, so a "type" means a match to the SPIFF templates (Gagné et al. 2026). "First" always means the first we found in SIMBAD, VizieR, the UltracoolSheet, the SPIFF table, arXiv and a web search as of November 2026. We had no token for NASA ADS, so ADS full text was not searched.
+A note that applies to every spectral type below: SPHEREx gives low-resolution spectrophotometry (R ≈ 40–130), not a slit spectrum, so a "type" means a match to the SPIFF templates (Gagné et al. 2026). "First" always means the first we found in SIMBAD, VizieR, the UltracoolSheet, the SPIFF table, arXiv and a web search as of November 2026. We did not search the NASA ADS full text.
 
 ## WISE J2317-6659 gets a spectrum-based type
 
@@ -40,7 +40,7 @@ What is not shown: M8 is the earliest SPIFF template, so "M8" means "M8 or earli
 
 CWISE J235827.96−521813.4 gave a clean-looking match (L0, range M9–L1). Our own screen marked it inconclusive, because its SPHEREx 1.2 µm flux is 1.8× its catalogue J brightness, probably light from the G = 11.4 host 30″ away that our neighbour model does not see.
 
-The adversarial review then narrowed what could be said even if the spectrum were clean. L0 is not separated from M9, so the honest label is M9–L0. Gaia DR3 had already estimated its temperature (2295 ± 256 K) from a low-quality optical RP spectrum, so "first" can only mean the first infrared (1–5 µm) spectrum. A second photometric type (L0, dal Ponte et al. 2023) already existed. The pair itself was listed before Rothermich, by Hartman & Lépine (2020) and Kervella et al. (2022), and a spectrum cannot confirm a co-moving probability; Gaia astrometry does that, with Δμ = 0.0 ± 2.1 mas/yr. Finally, its mass is 0.075–0.084 M☉ if the system is 1 Gyr or older, so it sits at the star/brown-dwarf boundary and should not be called a brown dwarf. We do not count it as a result.
+The AI review then narrowed what could be said even if the spectrum were clean. L0 is not separated from M9, so the label should be M9–L0. Gaia DR3 had already estimated its temperature (2295 ± 256 K) from a low-quality optical RP spectrum, so "first" can only mean the first infrared (1–5 µm) spectrum. A second photometric type (L0, dal Ponte et al. 2023) already existed. The pair itself was listed before Rothermich, by Hartman & Lépine (2020) and Kervella et al. (2022), and a spectrum cannot confirm a co-moving probability; Gaia astrometry does that, with Δμ = 0.0 ± 2.1 mas/yr. Finally, its mass is 0.075–0.084 M☉ if the system is 1 Gyr or older, so it sits at the star/brown-dwarf boundary and should not be called a brown dwarf. We do not count it as a result.
 
 ## Two candidate wide pairs
 
@@ -54,7 +54,7 @@ How sure: a candidate wide co-moving pair, not a discovery and not a confirmed b
 
 What would confirm it: Gaia DR4, released on 2 December 2026, should give the dwarf its own parallax and proper motion and the host an orbit solution, so it can confirm or rule out the association. A radial velocity of the L dwarf to about 3 km/s would confirm it independently.
 
-What the review changed: the independent adversarial review kept the claim as a candidate pair but corrected our numbers. The separation is 45.15″ (3,760 au), not 44.1″; the distance is ≈85 pc (≈70–100), not 84 ± 6 pc; the type is ≈L0 (L0–L1) rather than a firm L0; the motion agreement is 3–4 ± 3.5 mas/yr, not 1.5 ± 3.5; and our statement that no radial velocity exists was wrong. It also dropped our remark that the system's speed hints at a thick-disk origin.
+What the review changed: it kept the claim as a candidate pair but corrected our numbers. The separation is 45.15″ (3,760 au), not 44.1″; the distance is ≈85 pc (≈70–100), not 84 ± 6 pc; the type is ≈L0 (L0–L1) rather than a firm L0; the motion agreement is 3–4 ± 3.5 mas/yr, not 1.5 ± 3.5; and our statement that no radial velocity exists was wrong. It also dropped our remark that the system's speed hints at a thick-disk origin.
 
 ### WISE J235447.80−814044.9 and WD J235419.41−814104.96
 
@@ -62,17 +62,15 @@ WISE J2354−8140 is a known T dwarf (T6.4 from methane imaging, Tinney et al. 2
 
 Its motion agrees with the white dwarf's Gaia motion of (96, 36) mas/yr in every estimate we trust. The one that does not use our pipeline at all, AllWISE to VHS after correcting the catalogue zero-points against Gaia, gives (93 ± 30, 23 ± 28) mas/yr. Our own WISE W2 and SPHEREx positions give (124 ± 19, 49 ± 19) mas/yr. Both are 3–7σ away from zero motion, so it is not a background source. Its brightness and colours point to T7.0–T7.3, and at T6–T7.5 its photometric distance matches the white dwarf's (25.7 pc, 22–30 pc, for T6.4). A T8 or an early T would not fit.
 
-How sure: a candidate co-moving pair, not a confirmed one. The T dwarf has no parallax, and our motions are good to about 20–30 mas/yr (≈3 km/s), four times too coarse to test whether the pair is bound (escape speed 0.73 km/s). Stars with similar motion and distance are not rare in this part of the sky, so there is roughly a 10% chance that the match is a coincidence somewhere in our search of 3,293 dwarfs. The SPHEREx spectrum shows a T dwarf from its 3–5 µm shape but is too faint and blended to give a subtype, so we do not claim one. Zhang et al. (2025) ran a search designed for such pairs; with the uncorrected CatWISE motion they used, this pair falls just outside their cut, so "not reported" does not mean "never seen". If the pair is real, the white dwarf's cooling age makes the system older than about 6 Gyr.
+How sure: a candidate co-moving pair, not a confirmed one. The T dwarf has no parallax, and our motions are good to about 20–30 mas/yr (≈3 km/s), four times too coarse to test whether the pair is bound (escape speed 0.73 km/s). Stars with similar motion and distance are not rare in this part of the sky, so there is roughly a 10% chance that the match is a coincidence somewhere in our search of 3,293 dwarfs. The SPHEREx spectrum shows a T dwarf from its 3–5 µm shape but is too faint and blended to give a subtype, so we do not claim one. Zhang et al. (2025) ran a search designed for such pairs; with the uncorrected CatWISE motion they used, this pair falls just outside their cut, so others may have looked at it without reporting it. If the pair is real, the white dwarf's cooling age makes the system older than about 6 Gyr.
 
-Four white dwarf + T dwarf wide pairs are confirmed and about five more are published candidates, so this would not be a first in general. It is not the nearest (Wolf 1130 C is at 16.6 pc) and not the first with a magnetic white dwarf (LSPM J1459+0851). As far as we know it would be the first with a white dwarf that is both magnetic and metal-polluted, which is a narrow distinction.
+Four white dwarf + T dwarf wide pairs are confirmed and about five more are published candidates, so this would not be a first in general. It is not the nearest (Wolf 1130 C is at 16.6 pc) and not the first with a magnetic white dwarf (LSPM J1459+0851). As far as we know it would only be the first with a white dwarf that is both magnetic and metal-polluted.
 
 What would confirm it: a parallax and a better proper motion for the T dwarf, for example from a few more years of infrared imaging.
 
 What the review changed: it found that a static star 8.2″ away pulls our WISE W1 positions by up to 1.7″, so we dropped W1 from the motion fit. It showed that our "seven proper-motion estimates" share data and amount to two independent ones. It also repeated the chance-alignment estimate in a larger Gaia field and found nine look-alike stars where we had found none, raising the chance of a coincidence from below 4% to about 10%. As a check on our astrometry, the same pipeline measured the white dwarf itself to within 0.65σ of its Gaia motion (see [validation.md](validation.md#motion)).
 
 ## What did not work
-
-Negative results are part of the story, because they show why the images need to be looked at.
 
 All 7 SPIFF "New Candidates" we tested were not new brown dwarfs. Two were diffraction spikes (J2011−0624, J0104+1244), one sat on the halo of a bright star (J0109−4652), one lay on a scattered-light streak from IRC+10216 (J0946+1355), one was an embedded young star with ice absorption (J0807−3443, IRAS 08057−3434), one was a source in the galaxy M33 (J0133+3048), and one was the known T6 dwarf 2MASS J11225550+2550250. CatWISE gave several of them spurious motions of up to 1.7″/yr.
 

@@ -32,12 +32,12 @@ export default function Landing({ onMode }: { onMode: (m: Mode) => void }) {
         <section aria-labelledby="featured-heading" className="rounded-lg border border-emerald-800 bg-emerald-950/30 p-4">
           <div className="text-xs tracking-wide text-emerald-400 uppercase">What we found</div>
           <h2 id="featured-heading" className="text-lg font-semibold">
-            WISE J2317−6659: the first spectrum-based type for a brown-dwarf candidate
+            WISE J2317−6659: a brown-dwarf candidate gets its first spectrum-based type
           </h2>
           <p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-300">
             Rothermich et al. (2024) listed this faint source as a probable T6 brown dwarf, based on its brightness alone. We measured its SPHEREx spectrum with this app,
-            and it agrees: it looks like a mid-T dwarf, T5 or T6. It's roughly 30 parsecs (100 light-years) away and moves half an arcsecond a year, but not together with the star pair next
-            to it, so it's on its own rather than their companion.
+            and it agrees: it looks like a mid-T dwarf, most likely T6. It's roughly 30 parsecs (100 light-years) away and moves half an arcsecond a year, but
+            not in step with the star pair next to it, so it is not their companion.
           </p>
           <p className="mt-1 text-xs text-slate-500">
             <a className="underline" href="https://github.com/davidfegyver/ultracool/blob/main/docs/results.md#wise-j2317-6659-gets-a-spectrum-based-type" target="_blank" rel="noreferrer">

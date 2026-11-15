@@ -17,7 +17,7 @@ const Label = ({ x, y, children }: { x: number; y: number; children: ReactNode }
 
 const STEPS: { title: string; text: string; art: ReactNode }[] = [
   {
-    title: 'A small region in a flipbook',
+    title: 'What is a flipbook?',
     text: 'A flipbook is a stack of infrared images of one small patch of sky, taken between 2010 and 2026 by WISE, NEOWISE and SPHEREx and lined up pixel by pixel.',
     art: (
       <>
