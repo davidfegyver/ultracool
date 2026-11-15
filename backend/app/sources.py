@@ -19,11 +19,12 @@ import s3fs
 from astropy import log as astropy_log
 from astropy.coordinates import SkyCoord
 from astropy.io import fits
+from astropy.io.votable import parse_single_table
 from astropy.wcs import WCS, FITSFixedWarning
 from astroquery.ipac.irsa import Irsa
 from reproject import reproject_interp
 
-from .config import CACHE_DIR, IRSA_MAX_CONCURRENCY, S3_MAX_CONCURRENCY
+from .config import CACHE_DIR, IRSA_MAX_CONCURRENCY, S3_MAX_CONCURRENCY, write_json
 from .frames import PIX_ARCSEC, _radius, aperture_flux
 
 log = logging.getLogger("ultracool.sources")
@@ -37,6 +38,9 @@ COLLECTIONS = ["spherex_dr1", "spherex_qr3", "wise_allsky", "neowiser"]
 SIA_TTL_S = 7 * 86400
 MARGIN_PX = 8  # native pixels around the grid footprint; must cover the SPHEREx background annulus
 SX_R_AP, SX_R_IN, SX_R_OUT = 2.0, 4.0, 7.0  # SPHEREx photometry radii in native 6.15" pixels
+SX_PIX_ARCSEC = 6.15
+SX_GRID_R = tuple(r * SX_PIX_ARCSEC / PIX_ARCSEC for r in (SX_R_AP, SX_R_IN, SX_R_OUT))  # the same radii in grid px
+GRID_SR = (PIX_ARCSEC / 206264.806) ** 2  # grid pixel solid angle
 BENIGN_FLAGS = {"SOURCE", "FULLSAMPLE"}  # informational bits, not data problems
 # IRSA's conservative L1b mask (NEOWISE Explanatory Supplement III.3.d: bits 1,3,4,6,9,10-19,21,30) minus the
 # saturation bits 11-18: those pixels keep a valid ramp fit from the unsaturated first reads, and the clipped
@@ -78,34 +82,68 @@ def irsa_retry(fn):
             time.sleep(delay)
 
 
-def irsa_scs(ra, dec, radius_deg, table="catwise_2020"):
-    """IRSA simple cone search -> VOTable bytes (retried, under IRSA_SEM)."""
-    url = "https://irsa.ipac.caltech.edu/SCS?" + urllib.parse.urlencode(
-        {"table": table, "RA": ra, "DEC": dec, "SR": radius_deg})
-
+def _irsa_get(url, timeout, must_contain=None):
+    """GET url -> bytes (retried, under IRSA_SEM); a reply without must_contain in its head counts as a failure."""
     def fetch():
-        with urllib.request.urlopen(url, timeout=120) as r:
-            return r.read()
-
-    return irsa_retry(fetch)
-
-
-def irsa_gator(catalog, ra, dec, radius_arcsec, cols):
-    """IRSA Gator cone query with column selection -> VOTable bytes (retried, under IRSA_SEM). Used for
-    catalog look-ups by the analysis: answers when the SCS front end returns 502, and selcols keeps the
-    huge NEOWISE single-exposure table small."""
-    url = "https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-query?" + urllib.parse.urlencode(
-        {"catalog": catalog, "spatial": "cone", "radius": radius_arcsec, "radunits": "arcsec",
-         "objstr": f"{ra:.6f} {dec:+.6f}", "outfmt": 3, "selcols": ",".join(cols)})
-
-    def fetch():
-        with urllib.request.urlopen(url, timeout=180) as r:
+        with urllib.request.urlopen(url, timeout=timeout) as r:
             data = r.read()
-        if b"<VOTABLE" not in data[:2000]:
-            raise RuntimeError(f"Gator: not a VOTable: {data[:200]!r}")
+        if must_contain and must_contain not in data[:2000]:
+            raise RuntimeError(f"unexpected IRSA reply: {data[:200]!r}")
         return data
 
     return irsa_retry(fetch)
+
+
+def irsa_scs(ra, dec, radius_deg):
+    """IRSA simple cone search of CatWISE2020 -> VOTable bytes."""
+    return _irsa_get("https://irsa.ipac.caltech.edu/SCS?" + urllib.parse.urlencode(
+        {"table": "catwise_2020", "RA": ra, "DEC": dec, "SR": radius_deg}), 120)
+
+
+def irsa_gator(catalog, ra, dec, radius_arcsec, cols):
+    """IRSA Gator cone query with column selection -> VOTable bytes. Used for catalog look-ups by the analysis:
+    answers when the SCS front end returns 502, and selcols keeps the huge NEOWISE single-exposure table small."""
+    return _irsa_get("https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-query?" + urllib.parse.urlencode(
+        {"catalog": catalog, "spatial": "cone", "radius": radius_arcsec, "radunits": "arcsec",
+         "objstr": f"{ra:.6f} {dec:+.6f}", "outfmt": 3, "selcols": ",".join(cols)}), 180, b"<VOTABLE")
+
+
+def _num(x):
+    """JSON-safe float: NaN/inf -> None, numpy scalars -> float."""
+    if x is None:
+        return None
+    x = float(x)
+    return x if math.isfinite(x) else None
+
+
+def _rows(votable_bytes):
+    """VOTable -> list of plain dicts (masked/NaN -> None, bytes -> str)."""
+    tab = parse_single_table(io.BytesIO(votable_bytes)).to_table()
+    out = []
+    for r in tab:
+        d = {}
+        for k in tab.colnames:
+            v = r[k]
+            if np.ma.is_masked(v):
+                v = None
+            elif isinstance(v, bytes):
+                v = v.decode()
+            elif isinstance(v, np.generic):
+                v = v.item()
+            d[k] = _num(v) if isinstance(v, float) else v
+        out.append(d)
+    return out
+
+
+def catwise_cone(ra, dec, r_arcsec, pos=("ra_pm", "dec_pm")):
+    """CatWISE2020 sources in a cone -> [{name, ra, dec, pmra, pmdec, sigpm (mas/yr), epoch}]. pos: the position
+    columns, the motion fit's ("ra_pm", "dec_pm") or the stationary fit's ("ra", "dec")."""
+    return [{"name": r["source_name"], "ra": r[pos[0]], "dec": r[pos[1]],
+             "pmra": (r["pmra"] or 0) * 1000, "pmdec": (r["pmdec"] or 0) * 1000,
+             "sigpm": math.hypot(r["sigpmra"] or 0.1, r["sigpmdec"] or 0.1) / math.sqrt(2) * 1000, "epoch": 2015.4}
+            for r in _rows(irsa_gator("catwise_2020", ra, dec, r_arcsec,
+                                      ["source_name", *pos, "pmra", "pmdec", "sigpmra", "sigpmdec"]))
+            if r[pos[0]] is not None]
 
 
 def query_frames(ra, dec):
@@ -127,8 +165,7 @@ def query_frames(ra, dec):
             aws = json.loads(str(r["cloud_access"]) or "{}").get("aws", {})
             out.append(RawFrame(survey, band, float(r["t_min"]), url, aws.get("bucket_name", ""),
                                 aws.get("key", ""), aws.get("region", ""), url.rsplit("/", 1)[1].removesuffix(".fits")))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps([asdict(f) for f in out]))
+    write_json(path, [asdict(f) for f in out])
     return out
 
 
@@ -183,8 +220,7 @@ def _psf_enclosed(hdul, fh, x, y, r, wavelength_um, cutout):
     os_ = hdu.header["OVSMPX"]
     n = int(round(math.sqrt(np.size(psf))))
     psf = np.asarray(psf, dtype=float).reshape(n, n)
-    yy, xx = np.indices(psf.shape)
-    rr = np.hypot(xx - (n - 1) / 2, yy - (n - 1) / 2) / os_
+    rr = _radius(psf.shape, (n - 1) / 2, (n - 1) / 2) / os_
     return float(psf[rr <= r].sum() / psf.sum())
 
 
@@ -325,11 +361,17 @@ def read_section(frame, grid_wcs, shape, target):
         log.warning("S3 read failed for %s (%s); IBE cutout fallback", frame.stem, e)
     ra, dec = grid_wcs.wcs.crval
     size = shape[1] * PIX_ARCSEC / 3600 * 1.2
-
-    def fetch():
-        with urllib.request.urlopen(f"{frame.access_url}?center={ra},{dec}&size={size}", timeout=120) as r:
-            return r.read()
-
-    data = irsa_retry(fetch)
+    data = _irsa_get(f"{frame.access_url}?center={ra},{dec}&size={size}", 120)
     with io.BytesIO(data) as fh, fits.open(fh) as hdul:
         return _process(hdul, fh, frame, grid_wcs, shape, target, cutout=True)
+
+
+def safe_read(frame, grid_wcs, shape, target):
+    """read_section, or None when the frame misses the grid or cannot be read (logged)."""
+    try:
+        return read_section(frame, grid_wcs, shape, target)
+    except NoOverlap:
+        return None
+    except Exception:  # noqa: BLE001 - one unreadable frame drops that frame only
+        log.exception("read failed: %s", frame.stem)
+        return None

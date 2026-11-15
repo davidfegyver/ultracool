@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 
 import numpy as np
+from astropy.stats import mad_std
 
 DATA = Path(__file__).parent / "data"
 SUFFIX = "_spherex_standard.csv"
@@ -65,11 +66,8 @@ DOUBTFUL = "doubtful match"
 
 
 def detection_snr(lam, flx, err):
-    sel = (lam >= DET_BAND_UM[0]) & (lam <= DET_BAND_UM[1])
-    if not sel.any():
-        return None
-    w = err[sel] ** -2
-    return float(np.sum(w * flx[sel]) / math.sqrt(np.sum(w)))
+    r = _band_mean(lam, flx, err, DET_BAND_UM)
+    return None if r is None else r[0] / r[1]
 
 
 def _bin(points):
@@ -88,7 +86,7 @@ def _bin(points):
         fc, ec = f[ch == c], e[ch == c]
         if len(fc) >= 3:
             med = np.median(fc)
-            keep = np.abs(fc - med) <= OUTLIER_K * np.hypot(ec, 1.4826 * np.median(np.abs(fc - med)))
+            keep = np.abs(fc - med) <= OUTLIER_K * np.hypot(ec, mad_std(fc))
             fc, ec = fc[keep], ec[keep]
         w = ec**-2
         mu, err = float(np.sum(w * fc) / np.sum(w)), float(1 / math.sqrt(np.sum(w)))

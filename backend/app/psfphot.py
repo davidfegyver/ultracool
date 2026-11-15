@@ -9,8 +9,10 @@ import math
 import numpy as np
 from astropy.wcs import WCS
 
-from .frames import PIX_ARCSEC, mjd_to_year, propagate
+from .config import write_json
+from .frames import PIX_ARCSEC, mjd_to_year, pixel_sigma, propagate
 from .sequences import load_npy, seq_dir
+from .sources import GRID_SR, SX_GRID_R
 
 FIT_R_PX = 12.0  # fitted cutout radius around the target (33")
 SRC_R_PX = 16.0  # sources this close to the target are in the model (their PSF reaches the cutout)
@@ -22,8 +24,7 @@ PM_MIN_SIGMA = 5.0
 # Gaussian sigma searched per frame, grid px: SPHEREx PSF (~1 native 6.15" px) after bilinear resampling to 2.75"
 # fits at 1.5-1.65 px on bright isolated stars (LP 944-20, 2MASS J0746+20, Kelu-1)
 SIGMAS_PX = np.arange(1.2, 2.41, 0.15)
-SX_AP_PX = 2.0 * 6.15 / PIX_ARCSEC  # the native target aperture (12.3"), for the neighbour-light fraction
-GRID_SR = (PIX_ARCSEC / 206264.806) ** 2
+SX_AP_PX = SX_GRID_R[0]  # the native target aperture (12.3"), for the neighbour-light fraction
 VERSION = 1  # bump when the fit changes: cached per-frame results are recomputed
 # Error model, calibrated on empty sky (research/spectra/validation/empty_sky.py -> empty_sky.json, fit in
 # empty_sky_fit.json: 12 'clear' positions >= 11" and 12 'near' positions 5.5-11" from CatWISE sources in each of
@@ -42,13 +43,6 @@ PSF_CAL = {"D1": 1.031, "D2": 1.012, "D3": 1.033, "D4": 1.025, "D5": 1.054, "D6"
 
 def calibrated_err(err, nb_ap, band):
     return math.hypot(err * ERR_SCALE.get(band, 1.0) * (1 + min(0.5, 0.5 * abs(nb_ap) / err)), NB_ERR_FRAC * nb_ap)
-
-
-def frame_noise(img):
-    """Robust per-pixel sigma from horizontal pixel differences (insensitive to sources and gradients)."""
-    d = np.diff(img, axis=1)
-    d = d[np.isfinite(d)]
-    return 1.4826 * float(np.median(np.abs(d - np.median(d)))) / math.sqrt(2) if d.size else math.nan
 
 
 def fit_frame(img, srcs, sigma_noise, sigmas=SIGMAS_PX):
@@ -83,12 +77,6 @@ def fit_frame(img, srcs, sigma_noise, sigmas=SIGMAS_PX):
     return float(coef[0]), float(math.sqrt(cov[0, 0])), nb_ap, float(s)
 
 
-def _propagate(ra, dec, pmra, pmdec, epoch, yr):
-    """frames.propagate for arrays."""
-    dt = yr - epoch
-    return ra + pmra / 3.6e6 / np.cos(np.radians(dec)) * dt, dec + pmdec / 3.6e6 * dt
-
-
 def _catalog_at(cat, t, yr):
     """-> (rows (ra, dec, pmra, pmdec, epoch), separation from the target at epoch yr in ", True where the entry
     is within OWN_ENTRY_ARCSEC of the target at the catalog epoch). A catalog motion below PM_MIN_SIGMA is set
@@ -97,9 +85,9 @@ def _catalog_at(cat, t, yr):
     c = np.array([(r["ra"], r["dec"], r["pmra"], r["pmdec"], r["epoch"]) for r in cat], float).reshape(-1, 5).T
     sig = np.array([r.get("sigpm") or 0.0 for r in cat], float)
     c[2:4, np.hypot(c[2], c[3]) < PM_MIN_SIGMA * sig] = 0.0
-    tra, tde = _propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], c[4])
+    tra, tde = propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], c[4])
     own = np.hypot((c[0] - tra) * np.cos(np.radians(tde)), c[1] - tde) * 3600 < OWN_ENTRY_ARCSEC
-    ra, de = _propagate(*c, yr)
+    ra, de = propagate(*c, yr)
     tra, tde = propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], yr)
     return c, np.hypot((ra - tra) * np.cos(np.radians(tde)), de - tde) * 3600, own
 
@@ -142,15 +130,13 @@ def photometry(m, cat, cache=True):
         img = load_npy(m["id"], f["id"])
         tx, ty = wcs.world_to_pixel_values(*propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"],
                                                       t["epoch_yr"], yr))
-        nx, ny = wcs.world_to_pixel_values(*_propagate(*nb, yr))
+        nx, ny = wcs.world_to_pixel_values(*propagate(*nb, yr))
         keep = np.hypot(nx - tx, ny - ty) <= SRC_R_PX
-        r = fit_frame(img, [(float(tx), float(ty))] + list(zip(nx[keep].tolist(), ny[keep].tolist())), frame_noise(img))
+        r = fit_frame(img, [(float(tx), float(ty))] + list(zip(nx[keep].tolist(), ny[keep].tolist())), pixel_sigma(img))
         k = GRID_SR * 1e12 * PSF_CAL.get(f["band"], 1.0)  # MJy/sr x grid pixels -> uJy, native flux scale
         got[f["id"]] = None if r is None else {
             "flux_ujy": r[0] * k, "nb_ap_ujy": r[2] * k, "sigma_px": r[3], "raw_err_ujy": r[1] * k,
             "flux_err_ujy": calibrated_err(r[1], r[2], f["band"]) * k}
     if cache:
-        tmp = path.with_suffix(".tmp")
-        tmp.write_text(json.dumps(got))
-        tmp.replace(path)
+        write_json(path, got)
     return got

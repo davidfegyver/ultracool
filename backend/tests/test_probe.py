@@ -7,13 +7,9 @@ from fastapi.testclient import TestClient
 from app import analysis, sequences
 from app.frames import grid_wcs_json, make_grid
 from app.probe import flag_outliers, snap
+from test_analysis import _star
 
 SID = "00000000000000bb"
-
-
-def _star(shape, x, y, flux, sigma=1.0):
-    yy, xx = np.indices(shape)
-    return flux / (2 * np.pi * sigma**2) * np.exp(-((xx - x) ** 2 + (yy - y) ** 2) / (2 * sigma**2))
 
 
 def test_snap_to_synthetic_peak():
@@ -51,7 +47,7 @@ def client(tmp_path, monkeypatch):
         if i == 35:
             img[:] = np.nan
         fid = f"wise-{band}-v{i:02d}" if survey == "wise" else f"sx-{i:02d}"
-        np.save(d / f"{fid}.npy", img.astype(np.float32))
+        np.savez_compressed(d / f"{fid}.npz", raw=img.astype(np.float32))
         frames.append({"id": fid, "survey": survey, "band": band, "kind": "visit" if survey == "wise" else "single",
                        "mjd": 55200.0 + 180 * i, "wavelength_um": 3.4 if band == "W1" else 4.6 if band == "W2" else 0.8 + 0.18 * (i - 12),
                        "flux_ujy": None, "flux_err_ujy": None, "flagged": False, "flag_names": [],

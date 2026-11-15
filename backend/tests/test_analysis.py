@@ -1,12 +1,13 @@
 import math
+from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
 import pytest
 from fastapi import HTTPException
 
-from app.analysis import centroid, classify_variability, find_tracks, fit_motion, measure_color
-from app.frames import clipped_mean
-from app.sequences import SeqRequest, _params, _units
+from app.analysis import _target_track, centroid, classify_variability, find_tracks, fit_motion, measure_color
+from app.frames import clipped_mean, make_grid
+from app.sequences import SeqRequest, _params, _units, run_chunks
 from app.sources import RawFrame
 
 
@@ -182,7 +183,7 @@ def _synthetic_sequence(tmp_path, monkeypatch, mover_flux, neighbour_flux=40.0, 
         # prediction, which a wide search latches onto (closer than ~3 px it truly blends in 2-yr stacks)
         img += _star(shape, cx + 4.35, cy + 2.45, neighbour_flux)
         fid = f"wise-W2-v{i:02d}"
-        np.save(tmp_path / "seq" / sid / "npy" / f"{fid}.npy", img.astype(np.float32))
+        np.savez_compressed(tmp_path / "seq" / sid / "npy" / f"{fid}.npz", raw=img.astype(np.float32))
         frames.append({"id": fid, "survey": "wise", "band": "W2", "kind": "visit", "mjd": 51544.5 + (t - 2000) * 365.25,
                        "flux_ujy": None, "flux_err_ujy": None, "flagged": False, "flag_names": [], "magzp": 20.0,
                        "target_px": [x, shape[0] - 1 - y]})
@@ -336,3 +337,31 @@ def test_saturated_or_undetected_target_is_not_sure(monkeypatch):
     motion["undetected_bands"] = ["W1", "W2"]
     s = analysis._summary({})
     assert s["color"]["w1_w2"] is None and s["variability"]["verdict"] == "insufficient data"
+
+
+def test_target_track_exact_at_high_dec_grid_corner():
+    # the flat-sky offsets this replaced were 1.3 px off at a 0.25-deg grid corner at Dec +75
+    wcs, _ = make_grid(30.0, 75.0, 0.25)
+    years = np.arange(2010.0, 2026.0, 2.0)
+    px = [(3 + 0.4 * (t - 2010), 4 + 0.3 * (t - 2010)) for t in years]
+    pts = [{"ra": float(r), "dec": float(d), "mjd": 51544.5 + (t - 2000) * 365.25, "err_arcsec": 0.1}
+           for t, (x, y) in zip(years, px) for r, d in [wcs.pixel_to_world_values(x, y)]]
+    fit = _target_track(None, {"recovered": True, "verdict": "moving", "points": pts}, wcs)
+    for t, (x, y) in zip(years, px):
+        dt = t - fit["t0"]
+        assert abs(-(fit["xi0"] + fit["pmra"] / 1000 * dt) / 2.75 - x) < 0.05
+        assert abs((fit["eta0"] + fit["pmdec"] / 1000 * dt) / 2.75 - y) < 0.05
+
+
+def _task(k, chunk):
+    if chunk == [3]:
+        raise RuntimeError("worker died")
+    return [k * c for c in chunk]
+
+
+def test_run_chunks_reports_a_failed_task_and_finishes_the_rest(monkeypatch):
+    with ThreadPoolExecutor(2) as pool:
+        monkeypatch.setattr("app.sequences._submit", pool.submit)
+        got = {c[0]: r for c, r in run_chunks(_task, [[i] for i in range(6)], 2, 10)}
+    assert isinstance(got.pop(3), RuntimeError)
+    assert got == {i: [10 * i] for i in (0, 1, 2, 4, 5)}

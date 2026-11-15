@@ -21,35 +21,24 @@ import threading
 import time
 import urllib.error
 import urllib.parse
-import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
-API = os.getenv("API_URL", "http://localhost:8000")
+from scripts.prewarm import API, call
+
 NEW_QUERIES = threading.Semaphore(2)  # politeness: <= 2 objects in resolve + IRSA SIA query at a time
 DESIG_PREFIX_RE = re.compile(r"^C?WISE\w*\s*J\d")  # CWISE, CWISEP, WISE, WISEA, WISEPA, WISEPC, ... J<coords>
 POLL_S = 10
 
 
-def call(path, body=None, timeout=900):
-    req = urllib.request.Request(API + path, data=None if body is None else json.dumps(body).encode(),
-                                 headers={"content-type": "application/json"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.load(r)
-
-
 def spiff_objects(spt_min, spt_max, dataset):
-    from app.ucd import RA, DEC, ROWS, SPT, spt_num  # the server's own catalog and spectral-type parser
-    lo = spt_num(spt_min) if spt_min else None
-    hi = spt_num(spt_max) if spt_max else None
-    for name, v in (("--spt-min", spt_min), ("--spt-max", spt_max)):
-        if v and spt_num(v) is None:
-            sys.exit(f"bad {name} {v!r} (expected e.g. M7, L2.5, T5, Y1)")
-    for i, r in enumerate(ROWS):
-        if (lo is not None or hi is not None) and SPT[i] != SPT[i]:  # NaN: no usable type
-            continue
-        if (lo is not None and SPT[i] < lo) or (hi is not None and SPT[i] > hi) or (dataset and r["dataset"] != dataset):
-            continue
-        yield {"name": r["designation"], "ra": float(RA[i]), "dec": float(DEC[i])}
+    from fastapi import HTTPException
+
+    from app import ucd  # the server's own catalog and spectral-type filter
+    try:
+        rows = ucd.search(spt_min, spt_max, dataset, limit=len(ucd.ROWS))
+    except HTTPException as e:
+        sys.exit(e.detail)
+    return [{"name": r["designation"], "ra": r["ra"], "dec": r["dec"]} for r in rows]
 
 
 def csv_objects(path):

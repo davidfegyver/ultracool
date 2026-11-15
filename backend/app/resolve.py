@@ -1,5 +1,4 @@
 import hashlib
-import io
 import json
 import logging
 import math
@@ -9,13 +8,12 @@ import warnings
 
 import astropy.units as u
 import numpy as np
-from astropy.coordinates import SkyCoord
-from astropy.io.votable import parse_single_table
+from astropy.coordinates import SkyCoord, jparser
 from astroquery.simbad import SimbadClass, conf as simbad_conf
 from fastapi import APIRouter, HTTPException
 
-from .config import CACHE_DIR
-from .sources import irsa_gator
+from .config import CACHE_DIR, write_json
+from .sources import catwise_cone
 
 log = logging.getLogger("ultracool.resolve")
 
@@ -27,8 +25,6 @@ SEXA_RE = re.compile(r"^[\d\s:hmsd°'\"+\-.,]+$")
 # CDS main site is sometimes down; the Harvard mirror serves the same TAP
 SIMBAD_SERVERS = ["simbad.cds.unistra.fr", "simbad.harvard.edu"]
 _simbad_lock = threading.Lock()
-# survey designations encode the position: CWISE J201121.52-062438.1 -> 20:11:21.52 -06:24:38.1
-DESIG_RE = re.compile(r"\bJ(\d{2})(\d{2})(\d{2}(?:\.\d+)?)([+-])(\d{2})(\d{2})(\d{2}(?:\.\d+)?)\b")
 CATWISE_EPOCH_YR = 2015.4  # CatWISE2020 positions are at MJD 57170
 # epoch of the position a designation encodes, by survey prefix (WISE/AllWISE: ~2010.5; others: J2000)
 DESIG_EPOCH_YR = {"CWISE": CATWISE_EPOCH_YR, "CWISEP": CATWISE_EPOCH_YR, "WISEA": 2010.5, "WISE": 2010.5}
@@ -78,33 +74,26 @@ def _simbad(q: str) -> dict | None:
 
 def parse_designation(q: str) -> dict | None:
     """Position encoded in a survey designation ('CWISE J201121.52-062438.1') -> resolve dict, or None."""
-    m = DESIG_RE.search(q)
+    m = jparser.search(q)
     if not m:
         return None
-    hh, mm, ss, sign, dd, dm, ds = m.groups()
-    c = SkyCoord(f"{hh}h{mm}m{ss}s {sign}{dd}d{dm}m{ds}s")
-    prefix = q[:m.start()].strip().upper()
+    c = jparser.to_skycoord(q)
     return {**_coord_result(float(c.ra.deg), float(c.dec.deg)), "name": q,
-            "epoch_yr": DESIG_EPOCH_YR.get(prefix, 2000.0)}
+            "epoch_yr": DESIG_EPOCH_YR.get(m.group(1)[:-1].strip().upper(), 2000.0)}
 
 
 def _catwise_motion(ra: float, dec: float, radius_arcsec: float) -> dict | None:
     """Nearest CatWISE2020 source with a significant (> 3 sigma) proper motion: its position at the CatWISE
     epoch and its motion, or None (static or noisy motions would only move the target off its SIMBAD place)."""
-    data = irsa_gator("catwise_2020", ra, dec, radius_arcsec,
-                      ["source_name", "ra", "dec", "pmra", "pmdec", "sigpmra", "sigpmdec"])
-    t = parse_single_table(io.BytesIO(data)).to_table()
-    if len(t) == 0:
+    rows = catwise_cone(ra, dec, radius_arcsec, ("ra", "dec"))
+    if not rows:
         return None
-    sep = SkyCoord(np.asarray(t["ra"], float), np.asarray(t["dec"], float), unit="deg").separation(
-        SkyCoord(ra, dec, unit="deg"))
-    r = t[int(np.argmin(sep))]
-    pm, err = math.hypot(float(r["pmra"]), float(r["pmdec"])), math.hypot(float(r["sigpmra"]), float(r["sigpmdec"]))
-    if not (math.isfinite(pm) and math.isfinite(err) and pm > 3 * err):
+    sep = SkyCoord([r["ra"] for r in rows], [r["dec"] for r in rows], unit="deg").separation(SkyCoord(ra, dec, unit="deg"))
+    r = rows[int(np.argmin(sep))]
+    if not math.hypot(r["pmra"], r["pmdec"]) > 3 * math.sqrt(2) * r["sigpm"]:  # sigpm = hypot(sigpmra, sigpmdec)/sqrt 2
         return None
-    return {"ra": float(r["ra"]), "dec": float(r["dec"]), "epoch_yr": CATWISE_EPOCH_YR,
-            "pmra_masyr": float(r["pmra"]) * 1000, "pmdec_masyr": float(r["pmdec"]) * 1000,
-            "pm_source": f"CatWISE2020 {str(r['source_name']).strip()}"}
+    return {"ra": r["ra"], "dec": r["dec"], "epoch_yr": r["epoch"], "pmra_masyr": r["pmra"],
+            "pmdec_masyr": r["pmdec"], "pm_source": f"CatWISE2020 {r['name'].strip()}"}
 
 
 def _with_catwise_motion(res: dict) -> dict:
@@ -146,8 +135,7 @@ def resolve(q: str) -> dict:
     if res is None:
         raise HTTPException(404, f"Object not found: {q}")
     res = _with_catwise_motion(res)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(res))
+    write_json(path, res)
     return res
 
 

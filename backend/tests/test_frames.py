@@ -91,5 +91,3 @@ def test_grid_quantisation_round_trip(tmp_path):
     assert out[10, 10] == img[10, 10]
     fin = np.isfinite(img)
     assert np.max(np.abs(out[fin] - img[fin])) <= 2.0 / 16 / 2 * 1.1  # half a step of sigma / 16
-    np.save(tmp_path / "old.npy", img)  # caches written before quantisation still load
-    assert np.array_equal(load_grid(tmp_path / "old"), img, equal_nan=True)

@@ -37,10 +37,10 @@ LESSONS = {
 }
 
 
-def call(path, body=None):
+def call(path, body=None, timeout=900):
     req = urllib.request.Request(API + path, data=None if body is None else json.dumps(body).encode(),
                                  headers={"content-type": "application/json"})
-    with urllib.request.urlopen(req, timeout=300) as r:
+    with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.load(r)
 
 

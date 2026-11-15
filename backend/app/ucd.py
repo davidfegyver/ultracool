@@ -1,6 +1,5 @@
 """SPIFF ultracool-dwarf catalog (16.9k objects): search by spectral type and positional lookup."""
 import csv
-import re
 from pathlib import Path
 
 import astropy.units as u
@@ -9,15 +8,9 @@ from astropy.coordinates import SkyCoord
 from fastapi import APIRouter, HTTPException, Query
 
 from .frames import propagate
+from .spectral import spt_num  # finds the class inside prefixed types too (sdT4, d/sdL8, esdL8)
 
 router = APIRouter()
-SPT_RE = re.compile(r"^([MLTY])(\d+(?:\.\d+)?)")
-SPT_BASE = {"M": 0, "L": 10, "T": 20, "Y": 30}
-
-
-def spt_num(s):
-    m = SPT_RE.match(s or "")
-    return SPT_BASE[m.group(1)] + float(m.group(2)) if m else None
 
 
 with open(Path(__file__).parent / "data" / "ucd_catalog.csv", newline="") as fh:

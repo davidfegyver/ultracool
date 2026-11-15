@@ -1,11 +1,9 @@
 """Science summary of a sequence (proper motion, W1-W2 colour, variability, spectrum) and a search for every
 moving source in the field. Works on the cached grid frames (npy) and the manifest photometry."""
 import hashlib
-import io
 import json
 import logging
 import math
-import os
 import urllib.parse
 import urllib.request
 import warnings
@@ -14,7 +12,6 @@ from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
 from astropy.coordinates import SkyCoord
-from astropy.io.votable import parse_single_table
 from astropy.timeseries import LombScargle
 from astropy.wcs import WCS
 from fastapi import APIRouter
@@ -25,10 +22,13 @@ from scipy.ndimage import shift as nd_shift
 from scipy.spatial import cKDTree
 
 from . import config, psfphot, ucd
-from .frames import PIX_ARCSEC, aperture_flux, clipped_mean, deep_stack, group_by_gap, mjd_to_year, propagate
+from .config import write_json
+from .frames import (PIX_ARCSEC, _radius, aperture_flux, clipped_mean, deep_stack, group_by_gap, mjd_to_year,
+                     propagate)
 from .sequences import (WISE_F0_JY, WISE_R_AP, WISE_R_IN, WISE_R_OUT, get_manifest, load_npy, seq_dir,
                         wise_flux_factor)
-from .sources import WISE_ART_R_ARCSEC, bright_star_artifacts, irsa_gator, query_frames
+from .sources import (SX_GRID_R, SX_PIX_ARCSEC, SX_R_AP, WISE_ART_R_ARCSEC, _num, _rows, bright_star_artifacts,
+                      catwise_cone, irsa_gator, query_frames)
 from .spectral import DOUBTFUL, EARLY_LABELS, NO_DETECTION, WARMER, classify, demote
 
 log = logging.getLogger("ultracool.analysis")
@@ -52,7 +52,7 @@ OUTLIER_SIGMA = 4.0
 BLEND_FLUX_RATIO = 0.2  # another source carrying >= 20% of the target's flux at its spot shifts the centroid
 STATIC_SEP_ARCSEC = 2 * 8.25  # target this far from its spot: its aperture there holds only static sky
 VAR_MIN_SNR = 5.0  # median per-visit S/N a band needs before its scatter can mean variability
-SX_AP_ARCSEC = 2.0 * 6.15  # SPHEREx photometry aperture radius (sources.SX_R_AP native pixels)
+SX_AP_ARCSEC = SX_R_AP * SX_PIX_ARCSEC  # SPHEREx photometry aperture radius (12.3")
 CONTAM_FRAC = 0.25  # neighbours adding > 25% of the target's light make a template fit describe them
 # neighbour light inside the 12.3" aperture (from the PSF fit, psfphot) above this fraction of the target's own
 # flux in any SPHEREx band: the spectrum uses the neighbour-subtracted PSF photometry instead of the aperture
@@ -103,14 +103,6 @@ STATIC_PX = 1.0  # detections recurring within 1 px in half the windows are stat
 ARTIFACT_FRAC = 0.4
 
 
-def _num(x):
-    """JSON-safe float: NaN/inf -> None, numpy scalars -> float."""
-    if x is None:
-        return None
-    x = float(x)
-    return x if math.isfinite(x) else None
-
-
 def _clean(o):
     if isinstance(o, dict):
         return {k: _clean(v) for k, v in o.items()}
@@ -123,25 +115,6 @@ def _clean(o):
     if isinstance(o, (float, np.floating)):
         return _num(o)
     return o
-
-
-def _rows(votable_bytes):
-    """VOTable -> list of plain dicts (masked/NaN -> None, bytes -> str)."""
-    tab = parse_single_table(io.BytesIO(votable_bytes)).to_table()
-    out = []
-    for r in tab:
-        d = {}
-        for k in tab.colnames:
-            v = r[k]
-            if np.ma.is_masked(v):
-                v = None
-            elif isinstance(v, bytes):
-                v = v.decode()
-            elif isinstance(v, np.generic):
-                v = v.item()
-            d[k] = _num(v) if isinstance(v, float) else v
-        out.append(d)
-    return out
 
 
 def _grid_wcs(m):
@@ -202,8 +175,7 @@ def centroid(z, x0, y0, r_search, fwhm_px, min_snr=MIN_SNR):
         return cx, cy, 0.3, math.inf
     zf = _fill_nan(z)
     snr = _snr_map(zf, fwhm_px)
-    yy, xx = np.indices(z.shape)
-    inside = (np.hypot(xx - x0, yy - y0) <= r_search) & (snr >= maximum_filter(snr, size=3))
+    inside = (_radius(z.shape, x0, y0) <= r_search) & (snr >= maximum_filter(snr, size=3))
     if not inside.any():
         return None
     i = np.argmax(np.where(inside, snr, -np.inf))
@@ -311,7 +283,6 @@ def measure_motion(m):
     sid = m["id"]
     t = m["target"]
     wcs = _grid_wcs(m)
-    ra0, dec0 = (float(v) for v in wcs.wcs.crval)
     groups = _motion_groups(m["frames"])
     cat = {"pmra_masyr": t["pmra_masyr"], "pmdec_masyr": t["pmdec_masyr"]}
     pm_cat = math.hypot(t["pmra_masyr"], t["pmdec_masyr"])
@@ -320,15 +291,15 @@ def measure_motion(m):
            "n_epochs": 0, "catalog": cat, "consistent_with_catalog": None, "verdict": "insufficient data",
            "recovered": False, "track_snr": None, "undetected_bands": [], "points": [], "rejected_points": []}
     if pm_cat:
-        out["track_snr"] = _track_snr(m, wcs, ra0, dec0)
+        out["track_snr"] = _track_snr(m, wcs)
     if len(groups) < 3:
         return out
     cx0, cy0 = wcs.wcs.crpix[0] - 1, wcs.wcs.crpix[1] - 1
     blend_cache: dict = {}
 
-    def predict_cat(ty):
-        return _offsets_arcsec(*propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], ty),
-                               ra0, dec0)
+    def predict_cat(ty):  # the catalog track in the fit's offsets: (-x, y) * PIX_ARCSEC from the grid centre
+        x, y = _target_px(wcs, t, ty)
+        return (cx0 - x) * PIX_ARCSEC, (y - cy0) * PIX_ARCSEC
 
     def measure(model, use_groups, rejected):
         pm_mas = (model["pmra"], model["pmdec"]) if model else (t["pmra_masyr"], t["pmdec_masyr"])
@@ -356,10 +327,10 @@ def measure_motion(m):
             if c is None:
                 continue
             ra, dec = (float(v) for v in wcs.pixel_to_world_values(c[0], c[1]))
-            xi, eta = _offsets_arcsec(ra, dec, ra0, dec0)
             p = {"mjd": float(np.mean([f["mjd"] for f in fs])), "band": band, "ra": ra, "dec": dec,
                  "err_arcsec": math.hypot(c[2] * PIX_ARCSEC, POS_FLOOR_ARCSEC[band]), "snr": min(c[3], 1e4),
-                 "_t": ty, "_xi": float(xi), "_eta": float(eta), "_epoch": (band == "SPHEREx", round(ty / WINDOW_YR))}
+                 "_t": ty, "_xi": float(cx0 - c[0]) * PIX_ARCSEC, "_eta": float(c[1] - cy0) * PIX_ARCSEC,
+                 "_epoch": (band == "SPHEREx", round(ty / WINDOW_YR))}
             ratio = None
             if math.isfinite(c[3]) and band != "SPHEREx":
                 ratio = _blend_ratio(m, blend_cache, band, fs, ty, c, math.hypot(*pm_mas) / 1000)
@@ -437,7 +408,12 @@ def _blend_ratio(m, cache, band, fs, ty, c, pm_arcsec_yr):
     return max(0.0, float(s)) / math.sqrt(len(others)) / (c[3] / math.sqrt(len(fs)))
 
 
-def _track_snr(m, wcs, ra0, dec0):
+def _target_px(wcs, t, ty):
+    """Grid pixel (x, y) of the target's catalog track at year ty."""
+    return wcs.world_to_pixel_values(*propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], ty))
+
+
+def _track_snr(m, wcs):
     """Shift-and-stack all W2 visits along the catalog proper motion to REF_YR: S/N of the target there.
     Confirms a faint mover that single epochs cannot follow."""
     t = m["target"]
@@ -446,11 +422,7 @@ def _track_snr(m, wcs, ra0, dec0):
         return None
     pm_px = (-t["pmra_masyr"] / 1000 / PIX_ARCSEC, t["pmdec_masyr"] / 1000 / PIX_ARCSEC)
     snr = _snr_map(_fill_nan(_shifted_stack(m["id"], fs, pm_px, REF_YR)), FWHM_PX["W2"])
-    xi, eta = _offsets_arcsec(*propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], REF_YR),
-                              ra0, dec0)
-    x, y = wcs.wcs.crpix[0] - 1 - xi / PIX_ARCSEC, wcs.wcs.crpix[1] - 1 + eta / PIX_ARCSEC
-    yy, xx = np.indices(snr.shape)
-    near = np.hypot(xx - x, yy - y) <= TIGHT_R_PX
+    near = _radius(snr.shape, *_target_px(wcs, t, REF_YR)) <= TIGHT_R_PX
     return float(snr[near].max()) if near.any() else None
 
 
@@ -639,10 +611,7 @@ def _ext_cached(key, fetch):
     if path.exists():
         return json.loads(path.read_text())
     res = fetch()
-    path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(f".{os.getpid()}.tmp")
-    tmp.write_text(json.dumps(_clean(res)))
-    tmp.replace(path)
+    write_json(path, _clean(res))
     return res
 
 
@@ -711,18 +680,14 @@ def catalog_lightcurve(m):
                                "flux_err_ujy": flux * mag_err / 1.0857, "mag": mag, "mag_err": mag_err,
                                "n": len(vs), "table": table})
     points.sort(key=lambda p: (p["band"], p["mjd"]))
-    return {"source": "neowiser_p1bs_psd+allwise_p3as_mep", "status": "ok" if points else "no data",
-            "saturated": saturated, "points": points}
-
-
-def _catalog_lc_cached(m):
-    """Cheap once the IRSA rows are cached (_catalog_rows); recomputed per call so it follows the frames."""
-    return _clean(catalog_lightcurve(m))
+    # IRSA rows are cached (_catalog_rows); this is recomputed per call so it follows the frames
+    return _clean({"source": "neowiser_p1bs_psd+allwise_p3as_mep", "status": "ok" if points else "no data",
+                   "saturated": saturated, "points": points})
 
 
 @router.get("/api/sequences/{sid}/catalog_lightcurve")
 def catalog_lightcurve_route(sid: str):
-    return _catalog_lc_cached(get_manifest(sid))
+    return catalog_lightcurve(get_manifest(sid))
 
 
 def photometry_lc(m, sky):
@@ -734,7 +699,7 @@ def photometry_lc(m, sky):
         return lc, "pipeline", "WISE visit co-adds, 8.25\" aperture photometry" + (
             "; light of static sources the target passes over subtracted" if sky else "")
     try:
-        cat = _catalog_lc_cached(m)
+        cat = catalog_lightcurve(m)
     except Exception as e:  # noqa: BLE001 - IRSA down: say so instead of failing the summary
         log.warning("catalog light curve failed for %s: %s", m["id"], e)
         return lc, None, "WISE pipeline photometry insufficient and IRSA catalogs unavailable"
@@ -849,21 +814,27 @@ def _plain_props(color, var, spec):
 SUMMARY_VERSION = 2
 
 
+def _read_keyed(path, key):
+    """Result cached at path by _cached (or the probe) if it was computed for key, else None."""
+    if path.exists():
+        c = json.loads(path.read_text())
+        if c.pop("_key", None) == key:
+            return c
+    return None
+
+
 def _cached(m, name, compute, key=None):
     """Result cached in the sequence directory, recomputed when the frame set changes (key; default status +
     frame count + SUMMARY_VERSION); results that hit an unavailable external service (`_transient`) are not
     cached, so the next call retries."""
     key = key or [m["status"], len(m["frames"]), SUMMARY_VERSION]
     path = seq_dir(m["id"]) / name
-    if path.exists():
-        c = json.loads(path.read_text())
-        if c.get("_key") == key:
-            return {k: v for k, v in c.items() if k != "_key"}
+    c = _read_keyed(path, key)
+    if c is not None:
+        return c
     res = _clean(compute(m))
     if not res.pop("_transient", False):
-        tmp = path.with_suffix(".tmp")
-        tmp.write_text(json.dumps({**res, "_key": key}))
-        tmp.replace(path)
+        write_json(path, {**res, "_key": key})
     return res
 
 
@@ -922,8 +893,7 @@ def spectrum_contamination(m, sky):
         return None
     t_sx = float(np.median(sx))
     dt_min = (2 * SX_AP_ARCSEC + 6.4) / pm
-    x, y = (float(v) for v in _grid_wcs(m).world_to_pixel_values(
-        *propagate(t["ra"], t["dec"], t["pmra_masyr"], t["pmdec_masyr"], t["epoch_yr"], t_sx)))
+    x, y = (float(v) for v in _target_px(_grid_wcs(m), t, t_sx))
     lc = wise_lightcurve(m["frames"], sky)
     out = {}
     for band in ("W1", "W2"):
@@ -931,8 +901,7 @@ def spectrum_contamination(m, sky):
               and f.get("magzp") is not None and abs(mjd_to_year(f["mjd"]) - t_sx) >= dt_min]
         if len(fs) < 2 or not lc.get(band):
             return None
-        net, err = aperture_flux(clipped_mean([load_npy(m["id"], f["id"]) for f in fs]), x, y,
-                                 SX_AP_ARCSEC / PIX_ARCSEC, 4 * 6.15 / PIX_ARCSEC, 7 * 6.15 / PIX_ARCSEC)
+        net, err = aperture_flux(clipped_mean([load_npy(m["id"], f["id"]) for f in fs]), x, y, *SX_GRID_R)
         if not math.isfinite(net):
             return None
         f_t, e_t = _wmean(np.array([p[1] for p in lc[band]]), np.array([p[2] for p in lc[band]]))
@@ -1143,7 +1112,7 @@ def _catalogs(m):
     cone = [round(ra0, 4), round(dec0, 4), round(r_deg, 4)]
     out = {}
     try:
-        out["catwise"] = _ext_cached({"q": "catwise_2020_field", "cone": cone}, lambda: _fetch_catwise(ra0, dec0, r_deg))
+        out["catwise"] = _ext_cached({"q": "catwise_2020_field", "cone": cone}, lambda: catwise_cone(ra0, dec0, r_deg * 3600))
     except Exception as e:  # noqa: BLE001
         log.warning("CatWISE field query failed: %s", e)
         out["catwise"] = None
@@ -1153,15 +1122,6 @@ def _catalogs(m):
         log.warning("SIMBAD field query failed: %s", e)
         out["simbad"] = None
     return out
-
-
-def _fetch_catwise(ra0, dec0, r_deg):
-    return [{"name": r["source_name"], "ra": r["ra_pm"], "dec": r["dec_pm"],
-             "pmra": (r["pmra"] or 0) * 1000, "pmdec": (r["pmdec"] or 0) * 1000,
-             "sigpm": math.hypot(r["sigpmra"] or 0.1, r["sigpmdec"] or 0.1) / math.sqrt(2) * 1000, "epoch": 2015.4}
-            for r in _rows(irsa_gator("catwise_2020", ra0, dec0, r_deg * 3600,
-                                      ["source_name", "ra_pm", "dec_pm", "pmra", "pmdec", "sigpmra", "sigpmdec"]))
-            if r["ra_pm"] is not None]
 
 
 def _fetch_simbad(ra0, dec0, r_deg):
@@ -1262,13 +1222,10 @@ def _target_track(m, motion, wcs):
     """The target's measured track (summary motion) as a fit in grid-pixel convention, or None."""
     if not motion["recovered"] or motion["verdict"] != "moving":
         return None
-    ra0, dec0 = (float(v) for v in wcs.wcs.crval)
     pts = motion["points"]
-    xi, eta = _offsets_arcsec([p["ra"] for p in pts], [p["dec"] for p in pts], ra0, dec0)
-    cx, cy = wcs.wcs.crpix[0] - 1, wcs.wcs.crpix[1] - 1
+    x, y = wcs.world_to_pixel_values([p["ra"] for p in pts], [p["dec"] for p in pts])
     # same convention as find_tracks: offsets (-x, y) * PIX_ARCSEC from the grid origin
-    return fit_motion([mjd_to_year(p["mjd"]) for p in pts], np.asarray(xi) - cx * PIX_ARCSEC,
-                      np.asarray(eta) + cy * PIX_ARCSEC, [p["err_arcsec"] for p in pts])
+    return fit_motion([mjd_to_year(p["mjd"]) for p in pts], -x * PIX_ARCSEC, y * PIX_ARCSEC, [p["err_arcsec"] for p in pts])
 
 
 def _artifact_samples(m, visits):

@@ -8,30 +8,29 @@ import json
 import logging
 import math
 import threading
-from concurrent.futures import Future, ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 from typing import Literal
 
 import numpy as np
+from astropy.stats import mad_std
 from fastapi import APIRouter, HTTPException, Query
 
 from . import sequences
-from .analysis import (FWHM_PX, PHOT_FLOOR, REF_YR, _clean, _grid_wcs, _offsets_arcsec, _plain_props, _shifted_stack,
-                       centroid, classify_variability, measure_color, not_sure, photometry_lc, static_sky_flux,
-                       typed_spectrum, wise_lightcurve)
+from .analysis import (FWHM_PX, PHOT_FLOOR, REF_YR, _clean, _grid_wcs, _offsets_arcsec, _plain_props, _read_keyed,
+                       _shifted_stack, centroid, classify_variability, measure_color, not_sure, photometry_lc,
+                       static_sky_flux, typed_spectrum, wise_lightcurve)
+from .config import write_json
 from .frames import PIX_ARCSEC, aperture_flux, make_grid, mjd_to_year, propagate
 from .sequences import (CHUNK_READS, WISE_R_AP, WISE_R_IN, WISE_R_OUT, WORKER_PROCESSES, get_manifest, load_npy,
-                        seq_dir, wise_flux_factor)
-from .sources import SX_R_AP, SX_R_IN, SX_R_OUT, NoOverlap, query_frames, read_section
+                        run_chunks, seq_dir, wise_flux_factor)
+from .sources import GRID_SR, SX_GRID_R, SX_PIX_ARCSEC, SX_R_OUT, query_frames, safe_read
 from .spectral import BIN_CENTRE
 
 log = logging.getLogger("ultracool.probe")
 router = APIRouter()
 
 SNAP_ARCSEC, SNAP_MIN_SNR = 4.0, 3.0
-SX_NATIVE_ARCSEC = 6.15
-SX_GRID_R = tuple(r * SX_NATIVE_ARCSEC / PIX_ARCSEC for r in (SX_R_AP, SX_R_IN, SX_R_OUT))  # target radii, grid px
 EDGE_PX = SX_GRID_R[1]  # the aperture and at least half of each sky annulus stay on the grid
-GRID_SR = (PIX_ARCSEC / 206264.806) ** 2
 # preview SPHEREx aperture correction: fraction of a star's total flux inside 12.3" on the bilinearly resampled
 # grid = median ratio of grid aperture flux to the native (EPSF-corrected) target flux, per band, over frames at
 # S/N > 20 of AL Boo and eps Ind B (3 sequences, agreeing to <= 0.01; 16-84% spread <= 0.01 per band)
@@ -173,7 +172,7 @@ def flag_outliers(sx):
         if len(near) < 4:
             continue
         med = np.median(near)
-        if abs(fl[i] - med) > PREVIEW_CLIP_SIGMA * math.hypot(f["flux_err_ujy"], 1.4826 * np.median(np.abs(near - med))):
+        if abs(fl[i] - med) > PREVIEW_CLIP_SIGMA * math.hypot(f["flux_err_ujy"], mad_std(near)):
             f.update(flagged=True, flag_names=["OUTLIER"])
 
 
@@ -181,18 +180,12 @@ def _native_chunk(items):
     """Worker-process task: native-pixel SPHEREx photometry at [(frame_id, RawFrame, ra, dec)] ->
     [(frame_id, phot | None, wavelength_um | None)]. A grid covering the sky annulus keeps the IBE fallback valid."""
     pool = sequences._read_pool or ThreadPoolExecutor(sequences.READ_THREADS)
-    fov = 2 * SX_R_OUT * SX_NATIVE_ARCSEC / 3600
+    fov = 2 * SX_R_OUT * SX_PIX_ARCSEC / 3600
 
     def one(item):
         fid, raw, ra, dec = item
-        try:
-            r = read_section(raw, *make_grid(ra, dec, fov), (ra, dec))
-            return fid, r["phot"], r["wavelength_um"]
-        except NoOverlap:
-            return fid, None, None
-        except Exception:  # noqa: BLE001 - one unreadable frame drops that frame only
-            log.exception("probe read failed: %s", raw.stem)
-            return fid, None, None
+        r = safe_read(raw, *make_grid(ra, dec, fov), (ra, dec))
+        return fid, r and r["phot"], r and r["wavelength_um"]
 
     return list(pool.map(one, items))
 
@@ -205,22 +198,12 @@ def native_frames(m, pos, pm, state):
     sx = [f for f in m["frames"] if f["survey"] == "spherex" and f["id"] in raw]
     items = [(f["id"], raw[f["id"]], *_at(pos, pm, f["mjd"])) for f in sx]
     state["total"] = len(items)
-    chunks = iter([items[i:i + CHUNK_READS] for i in range(0, len(items), CHUNK_READS)])
-    futs: dict[Future, list] = {}
+    chunks = [items[i:i + CHUNK_READS] for i in range(0, len(items), CHUNK_READS)]
     got = {}
-
-    def submit_next():
-        c = next(chunks, None)
-        if c is not None:
-            futs[sequences._submit(_native_chunk, c)] = c
-
-    for _ in range(PROBE_INFLIGHT):
-        submit_next()
-    while futs:
-        fut = next(as_completed(futs))
-        futs.pop(fut)
-        submit_next()
-        for fid, phot, wl in fut.result():
+    for _, res in run_chunks(_native_chunk, chunks, PROBE_INFLIGHT):
+        if isinstance(res, Exception):
+            raise res
+        for fid, phot, wl in res:
             got[fid] = (phot, wl)
             state["done"] += 1
     out = []
@@ -284,10 +267,7 @@ def _run_full(key, m, pos, pm, state, path):
     try:
         frames = grid_frames(m, pos, pm, ("wise",)) + native_frames(m, pos, pm, state)
         res = analyse(m, pos, pm, frames, "full")
-        path.parent.mkdir(parents=True, exist_ok=True)
-        tmp = path.with_suffix(".tmp")
-        tmp.write_text(json.dumps(_clean({**res, "_key": [m["status"], len(m["frames"])]})))
-        tmp.replace(path)
+        write_json(path, _clean({**res, "_key": [m["status"], len(m["frames"])]}))
         with FULL_LOCK:
             FULL_JOBS.pop(key, None)
     except Exception as e:  # noqa: BLE001 - reported to the caller, who may retry
@@ -309,10 +289,9 @@ def probe(sid: str, ra: float = Query(ge=0, lt=360), dec: float = Query(ge=-90, 
         return _response(mode, ra, dec, pos, pm, res=analyse(m, pos, pm, grid_frames(m, pos, pm), "preview"))
     key = _cache_key(sid, pos, pm)
     path = seq_dir(sid) / "probe" / f"{key}.json"
-    if path.exists():
-        c = json.loads(path.read_text())
-        if c.pop("_key") == [m["status"], len(m["frames"])]:
-            return _response(mode, ra, dec, pos, pm, res=c)
+    c = _read_keyed(path, [m["status"], len(m["frames"])])
+    if c is not None:
+        return _response(mode, ra, dec, pos, pm, res=c)
     with FULL_LOCK:
         st = FULL_JOBS.get(key)
         if st and st["error"]:  # report the failure once; the next call retries

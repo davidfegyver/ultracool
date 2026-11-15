@@ -3,6 +3,7 @@ import pytest
 
 from app import analysis, psfphot
 from app.analysis import colour_doubt, typed_spectrum
+from app.frames import pixel_sigma
 from app.spectral import BIN_CENTRE, DOUBTFUL, NO_DETECTION, TEMPLATES, WARMER, _bin, classify, spt_num
 
 
@@ -139,7 +140,7 @@ def test_psf_fit_removes_a_bright_neighbour():
         return flux / (2 * np.pi * s * s) * np.exp(-((xx - x) ** 2 + (yy - y) ** 2) / (2 * s * s))
 
     img = 5.0 + rng.standard_normal((41, 41)) + star(20.3, 19.6, 300) + star(24.3, 19.6, 3000)
-    flux, err, nb_ap, s = psfphot.fit_frame(img, [(20.3, 19.6), (24.3, 19.6)], psfphot.frame_noise(img))
+    flux, err, nb_ap, s = psfphot.fit_frame(img, [(20.3, 19.6), (24.3, 19.6)], pixel_sigma(img))
     assert abs(flux - 300) < 3 * err and err < 30
     assert nb_ap > 1000 and s == pytest.approx(1.6, abs=0.15)
     assert psfphot.fit_frame(np.full((41, 41), np.nan), [(20, 20)], 1.0) is None

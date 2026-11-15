@@ -6,7 +6,6 @@ import json
 import logging
 import math
 import multiprocessing
-import os
 import re
 import threading
 import time
@@ -21,11 +20,11 @@ from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel
 
 from . import sources
-from .config import CACHE_DIR, MAX_RUNNING_SEQUENCES, S3_MAX_CONCURRENCY, WORKER_PROCESSES
+from .config import CACHE_DIR, MAX_RUNNING_SEQUENCES, S3_MAX_CONCURRENCY, WORKER_PROCESSES, write_json
 from .frames import (PIX_ARCSEC, aperture_flux, clipped_mean, deep_stack, default_fov_deg, grid_wcs_json,
                      group_by_gap, load_grid, make_grid, mjd_to_year, propagate, render_diff_png, render_exposure_png,
                      render_png, render_sigma_png, save_grid)
-from .sources import NoOverlap, query_frames, read_section
+from .sources import query_frames, safe_read
 
 log = logging.getLogger("ultracool.sequences")
 router = APIRouter()
@@ -99,9 +98,7 @@ class Manifest:
                 self.data["frames"].append(frame)
             if unit_done:
                 self.data["done"] += 1
-            tmp = self.path.with_suffix(".tmp")
-            tmp.write_text(json.dumps(self.data))
-            os.replace(tmp, self.path)
+            write_json(self.path, self.data)
 
 
 def _params(req: SeqRequest):
@@ -194,6 +191,25 @@ def _submit(*args):
         raise BrokenProcessPool("frame worker pool cannot be restarted")
 
 
+def run_chunks(fn, chunks, inflight, *args):
+    """fn(*args, chunk) for every chunk on the worker processes, at most `inflight` queued at a time -> yields
+    (chunk, result) as they finish; result is the exception when the task failed (e.g. its worker process died)."""
+    chunks, futs = iter(chunks), {}
+
+    def submit_next():
+        c = next(chunks, None)
+        if c is not None:
+            futs[_submit(fn, *args, c)] = c
+
+    for _ in range(inflight):
+        submit_next()
+    while futs:
+        fut = next(as_completed(futs))
+        c = futs.pop(fut)
+        submit_next()
+        yield c, fut.exception() or fut.result()
+
+
 def _in_window(f, p):
     return (p["mjd_min"] is None or f.mjd >= p["mjd_min"]) and (p["mjd_max"] is None or f.mjd <= p["mjd_max"])
 
@@ -220,24 +236,9 @@ def _run(man: Manifest, p, wcs, shape, priority_bands=()):
     wise_left = {u[0] for u in todo if u[2][0].survey == "wise"}
     man.update(status="fetching", total=len(units), done=len(units) - len(todo), wise_done=not wise_left)
     STARTED[sid] = (time.time(), len(units) - len(todo))
-    chunks = iter(_chunks(todo))
-    futs: dict[Future, list] = {}
-
-    def submit_next():
-        chunk = next(chunks, None)
-        if chunk is not None:
-            futs[_submit(_make_chunk, sid, p, wcs, shape, chunk)] = chunk
-
-    for _ in range(INFLIGHT_PER_SEQUENCE):
-        submit_next()
-    while futs:
-        fut = next(as_completed(futs))
-        chunk = futs.pop(fut)
-        submit_next()
-        try:
-            results = fut.result()
-        except Exception:  # noqa: BLE001 - e.g. a worker process died; its frames are lost, not the sequence
-            log.exception("worker task failed for %s", sid)
+    for chunk, results in run_chunks(_make_chunk, _chunks(todo), INFLIGHT_PER_SEQUENCE, sid, p, wcs, shape):
+        if isinstance(results, Exception):  # e.g. a worker process died; its frames are lost, not the sequence
+            log.error("worker task failed for %s", sid, exc_info=results)
             results = [(fid, None) for fid, *_ in chunk]
         for fid, frame in results:
             wise_left.discard(fid)
@@ -260,16 +261,7 @@ def _make_chunk(sid, p, wcs, shape, units):
     if _read_pool is None:  # called in-process (tests, debugging)
         _read_pool = ThreadPoolExecutor(max_workers=READ_THREADS)
 
-    def read(f):
-        try:
-            return read_section(f, wcs, shape, _target(p, f.mjd))
-        except NoOverlap:
-            return None
-        except Exception:  # noqa: BLE001
-            log.exception("read failed: %s", f.stem)
-            return None
-
-    reads = list(_read_pool.map(read, [f for *_, members in units for f in members]))
+    reads = list(_read_pool.map(lambda f: safe_read(f, wcs, shape, _target(p, f.mjd)), [f for *_, ms in units for f in ms]))
     out, i = [], 0
     for fid, kind, members in units:
         rs = reads[i:i + len(members)]
@@ -336,10 +328,7 @@ def get_manifest(sid):
     if m is None:
         raise HTTPException(404, f"Unknown sequence: {sid}")
     m["frames"].sort(key=lambda f: f["mjd"])
-    for f in m["frames"]:  # manifests written before these fields existed
-        f.setdefault("kind", "single" if f["survey"] == "spherex" else "visit")
-        f.setdefault("flag_names", [])
-    m.setdefault("wise_done", m["status"] == "done")  # manifests written before the field existed
+    m.setdefault("wise_done", m["status"] == "done")  # absent until _run starts fetching
     for survey in ("spherex", "wise"):
         fs = [f for f in m["frames"] if f["survey"] == survey]
         for f, g in zip(fs, group_by_gap([f["mjd"] for f in fs], 30)):
@@ -381,7 +370,7 @@ def get_frame_png(sid: str, frame_id: str):
 
 
 def load_npy(sid, frame_id):
-    """Grid image of a frame: quantised .npz (current) or float .npy (caches written before it)."""
+    """Grid image of a frame (frames.load_grid)."""
     base = seq_dir(sid) / "npy" / frame_id
     if not (ID_RE.match(sid) and FRAME_RE.match(frame_id)):
         raise HTTPException(404, f"Frame not found: {frame_id}")

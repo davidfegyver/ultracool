@@ -3,7 +3,7 @@ import math
 import warnings
 
 import numpy as np
-from astropy.stats import SigmaClip, sigma_clip
+from astropy.stats import SigmaClip, mad_std, sigma_clip
 from astropy.wcs import WCS
 from photutils.aperture import ApertureStats, CircularAnnulus, CircularAperture, aperture_photometry
 from PIL import Image
@@ -13,10 +13,9 @@ PIX_ARCSEC = 2.75  # WISE native; every survey is resampled onto this so frames 
 
 
 def propagate(ra, dec, pmra_masyr, pmdec_masyr, epoch_yr, t_yr):
-    """Linear proper-motion propagation (pmra includes cos dec, as SIMBAD/Gaia give it)."""
+    """Linear proper-motion propagation (pmra includes cos dec, as SIMBAD/Gaia give it); scalars or arrays."""
     dt = t_yr - epoch_yr
-    return (ra + pmra_masyr / 3.6e6 / math.cos(math.radians(dec)) * dt,
-            dec + pmdec_masyr / 3.6e6 * dt)
+    return ra + pmra_masyr / 3.6e6 / np.cos(np.radians(dec)) * dt, dec + pmdec_masyr / 3.6e6 * dt
 
 
 def mjd_to_year(mjd):
@@ -99,7 +98,7 @@ def aperture_flux(img, x, y, r_ap=3, r_in=6, r_out=10, var=None, mask=None, bkg_
         r_mid = (r_in + r_out) / 2
         pos = [(x + r_mid * math.cos(a), y + r_mid * math.sin(a)) for a in np.linspace(0, 2 * math.pi, 8, endpoint=False)]
         sums = np.array(aperture_photometry(sub, CircularAperture(pos, r_ap), mask=bad, method="exact")["aperture_sum"])
-        err = max(err, 1.4826 * float(np.median(np.abs(sums - np.median(sums)))))
+        err = max(err, float(mad_std(sums)))
     return net, err
 
 
@@ -120,9 +119,7 @@ def save_grid(base, img):
     pixels); PMs and colours on the W1534 field moved by <= 0.02 sigma."""
     a = np.asarray(img, dtype=np.float32)
     finite = np.isfinite(a)
-    d = np.diff(a, axis=1)
-    d = d[np.isfinite(d)]
-    sigma = 1.4826 * float(np.median(np.abs(d - np.median(d)))) / math.sqrt(2) if d.size else 0.0
+    sigma = pixel_sigma(a)
     if not (finite.any() and math.isfinite(sigma) and sigma > 0):  # flat or empty: keep it exact
         np.savez_compressed(f"{base}.npz", raw=a)
         return
@@ -136,15 +133,11 @@ def save_grid(base, img):
 
 
 def load_grid(base):
-    """Inverse of save_grid (also reads raw .npy written before quantisation) -> float32 array, or None."""
-    path = f"{base}.npz"
+    """Inverse of save_grid -> float32 array, or None."""
     try:
-        z = np.load(path)
+        z = np.load(f"{base}.npz")
     except FileNotFoundError:
-        try:
-            return np.load(f"{base}.npy")
-        except FileNotFoundError:
-            return None
+        return None
     with z:
         if "raw" in z:
             return z["raw"]
@@ -196,10 +189,16 @@ def render_exposure_png(img, path):
     render_sigma_png(z, path)
 
 
+def pixel_sigma(img):
+    """Robust per-pixel sigma from horizontal pixel differences (insensitive to sources and gradients); NaN if none."""
+    d = np.diff(img, axis=1)
+    d = d[np.isfinite(d)]
+    return float(mad_std(d)) / math.sqrt(2) if d.size else math.nan
+
+
 def _robust_norm(x):
-    med = np.nanmedian(x)
-    mad = 1.4826 * np.nanmedian(np.abs(x - med))
-    return (x - med) / (mad if mad > 0 else 1.0)
+    mad = mad_std(x, ignore_nan=True)
+    return (x - np.nanmedian(x)) / (mad if mad > 0 else 1.0)
 
 
 def render_diff_png(a, b, path):
@@ -212,13 +211,8 @@ def render_diff_png(a, b, path):
 
 
 def deep_stack(imgs):
-    """3-sigma-clipped mean of robust-normalised frames, in sigma units of the result.
-    Mean beats median by ~25% in depth; clipping drops cosmic rays and hot pixels."""
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")  # all-NaN pixels at frame edges, NaN-input notices from sigma_clip
-        # mad_std: with plain std a lone outlier among few frames (e.g. 4 WISE visits) can never exceed 3 sigma
-        clipped = sigma_clip(np.stack([_robust_norm(i) for i in imgs]), sigma=3, stdfunc="mad_std", axis=0)
-        return _robust_norm(clipped.mean(axis=0).filled(np.nan))
+    """3-sigma-clipped mean of robust-normalised frames, in sigma units of the result."""
+    return _robust_norm(clipped_mean([_robust_norm(i) for i in imgs]))
 
 
 def render_sigma_png(z, path, lo=-1.5, hi=6.0):
