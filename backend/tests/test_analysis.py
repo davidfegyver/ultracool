@@ -312,3 +312,27 @@ def test_queue_position_and_eta(monkeypatch):
     pos, eta = sequences.queue_status("a", {"status": "fetching", "done": 60, "total": 110})
     assert pos is None and eta == pytest.approx(50, rel=0.05)  # 50 units at 1 unit/s
     assert sequences.queue_status("z", {"status": "done", "done": 5, "total": 5}) == (None, None)
+
+
+def test_saturated_or_undetected_target_is_not_sure(monkeypatch):
+    """Saturated star on catalog photometry: no 'constant'/'irregular' verdict (a period still counts); target
+    found in neither W1 nor W2 by the astrometry: no colour and no variability verdict."""
+    from app import analysis
+
+    lc = {b: [(55000.0 + 180 * i, 1000.0 * (2 if i == 3 else 1), 10.0) for i in range(12)] for b in ("W1", "W2")}
+    motion = {"recovered": True, "undetected_bands": [], "track_snr": None, "verdict": "not moving"}
+    monkeypatch.setattr(analysis, "measure_motion", lambda m: dict(motion))
+    monkeypatch.setattr(analysis, "static_sky_flux", lambda m: {})
+    monkeypatch.setattr(analysis, "find_asteroids", lambda m: [])
+    monkeypatch.setattr(analysis, "typed_spectrum", lambda m, sky, color: {"verdict": "insufficient data",
+                                                                           "neighbours_checked": True})
+    monkeypatch.setattr(analysis, "_plain", lambda *a: [])
+    monkeypatch.setattr(analysis, "photometry_lc", lambda m, sky: (lc, "catalog", "catalog"))
+    monkeypatch.setattr(analysis, "_saturated", lambda m: True)
+    s = analysis._summary({})
+    assert s["variability"]["verdict"] == "insufficient data" and "saturated" in s["variability"]["note"]
+    monkeypatch.setattr(analysis, "_saturated", lambda m: False)
+    monkeypatch.setattr(analysis, "photometry_lc", lambda m, sky: (lc, "pipeline", "pipeline"))
+    motion["undetected_bands"] = ["W1", "W2"]
+    s = analysis._summary({})
+    assert s["color"]["w1_w2"] is None and s["variability"]["verdict"] == "insufficient data"
