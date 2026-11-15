@@ -1,0 +1,267 @@
+{
+ "method": "app.ucd.near(ra,dec,10 arcsec, along 2000-2026 PM track) on backend/app/data/ucd_catalog.csv",
+ "matches": {
+  "LP 944-20": [
+   {
+    "designation": "LP 944-20",
+    "ra": 54.89675,
+    "dec": -35.428916666666666,
+    "dataset": "Known",
+    "spiff_autotype": "L1",
+    "spiff_chi2_r": 0.3,
+    "literature_spectral_type": "M9\u03b2",
+    "sep_arcsec": 0.6050686375832006
+   }
+  ],
+  "2MASS J07464256+2000321": [
+   {
+    "designation": "2MASSI J0746425+200032",
+    "ra": 116.67541666666665,
+    "dec": 20.008694444444444,
+    "dataset": "Known",
+    "spiff_autotype": "L1",
+    "spiff_chi2_r": 0.5,
+    "literature_spectral_type": "L0.5",
+    "sep_arcsec": 0.19508899860702764
+   }
+  ],
+  "Kelu-1": [
+   {
+    "designation": "Kelu-1",
+    "ra": 196.41741666666664,
+    "dec": -25.685,
+    "dataset": "Known",
+    "spiff_autotype": "L3",
+    "spiff_chi2_r": 0.2,
+    "literature_spectral_type": "L0.5pec",
+    "sep_arcsec": 0.35807246561367656
+   }
+  ],
+  "ULAS J000734.90+011247.1": [
+   {
+    "designation": "ULAS J000734.90+011247.1",
+    "ra": 1.895708333333333,
+    "dec": 1.2131944444444445,
+    "dataset": "Known",
+    "spiff_autotype": "T6",
+    "spiff_chi2_r": 1.9,
+    "literature_spectral_type": "T7",
+    "sep_arcsec": 1.0666450911532028
+   }
+  ],
+  "eps Ind B": [
+   {
+    "designation": "eps Indi B",
+    "ra": 331.0655833333333,
+    "dec": -56.79011111111111,
+    "dataset": "Known",
+    "spiff_autotype": "T3",
+    "spiff_chi2_r": 1.6,
+    "literature_spectral_type": "T1",
+    "sep_arcsec": 1.8099848999838224
+   }
+  ],
+  "WISE J085510.83-071442.5": [],
+  "WISEA J153429.75-104303.3": [],
+  "2MASS J18353790+3259545": [],
+  "2MASS J00361617+1821104": [
+   {
+    "designation": "2MASSW J0036159+182110",
+    "ra": 9.067083333333331,
+    "dec": 18.35288888888889,
+    "dataset": "Known",
+    "spiff_autotype": "L3",
+    "spiff_chi2_r": 0.7,
+    "literature_spectral_type": "L3.5",
+    "sep_arcsec": 0.20370441951503654
+   }
+  ],
+  "2MASS J15074769-1627386": [
+   {
+    "designation": "2MASSW J1507476-162738",
+    "ra": 226.94858333333332,
+    "dec": -16.461111111111112,
+    "dataset": "Known",
+    "spiff_autotype": "L6",
+    "spiff_chi2_r": 2.0,
+    "literature_spectral_type": "L5",
+    "sep_arcsec": 0.25459419291555146
+   }
+  ],
+  "2MASS J08251968+2115521": [
+   {
+    "designation": "2MASSI J0825196+211552",
+    "ra": 126.33170833333332,
+    "dec": 21.264305555555556,
+    "dataset": "Known",
+    "spiff_autotype": "L8",
+    "spiff_chi2_r": 1.4,
+    "literature_spectral_type": "L7pec",
+    "sep_arcsec": 0.06102567526327777
+   }
+  ],
+  "DENIS J025503.3-470049": [],
+  "2MASS J18212815+1414010": [
+   {
+    "designation": "2MASS J18212815+1414010",
+    "ra": 275.36729166666663,
+    "dec": 14.23361111111111,
+    "dataset": "Known",
+    "spiff_autotype": "L5",
+    "spiff_chi2_r": 0.5,
+    "literature_spectral_type": "L4.5pec",
+    "sep_arcsec": 0.17828761755403943
+   }
+  ],
+  "SDSS J125453.90-012247.4": [
+   {
+    "designation": "SDSSp J125453.90-012247.4",
+    "ra": 193.72458333333333,
+    "dec": -1.3798055555555555,
+    "dataset": "Known",
+    "spiff_autotype": "T2",
+    "spiff_chi2_r": 1.3,
+    "literature_spectral_type": "T2",
+    "sep_arcsec": 0.11657009869877104
+   }
+  ],
+  "SIMP J013656.5+093347": [
+   {
+    "designation": "SIMP J013656.5+093347.3",
+    "ra": 24.235916666666665,
+    "dec": 9.56313888888889,
+    "dataset": "Known",
+    "spiff_autotype": "T2",
+    "spiff_chi2_r": 1.2,
+    "literature_spectral_type": "T2.5",
+    "sep_arcsec": 0.35879243542466455
+   }
+  ],
+  "2MASS J05591914-1404488": [
+   {
+    "designation": "2MASS J05591914-1404488",
+    "ra": 89.83,
+    "dec": -14.080305555555555,
+    "dataset": "Known",
+    "spiff_autotype": "T4 pec",
+    "spiff_chi2_r": 5.7,
+    "literature_spectral_type": "T5",
+    "sep_arcsec": 0.21404563278731928
+   }
+  ],
+  "2MASS J15344984-2952274": [],
+  "2MASS J11225550+2550250": [
+   {
+    "designation": "CWISE J112254.10+255019.2",
+    "ra": 170.72625,
+    "dec": 25.83897222222222,
+    "dataset": "New Candidates",
+    "spiff_autotype": "T3",
+    "spiff_chi2_r": 3.0,
+    "literature_spectral_type": null,
+    "sep_arcsec": 0.4126337460018919
+   },
+   {
+    "designation": "WISEPC J112254.73+255021.5",
+    "ra": 170.73229166666664,
+    "dec": 25.840305555555556,
+    "dataset": "Known",
+    "spiff_autotype": "T6",
+    "spiff_chi2_r": 1.5,
+    "literature_spectral_type": "T6",
+    "sep_arcsec": 3.3233171264377335
+   }
+  ],
+  "2MASS J07271824+1710012": [
+   {
+    "designation": "2MASSI J0727182+171001",
+    "ra": 111.82979166666667,
+    "dec": 17.164305555555554,
+    "dataset": "Known",
+    "spiff_autotype": "T7",
+    "spiff_chi2_r": 2.6,
+    "literature_spectral_type": "T7",
+    "sep_arcsec": 0.6452405391472844
+   }
+  ],
+  "2MASS J12171110-0311131": [],
+  "2MASS J04151954-0935066": [
+   {
+    "designation": "2MASSI J0415195-093506",
+    "ra": 63.838583333333325,
+    "dec": -9.5835,
+    "dataset": "Known",
+    "spiff_autotype": "T8",
+    "spiff_chi2_r": 3.5,
+    "literature_spectral_type": "T8",
+    "sep_arcsec": 0.9638273406243092
+   }
+  ],
+  "UGPS J072227.51-054031.2": [
+   {
+    "designation": "UGPS J072227.51-054031.2",
+    "ra": 110.6137083333333,
+    "dec": -5.674888888888889,
+    "dataset": "Known",
+    "spiff_autotype": "T9 pec",
+    "spiff_chi2_r": 7.3,
+    "literature_spectral_type": "T9",
+    "sep_arcsec": 0.48513539218295026
+   }
+  ],
+  "WISE J072003.20-084651.2": [],
+  "DENIS J081730.0-615520": [
+   {
+    "designation": "DENIS J081730.0-615520",
+    "ra": 124.37499999999997,
+    "dec": -61.921,
+    "dataset": "Known",
+    "spiff_autotype": "T5 pec",
+    "spiff_chi2_r": 5.2,
+    "literature_spectral_type": "T6",
+    "sep_arcsec": 0.059155573786310846
+   }
+  ],
+  "WISE J154151.65-225024.9": [],
+  "WISE J205628.90+145953.3": [
+   {
+    "designation": "WISEPC J205628.90+145953.3",
+    "ra": 314.1202916666666,
+    "dec": 14.998194444444444,
+    "dataset": "Known",
+    "spiff_autotype": "T8 pec",
+    "spiff_chi2_r": 6.0,
+    "literature_spectral_type": "Y0",
+    "sep_arcsec": 0.3991679299106765
+   }
+  ],
+  "WISE J173835.52+273258.9": [
+   {
+    "designation": "WISEPA J173835.53+273258.9",
+    "ra": 264.64799999999997,
+    "dec": 27.549694444444444,
+    "dataset": "Known",
+    "spiff_autotype": "Y0",
+    "spiff_chi2_r": 1.7,
+    "literature_spectral_type": "Y0",
+    "sep_arcsec": 0.09504185899094204
+   }
+  ],
+  "RW Aur": [],
+  "OJ 287": [],
+  "LP 791-18": [],
+  "BPM 90029": [],
+  "CWISE J080741.06-344335.9": [
+   {
+    "designation": "CWISE J080741.06-344335.9",
+    "ra": 121.92162499999999,
+    "dec": -34.72677777777778,
+    "dataset": "New Candidates",
+    "spiff_autotype": "L3 pec",
+    "spiff_chi2_r": 4.6,
+    "literature_spectral_type": null,
+    "sep_arcsec": 1.6306176165228767
+   }
+  ]
+ }
+}

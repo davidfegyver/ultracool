@@ -1,0 +1,22 @@
+{
+ "verdict": "insufficient data",
+ "best": null,
+ "ranking": [],
+ "binned": [
+  {
+   "wavelength_um": 1.072,
+   "flambda": 135551.08722000217,
+   "err": 6827.109435268233
+  },
+  {
+   "wavelength_um": 1.094,
+   "flambda": 136184.69465901586,
+   "err": 7001.773072720767
+  }
+ ],
+ "template_curve": null,
+ "detection_snr": null,
+ "contamination": null,
+ "negative_bins": 0,
+ "contaminated": false
+}

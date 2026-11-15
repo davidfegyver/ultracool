@@ -1,0 +1,53 @@
+{
+ "source": "empty_sky.json (empty_sky.py)",
+ "n_fits": 108597,
+ "err_scale_clear_r_lt_0.3": {
+  "D1": 1.56,
+  "D2": 1.08,
+  "D3": 1.0,
+  "D4": 1.05,
+  "D5": 1.37,
+  "D6": 1.85
+ },
+ "model": "err = hypot(ERR_SCALE[band]*raw*(1+min(0.5,0.5*|nb|/raw)), 0.04*|nb|)",
+ "grid_search": {
+  "g": 0.5,
+  "eps": 0.04
+ },
+ "robust_std_flux_over_err_per_cell": {
+  "clear nb/err 0-0.3": 0.95,
+  "clear nb/err 0.3-1": 0.96,
+  "clear nb/err 1-3": 0.99,
+  "clear nb/err 3-10": 0.98,
+  "clear nb/err 10-1000000000.0": 0.8,
+  "near nb/err 0-0.3": 0.59,
+  "near nb/err 0.3-1": 0.71,
+  "near nb/err 1-3": 0.93,
+  "near nb/err 3-10": 1.27,
+  "near nb/err 10-1000000000.0": 1.17
+ },
+ "raw_robust_std_per_cell": {
+  "clear nb/err 0-0.3": 1.33,
+  "clear nb/err 0.3-1": 1.68,
+  "clear nb/err 1-3": 2.03,
+  "clear nb/err 3-10": 1.88,
+  "clear nb/err 10-1000000000.0": 1.65,
+  "near nb/err 0-0.3": 0.85,
+  "near nb/err 0.3-1": 1.27,
+  "near nb/err 1-3": 1.85,
+  "near nb/err 3-10": 2.47,
+  "near nb/err 10-1000000000.0": 2.56
+ },
+ "n_per_cell": {
+  "clear nb/err 0-0.3": 14757,
+  "clear nb/err 0.3-1": 12680,
+  "clear nb/err 1-3": 12633,
+  "clear nb/err 3-10": 8983,
+  "clear nb/err 10-1000000000.0": 5260,
+  "near nb/err 0-0.3": 4634,
+  "near nb/err 0.3-1": 8538,
+  "near nb/err 1-3": 14001,
+  "near nb/err 3-10": 14264,
+  "near nb/err 10-1000000000.0": 12847
+ }
+}

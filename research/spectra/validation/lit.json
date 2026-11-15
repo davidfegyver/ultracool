@@ -1,0 +1,173 @@
+{
+ "_rule": "Literature type used for the confusion table: SPIFF literature_spectral_type (spiff_matches.json) when present, else the SIMBAD sp_type from resolve.jsonl (first component of a binary). 'binary' = SIMBAD lists two components or the object is a known unresolved pair. 'crowded' = |b| < 15 deg (computed in evaluate.py). Types later than Y1 are compared as Y1 (the last template). role: ucd | control.",
+ "LP 944-20": {
+  "lit": "M9.5",
+  "src": "SIMBAD M9.5Ve (SPIFF lit. M9beta)",
+  "role": "ucd"
+ },
+ "2MASS J18353790+3259545": {
+  "lit": "M8.5",
+  "src": "SIMBAD M8.5V",
+  "role": "ucd"
+ },
+ "2MASS J07464256+2000321": {
+  "lit": "L0.5",
+  "src": "SPIFF lit. L0.5 (SIMBAD L0+L1.5)",
+  "role": "ucd",
+  "binary": true
+ },
+ "2MASS J00361617+1821104": {
+  "lit": "L3.5",
+  "src": "SPIFF lit. L3.5",
+  "role": "ucd"
+ },
+ "Kelu-1": {
+  "lit": "L0.5",
+  "src": "SPIFF lit. L0.5pec (SIMBAD L2+L3.5)",
+  "role": "ucd",
+  "binary": true
+ },
+ "2MASS J15074769-1627386": {
+  "lit": "L5",
+  "src": "SPIFF lit. L5",
+  "role": "ucd"
+ },
+ "2MASS J08251968+2115521": {
+  "lit": "L7",
+  "src": "SPIFF lit. L7pec (SIMBAD L7.5V)",
+  "role": "ucd"
+ },
+ "DENIS J025503.3-470049": {
+  "lit": "L9",
+  "src": "SIMBAD L9",
+  "role": "ucd"
+ },
+ "2MASS J18212815+1414010": {
+  "lit": "L4.5",
+  "src": "SPIFF lit. L4.5pec",
+  "role": "ucd"
+ },
+ "SDSS J125453.90-012247.4": {
+  "lit": "T2",
+  "src": "SPIFF lit. T2",
+  "role": "ucd"
+ },
+ "SIMP J013656.5+093347": {
+  "lit": "T2.5",
+  "src": "SPIFF lit. T2.5 (SIMBAD T2.0)",
+  "role": "ucd"
+ },
+ "2MASS J05591914-1404488": {
+  "lit": "T5",
+  "src": "SPIFF lit. T5 (SIMBAD T4.5)",
+  "role": "ucd"
+ },
+ "2MASS J15344984-2952274": {
+  "lit": "T4.5",
+  "src": "SIMBAD T4.5+T5",
+  "role": "ucd",
+  "binary": true
+ },
+ "2MASS J11225550+2550250": {
+  "lit": "T6",
+  "src": "SPIFF lit. T6",
+  "role": "ucd"
+ },
+ "2MASS J07271824+1710012": {
+  "lit": "T7",
+  "src": "SPIFF lit. T7",
+  "role": "ucd"
+ },
+ "2MASS J12171110-0311131": {
+  "lit": "T7.5",
+  "src": "SIMBAD T7.5",
+  "role": "ucd"
+ },
+ "2MASS J04151954-0935066": {
+  "lit": "T8",
+  "src": "SPIFF lit. T8",
+  "role": "ucd"
+ },
+ "ULAS J000734.90+011247.1": {
+  "lit": "T7",
+  "src": "SPIFF lit. T7",
+  "role": "ucd"
+ },
+ "eps Ind B": {
+  "lit": "T1",
+  "src": "SPIFF lit. T1 (SIMBAD T1V+T6V, unresolved pair)",
+  "role": "ucd",
+  "binary": true
+ },
+ "UGPS J072227.51-054031.2": {
+  "lit": "T9",
+  "src": "SPIFF lit. T9",
+  "role": "ucd"
+ },
+ "WISE J072003.20-084651.2": {
+  "lit": "M9.5",
+  "src": "SIMBAD M9.5+T5 (Scholz's star)",
+  "role": "ucd",
+  "binary": true
+ },
+ "DENIS J081730.0-615520": {
+  "lit": "T6",
+  "src": "SPIFF lit. T6",
+  "role": "ucd"
+ },
+ "WISE J085510.83-071442.5": {
+  "lit": "Y2",
+  "src": "SIMBAD Y2 (task brief: Y4)",
+  "role": "ucd"
+ },
+ "WISE J154151.65-225024.9": {
+  "lit": "Y0",
+  "src": "SIMBAD Y0",
+  "role": "ucd"
+ },
+ "WISE J205628.90+145953.3": {
+  "lit": "Y0",
+  "src": "SPIFF lit. Y0",
+  "role": "ucd"
+ },
+ "WISE J173835.52+273258.9": {
+  "lit": "Y0",
+  "src": "SPIFF lit. Y0",
+  "role": "ucd"
+ },
+ "WISEA J153429.75-104303.3": {
+  "lit": null,
+  "src": "SIMBAD BD?, no sp_type; not in SPIFF table",
+  "role": "ucd"
+ },
+ "RW Aur": {
+  "lit": "K1",
+  "src": "SIMBAD TT* K1/5e+K5e",
+  "role": "control"
+ },
+ "OJ 287": {
+  "lit": null,
+  "src": "SIMBAD BLL (blazar)",
+  "role": "control"
+ },
+ "LP 791-18": {
+  "lit": "M6",
+  "src": "SIMBAD M6V",
+  "role": "control"
+ },
+ "BPM 90029": {
+  "lit": "K5",
+  "src": "SIMBAD K5V (Harvard SIMBAD TAP, K=9.15)",
+  "role": "control"
+ },
+ "CWISE J080741.06-344335.9": {
+  "lit": null,
+  "src": "IRAS 08057-3434, embedded YSO (research/discovery/REPORT.md)",
+  "role": "control"
+ },
+ "WISE J231728.42-665959.3": {
+  "lit": null,
+  "src": "SIMBAD BD?, photometric (T6) Rothermich+2024; WISE-photometry check only",
+  "role": "ucd"
+ }
+}

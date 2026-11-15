@@ -1,0 +1,27 @@
+{
+ "object": {
+  "q": "LP 944-20",
+  "name": "LP  944-20",
+  "ra": 54.89688479175417,
+  "dec": -35.428789443425835,
+  "pm": [
+   309.001,
+   269.058
+  ],
+  "ep": 2000.0,
+  "otype": "LM*",
+  "sptype": "M9.5Ve",
+  "copied_sid": "a6b97a3c57d9abbf"
+ },
+ "request": {
+  "ra": 54.89688479175417,
+  "dec": -35.428789443425835,
+  "pmra_masyr": 309.001,
+  "pmdec_masyr": 269.058,
+  "epoch_yr": 2000.0
+ },
+ "sid": "a6b97a3c57d9abbf",
+ "status": "done",
+ "n_frames": 487,
+ "fetch_s": 0
+}

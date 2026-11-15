@@ -24,7 +24,7 @@ from scipy.ndimage import binary_dilation, gaussian_filter, label, maximum_filte
 from scipy.ndimage import shift as nd_shift
 from scipy.spatial import cKDTree
 
-from . import config, ucd
+from . import config, psfphot, ucd
 from .frames import PIX_ARCSEC, aperture_flux, clipped_mean, deep_stack, group_by_gap, mjd_to_year, propagate
 from .sequences import (WISE_F0_JY, WISE_R_AP, WISE_R_IN, WISE_R_OUT, get_manifest, load_npy, seq_dir,
                         wise_flux_factor)
@@ -54,6 +54,9 @@ STATIC_SEP_ARCSEC = 2 * 8.25  # target this far from its spot: its aperture ther
 VAR_MIN_SNR = 5.0  # median per-visit S/N a band needs before its scatter can mean variability
 SX_AP_ARCSEC = 2.0 * 6.15  # SPHEREx photometry aperture radius (sources.SX_R_AP native pixels)
 CONTAM_FRAC = 0.25  # neighbours adding > 25% of the target's light make a template fit describe them
+# neighbour light inside the 12.3" aperture (from the PSF fit, psfphot) above this fraction of the target's own
+# flux in any SPHEREx band: the spectrum uses the neighbour-subtracted PSF photometry instead of the aperture
+NB_FRAC = 0.1
 # a crowded-field sky over-subtraction drives many channels negative: for pure noise, P(z < -2.5) = 0.6%, so
 # >= 3 such channels among ~90 happens by chance ~2% of the time
 NEG_BIN_SIGMA, NEG_BINS_MAX = -2.5, 3
@@ -795,19 +798,27 @@ def _plain_props(color, var, spec):
                   "red (L/T dwarf-like)": f"Its infrared colour W1-W2 = {val} mag is red, as for early-T and the reddest L brown dwarfs{hedge}.",
                   "normal star colors": f"Its infrared colour W1-W2 = {val} mag is normal for a star, not a cold brown dwarf.",
                   }.get(color["verdict"], "Its infrared colour could not be pinned down."))
+    elif color.get("note"):
+        s.append(f"Its WISE W1-W2 colour is not given: {color['note']}.")
     else:
         s.append("Its WISE W1-W2 colour could not be measured (too faint or not covered).")
     if var["verdict"] == "periodic variable":
         alts = " or ".join(f"~{p:.0f}" for p in var["period_alternatives_days"])
         s.append(f"Its brightness rises and falls regularly, every ~{var['period_days']:.0f} days"
                  + (f" ({alts} days fit the twice-yearly WISE visits equally well)." if alts else "."))
+    elif var.get("note"):
+        s.append(f"Whether its brightness changes cannot be told: {var['note']}.")
     else:
         s.append({"irregular variable": "Its brightness changes, but without a regular pattern (irregular variable).",
                   "constant": "Its infrared brightness stays constant within the measurement errors.",
                   }.get(var["verdict"], "Too few WISE measurements to tell whether its brightness changes."))
     label = spec["best"]["label"] if spec.get("best") else None
     if spec["verdict"] == "match":
-        s.append(f"Its SPHEREx spectrum fits a {label} brown-dwarf template best" + _runner_up(spec["ranking"]))
+        rng = spec.get("type_range")
+        s.append(f"Its SPHEREx spectrum fits a {label} brown-dwarf template best" +
+                 (f"; allowing for this method's typical error, its type lies between {rng[0]} and {rng[1]}."
+                  if rng and rng[0] != rng[1] else
+                  _runner_up(spec["ranking"])))
     elif spec["verdict"] == WARMER:
         s.append(f"Its SPHEREx spectrum is closest to one of the warmest templates ({label}), but {spec['doubt']}: "
                  "probably an ordinary star, warmer than the ultracool dwarfs.")
@@ -824,14 +835,25 @@ def _plain_props(color, var, spec):
         s.append("Not enough clean SPHEREx measurements to read its spectrum.")
     else:
         s.append("Its SPHEREx spectrum does not look like an ultracool dwarf (no template fits well).")
+    if spec.get("photometry", "").startswith("neighbour") and spec["verdict"] != "insufficient data":
+        s.append("Nearby stars share SPHEREx's large pixels here; their light was fitted and removed first.")
+    if spec.get("blends_arcsec") and spec["verdict"] != "insufficient data":
+        n = len(spec["blends_arcsec"])
+        s.append(f"{n} other catalogued source{'s lie' if n > 1 else ' lies'} within 5 arcseconds of it; SPHEREx "
+                 "cannot separate that light, so the spectrum includes it.")
     return s
+
+
+# bump when the summary changes: cached summary.json files are recomputed on their next request (seconds per
+# field, no new image downloads; PIPELINE_VERSION is for the frames). 2: neighbour-aware SPHEREx spectrum.
+SUMMARY_VERSION = 2
 
 
 def _cached(m, name, compute, key=None):
     """Result cached in the sequence directory, recomputed when the frame set changes (key; default status +
-    frame count); results that hit an unavailable external service (`_transient`) are not cached, so the next
-    call retries."""
-    key = key or [m["status"], len(m["frames"])]
+    frame count + SUMMARY_VERSION); results that hit an unavailable external service (`_transient`) are not
+    cached, so the next call retries."""
+    key = key or [m["status"], len(m["frames"]), SUMMARY_VERSION]
     path = seq_dir(m["id"]) / name
     if path.exists():
         c = json.loads(path.read_text())
@@ -932,16 +954,43 @@ def colour_doubt(spec, color):
                      f"(typically {locus:.2f} mag or redder)")
 
 
-def typed_spectrum(m, sky, color):
+def neighbour_frames(m, cache=True):
+    """m's frames with SPHEREx fluxes from the neighbour-aware PSF fit (psfphot), the neighbour light in the
+    aperture as a fraction of the target's flux per band, and the separations of catalogued sources too close
+    to separate (psfphot.blends) -> (frames, {band: fraction}, [arcsec]), or (None, None, None) when CatWISE
+    is unavailable."""
+    cat = _catalogs(m)["catwise"]
+    if cat is None:
+        return None, None, None
+    ph = psfphot.photometry(m, cat, cache)
+    frames = [f if f["survey"] != "spherex" else {**f, "flux_ujy": p["flux_ujy"], "flux_err_ujy": p["flux_err_ujy"]}
+              for f in m["frames"] if f["survey"] != "spherex" or (p := ph.get(f["id"]))]
+    frac = {}
+    for band in sorted({f["band"] for f in m["frames"] if f["survey"] == "spherex"}):
+        p = [ph[f["id"]] for f in m["frames"] if f["band"] == band and ph.get(f["id"])]
+        if p:
+            target = max(np.median([x["flux_ujy"] for x in p]), np.median([x["flux_err_ujy"] for x in p]))
+            frac[band] = float(np.median([x["nb_ap_ujy"] for x in p]) / target)
+    yrs = [mjd_to_year(f["mjd"]) for f in m["frames"] if f["survey"] == "spherex"]
+    return frames, frac, psfphot.blends(cat, m["target"], float(np.median(yrs))) if yrs else []
+
+
+def typed_spectrum(m, sky, color, cache=True):
     """spectral.classify, then: no clear SPHEREx detection stays that (there is no spectrum to be contaminated);
     a detection is 'insufficient data' (ranking kept for experts) when the photometry is contaminated: other
     sources supply a large part of the light in the SPHEREx aperture (then any template 'match' describes the
     neighbour: W0855-0714 typed as an M dwarf), or >= NEG_BINS_MAX channels are significantly negative (crowded
-    field, sky over-subtracted: J1925+2901 at b = +7 deg). A remaining match must agree with the WISE colour."""
-    spec = classify(m["frames"])
-    c = spectrum_contamination(m, sky)
+    field, sky over-subtracted: J1925+2901 at b = +7 deg). A remaining match must agree with the WISE colour.
+    When catalogued neighbours put more than NB_FRAC of the target's light into the aperture, the spectrum uses
+    the neighbour-subtracted PSF photometry instead, and only the negative-channel check applies.
+    cache=False: probe positions (the per-frame PSF fits are not stored)."""
+    psf_frames, nb, blends = neighbour_frames(m, cache)
+    use_psf = bool(nb) and max(nb.values()) > NB_FRAC
+    spec = classify(psf_frames if use_psf else m["frames"])
+    c = None if use_psf else spectrum_contamination(m, sky)
     neg = sum(b["flambda"] / b["err"] < NEG_BIN_SIGMA for b in spec["binned"] if b["err"] > 0)
-    spec.update(contamination=c, negative_bins=neg)
+    spec.update(contamination=c, negative_bins=neg, neighbour_frac=nb, neighbours_checked=nb is not None,
+                blends_arcsec=blends, photometry="neighbour-subtracted PSF fit" if use_psf else "aperture")
     reason = None
     if spec.get("reason") == NO_DETECTION:
         pass
@@ -951,7 +1000,7 @@ def typed_spectrum(m, sky, color):
         reason = f"{neg} channels significantly negative: crowded-field background, photometry unreliable"
     spec["contaminated"] = reason is not None
     if reason:
-        spec.update(verdict="insufficient data", best=None, template_curve=None, reason=reason)
+        spec.update(verdict="insufficient data", best=None, template_curve=None, type_range=None, reason=reason)
     elif spec["verdict"] == "match":
         colour_doubt(spec, color)
     return spec
@@ -966,19 +1015,35 @@ def spectrum(sid: str):
     return _clean(typed_spectrum(m, sky, measure_color(wise_lightcurve(m["frames"], sky))))
 
 
+def not_sure(color, var, why):
+    """No significant source in the aperture (or only saturated catalog values): colour and variability say
+    'insufficient data' instead of describing whatever noise or neighbour light the aperture holds."""
+    if color is not None:
+        color.update(w1_w2=None, w1_w2_err=None, w1_w2_is_lower_limit=False, verdict="insufficient data", note=why)
+    var.update(verdict="insufficient data", period_days=None, fap=None, period_alias_warning=False,
+               period_alternatives_days=[], note=why)
+
+
 def _summary(m):
     motion = measure_motion(m)
     sky = static_sky_flux(m)
     lc, source, note = photometry_lc(m, sky)
-    floor = SATURATED_FLOOR if source == "catalog" and _saturated(m) else PHOT_FLOOR
+    saturated = source == "catalog" and _saturated(m)
+    floor = SATURATED_FLOOR if saturated else PHOT_FLOOR
     w1_undetected = motion["recovered"] and "W1" in motion["undetected_bands"] and source == "pipeline"
     color = {**measure_color(lc, w1_undetected), "source": source, "source_note": note}
     var = {**classify_variability(lc, floor), "source": source, "source_note": note}
+    if source == "pipeline" and {"W1", "W2"} <= set(motion["undetected_bands"]) and not (motion.get("track_snr") or 0) >= 5:
+        not_sure(color, var, "no significant source at the target's position in W1 or W2")
+    elif saturated and var["verdict"] != "periodic variable":
+        # saturated profile fits drift by 0.1-0.2 mag and more (Barnard's Star, a constant star, doubles in W1):
+        # neither 'constant' nor 'irregular' can be told; a period at FAP < 1% (R Dra) still can
+        not_sure(None, var, "the star is saturated in WISE: catalog brightness values are not reliable enough")
     spec = typed_spectrum(m, sky, color)
     asteroids = find_asteroids(m)
     return {"motion": motion, "color": color, "variability": var, "spectrum": spec,
             "plain": _plain(motion, color, var, spec), "asteroids": asteroids or [],
-            "_transient": source is None or asteroids is None}
+            "_transient": source is None or asteroids is None or not spec["neighbours_checked"]}
 
 
 @router.get("/api/sequences/{sid}/summary")

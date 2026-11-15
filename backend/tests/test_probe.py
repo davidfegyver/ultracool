@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 from fastapi.testclient import TestClient
 
-from app import sequences
+from app import analysis, sequences
 from app.frames import grid_wcs_json, make_grid
 from app.probe import flag_outliers, snap
 
@@ -37,6 +37,7 @@ def client(tmp_path, monkeypatch):
     """A synthetic finished sequence: a star at the grid centre in 6 W1 + 6 W2 visits and 24 SPHEREx frames,
     one SPHEREx frame entirely off the detector (NaN)."""
     monkeypatch.setattr(sequences, "CACHE_DIR", tmp_path)
+    monkeypatch.setattr(analysis, "_catalogs", lambda m: {"catwise": [], "simbad": []})  # no network in tests
     rng = np.random.default_rng(5)
     wcs, shape = make_grid(150.0, 0.0, 40 * 2.75 / 3600)
     cx, cy = wcs.wcs.crpix[0] - 1, wcs.wcs.crpix[1] - 1
@@ -82,3 +83,12 @@ def test_preview_shape_without_nan(client):
     assert len(p["frames"]) == 36 and p["frames"][-1]["flux_ujy"] is None
     assert {"verdict", "w1_w2"} <= p["color"].keys() and "verdict" in p["variability"] and "verdict" in p["spectrum"]
     json.dumps(p, allow_nan=False)
+
+
+def test_probe_on_empty_sky_is_not_sure(client):
+    """No clear source at the point: no colour class, no variability verdict, no period."""
+    p = client.get(f"/api/sequences/{SID}/probe", params={"ra": 150.0 + 20 / 3600, "dec": 0.0}).json()
+    assert not p["position"]["snapped"] and p["pm"]["source"] == "none"
+    assert p["color"]["verdict"] == "insufficient data" and p["color"]["w1_w2"] is None
+    assert p["variability"]["verdict"] == "insufficient data" and p["variability"]["period_days"] is None
+    assert any("no clear source" in s for s in p["plain"][2:])

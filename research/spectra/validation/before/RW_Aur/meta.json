@@ -1,0 +1,26 @@
+{
+ "object": {
+  "q": "RW Aur",
+  "name": "V* RW Aur",
+  "ra": 76.95652603458333,
+  "dec": 30.401438173888888,
+  "pm": [
+   7.23,
+   -20.33
+  ],
+  "ep": 2000.0,
+  "otype": "TT*",
+  "sptype": "K1/5e+K5e"
+ },
+ "request": {
+  "ra": 76.95652603458333,
+  "dec": 30.401438173888888,
+  "pmra_masyr": 7.23,
+  "pmdec_masyr": -20.33,
+  "epoch_yr": 2000.0
+ },
+ "sid": "403f343d901827ce",
+ "status": "done",
+ "n_frames": 379,
+ "fetch_s": 150
+}

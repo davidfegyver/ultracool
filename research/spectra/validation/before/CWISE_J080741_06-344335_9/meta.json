@@ -1,0 +1,26 @@
+{
+ "object": {
+  "q": "CWISE J080741.06-344335.9",
+  "name": "IRAS 08057-3434 (CatWISE pos., PM set 0: static per research/discovery)",
+  "ra": 121.9211,
+  "dec": -34.72664,
+  "pm": [
+   0.0,
+   0.0
+  ],
+  "ep": 2015.4,
+  "otype": "YSO (discovery REPORT)",
+  "sptype": null
+ },
+ "request": {
+  "ra": 121.9211,
+  "dec": -34.72664,
+  "pmra_masyr": 0.0,
+  "pmdec_masyr": 0.0,
+  "epoch_yr": 2015.4
+ },
+ "sid": "f370d89465a41cd3",
+ "status": "done",
+ "n_frames": 459,
+ "fetch_s": 165
+}

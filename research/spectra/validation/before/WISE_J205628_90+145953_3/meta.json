@@ -1,0 +1,26 @@
+{
+ "object": {
+  "q": "WISE J205628.90+145953.3",
+  "name": "WISE J205628.90+145953.3",
+  "ra": 314.1207973,
+  "dec": 14.9983756,
+  "pm": [
+   1093.25,
+   700.0
+  ],
+  "ep": 2015.4,
+  "otype": null,
+  "sptype": null
+ },
+ "request": {
+  "ra": 314.1207973,
+  "dec": 14.9983756,
+  "pmra_masyr": 1093.25,
+  "pmdec_masyr": 700.0,
+  "epoch_yr": 2015.4
+ },
+ "sid": "7afaa2ed4a19bc8f",
+ "status": "done",
+ "n_frames": 349,
+ "fetch_s": 135
+}

@@ -1,0 +1,27 @@
+{
+ "object": {
+  "q": "ULAS J000734.90+011247.1",
+  "name": "ULAS J000734.90+011247.1",
+  "ra": 1.8954309999999999,
+  "dec": 1.21309,
+  "pm": [
+   0.0,
+   0.0
+  ],
+  "ep": 2000.0,
+  "otype": "BD*",
+  "sptype": "T7",
+  "copied_sid": "4e76ee008fe27169"
+ },
+ "request": {
+  "ra": 1.8954309999999999,
+  "dec": 1.21309,
+  "pmra_masyr": 0.0,
+  "pmdec_masyr": 0.0,
+  "epoch_yr": 2000.0
+ },
+ "sid": "4e76ee008fe27169",
+ "status": "done",
+ "n_frames": 439,
+ "fetch_s": 0
+}

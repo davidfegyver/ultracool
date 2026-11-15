@@ -1,7 +1,9 @@
 import numpy as np
+import pytest
 
+from app import analysis, psfphot
 from app.analysis import colour_doubt, typed_spectrum
-from app.spectral import BIN_CENTRE, DOUBTFUL, NO_DETECTION, TEMPLATES, WARMER, classify
+from app.spectral import BIN_CENTRE, DOUBTFUL, NO_DETECTION, TEMPLATES, WARMER, _bin, classify, spt_num
 
 
 def _points(lams, seed=1):
@@ -93,8 +95,9 @@ def test_blue_w1_w2_demotes_matches():
         assert s["verdict"] == "match", label
 
 
-def test_no_detection_wins_over_negative_channels():
+def test_no_detection_wins_over_negative_channels(monkeypatch):
     """Empty sky with an over-subtracted background: 'no clear detection', not 'crowded field'."""
+    monkeypatch.setattr(analysis, "_catalogs", lambda m: {"catwise": None, "simbad": None})  # CatWISE unavailable
     lams = BIN_CENTRE[(BIN_CENTRE >= 1.01) & (BIN_CENTRE <= 5.0)]
     pts = [{"survey": "spherex", "flagged": False, "wavelength_um": float(lam), "mjd": 60800.0,
             "flux_ujy": -3.0 * 10 if i % 10 == 0 else 0.0, "flux_err_ujy": 10.0} for i, lam in enumerate(lams)]
@@ -102,3 +105,41 @@ def test_no_detection_wins_over_negative_channels():
     s = typed_spectrum(m, {}, {"w1_w2": None})
     assert s["negative_bins"] >= 3
     assert s["reason"] == NO_DETECTION and not s["contaminated"]
+    assert s["photometry"] == "aperture" and not s["neighbours_checked"]
+
+
+def test_outlier_frame_is_dropped_and_scatter_inflates_error():
+    pts = [{"wavelength_um": 4.0, "flux_ujy": 100.0 + d, "flux_err_ujy": 1.0} for d in (-1, 0, 1, 0.5, -0.5)]
+    _, f, e = _bin(pts + [{"wavelength_um": 4.0, "flux_ujy": 5000.0, "flux_err_ujy": 1.0}])  # cosmic ray
+    assert abs(f[0] * 16 - 100.0) < 0.5 and e[0] * 16 == pytest.approx(1 / np.sqrt(5))
+    scattered = [{"wavelength_um": 4.0, "flux_ujy": 100.0 + 10 * d, "flux_err_ujy": 1.0} for d in (-1, 0, 1, 0.5, -0.5)]
+    _, _, e = _bin(scattered)
+    assert e[0] * 16 > 3 / np.sqrt(5)  # 10x the stated errors: error scaled up by sqrt(chi2_red)
+
+
+def test_type_range_brackets_the_true_type_and_widens_with_noise():
+    lams = BIN_CENTRE[(BIN_CENTRE >= 1.01) & (BIN_CENTRE <= 5.0)]
+    tight = classify(_points(lams))
+    lo, hi = (spt_num(x) for x in tight["type_range"])
+    assert lo <= spt_num("T5") <= hi
+    noisy = _points(lams)
+    for p in noisy:
+        p["flux_err_ujy"] *= 6
+    lo2, hi2 = (spt_num(x) for x in classify(noisy)["type_range"])
+    assert lo2 <= spt_num("T5") <= hi2 and hi2 - lo2 >= hi - lo
+
+
+def test_psf_fit_removes_a_bright_neighbour():
+    """Faint target with a 10x brighter star 11" away (inside the 12.3" SPHEREx aperture): the joint fit
+    recovers the target; a plain aperture sum would be dominated by the neighbour."""
+    rng = np.random.default_rng(2)
+    yy, xx = np.indices((41, 41))
+
+    def star(x, y, flux, s=1.6):
+        return flux / (2 * np.pi * s * s) * np.exp(-((xx - x) ** 2 + (yy - y) ** 2) / (2 * s * s))
+
+    img = 5.0 + rng.standard_normal((41, 41)) + star(20.3, 19.6, 300) + star(24.3, 19.6, 3000)
+    flux, err, nb_ap, s = psfphot.fit_frame(img, [(20.3, 19.6), (24.3, 19.6)], psfphot.frame_noise(img))
+    assert abs(flux - 300) < 3 * err and err < 30
+    assert nb_ap > 1000 and s == pytest.approx(1.6, abs=0.15)
+    assert psfphot.fit_frame(np.full((41, 41), np.nan), [(20, 20)], 1.0) is None

@@ -16,8 +16,8 @@ from fastapi import APIRouter, HTTPException, Query
 
 from . import sequences
 from .analysis import (FWHM_PX, PHOT_FLOOR, REF_YR, _clean, _grid_wcs, _offsets_arcsec, _plain_props, _shifted_stack,
-                       centroid, classify_variability, measure_color, photometry_lc, static_sky_flux, typed_spectrum,
-                       wise_lightcurve)
+                       centroid, classify_variability, measure_color, not_sure, photometry_lc, static_sky_flux,
+                       typed_spectrum, wise_lightcurve)
 from .frames import PIX_ARCSEC, aperture_flux, make_grid, mjd_to_year, propagate
 from .sequences import (CHUNK_READS, WISE_R_AP, WISE_R_IN, WISE_R_OUT, WORKER_PROCESSES, get_manifest, load_npy,
                         seq_dir, wise_flux_factor)
@@ -248,7 +248,9 @@ def analyse(m, pos, pm, frames, mode):
     # shortcut: no saturation flags at the probe, so the catalog fallback keeps the 5% floor, not the 15% one
     color = {**measure_color(lc), "source": source, "source_note": note}
     var = {**classify_variability(lc, PHOT_FLOOR), "source": source, "source_note": note}
-    spec = typed_spectrum(seq, sky, color)
+    if pm["source"] != "mover" and not pos["snapped"]:
+        not_sure(color, var, "there is no clear source at this point")
+    spec = typed_spectrum(seq, sky, color, cache=False)
     first = ("Quick preview from resampled images; errors are approximate." if mode == "preview" else
              "Full measurement on the original SPHEREx pixels, the same method as for the target.")
     s = [first]

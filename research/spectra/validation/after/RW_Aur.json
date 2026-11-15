@@ -1,0 +1,45 @@
+{
+ "sid": "403f343d901827ce",
+ "spectrum": {
+  "verdict": "insufficient data",
+  "best": null,
+  "ranking": [],
+  "binned": [
+   {
+    "wavelength_um": 1.072,
+    "flambda": 135551.08722000217,
+    "err": 6827.109435268233
+   },
+   {
+    "wavelength_um": 1.094,
+    "flambda": 136184.69465901586,
+    "err": 7001.773072720767
+   }
+  ],
+  "template_curve": null,
+  "detection_snr": null,
+  "contamination": null,
+  "negative_bins": 0,
+  "neighbour_frac": {
+   "D1": 6.128180371254079e-11
+  },
+  "neighbours_checked": true,
+  "blends_arcsec": [],
+  "photometry": "aperture",
+  "contaminated": false
+ },
+ "color": {
+  "w1_w2": 1.0199999999999996,
+  "w1_w2_err": 0.1482570828604344,
+  "w1_w2_is_lower_limit": false,
+  "verdict": "red (L/T dwarf-like)",
+  "source": "catalog",
+  "source_note": "NEOWISE/AllWISE single-exposure catalog profile fits, per-visit medians; target saturated in the images"
+ },
+ "plain": [
+  "No motion detected over 17 years (less than about 0.09 arcseconds per year): a distant star, a galaxy, or too slow to see.",
+  "Its infrared colour W1-W2 = 1.02 mag is red, as for early-T and the reddest L brown dwarfs (dusty or very cool stars can look like this too).",
+  "Whether its brightness changes cannot be told: the star is saturated in WISE: catalog brightness values are not reliable enough.",
+  "Not enough clean SPHEREx measurements to read its spectrum."
+ ]
+}

@@ -2,6 +2,7 @@
 The /spectrum route lives in analysis.py: it also checks the photometry for contamination by other sources."""
 import csv
 import math
+import re
 from pathlib import Path
 
 import numpy as np
@@ -30,6 +31,15 @@ MAX_CHI2_RED = 10
 # forced photometry adds EPSF-zone aperture corrections and pixel-phase effects of a few % more. 3% left
 # eps Ind B (SPIFF T3 at chi2_r 1.6) at chi2_r 10.5 with every residual a smooth few-% wiggle; 5% gives 4.5.
 SYS_FRAC = 0.05
+OUTLIER_K = 5.0  # per-channel frame rejection, as probe.flag_outliers
+# type range: templates within Delta chi2 = 4 (2 sigma, one parameter) of the best, after rescaling, widened by
+# TYPE_SYS subtypes each way: on 20 typed validation dwarfs the statistical range alone held the literature
+# type for 7 only, while |ours - literature| <= 1 subtype for 13 (research/spectra/REPORT.md)
+TYPE_DCHI2 = 4.0
+TYPE_SYS = 1.0
+SPT_RE = re.compile(r"([MLTY])(\d+(?:\.\d+)?)")
+SPT_BASE = {"M": 0, "L": 10, "T": 20, "Y": 30}
+SPT_MIN, SPT_MAX = 8.0, 31.0  # M8 and Y1, the ends of the template grid
 # A template "match" needs the target itself: inverse-variance weighted mean F_lambda over the 3.5-5.0 um bins
 # (where every ultracool dwarf is brightest relative to its 1-3 um flux) at >= 5 sigma. Noise or a static
 # diffraction spike otherwise fits *some* template at chi2_r ~1.5 (J2011-0624 typed "sdT4" at S/N 3.5).
@@ -63,20 +73,30 @@ def detection_snr(lam, flx, err):
 
 
 def _bin(points):
-    """Inverse-variance weighted F_lambda per SPHEREx channel -> (centres, flambda, err)."""
-    sw = np.zeros(len(BIN_CENTRE))
-    swf = np.zeros(len(BIN_CENTRE))
-    for p in points:
-        lam = p["wavelength_um"]
-        inside = np.abs(BIN_CENTRE - lam) <= BIN_WIDTH / 2
-        if not inside.any():
-            continue
-        i = int(np.argmin(np.where(inside, np.abs(BIN_CENTRE - lam), np.inf)))
-        f, e = p["flux_ujy"] / lam**2, p["flux_err_ujy"] / lam**2
-        sw[i] += 1 / e**2
-        swf[i] += f / e**2
-    ok = sw > 0
-    return BIN_CENTRE[ok], swf[ok] / sw[ok], 1 / np.sqrt(sw[ok])
+    """Per SPHEREx channel: frames more than OUTLIER_K x (own error + the channel's robust spread) from the
+    channel median are dropped (cosmic rays, asteroids, a neighbour's spike, a failed fit), the rest averaged
+    with inverse-variance weights; with >= 3 frames the error is scaled up by sqrt(chi2_red) when the frames
+    scatter more than their errors say -> (centres, flambda, err)."""
+    lam = np.array([p["wavelength_um"] for p in points], float)
+    d = np.abs(BIN_CENTRE[None, :] - lam[:, None])
+    inside = d <= BIN_WIDTH / 2
+    ch = np.where(inside.any(axis=1), np.argmin(np.where(inside, d, np.inf), axis=1), -1)
+    f = np.array([p["flux_ujy"] for p in points], float) / lam**2
+    e = np.array([p["flux_err_ujy"] for p in points], float) / lam**2
+    out = []
+    for c in np.unique(ch[ch >= 0]):
+        fc, ec = f[ch == c], e[ch == c]
+        if len(fc) >= 3:
+            med = np.median(fc)
+            keep = np.abs(fc - med) <= OUTLIER_K * np.hypot(ec, 1.4826 * np.median(np.abs(fc - med)))
+            fc, ec = fc[keep], ec[keep]
+        w = ec**-2
+        mu, err = float(np.sum(w * fc) / np.sum(w)), float(1 / math.sqrt(np.sum(w)))
+        if len(fc) >= 3:
+            err *= math.sqrt(max(1.0, float(np.sum(((fc - mu) / ec) ** 2)) / (len(fc) - 1)))
+        out.append((BIN_CENTRE[c], mu, err))
+    a = np.array(out, float).reshape(-1, 3)
+    return a[:, 0], a[:, 1], a[:, 2]
 
 
 def _band_mean(lam, f, e, band):
@@ -111,6 +131,28 @@ def demote(spec, reason):
     """A template 'match' the object itself argues against: on one of the earliest templates it is a warmer,
     ordinary star; otherwise the match is doubtful. Best match and ranking are kept for experts."""
     spec.update(verdict=WARMER if spec["best"]["label"] in EARLY_LABELS else DOUBTFUL, doubt=reason)
+
+
+def spt_num(label):
+    """Template label -> M0 = 0 ... L0 = 10, T0 = 20, Y0 = 30 (gravity/metallicity tags ignored), or None."""
+    m = SPT_RE.search(label)
+    return SPT_BASE[m.group(1)] + float(m.group(2)) if m else None
+
+
+def spt_label(v):
+    k = "MLTY"[min(3, int(v // 10))]
+    return f"{k}{v - SPT_BASE[k]:g}"
+
+
+def type_range(fits):
+    """[earliest, latest] spectral type among the templates within TYPE_DCHI2 of the best fit, widened by TYPE_SYS
+    and clipped to M8-Y1; the chi2
+    curve rescaled by the best chi2_red when that exceeds 1 (the errors are then too small for the fit)."""
+    c0, _, _, n0 = fits[0]
+    scale = max(1.0, c0 / max(1, n0 - 1))
+    v = [spt_num(label) for c, label, _, _ in fits if (c - c0) / scale <= TYPE_DCHI2]
+    v = [x for x in v if x is not None]
+    return [spt_label(max(SPT_MIN, min(v) - TYPE_SYS)), spt_label(min(SPT_MAX, max(v) + TYPE_SYS))] if v else None
 
 
 def classify(frames):
@@ -160,7 +202,7 @@ def classify(frames):
                 "template_curve": None, "detection_snr": det, "reason": NO_DETECTION}
     verdict = "match" if best["chi2_red"] <= MAX_CHI2_RED else "not consistent with ultracool dwarf templates"
     out = {"verdict": verdict, "best": best, "ranking": ranking, "binned": binned, "template_curve": curve,
-           "detection_snr": det, "water_depth": None}
+           "detection_snr": det, "water_depth": None, "type_range": type_range(fits)}
     wd = water_depth(lam, flx, err)
     if wd:
         out["water_depth"] = {"value": wd[0], "err": wd[1], "template": TEMPLATE_DEPTH[label]}

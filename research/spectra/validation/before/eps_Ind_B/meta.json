@@ -1,0 +1,27 @@
+{
+ "object": {
+  "q": "eps Ind B",
+  "name": "* eps Ind B",
+  "ra": 331.04414658852124,
+  "dec": -56.782844195116105,
+  "pm": [
+   3981.977,
+   -2466.832
+  ],
+  "ep": 2000.0,
+  "otype": "BD*",
+  "sptype": "T1V+T6V",
+  "copied_sid": "4b719c59be91aa95"
+ },
+ "request": {
+  "ra": 331.04414658852124,
+  "dec": -56.782844195116105,
+  "pmra_masyr": 3981.977,
+  "pmdec_masyr": -2466.832,
+  "epoch_yr": 2000.0
+ },
+ "sid": "4b719c59be91aa95",
+ "status": "done",
+ "n_frames": 505,
+ "fetch_s": 0
+}

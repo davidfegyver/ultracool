@@ -1,0 +1,640 @@
+{
+ "motion": {
+  "status": "ok",
+  "pmra_masyr": -1402.5124059533632,
+  "pmdec_masyr": -2204.9268174818717,
+  "pmra_err_masyr": 146.26533890671845,
+  "pmdec_err_masyr": 146.26533890671845,
+  "pm_total_arcsec_yr": 2.6131864302616887,
+  "significance_sigma": 17.866067585077438,
+  "baseline_yr": 14.221822806297041,
+  "n_epochs": 4,
+  "catalog": {
+   "pmra_masyr": -1324.4,
+   "pmdec_masyr": -2435.9
+  },
+  "consistent_with_catalog": true,
+  "verdict": "moving",
+  "recovered": true,
+  "track_snr": 12.86704869147192,
+  "undetected_bands": [
+   "W1"
+  ],
+  "points": [
+   {
+    "mjd": 55240.5046415,
+    "band": "W2",
+    "ra": 233.6252126202518,
+    "dec": -10.717460994646787,
+    "err_arcsec": 0.9613762166213337,
+    "snr": 4.087125214400757
+   },
+   {
+    "mjd": 56974.0974965,
+    "band": "W2",
+    "ra": 233.62248668864106,
+    "dec": -10.720793319013602,
+    "err_arcsec": 0.667364079807681,
+    "snr": 6.036367589173291
+   },
+   {
+    "mjd": 59886.512913625,
+    "band": "W2",
+    "ra": 233.619843779827,
+    "dec": -10.725724683763932,
+    "err_arcsec": 0.43134954052640756,
+    "snr": 10.05622091426875
+   },
+   {
+    "mjd": 60435.0254215,
+    "band": "W2",
+    "ra": 233.6189064011953,
+    "dec": -10.725888439664885,
+    "err_arcsec": 0.7577592285220787,
+    "snr": 5.2583865123888165
+   }
+  ],
+  "rejected_points": [
+   {
+    "mjd": 59886.512913625,
+    "band": "W1",
+    "ra": 233.62014979108358,
+    "dec": -10.725780433306674,
+    "err_arcsec": 0.46050621813812864,
+    "snr": 8.83092952821535,
+    "reason": "blended: other sources at this spot carry 40% of its flux"
+   },
+   {
+    "mjd": 60435.04152975,
+    "band": "W1",
+    "ra": 233.61962052604747,
+    "dec": -10.726159476505213,
+    "err_arcsec": 0.6432503580356062,
+    "snr": 5.991714434914115,
+    "reason": "blended: other sources at this spot carry 24% of its flux"
+   },
+   {
+    "mjd": 55240.5046415,
+    "band": "W1",
+    "ra": 233.62467589363303,
+    "dec": -10.716261930276417,
+    "err_arcsec": 1.1864875211952124,
+    "snr": 3.132204728437626,
+    "reason": "W1: target detected in only 1 of 7 epochs"
+   },
+   {
+    "mjd": 59156.043757625,
+    "band": "W2",
+    "ra": 233.61970512988836,
+    "dec": -10.723680168510814,
+    "err_arcsec": 0.4178317284197754,
+    "snr": 10.47631113139149,
+    "reason": "off the track by 6 sigma"
+   }
+  ],
+  "chi2_red": 5.154478031089724,
+  "catalog_offset_sigma": 1.3621747426975839
+ },
+ "color": {
+  "w1_w2": 1.6288084324126761,
+  "w1_w2_err": null,
+  "w1_w2_is_lower_limit": true,
+  "verdict": "very red (T dwarf-like)",
+  "source": "pipeline",
+  "source_note": "WISE visit co-adds, 8.25\" aperture photometry; light of static sources the target passes over subtracted"
+ },
+ "variability": {
+  "bands": {
+   "W1": {
+    "n": 21,
+    "chi2_red": 1.941768422102052,
+    "chi2_red_without_worst": 1.2050663996497082,
+    "amplitude_mag": 2.9776697960800993,
+    "median_snr": 1.631430620488264
+   },
+   "W2": {
+    "n": 21,
+    "chi2_red": 3.0091090451462557,
+    "chi2_red_without_worst": 2.666847320739943,
+    "amplitude_mag": 2.644847631575491,
+    "median_snr": 3.884887743282454
+   }
+  },
+  "verdict": "insufficient data",
+  "period_days": null,
+  "fap": null,
+  "period_alias_warning": false,
+  "period_alternatives_days": [],
+  "source": "pipeline",
+  "source_note": "WISE visit co-adds, 8.25\" aperture photometry; light of static sources the target passes over subtracted"
+ },
+ "spectrum": {
+  "verdict": "insufficient data",
+  "best": null,
+  "ranking": [],
+  "binned": [
+   {
+    "wavelength_um": 1.007,
+    "flambda": -41.0583751112066,
+    "err": 51.01993781071745
+   },
+   {
+    "wavelength_um": 1.028,
+    "flambda": 14.726629808030665,
+    "err": 39.51833257639569
+   },
+   {
+    "wavelength_um": 1.05,
+    "flambda": -44.115141994043746,
+    "err": 77.13854958881669
+   },
+   {
+    "wavelength_um": 1.072,
+    "flambda": 51.68022162499391,
+    "err": 79.29785806944675
+   },
+   {
+    "wavelength_um": 1.094,
+    "flambda": 92.48919587846285,
+    "err": 103.05749065044397
+   },
+   {
+    "wavelength_um": 1.099,
+    "flambda": -92.69002494077289,
+    "err": 43.545255886557804
+   },
+   {
+    "wavelength_um": 1.131,
+    "flambda": 25.34203403149883,
+    "err": 29.067810869583784
+   },
+   {
+    "wavelength_um": 1.196,
+    "flambda": -15.113760085523126,
+    "err": 29.272453505849587
+   },
+   {
+    "wavelength_um": 1.261,
+    "flambda": -15.164834497359156,
+    "err": 31.736437735040916
+   },
+   {
+    "wavelength_um": 1.294,
+    "flambda": 16.152098224231267,
+    "err": 23.84298323896343
+   },
+   {
+    "wavelength_um": 1.326,
+    "flambda": -31.85093220874011,
+    "err": 23.087363241553216
+   },
+   {
+    "wavelength_um": 1.359,
+    "flambda": 11.798230837297808,
+    "err": 37.39755635330648
+   },
+   {
+    "wavelength_um": 1.391,
+    "flambda": 0.8128164272076289,
+    "err": 20.28367191644632
+   },
+   {
+    "wavelength_um": 1.424,
+    "flambda": -48.732223534668044,
+    "err": 38.24346612307132
+   },
+   {
+    "wavelength_um": 1.456,
+    "flambda": -13.804010480641299,
+    "err": 36.625479640225954
+   },
+   {
+    "wavelength_um": 1.489,
+    "flambda": -22.18169410379186,
+    "err": 32.874069129853595
+   },
+   {
+    "wavelength_um": 1.521,
+    "flambda": 3.0644642681937464,
+    "err": 16.398108267247554
+   },
+   {
+    "wavelength_um": 1.554,
+    "flambda": -15.13796574735193,
+    "err": 18.639037151386542
+   },
+   {
+    "wavelength_um": 1.586,
+    "flambda": 46.21782414255826,
+    "err": 26.53884498819247
+   },
+   {
+    "wavelength_um": 1.619,
+    "flambda": -8.083727293457477,
+    "err": 13.736076462204583
+   },
+   {
+    "wavelength_um": 1.636,
+    "flambda": -0.8283787327289623,
+    "err": 14.194206213028014
+   },
+   {
+    "wavelength_um": 1.682,
+    "flambda": 10.35930056881984,
+    "err": 16.514999789065612
+   },
+   {
+    "wavelength_um": 1.728,
+    "flambda": -46.345088167100634,
+    "err": 17.017702862519233
+   },
+   {
+    "wavelength_um": 1.775,
+    "flambda": 10.293014100336192,
+    "err": 12.283840413108152
+   },
+   {
+    "wavelength_um": 1.821,
+    "flambda": 17.809743738576906,
+    "err": 14.38660629466027
+   },
+   {
+    "wavelength_um": 1.867,
+    "flambda": 4.20263804713268,
+    "err": 13.208335596099744
+   },
+   {
+    "wavelength_um": 1.913,
+    "flambda": -3.0891394321090333,
+    "err": 9.792375793024163
+   },
+   {
+    "wavelength_um": 1.959,
+    "flambda": 13.540061269025347,
+    "err": 8.99318777258313
+   },
+   {
+    "wavelength_um": 2.005,
+    "flambda": -0.21217209741288967,
+    "err": 17.480604985570228
+   },
+   {
+    "wavelength_um": 2.052,
+    "flambda": 2.158930448084519,
+    "err": 8.277928640871009
+   },
+   {
+    "wavelength_um": 2.098,
+    "flambda": 13.241607895453626,
+    "err": 8.335755882450826
+   },
+   {
+    "wavelength_um": 2.144,
+    "flambda": 14.664265481637878,
+    "err": 7.79219822737086
+   },
+   {
+    "wavelength_um": 2.19,
+    "flambda": 11.789949023015389,
+    "err": 8.581706995120287
+   },
+   {
+    "wavelength_um": 2.236,
+    "flambda": -7.451823449529879,
+    "err": 8.224756837900816
+   },
+   {
+    "wavelength_um": 2.329,
+    "flambda": 16.11045523633313,
+    "err": 7.596131608965003
+   },
+   {
+    "wavelength_um": 2.375,
+    "flambda": -1.5232946386444035,
+    "err": 7.177203056816855
+   },
+   {
+    "wavelength_um": 2.423,
+    "flambda": -5.8615168684389625,
+    "err": 7.3956715814187834
+   },
+   {
+    "wavelength_um": 2.505,
+    "flambda": 3.598944665143378,
+    "err": 5.4951432804296605
+   },
+   {
+    "wavelength_um": 2.588,
+    "flambda": 5.580746299945831,
+    "err": 4.161362338320492
+   },
+   {
+    "wavelength_um": 2.67,
+    "flambda": 2.403217047268115,
+    "err": 3.811799439691842
+   },
+   {
+    "wavelength_um": 2.752,
+    "flambda": 13.823945638852448,
+    "err": 3.8134683745288775
+   },
+   {
+    "wavelength_um": 2.834,
+    "flambda": 7.698038093179407,
+    "err": 3.5053167939207777
+   },
+   {
+    "wavelength_um": 2.917,
+    "flambda": 7.933931064293403,
+    "err": 3.4782494652798612
+   },
+   {
+    "wavelength_um": 2.999,
+    "flambda": 1.459276350612851,
+    "err": 2.897383156069706
+   },
+   {
+    "wavelength_um": 3.081,
+    "flambda": 0.0342070478977629,
+    "err": 2.4347580731175795
+   },
+   {
+    "wavelength_um": 3.164,
+    "flambda": 9.295784108115779,
+    "err": 3.166787540075953
+   },
+   {
+    "wavelength_um": 3.246,
+    "flambda": 0.15895565258614522,
+    "err": 5.075278645065984
+   },
+   {
+    "wavelength_um": 3.328,
+    "flambda": 4.188968224868149,
+    "err": 3.1513472257910267
+   },
+   {
+    "wavelength_um": 3.411,
+    "flambda": -1.5648234447352127,
+    "err": 2.8142527499758634
+   },
+   {
+    "wavelength_um": 3.493,
+    "flambda": 4.8959633685915165,
+    "err": 2.905926023418448
+   },
+   {
+    "wavelength_um": 3.575,
+    "flambda": 2.546420609026081,
+    "err": 3.895623201666365
+   },
+   {
+    "wavelength_um": 3.657,
+    "flambda": 4.234501524183082,
+    "err": 3.1262217236466956
+   },
+   {
+    "wavelength_um": 3.74,
+    "flambda": 7.165902150958032,
+    "err": 3.3276796447276444
+   },
+   {
+    "wavelength_um": 3.809,
+    "flambda": 4.633190259522338,
+    "err": 4.494489360929037
+   },
+   {
+    "wavelength_um": 3.845,
+    "flambda": -7.2184915277445905,
+    "err": 7.075596759601831
+   },
+   {
+    "wavelength_um": 3.917,
+    "flambda": 23.292041692560723,
+    "err": 7.0505227568011035
+   },
+   {
+    "wavelength_um": 3.953,
+    "flambda": 0.9803464609894724,
+    "err": 4.953902370809048
+   },
+   {
+    "wavelength_um": 3.989,
+    "flambda": 6.082172950173136,
+    "err": 5.059310043428256
+   },
+   {
+    "wavelength_um": 4.025,
+    "flambda": 5.5450486368326395,
+    "err": 6.763017124147951
+   },
+   {
+    "wavelength_um": 4.061,
+    "flambda": 13.66729216913183,
+    "err": 3.7009668592268756
+   },
+   {
+    "wavelength_um": 4.097,
+    "flambda": 2.9280806597108224,
+    "err": 4.590123049619695
+   },
+   {
+    "wavelength_um": 4.132,
+    "flambda": 10.367742571737034,
+    "err": 4.7051083333981305
+   },
+   {
+    "wavelength_um": 4.168,
+    "flambda": 9.448292639715856,
+    "err": 5.269314160329382
+   },
+   {
+    "wavelength_um": 4.204,
+    "flambda": 14.778955592160177,
+    "err": 5.066247328466632
+   },
+   {
+    "wavelength_um": 4.24,
+    "flambda": 5.897225647088132,
+    "err": 5.1598683266276355
+   },
+   {
+    "wavelength_um": 4.276,
+    "flambda": 22.555121122875363,
+    "err": 7.705060261040541
+   },
+   {
+    "wavelength_um": 4.312,
+    "flambda": 8.625077973723796,
+    "err": 4.011886691229991
+   },
+   {
+    "wavelength_um": 4.348,
+    "flambda": 6.609151945899895,
+    "err": 5.196549042542232
+   },
+   {
+    "wavelength_um": 4.384,
+    "flambda": 16.33407288931712,
+    "err": 8.119215179442175
+   },
+   {
+    "wavelength_um": 4.412,
+    "flambda": -2.0525629438259227,
+    "err": 4.387188160258996
+   },
+   {
+    "wavelength_um": 4.447,
+    "flambda": 8.290032644243272,
+    "err": 3.9512619050858913
+   },
+   {
+    "wavelength_um": 4.481,
+    "flambda": 11.044466040612583,
+    "err": 6.187077012073082
+   },
+   {
+    "wavelength_um": 4.516,
+    "flambda": 4.983164162963363,
+    "err": 4.550779547578966
+   },
+   {
+    "wavelength_um": 4.551,
+    "flambda": 8.579185501413358,
+    "err": 5.65193023970155
+   },
+   {
+    "wavelength_um": 4.586,
+    "flambda": -3.778352240805922,
+    "err": 5.560341943618855
+   },
+   {
+    "wavelength_um": 4.62,
+    "flambda": -3.733163456150745,
+    "err": 4.733258202275172
+   },
+   {
+    "wavelength_um": 4.655,
+    "flambda": -5.186760333447466,
+    "err": 5.9374690988621674
+   },
+   {
+    "wavelength_um": 4.69,
+    "flambda": -2.400863851463166,
+    "err": 6.285616835565399
+   },
+   {
+    "wavelength_um": 4.724,
+    "flambda": 4.260100935237576,
+    "err": 4.838957916658459
+   },
+   {
+    "wavelength_um": 4.759,
+    "flambda": 2.832567263233131,
+    "err": 4.32618339155384
+   },
+   {
+    "wavelength_um": 4.794,
+    "flambda": -2.2738424165010818,
+    "err": 5.187491640816171
+   },
+   {
+    "wavelength_um": 4.828,
+    "flambda": 10.046992481980995,
+    "err": 8.275708835485673
+   },
+   {
+    "wavelength_um": 4.863,
+    "flambda": -0.06086963861844554,
+    "err": 7.922989809524028
+   },
+   {
+    "wavelength_um": 4.898,
+    "flambda": -0.0047690768398356955,
+    "err": 6.740257974966211
+   },
+   {
+    "wavelength_um": 4.933,
+    "flambda": -1.1374489136184125,
+    "err": 6.584328851287391
+   },
+   {
+    "wavelength_um": 4.967,
+    "flambda": -4.0169790468542015,
+    "err": 8.595723356969598
+   }
+  ],
+  "template_curve": null,
+  "detection_snr": 6.172006009198084,
+  "contamination": {
+   "W1": 0.0,
+   "W2": 0.0
+  },
+  "negative_bins": 1,
+  "contaminated": false
+ },
+ "plain": [
+  "It moves across the sky: about 2.61 arcseconds per year, measured over 14 years (a very confident measurement), matching the catalog proper motion.",
+  "Its infrared colour W1-W2 = at least 1.6 mag is very red, like T-type brown dwarfs.",
+  "Too few WISE measurements to tell whether its brightness changes.",
+  "Not enough clean SPHEREx measurements to read its spectrum."
+ ],
+ "asteroids": [
+  {
+   "name": "2009 RQ43",
+   "ra": 233.6376995833333,
+   "dec": -10.721596666666667,
+   "mjd": 57601.49,
+   "rate_arcsec_h": 3.769734559620876,
+   "vmag": 22.6
+  },
+  {
+   "name": "2016 AU314",
+   "ra": 233.62708249999997,
+   "dec": -10.752461944444445,
+   "mjd": 58325.38,
+   "rate_arcsec_h": 5.0122505174821415,
+   "vmag": 24.2
+  },
+  {
+   "name": "2000 TZ20",
+   "ra": 233.62365999999997,
+   "dec": -10.687965277777778,
+   "mjd": 58527.18,
+   "rate_arcsec_h": 29.484102755383283,
+   "vmag": 21.7
+  },
+  {
+   "name": "2011 WR94",
+   "ra": 233.6344683333333,
+   "dec": -10.733939999999999,
+   "mjd": 58891.32,
+   "rate_arcsec_h": 25.888520546759715,
+   "vmag": 23.6
+  },
+  {
+   "name": "2009 CH76",
+   "ra": 233.6364720833333,
+   "dec": -10.742468888888888,
+   "mjd": 59420.76,
+   "rate_arcsec_h": 17.437784139620494,
+   "vmag": 23.2
+  },
+  {
+   "name": "2007 RX236",
+   "ra": 233.6459170833333,
+   "dec": -10.705493333333333,
+   "mjd": 59784.94,
+   "rate_arcsec_h": 2.7411810337881737,
+   "vmag": 21.1
+  },
+  {
+   "name": "2000 EZ104",
+   "ra": 233.5917695833333,
+   "dec": -10.734762777777776,
+   "mjd": 60149.24,
+   "rate_arcsec_h": 24.971295622974793,
+   "vmag": 18.8
+  }
+ ]
+}

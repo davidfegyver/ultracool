@@ -1,0 +1,26 @@
+{
+ "object": {
+  "q": "WISE J072003.20-084651.2",
+  "name": "NAME Scholz's star",
+  "ra": 110.013557,
+  "dec": -8.780528999999998,
+  "pm": [
+   -52.7,
+   -95.8
+  ],
+  "ep": 2000.0,
+  "otype": "LM*",
+  "sptype": "M9.5+T5"
+ },
+ "request": {
+  "ra": 110.013557,
+  "dec": -8.780528999999998,
+  "pmra_masyr": -52.7,
+  "pmdec_masyr": -95.8,
+  "epoch_yr": 2000.0
+ },
+ "sid": "957a631898d66589",
+ "status": "done",
+ "n_frames": 272,
+ "fetch_s": 150
+}
