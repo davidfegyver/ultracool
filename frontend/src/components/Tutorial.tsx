@@ -17,8 +17,8 @@ const Label = ({ x, y, children }: { x: number; y: number; children: ReactNode }
 
 const STEPS: { title: string; text: string; art: ReactNode }[] = [
   {
-    title: 'One patch of sky, many dates',
-    text: 'A flipbook is a pile of infrared pictures of the same small patch of sky, taken between 2010 and 2026 by WISE, NEOWISE and SPHEREx, lined up pixel by pixel.',
+    title: 'A small region in a flipbook',
+    text: 'A flipbook is a pile of infrared pictures of the same small patch of the sky, taken between 2010 and 2026 by WISE, NEOWISE and SPHEREx, lined up pixel by pixel.',
     art: (
       <>
         <Frame x={10} y={14} />
@@ -30,7 +30,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Press play, watch for movement',
+    title: 'Observe their motion',
     text: 'Pictures play oldest first. Distant stars stay frozen. A dot that slides steadily is a nearby star or brown dwarf; one that jumps around in a single day is an asteroid.',
     art: (
       <Frame x={30} y={10}>
@@ -40,7 +40,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'The pink circle',
+    title: 'Predicted movement',
     text: 'The pink circle shows where catalogs predict your object on that date. If the dot sits in the circle on every date, the object is moving just as expected.',
     art: (
       <Frame x={30} y={10}>
@@ -50,7 +50,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'The cyan probe',
+    title: 'Select and measure',
     text: 'Something else caught your eye? Drag the cyan crosshair onto it, or right-click the sky map. Its circle is the measuring aperture. Nothing is measured until you pick "Measure this source" in the menu that opens.',
     art: (
       <Frame x={30} y={10}>
@@ -61,8 +61,8 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Two infrared colors',
-    text: 'W1 (3.4 µm) and W2 (4.6 µm) are two infrared "colors". Ordinary stars look about the same in both. Cold brown dwarfs are much brighter in W2, so a dot that appears only in W2 is exciting.',
+    title: 'Shades of infrared',
+    text: 'W1 (3.4 µm) and W2 (4.6 µm) are two infrared "shades". Ordinary stars look about the same in both. Cold brown dwarfs are much brighter in W2, so a dot that appears only in W2 is exciting!',
     art: (
       <>
         <Frame x={6}>
@@ -77,7 +77,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Brightness lives in the light curve',
+    title: 'The light curve',
     text: 'Each picture has its contrast adjusted on its own, so brightness changes hide in the images. The light curve plot shows brightness against time: regular waves mean pulsation, random jumps mean dust or flares.',
     art: (
       <g transform="translate(10 10)">
@@ -88,7 +88,7 @@ const STEPS: { title: string; text: string; art: ReactNode }[] = [
     ),
   },
   {
-    title: 'Real or ghost?',
+    title: 'Phantom objects',
     text: 'Cameras make fake objects: spikes and rings around bright stars, afterimages, cosmic-ray hits. Something seen on only one date or in only one band is usually an artifact. Real objects come back.',
     art: (
       <Frame x={30} y={10}>

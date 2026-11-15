@@ -2,7 +2,7 @@
 
 **Watch 16 years of the infrared sky move.** Pick any star, brown dwarf or patch of sky and play NASA infrared images from WISE (2010), NEOWISE (2014–2024) and SPHEREx (2025–2026) as one aligned flipbook. The app measures motion, colour, brightness changes and a 0.75–5 µm SPHEREx spectrum typed against brown-dwarf templates.
 
-Built for NASA Space Apps 2026 ("Planet X and SPHEREx").
+Built for NASA Space Apps Challenge 2026 ("Planet X and SPHEREx").
 
 ## Four modes
 

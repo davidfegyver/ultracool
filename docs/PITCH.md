@@ -1,4 +1,4 @@
-# Ultracool Browser: 3-minute pitch (NASA Space Apps 2026, "Planet X and SPHEREx")
+# Ultracool Browser: 3-minute pitch (NASA Space Apps Challenge 2026, "Planet X and SPHEREx")
 
 8 slides, about 410 spoken words (≈140 words/min, ~2:55). Times are cumulative. Every number below is checked: see the source column at the end. The HTML deck with speaker notes is `docs/pitch/index.html`.
 
