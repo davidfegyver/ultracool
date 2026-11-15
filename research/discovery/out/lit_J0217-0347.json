@@ -1,0 +1,43 @@
+{
+ "tag": "J0217-0347",
+ "query_name": "CWISE J021749.20-034742.9",
+ "ra": 34.455035,
+ "dec": -3.7952667,
+ "utc": "2026-11-15T00:59:46Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [],
+ "simbad_cone30": [
+  {
+   "main_id": "2XLSSd J021748.5-034725",
+   "otype": "G",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 22.522921101403284
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=34.455035-3.795267&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "II_326_zcatrev": 2,
+  "II_328_allwise": 1,
+  "II_377_master": 2,
+  "VI_42_out": 1,
+  "VII_292_south": 2
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "VII_292_south",
+   "values": [
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "REX"
+    }
+   ]
+  }
+ ]
+}

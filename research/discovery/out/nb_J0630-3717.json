@@ -1,0 +1,26 @@
+{
+ "name": "J0630-3717",
+ "ra": 97.5759683,
+ "dec": -37.292858,
+ "radius_arcsec": 15,
+ "2mass_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/246/out&-c=97.575968-37.292858&-c.rs=15&-out=2MASS,Jmag,Hmag,Kmag&-out.add=_r",
+ "2mass": [
+  {
+   "_r": "11.741",
+   "2MASS": "06301909-3717399",
+   "Jmag": "15.714",
+   "Hmag": "15.523",
+   "Kmag": "16.378"
+  }
+ ],
+ "gaia_dr3_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/355/gaiadr3&-c=97.575968-37.292858&-c.rs=15&-out=Source,Gmag,RPmag,PM&-out.add=_r",
+ "gaia_dr3": [
+  {
+   "_r": "11.804",
+   "Source": "5580320822941681792",
+   "Gmag": "16.897263",
+   "RPmag": "16.400698",
+   "PM": "3.700"
+  }
+ ]
+}

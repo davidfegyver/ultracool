@@ -1,0 +1,78 @@
+{
+ "tag": "J0630-3717",
+ "query_name": "WISE J063018.26-371735.5",
+ "ra": 97.5759683,
+ "dec": -37.292858,
+ "utc": "2026-11-15T00:33:58Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 21404049,
+   "main_id": "WISE J063018.26-371735.5",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 1,
+   "plx_value": 0.0,
+   "pmra": 0.0,
+   "pmdec": 0.0
+  }
+ ],
+ "simbad_ids": [
+  "CWISE J063018.23-371734.3",
+  "WISE J063018.26-371735.5",
+  "WISEA J063018.29-371735.2"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2021ApJS..253....7K",
+   "title": "The field substellar mass function based on the full-sky 20 pc census of 525 L, T, and Y dwarfs."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "WISE J063018.26-371735.5",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 1.3623459235823392
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=97.575968-37.292858&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "II_328_allwise": 1,
+  "II_391_ks4dr1": 1,
+  "VI_42_out": 1,
+  "B_gemini_obscore": 3,
+  "J_ApJS_234_23_r90cat": 1,
+  "J_ApJS_234_23_c75cat": 1,
+  "J_ApJS_253_7_tablea1": 1,
+  "J_ApJS_253_7_table1": 1,
+  "J_AJ_144_148_table1": 1,
+  "J_AJ_144_148_table3": 2
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "J_ApJS_253_7_tablea1",
+   "values": [
+    {
+     "SpTO": "",
+     "SpTIR": ""
+    }
+   ]
+  },
+  {
+   "table": "J_AJ_144_148_table1",
+   "values": [
+    {
+     "SpT": ""
+    }
+   ]
+  }
+ ]
+}

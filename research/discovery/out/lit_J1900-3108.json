@@ -1,0 +1,107 @@
+{
+ "tag": "J1900-3108",
+ "query_name": "WISE J190005.75-310811.2",
+ "ra": 285.0239937,
+ "dec": -31.1369063,
+ "utc": "2026-11-15T00:32:29Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 21402619,
+   "main_id": "WISE J190005.75-310811.2",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 3,
+   "plx_value": 42.5,
+   "pmra": -43.5,
+   "pmdec": -312.5
+  }
+ ],
+ "simbad_ids": [
+  "WISE J190005.75-310811.2",
+  "WISEA J190005.76-310810.9",
+  "CNS5 4727"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2020ApJ...899..123M",
+   "title": "Spitzer follow-up of extremely cold brown dwarfs discovered by the Backyard Worlds: Planet 9 citizen science project."
+  },
+  {
+   "bibcode": "2021ApJS..253....7K",
+   "title": "The field substellar mass function based on the full-sky 20 pc census of 525 L, T, and Y dwarfs."
+  },
+  {
+   "bibcode": "2023A&A...670A..19G",
+   "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "WISE J190005.75-310811.2",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 3,
+   "sep": 5.2504069298133285
+  },
+  {
+   "main_id": "Gaia DR3 6760111913536673280",
+   "otype": "*",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 19.222212554902207
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=285.023994-31.136906&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "I_252_out": 1,
+  "I_284_out": 1,
+  "I_297_out": 1,
+  "I_305_out": 1,
+  "I_317_sample": 1,
+  "I_347_gaia2dis": 1,
+  "I_352_gedr3dis": 1,
+  "I_355_gaiadr3": 1,
+  "I_355_paramsup": 1,
+  "II_328_allwise": 1,
+  "II_381_hlsp_ps1_tm": 4,
+  "IV_39_tic82": 1,
+  "VI_42_out": 1,
+  "B_gemini_obscore": 5,
+  "J_ApJ_899_123_table5": 1,
+  "J_ApJ_899_123_table6": 1,
+  "J_ApJ_899_123_table4": 2,
+  "J_ApJ_918_11_table10": 1,
+  "J_ApJS_253_7_tablea1": 1,
+  "J_ApJS_253_7_table4": 20,
+  "J_ApJS_253_7_plx": 1,
+  "J_A_A_670_A19_cns5": 1,
+  "J_MNRAS_436_413_table1": 1,
+  "J_MNRAS_521_2087_rpmgaia3": 1
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "J_ApJ_918_11_table10",
+   "values": [
+    {
+     "SpType": "6.0"
+    }
+   ]
+  },
+  {
+   "table": "J_ApJS_253_7_tablea1",
+   "values": [
+    {
+     "SpTO": "",
+     "SpTIR": ""
+    }
+   ]
+  }
+ ]
+}

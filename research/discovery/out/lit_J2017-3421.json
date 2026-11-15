@@ -1,0 +1,108 @@
+{
+ "tag": "J2017-3421",
+ "query_name": "WISE J201748.72-342102.5",
+ "ra": 304.4535359,
+ "dec": -34.3504723,
+ "utc": "2026-11-15T00:17:18Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 18628311,
+   "main_id": "WISE J201748.72-342102.5",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 4,
+   "plx_value": 47.2,
+   "pmra": 190.5,
+   "pmdec": 284.4
+  }
+ ],
+ "simbad_ids": [
+  "WISE J201748.72-342102.5",
+  "CNS5 5032",
+  "WISEA J201748.74-342102.6"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2018ApJS..236...28T",
+   "title": "New Y- and T dwarfs from WISE identified by methane imaging."
+  },
+  {
+   "bibcode": "2019ApJS..240...19K",
+   "title": "Preliminary trigonometric parallaxes of 184 late-T and Y dwarfs and an analysis of the field substellar mass function into the \"planetary\" mass regime."
+  },
+  {
+   "bibcode": "2021ApJS..253....7K",
+   "title": "The field substellar mass function based on the full-sky 20 pc census of 525 L, T, and Y dwarfs."
+  },
+  {
+   "bibcode": "2023A&A...670A..19G",
+   "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "WISE J201748.72-342102.5",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 4,
+   "sep": 5.312179552830066
+  },
+  {
+   "main_id": "Gaia DR3 6699278585165415936",
+   "otype": "*",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 16.158686552681683
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=304.453536-34.350472&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "II_328_allwise": 1,
+  "VI_42_out": 1,
+  "B_gemini_obscore": 7,
+  "J_ApJS_234_23_r90cat": 1,
+  "J_ApJS_234_23_c75cat": 1,
+  "J_ApJS_240_19_table1": 1,
+  "J_ApJS_240_19_spitzer": 1,
+  "J_ApJS_253_7_tablea1": 1,
+  "J_ApJS_253_7_table4": 13,
+  "J_ApJS_253_7_plx": 1,
+  "J_A_A_670_A19_cns5": 1,
+  "J_AJ_144_148_table1": 1,
+  "J_AJ_144_148_table3": 1
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "J_ApJS_240_19_table1",
+   "values": [
+    {
+     "SpT": "[T7.5]"
+    }
+   ]
+  },
+  {
+   "table": "J_ApJS_253_7_tablea1",
+   "values": [
+    {
+     "SpTO": "",
+     "SpTIR": ""
+    }
+   ]
+  },
+  {
+   "table": "J_AJ_144_148_table1",
+   "values": [
+    {
+     "SpT": ""
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T00:14:17 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T00:14:17	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J/AJ/159/257&-c=136.5378-14.3266&-c.rs=10&-out=**	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=136.537800-14.326600,rs=10.	
+#Constraint -out=**
+
+#RESOURCE=yCat_51590257
+#Name: J/AJ/159/257
+#Title: Hawaii IR parallax program. IV. L0-T8 BDs with UKIRT (Best+, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/aj/159/257	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/aj/159/257	    IVOID of underlying data collection
+#INFO	creator=Best W.M.J.	    First author or institution
+#INFO	cites=bibcode:2020AJ....159..257B	    Article or Data origin sources
+#INFO	journal=AJ	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AJ/159/257	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.51590257	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-08-03	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_AJ_159_257_table1:
+#Name: J/AJ/159/257/table1
+#Title: Observations
+#Column	_r	(F5.2)	Distance from center (136.53780-14.32660)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Name	(a26)	Star name	[ucd=meta.id;meta.main]
+#Column	f_Name	(A1)	Specific star notes (1)	[ucd=meta.code]
+#Column	SpT-op	(a10)	Optical spectral type (2)	[ucd=src.spType]
+#Column	SpT-ir	(a12)	Infrared spectral type (2)	[ucd=src.spType]
+#Column	Jmag	(F5.2)	[12.63/19.06]? mean pipeline measured MKO J band magnitude	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag	(F5.2)	[0.02/0.02]? Uncertainty in Jmag	[ucd=stat.error;phot.mag]
+#Column	FWHM	(F5.2)	[0.72/1.5]? mean Full Width at Half Maximum	[ucd=instr.bandwidth]
+#Column	e_FWHM	(F5.2)	[0.05/0.52]? Uncertainty (Root Mean Square) in FWHM	[ucd=stat.error;phys.angSize]
+#Column	dAirmass	(F6.3)	[0.006/0.301]? Maximum difference in airmass across all epochs	[ucd=obs.airMass]
+#Column	Tint	(A3)	Exposure time for each image (3)	[ucd=time.duration;obs.exposure]
+#Column	Nfr	(I4)	[18/1066] Total number, frames obtained	[ucd=meta.number]
+#Column	Nep	(I2)	[1/18] Total number, epoch (nights) observed	[ucd=meta.number]
+#Column	dt	(F4.1)	[0.0/3.7] Time span ({Delta}t)	[ucd=time;arith.diff]
+#Column	Nref	(I4)	[25/3394]? Number of stars used for the astrometric reference frame	[ucd=meta.number]
+#Column	Ncal	(I4)	[10/3303]? Number of subset of Nref used for absolute astrometric calibration	[ucd=meta.number]
+#Column	Nabs	(I4)	[4/1077]? Number of subset of Nref used to correct the final parallaxes from relative to absolute	[ucd=meta.number]
+#Column	Domega	(F4.1)	[-1.9/3.6]? Offset, relative to absolute parallax computed for each field	[ucd=pos;arith.diff]
+#Column	e_Domega	(F4.1)	[0.0/1.2]? Uncertainty in Domega	[ucd=stat.error]
+#Column	r_Name	(i)	Discovery reference for star (See refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	r_SpT	(i)	Spectral type reference (See refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	SimbadName	(a25)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+_r	recno	Name	f_Name	SpT-op	SpT-ir	Jmag	e_Jmag	FWHM	e_FWHM	dAirmass	Tint	Nfr	Nep	dt	Nref	Ncal	Nabs	Domega	e_Domega	r_Name	r_SpT	SimbadName	_RA	_DE
+arcsec	 	 	 	 	 	mag	mag	arcsec	arcsec	 	s	 	 	yr	 	 	 	mas	mas	 	 	 	deg	deg
+-----	--------	--------------------------	-	----------	------------	-----	-----	-----	-----	------	---	----	--	----	----	----	----	----	----	-----	-----	-------------------------	---------	---------
+ 0.63	     144	PSO J136.5380-14.3267     	 	          	T3.5        	16.43	 0.02	 0.88	 0.12	 0.101	  6	  99	11	 3.1	 249	 227	 131	 0.4	 0.1	   53	   53	PSO J136.5380-14.3267    	136.53798	-14.32663
+
+#Table	J_AJ_159_257_table4:
+#Name: J/AJ/159/257/table4
+#Title: UKIRT/WFCAM parallaxes and proper motions
+#Column	_r	(F6.3)	Distance from center (136.5378000-14.3266000)[FK5/J2000], at Epoch of catalog (Epoch)	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Name	(a26)	Star name	[ucd=meta.id;meta.main]
+#Column	f_Name	(A1)	Flag(s) on Name (1)	[ucd=meta.code]
+#Column	RAJ2000	(F11.7)	Right Ascension (J2000) at Ep=Epoch	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F11.7)	[-30/60] Declination (J2000) at Ep=Epoch	[ucd=pos.eq.dec;meta.main]
+#Column	Epoch	(F8.2)	[56782/57681] Epoch of first observation (MJD)	[ucd=time.epoch]
+#Column	omega-rel	(F5.1)	[15/158] Relative parallax ({omega}_rel_)	[ucd=pos.parallax.trig]
+#Column	e_omega-rel	(F4.1)	[1.5/10.6] Uncertainty in omega-rel	[ucd=stat.error]
+#Column	pmRA-rel	(F7.1)	[-1217/1232] Relative proper motion in RA, ({mu}_{alpha},rel_cos{delta})	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA-rel	(F4.1)	[1/15.1] Uncertainty in pmRA-rel	[ucd=stat.error;pos.pm]
+#Column	pmDE-rel	(F7.1)	[-1843/1466] Relative proper motion in DE ({mu}_{delta},rel_)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE-rel	(F4.1)	[1.1/11.1] Uncertainty in pmDE-rel	[ucd=stat.error;pos.pm]
+#Column	omega-abs	(F5.1)	[15.7/159.2] Absolute parallax ({omega}_abs_) (2)	[ucd=pos.parallax.trig]
+#Column	e_omega-abs	(F4.1)	[1.5/10.6] Uncertainty in omega-abs (2)	[ucd=stat.error]
+#Column	pmRA-abs	(F7.1)	[-1225/1238] Absolute proper motion in RA, ({mu}_{alpha},abs_cos{delta} (2)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA-abs	(F4.1)	[1/15.1] Uncertainty in pmRA-abs (2)	[ucd=stat.error;pos.pm]
+#Column	pmDE-abs	(F7.1)	[-1848/1461] Absolute proper motion in DE ({mu}_{delta},abs_) (2)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE-abs	(F4.1)	[1.1/11.1] Uncertainty in pmDE-abs (2)	[ucd=stat.error;pos.pm]
+#Column	chi2	(F4.1)	[3.2/58.9] smallest {chi}^2 among the IRLS+MCMC chains	[ucd=stat.fit.chi2]
+#Column	dof	(I3)	[7/31] Degrees of freedom for dataset	[ucd=stat.fit.dof]
+_r	recno	Name	f_Name	RAJ2000	DEJ2000	Epoch	omega-rel	e_omega-rel	pmRA-rel	e_pmRA-rel	pmDE-rel	e_pmDE-rel	omega-abs	e_omega-abs	pmRA-abs	e_pmRA-abs	pmDE-abs	e_pmDE-abs	chi2	dof
+arcsec	 	 	 	deg	deg	d	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	 	
+------	--------	--------------------------	-	-----------	-----------	--------	-----	----	-------	----	-------	----	-----	----	-------	----	-------	----	----	---
+ 0.632	     139	PSO J136.5380-14.3267     	 	136.5379781	-14.3266318	56972.61	 37.0	 4.1	 -236.1	 2.8	   94.6	 3.3	 37.4	 4.1	 -240.8	 2.8	   96.0	 3.3	 9.9	 17
+
+#Table	J_AJ_159_257_table7:
+#Name: J/AJ/159/257/table7
+#Title: Updates to common proper motion companion status
+#Column	_r	(F5.2)	Distance from center (136.53780-14.32660)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Name	(a25)	Primary name	[ucd=meta.id;meta.main]
+#Column	SpT-pri	(a11)	Primary spectral type	[ucd=src.spType]
+#Column	omega-pri	(F5.2)	[22.25/70.02] Primary parallax	[ucd=pos.parallax.trig]
+#Column	e_omega-pri	(F5.2)	[0.04/3.2] Uncertainty in omega-pri	[ucd=stat.error]
+#Column	f_omega-pri	(A1)	Flag on omega-pri (1)	[ucd=meta.code]
+#Column	pmRA-pri	(F7.2)	[-995.2/381.54] Primary proper motion in RA, ({mu}_{alpha},pri_cos{delta})	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA-pri	(F5.2)	[0.05/7] Uncertainty in pmRA-pri	[ucd=stat.error;pos.pm]
+#Column	f_pmRA-pri	(A1)	Flag on pmRA-pri (1)	[ucd=meta.code]
+#Column	pmDE-pri	(F7.2)	[-512.98/244.28] Primary proper motion in DE ({mu}_{delta}_)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE-pri	(F5.2)	[0.04/6.1] Uncertainty in pmDE-pri	[ucd=stat.error;pos.pm]
+#Column	f_pmDE-pri	(A1)	Flag on pmDE-pri (1)	[ucd=meta.code]
+#Column	Comp	(a26)	Companion name	[ucd=meta.id.assoc]
+#Column	SpT-comp	(a15)	Companion spectral type	[ucd=src.spType]
+#Column	f_SpT-comp	(A1)	Flag on SpT-comp (1)	[ucd=meta.code]
+#Column	omega-comp	(F4.1)	[26.6/70.1] Companion parallax	[ucd=pos.parallax.trig]
+#Column	e_omega-comp	(F4.1)	[2.5/4.3] Uncertainty in omega-comp	[ucd=stat.error]
+#Column	f_omega-comp	(A1)	Flag on omega-comp (1)	[ucd=meta.code]
+#Column	pmRA-comp	(F7.1)	[-1011.7/372.6] Companion proper motion in RA, ({mu}_{alpha},sec_cos_{delta}_)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA-comp	(F4.1)	[1.7/5.0] Uncertainty in pmRA-comp	[ucd=stat.error;pos.pm]
+#Column	f_pmRA-comp	(A1)	Flag on pmRA-comp (1)	[ucd=meta.code]
+#Column	pmDE-comp	(F6.1)	[-513.8/250.1] Companion proper motion in DE ({mu}_{delta}_)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE-comp	(F4.1)	[1.9/4.6] Uncertainty in pmDE-comp	[ucd=stat.error;pos.pm]
+#Column	f_pmDE-comp	(A1)	Flag on pmDE-comp (1)	[ucd=meta.code]
+#Column	Sep	(F5.1)	[6.4/265.0] Separation	[ucd=pos.angDistance]
+#Column	Refs	(A11)	References (2)	[ucd=meta.ref;pos.frame]
+#Column	SimbadName	(a23)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]

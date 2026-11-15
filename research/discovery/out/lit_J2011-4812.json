@@ -1,0 +1,122 @@
+{
+ "tag": "J2011-4812",
+ "query_name": "CWISEP J201146.45-481259.7",
+ "ra": 302.9437631,
+ "dec": -48.2166297,
+ "utc": "2026-11-15T00:29:44Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 19496325,
+   "main_id": "CWISEP J201146.45-481259.7",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 3,
+   "plx_value": 71.0,
+   "pmra": 72.4,
+   "pmdec": -402.8
+  }
+ ],
+ "simbad_ids": [
+  "CWISEP J201146.45-481259.7",
+  "CNS5 5012"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2020ApJ...889...74M",
+   "title": "Expanding the Y dwarf census with Spitzer follow-up of the coldest CatWISE solar neighborhood discoveries."
+  },
+  {
+   "bibcode": "2021ApJS..253....7K",
+   "title": "The field substellar mass function based on the full-sky 20 pc census of 525 L, T, and Y dwarfs."
+  },
+  {
+   "bibcode": "2023A&A...670A..19G",
+   "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "CWISEP J201146.45-481259.7",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 3,
+   "sep": 6.681089807779794
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=302.943763-48.216630&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "II_328_allwise": 1,
+  "II_391_ks4dr1": 2,
+  "VI_42_out": 1,
+  "B_gemini_obscore": 4,
+  "J_ApJ_889_74_bdcand": 1,
+  "J_ApJ_889_74_table3": 3,
+  "J_ApJ_889_74_table4": 1,
+  "J_ApJ_918_11_table6": 1,
+  "J_ApJ_918_11_table10": 1,
+  "J_ApJS_234_23_r90cat": 1,
+  "J_ApJS_234_23_c75cat": 1,
+  "J_ApJS_253_7_tablea1": 1,
+  "J_ApJS_253_7_table4": 20,
+  "J_ApJS_253_7_plx": 1,
+  "J_ApJS_253_7_table11": 1,
+  "J_ApJS_271_55_table4": 1,
+  "J_ApJS_271_55_notes4": 1,
+  "J_A_A_670_A19_cns5": 1
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "J_ApJ_918_11_table6",
+   "values": [
+    {
+     "SpT": "Y0",
+     "SpTRef": "Me20a"
+    }
+   ]
+  },
+  {
+   "table": "J_ApJ_918_11_table10",
+   "values": [
+    {
+     "SpType": "10.0"
+    }
+   ]
+  },
+  {
+   "table": "J_ApJS_253_7_tablea1",
+   "values": [
+    {
+     "SpTO": "",
+     "SpTIR": ""
+    }
+   ]
+  },
+  {
+   "table": "J_ApJS_253_7_table11",
+   "values": [
+    {
+     "SpTO": "",
+     "SpTIR": "[Y0]"
+    }
+   ]
+  },
+  {
+   "table": "J_ApJS_271_55_table4",
+   "values": [
+    {
+     "SpTOpt": "",
+     "SpTOptCode": "",
+     "SpTNIR": "",
+     "SpTNIRCode": ""
+    }
+   ]
+  }
+ ]
+}

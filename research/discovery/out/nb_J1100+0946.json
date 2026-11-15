@@ -1,0 +1,10 @@
+{
+ "name": "J1100+0946",
+ "ra": 165.0875916,
+ "dec": 9.7813046,
+ "radius_arcsec": 15,
+ "2mass_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/246/out&-c=165.087592+9.781305&-c.rs=15&-out=2MASS,Jmag,Hmag,Kmag&-out.add=_r",
+ "2mass": [],
+ "gaia_dr3_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/355/gaiadr3&-c=165.087592+9.781305&-c.rs=15&-out=Source,Gmag,RPmag,PM&-out.add=_r",
+ "gaia_dr3": []
+}

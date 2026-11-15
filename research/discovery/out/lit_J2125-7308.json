@@ -1,0 +1,67 @@
+{
+ "tag": "J2125-7308",
+ "query_name": "WISE J212510.89-730758.7",
+ "ra": 321.2971596,
+ "dec": -73.1335472,
+ "utc": "2026-11-15T00:47:13Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 21402624,
+   "main_id": "WISE J212510.89-730758.7",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 1,
+   "plx_value": 0.0,
+   "pmra": 0.0,
+   "pmdec": 0.0
+  }
+ ],
+ "simbad_ids": [
+  "WISE J212510.89-730758.7",
+  "WISEA J212510.91-730758.8"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2020ApJ...899..123M",
+   "title": "Spitzer follow-up of extremely cold brown dwarfs discovered by the Backyard Worlds: Planet 9 citizen science project."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "WISE J212510.89-730758.7",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 2.7398250945578453
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=321.297160-73.133547&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "II_328_allwise": 1,
+  "II_391_ks4dr1": 1,
+  "VI_42_out": 1,
+  "J_ApJ_899_123_table5": 1,
+  "J_ApJ_899_123_table6": 1,
+  "J_ApJ_899_123_table4": 2,
+  "J_ApJ_918_11_table10": 1,
+  "J_ApJS_234_23_r90cat": 1,
+  "J_ApJS_234_23_c75cat": 1
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "J_ApJ_918_11_table10",
+   "values": [
+    {
+     "SpType": "8.0"
+    }
+   ]
+  }
+ ]
+}

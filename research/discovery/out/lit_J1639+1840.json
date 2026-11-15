@@ -1,0 +1,109 @@
+{
+ "tag": "J1639+1840",
+ "query_name": "WISE J163932.74+184049.0",
+ "ra": 249.8856353,
+ "dec": 18.6803467,
+ "utc": "2026-11-15T00:36:40Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 21402610,
+   "main_id": "WISE J163932.74+184049.0",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 5,
+   "plx_value": 61.9,
+   "pmra": -542.8,
+   "pmdec": 74.9
+  }
+ ],
+ "simbad_ids": [
+  "WISE J163932.74+184049.0",
+  "WISEA J163932.75+184049.4",
+  "CNS5 4089"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2020ApJ...899..123M",
+   "title": "Spitzer follow-up of extremely cold brown dwarfs discovered by the Backyard Worlds: Planet 9 citizen science project."
+  },
+  {
+   "bibcode": "2021ApJS..253....7K",
+   "title": "The field substellar mass function based on the full-sky 20 pc census of 525 L, T, and Y dwarfs."
+  },
+  {
+   "bibcode": "2023A&A...670A..19G",
+   "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+  },
+  {
+   "bibcode": "2024RNAAS...8..239M",
+   "title": "Gemini Near-infrared Photometry for a Sample of Cold Brown Dwarfs Discovered by Backyard Worlds: Planet 9."
+  },
+  {
+   "bibcode": "2025AJ....169..163A",
+   "title": "JWST 1.5 {\\em \u03bc}m and 4.8 {\\em \u03bc}m Photometry of Y Dwarfs."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "WISE J163932.74+184049.0",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 5,
+   "sep": 8.56879156549385
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=249.885635+18.680347&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "II_328_allwise": 1,
+  "V_139_sdss9": 2,
+  "V_154_sdss16": 2,
+  "VI_42_out": 1,
+  "VII_292_south": 2,
+  "B_gemini_obscore": 7,
+  "J_ApJ_899_123_table5": 1,
+  "J_ApJ_899_123_table6": 1,
+  "J_ApJ_899_123_table4": 6,
+  "J_ApJ_918_11_table10": 1,
+  "J_ApJS_234_23_r90cat": 1,
+  "J_ApJS_234_23_c75cat": 1,
+  "J_ApJS_253_7_tablea1": 1,
+  "J_ApJS_253_7_table4": 13
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "VII_292_south",
+   "values": [
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    }
+   ]
+  },
+  {
+   "table": "J_ApJ_918_11_table10",
+   "values": [
+    {
+     "SpType": "9.5"
+    }
+   ]
+  },
+  {
+   "table": "J_ApJS_253_7_tablea1",
+   "values": [
+    {
+     "SpTO": "",
+     "SpTIR": ""
+    }
+   ]
+  }
+ ]
+}

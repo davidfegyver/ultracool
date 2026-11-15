@@ -1,0 +1,13 @@
+== I/355/gaiadr3
+RA_ICRS	DE_ICRS	Source	e_RA_ICRS	e_DE_ICRS	Plx	e_Plx	PM	pmRA	e_pmRA	pmDE	e_pmDE	RUWE	FG	e_FG	Gmag	FBP	e_FBP	BPmag	FRP	e_FRP	RPmag	BP-RP	RV	e_RV	Vbroad	GRVSmag	QSO	Gal	NSS	XPcont	XPsamp	RVS	EpochPh	EpochRV	MCMCGSP	MCMCMSC	And	Teff	
+deg	deg	 	mas	mas	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	mas/yr	 	e-/s	e-/s	mag	e-/s	e-/s	mag	e-/s	e-/s	mag	mag	km/s	km/s	km/s	mag	 	 	 	 	 	 	 	 	 	 	 	K	[cm/s2]	[-]	pc	mag	 	 	 	 	 	 	 	 	 	 	 	 	deg	deg
+---------------	---------------	-------------------	-------	-------	---------	-------	---------	---------	------	---------	------	-------	----------------	-----------	---------	-----------	-----------	---------	-----------	-------
+097.57958147859	-37.29443502581	5580320822941681792	 0.0393	 0.0469	   0.1227	 0.0471	    3.700	    1.260	 0.055	    3.479	 0.059	  1.002	      3281.26824	 2.1171e+00	16.897263	 1.7302e+03	 9.5570e+00	17.243275	 2.1821e+03	 1.0303
+097.58197866120	-37.29195326813	5580320822940067712	 0.4909	 0.5426	   1.9900	 0.6021	    2.298	   -2.296	 0.691	    0.097	 0.655	  1.115	       132.93816	 8.1799e-01	20.378242	 2.8608e+01	 5.2761e+00	21.697342	 1.5178e+02	 1.2183
+== II/246/out
+RAJ2000	DEJ2000	2MASS	Jmag	e_Jmag	Hmag	e_Hmag	Kmag	e_Kmag	Qflg	Rflg	Bflg	Cflg	Xflg	Aflg
+deg	deg	 	mag	mag	mag	mag	mag	mag	 	 	 	 	 	
+----------	----------	-----------------	------	------	------	------	------	------	---	---	---	---	-	-
+097.579568	-37.294418	06301909-3717399 	15.714	 0.066	15.523	 0.112	16.378	      	ABU	220	110	000	0	0
+== II/365/catwise
+== II/367/vhs_dr5

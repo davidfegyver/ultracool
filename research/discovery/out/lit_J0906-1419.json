@@ -1,0 +1,78 @@
+{
+ "tag": "J0906-1419",
+ "query_name": "PSO J136.5380-14.3267",
+ "ra": 136.5378326,
+ "dec": -14.3266271,
+ "utc": "2026-11-15T00:15:42Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 18628203,
+   "main_id": "PSO J136.5380-14.3267",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 3,
+   "plx_value": 37.4,
+   "pmra": -240.8,
+   "pmdec": 96.0
+  }
+ ],
+ "simbad_ids": [
+  "PSO J136.5380-14.3267",
+  "CNS5 2260"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2020AJ....159..257B",
+   "title": "The Hawaii infrared parallax program. IV. A comprehensive parallax survey of L0-T8 dwarfs with UKIRT."
+  },
+  {
+   "bibcode": "2023A&A...670A..19G",
+   "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+  },
+  {
+   "bibcode": "2023ApJ...959...63S",
+   "title": "The Hawaii Infrared Parallax Program. VI. The Fundamental Properties of 1000+ Ultracool Dwarfs and Planetary-mass Objects Using Optical to Mid-infrared Spectral Energy Distributions and Comparison to BT-Settl and ATMO 2020 Model Atmospheres."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "PSO J136.5380-14.3267",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 3,
+   "sep": 0.5077922254938245
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=136.537833-14.326627&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "I_243_out": 1,
+  "I_252_out": 1,
+  "I_284_out": 1,
+  "I_297_out": 3,
+  "I_346_fs": 2,
+  "I_347_gaia2dis": 1,
+  "I_352_gedr3dis": 1,
+  "I_355_gaiadr3": 1,
+  "II_246_out": 2,
+  "II_328_allwise": 2,
+  "II_381_hlsp_ps1_tm": 2,
+  "II_389_ps1_dr2": 2,
+  "IV_39_tic82": 2,
+  "VI_42_out": 1,
+  "B_denis_denis": 2,
+  "B_eso_eso_arc": 13,
+  "J_ApJS_234_23_r90cat": 1,
+  "J_ApJS_234_23_c75cat": 1,
+  "J_ApJS_275_19_table11a": 1,
+  "J_A_A_670_A19_cns5": 1,
+  "J_AJ_159_257_table1": 1
+ },
+ "vizier_spt_rows": []
+}

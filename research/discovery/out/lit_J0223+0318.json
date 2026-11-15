@@ -1,0 +1,62 @@
+{
+ "tag": "J0223+0318",
+ "query_name": "SDSS J022306.73+031832.8",
+ "ra": 35.77856,
+ "dec": 3.309046,
+ "utc": "2026-11-15T01:04:02Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 12084613,
+   "main_id": "SDSS J022306.73+031832.8",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 1,
+   "plx_value": 0.0,
+   "pmra": 0.0,
+   "pmdec": 0.0
+  }
+ ],
+ "simbad_ids": [
+  "SDSS J022306.73+031832.8",
+  "ULAS J022306.75+031833.2"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2016A&A...589A..49S",
+   "title": "Photometric brown-dwarf classification. II. A homogeneous sample of 1361 L and T dwarfs brighter than J = 17.5 with accurate spectral types."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "SDSS J022306.73+031832.8",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 1.6980523887556571
+  },
+  {
+   "main_id": "DES J022307.45+031829.4",
+   "otype": "GiC",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 9.57728174926248
+  },
+  {
+   "main_id": "DES J022308.37+031839.1",
+   "otype": "GiC",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 23.732916917098326
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=35.778560+3.309046&-c.rs=10&-out.max=20",
+ "vizier_status": "error: IncompleteRead(409297 bytes read)",
+ "vizier_tables_with_rows": {},
+ "vizier_spt_rows": []
+}

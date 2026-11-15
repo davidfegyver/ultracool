@@ -1,0 +1,106 @@
+{
+ "tag": "J0019-0943",
+ "query_name": "CWISE J001908.34-094323.8",
+ "ra": 4.7847839,
+ "dec": -9.7232853,
+ "utc": "2026-11-15T00:55:25Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 21402633,
+   "main_id": "CWISE J001908.34-094323.8",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 1,
+   "plx_value": 0.0,
+   "pmra": 0.0,
+   "pmdec": 0.0
+  }
+ ],
+ "simbad_ids": [
+  "WISEU J001908.31-094323.3",
+  "CWISE J001908.34-094323.8"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2020ApJ...899..123M",
+   "title": "Spitzer follow-up of extremely cold brown dwarfs discovered by the Backyard Worlds: Planet 9 citizen science project."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "CWISE J001908.34-094323.8",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 0.0
+  },
+  {
+   "main_id": "LP  704-85",
+   "otype": "PM*",
+   "sp_type": "",
+   "nbref": 8,
+   "sep": 13.747528029980602
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=4.784784-9.723285&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "I_98A_catalog": 1,
+  "I_243_out": 1,
+  "I_252_out": 1,
+  "I_284_out": 1,
+  "I_297_out": 1,
+  "II_381_hlsp_ps1_tm": 1,
+  "II_389_ps1_dr2": 1,
+  "V_139_sdss9": 3,
+  "V_154_sdss16": 5,
+  "VI_42_out": 1,
+  "VII_292_south": 4,
+  "J_ApJ_899_123_table5": 1,
+  "J_ApJ_899_123_table6": 1,
+  "J_ApJ_899_123_table4": 2,
+  "J_ApJ_918_11_table10": 1,
+  "J_AJ_161_234_table7": 3
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "I_98A_catalog",
+   "values": [
+    {
+     "SpType": "m"
+    }
+   ]
+  },
+  {
+   "table": "VII_292_south",
+   "values": [
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "REX"
+    }
+   ]
+  },
+  {
+   "table": "J_ApJ_918_11_table10",
+   "values": [
+    {
+     "SpType": "7.0"
+    }
+   ]
+  }
+ ]
+}

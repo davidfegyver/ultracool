@@ -1,0 +1,110 @@
+{
+ "tag": "J0601-5922",
+ "query_name": "WISE J060133.02-592228.8",
+ "ra": 90.3872328,
+ "dec": -59.3742109,
+ "utc": "2026-11-15T00:14:18Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 19496245,
+   "main_id": "WISE J060133.02-592228.8",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 2,
+   "plx_value": 0.0,
+   "pmra": -209.0,
+   "pmdec": 414.0
+  }
+ ],
+ "simbad_ids": [
+  "CWISEP J060132.96-592227.3",
+  "WISE J060133.02-592228.8",
+  "WISEA J060133.04-592228.5",
+  "CWISE J060132.93-592227.1"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2020ApJ...889...74M",
+   "title": "Expanding the Y dwarf census with Spitzer follow-up of the coldest CatWISE solar neighborhood discoveries."
+  },
+  {
+   "bibcode": "2021ApJS..253....7K",
+   "title": "The field substellar mass function based on the full-sky 20 pc census of 525 L, T, and Y dwarfs."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "WISE J060133.02-592228.8",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 2,
+   "sep": 7.286251696460296
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=90.387233-59.374211&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "I_243_out": 1,
+  "I_252_out": 1,
+  "I_284_out": 2,
+  "I_297_out": 2,
+  "I_305_out": 1,
+  "I_317_sample": 2,
+  "I_331_apop": 1,
+  "I_347_gaia2dis": 1,
+  "I_352_gedr3dis": 1,
+  "I_355_gaiadr3": 1,
+  "II_328_allwise": 1,
+  "II_391_ks4dr1": 2,
+  "IV_39_tic82": 1,
+  "VI_42_out": 1,
+  "VII_292_south": 4,
+  "J_ApJ_889_74_bdcand": 1,
+  "J_ApJ_889_74_table3": 5,
+  "J_ApJS_234_23_r90cat": 1,
+  "J_ApJS_234_23_c75cat": 1,
+  "J_ApJS_253_7_tablea1": 1
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "I_331_apop",
+   "values": [
+    {
+     "Type": "3"
+    }
+   ]
+  },
+  {
+   "table": "VII_292_south",
+   "values": [
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "REX"
+    },
+    {
+     "type": "PSF"
+    },
+    {
+     "type": "PSF"
+    }
+   ]
+  },
+  {
+   "table": "J_ApJS_253_7_tablea1",
+   "values": [
+    {
+     "SpTO": "",
+     "SpTIR": ""
+    }
+   ]
+  }
+ ]
+}

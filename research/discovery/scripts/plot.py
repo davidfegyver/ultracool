@@ -55,7 +55,8 @@ def main(path):
             ax.set_title(f"WISE PM: ({f['pmra_masyr']:.0f}±{f['pmra_err']:.0f}, {f['pmdec_masyr']:.0f}±{f['pmdec_err']:.0f}) mas/yr", fontsize=9)
         ax.set_xlabel("year"); ax.set_ylabel("arcsec from grid centre"); ax.legend(fontsize=7)
     ax = fig.add_subplot(gs[1, 2:])
-    s = r["spectrum"]
+    dev = (r.get("dev") or {}).get("summary") or {}
+    s = dev.get("spectrum") or r["spectrum"]  # current production typing (dev API) when attached, else the frozen snapshot's
     b = s.get("binned") or []
     if b:
         lam = np.array([q["wavelength_um"] for q in b]); f = np.array([q["flambda"] for q in b]); e = np.array([q["err"] for q in b])
@@ -66,7 +67,8 @@ def main(path):
         ax.axhline(0, color="gray", lw=0.5)
         ax.set_xlabel("wavelength (um)"); ax.set_ylabel("F_lambda (uJy/um^2, arb.)"); ax.legend(fontsize=7)
         best = s.get("best")
-        ax.set_title(f"{s['verdict']}" + (f": {best['label']} p={best['prob']:.2f} chi2r={best['chi2_red']:.1f}" if best else ""), fontsize=9)
+        ax.set_title(("[prod code] " if dev else "[snap v2] ") + f"{s['verdict']}" + (f": {best['label']} p={best['prob']:.2f} chi2r={best['chi2_red']:.1f}" if best else "")
+                     + (f" ({s.get('reason') or s.get('doubt')})" if s.get("reason") or s.get("doubt") else ""), fontsize=8)
     fig.suptitle(r["name"])
     fig.tight_layout()
     out = Path(path).with_name(r["name"] + "_montage.png")

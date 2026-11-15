@@ -1,0 +1,112 @@
+{
+ "tag": "J1826-4652",
+ "query_name": "CWISE J182641.78-465249.2",
+ "ra": 276.6740877,
+ "dec": -46.8803528,
+ "utc": "2026-11-15T00:31:08Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 27207639,
+   "main_id": "CWISE J182641.78-465249.2",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 1,
+   "plx_value": 0.0,
+   "pmra": 0.0,
+   "pmdec": 0.0
+  }
+ ],
+ "simbad_ids": [
+  "CWISE J182641.78-465249.2"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2024AJ....167..253R",
+   "title": "89 New Ultracool Dwarf Comoving Companions Identified with the Backyard Worlds: Planet 9 Citizen Science Project."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "CWISE J182641.78-465249.2",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 0.0
+  },
+  {
+   "main_id": "SIPS J1826-4652",
+   "otype": "LM*",
+   "sp_type": "",
+   "nbref": 5,
+   "sep": 8.844273575919997
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=276.674088-46.880353&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "I_243_out": 3,
+  "I_252_out": 3,
+  "I_284_out": 4,
+  "I_297_out": 4,
+  "I_305_out": 2,
+  "I_317_sample": 4,
+  "I_347_gaia2dis": 4,
+  "I_352_gedr3dis": 4,
+  "I_355_gaiadr3": 5,
+  "I_355_xpsummary": 1,
+  "I_355_xpcont": 1,
+  "I_360_goldu": 1,
+  "II_246_out": 1,
+  "II_328_allwise": 1,
+  "II_374_table2": 1,
+  "IV_39_tic82": 4,
+  "V_160_shboost": 1,
+  "VI_42_out": 1,
+  "B_denis_denis": 1,
+  "J_ApJ_984_58_table1": 1,
+  "J_A_A_619_L8_table2": 1,
+  "J_A_A_629_A139_table3": 1,
+  "J_A_A_649_A6_table1c": 1,
+  "J_A_A_657_A7_tablea3": 1,
+  "J_A_A_665_A78_bkgev": 1,
+  "J_A_A_692_A115_pristine_ca": 1,
+  "J_AJ_161_234_table2": 1,
+  "J_AJ_161_234_table3": 1,
+  "J_AJ_161_234_table4": 1,
+  "J_AJ_170_168_table1": 1,
+  "J_other_ApSS_371_85_catalog": 1,
+  "J_other_JDSO_15_21_hpms3": 1
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "J_A_A_619_L8_table2",
+   "values": [
+    {
+     "sptphot": "M8"
+    }
+   ]
+  },
+  {
+   "table": "J_A_A_657_A7_tablea3",
+   "values": [
+    {
+     "SpType": ""
+    }
+   ]
+  },
+  {
+   "table": "J_other_ApSS_371_85_catalog",
+   "values": [
+    {
+     "SpTEst": "M8"
+    }
+   ]
+  }
+ ]
+}

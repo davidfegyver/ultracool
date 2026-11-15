@@ -1,0 +1,9 @@
+{
+ "name": "J1302+1911",
+ "ra": 195.7314419,
+ "dec": 19.1959306,
+ "radius_arcsec": 15,
+ "2mass": "error: VizieR error",
+ "gaia_dr3_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/355/gaiadr3&-c=195.731442+19.195931&-c.rs=15&-out=Source,Gmag,RPmag,PM&-out.add=_r",
+ "gaia_dr3": []
+}

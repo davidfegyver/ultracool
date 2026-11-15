@@ -1,0 +1,18 @@
+{
+ "name": "J0019-0943",
+ "ra": 4.7847839,
+ "dec": -9.7232853,
+ "radius_arcsec": 15,
+ "2mass_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/246/out&-c=4.784784-9.723285&-c.rs=15&-out=2MASS,Jmag,Hmag,Kmag&-out.add=_r",
+ "2mass": [
+  {
+   "_r": "13.318",
+   "2MASS": "00190828-0943371",
+   "Jmag": "12.135",
+   "Hmag": "11.554",
+   "Kmag": "11.237"
+  }
+ ],
+ "gaia_dr3_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/355/gaiadr3&-c=4.784784-9.723285&-c.rs=15&-out=Source,Gmag,RPmag,PM&-out.add=_r",
+ "gaia_dr3": []
+}

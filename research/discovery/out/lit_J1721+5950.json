@@ -1,0 +1,71 @@
+{
+ "tag": "J1721+5950",
+ "query_name": "CWISEP J172104.42+595047.7",
+ "ra": 260.2683863,
+ "dec": 59.8465999,
+ "utc": "2026-11-15T00:50:32Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 19496317,
+   "main_id": "CWISEP J172104.42+595047.7",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 1,
+   "plx_value": 0.0,
+   "pmra": -10.0,
+   "pmdec": -32.0
+  }
+ ],
+ "simbad_ids": [
+  "CWISEP J172104.42+595047.7"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2020ApJ...889...74M",
+   "title": "Expanding the Y dwarf census with Spitzer follow-up of the coldest CatWISE solar neighborhood discoveries."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "CWISEP J172104.42+595047.7",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 0.4122255324188287
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=260.268386+59.846600&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "II_328_allwise": 1,
+  "II_377_master": 1,
+  "VI_42_out": 1,
+  "VII_292_north": 1,
+  "VIII_103_spirex24": 1,
+  "VIII_103_pacsx24": 1,
+  "J_ApJ_889_74_bdcand": 1,
+  "J_ApJ_889_74_table3": 2,
+  "J_ApJ_889_74_table4": 1,
+  "J_ApJS_234_23_r90cat": 1,
+  "J_ApJS_234_23_c75cat": 1,
+  "J_AJ_128_1_sources": 2,
+  "J_AJ_131_2859_table5": 1,
+  "J_MNRAS_416_927_flsintwf": 2
+ },
+ "vizier_spt_rows": [
+  {
+   "table": "VII_292_north",
+   "values": [
+    {
+     "type": "REX"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "tag": "J0225+1548",
+ "query_name": "WISEA J022513.21+154855.1",
+ "ra": 36.3053859,
+ "dec": 15.8152238,
+ "utc": "2026-11-15T00:38:00Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [
+  {
+   "oid": 19496213,
+   "main_id": "WISEA J022513.21+154855.1",
+   "otype": "BD?",
+   "sp_type": "",
+   "sp_bibcode": "",
+   "nbref": 1,
+   "plx_value": 0.0,
+   "pmra": 229.0,
+   "pmdec": 85.0
+  }
+ ],
+ "simbad_ids": [
+  "CWISEP J022513.27+154854.8",
+  "WISEA J022513.21+154855.1",
+  "CWISE J022513.28+154854.8"
+ ],
+ "simbad_refs": [
+  {
+   "bibcode": "2020ApJ...889...74M",
+   "title": "Expanding the Y dwarf census with Spitzer follow-up of the coldest CatWISE solar neighborhood discoveries."
+  }
+ ],
+ "simbad_mesSpT": [],
+ "simbad_cone30": [
+  {
+   "main_id": "WISEA J022513.21+154855.1",
+   "otype": "BD?",
+   "sp_type": "",
+   "nbref": 1,
+   "sep": 3.653620611808551
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=36.305386+15.815224&-c.rs=10&-out.max=20",
+ "vizier_status": "error: IncompleteRead(327377 bytes read)",
+ "vizier_tables_with_rows": {},
+ "vizier_spt_rows": []
+}

@@ -1,0 +1,38 @@
+{
+ "tag": "J1910+3425",
+ "query_name": "UHS DR3 459676247494",
+ "ra": 287.6585676,
+ "dec": 34.4323264,
+ "utc": "2026-11-15T01:01:43Z",
+ "sources": {
+  "simbad": "https://simbad.harvard.edu/simbad/sim-tap",
+  "vizier": "vizier.cfa.harvard.edu (all catalogues, 10 arcsec)"
+ },
+ "simbad_basic": [],
+ "simbad_cone30": [
+  {
+   "main_id": "TYC 2648-987-1",
+   "otype": "*",
+   "sp_type": "",
+   "nbref": 0,
+   "sep": 25.035734067589136
+  }
+ ],
+ "vizier_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-c=287.658568+34.432326&-c.rs=10&-out.max=20",
+ "vizier_status": "ok",
+ "vizier_tables_with_rows": {
+  "I_297_out": 1,
+  "I_305_out": 1,
+  "I_347_gaia2dis": 1,
+  "I_352_gedr3dis": 1,
+  "I_355_gaiadr3": 1,
+  "II_246_out": 1,
+  "II_328_allwise": 1,
+  "II_381_hlsp_ps1_tm": 3,
+  "II_389_ps1_dr2": 3,
+  "IV_39_tic82": 2,
+  "VI_42_out": 1,
+  "J_MNRAS_521_2087_rpmgaia3": 1
+ },
+ "vizier_spt_rows": []
+}

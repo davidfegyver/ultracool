@@ -1,0 +1,18 @@
+{
+ "name": "J2011-4812",
+ "ra": 302.9437631,
+ "dec": -48.2166297,
+ "radius_arcsec": 15,
+ "2mass_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/246/out&-c=302.943763-48.216630&-c.rs=15&-out=2MASS,Jmag,Hmag,Kmag&-out.add=_r",
+ "2mass": [],
+ "gaia_dr3_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I/355/gaiadr3&-c=302.943763-48.216630&-c.rs=15&-out=Source,Gmag,RPmag,PM&-out.add=_r",
+ "gaia_dr3": [
+  {
+   "_r": "14.557",
+   "Source": "6669021292182006144",
+   "Gmag": "18.451710",
+   "RPmag": "17.863880",
+   "PM": "7.936"
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "name": "J1639+1840",
+ "ra": 249.8856353,
+ "dec": 18.6803467,
+ "radius_arcsec": 15,
+ "2mass_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/246/out&-c=249.885635+18.680347&-c.rs=15&-out=2MASS,Jmag,Hmag,Kmag&-out.add=_r",
+ "2mass": [
+  {
+   "_r": "12.424",
+   "2MASS": "16393295+1841002",
+   "Jmag": "15.905",
+   "Hmag": "15.325",
+   "Kmag": "15.083"
+  }
+ ],
+ "gaia_dr3": "error: VizieR error"
+}
