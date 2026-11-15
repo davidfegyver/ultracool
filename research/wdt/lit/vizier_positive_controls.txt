@@ -1,0 +1,36 @@
+#### positive control: first row of J/MNRAS/506/2269/catalog (no constraint)
+Source1	Source2	RA_ICRS	RA2deg	e_RA_ICRS	e_RA2deg	DE_ICRS	DE2deg	e_DE_ICRS	e_DE2deg	Plx1	Plx2	PM1	PM2	pmRA1	pmRA2	pmDE1	pmDE2	Dup1	Dup2	Gmag1	Gmag2	BPmag1	BPmag2	RPmag1	RPmag2	theta	sepAU	BinType	R	dr
+ 	 	deg	deg	mas	mas	deg	deg	mas	mas	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	mas/yr	mas/yr	 	 	mag	mag	mag	mag	mag	mag	deg	AU	 	 	 	 	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	deg	deg
+-------------------	-------------------	-----------------------	-------------------------	-------------	-------------	-----------------------	-------------------------	-------------	-------------	----
+4282339100022417152	4282339095720590720	282.8094311300575327550	 2.828088579357593062e+02	 0.0127598740	 0.2860694500	+05.6924643761051036961	 5.688739805905678182e+00	 0.0127605690	 0.2421480600	  2.
+#### positive control: first row of J/ApJS/247/66/table4 (no constraint)
+Seq	Gaia	RA_ICRS	DE_ICRS	pmRA	pmDE	plx	Gmag	BP-RP	RV	_RA.icrs	_DE.icrs
+ 	 	deg	deg	mas/yr	mas/yr	mas	mag	mag	km/s	deg	deg
+------	-------------------	---------	---------	---------	---------	----------	-------	--------	--------	---------	---------
+     1	2132602965008510080	289.40943	+49.20537	   80.324	  112.491	   10.9543	14.8427	  2.2534	        	289.40890	+49.20489
+#### positive control: first row of B/wds/wds (no constraint)
+WDS	Disc	Comp	Obs1	pa1	pa2	sep1	sep2	mag1	mag2	DM	Notes	n_RAh	RAJ2000	DEJ2000
+ 	 	 	yr	deg	deg	arcsec	arcsec	mag	mag	 	 	 	"h:m:s"	"d:m:s"
+----------	-------	-----	----	---	---	-----	------	------	-----	---------	----	-	-----------	-----------
+00000+7530	A  1248	     	1904	246	235	  0.8	  0.60	10.270	11.50	+74 1056 	    	 	00 00 06.64	+75 28 59.8
+#### positive control: first row of J/A+A/657/A7/tablea3 (no constraint)
+T	HIP-Parent	HIP	EDR3-Parent	EDR3-Source	Name	RA_ICRS	DE_ICRS	rPos	Vmag	Hpmag	Gmag	Kmag	E(B-V)	SpType	Plx	e_Plx	r_Plx	RUWE	RV	e_RV	r_RV	pmRA	e_pmRA	pmDE	e_pmDE	snrPMaG3	BinG3	Mass	Radius	N	Sep	PA	LinS
+ 	 	 	 	 	 	deg	deg	 	mag	mag	mag	mag	mag	 	mas	mas	 	 	km/s	km/s	 	mas/a	mas/a	mas/a	mas/a	 	 	Msun	Rsun	 	arcsec	deg	au	km/s	km/s	km/s	deg	 	 	 	 	
+-	------	------	-------------------	-------------------	-------------------------------	---------------	---------------	-----	------	-------	-------	------	------	-----------------------	-------	-----
+1	      	      	    123424475948672	    123424475948672	LSPM J0259+0046                	044.80000692214	+00.77949330385	G    	      	       	14.9007	10.863	 0.000	M5V                    	 22.499	 0.03
+#### positive control: first row of J/MNRAS/527/8687/tablea6 (no constraint)
+BinType	GaiaDR3-Id1	GaiaDR3-Id2	GaiaDR3-Id3	Name1	Name2	Name3	SpType1	r_SpType1	SpType2	r_SpType2	SpType3	r_SpType3	Plx	Sep1pc	Sep1AU	dvtan1	Sep2pc	Sep2AU	dvtan2	Comment	SimbadName	_RA	_DE
+ 	 	 	 	 	 	 	 	 	 	 	 	 	mas	pc	AU	km/s	pc	AU	km/s	 	 	deg	deg
+--------	-------------------	-------------------	-------------------	----------------------	-------------------------	-----------------	------	-------------------	--------	-------------------	-------	
+WDBD    	1176717792385803136	                   	                   	WDJ142439.15+091714.16	GD 165B                  	                 	DA    	2011ApJ...743..138G	L4      	2022ApJ...938...56G	       	
+#### positive control: El-Badry+2021 Source1 of first row, then cone 60" around it
+## cone 5" around 282.8094311 +5.6924644 (Source1 of the first row)
+_r	Source1	Source2	sepAU	R
+arcsec	 	 	AU	
+-----	-------------------	-------------------	----------------------	-------------------------
+0.000	4282339100022417152	4282339095720590720	  5500.025776463480724	 1.530961811036094522e-01
+## Source1=4282339100022417152 constraint
+Source1	Source2	sepAU	R
+ 	 	AU	
+-------------------	-------------------	----------------------	-------------------------
+4282339100022417152	4282339095720590720	  5500.025776463480724	 1.530961811036094522e-01

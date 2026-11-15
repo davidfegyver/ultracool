@@ -1,0 +1,380 @@
+#### J/ApJS/253/7/* @ 358.70015 -81.67908
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:29 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:29	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fApJS%2f253%2f7%2f%2a&-c=358.70015+-81.67908&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=13	
+#  13 catalogues with potential matches were examined.
+#
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_22530007
+#Name: J/ApJS/253/7
+#Title: A full-sky census of brown dwarfs within 20pc (Kirkpatrick+, 2021)
+#INFO	ivoid=ivo://cds.vizier/j/apjs/253/7	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/apjs/253/7	    IVOID of underlying data collection
+#INFO	creator=Kirkpatrick J.D.	    First author or institution
+#INFO	cites=bibcode:2021ApJS..253....7K	    Article or Data origin sources
+#INFO	journal=ApJS	    Journal name
+#INFO	original_date=2021	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJS/253/7	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier/bb-7x-7	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-08-03	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_ApJS_253_7_tablea1:
+#Name: J/ApJS/253/7/tablea1
+#Title: Amassed spectroscopic, astrometric, and photometric data for objects listed in Tables 5-11
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	T	(A2)	Table listing (1)	[ucd=meta.note]
+#Column	Name	(A16)	Short name used in other tables (2)	[ucd=meta.id]
+#Column	SpTO	(F4.1)	[-2/19]? Optical spectral type (3)	[ucd=src.spType]
+#Column	SpTIR	(F4.1)	[-1/22]? Near-IR spectral type (3)	[ucd=src.spType]
+#Column	SpAd	(F4.1)	[-9/24] Adopted spectral type (3)	[ucd=src.spType]
+#Column	r_SpTO	(A1)	Source of the optical spectral type (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	r_SpTIR	(A1)	Source of the NIR spectral type (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	plx	(F11.4)	[-12.4/502]? Best measured trigonometric parallax (4)	[ucd=pos.parallax.trig]
+#Column	e_plx	(F9.4)	[0.019/73]? Uncertainty in plx (4)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F9.2)	[-8124/3968]? Best measured proper motion, in RA (4)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.2)	[0.03/101]? Uncertainty in pmRA (4)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.2)	[-3108/1685]? Best measured proper motion, in DE (4)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.2)	[0.03/101]? Uncertainty in pmDE (4)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	AS	(A2)	Source of the astrometry (see refs.dat file)	[ucd=meta.bib]
+#Column	JMKO	(F8.2)	[11.4/27]? J-band photometry on the MKO system	[ucd=phot.mag;em.IR.J]
+#Column	e_JMKO	(F6.2)	[0.01/0.8]? Uncertainty in JMKO	[ucd=stat.error]
+#Column	Jmag	(F8.2)	[10.7/21]? J-band photometry one the 2MASS system	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag	(F6.2)	[0.01/0.6]? Uncertainty in Jmag	[ucd=stat.error;phot.mag]
+#Column	Hmag	(F8.2)	[9.5/25.3]? H-band photometry on either the MKO or 2MASS system	[ucd=phot.mag;em.IR.H]
+#Column	e_Hmag	(F6.2)	[0.01/0.5]? Uncertainty in Hmag	[ucd=stat.error;phot.mag]
+#Column	KMKO	(F8.2)	[10/23.5]? K-band photometry on the MKO system	[ucd=phot.mag;em.IR.K]
+#Column	e_KMKO	(F6.2)	[0.01/0.5]? Uncertainty in KMKO	[ucd=stat.error]
+#Column	Ksmag	(F8.2)	[8.8/19.2]? Ks-band photometry on the 2MASS system	[ucd=phot.mag;em.IR.K]
+#Column	e_Ksmag	(F6.2)	[0.01/0.6]? Uncertainty in Ksmag	[ucd=stat.error;phot.mag]
+#Column	PhotS	(A5)	Source of the near-IR photometry (5)	[ucd=meta.bib]
+#Column	RACdeg	(F11.7)	CatWISE2020 Right Ascension (J2000) at Ep=57170 (6)	[ucd=pos.eq.ra]
+#Column	DECdeg	(F11.7)	CatWISE2020 Declination (J2000) at Ep=57170 (6)	[ucd=pos.eq.dec]
+#Column	pmRAC2	(F12.5)	[-8/2.7]? CatWISE2020 measured proper motion in RA	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRAC2	(F10.4)	[0.002/0.3]? Uncertainty in pmRAC2	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDEC2	(F12.5)	[-3.5/1.7]? CatWISE2020 measured proper motion in DE	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDEC2	(F10.4)	[0.002/0.3]? Uncertainty in pmDEC2	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	W1magC2	(F9.3)	[7.9/20]? CatWISE2020 moving-object PSF-fit W1 band photometry	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1magC2	(F8.3)	[0.004/0.6]? Uncertainty in W1magC2	[ucd=stat.error]
+#Column	W2magC2	(F9.3)	[7.3/16.7]? CatWISE2020 moving-object PSF-fit W2 band photometry	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2magC2	(F8.3)	[0.004/0.2]? Uncertainty in W2magC2	[ucd=stat.error]
+#Column	plxC2	(F8.3)	[-1/0.6]? CatWISE2020 par_pm parallax estimate (7)	[ucd=pos.parallax.trig]
+#Column	e_plxC2	(F7.3)	[0.01/0.4]? Uncertainty in plxC2 (7)	[ucd=stat.error]
+#Column	C2S	(A2)	Source of the CatWISE2020 data (8)	[ucd=meta.bib]
+#Column	W1mag	(F9.3)	[7.8/20.1]? cISE stationary-object PSF-fit W1 band photometry	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1mag	(F8.3)	[0.01/0.6]? Uncertainty in W1mag	[ucd=stat.error;phot.mag]
+#Column	W2mag	(F9.3)	[7.2/17]? WISE stationary-object PSF-fit W2 band photometry	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2mag	(F8.3)	[0.008/0.3]? Uncertainty in W2mag	[ucd=stat.error;phot.mag]
+#Column	W3mag	(F9.3)	[6.2/13.5]? WISE stationary-object PSF-fit W3 band photometry	[ucd=phot.flux.density;em.IR.8-15um]
+#Column	e_W3mag	(F8.3)	[0.01/0.6]? Uncertainty in W3mag	[ucd=stat.error;phot.mag]
+#Column	WS	(A2)	Source of the stationary-object photometry (9)	[ucd=meta.bib]
+#Column	ch1mag	(F9.3)	[7.5/19.7]? Spitzer channel 1 (3.6um) photometry	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_ch1mag	(F8.3)	[0.01/0.3]? Uncertainty in ch1mag	[ucd=stat.error;phot.mag]
+#Column	ch2mag	(F9.3)	[7.4/17]? Spitzer channel 2 (4.5um) photometry	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_ch2mag	(F8.3)	[0.01/0.06]? Uncertainty in ch2mag	[ucd=stat.error;phot.mag]
+#Column	S	(A1)	Source of Spitzer photometry (10)	[ucd=meta.bib]
+#Column	N	(A1)	[MSY] Note (11)	[ucd=meta.note]
+#Column	FName	(a28)	Full discovery designation of the system (2)	[ucd=meta.id;meta.main]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000) as in other tables; column added by CDS	[ucd=meta.id]
+#Column	m_PName	(A2)	Component for object	[ucd=meta.code.multip]
+#Column	New	(I3)	New candidate (link to Table 1)	[ucd=meta.ref.url]
+#Column	Nc	(I3)	Number of astrometry measurements for this star (link to Table 4)	[ucd=meta.number]
+#Column	SimbadName	(a28)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+_r	recno	T	Name	SpTO	SpTIR	SpAd	r_SpTO	r_SpTIR	plx	e_plx	pmRA	e_pmRA	pmDE	e_pmDE	AS	JMKO	e_JMKO	Jmag	e_Jmag	Hmag	e_Hmag	KMKO	e_KMKO	Ksmag	e_Ksmag	PhotS	RACdeg	DECdeg	pmRAC2	e_pmRAC2	pmDEC2	e_pmDEC2	W1magC2	e_W1magC2	W2magC2	e_W2magC2	plxC2	e_plxC2	C2S	W1mag	e_W1mag	W2mag	e_W2mag	W3mag	e_W3mag	WS	ch1mag	e_ch1mag	ch2mag	e_ch2mag	S	N	FName	PName	m_PName	New	Nc	SimbadName	_RA	_DE
+arcsec	 	 	 	 	 	 	 	 	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	 	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	 	deg	deg	mas/yr	mas/yr	mas/yr	mas/yr	mag	mag	mag	mag	mas	mas	 	mag	mag	mag	mag	mag	mag	 	mag	mag	mag	mag	 	 	 	 	 	 	 	 	deg	deg
+-----	--------	--	----------------	----	----	----	-	-	-----------	---------	---------	------	---------	------	--	--------	------	--------	------	--------	------	--------	------	--------	------	-----	-----------	-----------	------------	----------	------------	----------	---------	--------	---------	--------	--------	-------	--	---------	--------	---------	--------	---------	--------	--	---------	--------	---------	--------	-	-	----------------------------	---------	--	---	---	----------------------------	---------	---------
+ 0.56	     677	C 	CWISE 2354-8140 	    	    	17.0	-	-	           	         	   141.83	 25.80	    72.83	 23.10	Ac	   17.61	  0.04	        	      	        	      	        	      	   18.13	  0.26	V---V	358.7001545	-81.6790757	     0.14183	    0.0258	     0.07283	    0.0231	   17.239	   0.047	   15.027	   0.023	   0.101	  0.069	C2	   17.365	   0.108	   15.021	   0.054	   12.558	   0.388	AW	   16.613	   0.040	   15.066	   0.021	0	 	CWISE J235448.04-814044.6   	2354-8140	  	  1	  0	CWISE J235448.04-814044.6   	358.69921	-81.67915
+
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	J_ApJS_253_7_table1:
+#Name: J/ApJS/253/7/table1
+#Title: New L, T, and Y dwarf candidates
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[FK5/J2000], at Epoch=J2000.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	CWISE	(A19)	CWISE position-based identifier (JHHMMSS.ss+DDMMSS.s)	[ucd=meta.id;meta.main]
+#Column	f_CWISE	(A1)	b: background (1)	[ucd=meta.code]
+#Column	Note	(A6)	Note (2)	[ucd=meta.note]
+#Column	Disc	(a28)	Discoverer code (3)	[ucd=meta.code]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000) as in other tables; column added by CDS	[ucd=meta.id]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+_r	recno	CWISE	f_CWISE	Note	Disc	PName	Simbad	_RA	_DE
+arcsec	 	 	 	 	 	 	 	deg	deg
+-----	--------	-------------------	-	------	----------------------------	---------	------	---------	---------
+ 0.56	      85	J235448.04-814044.6	 	      	G, J, K, N                  	2354-8140	Simbad	358.69921	-81.67915
+
+#Coosys	H:	ICRS
+#Table	J_ApJS_253_7_table4:
+#Name: J/ApJS/253/7/table4
+#Title: Astrometry on the Gaia DR2 Reference Frame
+#Column	_r	(F6.3)	Distance from center (358.700150-81.679080)[ICRS], at Epoch of catalog (MJD)	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000)	[ucd=meta.id]
+#Column	RA_ICRS	(F10.6)	[1.3/359.4] Right Ascension (ICRS) at Ep=MJD	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F10.6)	[-82.2/84.8] Declination (ICRS) at Ep=MJD	[ucd=pos.eq.dec;meta.main]
+#Column	e_RA_ICRS	(F6.3)	[0.01/2.5] Positional uncertainty in RA	[ucd=stat.error;pos.eq.ra]
+#Column	e_DE_ICRS	(F6.3)	[0.01/2.5] Positional uncertainty in DE	[ucd=stat.error;pos.eq.dec]
+#Column	Src	(A3)	Source (1)	[ucd=meta.bib]
+#Column	MJD	(F8.2)	[53310.5/58874.8] Epoch, Modified Julian Date (JD-2400000.5)	[ucd=time.epoch]
+#Column	X	(F13.2)	[-150232823/153255842] Solar System position, X, of observation in km (2)	[ucd=pos.cartesian.x;obs]
+#Column	Y	(F13.2)	[-152281985/148013402] Solar System position, Y, of observation in km (2)	[ucd=pos.cartesian.y;obs]
+#Column	Z	(F12.2)	[-62689519/62070770] Solar System position, Z, of observation in km (2)	[ucd=src.redshift;obs]
+#Table	J_ApJS_253_7_plx:
+#Name: J/ApJS/253/7/plx
+#Title: Parallax and motion fits for objects with high-quality (Table 5), low-quality (Table 6) and poor-quality (Table 7) parallaxes
+#Column	_r	(F6.3)	Distance from center (358.700150-81.679080)[ICRS], at Epoch of catalog (MJD)	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	FName	(A26)	Full name, position-based identifier	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F10.6)	Right Ascension (ICRS) at Ep=MJD	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F5.1)	[1.6/175] Positional uncertainty in RA	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F10.6)	[-82.2/84.8] Declination (ICRS) at Ep=MJD	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F5.1)	[1.6/141] Positional uncertainty in DE	[ucd=stat.error;pos.eq.dec]
+#Column	MJD	(F8.2)	[57064.5/58254.2] Mean Epoch, t0, Modified Julian Date (JD-2400000.5)	[ucd=time.epoch]
+#Column	q_plx	(A1)	h=high-quality (Table 5), l=low-quality (Table 6) and p=poor-quality (or unmeasurable) for parallaxes that need improvement (Table 7)	[ucd=meta.code.qual]
+#Column	plx	(F5.1)	[-12.4/439]? Absolute parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F4.1)	[1.7/73]? Uncertainty in plx	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F7.1)	[-8123.7/1289.1] Absolute proper motion in RA	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F4.1)	[0.4/59] Uncertainty in pmRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F7.1)	[-3107.5/1311.5] Absolute proper motion in DE	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F4.1)	[0.6/45] Uncertainty in pmDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	chisq	(F7.2)	[9.9/4401] {chi}^2^ of fit	[ucd=stat.fit.chi2]
+#Column	dof	(I3)	[17/133] Degrees of freedom	[ucd=stat.fit.dof]
+#Column	chisq/dof	(F5.2)	[0.2/77.2] Reduced {chi}^2^ of fit	[ucd=meta.note]
+#Column	NSp	(I2)	[2/39] Number of Spitzer astrometric epochs	[ucd=meta.number]
+#Column	NW1	(I2)	[0/29] Number of unWISE W1 astrometric epochs	[ucd=meta.number]
+#Column	NW2	(I2)	[0/29] Number of unWISE W2 astrometric epochs	[ucd=meta.number]
+#Column	NGDR2	(I3)	[3/344] Number of Gaia DR2 five-parameter re-registration stars	[ucd=meta.number]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000) as in other tables; column added by CDS	[ucd=meta.id]
+#Column	_RA.icrs	(F10.6)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F10.6)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_253_7_table11:
+#Name: J/ApJS/253/7/table11
+#Title: The full-sky 20-pc census of L, T, and Y dwarfs (known as of 2020 Oct)
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Cat	(A7)	Catalog used for FName if any	[ucd=instr.setup;meta.table]
+#Column	FName	(A19)	Full name, position-based identifier	[ucd=meta.id;meta.main]
+#Column	m_PName	(A2)	Component ID on object	[ucd=meta.code.multip]
+#Column	OName	(a21)	Other name	[ucd=meta.id]
+#Column	f_FName	(A1)	Cross identification flags for Table A1 (1)	[ucd=meta.code]
+#Column	r_FName	(a7)	Discovery Reference(s) (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	SpTO	(a12)	Optical spectral type	[ucd=src.spType]
+#Column	f_SpTO	(A1)	Flag on SpTO (2)	[ucd=meta.code]
+#Column	r_SpTO	(A3)	Reference(s) for SpTO (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	SpTIR	(a14)	Near-IR spectral type	[ucd=src.spType]
+#Column	r_SpTIR	(a7)	Reference(s) for SpTIR (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	u_plx	(A1)	[:u ] Uncertainty flag (3)	[ucd=meta.code.error;pos.parallax]
+#Column	plx	(F8.4)	[37.1/501.6]? Absolute parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F7.4)	[0.019/21.4]? Uncertainty in plx	[ucd=stat.error;pos.parallax]
+#Column	pmtot	(F7.2)	[11.7/8151.6]? Total proper motion	[ucd=pos.pm]
+#Column	e_pmtot	(F5.2)	[0.1/99.7]? Uncertainty in pmtot	[ucd=stat.error]
+#Column	AS	(a6)	Source of the astrometry (see refs.dat file)	[ucd=meta.bib]
+#Column	AS-flags	(A1)	Flags on astrometry (4)	[ucd=meta.code]
+#Column	Teff	(I4)	[250/2338]? Effective surface temperature	[ucd=phys.temperature.effective]
+#Column	e_Teff	(I3)	[10/198]? Uncertainty in Teff	[ucd=stat.error;phys.temperature.effective]
+#Column	Note	(a7)	Special note(s) (5)	[ucd=meta.note]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000) as in other tables; column added by CDS	[ucd=meta.id]
+#Column	SimbadName	(a28)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Positions from Simbad or names (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Positions from Simbad or names (declination part)	[ucd=pos.eq.dec;meta.main]
+#### J/ApJS/253/7/* @ 358.58383 -81.68455
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:29 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:29	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fApJS%2f253%2f7%2f%2a&-c=358.58383+-81.68455&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=13	
+#  13 catalogues with potential matches were examined.
+#
+#INFO	-c=358.583830-81.684550,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_22530007
+#Name: J/ApJS/253/7
+#Title: A full-sky census of brown dwarfs within 20pc (Kirkpatrick+, 2021)
+#INFO	ivoid=ivo://cds.vizier/j/apjs/253/7	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/apjs/253/7	    IVOID of underlying data collection
+#INFO	creator=Kirkpatrick J.D.	    First author or institution
+#INFO	cites=bibcode:2021ApJS..253....7K	    Article or Data origin sources
+#INFO	journal=ApJS	    Journal name
+#INFO	original_date=2021	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJS/253/7	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier/bb-7x-7	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-08-03	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_ApJS_253_7_tablea1:
+#Name: J/ApJS/253/7/tablea1
+#Title: Amassed spectroscopic, astrometric, and photometric data for objects listed in Tables 5-11
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	T	(A2)	Table listing (1)	[ucd=meta.note]
+#Column	Name	(A16)	Short name used in other tables (2)	[ucd=meta.id]
+#Column	SpTO	(F4.1)	[-2/19]? Optical spectral type (3)	[ucd=src.spType]
+#Column	SpTIR	(F4.1)	[-1/22]? Near-IR spectral type (3)	[ucd=src.spType]
+#Column	SpAd	(F4.1)	[-9/24] Adopted spectral type (3)	[ucd=src.spType]
+#Column	r_SpTO	(A1)	Source of the optical spectral type (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	r_SpTIR	(A1)	Source of the NIR spectral type (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	plx	(F11.4)	[-12.4/502]? Best measured trigonometric parallax (4)	[ucd=pos.parallax.trig]
+#Column	e_plx	(F9.4)	[0.019/73]? Uncertainty in plx (4)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F9.2)	[-8124/3968]? Best measured proper motion, in RA (4)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.2)	[0.03/101]? Uncertainty in pmRA (4)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.2)	[-3108/1685]? Best measured proper motion, in DE (4)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.2)	[0.03/101]? Uncertainty in pmDE (4)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	AS	(A2)	Source of the astrometry (see refs.dat file)	[ucd=meta.bib]
+#Column	JMKO	(F8.2)	[11.4/27]? J-band photometry on the MKO system	[ucd=phot.mag;em.IR.J]
+#Column	e_JMKO	(F6.2)	[0.01/0.8]? Uncertainty in JMKO	[ucd=stat.error]
+#Column	Jmag	(F8.2)	[10.7/21]? J-band photometry one the 2MASS system	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag	(F6.2)	[0.01/0.6]? Uncertainty in Jmag	[ucd=stat.error;phot.mag]
+#Column	Hmag	(F8.2)	[9.5/25.3]? H-band photometry on either the MKO or 2MASS system	[ucd=phot.mag;em.IR.H]
+#Column	e_Hmag	(F6.2)	[0.01/0.5]? Uncertainty in Hmag	[ucd=stat.error;phot.mag]
+#Column	KMKO	(F8.2)	[10/23.5]? K-band photometry on the MKO system	[ucd=phot.mag;em.IR.K]
+#Column	e_KMKO	(F6.2)	[0.01/0.5]? Uncertainty in KMKO	[ucd=stat.error]
+#Column	Ksmag	(F8.2)	[8.8/19.2]? Ks-band photometry on the 2MASS system	[ucd=phot.mag;em.IR.K]
+#Column	e_Ksmag	(F6.2)	[0.01/0.6]? Uncertainty in Ksmag	[ucd=stat.error;phot.mag]
+#Column	PhotS	(A5)	Source of the near-IR photometry (5)	[ucd=meta.bib]
+#Column	RACdeg	(F11.7)	CatWISE2020 Right Ascension (J2000) at Ep=57170 (6)	[ucd=pos.eq.ra]
+#Column	DECdeg	(F11.7)	CatWISE2020 Declination (J2000) at Ep=57170 (6)	[ucd=pos.eq.dec]
+#Column	pmRAC2	(F12.5)	[-8/2.7]? CatWISE2020 measured proper motion in RA	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRAC2	(F10.4)	[0.002/0.3]? Uncertainty in pmRAC2	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDEC2	(F12.5)	[-3.5/1.7]? CatWISE2020 measured proper motion in DE	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDEC2	(F10.4)	[0.002/0.3]? Uncertainty in pmDEC2	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	W1magC2	(F9.3)	[7.9/20]? CatWISE2020 moving-object PSF-fit W1 band photometry	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1magC2	(F8.3)	[0.004/0.6]? Uncertainty in W1magC2	[ucd=stat.error]
+#Column	W2magC2	(F9.3)	[7.3/16.7]? CatWISE2020 moving-object PSF-fit W2 band photometry	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2magC2	(F8.3)	[0.004/0.2]? Uncertainty in W2magC2	[ucd=stat.error]
+#Column	plxC2	(F8.3)	[-1/0.6]? CatWISE2020 par_pm parallax estimate (7)	[ucd=pos.parallax.trig]
+#Column	e_plxC2	(F7.3)	[0.01/0.4]? Uncertainty in plxC2 (7)	[ucd=stat.error]
+#Column	C2S	(A2)	Source of the CatWISE2020 data (8)	[ucd=meta.bib]
+#Column	W1mag	(F9.3)	[7.8/20.1]? cISE stationary-object PSF-fit W1 band photometry	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1mag	(F8.3)	[0.01/0.6]? Uncertainty in W1mag	[ucd=stat.error;phot.mag]
+#Column	W2mag	(F9.3)	[7.2/17]? WISE stationary-object PSF-fit W2 band photometry	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2mag	(F8.3)	[0.008/0.3]? Uncertainty in W2mag	[ucd=stat.error;phot.mag]
+#Column	W3mag	(F9.3)	[6.2/13.5]? WISE stationary-object PSF-fit W3 band photometry	[ucd=phot.flux.density;em.IR.8-15um]
+#Column	e_W3mag	(F8.3)	[0.01/0.6]? Uncertainty in W3mag	[ucd=stat.error;phot.mag]
+#Column	WS	(A2)	Source of the stationary-object photometry (9)	[ucd=meta.bib]
+#Column	ch1mag	(F9.3)	[7.5/19.7]? Spitzer channel 1 (3.6um) photometry	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_ch1mag	(F8.3)	[0.01/0.3]? Uncertainty in ch1mag	[ucd=stat.error;phot.mag]
+#Column	ch2mag	(F9.3)	[7.4/17]? Spitzer channel 2 (4.5um) photometry	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_ch2mag	(F8.3)	[0.01/0.06]? Uncertainty in ch2mag	[ucd=stat.error;phot.mag]
+#Column	S	(A1)	Source of Spitzer photometry (10)	[ucd=meta.bib]
+#Column	N	(A1)	[MSY] Note (11)	[ucd=meta.note]
+#Column	FName	(a28)	Full discovery designation of the system (2)	[ucd=meta.id;meta.main]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000) as in other tables; column added by CDS	[ucd=meta.id]
+#Column	m_PName	(A2)	Component for object	[ucd=meta.code.multip]
+#Column	New	(I3)	New candidate (link to Table 1)	[ucd=meta.ref.url]
+#Column	Nc	(I3)	Number of astrometry measurements for this star (link to Table 4)	[ucd=meta.number]
+#Column	SimbadName	(a28)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	J_ApJS_253_7_table1:
+#Name: J/ApJS/253/7/table1
+#Title: New L, T, and Y dwarf candidates
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000], at Epoch=J2000.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	CWISE	(A19)	CWISE position-based identifier (JHHMMSS.ss+DDMMSS.s)	[ucd=meta.id;meta.main]
+#Column	f_CWISE	(A1)	b: background (1)	[ucd=meta.code]
+#Column	Note	(A6)	Note (2)	[ucd=meta.note]
+#Column	Disc	(a28)	Discoverer code (3)	[ucd=meta.code]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000) as in other tables; column added by CDS	[ucd=meta.id]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#Coosys	H:	ICRS
+#Table	J_ApJS_253_7_table4:
+#Name: J/ApJS/253/7/table4
+#Title: Astrometry on the Gaia DR2 Reference Frame
+#Column	_r	(F6.3)	Distance from center (358.583830-81.684550)[ICRS], at Epoch of catalog (MJD)	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000)	[ucd=meta.id]
+#Column	RA_ICRS	(F10.6)	[1.3/359.4] Right Ascension (ICRS) at Ep=MJD	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F10.6)	[-82.2/84.8] Declination (ICRS) at Ep=MJD	[ucd=pos.eq.dec;meta.main]
+#Column	e_RA_ICRS	(F6.3)	[0.01/2.5] Positional uncertainty in RA	[ucd=stat.error;pos.eq.ra]
+#Column	e_DE_ICRS	(F6.3)	[0.01/2.5] Positional uncertainty in DE	[ucd=stat.error;pos.eq.dec]
+#Column	Src	(A3)	Source (1)	[ucd=meta.bib]
+#Column	MJD	(F8.2)	[53310.5/58874.8] Epoch, Modified Julian Date (JD-2400000.5)	[ucd=time.epoch]
+#Column	X	(F13.2)	[-150232823/153255842] Solar System position, X, of observation in km (2)	[ucd=pos.cartesian.x;obs]
+#Column	Y	(F13.2)	[-152281985/148013402] Solar System position, Y, of observation in km (2)	[ucd=pos.cartesian.y;obs]
+#Column	Z	(F12.2)	[-62689519/62070770] Solar System position, Z, of observation in km (2)	[ucd=src.redshift;obs]
+#Table	J_ApJS_253_7_plx:
+#Name: J/ApJS/253/7/plx
+#Title: Parallax and motion fits for objects with high-quality (Table 5), low-quality (Table 6) and poor-quality (Table 7) parallaxes
+#Column	_r	(F6.3)	Distance from center (358.583830-81.684550)[ICRS], at Epoch of catalog (MJD)	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	FName	(A26)	Full name, position-based identifier	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F10.6)	Right Ascension (ICRS) at Ep=MJD	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F5.1)	[1.6/175] Positional uncertainty in RA	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F10.6)	[-82.2/84.8] Declination (ICRS) at Ep=MJD	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F5.1)	[1.6/141] Positional uncertainty in DE	[ucd=stat.error;pos.eq.dec]
+#Column	MJD	(F8.2)	[57064.5/58254.2] Mean Epoch, t0, Modified Julian Date (JD-2400000.5)	[ucd=time.epoch]
+#Column	q_plx	(A1)	h=high-quality (Table 5), l=low-quality (Table 6) and p=poor-quality (or unmeasurable) for parallaxes that need improvement (Table 7)	[ucd=meta.code.qual]
+#Column	plx	(F5.1)	[-12.4/439]? Absolute parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F4.1)	[1.7/73]? Uncertainty in plx	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F7.1)	[-8123.7/1289.1] Absolute proper motion in RA	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F4.1)	[0.4/59] Uncertainty in pmRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F7.1)	[-3107.5/1311.5] Absolute proper motion in DE	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F4.1)	[0.6/45] Uncertainty in pmDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	chisq	(F7.2)	[9.9/4401] {chi}^2^ of fit	[ucd=stat.fit.chi2]
+#Column	dof	(I3)	[17/133] Degrees of freedom	[ucd=stat.fit.dof]
+#Column	chisq/dof	(F5.2)	[0.2/77.2] Reduced {chi}^2^ of fit	[ucd=meta.note]
+#Column	NSp	(I2)	[2/39] Number of Spitzer astrometric epochs	[ucd=meta.number]
+#Column	NW1	(I2)	[0/29] Number of unWISE W1 astrometric epochs	[ucd=meta.number]
+#Column	NW2	(I2)	[0/29] Number of unWISE W2 astrometric epochs	[ucd=meta.number]
+#Column	NGDR2	(I3)	[3/344] Number of Gaia DR2 five-parameter re-registration stars	[ucd=meta.number]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000) as in other tables; column added by CDS	[ucd=meta.id]
+#Column	_RA.icrs	(F10.6)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F10.6)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_253_7_table11:
+#Name: J/ApJS/253/7/table11
+#Title: The full-sky 20-pc census of L, T, and Y dwarfs (known as of 2020 Oct)
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Cat	(A7)	Catalog used for FName if any	[ucd=instr.setup;meta.table]
+#Column	FName	(A19)	Full name, position-based identifier	[ucd=meta.id;meta.main]
+#Column	m_PName	(A2)	Component ID on object	[ucd=meta.code.multip]
+#Column	OName	(a21)	Other name	[ucd=meta.id]
+#Column	f_FName	(A1)	Cross identification flags for Table A1 (1)	[ucd=meta.code]
+#Column	r_FName	(a7)	Discovery Reference(s) (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	SpTO	(a12)	Optical spectral type	[ucd=src.spType]
+#Column	f_SpTO	(A1)	Flag on SpTO (2)	[ucd=meta.code]
+#Column	r_SpTO	(A3)	Reference(s) for SpTO (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	SpTIR	(a14)	Near-IR spectral type	[ucd=src.spType]
+#Column	r_SpTIR	(a7)	Reference(s) for SpTIR (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	u_plx	(A1)	[:u ] Uncertainty flag (3)	[ucd=meta.code.error;pos.parallax]
+#Column	plx	(F8.4)	[37.1/501.6]? Absolute parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F7.4)	[0.019/21.4]? Uncertainty in plx	[ucd=stat.error;pos.parallax]
+#Column	pmtot	(F7.2)	[11.7/8151.6]? Total proper motion	[ucd=pos.pm]
+#Column	e_pmtot	(F5.2)	[0.1/99.7]? Uncertainty in pmtot	[ucd=stat.error]
+#Column	AS	(a6)	Source of the astrometry (see refs.dat file)	[ucd=meta.bib]
+#Column	AS-flags	(A1)	Flags on astrometry (4)	[ucd=meta.code]
+#Column	Teff	(I4)	[250/2338]? Effective surface temperature	[ucd=phys.temperature.effective]
+#Column	e_Teff	(I3)	[10/198]? Uncertainty in Teff	[ucd=stat.error;phys.temperature.effective]
+#Column	Note	(a7)	Special note(s) (5)	[ucd=meta.note]
+#Column	PName	(A9)	Short name position code for object (HHMM+DDMM; J2000) as in other tables; column added by CDS	[ucd=meta.id]
+#Column	SimbadName	(a28)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Positions from Simbad or names (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Positions from Simbad or names (declination part)	[ucd=pos.eq.dec;meta.main]

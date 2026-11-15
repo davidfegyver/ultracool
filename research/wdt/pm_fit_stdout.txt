@@ -1,0 +1,22 @@
+VHS VHS J235448.06-814044.8 JMJD 57554.373509 pStar 0.993865 Jperrbits 0 -> used offs (0.055,-0.137)
+VHS VHS J235448.03-814044.8 JMJD 57340.095093 pStar 0.003067 Jperrbits 8388736 -> dropped offs (0.001,-0.151)
+VHS VHS J235448.02-814044.8 JMJD 57341.096511 pStar 0.944606 Jperrbits 0 -> used offs (-0.032,-0.187)
+
+PM estimates (mas/yr) and comparison with the WD (96.03, 36.29):
+pipeline_summary(WISE 2010-2024, catalog-prior search)         ( 101.9+-27.2,   54.8+-27.2) chi2r=None base=14.0 | d=(+6,+18) chi2=0.51 p=0.78 dv=2.5+-3.5 km/s
+CatWISE2020 corrected (VizieR II/365)                          ( 121.8+-25.8,   70.6+-23.1) chi2r=None base=None | d=(+26,+34) chi2=3.20 p=0.20 dv=5.5+-3.1 km/s
+CatWISE2020 uncorrected (IRSA catwise_2020)                    ( 141.8+-25.8,   72.8+-23.1) chi2r=None base=None | d=(+46,+36) chi2=5.65 p=0.06 dv=7.5+-3.2 km/s
+ours WISE+SPHEREx (16.4 yr)                                    ( 101.4+-22.6,   55.3+-22.6) chi2r=1.33 base=16.43 | d=(+5,+19) chi2=0.76 p=0.68 dv=2.5+-2.9 km/s
+ours WISE+SPHEREx (16.4 yr) [no parallax term]                 ( 100.0+-22.5,   53.5+-22.5) chi2r=1.31 base=16.43 | d=(+4,+17) chi2=0.62 p=0.73 dv=2.3+-2.9 km/s
+AllWISE->VHS (2 catalogues, no pipeline)                       (  78.0+-32.0,   17.4+-30.0) chi2r=0.01 base=5.9 | d=(-18,-19) chi2=0.71 p=0.70 dv=3.3+-4.0 km/s
+AllWISE->VHS (2 catalogues, no pipeline) [no parallax term]    (  75.3+-32.0,   19.5+-30.0) chi2r=0.08 base=5.9 | d=(-21,-17) chi2=0.73 p=0.69 dv=3.4+-4.0 km/s
+AllWISE+VHS+SPHEREx (no CatWISE)                               (  96.9+-23.7,   35.4+-22.8) chi2r=0.22 base=16.14 | d=(+1,-1) chi2=0.00 p=1.00 dv=0.2+-3.0 km/s
+AllWISE+VHS+SPHEREx (no CatWISE) [no parallax term]            (  95.5+-23.7,   36.6+-22.8) chi2r=0.25 base=16.14 | d=(-0,+0) chi2=0.00 p=1.00 dv=0.1+-3.0 km/s
+VHS->SPHEREx (no WISE at all)                                  ( 121.4+-37.9,   63.3+-37.9) chi2r=0.04 base=10.83 | d=(+25,+27) chi2=0.96 p=0.62 dv=4.7+-4.8 km/s
+VHS->SPHEREx (no WISE at all) [no parallax term]               ( 124.3+-37.9,   64.3+-37.9) chi2r=0.03 base=10.83 | d=(+28,+28) chi2=1.10 p=0.58 dv=5.1+-4.8 km/s
+AllWISE+CatWISE+VHS+SPHEREx (catalogue positions)              (  96.8+-23.7,   34.5+-22.8) chi2r=0.45 base=16.14 | d=(+1,-2) chi2=0.01 p=1.00 dv=0.2+-2.9 km/s
+AllWISE+CatWISE+VHS+SPHEREx (catalogue positions) [no parallax term] (  95.0+-23.7,   35.6+-22.8) chi2r=0.59 base=16.14 | d=(-1,-1) chi2=0.00 p=1.00 dv=0.2+-3.0 km/s
+COMBINED: ours WISE+VHS+SPHEREx                                ( 123.3+-20.9,   63.7+-20.9) chi2r=1.4 base=16.43 | d=(+27,+27) chi2=3.42 p=0.18 dv=4.9+-2.7 km/s
+COMBINED: ours WISE+VHS+SPHEREx [no parallax term]             ( 121.5+-20.8,   64.2+-20.8) chi2r=1.39 base=16.43 | d=(+26,+28) chi2=3.30 p=0.19 dv=4.8+-2.7 km/s
+
+separation (2016.0): {'arcsec': np.float64(63.79), 'au_projected': np.float64(1719.0), 'pa_deg': np.float64(72.0)}

@@ -1,0 +1,103 @@
+#### J/A+A/679/A127/* @ 358.70015 -81.67908
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:37 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:37	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fA%2bA%2f679%2fA127%2f%2a&-c=358.70015+-81.67908&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_36790127
+#Name: J/A+A/679/A127
+#Title: 100pc white dwarf spectral classification (Garcia-Zamora+, 2023)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/679/a127	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/679/a127	    IVOID of underlying data collection
+#INFO	creator=Garcia-Zamora E.M.	    First author or institution
+#INFO	cites=bibcode:2023A&A...679A.127G	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2023	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/679/A127	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36790127	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-04-16	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2016.000:	ICRS
+#Table	J_A_A_679_A127_catalog:
+#Name: J/A+A/679/A127/catalog
+#Title: Catalog of predicted spectral type for all objects in the 100pc (table 3)
+#Column	_r	(F6.3)	Distance from center (358.70015000000-81.67908000000)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Index	(I5)	[0/12350] Object index	[ucd=meta.id]
+#Column	GaiaDR3	(A19)	Object Gaia DR3 source ID	[ucd=meta.id;meta.main]
+#Column	refEp	(F6.1)	[2016.0] Position reference epoch	[ucd=meta.ref;pos.frame]
+#Column	RA_ICRS	(F15.11)	Right ascension (ICRS) at Ep=2016.0	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F13.10)	Right ascension error	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2016.0	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F13.10)	Declination error	[ucd=stat.error;pos.eq.dec]
+#Column	plx	(F9.4)	Parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F6.4)	Parallax error	[ucd=stat.error;pos.parallax]
+#Column	BP-RP	(F9.6)	BP-RP colour	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	GMAG	(F9.6)	Absolute magnitude (G)	[ucd=phys.magAbs]
+#Column	SPPred	(a7)	Predicted spectral type of object	[ucd=src.spType]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#### J/A+A/679/A127/* @ 358.58383 -81.68455
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:37 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:37	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fA%2bA%2f679%2fA127%2f%2a&-c=358.58383+-81.68455&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.583830-81.684550,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_36790127
+#Name: J/A+A/679/A127
+#Title: 100pc white dwarf spectral classification (Garcia-Zamora+, 2023)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/679/a127	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/679/a127	    IVOID of underlying data collection
+#INFO	creator=Garcia-Zamora E.M.	    First author or institution
+#INFO	cites=bibcode:2023A&A...679A.127G	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2023	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/679/A127	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36790127	    Dataset identifier that can be used for citation
+#INFO	publication_date=2025-04-16	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2016.000:	ICRS
+#Table	J_A_A_679_A127_catalog:
+#Name: J/A+A/679/A127/catalog
+#Title: Catalog of predicted spectral type for all objects in the 100pc (table 3)
+#Column	_r	(F6.3)	Distance from center (358.58383000000-81.68455000000)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Index	(I5)	[0/12350] Object index	[ucd=meta.id]
+#Column	GaiaDR3	(A19)	Object Gaia DR3 source ID	[ucd=meta.id;meta.main]
+#Column	refEp	(F6.1)	[2016.0] Position reference epoch	[ucd=meta.ref;pos.frame]
+#Column	RA_ICRS	(F15.11)	Right ascension (ICRS) at Ep=2016.0	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F13.10)	Right ascension error	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2016.0	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F13.10)	Declination error	[ucd=stat.error;pos.eq.dec]
+#Column	plx	(F9.4)	Parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F6.4)	Parallax error	[ucd=stat.error;pos.parallax]
+#Column	BP-RP	(F9.6)	BP-RP colour	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	GMAG	(F9.6)	Absolute magnitude (G)	[ucd=phys.magAbs]
+#Column	SPPred	(a7)	Predicted spectral type of object	[ucd=src.spType]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+_r	recno	Index	GaiaDR3	refEp	RA_ICRS	e_RA_ICRS	DE_ICRS	e_DE_ICRS	plx	e_plx	BP-RP	GMAG	SPPred	Simbad
+arcsec	 	 	 	yr	deg	mas	deg	mas	mas	mas	mag	mag	 	
+------	--------	-----	-------------------	------	---------------	-------------	---------------	-------------	---------	------	---------	---------	-------	------
+ 0.002	    4190	 4189	6350786278796634112	2016.0	358.58382867379	 0.0521554240	-81.68455055873	 0.0536537950	  37.1045	0.0610	 1.306006	15.069697	DC     	Simbad
+

@@ -1,0 +1,144 @@
+### ti:"40 pc" AND ti:"white dwarfs" AND au:OBrien
+  <id>https://arxiv.org/api/u5Dznv8hN91vJTHkMZy1Jk8mjuo</id>	  <title>arXiv Query: search_query=ti:"40 pc" AND ti:"white dwarfs" AND au:OBrien&amp;id_list=&amp;start=0&amp;max_results=10</title>	
+### ti:"Rotation plays a role"
+  <id>https://arxiv.org/api/pbdXZ9LUbXlP1gEkfobBtvCzZMI</id>	  <title>arXiv Query: search_query=ti:"Rotation plays a role"&amp;id_list=&amp;start=0&amp;max_results=10</title>	    <id>http://arxiv.org/abs/2401.15158v1</id>
+    <title>Rotation plays a role in the generation of magnetic fields in single white dwarfs</title>	    <published>2024-01-26T19:08:04Z</published>	
+### ti:"Classification and parameterization" AND ti:"white dwarfs"
+  <id>https://arxiv.org/api/lLnCyTWl4fhGQY7Mul6NsGfg3pg</id>	  <title>arXiv Query: search_query=ti:"Classification and parameterization" AND ti:"white dwarfs"&amp;id_list=&amp;start=0&amp;max_results=10</title>	
+### ti:"methane imaging" AND au:Tinney
+  <id>https://arxiv.org/api/moC0zfvxil1HQvjRiWaDsFq8wkQ</id>	  <title>arXiv Query: search_query=ti:"methane imaging" AND au:Tinney&amp;id_list=&amp;start=0&amp;max_results=10</title>	    <id>http://arxiv.org/abs/1209.6123v1</id>
+    <title>WISE J163940.83-684738.6: A Y Dwarf identified by Methane Imaging</title>	    <published>2012-09-27T04:31:23Z</published>	    <id>http://arxiv.org/abs/astro-ph/0508150v1</id>
+    <title>The 2MASS Wide-Field T Dwarf Search. IV Unting out T dwarfs with Methane Imaging</title>	    <published>2005-08-05T08:06:57Z</published>	    <id>http://arxiv.org/abs/1804.00362v1</id>
+    <title>New Y and T dwarfs from WISE identified by Methane Imaging</title>	    <published>2018-04-02T00:34:49Z</published>	    <id>http://arxiv.org/abs/1007.2406v1</id>
+    <title>A Methane Imaging Survey for T Dwarf Candidates in Rho Ophiuchi</title>	    <published>2010-07-14T19:55:40Z</published>	    <id>http://arxiv.org/abs/1502.06503v1</id>
+    <title>49 new T dwarfs identified using methane imaging</title>	    <published>2015-02-23T16:59:21Z</published>	    <id>http://arxiv.org/abs/astro-ph/0508149v1</id>
+    <title>The 2MASS Wide-Field T Dwarf Search. V. Discovery of a T Dwarf via Methane Imaging</title>	    <published>2005-08-05T07:02:50Z</published>	
+### ti:"field substellar mass function" AND au:Kirkpatrick
+  <id>https://arxiv.org/api/VToSu9Kd0LTkhiCGe/lYxqorwJE</id>	  <title>arXiv Query: search_query=ti:"field substellar mass function" AND au:Kirkpatrick&amp;id_list=&amp;start=0&amp;max_results=10</title>	    <id>http://arxiv.org/abs/1812.01208v1</id>
+    <title>Preliminary Trigonometric Parallaxes of 184 Late-T and Y Dwarfs and an Analysis of the Field Substellar Mass Function into the "Planetary" Mass Regime</title>	    <published>2018-12-04T04:07:12Z</published>	    <id>http://arxiv.org/abs/2011.11616v1</id>
+    <title>The Field Substellar Mass Function Based on the Full-sky 20-pc Census of 525 L, T, and Y Dwarfs</title>	    <published>2020-11-23T18:45:26Z</published>	
+### ti:"Benchmark brown dwarfs"
+  <id>https://arxiv.org/api/RE7ZtBwMUAwE97yMV4tnYD7xnX0</id>	  <title>arXiv Query: search_query=ti:"Benchmark brown dwarfs"&amp;id_list=&amp;start=0&amp;max_results=10</title>	    <id>http://arxiv.org/abs/0912.5339v1</id>
+    <title>The current population of benchmark brown dwarfs</title>	    <published>2009-12-29T17:33:16Z</published>	    <id>http://arxiv.org/abs/1805.05645v1</id>
+    <title>Orbital and spectral analysis of the benchmark brown dwarf HD 4747B</title>	    <published>2018-05-15T08:55:26Z</published>	    <id>http://arxiv.org/abs/astro-ph/9707239v2</id>
+    <title>DENIS-P J1228.2-1547 -- A New Benchmark Brown Dwarf</title>	    <published>1997-07-22T02:56:20Z</published>	    <id>http://arxiv.org/abs/2002.08319v2</id>
+    <title>Spectral and atmospheric characterisation of a new benchmark brown dwarf HD13724B</title>	    <published>2020-02-18T16:13:01Z</published>	    <id>http://arxiv.org/abs/astro-ph/0603320v1</id>
+    <title>Finding benchmark brown dwarfs to probe the IMF as a function of time</title>	    <published>2006-03-13T19:56:48Z</published>	    <id>http://arxiv.org/abs/2608.26029v1</id>
+    <title>Benchmark Brown Dwarfs as Chemical Laboratories: Linking System Bulk Properties to Atmospheric Retrievals</title>	    <published>2026-08-26T17:09:36Z</published>	    <id>http://arxiv.org/abs/1912.02565v2</id>
+    <title>A dusty benchmark brown dwarf near the ice line of HD 72946</title>	    <published>2019-12-05T13:26:50Z</published>	    <id>http://arxiv.org/abs/1801.06192v1</id>
+    <title>GPI Spectroscopy of the Mass, Age, and Metallicity Benchmark Brown Dwarf HD 4747 B</title>	    <published>2018-01-18T19:00:11Z</published>	    <id>http://arxiv.org/abs/1112.1725v2</id>
+    <title>The Dynamical Mass and Three-Dimensional Orbit of HR7672B: A Benchmark Brown Dwarf with High Eccentricity</title>	    <published>2011-12-07T22:54:06Z</published>	    <id>http://arxiv.org/abs/2401.10058v3</id>
+    <title>The discovery of two new benchmark brown dwarfs with precise dynamical masses at the stellar-substellar boundary</title>	    <published>2024-01-18T15:26:11Z</published>	
+### ti:"catalogue of white dwarfs in Gaia EDR3"
+  <id>https://arxiv.org/api/bVvNfWMahzE8Vtg/HnfK49b6uY4</id>	  <title>arXiv Query: search_query=ti:"catalogue of white dwarfs in Gaia EDR3"&amp;id_list=&amp;start=0&amp;max_results=10</title>	    <id>http://arxiv.org/abs/2106.07669v2</id>
+    <title>A catalogue of white dwarfs in Gaia EDR3</title>	    <published>2021-06-14T18:00:06Z</published>	
+### ti:"white dwarfs within 40 pc"
+  <title>arXiv Query: search_query=ti:"white dwarfs within 40 pc"&amp;id_list=&amp;start=0&amp;max_results=15</title>	    <id>http://arxiv.org/abs/2310.15410v1</id>	    <title>Initial-final mass relation from white dwarfs within 40 pc</title>
+    <published>2023-10-23T23:55:03Z</published>	    <id>http://arxiv.org/abs/2006.00965v2</id>	    <title>$\textit{Gaia}$ white dwarfs within 40 pc I: spectroscopic observations of new candidates</title>
+    <published>2020-06-01T14:22:10Z</published>	    <id>http://arxiv.org/abs/2006.00874v2</id>	    <title>$Gaia$ white dwarfs within 40 pc II: the volume-limited northern hemisphere sample</title>
+    <published>2020-06-01T12:12:06Z</published>	    <id>http://arxiv.org/abs/2503.09734v1</id>	    <title>The dearth of high-mass hydrogen-atmosphere metal-polluted white dwarfs within 40 pc</title>
+    <published>2025-03-12T18:34:36Z</published>	    <id>http://arxiv.org/abs/1505.02297v1</id>	    <title>Physical Properties of the Current Census of Northern White Dwarfs within 40 pc of the Sun</title>
+    <published>2015-05-09T17:45:21Z</published>	    <id>http://arxiv.org/abs/2210.01608v2</id>	    <title>$\textit{Gaia}$ white dwarfs within 40 pc III: spectroscopic observations of new candidates in the southern hemisphere</title>
+    <published>2022-10-04T13:39:32Z</published>		
+### ti:"40 pc sample of white dwarfs"
+  <title>arXiv Query: search_query=ti:"40 pc sample of white dwarfs"&amp;id_list=&amp;start=0&amp;max_results=15</title>	    <id>http://arxiv.org/abs/2312.02735v2</id>	    <title>The 40 pc sample of white dwarfs from Gaia</title>
+    <published>2023-12-05T12:58:47Z</published>		
+### ti:"large Gaia sample of white dwarfs"
+  <title>arXiv Query: search_query=ti:"large Gaia sample of white dwarfs"&amp;id_list=&amp;start=0&amp;max_results=15</title>	    <id>http://arxiv.org/abs/2308.05572v3</id>	    <title>Classification and parameterisation of a large Gaia sample of white dwarfs using XP spectra</title>
+    <published>2023-08-10T13:34:47Z</published>		
+### all:"Benchmark brown dwarfs I"
+  <title>arXiv Query: search_query=all:"Benchmark brown dwarfs I"&amp;id_list=&amp;start=0&amp;max_results=15</title>	    <id>http://arxiv.org/abs/2505.24560v3</id>	    <title>Benchmark brown dwarfs -- I. A blue M2 + T5 wide binary and a probable young [M4 + M4] + [T7 + T8] hierarchical quadruple</title>
+    <published>2025-05-30T13:13:32Z</published>		
+### ti:"benchmark brown dwarfs" AND ti:"Gaia"
+  <title>arXiv Query: search_query=ti:"benchmark brown dwarfs" AND ti:"Gaia"&amp;id_list=&amp;start=0&amp;max_results=15</title>		
+### abs:2505.24560
+  <title>arXiv Query: search_query=abs:2505.24560&amp;id_list=&amp;start=0&amp;max_results=15</title>		
+### au:Marocco AND abs:"Backyard Worlds"
+  2404.14324 2024-04-22 Thirteen New M Dwarf + T Dwarf Pairs Identified with WISE/NEOWISE
+  2211.02288 2022-11-04 Discovery of a Mid-L Dwarf Companion to the L 262-74 System
+  2312.09294 2023-12-14 WRAP: A Tool for Efficient Cross-Identification of Proper Motion Objects Spanning Multiple Surveys
+  2108.05321 2021-08-11 Ross 19B: An Extremely Cold Companion Discovered via the Backyard Worlds: Planet 9 Citizen Science Project
+  2007.03836 2020-07-08 WISEA J041451.67-585456.7 and WISEA J181006.18-101000.5: The First Extreme T-type Subdwarfs?
+  2301.02322 2023-01-05 Redder than Red: Discovery of an Exceptionally Red L/T Transition Dwarf
+  2403.04592 2024-03-07 89 New Ultracool Dwarf Co-Moving Companions Identified With The Backyard Worlds: Planet 9 Citizen Science Proj
+  2106.01387 2021-06-02 New Candidate Extreme T Subdwarfs from the Backyard Worlds: Planet 9 Citizen Science Project
+  2112.04678 2021-12-09 A Wide Planetary Mass Companion Discovered Through the Citizen Science Project Backyard Worlds: Planet 9
+  2604.01323 2026-04-01 Three Thousand Motion-Confirmed L and T Dwarf Candidates from the Backyard Worlds:~Planet 9 Citizen Science Pr
+### au:Meisner AND abs:"white dwarf"
+  2008.06396 2020-08-14 Spitzer Follow-up of Extremely Cold Brown Dwarfs Discovered by the Backyard Worlds: Planet 9 Citizen Science P
+  1902.07073 2019-02-19 A 3 Gyr White Dwarf with Warm Dust Discovered via the Backyard Worlds: Planet 9 Citizen Science Project
+  2402.18644 2024-02-28 The frequency of metal-enrichment of cool helium-atmosphere white dwarfs using the DESI Early Data Release
+  2402.18641 2024-02-28 The DESI Early Data Release White Dwarf Catalogue
+  2609.11798 2026-09-10 Planetary Accretion Is Less Frequent in Wide Binaries: Evidence from Metal-Enriched White Dwarfs in DESI DR1
+  2412.04597 2024-12-05 New Ultracool Companions to Nearby White Dwarfs
+  2302.01335 2023-02-02 DAHe white dwarfs from the DESI survey
+  2611.13128 2026-11-09 Planetary material is a major source of hydrogen in helium-atmosphere white dwarfs
+  2609.04314 2026-09-03 The DESI Data Release 1 white dwarf catalogue
+  2604.09845 2026-04-10 Spectroscopic Characterization of WD J000801.25-350450 and its Two Co-Moving Companions
+  2607.14251 2026-07-15 First planetesimals from DESI DR1: 12 highly metal-rich white dwarfs
+  2112.11314 2021-12-17 Discovery of 16 New Members of the Solar Neighborhood using Proper Motions from CatWISE2020
+  2204.09739 2022-04-20 Discovery of 34 low-mass comoving systems using NOIRLab Source Catalog DR2
+  2010.11284 2020-10-21 Preliminary Target Selection for the DESI Milky Way Survey (MWS)
+  2407.08578 2024-07-11 Discovery of a Hypervelocity L Subdwarf at the Star/Brown Dwarf Mass Limit
+  2403.04592 2024-03-07 89 New Ultracool Dwarf Co-Moving Companions Identified With The Backyard Worlds: Planet 9 Citizen Science Proj
+  2208.08514 2022-08-17 Overview of the DESI Milky Way Survey
+  2312.03639 2023-12-06 The Initial Mass Function Based on the Full-sky 20-pc Census of $\sim$3,600 Stars and Brown Dwarfs
+### au:Gonzales AND abs:"white dwarf"
+  2312.03639 2023-12-06 The Initial Mass Function Based on the Full-sky 20-pc Census of $\sim$3,600 Stars and Brown Dwarfs
+### abs:COCONUTS AND au:Zhang
+  2512.21711 2025-12-25 Do Latent Tokens Think? A Causal and Adversarial Analysis of Chain-of-Continuous-Thought
+  2107.02805 2021-07-06 The Second Discovery from the COol Companions ON Ultrawide orbiTS (COCONUTS) Program: A Cold Wide-Orbit Exopla
+  2207.02865 2022-07-06 COol Companions ON Ultrawide orbiTS (COCONUTS). III. A Very Red L6 Benchmark Brown Dwarf around a Young M5 Dwa
+  2410.10939 2024-10-14 Disequilibrium Chemistry, Diabatic Thermal Structure, and Clouds in the Atmosphere of COCONUTS-2b
+  1904.04669 2019-04-07 Coconuts and Islanders: A Statistics-First Guide to the Boltzmann Distribution
+  2505.11990 2025-05-17 Time-evolving coronal modelling of the solar maximum around the solar storms in May 2024 by COCONUT
+  2002.05723 2020-02-13 COol Companions ON Ultrawide orbiTS (COCONUTS). I. A High-Gravity T4 Benchmark around an Old White Dwarf and A
+  2308.16043 2023-08-30 COCONUT-MF: Two-fluid ion-neutral global coronal modelling
+  2303.10410 2023-03-18 Assessing inner boundary conditions for global coronal modeling of solar maxima
+  2306.08874 2023-06-15 The role of plasma beta in global coronal models: Bringing balance back to the force
+  2205.03341 2022-05-06 COCONUT, a novel fast-converging MHD model for solar corona simulations: I. Benchmarking and optimization of p
+  2604.26850 2026-04-29 Oxygen and nitrogen isotopologues on cold COCONUTS-2b observed with MIRI/MRS
+  2605.03330 2026-05-05 COCONUT: Toward practical time-evolving Sun-to-Earth magnetohydrodynamic modeling
+  2602.08783 2026-02-09 Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure
+  2606.29164 2026-06-28 Latent Reasoning Does Not Lack Signal, It Lacks Invariance: Subspace-Constrained Refinement for Robust Reasoni
+  2210.06165 2022-10-12 COCONUT, a novel fast-converging MHD model for solar corona simulations: II. Assessing the impact of the input
+  2509.12875 2025-09-16 LTA-thinker: Latent Thought-Augmented Training Framework for Large Language Models on Complex Reasoning
+  2604.07176 2026-04-08 Panchromatic View of the Frigid Jovian Exoplanet COCONUTS-2 b
+### au:French AND abs:"white dwarf" AND abs:ultracool
+  2412.04597 2024-12-05 New Ultracool Companions to Nearby White Dwarfs
+### au:Rothermich
+  2102.02815 2021-02-04 Backyard Worlds: Planet 9 Discovery of an Unusual Low-mass Companion to an M Dwarf at 80 pc
+  2609.13433 2026-09-11 Sinking Silicates I: Characterizing the benchmark system containing the T0 brown dwarf CWISE J210640.16+250729
+  2403.04592 2024-03-07 89 New Ultracool Dwarf Co-Moving Companions Identified With The Backyard Worlds: Planet 9 Citizen Science Proj
+  2504.13810 2025-04-18 Disentangling the Effects of Temperature, Clouds, and Gravity on K I doublet in L dwarfs
+  2401.11038 2024-01-19 Predicting Cloud Conditions in Substellar Mass Objects Using Ultracool Dwarf Companions
+  2603.12479 2026-03-12 Bridging the Gap: Using Brown Dwarfs to Examine Silicate Clouds in Giant Exoplanet Atmospheres
+  2211.02288 2022-11-04 Discovery of a Mid-L Dwarf Companion to the L 262-74 System
+  2607.09851 2026-07-10 Benchmark Brown Dwarf Systems I: Chemical Abundance Analysis of FGK Stars with Wide-Separation Brown Dwarf Com
+  2608.26029 2026-08-26 Benchmark Brown Dwarfs as Chemical Laboratories: Linking System Bulk Properties to Atmospheric Retrievals
+  2603.24662 2026-03-25 Clouds with a silicate lining: Using JWST spectra to probe atmospheric diversity in young AB Dor L dwarfs
+  2509.26505 2025-09-30 Diversity of Cold Worlds: Predicted Near- to Mid-infrared Spectral Signatures of a Cold Brown Dwarf with Poten
+  2408.10112 2024-08-19 Eight New Substellar Hyades Candidates from the UKIRT Hemisphere Survey
+  2203.11090 2022-03-21 Substellar Hyades Candidates from the UKIRT Hemisphere Survey
+  2412.04597 2024-12-05 New Ultracool Companions to Nearby White Dwarfs
+  2405.03849 2024-05-06 Discovery of the Remarkably Red L/T Transition Object VHS J183135.58-551355.9
+  2004.12829 2020-04-27 WISEA J083011.95+283716.0: A Missing Link Planetary-Mass Object
+  2604.09845 2026-04-10 Spectroscopic Characterization of WD J000801.25-350450 and its Two Co-Moving Companions
+  2511.20923 2025-11-25 The Diversity of Cold Worlds: Age and Characterization of the Exoplanet COCONUTS-2b
+  2407.08578 2024-07-11 Discovery of a Hypervelocity L Subdwarf at the Star/Brown Dwarf Mass Limit
+  2503.02025 2025-03-03 The Diversity of Cold Worlds: a blended-light binary straddling the T/Y transition in brown dwarfs
+  2503.06004 2025-03-08 Unveiling the Infrared Excess of SIPS J2045-6332: Evidence for a Young Stellar Object with Potential Low-Mass 
+  2108.05321 2021-08-11 Ross 19B: An Extremely Cold Companion Discovered via the Backyard Worlds: Planet 9 Citizen Science Project
+  2301.02322 2023-01-05 Redder than Red: Discovery of an Exceptionally Red L/T Transition Dwarf
+  2007.03836 2020-07-08 WISEA J041451.67-585456.7 and WISEA J181006.18-101000.5: The First Extreme T-type Subdwarfs?
+  2112.04678 2021-12-09 A Wide Planetary Mass Companion Discovered Through the Citizen Science Project Backyard Worlds: Planet 9
+  2505.24591 2025-05-30 Diversity of Cold Worlds: A Near Complete Spectral Energy Distribution for 2MASS J04151954-0935066 using JWST
+  2404.10977 2024-04-17 Methane Emission From a Cool Brown Dwarf
+  2404.14324 2024-04-22 Thirteen New M Dwarf + T Dwarf Pairs Identified with WISE/NEOWISE
+  2411.01378 2024-11-02 New Cold Subdwarf Discoveries from Backyard Worlds and a Metallicity Classification System for T Subdwarfs
+  2408.14447 2024-08-26 Discovery of 118 New Ultracool Dwarf Candidates Using Machine Learning Techniques
+  2008.06396 2020-08-14 Spitzer Follow-up of Extremely Cold Brown Dwarfs Discovered by the Backyard Worlds: Planet 9 Citizen Science P
+  2509.18635 2025-09-23 Silicate Precursor Silane detected in Cold Low-Metallicity Brown Dwarf
+  2011.11616 2020-11-23 The Field Substellar Mass Function Based on the Full-sky 20-pc Census of 525 L, T, and Y Dwarfs
+  2604.01323 2026-04-01 Three Thousand Motion-Confirmed L and T Dwarf Candidates from the Backyard Worlds:~Planet 9 Citizen Science Pr
+  2312.03639 2023-12-06 The Initial Mass Function Based on the Full-sky 20-pc Census of $\sim$3,600 Stars and Brown Dwarfs

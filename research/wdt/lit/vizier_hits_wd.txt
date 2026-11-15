@@ -1,0 +1,70 @@
+### parts_wd/vizier_part_III__.tsv.gz: 418 tables/catalogues listed, 0 with rows; 421317 chars 
+### parts_wd/vizier_part_II__.tsv.gz: 642 tables/catalogues listed, 4 with rows; 745645 chars 
+ *II/252/denis                       n= 4 min_r=  1.550  [The DENIS database, 2nd Release (DENIS Consortium, 2003)] {}
+ *II/328/allwise                     n=15 min_r=  0.616  [AllWISE Data Release (Cutri+ 2013)] {}
+ *II/246/out                         n= 1 min_r=  1.682  [2MASS All-Sky Catalog of Point Sources (Cutri+ 2003)] {'2MASS': '23541939-8141049'}
+ *II/374/table2                      n= 1 min_r=  0.002  [RGB photometric calibration of 213 million Gaia stars (Carrasco+, 2023] {'objtype': '0', 'qlflag': '0'}
+### parts_wd/vizier_part_IV__.tsv.gz: 41 tables/catalogues listed, 1 with rows; 53121 chars 
+ *IV/39/tic82                        n= 5 min_r=  1.647  [TESS Input Catalog version 8.2 (TIC v8.2) (Paegert+, 2021)] {'2MASS': '23541939-8141049', 'LClass': 'DWARF'}
+### parts_wd/vizier_part_IX__.tsv.gz: 177 tables/catalogues listed, 0 with rows; 225399 chars 
+### parts_wd/vizier_part_I__.tsv.gz: 553 tables/catalogues listed, 15 with rows; 625480 chars 
+ *I/243/out                          n= 4 min_r=  3.938  [The PMM USNO-A1.0 Catalogue (Monet 1997)] {}
+ *I/355/gaiadr3                      n= 5 min_r=  0.002  [Gaia DR3 Part 1. Main source (Gaia Collaboration, 2022)] {'MCMCGSP': '0', '2MASS': '23541939-8141049'}
+  I/355/paramsup                     n= 1 min_r= 13.637  [Gaia DR3 Part 1. Main source (Gaia Collaboration, 2022)] {'Teff': '5396.7070', 'logg': '4.7528'}
+ *I/355/xpsummary                    n= 1 min_r=  0.002  [Gaia DR3 Part 1. Main source (Gaia Collaboration, 2022)] {}
+ *I/355/xpcont                       n= 1 min_r=  0.002  [Gaia DR3 Part 1. Main source (Gaia Collaboration, 2022)] {}
+ *I/347/gaia2dis                     n= 4 min_r=  0.053  [Distances to 1.33 billion stars in Gaia DR2 (Bailer-Jones+, 2018)] {'ResFlag': '1', 'ModFlag': '1'}
+ *I/352/gedr3dis                     n= 4 min_r=  0.002  [Distances to 1.47 billion stars in Gaia EDR3 (Bailer-Jones+, 2021)] {'Flag': '10033'}
+ *I/320/spm4                         n= 1 min_r=  1.711  [SPM 4.0 Catalog (Girard+, 2011)] {'SPMID': '20201077'}
+ *I/297/out                          n= 9 min_r=  2.024  [NOMAD Catalog (Zacharias+ 2005)] {}
+ *I/319/xpm                          n= 1 min_r=  1.765  [XPM Catalog of positions and proper motions (Fedorov+ 2011)] {}
+ *I/317/sample                       n= 9 min_r=  1.770  [The PPMXL Catalog (Roeser+ 2010)] {}
+ *I/331/apop                         n= 3 min_r=  1.422  [Absolute Proper motions Outside the Plane (APOP) (Qi+, 2015)] {'Type': '0'}
+ *I/284/out                          n= 9 min_r=  2.025  [The USNO-B1.0 Catalog (Monet+ 2003)] {}
+ *I/252/out                          n= 4 min_r=  3.644  [The USNO-A2.0 Catalogue (Monet+ 1998)] {}
+ *I/305/out                          n= 8 min_r=  2.167  [The Guide Star Catalog, Version 2.3.2 (GSC2.3) (STScI, 2006)] {'Class': '3'}
+### parts_wd/vizier_part_J_AJ__.tsv.gz: 6764 tables/catalogues listed, 6 with rows; 7736334 chars 
+ *J/AJ/161/234/table2                n= 1 min_r=  0.053  [1.7 million K and M dwarfs cross-matching (Medan+, 2021)] {'2MASS': '23541939-8141049', '2MASSProb': '0.9999659', '2MASSSep': '0.1576676', 'RAWdeg': '358.5828106', 'DEWdeg': '-81.6846368'}
+ *J/AJ/161/234/table3                n= 1 min_r=  0.053  [1.7 million K and M dwarfs cross-matching (Medan+, 2021)] {'2MASS': '23541939-8141049', '2MASSProb': '0.9999659', '2MASSSep': '0.1576676'}
+ *J/AJ/161/234/table4                n= 3 min_r=  0.053  [1.7 million K and M dwarfs cross-matching (Medan+, 2021)] {}
+ *J/AJ/158/93/table2                 n= 1 min_r=  0.053  [Regression of stellar effective temperatures in GaiaDR2 (Bai+, 2019)] {'Teff': '4641', 'e_Teff': '83'}
+ *J/AJ/159/84/table2                 n= 1 min_r=  0.053  [Machine-learning regression of extinction in Gaia DR2 (Bai+, 2020)] {}
+ *J/AJ/144/148/table3                n=31 min_r=  0.575  [Infrared photometry of brown dwarf and Hyper-LIRG (Griffith+, 2012)] {}
+### parts_wd/vizier_part_J_AN__.tsv.gz: 93 tables/catalogues listed, 0 with rows; 99553 chars 
+### parts_wd/vizier_part_J_ApA__.tsv.gz: 15718 tables/catalogues listed, 14 with rows; 18371511 chars 
+ *J/A+A/682/A5/catalog               n= 1 min_r=   0.00  [Gaia white dwarfs Classification (Vincent+, 2024)] {'SpType': 'DC:', 'Teff': '4629', 'logg': '7.871', 'comp': 'Pure H'}
+ *J/A+A/692/A115/pristine_ca         n= 1 min_r=  0.004  [Pristine survey DR1 (Martin+, 2024)] {}
+ *J/A+A/649/A6/table1c               n= 1 min_r=  0.002  [Gaia Catalogue of Nearby Stars - GCNS (Gaia collaboration, 2021)] {}
+ *J/A+A/679/A127/catalog             n= 1 min_r=  0.002  [100pc white dwarf spectral classification (Garcia-Zamora+, 2023)] {'SPPred': 'DC'}
+ *J/A+A/669/A15/table2               n= 1 min_r=  2.078  [TESS flare events and physical parameters (Yang+, 2023)] {}
+ *J/A+A/657/A7/tablea3               n= 1 min_r=  0.002  [Stellar and substellar companions from Gaia EDR3 (Kervella+, 2022)] {'Mass': '0.06'}
+ *J/A+A/674/A33/gspc-wd              n= 1 min_r=  0.002  [Gaia synthetic phot. cat. of white dwarfs (Gaia Coll., 2023)] {}
+ *J/A+A/699/A3/table3                n= 1 min_r=  0.002  [Gaia 500-pc white dwarf population (Garcia-Zamora+, 2025)] {'SPPred': 'DZ'}
+ *J/A+A/688/A168/table3              n= 1 min_r=  0.004  [Bright white dwarfs with IR excess (Madurga Favieres+, 2024)] {'Teff': '4476', 'logg': '7.77', 'Mass': '0.46', 'SpType': 'No'}
+  J/A+A/665/A78/agnev                n= 3 min_r= 22.635  [First eROSITA all sky survey (eRASS1) simulation (Seppi+, 2022)] {}
+  J/A+A/665/A78/bkgev                n=11 min_r= 35.813  [First eROSITA all sky survey (eRASS1) simulation (Seppi+, 2022)] {}
+ *J/A+A/674/A22/catalog              n= 1 min_r=  0.054  [Gaia DR3. Cross-match with known variable objects (Gavras+, 2023)] {'psuperclass': 'CST', 'pvarTypes': 'WD'}
+ *J/A+A/629/A139/table3              n= 1 min_r=  0.053  [Closest stars to the Sun within 50pc catalog (Torres+, 2019)] {}
+ *J/A+A/672/A65/class                n= 3 min_r=   0.00  [Clean SMC stellar samples (Jimenez-Arranz+, 2023)] {}
+### parts_wd/vizier_part_J_ApJS__.tsv.gz: 4449 tables/catalogues listed, 2 with rows; 6152992 chars 
+  J/ApJS/234/23/c75cat               n= 2 min_r= 35.647  [The WISE AGN candidates catalogs (Assef+, 2018)] {}
+ *J/ApJS/281/52/table1               n= 1 min_r=  1.648  [Flare events in TESS 2min cadence light curves (Wang+, 2025)] {'Bin': 'single', 'SpType': 'K'}
+### parts_wd/vizier_part_J_ApJ__.tsv.gz: 10287 tables/catalogues listed, 2 with rows; 13095794 chars 
+ *J/ApJ/984/58/table1                n= 1 min_r=  0.004  [Stellar parameters from XP and RVS spectra (Huson+, 2025)] {'logTeff': '3.702', 'e_logTeff': '0.007'}
+ *J/ApJ/970/181/catalog              n= 1 min_r=  0.011  [Categorizing WDs with Gaia XP spectra and UMAP (Kao+, 2024)] {}
+### parts_wd/vizier_part_J_MNRAS__.tsv.gz: 8998 tables/catalogues listed, 6 with rows; 11217815 chars 
+ *J/MNRAS/508/3877/maincat           n= 1 min_r=  0.002  [Catalogue of white dwarfs in Gaia EDR3 (Gentile+, 2021)] {'WDJname': 'WDJ235419.41-814104.96', 'Pwd': '0.994509', 'TeffH': '4476.05', 'loggH': '7.767726', 'MassH': '0.456840', 'TeffHe': '4545.72', 'loggHe': '7.813760', 'MassHe': '0.479564'}
+ *J/MNRAS/518/5106/catalog           n= 1 min_r=  0.002  [Classification of the 100pc WDs (Jimenez-Esteban+, 2023)] {}
+ *J/MNRAS/482/4570/gaia2wd           n= 1 min_r=  0.053  [Gaia DR2 white dwarf candidates (Gentile Fusillo+, 2019)] {'WD': 'WDJ235419.41-814104.96', 'Pwd': '0.99857', 'TeffH': '4564.539155', 'loggH': '7.802365', 'MassH': '0.463864', 'TeffHe': '4610.384097', 'loggHe': '7.824277', 'MassHe': '0.466922'}
+ *J/MNRAS/485/5573/g100pcwd          n= 1 min_r=  0.053  [Gaia-DR2 100pc white dwarf population (Torres+, 2019)] {}
+ *J/MNRAS/527/8687/tablea1           n= 1 min_r=  0.002  [40 parsec sample of white dwarfs from Gaia (O'Brien+, 2024)] {'SpType': 'DZH', 'Comp': 'H', 'Teff': '4476', 'e_Teff': '44', 'logg': '7.7690', 'e_logg': '0.0350', 'Mass': '0.4570', 'e_Mass': '0.0160', 'Teffc': '4676', 'Massc': '0.594', 'Agec': '7.76', 'r_SpType': '2023MNRAS.518.3055O'}
+ *J/MNRAS/518/3055/table3            n= 1 min_r=  1.644  [Gaia white dwarfs within 40pc. III (O'Brien+, 2023)] {'SpType': 'DZH', 'TeffG': '4480', 'e_TeffG': '40', 'loggG': '7.77', 'e_loggG': '0.04'}
+### parts_wd/vizier_part_J_PASJ__.tsv.gz: 213 tables/catalogues listed, 0 with rows; 230426 chars 
+### parts_wd/vizier_part_J_PASP__.tsv.gz: 321 tables/catalogues listed, 0 with rows; 333957 chars 
+### parts_wd/vizier_part_J_RNAAS__.tsv.gz: 0 tables/catalogues listed, 0 with rows; 743 chars ['Table or Catalog not found: J/RNAAS/*\t']
+### parts_wd/vizier_part_J_other__.tsv.gz: 1306 tables/catalogues listed, 0 with rows; 1514960 chars 
+### parts_wd/vizier_part_VII__.tsv.gz: 505 tables/catalogues listed, 0 with rows; 513059 chars 
+### parts_wd/vizier_part_VI__.tsv.gz: 74 tables/catalogues listed, 1 with rows; 73639 chars 
+ *VI/42/out                          n= 1 min_r=    0.1  [Identification of a Constellation From Position (Roman 1987)] {}
+### parts_wd/vizier_part_V__.tsv.gz: 297 tables/catalogues listed, 1 with rows; 510799 chars 
+ *V/160/shboost                      n= 1 min_r=  0.002  [SHBoost 2024 (Khalatyan+, 2024)] {'logTeff': '3.639821', 'logg': '7.942439', 'Mass': '0.474422'}

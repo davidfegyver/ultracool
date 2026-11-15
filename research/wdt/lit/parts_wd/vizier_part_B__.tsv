@@ -1,0 +1,991 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:25:13 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:25:13	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2f%2a&-c=358.58383+-81.68455&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=81	
+#  81 catalogues with potential matches were examined.
+#
+#INFO	-c=358.583830-81.684550,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102025
+#Name: B/gcvs
+#Title: General Catalogue of Variable Stars (Samus+, 2007-2017)
+#INFO	ivoid=ivo://cds.vizier/b/gcvs	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/gcvs	    IVOID of underlying data collection
+#INFO	creator=Samus N.N.	    First author or institution
+#INFO	cites=bibcode:2017ARep...61...80S	    Article or Data origin sources
+#INFO	journal=ARep	    Journal name
+#INFO	original_date=2017	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/gcvs	    Dataset landing page
+#INFO	publication_date=2025-04-23	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_gcvs_gcvs_cat:
+#Name: B/gcvs/gcvs_cat
+#Title: GCVS catalog (GCVS 5.1, version Oct, 2020)
+#Column	_r	(F5.2)	Distance from center (23 54 20.12-81 41 04.4)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	GCVS	(A10)	Variable star designation (2)	[ucd=meta.id;meta.main]
+#Column	n_GCVS	(A1)	[*] indicates a remark in "gcvs_rem.dat" file	[ucd=meta.note]
+#Column	RAJ2000	(A11)	? Hours RA, equinox J2000.0 (G1)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	? Degrees Dec, equinox J2000.0 (G1)	[ucd=pos.eq.dec;meta.main]
+#Column	VarType	(a10)	Type of variability (see file "vartype.txt")	[ucd=meta.code;src.var]
+#Column	magMax	(F6.3)	? Magnitude at maximum brightness	[ucd=phot.mag]
+#Column	Period	(F16.10)	? Period of the variable star	[ucd=time.period]
+#Column	SpType	(a17)	Spectral type	[ucd=src.spType]
+#Column	Exists	(A12)	Cases of non-existence of the variable etc. (12)	[ucd=meta.note]
+#Column	VarName	(A11)	Variable star designation (17)	[ucd=meta.id]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Table	B_gcvs_nsv_cat:
+#Name: B/gcvs/nsv_cat
+#Title: NSV and supplement
+#Column	_r	(F4.1)	Distance from center (23 54 20.1-81 41 04)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	f_NSV	(A1)	[=|] '=' for named variables	[ucd=meta.code]
+#Column	NSV	(A5)	NSV number (above 15000 for the Supplement)	[ucd=meta.id;meta.main]
+#Column	u_NSV	(A1)	[-] Dubitancy flag if a star's variability seems doubtful or erroneous to the catalog compilers	[ucd=meta.code.error]
+#Column	n_NSV	(A1)	[*] Notes in published catalog or remark in file "nsv.rem.dat" (2)	[ucd=meta.note]
+#Column	RAJ2000	(A10)	? Hours RA, equinox J2000.0 (G1)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	? Degrees Dec, equinox J2000.0 (G1)	[ucd=pos.eq.dec;meta.main]
+#Column	VarType	(a6)	? Type of variability (3)	[ucd=meta.code;src.var]
+#Column	magMax	(F5.2)	? Magnitude at maximum brightness (4)	[ucd=phot.mag]
+#Column	SpType	(a15)	Spectral type (9)	[ucd=src.spType]
+#Column	VarName	(a12)	Designation in GCVS (G8)	[ucd=meta.id]
+#Coosys	B1950:	eq_FK4 B1950
+#Table	B_gcvs_evs_cat:
+#Name: B/gcvs/evs_cat
+#Title: Extragalactic Variable Stars. Catalogue (Vol. V)
+#Column	_r	(F5.2)	Distance from center (23 51 31.99-81 57 46.5)[FK4/B1950]	[ucd=pos.angDistance]
+#Column	Name	(a12)	Variable star designation (3)	[ucd=meta.id;meta.main]
+#Column	n_Name	(A1)	[*] indicates a remark in file evs_rem.dat	[ucd=meta.note]
+#Column	RAB1950	(A11)	Right ascension, equinox B1950.0	[ucd=pos.eq.ra;meta.main]
+#Column	DEB1950	(A11)	Declination, equinox B1950.0	[ucd=pos.eq.dec;meta.main]
+#Column	VarType	(a8)	Type of variability (see file "vartype.txt")	[ucd=meta.code;src.var]
+#Column	magMax	(F5.2)	? Magnitude at maximum brightness	[ucd=phot.mag]
+#Column	P	(F13.8)	? Period (mean for U Gem-type)	[ucd=time.period]
+#Column	SpType	(a6)	Spectral type (4)	[ucd=src.spType]
+#Column	VarName	(a9)	Designation in GCVS (G8)	[ucd=meta.id]
+#Column	Mm	(A2)	[n: ] Non-member note (5)	[ucd=meta.code.member]
+#Column	_RA.icrs	(A11)	Right ascension (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A11)	Declination (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.dec]
+
+#RESOURCE=yCat_102004
+#Name: B/hst
+#Title: HST Archived Exposures Catalog (STScI, 2007)
+#INFO	ivoid=ivo://cds.vizier/b/hst	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/hst	    IVOID of underlying data collection
+#INFO	creator=STScI Team	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/hst	    Dataset landing page
+#INFO	publication_date=2024-03-10	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_hst_obscore:
+#Name: B/hst/obscore
+#Title: HST observation logs (sample)
+#Column	_r	(F6.3)	Distance from center (358.583830000000-81.68455000000000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	obs_publisher_did	(a256)	publisher dataset identifier	[ucd=meta.id;meta.dataset]
+#Column	dataproduct_type	(a32)	type of product	[ucd=meta.note]
+#Column	calib_level	(I1)	? calibration level (0,1,2,3)	[ucd=phot.calib;arith.zp]
+#Column	target_name	(a32)	name of intended target	[ucd=meta.id]
+#Column	RAJ2000	(F16.12)	? RA of central coordinates (J2000) (s_ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F18.14)	? DEC of central coordinates (J2000) (s_dec)	[ucd=pos.eq.dec;meta.main]
+#Column	s_fov	(F17.14)	? size of the region covered (~diameter of minimum bounding circle)	[ucd=instr.fov;instr.pixel]
+#Column	t_min	(F13.7)	? start time of observation (MJD) (t_min)	[ucd=time.epoch]
+#Column	t_max	(F13.7)	? end time of observation (MJD) (t_max)	[ucd=time.epoch]
+#Column	access_url	(a250)	?URL to download the data	[ucd=meta.ref.url]
+#Column	access_format	(a64)	format of the data files	[ucd=meta.note]
+#Column	access_estsize	(I7)	? estimated size of the download	[ucd=meta.number]
+#Table	B_hst_hstlog:
+#Name: B/hst/hstlog
+#Title: Merged log of HST Observations
+#Column	_r	(F5.2)	Distance from center (23 54 20.12-81 41 04.4)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Target	(a30)	Target Name, as given by the proposer	[ucd=]
+#Column	RAJ2000	(A11)	Right Ascension J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination J2000	[ucd=pos.eq.dec;meta.main]
+#Column	config	(a15)	Instrument configuration	[ucd=]
+#Column	wave	(I5)	"Central" wavelength of the observation	[ucd=]
+#Column	Dataset	(A9)	Dataset name, uniquely identifies the data for a given exposure.	[ucd=meta.ref]
+#Column	ObsDate	(A16)	? Observation starting time	[ucd=time.start;obs]
+#Column	Sp	(A1)	[S] Existence of Spectrum Preview	[ucd=meta.note]
+#Column	Im	(A1)	[I] Existence of Image Preview	[ucd=meta.note]
+#Table	B_hst_wfpc2:
+#Name: B/hst/wfpc2
+#Title: *HST WFPC2 associations, Version 1.
+#Column	_r	(F4.1)	Distance from center (358.5838-81.6846)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	AssocID	(A9)	Association ID (filename)	[ucd=]
+#Column	RAJ2000	(F8.4)	Right Ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F8.4)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	ObsStart	(A20)	Date of First shutter open action (in DMF = seconds since 01-Jan-1980)	[ucd=]
+#Column	Target	(a30)	Target Name, as given by the proposer	[ucd=]
+#Column	wave	(I5)	? "Central" wavelength of the observation	[ucd=]
+#Column	Nmem	(I3)	Number of members for this association	[ucd=]
+
+#RESOURCE=yCat_102005
+#Name: B/cfht
+#Title: Log of CFHT Exposures (CADC, 1979-)
+#INFO	ivoid=ivo://cds.vizier/b/cfht	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/cfht	    IVOID of underlying data collection
+#INFO	creator=National Research Council	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/cfht	    Dataset landing page
+#INFO	publication_date=2024-03-10	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_cfht_obscore:
+#Name: B/cfht/obscore
+#Title: The CFHT Observation logs
+#Column	_r	(F6.3)	Distance from center (358.583829999999978-81.684550000000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	obs_publisher_did	(a64)	publisher dataset identifier	[ucd=meta.id;meta.dataset]
+#Column	dataproduct_type	(a8)	type of product	[ucd=meta.note]
+#Column	target_name	(a64)	name of intended target	[ucd=meta.id]
+#Column	RAJ2000	(F19.15)	? right ascension of central coordinates (J2000) (s_ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F16.12)	? declination of central coordinates (J2000) (s_dec)	[ucd=pos.eq.dec;meta.main]
+#Column	s_fov	(F18.15)	? size of the region covered, ~diameter of minimum bounding circle	[ucd=instr.fov;instr.pixel]
+#Column	t_min	(F13.7)	? start time of observation (MJD) (t_min)	[ucd=time.epoch]
+#Column	t_max	(F13.7)	? end time of observation (MJD) (t_max)	[ucd=time.epoch]
+#Column	access_url	(a200)	URL to download the data	[ucd=meta.ref.url]
+#Column	access_format	(a64)	format of the data file	[ucd=meta.note]
+#Column	access_estsize	(I7)	? estimated size of the download	[ucd=meta.number]
+#Table	B_cfht_cfht:
+#Name: B/cfht/cfht
+#Title: Old Observation Log (October 2002 to 2007)
+#Column	_r	(F4.1)	Distance from center (23 54 20.1-81 41 04)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	RAJ2000	(A10)	? Right Ascension (J2000) at the beginning of the exposure	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	? Declination (J2000) at the beginning of the exposure	[ucd=pos.eq.dec;meta.main]
+#Column	ObsDate	(A20)	Observation date (based on universal time, in DMF format = seconds since 1980)	[ucd=time.epoch;obs]
+#Column	ExpTime	(I6)	Exposure time in seconds for the exposure	[ucd=time.duration;obs.exposure]
+#Column	class	(A1)	Class of observation, coming from cfht	[ucd=meta.code;obs]
+#Column	science	(A1)	[YCFHOT] Exposure Science classification	[ucd=meta.code.class]
+#Column	preview	(A1)	[YCILPST] Existence of a preview	[ucd=meta.ref.url;pos.frame]
+#Column	Object	(a70)	Target name as typed by the observer	[ucd=meta.id]
+
+#RESOURCE=yCat_102037
+#Name: B/gemini
+#Title: The Gemini Observation Log (CADC, 2001-)
+#INFO	ivoid=ivo://cds.vizier/b/gemini	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/gemini	    IVOID of underlying data collection
+#INFO	creator=Association of Universities for Research in Astronomy	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/gemini	    Dataset landing page
+#INFO	publication_date=2024-03-10	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H:	ICRS
+#Table	B_gemini_obscore:
+#Name: B/gemini/obscore
+#Title: Gemini Observations
+#Column	_r	(F6.3)	Distance from center (358.5838299999999776-81.6845500000000015)[ICRS]	[ucd=pos.angDistance]
+#Column	obs_publisher_did	(a256)	? publisher dataset identifier (caomPlaneURI)	[ucd=meta.id;meta.dataset]
+#Column	dataproduct_type	(a128)	? type of product	[ucd=meta.note]
+#Column	target_name	(a64)	? name of intended target	[ucd=meta.id]
+#Column	RA_ICRS	(F20.16)	? RA of central coordinates (ICRS) (s_ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F20.16)	? DEC of central coordinates (ICRS) (s_dec)	[ucd=pos.eq.dec;meta.main]
+#Column	s_fov	(F20.16)	? size of the region covered (~diameter of minimum bounding circle)	[ucd=instr.fov;instr.pixel]
+#Column	t_min	(F13.7)	? Time min in MJD	[ucd=time.epoch]
+#Column	t_max	(F13.7)	? Time max in MJD	[ucd=time.epoch]
+#Column	access_format	(a128)	? format of the data files	[ucd=meta.note]
+#Column	access_estsize	(I4)	? estimated size of the download	[ucd=meta.number]
+#Column	access_url	(a8)	Access url (datalink/XML)	[ucd=meta.ref.url]
+_r	obs_publisher_did	dataproduct_type	target_name	RA_ICRS	DE_ICRS	s_fov	t_min	t_max	access_format	access_estsize	access_url
+arcsec	 	 	 	deg	deg	deg	d	d	 	kbyte	
+------	----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	--------------------------------------------------------------------------------------------------------------------------------	----------------------------------------------------------------	--------------------	--------------------	--------------------	-------------	-------------	--------------------------------------------------------------------------------------------------------------------------------	----	--------
+ 1.035	ivo://cadc.nrc.ca/GEMINI?GS-2021A-Q-320-24-006/S20210207S0009                                                                                                                                                                                                   	spectrum                                                                                                                        	WDJ235419.41-814104.96                                          	358.5823291154987942	-81.6843613265828026	  0.1662320277152543	59252.0472940	59252.0501875	application/x-votable+xml;content=datalink                                                                                      	    	datalink
+ 1.035	ivo://cadc.nrc.ca/GEMINI?GS-2021A-Q-320-24-001/S20210207S0004                                                                                                                                                                                                   	spectrum                                                                                                                        	WDJ235419.41-814104.96                                          	358.5823291879354997	-81.6843613129481270	  0.1662252663074402	59252.0362002	59252.0390937	application/x-votable+xml;content=datalink                                                                                      	    	datalink
+15.807	ivo://cadc.nrc.ca/GEMINI?GS-2021A-Q-320-24-002/S20210207S0005                                                                                                                                                                                                   	spectrum                                                                                                                        	WDJ235419.41-814104.96                                          	358.5534976050259957	-81.6843601972807107	  0.1662272075775089	59252.0395394	59252.0424329	application/x-votable+xml;content=datalink                                                                                      	    	datalink
+15.808	ivo://cadc.nrc.ca/GEMINI?GS-2021A-Q-320-24-005/S20210207S0008                                                                                                                                                                                                   	spectrum                                                                                                                        	WDJ235419.41-814104.96                                          	358.5534971413629819	-81.6843601299933653	  0.1662298852560830	59252.0439606	59252.0468542	application/x-votable+xml;content=datalink                                                                                      	    	datalink
+
+
+#RESOURCE=yCat_102034
+#Name: B/psr
+#Title: ATNF Pulsar Catalogue (Manchester+, 2005)
+#INFO	ivoid=ivo://cds.vizier/b/psr	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/psr	    IVOID of underlying data collection
+#INFO	creator=Manchester R.N.	    First author or institution
+#INFO	cites=bibcode:2005AJ....129.1993M	    Article or Data origin sources
+#INFO	journal=AJ	    Journal name
+#INFO	original_date=2005	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/psr	    Dataset landing page
+#INFO	publication_date=2017-07-18	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_psr_psr:
+#Name: B/psr/psr
+#Title: ATNF Pulsar Catalogue
+#Column	_r	(F5.2)	Distance from center (23 54 20.12-81 41 04.4)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	PSRJ	(a12)	Pulsar name based on J2000 coordinates	[ucd=meta.id;meta.main]
+#Column	r_PSRJ	(A7)	Reference of PSRJ (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	RAJ2000	(A11)	Hour of right ascension (J2000)	[ucd=pos.eq.ra]
+#Column	DEJ2000	(A11)	? Degree of Declination (J2000)	[ucd=pos.eq.dec]
+#Column	Plx	(F6.3)	? Annual parallax	[ucd=pos.parallax]
+#Column	e_Plx	(F6.3)	? Mean error on Plx	[ucd=stat.error;pos.parallax]
+#Column	r_Plx	(A7)	Reference of Plx (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	P0	(F17.14)	? Barycentric period of the pulsar	[ucd=time.period]
+#Column	e_P0	(E8.1)	? Mean error on P0	[ucd=stat.error]
+#Column	r_P0	(A7)	Reference of P0 (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	DM	(F11.6)	? Dispersion measure	[ucd=phys.dispMeasure]
+#Column	e_DM	(F7)	? Mean error on e_DM	[ucd=stat.error]
+#Column	r_DM	(A7)	Reference of DM (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	S400	(F7.2)	? Mean flux density at 400MHz	[ucd=phot.flux.density;em.radio.200-400MHz]
+#Column	e_S400	(F8.4)	? Mean error on S400	[ucd=stat.error]
+#Column	r_S400	(A6)	Reference of S400 (see refs.dat file)	[ucd=meta.ref;pos.frame]
+#Column	Dist	(F5.2)	? Best estimate of the pulsar distance using the tc93 DM-based distance as default	[ucd=pos.distance;pos.heliocentric]
+#Column	DistDM	(F5.2)	? Distance based on the tc93 electron density model (4)	[ucd=pos.distance;pos.heliocentric]
+#Column	r_DistDM	(A4)	Reference of DistDM	[ucd=meta.ref;pos.frame]
+#Column	Age	(F13.1)	? Spin down age [{tau}=P/(2dP/dt)]	[ucd=time.age]
+#Column	Edot	(D8.1)	? Spin down energy loss rate (in ergs/s)	[ucd=phys.energy]
+
+#RESOURCE=yCat_102035
+#Name: B/wd
+#Title: Spectroscopically identified white dwarfs (McCook+, 2014)
+#INFO	ivoid=ivo://cds.vizier/b/wd	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/wd	    IVOID of underlying data collection
+#INFO	creator=McCook G.P.	    First author or institution
+#INFO	cites=bibcode:2016yCat....102035M	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2016	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/wd	    Dataset landing page
+#INFO	publication_date=2018-01-05	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	B1950_1950.000:	eq_FK4 B1950
+#Table	B_wd_catalog:
+#Name: B/wd/catalog
+#Title: Data for the White Dwarfs
+#Column	_r	(F2)	Distance from center (23 51 32-81 57.8)[FK4/B1950], at Epoch=J1950.0	[ucd=pos.angDistance]
+#Column	N	(I3)	Number of rows with data for this WD in this table	[ucd=meta.number]
+#Column	WD	(A10)	White Dwarf (WD) number (1)	[ucd=meta.id;meta.main]
+#Column	RAB1950	(A8)	?Hours RA, Equinox=B1950, Epoch=1950.0 (2)	[ucd=pos.eq.ra;meta.main]
+#Column	DEB1950	(A8)	?Degrees Dec, Equinox=B1950, Epoch=1950.0 (2)	[ucd=pos.eq.dec;meta.main]
+#Column	SpT	(a10)	Spectral type (definitions in the paper, or in file "preface.tex").	[ucd=src.spType]
+#Column	bNote	(A1)	[*b?] 'b' if white dwarf is member of binary, '*' indicates a note in file "notes.dat"	[ucd=meta.code]
+#Column	Names	(a26)	Other names for this star, see table Names	[ucd=meta.id]
+#Column	Vmag	(F6.3)	[6.4/24.3]? V or other magnitude (see n_Vmag)	[ucd=phot.mag;em.opt.V]
+#Column	B-V	(F6.3)	[-0.7/2]? B-V color index in the UBV system	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	U-B	(F6.3)	[-9.9/1.4]? U-B color index in the UBV system	[ucd=phot.color;em.opt.U;em.opt.B]
+#Column	pm	(F7.4)	[0/7]? Total proper motion	[ucd=pos.pm]
+#Column	pmPA	(F5.1)	? Position angle of proper motion vector	[ucd=pos.pm;pos.posAng]
+#Column	_RA.icrs	(A10)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account  (computed by VizieR, not part of the original data)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(A9)	Declination (ICRS) at Epoch=J2000, proper motions taken into account  (computed by VizieR, not part of the original data)	[ucd=pos.eq.dec]
+
+#RESOURCE=yCat_102008
+#Name: B/int
+#Title: Isaac Newton Telescope Wide Field Survey (CASU 2002)
+#INFO	ivoid=ivo://cds.vizier/b/int	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/int	    IVOID of underlying data collection
+#INFO	creator=Cambridge Astronomical Survey Unit	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/int	    Dataset landing page
+#INFO	publication_date=2002-04-18	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_int_obs:
+#Name: B/int/obs
+#Title: Observation log
+#Column	_r	(F4.1)	Distance from center (358.5838-81.6846)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Target	(a18)	Target name	[ucd=meta.id]
+#Column	RAJ2000	(F8.4)	RA (J2000) decimal milliarcseconds (1)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F8.4)	DEC (J2000) decimal milliarcseconds (1)	[ucd=pos.eq.dec;meta.main]
+#Column	Obs	(A21)	Observation date year	[ucd=time.epoch]
+#Column	Exp	(F7.2)	Exposure time (seconds)	[ucd=time.duration;obs.exposure]
+#Column	lambda	(F5.1)	Central wavelength (2)	[ucd=em.wl.central]
+#Column	width	(F5.1)	? Filter width (2)	[ucd=instr.bandwidth]
+
+#RESOURCE=yCat_102017
+#Name: B/bax
+#Title: The BAX Database (Blanchard+, 2004)
+#INFO	ivoid=ivo://cds.vizier/b/bax	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/bax	    IVOID of underlying data collection
+#INFO	creator=Sadat R.	    First author or institution
+#INFO	cites=bibcode:2004A&A...424.1097S	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2004	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/bax	    Dataset landing page
+#INFO	publication_date=2018-01-05	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_bax_bax:
+#Name: B/bax/bax
+#Title: Main parameters of the BAX database
+#Column	_r	(F4.1)	Distance from center (358.5838-81.6846)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Name	(a23)	Name of cluster	[ucd=]
+#Column	RAJ2000	(F8.4)	? Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F8.4)	? Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	z	(F7.3)	? Redshift	[ucd=]
+#Column	Fx	(E8.2)	? Flux in the 0.1-2.4keV band	[ucd=]
+#Column	Lx	(E8.2)	? Luminosity in the 0.1-2.4keV band (in 10^44^erg/s)	[ucd=]
+#Column	Tx	(F6.2)	? Temperature of the intracluster gas	[ucd=]
+#Column	BAX	(A3)	Simbad column added by the CDS	[ucd=]
+
+#RESOURCE=yCat_102041
+#Name: B/dao
+#Title: DAO Science Archive observations (CADC, 2020)
+#INFO	ivoid=ivo://cds.vizier/b/dao	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/dao	    IVOID of underlying data collection
+#INFO	creator=National Research Council	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/dao	    Dataset landing page
+#INFO	publication_date=2023-07-25	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_dao_obscore:
+#Name: B/dao/obscore
+#Title: DAO Science Archive observations
+#Column	_r	(F6.3)	Distance from center (358.58383000000-81.684550000000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	obs_publisher_did	(a256)	publisher dataset identifier (caomPlaneURI)	[ucd=meta.id;meta.dataset]
+#Column	dataproduct_type	(a32)	type of product	[ucd=meta.note]
+#Column	target_name	(a64)	? name of intended target	[ucd=meta.id]
+#Column	RAJ2000	(F15.11)	? RA of central coordinates (J2000) (s_ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F16.12)	? DEC of central coordinates (J2000) (s_dec)	[ucd=pos.eq.dec;meta.main]
+#Column	s_fov	(F17.14)	? size of the region covered (~diameter of minimum bounding circle)	[ucd=instr.fov;instr.pixel]
+#Column	t_min	(F13.7)	? start time of observation (MJD) (t_min)	[ucd=time.epoch]
+#Column	t_max	(F13.7)	? end time of observation (MJD) (t_max)	[ucd=time.epoch]
+#Column	access_url	(a256)	? URL to download the data	[ucd=meta.ref.url]
+#Column	access_format	(a64)	? format of the data files	[ucd=meta.note]
+#Column	access_estsize	(I1)	? estimated size of the download	[ucd=meta.number]
+
+#RESOURCE=yCat_102044
+#Name: B/sbx
+#Title: The eXtended Catalogue of Spectroscopic Binary Orbits (Merle+, 2026-)
+#INFO	ivoid=ivo://cds.vizier/b/sbx	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/sbx	    IVOID of underlying data collection
+#INFO	creator=Merle	    First author or institution
+#INFO	cites=bibcode:2026MNRAS.547ag351M	    Article or Data origin sources
+#INFO	journal=MNRA	    Journal name
+#INFO	original_date=2026	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/sbx	    Dataset landing page
+#INFO	publication_date=2026-09-17	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_sbx_systems:
+#Name: B/sbx/systems
+#Title: Position, magnitudes and spectral types (\originalcolumnnames)
+#Column	_r	(F6.3)	Distance from center (358.58382999999997764-81.684550000000001546)[ICRS], at Epoch of catalog (Epoch)	[ucd=pos.angDistance]
+#Column	Seq	(I4)	[1/4080] System Number (sn)	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F21.17)	[0.01/359.72] Right Ascension at Epoch "Epoch" (ICRS) (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F22.18)	[-87.06/89.27] Declination at Epoch "Epoch" (ICRS) (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	Epoch	(F7.2)	[1991.25/2016.0] Epoch of position measurement (position_epoch)	[ucd=time.epoch]
+#Column	Comp	(A7)	? Component identifier for the system (component)	[ucd=meta.id.part]
+#Column	mag1	(D11.7)	[-1.46/22.77]? Magnitude 1 (mag1)	[ucd=phot.mag]
+#Column	SpType1	(A28)	? Spectral type 1 (st1)	[ucd=src.spType]
+#Column	mag2	(F7.3)	[1.33/19.7]? Magnitude 2 (mag2)	[ucd=phot.mag]
+#Column	SpType2	(A8)	? Spectral type 2 (st2)	[ucd=src.spType]
+#Column	Plx	(D15.10)	[-1.33/743.0]? Stellar parallax (parallax)	[ucd=pos.parallax]
+#Column	pmRA	(D16.10)	[-3678.19/3468.26]? Proper motion in Right Ascension (pmra)	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(D16.10)	[-1677.83/1180.98]? Proper motion in Right Ascension (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	Simbad	(A9)	Simbad Name (not part of original data)	[ucd=meta.ref]
+#Column	SBX	(A3)	Link to SBX database  (column added by CDS)	[ucd=meta.ref.url]
+#Column	_RAicrs	(F10)	Right Ascension (ICRS, epoch 2000) computed by CDS	[ucd=pos.eq.ra]
+#Column	_DEicrs	(F10)	Declination (ICRS, epoch 2000) computed by CDS	[ucd=pos.eq.dec]
+
+#RESOURCE=yCat_102033
+#Name: B/occ
+#Title: Occultation lights curves (Herald+ 2016)
+#INFO	ivoid=ivo://cds.vizier/b/occ	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/occ	    IVOID of underlying data collection
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/occ	    Dataset landing page
+#INFO	publication_date=2026-07-08	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_occ_moon:
+#Name: B/occ/moon
+#Title: table description
+#Column	_r	(F5.2)	Distance from center (+358.58383-81.68455)[ICRS]	[ucd=pos.angDistance]
+#Column	Date	(A19)	Observation date	[ucd=time.epoch]
+#Column	Dur	(F6.2)	[0.39/483.05] Duration of recording	[ucd=time.duration]
+#Column	HIP	(I6)	Hipparcos identifier	[ucd=meta.id;meta.dataset]
+#Column	SAO	(I6)	SAO identifier	[ucd=meta.id;meta.dataset]
+#Column	XZ80Q	(I6)	XZ80Q identifier	[ucd=meta.id;meta.dataset]
+#Column	Lat	(A12)	? Latitude	[ucd=pos.earth.lat]
+#Column	Lon	(A13)	? Longitude	[ucd=pos.earth.lon]
+#Column	Alt	(I4)	Altitude of observer	[ucd=pos.az.alt]
+#Column	ObsName	(A25)	Observer name	[ucd=obs.observer]
+#Column	Seq	(I5)	[1/20127] Sequential number of the light curves (CDS)	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Right ascension (added by VizieR from I/291/xz80q)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (added by VizieR from I/291/xz80q	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_102029
+#Name: B/pastel
+#Title: The PASTEL catalogue (Soubiran+, 2016-)
+#INFO	ivoid=ivo://cds.vizier/b/pastel	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/pastel	    IVOID of underlying data collection
+#INFO	creator=Soubiran C.	    First author or institution
+#INFO	cites=bibcode:2016A&A...591A.118S	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2016	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/pastel	    Dataset landing page
+#INFO	publication_date=2020-03-11	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_pastel_pastel:
+#Name: B/pastel/pastel
+#Title: The catalogue of stellar atmospheric parameters (Version 2020-01-30)
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	ID	(a33)	Designation	[ucd=meta.id;phys.atmol.configuration]
+#Column	RAdeg	(F15.11)	? Right Ascension (J2000) from Simbad or 2MASS	[ucd=pos.eq.ra]
+#Column	DEdeg	(F15.11)	? Declination (J2000) from Simbad or 2MASS	[ucd=pos.eq.dec]
+#Column	o_coo	(A1)	[ST?] Origin of coordinates (1)	[ucd=meta.number]
+#Column	Bmag	(F6.3)	? Johnson B magnitude from Simbad	[ucd=phot.mag;em.opt.B]
+#Column	Vmag	(F6.3)	? Johnson V magnitude from Simbad	[ucd=phot.mag;em.opt.V]
+#Column	Jmag	(F6.3)	? 2MASS J apparent magnitude	[ucd=phot.mag;em.IR.J]
+#Column	Ksmag	(F6.3)	? 2MASS Ks apparent magnitude	[ucd=phot.mag;em.IR.K]
+#Column	Teff	(I5)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	logg	(F6.3)	? Logarithm of gravity	[ucd=phys.gravity]
+#Column	[Fe/H]	(F6.3)	? Iron abundance relative to the Sun	[ucd=phys.abund.Fe]
+#Column	e_[Fe/H]	(F6.3)	? Standard error on iron abundance	[ucd=stat.error;phys.abund.Fe]
+#Column	n_[Fe/H]	(A1)	? [2M] Metal abundance, Fe2 (2)	[ucd=meta.note]
+#Column	f_[Fe/H]	(A1)	? [N] NLTE analysis (3)	[ucd=meta.code]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_102022
+#Name: B/ocl
+#Title: Optically visible open clusters and Candidates (Dias+ 2002-2015)
+#INFO	ivoid=ivo://cds.vizier/b/ocl	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/ocl	    IVOID of underlying data collection
+#INFO	creator=Dias W.S.	    First author or institution
+#INFO	cites=bibcode:2002A&A...389..871D	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2002	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/ocl	    Dataset landing page
+#INFO	publication_date=2018-06-22	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_ocl_clusters:
+#Name: B/ocl/clusters
+#Title: The Catalogue Data File (V3.5)
+#Column	_r	(F4.1)	Distance from center (23 54 20-81 41 04)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	P	(A1)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+#Column	Cluster	(a17)	Cluster name	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A8)	Right Ascension J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination J2000	[ucd=pos.eq.dec;meta.main]
+#Column	Class	(A2)	Flag for classification of the cluster (G1)	[ucd=meta.code]
+#Column	Diam	(F6.1)	[0.2/1400]? Angular apparent diameter	[ucd=phys.angSize]
+#Column	Dist	(I5)	[25/15000]? Distance from WEBDA	[ucd=pos.distance;pos.heliocentric]
+#Column	E(B-V)	(F6.3)	[0/6]? Colour excess in BV	[ucd=phot.color.excess]
+#Column	Age	(F6.3)	[6/10.1]? Age (in log t)	[ucd=time.age]
+#Column	pmRA	(F7.2)	? Mean proper motion of the cluster in RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F7.2)	? Mean proper motion of the cluster in Dec	[ucd=pos.pm;pos.eq.dec]
+#Column	Nc	(I5)	[1/14341]? Estimated number of cluster members	[ucd=meta.number]
+#Column	K14	(A3)	Details from Kharchenko et al. 2014 (J/A+A/558/A53)	[ucd=meta.ref.url]
+#Column	RV	(F7.2)	? Radial Velocity	[ucd=spect.dopplerVeloc;pos.heliocentric]
+#Column	o_RV	(I3)	[0/537]? Number of stars used to determine RV	[ucd=meta.number]
+#Column	[Fe/H]	(F6.3)	[-1.6/0.5]? Metallicity	[ucd=phys.abund.Z]
+#Column	o_[Fe/H]	(I2)	[0/60]? Number of stars used to determine [Fe/H]	[ucd=meta.number]
+#Column	TrType	(A8)	Trumpler type determined in the DSS inspection (concentration-brightness-richness-nebulosity)	[ucd=src.class]
+#Column	WEBDA	(a5)	Find out what exists about this cluster in the WEBDA data-base	[ucd=meta.ref.url]
+#Column	Lynga	(a5)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+#Table	B_ocl_removed:
+#Name: B/ocl/removed
+#Title: Removed clusters (V3.5)
+#Column	_r	(F4.1)	Distance from center (23 54 20-81 41 04)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	P	(A1)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+#Column	Cluster	(a17)	Cluster name	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A8)	Right Ascension J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination J2000	[ucd=pos.eq.dec;meta.main]
+#Column	Diam	(F6.1)	? Angular apparent diameter	[ucd=phys.angSize]
+#Column	Reason	(a29)	Reason of removing the cluster	[ucd=meta.note]
+#Column	Ref	(a95)	Reference used for deletion	[ucd=meta.ref;instr.setup]
+
+#RESOURCE=yCat_102013
+#Name: B/avo.rad
+#Title: MERLIN+VLA images of HDF/HFF sources (Muxlow+, 2003)
+#INFO	ivoid=ivo://cds.vizier/b/avo.rad	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/avo.rad	    IVOID of underlying data collection
+#INFO	creator=Muxlow T.W.B	    First author or institution
+#INFO	cites=2003MNRAS.(in.press	    Article or Data origin sources
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/avo.rad	    Dataset landing page
+#INFO	publication_date=2003-01-18	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_avo_rad_catalog:
+#Name: B/avo.rad/catalog
+#Title: MERLIN+VLA HFF/HDF(N) catalogue
+#Column	_r	(F6.3)	Distance from center (23 54 20.1192-81 41 04.380)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Name	(a14)	Designation of the source	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A13)	Hour of Right Ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A13)	Degree of Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Opt	(a4)	Counterpart is seen in CFHT or HST image (2)	[ucd=meta.id.cross]
+#Column	Freq	(E9.2)	Frequency of the observation	[ucd=em.freq]
+#Column	Vflux	(F9.6)	Total flux density in VLA image at 1.4GHz (2arcsec resolution)	[ucd=phot.flux.density]
+#Column	e_Vflux	(F9.6)	Mean error on Vflux	[ucd=stat.error]
+#Column	WSRT	(I3)	? ID in WSRT catalogue (2000A&A...361L..41G)	[ucd=meta.id;meta.dataset]
+#Column	Wpeak	(F9.6)	? Peak WSRT flux density at 1.38GHz (15arcsec resolution)	[ucd=phot.flux.density;em.radio.750-1500MHz]
+#Column	l_Sp-Index	(A1)	Sp-Index is lower limit	[ucd=meta.code.error]
+#Column	Sp-Index	(F5.2)	? Spectral index between 8.4 and 1.4 GHz (2000ApJ...533...611R)	[ucd=spect.index]
+#Column	l_Imag	(A1)	[>~] Imag is approximative or lower limit	[ucd=meta.code.error]
+#Column	Imag	(F4.1)	? I magnitude from CFHT or HST (2)	[ucd=phot.mag;em.opt.I]
+#Column	X-ray	(A3)	[Yes No] Counterpart is seen in CHANDRA image (2001AJ....122.2810B)	[ucd=meta.code]
+#Column	IR	(A3)	[Yes No] Counterpart is seen in ISO image (1999A&A...342..313A)	[ucd=meta.code]
+#Column	Class	(a4)	Classification of galaxy (4)	[ucd=src.class]
+#Column	z	(F6.3)	? Redshift	[ucd=src.redshift]
+#Column	Fig	(I1)	Figure number in which the source can be viewed	[ucd=meta.bib.fig]
+#Column	FWHM	(E8.1)	FWHM Bandpass	[ucd=instr.bandwidth]
+#Table	B_avo_rad_wsrt:
+#Name: B/avo.rad/wsrt
+#Title: WSRT data
+#Column	_r	(F6.3)	Distance from center (23 54 20.1192-81 41 04.380)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Name	(a14)	Designation of the source	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(A13)	Hour of Right Ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RAs	(I3)	Relative position error in Right Ascension	[ucd=stat.error]
+#Column	DEJ2000	(A13)	Degree of Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DEs	(I3)	Relative position error in Declination	[ucd=stat.error]
+#Column	Beam	(F4.1)	Circular restoring beam diameter in map used for analysis	[ucd=phys.angSize;instr.beam]
+#Column	Vpos	(A1)	[V] means low surface brightness extended source, VLA position given.	[ucd=meta.code]
+#Column	Opt	(a4)	Counterpart is seen in CFHT or HST image	[ucd=meta.id.cross]
+#Column	WSRT	(I3)	? ID in WSRT catalogue (2000A&A...361L..41G)	[ucd=meta.id;meta.dataset]
+#Column	Wpeak	(F9.6)	? Peak WSRT flux density at 1.38GHz (15arcsec resolution)	[ucd=phot.flux.density]
+#Column	Wint	(F9.6)	? Integrated WSRT flux density	[ucd=phot.flux.density]
+#Column	m_WSRT	(A1)	WSRT flux densities include two sources with same WSRT ID	[ucd=meta.code.multip]
+#Column	Freq	(E9.2)	Frequency of the observation	[ucd=em.freq]
+#Column	FWHM	(E8.1)	FWHM Bandpass	[ucd=instr.bandwidth]
+
+#RESOURCE=yCat_102010
+#Name: B/merlin
+#Title: The MERLIN Archive (MERLIN 1992-)
+#INFO	ivoid=ivo://cds.vizier/b/merlin	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/merlin	    IVOID of underlying data collection
+#INFO	creator=MERLIN Staff	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/merlin	    Dataset landing page
+#INFO	publication_date=2006-11-25	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_merlin_merlin:
+#Name: B/merlin/merlin
+#Title: Log of MERLIN archive data
+#Column	_r	(F6.3)	Distance from center (23 54 20.119200-81 41 04.38000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	RAJ2000	(A15)	Pointing position R.A. J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A15)	Pointing position Dec. J2000	[ucd=pos.eq.dec;meta.main]
+#Column	Name	(a17)	Source name	[ucd=meta.id;meta.main]
+#Column	begDATE	(A10)	Block start date (2)	[ucd=]
+#Column	Freq	(F10.3)	Frequency in central channel (3)	[ucd=em.freq]
+#Column	Bandwidth	(F6.3)	Bandwidth of raw data	[ucd=instr.bandwidth]
+#Column	Type	(a8)	Source type (5)	[ucd=meta.code;obs]
+#Column	DataNo	(I9)	Link to MERLIN Archive web page for more details.	[ucd=meta.id;obs]
+
+#RESOURCE=yCat_102019
+#Name: B/subaru
+#Title: Log of Subaru Prime Focus Camera Exposures (ADAC NAOJ, 2007)
+#INFO	ivoid=ivo://cds.vizier/b/subaru	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/subaru	    IVOID of underlying data collection
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/subaru	    Dataset landing page
+#INFO	publication_date=2007-09-01	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_subaru_suprimc:
+#Name: B/subaru/suprimc
+#Title: The Suprime-Cam Observation Log (2005-11-02)
+#Column	_r	(F4.1)	Distance from center (358.5838-81.6846)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	FrameID	(a12)	! Frame ID (1)	[ucd=meta.id;pos.frame;obs.field]
+#Column	RAJ2000	(F8.4)	Right Ascension (J2000) of the CCD chip center	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F8.4)	Declination (J2000) of the CCD chip center	[ucd=pos.eq.dec;meta.main]
+#Column	ObsStart	(A19)	Observation start date (year, UT)	[ucd=time.start;obs]
+#Column	ExpTime	(F6.1)	Exposure time	[ucd=time.duration;obs.exposure]
+#Column	Object	(a30)	Object name	[ucd=meta.id.assoc]
+#Column	Filter	(a8)	Filter combination (2)	[ucd=meta.id;instr.filter]
+#Column	Seeing	(F5.2)	Seeing size	[ucd=phys.angSize]
+#Column	SMOKA	(a5)	Get details about the frame in the SMOKA system	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_102018
+#Name: B/cb
+#Title: Cataclysmic Binaries, LMXBs, and related objects (Ritter+, 2004)
+#INFO	ivoid=ivo://cds.vizier/b/cb	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/cb	    IVOID of underlying data collection
+#INFO	creator=Ritter H.	    First author or institution
+#INFO	cites=bibcode:2003A&A...404..301R	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2003	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/cb	    Dataset landing page
+#INFO	publication_date=2020-09-30	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_cb_cbdata:
+#Name: B/cb/cbdata
+#Title: Catalogue of Cataclysmic Binaries
+#Column	_r	(F4.1)	Distance from center (23 54 20.1-81 41 04)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Name	(a12)	Object name (G1)	[ucd=meta.id;meta.main]
+#Column	AltName	(a12)	A frequently used alternative name	[ucd=meta.id]
+#Column	RAJ2000	(A10)	Right Ascension J2000 (14)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination J2000 (14)	[ucd=pos.eq.dec;meta.main]
+#Column	Type1	(A2)	Object type (3)	[ucd=src.class]
+#Column	Type2	(A2)	Object type (3)	[ucd=src.class]
+#Column	mag1	(F4.1)	? Apparent V (or B, b, F, g, I, J, j, K, p, R, r, v, w = "white light") magnitude at maximum brightness (4)	[ucd=phot.mag;em.opt.V]
+#Column	Orb.Per	(F9.6)	? Orbital period (in days)	[ucd=time.period]
+#Column	SpType2	(A7)	Spectral type of the secondary (G6)	[ucd=src.spType]
+#Column	SpType1	(a7)	Spectral type of the primary (G6)	[ucd=src.spType]
+#Column	Refs	(A4)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+#Table	B_cb_lmxbdata:
+#Name: B/cb/lmxbdata
+#Title: Catalogue of Low-Mass X-Ray Binaries
+#Column	_r	(F4.1)	Distance from center (23 54 20.1-81 41 04)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Name	(a12)	Object name (G1)	[ucd=meta.id;meta.main]
+#Column	AltName	(a12)	A frequently used alternative name	[ucd=meta.id]
+#Column	RAJ2000	(A10)	Right Ascension J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination J2000	[ucd=pos.eq.dec;meta.main]
+#Column	Type1	(A2)	Object type (3)	[ucd=src.class]
+#Column	Type2	(A2)	Object type (3)	[ucd=src.class]
+#Column	mag1	(F4.1)	? Apparent V (or B, g, I, i, J, K, R, r, U) magnitude at maximum brightness, in case of XT in quiescence	[ucd=phot.mag;em.opt.V]
+#Column	Orb.Per	(F9.6)	? Orbital period	[ucd=time.period]
+#Column	SpType2	(a7)	Spectral type of the secondary (G6)	[ucd=src.spType]
+#Column	SpType1	(a7)	Spectral type of the primary (G6)	[ucd=src.spType]
+#Column	Refs	(A4)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+#Table	B_cb_pcbdata:
+#Name: B/cb/pcbdata
+#Title: Catalogue of Related Objects
+#Column	_r	(F4.1)	Distance from center (23 54 20.1-81 41 04)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Name	(a12)	Object name (G1)	[ucd=meta.id;meta.main]
+#Column	AltName	(a12)	A frequently used alternative name	[ucd=meta.id]
+#Column	RAJ2000	(A10)	Right Ascension J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A9)	Declination J2000	[ucd=pos.eq.dec;meta.main]
+#Column	Type1	(A2)	Object type (3)	[ucd=src.class]
+#Column	Type2	(A2)	Object type (3)	[ucd=src.class]
+#Column	mag1	(F4.1)	? Apparent V (or B, g, I, i, R, r) magnitude at maximum brightness outside eclipse	[ucd=phot.mag;em.opt.V]
+#Column	Orb.Per	(F9.6)	Orbital period	[ucd=time.period]
+#Column	SpType2	(a7)	Spectral type of the secondary (G6)	[ucd=src.spType]
+#Column	SpType1	(a7)	Spectral type of the primary (G6)	[ucd=src.spType]
+#Column	Refs	(A4)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_102023
+#Name: B/mk
+#Title: Catalogue of Stellar Spectral Classifications (Skiff, 2009- )
+#INFO	ivoid=ivo://cds.vizier/b/mk	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/mk	    IVOID of underlying data collection
+#INFO	creator=Skiff B.A.	    First author or institution
+#INFO	cites=bibcode:2014yCat....1.2023S	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2014	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/mk	    Dataset landing page
+#INFO	publication_date=2022-05-13	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_mk_mktypes:
+#Name: B/mk/mktypes
+#Title: The catalog of MK Spectral Types
+#Column	_r	(F5.2)	Distance from center (23 54 20.12-81 41 04.4)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Name	(a27)	Star name as published or valid SIMBAD name (Lortet et al.)	[ucd=meta.id]
+#Column	Mag	(F5.2)	? Magnitude, see passband in n_Mag	[ucd=phot.mag]
+#Column	n_Mag	(A2)	Color passband of magnitude (2)	[ucd=meta.note]
+#Column	n_SpType	(A1)	[+] if spectral type is an MK standard	[ucd=meta.note]
+#Column	SpType	(a26)	spectral type (MK, HD, or other)	[ucd=src.spType]
+#Column	Remarks	(a31)	Comments (3)	[ucd=meta.note]
+#Column	Bibcode	(A19)	Publication Source	[ucd=meta.bib.bibcode]
+#Column	RAJ2000	(A11)	Right Ascension (J2000) hour	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000) degree	[ucd=pos.eq.dec;meta.main]
+#Column	rc	(A1)	Source of coordinates (1)	[ucd=meta.ref;pos.frame]
+#Column	Simbad	(a6)	VizieR added column, not part of original data	[ucd=meta.ref]
+
+#RESOURCE=yCat_102024
+#Name: B/sn
+#Title: Asiago Supernova Catalogue (Barbon et al., 1999-)
+#INFO	ivoid=ivo://cds.vizier/b/sn	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/sn	    IVOID of underlying data collection
+#INFO	creator=Barbon R.	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/sn	    Dataset landing page
+#INFO	publication_date=2017-10-02	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_sn_sncat:
+#Name: B/sn/sncat
+#Title: List of SNe in chronological order on 2017-10-01
+#Column	_r	(F6.3)	Distance from center (23 54 20.119-81 41 04.38)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	SN	(A6)	Supernova designation	[ucd=meta.id;meta.main]
+#Column	Galaxy	(a14)	Parent galaxy identification	[ucd=meta.id]
+#Column	RAG	(A8)	Parent galaxy right ascension (J2000)	[ucd=pos.eq.ra]
+#Column	DEG	(A9)	Parent galaxy declination (J2000)	[ucd=pos.eq.dec]
+#Column	MType	(a9)	Parent galaxy morphological type	[ucd=src.morph.type]
+#Column	HRV	(I6)	? Parent galaxy heliocentric radial velocity	[ucd=spect.dopplerVeloc;pos.heliocentric]
+#Column	MaxMag	(F5.2)	? If available, supernova magnitude at maximum (photometric band indicated)	[ucd=phot.mag]
+#Column	Type	(a8)	Supernova type (3)	[ucd=src.class]
+#Column	Disc	(a41)	Name(s) of discoverer(s)	[ucd=meta.id;obs.observer]
+#Column	RAJ2000	(A12)	? Supernova right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A12)	? Supernova declination (J2000)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_102028
+#Name: B/corot
+#Title: CoRoT observation log (N2-4.4) (CoRoT 2016)
+#INFO	ivoid=ivo://cds.vizier/b/corot	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/corot	    IVOID of underlying data collection
+#INFO	creator=CoRoT team	    First author or institution
+#INFO	cites=bibcode:2014yCat....102028C	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2014	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/corot	    Dataset landing page
+#INFO	publication_date=2022-05-31	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_corot_Bright_star:
+#Name: B/corot/Bright_star
+#Title: Stars observed in the bright star mode
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	LC	(A2)	Light curves preview	[ucd=meta.ref.url]
+#Column	date1	(A19)	(startdat) UT date of first measurement	[ucd=time.epoch]
+#Column	date2	(A19)	(end_date) UT date of last measurment	[ucd=time.epoch]
+#Column	CoRoT	(I9)	[1/21960] (corotid) ID of the CoRoT target	[ucd=meta.id;meta.main]
+#Column	SpT	(a11)	? (spectral_type) Spectral type, from EXODAT	[ucd=src.spType]
+#Column	Run	(A5)	[SLIRca0-9] (run_code) (G1)	[ucd=meta.id;obs]
+#Column	RAJ2000	(F9.5)	(alpha) Right ascension of star, J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	(delta) Declination, J2000 (degrees)	[ucd=pos.eq.dec;meta.main]
+#Column	size	(F7.3)	? (filesize) [17280,32921280] bytes in file	[ucd=meta.note]
+#Column	Star	(a15)	Name of the star observed	[ucd=meta.id]
+#Column	FITS	(A4)	Download the FITS time serie file	[ucd=meta.ref.url]
+#Table	B_corot_Faint_star:
+#Name: B/corot/Faint_star
+#Title: Stars observed in the faint star mode with E(B-V)
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	LCRaw	(a5)	Light curves preview (Raw level (BAR extension))	[ucd=meta.ref.url]
+#Column	LCBarFill	(a9)	Light curves preview (BARFILL level (BARFILL extension))	[ucd=meta.ref.url]
+#Column	LCCorr	(a5)	Light curves preview (Corrected level (SYS extension))	[ucd=meta.ref.url]
+#Column	col	(A1)	[01] 0 = monochrome results, 1 = 3-channels	[ucd=meta.note]
+#Column	date1	(A19)	(startdat) UT date of first measurement	[ucd=time.epoch]
+#Column	date2	(A19)	(end_date) UT date of last measurement	[ucd=time.epoch]
+#Column	CoRoT	(I9)	[100396342/739016552] (corotid) ID of the CoRoT target	[ucd=meta.id;meta.main]
+#Column	SpT	(a10)	? (spectral_type) Spectral type, from EXODAT	[ucd=src.spType]
+#Column	E(B-V)	(F5.2)	? (E(B-V)) E(B-V) colour excess, from EXODAT	[ucd=phot.color.excess]
+#Column	Run	(A5)	[SLIRca0-9] (run_code) (G1)	[ucd=meta.id;obs]
+#Column	mag	(F6.3)	? (magnitud) Magnitude of the target	[ucd=phot.mag;em.opt]
+#Column	RAJ2000	(F9.5)	(alpha) Right ascension of star, J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	(delta) Declination, J2000 (degrees)	[ucd=pos.eq.dec;meta.main]
+#Column	LCmean	(E12.5)	? (lc_mean) light curve mean	[ucd=phot.mag;stat.mean]
+#Column	LCrms	(E12.5)	? (lc_rms) light curve rms	[ucd=src.var.amplitude]
+#Column	size	(F7.3)	? Size of file (bytes)	[ucd=meta.note]
+#Column	FITS	(A4)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_102043
+#Name: B/polarbase
+#Title: PolarBase spectropolarimetric database (ESPaDOnS, NARVAL) (Petit+, 2014)
+#INFO	ivoid=ivo://cds.vizier/b/polarbase	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/polarbase	    IVOID of underlying data collection
+#INFO	creator=Petit P.	    First author or institution
+#INFO	cites=bibcode:2014PASP..126..469P	    Article or Data origin sources
+#INFO	journal=PASP	    Journal name
+#INFO	original_date=2014	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/polarbase	    Dataset landing page
+#INFO	publication_date=2023-07-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_polarbase_polarbase:
+#Name: B/polarbase/polarbase
+#Title: Polarbase database (IRAP)
+#Column	_r	(F6.3)	Distance from center (358.583830-81.68455000)[ICRS]	[ucd=pos.angDistance]
+#Column	ID	(I6)	Key to indentify a spectrum (id_spectrum)	[ucd=meta.id;meta.main]
+#Column	Object	(a32)	Object's Name (object)	[ucd=meta.id]
+#Column	RA_ICRS	(F10.6)	Right ascension (ICRS) (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F12.8)	Declination (ICRS) (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	SpType	(a32)	Object spectral type (spectype)	[ucd=src.spType]
+#Column	Vmag	(F8.4)	? V Magnitude (magnitude)	[ucd=phot.mag;em.opt.V]
+#Column	Teff	(F8.1)	? Effective Temperature (teffective)	[ucd=phys.temperature.effective]
+#Column	Dist	(F11.4)	? Distance value (distance)	[ucd=pos.distance]
+#Column	Date	(A19)	Observation's ISO date (date)	[ucd=time.epoch;obs]
+#Column	Inst	(a9)	Instrument's Name (instrument)	[ucd=meta.id;instr]
+#Column	url	(a128)	Access URL (url_gwet)	[ucd=meta.ref.url]
+
+#RESOURCE=yCat_102007
+#Name: B/chandra
+#Title: The Chandra Archive Log (CXC, 1999-2014) Regularly updated
+#INFO	ivoid=ivo://cds.vizier/b/chandra	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/chandra	    IVOID of underlying data collection
+#INFO	creator=CXC	    First author or institution
+#INFO	cites=bibcode:2002yCat....102007C	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2002	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/chandra	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_chandra_chandra:
+#Name: B/chandra/chandra
+#Title: The Chandra Log (2026-10-18)
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	ObsID	(I5)	Observation ID (2)	[ucd=meta.id;obs]
+#Column	Instr	(A6)	Instrument (3)	[ucd=meta.id;instr]
+#Column	Grat	(A4)	Grating (5)	[ucd=instr.setup]
+#Column	ExpTime	(F9.3)	? Exposure time (ks)	[ucd=time.duration;obs.exposure]
+#Column	Target	(A40)	Target Name as specified in proposal	[ucd=meta.id]
+#Column	RAJ2000	(F9.5)	? RA in J2000 decimal degrees	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	? Dec in J2000 decimal degrees	[ucd=pos.eq.dec;meta.main]
+#Column	Status	(A18)	Status of the observation (6)	[ucd=meta.code;obs]
+
+#RESOURCE=yCat_102009
+#Name: B/xmm
+#Title: XMM-Newton Observation Log (XMM-Newton Science Operation Center, 2012-)
+#INFO	ivoid=ivo://cds.vizier/b/xmm	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/xmm	    IVOID of underlying data collection
+#INFO	creator=XMM-Newton Science Operation Center	    First author or institution
+#INFO	cites=bibcode:2002yCat....102009X	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2002	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/xmm	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_xmm_xmmlog:
+#Name: B/xmm/xmmlog
+#Title: The XMM-Newton Observation log (2026-10-19)
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Obsno	(A10)	Observation identifier (1)	[ucd=meta.id;meta.main]
+#Column	XSAlink	(A1)	[YN] XMM-Newton Science Archive link available for this observation (yes/no)	[ucd=meta.ref]
+#Column	PropDate	(A10)	Proprietary period expiry date	[ucd=time]
+#Column	Object	(A30)	Target as specified in proposal	[ucd=meta.id]
+#Column	RAJ2000	(F9.5)	? Median pointing RA (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	? Median pointing Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Obs0	(A19)	? Observation start date (UT)	[ucd=time.epoch]
+#Column	ObsDur	(I7)	? Observation on-time	[ucd=time.expo]
+#Column	Image	(A1)	[YN] Epic image of this observation (FITS)	[ucd=meta.ref.url]
+#Column	FITS	(A4)	FITS: retrieve the FITS image from the XMM Archive (column added by CDS)	[ucd=meta.ref.url]
+#Column	PPSp	(A4)	Retrieve PPS products at XMM for this exposure	[ucd=]
+
+#RESOURCE=yCat_102011
+#Name: B/eso
+#Title: ESO Science Archive Catalog (ESO, 1991-2026)
+#INFO	ivoid=ivo://cds.vizier/b/eso	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/eso	    IVOID of underlying data collection
+#INFO	creator=ESO	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/eso	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_eso_eso_arc:
+#Name: B/eso/eso_arc
+#Title: Full ESO science archive log from 1991
+#Column	_r	(F6.3)	Distance from center (358.583830000000-81.684550000000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	TelID	(I3)	Code which refers to the ESO telescope	[ucd=meta.id;instr.tel]
+#Column	ProgID	(A20)	Program identification	[ucd=meta.id]
+#Column	tExp	(F7.1)	? Exposure time	[ucd=time]
+#Column	RAJ2000	(F15.12)	Right Ascension in mas (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F15.12)	Declination in mas (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Ask	(A3)	Ask for the observation from the ESO Archive (column added by CDS)	[ucd=meta.ref.url]
+#Column	Target	(A32)	Target name (3)	[ucd=meta.id]
+_r	TelID	ProgID	tExp	RAJ2000	DEJ2000	Ask	Target
+arcsec	 	 	s	deg	deg	 	
+------	---	--------------------	-------	---------------	---------------	---	--------------------------------
+ 1.776	 91	114.2713.002        	  700.0	358.58694458008	-81.68434906006	Ask	Gaia DR2 6350786278796634112
+ 1.776	 91	114.2713.002        	  700.0	358.58694458008	-81.68434906006	Ask	Gaia DR2 6350786278796634112
+ 1.776	 91	114.2713.002        	  700.0	358.58694458008	-81.68434906006	Ask	Gaia DR2 6350786278796634112
+ 1.776	 91	114.2713.002        	  700.0	358.58694458008	-81.68434906006	Ask	Gaia DR2 6350786278796634112
+ 1.776	 91	114.2713.002        	  700.0	358.58694458008	-81.68434906006	Ask	Gaia DR2 6350786278796634112
+ 1.776	 91	114.2713.002        	  700.0	358.58694458008	-81.68434906006	Ask	Gaia DR2 6350786278796634112
+ 1.776	 91	114.2713.002        	  700.0	358.58694458008	-81.68434906006	Ask	Gaia DR2 6350786278796634112
+ 1.776	 91	114.2713.002        	  700.0	358.58694458008	-81.68434906006	Ask	Gaia DR2 6350786278796634112
+ 1.040	 92	1103.D-0763(B)      	  718.0	358.58486938477	-81.68430328369	Ask	WDJ235419.41-814104.96
+ 1.040	 92	1103.D-0763(B)      	  668.0	358.58486938477	-81.68430328369	Ask	WDJ235419.41-814104.96
+ 1.040	 92	1103.D-0763(B)      	  700.0	358.58486938477	-81.68430328369	Ask	WDJ235419.41-814104.96
+ 1.040	 92	1103.D-0763(B)      	  700.0	358.58486938477	-81.68430328369	Ask	WDJ235419.41-814104.96
+ 1.040	 92	1103.D-0763(B)      	  668.0	358.58486938477	-81.68430328369	Ask	WDJ235419.41-814104.96
+ 1.040	 92	1103.D-0763(B)      	  718.0	358.58486938477	-81.68430328369	Ask	WDJ235419.41-814104.96
+ 2.101	 91	114.2713.002        	  700.0	358.58682250977	-81.68415832520	Ask	Gaia DR2 6350786278796634112
+ 2.101	 91	114.2713.002        	  700.0	358.58682250977	-81.68415832520	Ask	Gaia DR2 6350786278796634112
+ 2.101	 91	114.2713.002        	  700.0	358.58682250977	-81.68415832520	Ask	Gaia DR2 6350786278796634112
+ 2.101	 91	114.2713.002        	  700.0	358.58682250977	-81.68415832520	Ask	Gaia DR2 6350786278796634112
+ 2.101	 91	114.2713.002        	  700.0	358.58682250977	-81.68415832520	Ask	Gaia DR2 6350786278796634112
+ 2.101	 91	114.2713.002        	  700.0	358.58682250977	-81.68415832520	Ask	Gaia DR2 6350786278796634112
+ 2.101	 91	114.2713.002        	  700.0	358.58682250977	-81.68415832520	Ask	Gaia DR2 6350786278796634112
+ 2.101	 91	114.2713.002        	  700.0	358.58682250977	-81.68415832520	Ask	Gaia DR2 6350786278796634112
+ 2.040	 91	114.2713.002        	  700.0	358.58660888672	-81.68415069580	Ask	Gaia DR2 6350786278796634112
+ 2.040	 91	114.2713.002        	  700.0	358.58660888672	-81.68415069580	Ask	Gaia DR2 6350786278796634112
+ 2.040	 91	114.2713.002        	  548.5	358.58660888672	-81.68415069580	Ask	Gaia DR2 6350786278796634112
+ 2.040	 91	114.2713.002        	  548.5	358.58660888672	-81.68415069580	Ask	Gaia DR2 6350786278796634112
+ 2.040	 91	114.2713.002        	  700.0	358.58660888672	-81.68415069580	Ask	Gaia DR2 6350786278796634112
+ 2.040	 91	114.2713.002        	  700.0	358.58660888672	-81.68415069580	Ask	Gaia DR2 6350786278796634112
+
+
+#RESOURCE=yCat_102016
+#Name: B/iram
+#Title: IRAM Observation Logs (IRAM 1991-)
+#INFO	ivoid=ivo://cds.vizier/b/iram	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/iram	    IVOID of underlying data collection
+#INFO	creator=Dan M.	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/iram	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_iram_pdbi:
+#Name: B/iram/pdbi
+#Title: The Plateau de Bure Interferometer Observation Log since 1991-12-01
+#Column	_r	(F6.3)	Distance from center (23 54 20.11920-81 41 04.3800)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Prog	(A8)	Identification code of the program	[ucd=meta.code;obs]
+#Column	Name	(A12)	Source name, as mentioned in the observing program	[ucd=meta.id;meta.main]
+#Column	tos	(I6)	Total on-source correlation time	[ucd=time.expo]
+#Column	Type	(A3)	Program type (1)	[ucd=instr.setup]
+#Column	RAJ2000	(A14)	? Right Ascension J2000 (hours)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A14)	Declination J2000 (sign)	[ucd=pos.eq.dec;meta.main]
+#Column	Vel	(F6.1)	Velocity of the source (3)	[ucd=spect.dopplerVeloc]
+#Column	n_Vel	(A1)	[LH] LSR or Heliocentric velocity	[ucd=meta.note;spect.dopplerVeloc]
+#Column	Flow	(I6)	?=0 Sky Frequency of the 3mm receiver (6)	[ucd=em.freq]
+#Column	n_Flow	(A1)	[UL] Signal Upper/Lower band of the 3mm receiver	[ucd=meta.note;em.freq]
+#Column	Fhigh	(I6)	?=0 Sky Frequency of the 1mm receiver (6)	[ucd=em.freq]
+#Column	n_Fhigh	(A1)	[UL] Signal Upper/Lower band of the 1mm receiver	[ucd=meta.note;em.freq]
+#Column	Conf	(A3)	Configuration code of the interferometer	[ucd=meta.id;instr]
+#Table	B_iram_30m:
+#Name: B/iram/30m
+#Title: List of observations at 30m instrument since 2009-09-30 (calibration observations not included)
+#Column	_r	(F6.3)	Distance from center (358.58382999999998 -81.6845500000000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	RAJ2000	(F18.14)	[0.02/359.86]? Right ascension, computed by CDS (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F18.13)	[-43.3/90.0]? Declination, computed by CDS (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Name	(A20)	Target source name	[ucd=meta.id;meta.main]
+#Column	scan	(I4)	[1/882] Scan No. (Date.scan = ncsID)	[ucd=meta.id]
+#Column	obsMode	(A11)	Observation mode (1)	[ucd=instr.setup]
+#Column	tau	(F8.3)	[-2.47/9.9]? Zenith tau at 225 GHz from tipping taumeter	[ucd=phys.absorption.opticalDepth]
+#Column	receiv	(A13)	Short name of the receiver(band) used	[ucd=instr.setup]
+#Column	line	(A12)	? Name of line observed	[ucd=meta.id;spect.line]
+#Column	Freq	(F10.4)	Frequency used for the observation	[ucd=em.freq]
+#Table	B_iram_noema:
+#Name: B/iram/noema
+#Title: The Plateau de Bure Interferometer (Noema) Observation Log since 2016
+#Column	_r	(F6.3)	Distance from center (23 54 20.11920-81 41 04.3800)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Prog	(A8)	Identification code of the program	[ucd=meta.code;obs]
+#Column	Name	(A12)	Source name, as mentioned in the observing program	[ucd=meta.id;meta.main]
+#Column	tos	(I6)	Total on-source correlation time	[ucd=time.expo]
+#Column	Type	(A3)	Program type (1)	[ucd=instr.setup]
+#Column	RAJ2000	(A14)	? Right Ascension J2000 (hours)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A14)	Declination J2000 (sign)	[ucd=pos.eq.dec;meta.main]
+#Column	Vel	(F6.1)	Velocity of the source (3)	[ucd=spect.dopplerVeloc]
+#Column	n_Vel	(A1)	[LH] LSR or Heliocentric velocity	[ucd=meta.note;spect.dopplerVeloc]
+#Column	Flow	(I6)	?=0 Minimum Sky Frequency (6)	[ucd=em.freq]
+#Column	n_Flow	(A1)	[UL] Signal Upper/Lower band	[ucd=meta.note;em.freq]
+#Column	Fhigh	(I6)	?=0 Maximum Sky Frequency (6)	[ucd=em.freq]
+#Column	n_Fhigh	(A1)	[UL] Signal Upper/Lower band	[ucd=meta.note;em.freq]
+#Column	Conf	(A3)	Configuration code of the interferometer	[ucd=meta.id;instr]
+
+#RESOURCE=yCat_102026
+#Name: B/wds
+#Title: The Washington Visual Double Star Catalog (Mason+ 2001-) Supersedes {\bf I/237}
+#INFO	ivoid=ivo://cds.vizier/b/wds	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/wds	    IVOID of underlying data collection
+#INFO	creator=Mason B.D.	    First author or institution
+#INFO	cites=bibcode:2001AJ....122.3466M	    Article or Data origin sources
+#INFO	journal=AJ	    Journal name
+#INFO	original_date=2001	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/wds	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	B_wds_wds:
+#Name: B/wds/wds
+#Title: The Washington Double Star Catalog (main part)
+#Column	_r	(F5.2)	Distance from center (23 54 20.12-81 41 04.4)[FK5/J2000], at Epoch=J2000.0	[ucd=pos.angDistance]
+#Column	WDS	(A10)	WDS name (based on J2000 position)	[ucd=meta.id;meta.main]
+#Column	Disc	(A7)	Discoverer Code (1 to 4 letters) and Number (5)	[ucd=meta.id]
+#Column	Comp	(A5)	Components when more than 2 (1)	[ucd=meta.code.multip]
+#Column	Obs1	(I4)	? Date of first satisfactory observation	[ucd=time]
+#Column	pa1	(I3)	? Position Angle at date Obs1 (2)	[ucd=pos.posAng]
+#Column	pa2	(I3)	? Position Angle at date Obs2 (2)	[ucd=pos.posAng]
+#Column	sep1	(F5.1)	? Separation at date Obs1	[ucd=pos.angDistance;src.orbital]
+#Column	sep2	(F6.2)	? Separation at date Obs12	[ucd=pos.angDistance;src.orbital]
+#Column	mag1	(F6.3)	? Magnitude of First Component	[ucd=phot.mag;em.opt]
+#Column	mag2	(F5.2)	? Magnitude of Second Component	[ucd=phot.mag;em.opt]
+#Column	DM	(A9)	Durchmusterung Number (3)	[ucd=meta.id]
+#Column	Notes	(A4)	[B-Z ] Notes about the binary (4)	[ucd=meta.note]
+#Column	n_RAh	(A1)	[!P] indicates a position derived from WDS name	[ucd=meta.note]
+#Column	RAJ2000	(A11)	? Right Ascension J2000 (Ep=J2000, hours)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination J2000 (Ep=J2000, sign)	[ucd=pos.eq.dec;meta.main]
+
+#RESOURCE=yCat_102027
+#Name: B/vsx
+#Title: AAVSO International Variable Star Index VSX (Watson+, 2006-)
+#INFO	ivoid=ivo://cds.vizier/b/vsx	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/vsx	    IVOID of underlying data collection
+#INFO	creator=Watson C.	    First author or institution
+#INFO	cites=bibcode:2006SASS...25...47W	    Article or Data origin sources
+#INFO	journal=SASS	    Journal name
+#INFO	original_date=2006	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/vsx	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_vsx_vsx:
+#Name: B/vsx/vsx
+#Title: Variable Star indeX, Version 2026-10-18 (\originalcolumnnames)
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	OID	(I8)	Internal identifier, can be used to link out to the VSX database (1)	[ucd=meta.id]
+#Column	Name	(A30)	Variable star identifier	[ucd=meta.id;meta.main]
+#Column	V	(I1)	Variability flag (2) (VarFlag)	[ucd=src.var]
+#Column	RAJ2000	(F9.5)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Type	(A30)	? Variability type, ariability type, as in GCVS catalog Variability type (see details of VSX type list)	[ucd=src.class]
+#Column	l_max	(A1)	? Limit flag on max (LimitFlagOnMax)	[ucd=meta.code.error;src.var.amplitude]
+#Column	max	(F7.3)	[-6.0/25.2]? Magnitude at maximum, or amplitude (MagMax)	[ucd=src.var.amplitude]
+#Column	u_max	(A1)	? Uncertainty flag on max (MaxUncertaintyFlag)	[ucd=meta.code.error;src.var.amplitude]
+#Column	n_max	(A10)	? Passband on max magnitude (4) (MaxPassband)	[ucd=meta.note;src.var.amplitude]
+#Column	f_min	(A1)	? Flag to indicate an amplitude (MinIsAmplitude)	[ucd=meta.code;src.var.amplitude]
+#Column	l_min	(A1)	? Limit flag on min (LimitFlagOnMin)	[ucd=meta.code.error;src.var.amplitude]
+#Column	min	(F7.3)	[-0.02/28.0]? Magnitude at minimum, or amplitude (MagMin)	[ucd=src.var.amplitude]
+#Column	u_min	(A1)	? Uncertainty flag on min (MinUncertaintyFlag)	[ucd=meta.code.error;src.var.amplitude]
+#Column	n_min	(A8)	? Passband on min magnitude (MinPassband)	[ucd=meta.note;src.var.amplitude]
+#Column	l_Period	(A1)	? Limit flag on period (3) (LimitFlagOnPeriod)	[ucd=ti

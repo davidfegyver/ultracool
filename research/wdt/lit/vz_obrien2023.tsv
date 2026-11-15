@@ -1,0 +1,125 @@
+#### J/MNRAS/518/3055/* @ 358.70015 -81.67908
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:33 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:33	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fMNRAS%2f518%2f3055%2f%2a&-c=358.70015+-81.67908&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=2	
+#  2 catalogues with potential matches were examined.
+#
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_75183055
+#Name: J/MNRAS/518/3055
+#Title: Gaia white dwarfs within 40pc. III (O'Brien+, 2023)
+#INFO	ivoid=ivo://cds.vizier/j/mnras/518/3055	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/mnras/518/3055	    IVOID of underlying data collection
+#INFO	creator=O&apos;Brien M.W.	    First author or institution
+#INFO	cites=bibcode:2023MNRAS.518.3055O	    Article or Data origin sources
+#INFO	journal=MNRA	    Journal name
+#INFO	original_date=2023	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/518/3055	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier/bg-g6-2zf	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-08-03	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_MNRAS_518_3055_table3:
+#Name: J/MNRAS/518/3055/table3
+#Title: Spectral types and parameters of the white dwarf sample
+#Column	_r	(F6.3)	Distance from center (358.70015000-81.67908000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	B	(A1)	indicates magnetic field strengths in table 4	[ucd=meta.ref.url]
+#Column	n_Name	(A1)	[*] Note on Name (G1)	[ucd=meta.note]
+#Column	Name	(A22)	WDJ J2000 Name (WDJHHMMSS.ss+DDMMSS.ss)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F12.8)	Right Ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F12.8)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	SpType	(a7)	Spectral type (2)	[ucd=src.spType]
+#Column	n_SpType	(A1)	[*] Note on SpType (3)	[ucd=meta.note]
+#Column	plx	(F6.2)	Parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F5.2)	Parallax error (4)	[ucd=stat.error;pos.parallax]
+#Column	Teff	(I5)	? 3D Spectro effective temperature from fitted Balmer line parameters	[ucd=phys.temperature.effective]
+#Column	e_Teff	(I3)	? 3D Spectro effective temperature error (4)	[ucd=stat.error;phys.temperature.effective]
+#Column	logg	(F6.3)	? 3D Spectro surface gravity from fitted Balmer line parameters	[ucd=phys.gravity]
+#Column	e_logg	(F6.3)	? 3D Spectro surface gravity error (4)	[ucd=stat.error]
+#Column	TeffG	(I5)	? Gaia effective temperature	[ucd=phys.temperature.effective]
+#Column	e_TeffG	(I4)	? Gaia effective temperature error (4)	[ucd=stat.error]
+#Column	loggG	(F5.2)	? Gaia surface gravity	[ucd=phys.gravity]
+#Column	e_loggG	(F5.2)	? Gaia surface gravity error (4)	[ucd=stat.error]
+#Column	Note	(a16)	Note	[ucd=meta.note]
+#Column	Ref	(A1)	Reference (5)	[ucd=meta.ref;pos.frame]
+#Column	GaiaDR3	(I19)	? Gaia DR3 ID	[ucd=meta.id]
+#Column	Bibcode	(A19)	Bibcode for any previously published spectral type	[ucd=meta.bib.bibcode]
+#Column	SimbadName	(A28)	Simbad column added by the CDS	[ucd=meta.id]
+#### J/MNRAS/518/3055/* @ 358.58383 -81.68455
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:33 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:33	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fMNRAS%2f518%2f3055%2f%2a&-c=358.58383+-81.68455&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=2	
+#  2 catalogues with potential matches were examined.
+#
+#INFO	-c=358.583830-81.684550,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_75183055
+#Name: J/MNRAS/518/3055
+#Title: Gaia white dwarfs within 40pc. III (O'Brien+, 2023)
+#INFO	ivoid=ivo://cds.vizier/j/mnras/518/3055	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/mnras/518/3055	    IVOID of underlying data collection
+#INFO	creator=O&apos;Brien M.W.	    First author or institution
+#INFO	cites=bibcode:2023MNRAS.518.3055O	    Article or Data origin sources
+#INFO	journal=MNRA	    Journal name
+#INFO	original_date=2023	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/518/3055	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier/bg-g6-2zf	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-08-03	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_MNRAS_518_3055_table3:
+#Name: J/MNRAS/518/3055/table3
+#Title: Spectral types and parameters of the white dwarf sample
+#Column	_r	(F6.3)	Distance from center (358.58383000-81.68455000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	B	(A1)	indicates magnetic field strengths in table 4	[ucd=meta.ref.url]
+#Column	n_Name	(A1)	[*] Note on Name (G1)	[ucd=meta.note]
+#Column	Name	(A22)	WDJ J2000 Name (WDJHHMMSS.ss+DDMMSS.ss)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F12.8)	Right Ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F12.8)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	SpType	(a7)	Spectral type (2)	[ucd=src.spType]
+#Column	n_SpType	(A1)	[*] Note on SpType (3)	[ucd=meta.note]
+#Column	plx	(F6.2)	Parallax	[ucd=pos.parallax.trig]
+#Column	e_plx	(F5.2)	Parallax error (4)	[ucd=stat.error;pos.parallax]
+#Column	Teff	(I5)	? 3D Spectro effective temperature from fitted Balmer line parameters	[ucd=phys.temperature.effective]
+#Column	e_Teff	(I3)	? 3D Spectro effective temperature error (4)	[ucd=stat.error;phys.temperature.effective]
+#Column	logg	(F6.3)	? 3D Spectro surface gravity from fitted Balmer line parameters	[ucd=phys.gravity]
+#Column	e_logg	(F6.3)	? 3D Spectro surface gravity error (4)	[ucd=stat.error]
+#Column	TeffG	(I5)	? Gaia effective temperature	[ucd=phys.temperature.effective]
+#Column	e_TeffG	(I4)	? Gaia effective temperature error (4)	[ucd=stat.error]
+#Column	loggG	(F5.2)	? Gaia surface gravity	[ucd=phys.gravity]
+#Column	e_loggG	(F5.2)	? Gaia surface gravity error (4)	[ucd=stat.error]
+#Column	Note	(a16)	Note	[ucd=meta.note]
+#Column	Ref	(A1)	Reference (5)	[ucd=meta.ref;pos.frame]
+#Column	GaiaDR3	(I19)	? Gaia DR3 ID	[ucd=meta.id]
+#Column	Bibcode	(A19)	Bibcode for any previously published spectral type	[ucd=meta.bib.bibcode]
+#Column	SimbadName	(A28)	Simbad column added by the CDS	[ucd=meta.id]
+_r	recno	B	n_Name	Name	RAJ2000	DEJ2000	SpType	n_SpType	plx	e_plx	Teff	e_Teff	logg	e_logg	TeffG	e_TeffG	loggG	e_loggG	Note	Ref	GaiaDR3	Bibcode	SimbadName
+arcsec	 	 	 	 	deg	deg	 	 	mas	mas	K	K	[cm/s2]	[cm/s2]	K	K	[cm/s2]	[cm/s2]	 	 	 	 	
+------	--------	-	-	----------------------	------------	------------	-------	-	------	-----	-----	---	------	------	-----	----	-----	-----	----------------	-	-------------------	-------------------	----------------------------
+ 1.644	     245	*	 	WDJ235419.41-814104.96	358.58087740	-81.68471183	DZH    	 	 37.10	 0.06	     	   	      	      	 4480	  40	 7.77	 0.04	                	 	6350786278796634112	                   	Gaia DR3 6350786278796634112
+

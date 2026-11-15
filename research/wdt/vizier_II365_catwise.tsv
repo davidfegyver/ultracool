@@ -1,0 +1,112 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:23:20 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:23:20	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/365/catwise&-c=358.7001937%20-81.6790731&-c.rs=10&-out.all&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=358.700194-81.679073,rs=10.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_2365
+#Name: II/365
+#Title: The CatWISE2020 catalog (updated version 28-Jan-2021) (Marocco+, 2021)
+#INFO	ivoid=ivo://cds.vizier/ii/365	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/ii/365	    IVOID of underlying data collection
+#INFO	creator=Marocco F.	    First author or institution
+#INFO	cites=bibcode:2021ApJS..253....8M	    Article or Data origin sources
+#INFO	journal=ApJS	    Journal name
+#INFO	original_date=2021	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/II/365	    Dataset landing page
+#INFO	publication_date=2023-12-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H:	ICRS
+#Table	II_365_catwise:
+#Name: II/365/catwise
+#Title: the CatWISE2020 catalog (among 1,890,715,640 sources)
+#Column	_r	(F6.3)	Distance from center (358.7001937-81.6790731)[ICRS]	[ucd=pos.angDistance]
+#Column	objID	(a18)	Tile name + processing code + wphot index (source_id)	[ucd=meta.id]
+#Column	RA_ICRS	(F11.7)	Right ascension (ICRS) (1)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F7.4)	[0/74.3] Uncertainty in ra (sigra)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F11.7)	Declination (ICRS) (1)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F7.4)	[0/83.3] Uncertainty in dec (sigdec)	[ucd=stat.error;pos.eq.dec]
+#Column	Name	(a20)	Source name (JHHMMSS.ss+DDMMSS.s; <CWISE JHHMMSS.ss+DDMMSS.s> in Simbad) (source_name)	[ucd=meta.id;meta.main]
+#Column	ePos	(F8.4)	[-25.7/44.2] Uncertainty cross-term (sigradec)	[ucd=stat.error]
+#Column	Xpos	(F8.3)	X-pixel coordinate in the unWISE full depth coadd (wx)	[ucd=pos.cartesian.x]
+#Column	Ypos	(F8.3)	Y-pixel coordinate in the unWISE full depth coadd (wy)	[ucd=pos.cartesian.y]
+#Column	skyW1	(F7.2)	[-98.2/4997]? Frame sky background value, band-1; in dn units (w1sky) (2)	[ucd=instr.background]
+#Column	e_skyW1	(F5.1)	[0.4/999]? Frame sky background value uncertainty; band-1 (w1sigsk) (2)	[ucd=stat.error]
+#Column	confW1	(F6.2)	[0/999]? Frame sky confusion based on the UNC images; in dn units (w1conf) (2)	[ucd=instr.skyLevel]
+#Column	skyW2	(F7.2)	[-99/5000]? Frame sky background value, band-2; in dn (w2sky) (2)	[ucd=instr.background]
+#Column	e_skyW2	(F5.1)	[0.7/999]? Frame sky background value uncertainty; band-2 (w2sigsk) (2)	[ucd=stat.error]
+#Column	confW2	(F6.2)	[0/999]? Frame sky confusion based on the UNC images; in dn units (w2conf) (2)	[ucd=instr.skyLevel]
+#Column	nW1	(I3)	[0/221]? Number of profile-fit flux measurements for source with SNR>=3, band 1 (w1NM)	[ucd=meta.number]
+#Column	mW1	(I3)	[0/221]? Number of profile-fit flux measurements for source, band-1 (w1M)	[ucd=meta.number]
+#Column	nW2	(I3)	[0/221]? Number of profile-fit flux measurements for source with SNR>=3, band-2 (w2NM)	[ucd=meta.number]
+#Column	mW2	(I3)	[0/221]? Number of profile-fit flux measurements for source, band-2 (w2M)	[ucd=meta.number]
+#Column	MJD	(F12.6)	[55205/58465] Mean observation epoch (MeanObsMJD)	[ucd=time.epoch]
+#Column	RAPMdeg	(F11.7)	Right ascension (ICRS) at Ep=2015.4 (ra_pm) (3)	[ucd=pos.eq.ra]
+#Column	e_RAPMdeg	(F7.4)	[1e-4/99.94]? Uncertainty in ra_pm (sigra_pm)	[ucd=stat.error]
+#Column	DEPMdeg	(F11.7)	Declination (ICRS) at Ep=2015.4 (dec_pm) (3)	[ucd=pos.eq.dec]
+#Column	e_DEPMdeg	(F7.4)	[0/99.8]? Uncertainty in dec_pm (sigdec_pm)	[ucd=stat.error]
+#Column	ePosPM	(F8.4)	[-99.2/99.9]? Uncertainty cross-term (sigradec_pm)	[ucd=stat.error]
+#Column	pmRA	(F10.5)	[-100/100] Motion in ra (PMRA) (1)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F8.4)	[7e-4/1000] Uncertainty in PMRA (sigPMRA)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F10.5)	[-100/100] Proper motion in dec (PMDec) (1)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F8.4)	[7e-4/1000] Uncertainty in PMDec (sigPMDec)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	snrW1pm	(F6.1)	[0/1000]? Flux S/N ratio; band-1 (w1snr_pm)	[ucd=stat.snr]
+#Column	snrW2pm	(F6.1)	[0/1000]? Flux S/N ratio; band-2 (w2snr_pm)	[ucd=stat.snr]
+#Column	FW1pm	(E8.1)	[-1.2e8/2e14]? WPRO raw flux, band-1 (W1, 3.35um) in dn units (w1flux_pm)	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_FW1pm	(F7)	[3.7e-4/3.5e12]? WPRO raw flux uncertainty; band-1 (w1sigflux_pm)	[ucd=stat.error]
+#Column	FW2pm	(E8.1)	[-4.8e8/2e10]? WPRO raw flux, band-2 (W2, 4.6um); in dn units (w2flux_pm)	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_FW2pm	(F7)	[1e-4/3.2e13]? Fit WPRO raw flux uncertainty; band-2 (w2sigflux_pm)	[ucd=stat.error]
+#Column	W1mproPM	(F6.3)	[-10/27]? WPRO magnitude in band-1 (W1: 3.35um) (w1mpro_pm) (4)	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1mproPM	(F6.3)	[0/0.6]? W1mproPM uncertainty (w1sigmpro_pm)	[ucd=stat.error]
+#Column	chi2W1pm	(E10.3)	[8.3e-7/6.4e21]? WPRO reduced chi^2^; band-1 (w1rchi2_pm)	[ucd=stat.fit.chi2]
+#Column	W2mproPM	(F6.3)	[-10/25.5]? WPRO magnitude in band-2 (W2: 4.6um) (w2mpro_pm) (4)	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2mproPM	(F6.3)	[0/0.6]? W2mproPM uncertainty (w2sigmpro_pm)	[ucd=stat.error]
+#Column	chi2W2pm	(E10.3)	[2.6e-6/375600]? WPRO reduced chi^2^; band-2 (w2rchi2_pm)	[ucd=stat.fit.chi2]
+#Column	chi2pm	(E10.3)	[8.3e-7/92260]? Reduced chi squared; total (rchi2_pm)	[ucd=stat.fit.chi2]
+#Column	pmQual	(a5)	Quality of the PM solution (pmcode) (5)	[ucd=meta.code.qual]
+#Column	Dist	(F6.3)	[0/20]? Radial distance between apparitions (dist)	[ucd=phys.angSize]
+#Column	dW1mpro	(F6.3)	[-9.2/9.3]? W1mpro difference (dw1mag)	[ucd=phot.mag;arith.diff]
+#Column	chi2dW1mpro	(F6.3)	[0/100]? Chi-square for dw1mag (1 DF) (rch2w1)	[ucd=meta.note]
+#Column	dW2mpro	(F6.3)	[-9.4/10.2]? W2mpro difference (dw2mag)	[ucd=phot.mag;arith.diff]
+#Column	chi2dW2mpro	(F6.3)	[0/100]? Chi-square for dw2mag (1 DF) (rch2w2)	[ucd=meta.note]
+#Column	ELONavg	(F10.6)	? Averaged ecliptic longitude (elon_avg)	[ucd=pos.ecliptic.lon]
+#Column	e_ELONavg	(F6.3)	[0.001/1.6]? One-sigma uncertainty in elon (elonSig)	[ucd=stat.error]
+#Column	ELATavg	(F10.6)	? Averaged ecliptic latitude (elat_avg)	[ucd=pos.ecliptic.lat]
+#Column	e_ELATavg	(F6.3)	[0.001/1.7]? One-sigma uncertainty in elat (elatSig)	[ucd=stat.error]
+#Column	dELON	(F7.3)	? Descending-ascending ecliptic longitude (Delon) (6)	[ucd=pos;arith.diff]
+#Column	e_dELON	(F7.3)	[0.001/101.5]? One-sigma uncertainty in Delon (DelonSig)	[ucd=stat.error]
+#Column	dELAT	(F7.3)	? Descending-ascending ecliptic latitude (Delat)	[ucd=pos;arith.diff]
+#Column	e_dELAT	(F7.3)	[0.001/105.8]? One-sigma uncertainty in Delat (DelatSig)	[ucd=stat.error]
+#Column	snrdELON	(F8.3)	[0/1065]? |Delon|/DelonSig (DelonSNR)	[ucd=stat.snr]
+#Column	snrdELAT	(F7.3)	[0/475]? |Delat|/DelatSig (DelatSNR)	[ucd=stat.snr]
+#Column	chi2pmRA	(E9.2)	[0/7.3e7]? Chi-square for PMRA difference (1 DF) (chi2pmra)	[ucd=meta.note]
+#Column	chi2pmDE	(E9.2)	[0/2.2e8]? Chi-square for PMRA difference (1 DF) (chi2pmdec)	[ucd=meta.note]
+#Column	ka	(A1)	[0123n] Astrometry usage code (7)	[ucd=meta.code]
+#Column	k1	(A1)	[0123n] W1 photometry usage code (7)	[ucd=meta.code]
+#Column	k2	(A1)	[0123n] W2 photometry usage code (7)	[ucd=meta.code]
+#Column	km	(A1)	[0123n] Proper motion usage code (7)	[ucd=meta.code]
+#Column	plx1	(F8.3)	[-831/569]? Parallax from PM desc-asce elon (par_pm)	[ucd=pos.parallax.trig]
+#Column	e_plx1	(F6.3)	[0.001/53]? One-sigma uncertainty in par_pm (par_pmSig)	[ucd=stat.error]
+#Column	plx2	(F8.3)	[-831/504]? Parallax estimate from stationary solution (par_stat)	[ucd=pos.parallax.trig]
+#Column	e_plx2	(F7.3)	[0.001/189]? One-sigma uncertainty in par_stat (par_sigma)	[ucd=stat.error]
+#Column	Sep	(F6.3)	[0/2.75]? Distance between CatWISE and AllWISE source (dist_x)	[ucd=pos.angDistance]
+#Column	ccf	(A4)	[0DHOPdhop] Worst case 4 character cc_flag from AllWISE (cc_flags) (8)	[ucd=meta.code]
+#Column	abf	(A2)	[0DHOP] Two character (W1 W2) artifact flag (ab_flags) (8)	[ucd=meta.code]
+#Column	WISEA	(a5)	Display the allWISE data (II/328) within 3"	[ucd=meta.ref.url]
+_r	objID	RA_ICRS	e_RA_ICRS	DE_ICRS	e_DE_ICRS	Name	ePos	Xpos	Ypos	skyW1	e_skyW1	confW1	skyW2	e_skyW2	confW2	nW1	mW1	nW2	mW2	MJD	RAPMdeg	e_RAPMdeg	DEPMdeg	e_DEPMdeg	ePosPM	pmRA	e_pmRA	pmDE	e_pmDE	snrW1pm	snrW2pm	FW1pm	e_FW1pm	FW2pm	e_FW2pm	W1mproPM	e_W1mproPM	chi2W1pm	W2mproPM	e_W2mproPM	chi2W2pm	chi2pm	pmQual	Dist	dW1mpro	chi2dW1mpro	dW2mpro	chi2dW2mpro	ELONavg	e_ELONavg	ELATavg	e_ELATavg	dELON	e_dELON	dELAT	e_dELAT	snrdELON	snrdELAT	chi2pmRA	chi2pmDE	ka	k1	k2	km	plx1	e_plx1	plx2	e_plx2	Sep	ccf	abf	WISEA
+arcsec	 	deg	arcsec	deg	arcsec	 	arcsec	pix	pix	ct	ct	ct	ct	ct	ct	 	 	 	 	d	deg	arcsec	deg	arcsec	arcsec	arcsec/yr	arcsec/yr	arcsec/yr	arcsec/yr	 	 	ct	ct	ct	ct	mag	mag	 	mag	mag	 	 	 	arcsec	mag	 	mag	 	deg	arcsec	deg	arcsec	arcsec	arcsec	arcsec	arcsec	 	 	 	 	 	 	 	 	arcsec	arcsec	arcsec	arcsec	arcsec	 	 	
+------	------------------	-----------	-------	-----------	-------	--------------------	--------	--------	--------	-------	-----	------	-------	-----	------	---	---	---	---	------------	-----------	-------	-----------	-------	--------	----------	--------	----------	--------	------	------	--------	-------	--------	-------	------	------	----------	------	------	----------	----------	-----	------	------	------	------	------	----------	------	----------	------	-------	-------	-------	-------	--------	-------	---------	---------	-	-	-	-	--------	------	--------	-------	------	----	--	-----
+ 0.043	0000m818_b0-019900	358.7002343	 0.0751	-81.6790835	 0.0680	J235448.04-814044.6 	  0.0069	1270.727	1153.859	  -1.58	  3.2	  0.00	  -1.78	 11.1	  0.00	 11	 11	 11	 11	57223.491901	358.7001545	 0.0749	-81.6790757	 0.0677	  0.0092	   0.12185	  0.0258	   0.07060	  0.0231	  23.0	  47.7	 1.3e+02	  6e+00	 9.8e+02	  2e+01	17.239	 0.047	 9.699e-01	15.027	 0.023	 8.031e-01	 8.797e-01	3N000	 0.219	-0.032	 0.112	-0.033	 0.515	290.041990	 0.069	-65.028514	 0.074	  0.174	  0.139	  0.002	  0.148	   1.252	  0.016	 4.53e-04	 1.63e-01	3	3	3	3	   0.101	 0.069	   0.070	  0.069	 0.516	0000	00	WISEA
+ 8.169	0000m818_b0-073099	358.7158147	 0.2774	-81.6788772	 0.2524	J235451.78-814043.9 	  0.0702	1267.782	1154.195	  -1.57	  3.2	  0.00	  -2.27	 11.3	  1.56	  9	 11	  0	 11	57491.606657	358.7158674	 0.2987	-81.6788865	 0.2705	  0.0715	  -0.08010	  0.1075	   0.06158	  0.0979	  13.1	   4.8	 6.6e+01	  5e+00	 8.1e+01	  2e+01	17.945	 0.083	 6.586e-01	17.731	 0.225	 7.704e-01	 7.088e-01	1N000	 0.255	 0.113	 0.455	 0.024	 0.003	290.044245	 0.261	-65.030568	 0.269	  0.067	  0.524	  0.229	  0.539	   0.128	  0.424	 4.67e-01	 5.58e+00	3	3	3	3	   0.250	 0.280	   0.113	  0.269	      	    	00	WISEA
+

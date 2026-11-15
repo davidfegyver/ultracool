@@ -1,0 +1,200 @@
+#### J/ApJS/247/66/* @ 358.70015 -81.67908
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:42 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:42	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fApJS%2f247%2f66%2f%2a&-c=358.70015+-81.67908&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=6	
+#  6 catalogues with potential matches were examined.
+#
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_22470066
+#Name: J/ApJS/247/66
+#Title: SUPERWIDE: wide binaries in Gaia & SUPERBLINK (Hartman+, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/apjs/247/66	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/apjs/247/66	    IVOID of underlying data collection
+#INFO	creator=Hartman Z.D.	    First author or institution
+#INFO	cites=bibcode:2020ApJS..247...66H	    Article or Data origin sources
+#INFO	journal=ApJS	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJS/247/66	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.22470066	    Dataset identifier that can be used for citation
+#INFO	publication_date=2021-09-08	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2015.500:	ICRS
+#Table	J_ApJS_247_66_table4:
+#Name: J/ApJS/247/66/table4
+#Title: Data on primary stars in pairs that have probabilities greater than 10% from the first pass probabilities and have parallax errors less than 10% of the parallax
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Seq	(I6)	[1/119390] Running sequence number	[ucd=meta.id;meta.main]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F9.3)	[-2251/1802] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-3543/10363] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[0.4/637.2] Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[0.08/21.3]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-93/91.5] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-767/569]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table5:
+#Name: J/ApJS/247/66/table5
+#Title: Data on secondary stars in pairs that have probabilities greater than 10% from the first pass probabilities and have parallax errors less than 10% of the parallax
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Seq	(I6)	[1/119390] Running sequence number	[ucd=meta.id;meta.main]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F9.3)	[-2251/1802] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-3543/10363] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[0.4/637.2] Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[0.08/21.3]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-93/91.5] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-767/569]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table7:
+#Name: J/ApJS/247/66/table7
+#Title: Data on primary stars in pairs that have probabilities greater than 10% from the first pass probabilities but have parallax errors >10% of the parallax itself
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F8.3)	[-904/1019] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-1196/510] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[-597/537]? Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[2.1/21.9]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-87.3/90] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-340/554]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table8:
+#Name: J/ApJS/247/66/table8
+#Title: Data on secondary stars in pairs that have probabilities greater than 10% from the first pass probabilities but have parallax errors >10% of the parallax itself
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F8.3)	[-904/1019] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-1196/510] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[-597/537]? Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[2.1/21.9]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-87.3/90] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-340/554]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#### J/ApJS/247/66/* @ 358.58383 -81.68455
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:42 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:42	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fApJS%2f247%2f66%2f%2a&-c=358.58383+-81.68455&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=6	
+#  6 catalogues with potential matches were examined.
+#
+#INFO	-c=358.583830-81.684550,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_22470066
+#Name: J/ApJS/247/66
+#Title: SUPERWIDE: wide binaries in Gaia & SUPERBLINK (Hartman+, 2020)
+#INFO	ivoid=ivo://cds.vizier/j/apjs/247/66	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/apjs/247/66	    IVOID of underlying data collection
+#INFO	creator=Hartman Z.D.	    First author or institution
+#INFO	cites=bibcode:2020ApJS..247...66H	    Article or Data origin sources
+#INFO	journal=ApJS	    Journal name
+#INFO	original_date=2020	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJS/247/66	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.22470066	    Dataset identifier that can be used for citation
+#INFO	publication_date=2021-09-08	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2015.500:	ICRS
+#Table	J_ApJS_247_66_table4:
+#Name: J/ApJS/247/66/table4
+#Title: Data on primary stars in pairs that have probabilities greater than 10% from the first pass probabilities and have parallax errors less than 10% of the parallax
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Seq	(I6)	[1/119390] Running sequence number	[ucd=meta.id;meta.main]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F9.3)	[-2251/1802] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-3543/10363] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[0.4/637.2] Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[0.08/21.3]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-93/91.5] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-767/569]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table5:
+#Name: J/ApJS/247/66/table5
+#Title: Data on secondary stars in pairs that have probabilities greater than 10% from the first pass probabilities and have parallax errors less than 10% of the parallax
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Seq	(I6)	[1/119390] Running sequence number	[ucd=meta.id;meta.main]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F9.3)	[-2251/1802] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-3543/10363] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[0.4/637.2] Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[0.08/21.3]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-93/91.5] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-767/569]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table7:
+#Name: J/ApJS/247/66/table7
+#Title: Data on primary stars in pairs that have probabilities greater than 10% from the first pass probabilities but have parallax errors >10% of the parallax itself
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F8.3)	[-904/1019] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-1196/510] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[-597/537]? Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[2.1/21.9]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-87.3/90] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-340/554]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_ApJS_247_66_table8:
+#Name: J/ApJS/247/66/table8
+#Title: Data on secondary stars in pairs that have probabilities greater than 10% from the first pass probabilities but have parallax errors >10% of the parallax itself
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Gaia	(I19)	? Gaia DR2 identifier (1)	[ucd=meta.id.cross]
+#Column	RA_ICRS	(F9.5)	Barycentric Right Ascension (ICRS) at Ep=2015.5	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F9.5)	Barycentric Declination (ICRS) at Ep=2015.5	[ucd=pos.eq.dec;meta.main]
+#Column	pmRA	(F8.3)	[-904/1019] Gaia DR2 proper motion along RA	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	[-1196/510] Gaia DR2 proper motion along DE	[ucd=pos.pm;pos.eq.dec]
+#Column	plx	(F10.4)	[-597/537]? Gaia DR2 parallax	[ucd=pos.parallax.trig]
+#Column	Gmag	(F7.4)	[2.1/21.9]? Gaia DR2 G band magnitude	[ucd=phot.mag;em.opt]
+#Column	BP-RP	(F8.4)	[-87.3/90] Gaia DR2 (Blue-Red) passband color	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	RV	(F8.2)	[-340/554]? Gaia DR2 spectroscopic radial velocity in the solar barycentric reference frame	[ucd=phys.veloc;pos.barycenter]
+#Column	_RA.icrs	(F9.5)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F9.5)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]

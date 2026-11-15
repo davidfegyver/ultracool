@@ -1,0 +1,255 @@
+#### J/MNRAS/482/4570/* @ 358.70015 -81.67908
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:31 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:31	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fMNRAS%2f482%2f4570%2f%2a&-c=358.70015+-81.67908&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=2	
+#  2 catalogues with potential matches were examined.
+#
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_74824570
+#Name: J/MNRAS/482/4570
+#Title: Gaia DR2 white dwarf candidates (Gentile Fusillo+, 2019)
+#INFO	ivoid=ivo://cds.vizier/j/mnras/482/4570	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/mnras/482/4570	    IVOID of underlying data collection
+#INFO	creator=Gentile Fusillo N.P.	    First author or institution
+#INFO	cites=bibcode:2019MNRAS.482.4570G	    Article or Data origin sources
+#INFO	journal=MNRA	    Journal name
+#INFO	original_date=2019	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/482/4570	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.74824570	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-08-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2015.500:	ICRS
+#Table	J_MNRAS_482_4570_gaia2wd:
+#Name: J/MNRAS/482/4570/gaia2wd
+#Title: DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)
+#Column	_r	(F6.3)	Distance from center (358.70015000000-81.67908000000)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Sp	(A1)	indicates SDSS spectrum in gaiasdss	[ucd=meta.ref.url]
+#Column	WD	(A23)	WD name (WDJHHMMSS.ss+DDMMSS.ss, J2000) (white_dwarf_name)	[ucd=meta.id;meta.main]
+#Column	DR2Name	(A28)	Unique Gaia source designation (designation)	[ucd=meta.id]
+#Column	Source	(I19)	Unique Gaia source identifier (source_id)	[ucd=meta.id]
+#Column	RA_ICRS	(F15.11)	Gaia DR2 barycentric right ascension (ICRS) at epoch J2015.5 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F21.18)	Standard error of right ascension (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F15.11)	Gaia DR2 barycentric declination (ICRS) at epoch J2015.5 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F21.18)	Standard error of declination (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	Plx	(F10.4)	Absolute stellar parallax of the source at J2015.5 (parallax)	[ucd=pos.parallax]
+#Column	e_Plx	(F6.4)	Standard error of parallax (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F9.3)	Proper motion in right ascension (pmRAxcosDE) (pmra)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F5.3)	Standard error of proper motion in right ascension (pmra_error)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	Proper motion in declination (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F5.3)	Standard error of proper motion in declination (pmdec_error)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	epsi	(F6.3)	Measure of the residuals in the astrometric solution for the source (astrometric_excess_noise)	[ucd=stat.fit.residual]
+#Column	amax	(F12.9)	Five-dimensional equivalent to the semi-major axis of the Gaia position error ellipse (astrometric_sigma5d_max)	[ucd=pos]
+#Column	FG	(F22.14)	Gaia G-band mean flux (phot_g_mean_flux)	[ucd=phot.flux;stat.mean;em.opt]
+#Column	e_FG	(F23.17)	Error on G-band mean flux (phot_g_mean_flux_error)	[ucd=stat.error;phot.flux;stat.mean]
+#Column	Gmag	(F9.6)	Gaia G-band mean magnitude (Vega scale) (phot_g_mean_mag)	[ucd=phot.mag;stat.mean;em.opt]
+#Column	FBP	(F23.15)	Integrated GBP mean flux (phot_bp_mean_flux)	[ucd=phot.flux;stat.mean;em.opt.B]
+#Column	e_FBP	(F25.18)	Error on GBP-band mean flux (phot_bp_mean_flux_error)	[ucd=stat.error;phot.flux;stat.mean]
+#Column	BPmag	(F9.6)	Gaia GBP-band mean magnitude (Vega scale) (phot_bp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.B]
+#Column	FRP	(F23.15)	Integrated GRP mean flux (phot_rp_mean_flux)	[ucd=phot.flux.density;em.opt.R]
+#Column	e_FRP	(F26.19)	Error on GRP-band mean flux (phot_rp_mean_flux_error)	[ucd=stat.error;phot.flux;stat.mean]
+#Column	RPmag	(F9.6)	Gaia GRP-band mean magnitude (Vega scale) (phot_rp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.R]
+#Column	E(BR/RP)	(F5.3)	GBP/GRP excess factor estimated from the comparison of the sum of integrated GBP and GRP fluxes with respect to the flux in the G-band (phot_bp_rp_excess_factor)	[ucd=arith.factor]
+#Column	GLON	(F14.10)	Galactic longitude (l)	[ucd=pos.galactic.lon]
+#Column	GLAT	(F14.10)	Galactic latitude (b)	[ucd=pos.galactic.lat]
+#Column	Density	(F12.4)	The number of Gaia sources per square degree around this object (density)	[ucd=meta.number]
+#Column	AG	(F23.19)	Extinction in the Gaia G-band band derived from E(B-V) values from Schlafly and Finkbeiner (2011ApJ...737..103S) (AG)	[ucd=phys.absorption]
+#Column	SDSS	(A19)	SDSS object name if available (JHHMMSS,.ss+DDMMSS.s, J2000) (SDSS_name)	[ucd=meta.id]
+#Column	umag	(F6.3)	? SDSS u band magnitude (umag)	[ucd=phot.mag;em.opt.U]
+#Column	e_umag	(F6.3)	? SDSS u band magnitude uncertainty (e_umag)	[ucd=stat.error;phot.mag]
+#Column	gmag	(F6.3)	? SDSS g band magnitude (gmag)	[ucd=phot.mag;em.opt.B]
+#Column	e_gmag	(F6.3)	? SDSS g band magnitude uncertainty (e_gmag)	[ucd=stat.error;phot.mag]
+#Column	rmag	(F6.3)	? SDSS r band magnitude (rmag)	[ucd=phot.mag;em.opt.R]
+#Column	e_rmag	(F6.3)	? SDSS r band magnitude uncertainty (e_rmag)	[ucd=stat.error;phot.mag]
+#Column	imag	(F6.3)	? SDSS i band magnitude (imag)	[ucd=phot.mag;em.opt.I]
+#Column	e_imag	(F6.3)	? SDSS i band magnitude uncertainty (e_imag)	[ucd=stat.error;phot.mag]
+#Column	zmag	(F6.3)	? SDSS z band magnitude (zmag)	[ucd=phot.mag;em.opt.I]
+#Column	e_zmag	(F6.3)	? SDSS z band magnitude uncertainty (e_zmag)	[ucd=stat.error;phot.mag]
+#Column	Pwd	(F7.5)	[0/1]? The probability of being a white dwarf (Pwd)	[ucd=stat.fit.goodness]
+#Column	f_Pwd	(I1)	[0/1] If 1 it indicates the PWD value could be unreliable (Pwd_flag)	[ucd=meta.code]
+#Column	TeffH	(F13.6)	? Effective temperature from fitting the dereddened G,GBP, and GRP absolute fluxes with pure-H model atmospheres (Teff_H)	[ucd=phys.temperature.effective]
+#Column	e_TeffH	(F13.6)	? Uncertainty on Teff_H (eTeff_H)	[ucd=stat.error]
+#Column	loggH	(F9.6)	? Surface gravity from fitting the dereddened G,GBP,and GRP absolute fluxes with pure-H model atmospheres (log_g_H)	[ucd=phys.gravity]
+#Column	e_loggH	(D12.5)	? Uncertainty on log_g_H (elog_g_H)	[ucd=stat.error]
+#Column	MassH	(F9.6)	? Stellar mass resulting from the adopted mass-radius relation (mass_H)	[ucd=phys.mass]
+#Column	e_MassH	(D12.5)	? Uncertainty on the mass (emass_H)	[ucd=stat.error]
+#Column	chi2H	(D12.5)	? chi2 value of the fit (pure-H) (chi2_H)	[ucd=stat.fit.chi2;stat.fit.param;meta.modelled]
+#Column	TeffHe	(F12.6)	? Effective temperature from fitting the dereddened G,GBP, and GRP absolute fluxes with pure-He model atmospheres (Teff_He)	[ucd=phys.temperature.effective]
+#Column	e_TeffHe	(F14.6)	? Uncertainty on Teff_He (eTeff_He)	[ucd=stat.error]
+#Column	loggHe	(F9.6)	? Surface gravity from fitting the dereddened G,GBP,and GRP absolute fluxes with pure-He model atmospheres (log_g_He)	[ucd=phys.gravity]
+#Column	e_loggHe	(D12.5)	? Uncertainty on log_g_He (elog_g_He)	[ucd=stat.error]
+#Column	MassHe	(F9.6)	? Stellar mass resulting from the adopted mass-radius relation (mass_He)	[ucd=phys.mass]
+#Column	e_MassHe	(D12.5)	? Uncertainty on the mass (emass_He)	[ucd=stat.error]
+#Column	chisqHe	(D12.5)	? chi2 value of the fit (pure-H) (chisq_He)	[ucd=stat.fit.chi2;stat.fit.param;meta.modelled]
+#Column	_RA.icrs	(F15.11)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F15.11)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_MNRAS_482_4570_gaiasdss:
+#Name: J/MNRAS/482/4570/gaiasdss
+#Title: Available SDSS spectra of candidates, corrected version (gaia-sdss_white_dwarf_catalogue.dat)
+#Column	_r	(F6.3)	Distance from center (358.7001500000000078-81.6790800000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	WD	(A22)	WD name (WDJHHMMSS.ss+DDMMSS.ss, J2000) (white_dwarf_name)	[ucd=meta.id;meta.main]
+#Column	n_WD	(A1)	[a] Multiplicity index on WD	[ucd=meta.note]
+#Column	Source	(I19)	Unique Gaia source identifier (source_id)	[ucd=meta.id]
+#Column	SDSS	(A19)	SDSS object name (JHHMMSS,.ss+DDMMSS.s, J2000) (SDSS_name)	[ucd=meta.id]
+#Column	RAJ2000	(F20.16)	Right ascension (J2000) of the spectrum source from SDSS DR14 (SDSS_ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F14.10)	Declination (J2000) of the spectrum source from SDSS DR14 (SDSS_dec)	[ucd=pos.eq.dec;meta.main]
+#Column	umag	(F6.3)	? SDSS u band magnitude (umag)	[ucd=phot.mag;em.opt.U]
+#Column	e_umag	(F6.3)	? SDSS u band magnitude uncertainty (e_umag)	[ucd=stat.error;phot.mag]
+#Column	gmag	(F6.3)	? SDSS g band magnitude (gmag)	[ucd=phot.mag;em.opt.B]
+#Column	e_gmag	(F6.3)	? SDSS g band magnitude uncertainty (e_gmag)	[ucd=stat.error;phot.mag]
+#Column	rmag	(F6.3)	? SDSS r band magnitude (rmag)	[ucd=phot.mag;em.opt.R]
+#Column	e_rmag	(F6.3)	? SDSS r band magnitude uncertainty (e_rmag)	[ucd=stat.error;phot.mag]
+#Column	imag	(F6.3)	? SDSS i band magnitude (imag)	[ucd=phot.mag;em.opt.I]
+#Column	e_imag	(F6.3)	? SDSS i band magnitude uncertainty (e_imag)	[ucd=stat.error;phot.mag]
+#Column	zmag	(F6.3)	? SDSS z band magnitude (zmag)	[ucd=phot.mag;em.opt.I]
+#Column	e_zmag	(F6.3)	? SDSS z band magnitude uncertainty (e_zmag)	[ucd=stat.error;phot.mag]
+#Column	Plate	(I4)	Identifier of the plate used in the observation of the spectrum (Plate)	[ucd=meta.id;instr.setup;instr.plate]
+#Column	MJD	(I5)	Modified Julian date of the observation of the spectrum (mjd)	[ucd=time.epoch]
+#Column	Fiber	(I4)	Identifier of the fiber used in the observation of the spectrum (fiberID)	[ucd=meta.note]
+#Column	S/N	(F15.11)	Signal-to-noise ratio of the spectrum calculated in the range 4500-5500 A (S/N)	[ucd=stat.snr;meta.modelled]
+#Column	SpClass	(a10)	Classification of the object based on a visual inspection of the SDSS spectrum (spectral_class) (1)	[ucd=meta.code.class;src.class]
+#Column	Sp	(A2)	Interactive spectrum from SDSS	[ucd=meta.ref.url]
+#### J/MNRAS/482/4570/* @ 358.58383 -81.68455
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:31 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:31	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fMNRAS%2f482%2f4570%2f%2a&-c=358.58383+-81.68455&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=2	
+#  2 catalogues with potential matches were examined.
+#
+#INFO	-c=358.583830-81.684550,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_74824570
+#Name: J/MNRAS/482/4570
+#Title: Gaia DR2 white dwarf candidates (Gentile Fusillo+, 2019)
+#INFO	ivoid=ivo://cds.vizier/j/mnras/482/4570	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/mnras/482/4570	    IVOID of underlying data collection
+#INFO	creator=Gentile Fusillo N.P.	    First author or institution
+#INFO	cites=bibcode:2019MNRAS.482.4570G	    Article or Data origin sources
+#INFO	journal=MNRA	    Journal name
+#INFO	original_date=2019	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/482/4570	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.74824570	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-08-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2015.500:	ICRS
+#Table	J_MNRAS_482_4570_gaia2wd:
+#Name: J/MNRAS/482/4570/gaia2wd
+#Title: DR2 white dwarf candidates, corrected version (gaia_dr2_white_dwarf_candidates.dat)
+#Column	_r	(F6.3)	Distance from center (358.58383000000-81.68455000000)[ICRS], at Epoch=J2015.5	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Sp	(A1)	indicates SDSS spectrum in gaiasdss	[ucd=meta.ref.url]
+#Column	WD	(A23)	WD name (WDJHHMMSS.ss+DDMMSS.ss, J2000) (white_dwarf_name)	[ucd=meta.id;meta.main]
+#Column	DR2Name	(A28)	Unique Gaia source designation (designation)	[ucd=meta.id]
+#Column	Source	(I19)	Unique Gaia source identifier (source_id)	[ucd=meta.id]
+#Column	RA_ICRS	(F15.11)	Gaia DR2 barycentric right ascension (ICRS) at epoch J2015.5 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F21.18)	Standard error of right ascension (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F15.11)	Gaia DR2 barycentric declination (ICRS) at epoch J2015.5 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F21.18)	Standard error of declination (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	Plx	(F10.4)	Absolute stellar parallax of the source at J2015.5 (parallax)	[ucd=pos.parallax]
+#Column	e_Plx	(F6.4)	Standard error of parallax (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F9.3)	Proper motion in right ascension (pmRAxcosDE) (pmra)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F5.3)	Standard error of proper motion in right ascension (pmra_error)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	Proper motion in declination (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F5.3)	Standard error of proper motion in declination (pmdec_error)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	epsi	(F6.3)	Measure of the residuals in the astrometric solution for the source (astrometric_excess_noise)	[ucd=stat.fit.residual]
+#Column	amax	(F12.9)	Five-dimensional equivalent to the semi-major axis of the Gaia position error ellipse (astrometric_sigma5d_max)	[ucd=pos]
+#Column	FG	(F22.14)	Gaia G-band mean flux (phot_g_mean_flux)	[ucd=phot.flux;stat.mean;em.opt]
+#Column	e_FG	(F23.17)	Error on G-band mean flux (phot_g_mean_flux_error)	[ucd=stat.error;phot.flux;stat.mean]
+#Column	Gmag	(F9.6)	Gaia G-band mean magnitude (Vega scale) (phot_g_mean_mag)	[ucd=phot.mag;stat.mean;em.opt]
+#Column	FBP	(F23.15)	Integrated GBP mean flux (phot_bp_mean_flux)	[ucd=phot.flux;stat.mean;em.opt.B]
+#Column	e_FBP	(F25.18)	Error on GBP-band mean flux (phot_bp_mean_flux_error)	[ucd=stat.error;phot.flux;stat.mean]
+#Column	BPmag	(F9.6)	Gaia GBP-band mean magnitude (Vega scale) (phot_bp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.B]
+#Column	FRP	(F23.15)	Integrated GRP mean flux (phot_rp_mean_flux)	[ucd=phot.flux.density;em.opt.R]
+#Column	e_FRP	(F26.19)	Error on GRP-band mean flux (phot_rp_mean_flux_error)	[ucd=stat.error;phot.flux;stat.mean]
+#Column	RPmag	(F9.6)	Gaia GRP-band mean magnitude (Vega scale) (phot_rp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.R]
+#Column	E(BR/RP)	(F5.3)	GBP/GRP excess factor estimated from the comparison of the sum of integrated GBP and GRP fluxes with respect to the flux in the G-band (phot_bp_rp_excess_factor)	[ucd=arith.factor]
+#Column	GLON	(F14.10)	Galactic longitude (l)	[ucd=pos.galactic.lon]
+#Column	GLAT	(F14.10)	Galactic latitude (b)	[ucd=pos.galactic.lat]
+#Column	Density	(F12.4)	The number of Gaia sources per square degree around this object (density)	[ucd=meta.number]
+#Column	AG	(F23.19)	Extinction in the Gaia G-band band derived from E(B-V) values from Schlafly and Finkbeiner (2011ApJ...737..103S) (AG)	[ucd=phys.absorption]
+#Column	SDSS	(A19)	SDSS object name if available (JHHMMSS,.ss+DDMMSS.s, J2000) (SDSS_name)	[ucd=meta.id]
+#Column	umag	(F6.3)	? SDSS u band magnitude (umag)	[ucd=phot.mag;em.opt.U]
+#Column	e_umag	(F6.3)	? SDSS u band magnitude uncertainty (e_umag)	[ucd=stat.error;phot.mag]
+#Column	gmag	(F6.3)	? SDSS g band magnitude (gmag)	[ucd=phot.mag;em.opt.B]
+#Column	e_gmag	(F6.3)	? SDSS g band magnitude uncertainty (e_gmag)	[ucd=stat.error;phot.mag]
+#Column	rmag	(F6.3)	? SDSS r band magnitude (rmag)	[ucd=phot.mag;em.opt.R]
+#Column	e_rmag	(F6.3)	? SDSS r band magnitude uncertainty (e_rmag)	[ucd=stat.error;phot.mag]
+#Column	imag	(F6.3)	? SDSS i band magnitude (imag)	[ucd=phot.mag;em.opt.I]
+#Column	e_imag	(F6.3)	? SDSS i band magnitude uncertainty (e_imag)	[ucd=stat.error;phot.mag]
+#Column	zmag	(F6.3)	? SDSS z band magnitude (zmag)	[ucd=phot.mag;em.opt.I]
+#Column	e_zmag	(F6.3)	? SDSS z band magnitude uncertainty (e_zmag)	[ucd=stat.error;phot.mag]
+#Column	Pwd	(F7.5)	[0/1]? The probability of being a white dwarf (Pwd)	[ucd=stat.fit.goodness]
+#Column	f_Pwd	(I1)	[0/1] If 1 it indicates the PWD value could be unreliable (Pwd_flag)	[ucd=meta.code]
+#Column	TeffH	(F13.6)	? Effective temperature from fitting the dereddened G,GBP, and GRP absolute fluxes with pure-H model atmospheres (Teff_H)	[ucd=phys.temperature.effective]
+#Column	e_TeffH	(F13.6)	? Uncertainty on Teff_H (eTeff_H)	[ucd=stat.error]
+#Column	loggH	(F9.6)	? Surface gravity from fitting the dereddened G,GBP,and GRP absolute fluxes with pure-H model atmospheres (log_g_H)	[ucd=phys.gravity]
+#Column	e_loggH	(D12.5)	? Uncertainty on log_g_H (elog_g_H)	[ucd=stat.error]
+#Column	MassH	(F9.6)	? Stellar mass resulting from the adopted mass-radius relation (mass_H)	[ucd=phys.mass]
+#Column	e_MassH	(D12.5)	? Uncertainty on the mass (emass_H)	[ucd=stat.error]
+#Column	chi2H	(D12.5)	? chi2 value of the fit (pure-H) (chi2_H)	[ucd=stat.fit.chi2;stat.fit.param;meta.modelled]
+#Column	TeffHe	(F12.6)	? Effective temperature from fitting the dereddened G,GBP, and GRP absolute fluxes with pure-He model atmospheres (Teff_He)	[ucd=phys.temperature.effective]
+#Column	e_TeffHe	(F14.6)	? Uncertainty on Teff_He (eTeff_He)	[ucd=stat.error]
+#Column	loggHe	(F9.6)	? Surface gravity from fitting the dereddened G,GBP,and GRP absolute fluxes with pure-He model atmospheres (log_g_He)	[ucd=phys.gravity]
+#Column	e_loggHe	(D12.5)	? Uncertainty on log_g_He (elog_g_He)	[ucd=stat.error]
+#Column	MassHe	(F9.6)	? Stellar mass resulting from the adopted mass-radius relation (mass_He)	[ucd=phys.mass]
+#Column	e_MassHe	(D12.5)	? Uncertainty on the mass (emass_He)	[ucd=stat.error]
+#Column	chisqHe	(D12.5)	? chi2 value of the fit (pure-H) (chisq_He)	[ucd=stat.fit.chi2;stat.fit.param;meta.modelled]
+#Column	_RA.icrs	(F15.11)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F15.11)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+_r	recno	Sp	WD	DR2Name	Source	RA_ICRS	e_RA_ICRS	DE_ICRS	e_DE_ICRS	Plx	e_Plx	pmRA	e_pmRA	pmDE	e_pmDE	epsi	amax	FG	e_FG	Gmag	FBP	e_FBP	BPmag	FRP	e_FRP	RPmag	E(BR/RP)	GLON	GLAT	Density	AG	SDSS	umag	e_umag	gmag	e_gmag	rmag	e_rmag	imag	e_imag	zmag	e_zmag	Pwd	f_Pwd	TeffH	e_TeffH	loggH	e_loggH	MassH	e_MassH	chi2H	TeffHe	e_TeffHe	loggHe	e_loggHe	MassHe	e_MassHe	chisqHe	_RA.icrs	_DE.icrs
+arcsec	 	 	 	 	 	deg	mas	deg	mas	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	mas	mas	e-/s	e-/s	mag	e-/s	e-/s	mag	e-/s	e-/s	mag	 	deg	deg	 	mag	 	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	 	 	K	K	 	 	Msun	Msun	 	K	K	 	 	Msun	Msun	 	deg	deg
+------	--------	-	-----------------------	----------------------------	-------------------	---------------	---------------------	---------------	---------------------	----------	------	---------	-----	---------	-----	------	------------	----------------------	-----------------------	---------	-----------------------	-------------------------	---------	-----------------------	--------------------------	---------	-----	--------------	--------------	------------	-----------------------	-------------------	------	------	------	------	------	------	------	------	------	------	-------	-	-------------	-------------	---------	------------	---------	------------	------------	------------	--------------	---------	------------	---------	------------	------------	---------------	---------------
+ 0.053	  278853	 	WDJ235419.41-814104.96 	Gaia DR2 6350786278796634112	6350786278796634112	358.58373644621	 0.076567441342206805	-81.68455562195	 0.063390665217351400	   37.0283	0.0829	   96.268	0.146	   36.264	0.115	 0.273	 0.135884800	   2395.54167393184980	    2.28161901044637982	17.239857	   1021.549990597089959	     7.817666124194849964	17.828240	   1963.443461610770100	     9.0871687768764992654	16.529373	1.246	305.4321669477	-35.1646471535	   9469.7120	  0.3086659983005269892	                   	      	      	      	      	      	      	      	      	      	      	0.99857	0	  4564.539155	    32.735644	 7.802365	 2.05060e-02	 0.463864	 5.84100e-03	 1.22900e+00	 4610.384097	     25.687119	 7.824277	 1.17460e-02	 0.466922	 2.46300e-03	 2.16763e+00	358.58087042146	-81.68471175004
+
+#Table	J_MNRAS_482_4570_gaiasdss:
+#Name: J/MNRAS/482/4570/gaiasdss
+#Title: Available SDSS spectra of candidates, corrected version (gaia-sdss_white_dwarf_catalogue.dat)
+#Column	_r	(F6.3)	Distance from center (358.5838299999999776-81.6845500000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	WD	(A22)	WD name (WDJHHMMSS.ss+DDMMSS.ss, J2000) (white_dwarf_name)	[ucd=meta.id;meta.main]
+#Column	n_WD	(A1)	[a] Multiplicity index on WD	[ucd=meta.note]
+#Column	Source	(I19)	Unique Gaia source identifier (source_id)	[ucd=meta.id]
+#Column	SDSS	(A19)	SDSS object name (JHHMMSS,.ss+DDMMSS.s, J2000) (SDSS_name)	[ucd=meta.id]
+#Column	RAJ2000	(F20.16)	Right ascension (J2000) of the spectrum source from SDSS DR14 (SDSS_ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F14.10)	Declination (J2000) of the spectrum source from SDSS DR14 (SDSS_dec)	[ucd=pos.eq.dec;meta.main]
+#Column	umag	(F6.3)	? SDSS u band magnitude (umag)	[ucd=phot.mag;em.opt.U]
+#Column	e_umag	(F6.3)	? SDSS u band magnitude uncertainty (e_umag)	[ucd=stat.error;phot.mag]
+#Column	gmag	(F6.3)	? SDSS g band magnitude (gmag)	[ucd=phot.mag;em.opt.B]
+#Column	e_gmag	(F6.3)	? SDSS g band magnitude uncertainty (e_gmag)	[ucd=stat.error;phot.mag]
+#Column	rmag	(F6.3)	? SDSS r band magnitude (rmag)	[ucd=phot.mag;em.opt.R]
+#Column	e_rmag	(F6.3)	? SDSS r band magnitude uncertainty (e_rmag)	[ucd=stat.error;phot.mag]
+#Column	imag	(F6.3)	? SDSS i band magnitude (imag)	[ucd=phot.mag;em.opt.I]
+#Column	e_imag	(F6.3)	? SDSS i band magnitude uncertainty (e_imag)	[ucd=stat.error;phot.mag]
+#Column	zmag	(F6.3)	? SDSS z band magnitude (zmag)	[ucd=phot.mag;em.opt.I]
+#Column	e_zmag	(F6.3)	? SDSS z band magnitude uncertainty (e_zmag)	[ucd=stat.error;phot.mag]
+#Column	Plate	(I4)	Identifier of the plate used in the observation of the spectrum (Plate)	[ucd=meta.id;instr.setup;instr.plate]
+#Column	MJD	(I5)	Modified Julian date of the observation of the spectrum (mjd)	[ucd=time.epoch]
+#Column	Fiber	(I4)	Identifier of the fiber used in the observation of the spectrum (fiberID)	[ucd=meta.note]
+#Column	S/N	(F15.11)	Signal-to-noise ratio of the spectrum calculated in the range 4500-5500 A (S/N)	[ucd=stat.snr;meta.modelled]
+#Column	SpClass	(a10)	Classification of the object based on a visual inspection of the SDSS spectrum (spectral_class) (1)	[ucd=meta.code.class;src.class]
+#Column	Sp	(A2)	Interactive spectrum from SDSS	[ucd=meta.ref.url]

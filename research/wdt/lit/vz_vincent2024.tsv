@@ -1,0 +1,141 @@
+#### J/A+A/682/A5/* @ 358.70015 -81.67908
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:36 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:36	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fA%2bA%2f682%2fA5%2f%2a&-c=358.70015+-81.67908&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_36820005
+#Name: J/A+A/682/A5
+#Title: Gaia white dwarfs Classification (Vincent+, 2024)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/682/a5	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/682/a5	    IVOID of underlying data collection
+#INFO	creator=Vincent D.	    First author or institution
+#INFO	cites=bibcode:2024A&A...682A...5V	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2024	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/682/A5	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36820005	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-11-28	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_A_A_682_A5_catalog:
+#Name: J/A+A/682/A5/catalog
+#Title: Gaia WD DR3 XP-classification catalogue
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	GaiaDR3	(I19)	The unique Gaia DR3 source identifier	[ucd=meta.id;meta.main]
+#Column	SpType	(A3)	WD spectral type	[ucd=src.spType]
+#Column	umag	(F9.4)	? Synthetic SDSS u magnitude	[ucd=phot.mag;em.opt.U]
+#Column	gmag	(F7.4)	Synthetic SDSS g magnitude	[ucd=phot.mag;em.opt.B]
+#Column	rmag	(F7.4)	Synthetic SDSS r magnitude	[ucd=phot.mag;em.opt.R]
+#Column	imag	(F7.4)	Synthetic SDSS i magnitude	[ucd=phot.mag;em.opt.I]
+#Column	zmag	(F9.4)	? Synthetic SDSS z magnitude	[ucd=phot.mag;em.opt.I]
+#Column	e_Fluxu	(D23.16)	? Synthetic SDSS u flux error	[ucd=stat.error]
+#Column	e_Fluxg	(D23.16)	Synthetic SDSS g flux error	[ucd=stat.error]
+#Column	e_Fluxr	(D23.16)	Synthetic SDSS r flux error	[ucd=stat.error]
+#Column	e_Fluxi	(D23.16)	Synthetic SDSS i flux error	[ucd=stat.error]
+#Column	e_Fluxz	(D23.16)	Synthetic SDSS z flux error	[ucd=stat.error]
+#Column	PDA	(F5.2)	DA classification probability	[ucd=stat.fit.goodness]
+#Column	PDB	(F5.2)	DB classification probability	[ucd=stat.fit.goodness]
+#Column	PDC	(F5.2)	DC classification probability	[ucd=stat.fit.goodness]
+#Column	PDO	(F5.2)	DO classification probability	[ucd=stat.fit.goodness]
+#Column	PDQ	(F5.2)	DQ classification probability	[ucd=stat.fit.goodness]
+#Column	PDZ	(F5.2)	DZ classification probability	[ucd=stat.fit.goodness]
+#Column	Teff	(I6)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	logg	(F8.3)	? Logarithm of surface gravity	[ucd=phys.gravity]
+#Column	M	(F8.3)	? Mass	[ucd=phys.mass]
+#Column	e_Teff	(I6)	? Error on the effective temperature	[ucd=stat.error;phys.temperature.effective]
+#Column	e_logg	(F8.3)	? Error on the surface gravity	[ucd=stat.error]
+#Column	e_M	(F9.3)	? Error on the mass	[ucd=stat.error]
+#Column	umagcor	(F9.4)	? u band correction	[ucd=phot.mag;arith.diff]
+#Column	e_umagcor	(F9.4)	[]? u band correction error	[ucd=stat.error;pos.cartesian.x]
+#Column	comp	(a27)	Model atmosphere composition	[ucd=meta.id;stat.fit]
+#Column	logCHe	(F6.3)	Carbon abundance for DQ stars	[ucd=phys.abund]
+#Column	logL	(F9.4)	? Log of the luminosity	[ucd=phys.luminosity]
+#Column	e_logL	(F9.4)	[]? Error on the Log luminosity	[ucd=stat.error]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Positions from Gaia DR3 (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Positions from Gaia DR3 (declination part)	[ucd=pos.eq.dec;meta.main]
+#### J/A+A/682/A5/* @ 358.58383 -81.68455
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:36 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:36	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fA%2bA%2f682%2fA5%2f%2a&-c=358.58383+-81.68455&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.583830-81.684550,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_36820005
+#Name: J/A+A/682/A5
+#Title: Gaia white dwarfs Classification (Vincent+, 2024)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/682/a5	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/682/a5	    IVOID of underlying data collection
+#INFO	creator=Vincent D.	    First author or institution
+#INFO	cites=bibcode:2024A&A...682A...5V	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2024	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/682/A5	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36820005	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-11-28	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_A_A_682_A5_catalog:
+#Name: J/A+A/682/A5/catalog
+#Title: Gaia WD DR3 XP-classification catalogue
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	GaiaDR3	(I19)	The unique Gaia DR3 source identifier	[ucd=meta.id;meta.main]
+#Column	SpType	(A3)	WD spectral type	[ucd=src.spType]
+#Column	umag	(F9.4)	? Synthetic SDSS u magnitude	[ucd=phot.mag;em.opt.U]
+#Column	gmag	(F7.4)	Synthetic SDSS g magnitude	[ucd=phot.mag;em.opt.B]
+#Column	rmag	(F7.4)	Synthetic SDSS r magnitude	[ucd=phot.mag;em.opt.R]
+#Column	imag	(F7.4)	Synthetic SDSS i magnitude	[ucd=phot.mag;em.opt.I]
+#Column	zmag	(F9.4)	? Synthetic SDSS z magnitude	[ucd=phot.mag;em.opt.I]
+#Column	e_Fluxu	(D23.16)	? Synthetic SDSS u flux error	[ucd=stat.error]
+#Column	e_Fluxg	(D23.16)	Synthetic SDSS g flux error	[ucd=stat.error]
+#Column	e_Fluxr	(D23.16)	Synthetic SDSS r flux error	[ucd=stat.error]
+#Column	e_Fluxi	(D23.16)	Synthetic SDSS i flux error	[ucd=stat.error]
+#Column	e_Fluxz	(D23.16)	Synthetic SDSS z flux error	[ucd=stat.error]
+#Column	PDA	(F5.2)	DA classification probability	[ucd=stat.fit.goodness]
+#Column	PDB	(F5.2)	DB classification probability	[ucd=stat.fit.goodness]
+#Column	PDC	(F5.2)	DC classification probability	[ucd=stat.fit.goodness]
+#Column	PDO	(F5.2)	DO classification probability	[ucd=stat.fit.goodness]
+#Column	PDQ	(F5.2)	DQ classification probability	[ucd=stat.fit.goodness]
+#Column	PDZ	(F5.2)	DZ classification probability	[ucd=stat.fit.goodness]
+#Column	Teff	(I6)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	logg	(F8.3)	? Logarithm of surface gravity	[ucd=phys.gravity]
+#Column	M	(F8.3)	? Mass	[ucd=phys.mass]
+#Column	e_Teff	(I6)	? Error on the effective temperature	[ucd=stat.error;phys.temperature.effective]
+#Column	e_logg	(F8.3)	? Error on the surface gravity	[ucd=stat.error]
+#Column	e_M	(F9.3)	? Error on the mass	[ucd=stat.error]
+#Column	umagcor	(F9.4)	? u band correction	[ucd=phot.mag;arith.diff]
+#Column	e_umagcor	(F9.4)	[]? u band correction error	[ucd=stat.error;pos.cartesian.x]
+#Column	comp	(a27)	Model atmosphere composition	[ucd=meta.id;stat.fit]
+#Column	logCHe	(F6.3)	Carbon abundance for DQ stars	[ucd=phys.abund]
+#Column	logL	(F9.4)	? Log of the luminosity	[ucd=phys.luminosity]
+#Column	e_logL	(F9.4)	[]? Error on the Log luminosity	[ucd=stat.error]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Column	_RA	(F9.5)	Positions from Gaia DR3 (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Positions from Gaia DR3 (declination part)	[ucd=pos.eq.dec;meta.main]
+_r	recno	GaiaDR3	SpType	umag	gmag	rmag	imag	zmag	e_Fluxu	e_Fluxg	e_Fluxr	e_Fluxi	e_Fluxz	PDA	PDB	PDC	PDO	PDQ	PDZ	Teff	logg	M	e_Teff	e_logg	e_M	umagcor	e_umagcor	comp	logCHe	logL	e_logL	Simbad	_RA	_DE
+arcsec	 	 	 	mag	mag	mag	mag	mag	W/m2/nm	W/m2/nm	W/m2/nm	W/m2/nm	W/m2/nm	 	 	 	 	 	 	K	[cm/s2]	Msun	K	[cm/s2]	Msun	mag	mag	 	 	[Lsun]	[Lsun]	 	deg	deg
+-----	--------	-------------------	---	---------	-------	-------	-------	---------	-----------------------	-----------------------	-----------------------	-----------------------	-----------------------	-----	-----	-----	-----	-----	-----	------	--------	--------	------	--------	---------	---------	---------	---------------------------	------	---------	---------	------	---------	---------
+ 0.00	   91983	6350786278796634112	DC:	  20.4035	18.0820	17.1978	16.8575	  16.7157	 1.0311210341678255e-31	 2.1204498867266646e-32	 3.1189187017794805e-32	 3.6475058681733678e-32	 5.5923888237486162e-32	 0.03	 0.00	 0.64	 0.00	 0.00	 0.30	  4629	   7.871	   0.502	    28	   0.016	    0.012	  -0.2264	   0.0683	Pure H                     	 0.000	  -4.1154	  -0.2053	Simbad	358.58383	-81.68455
+

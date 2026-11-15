@@ -1,0 +1,268 @@
+### abs:"white dwarf" AND abs:"brown dwarf" AND abs:wide: 42 entries (relevant, 2019+ listed)
+  2609.03017 2026-09-02 The scarcity of white dwarf-brown dwarf binaries in the solar neighbourhood: A population synthesis study
+  2603.10481 2026-03-11 White Dwarfs with Infrared Excess from LAMOST Data Release 11
+  2511.15993 2025-11-20 Formation of Extremely Low-Mass White Dwarfs in Wide Orbits
+  2510.10821 2025-10-12 Co-evolution of Nuclear Star Clusters and Massive Black Holes: Extreme Mass-Ratio Inspirals
+  2412.04599 2024-12-05 SDSS J100711.74+193056.2: A Candidate Common Motion Substellar Companion to the Nearest B-Type Star Regulus
+  2409.06874 2024-09-10 The only inflated brown dwarf in an eclipsing white dwarf-brown dwarf binary: WD1032+011B
+  2405.05312 2024-05-08 Optimal Celestial Bodies for Dark Matter Detection
+  2405.02393 2024-05-03 Dark Kinetic Heating of Exoplanets and Brown Dwarfs
+  2404.08087 2024-04-11 Time-resolved Hubble Space Telescope Wide Field Camera 3 Spectrophotometry Reveals Inefficient Day-to-Night He
+  2404.05488 2024-04-08 PHL 5038AB: Is the brown dwarf causing pollution of its white dwarf host star?
+  2305.06079 2023-05-10 Temperature and density dependence of line profiles of sodium perturbed by helium
+  2207.07022 2022-07-14 Two substellar survivor candidates; one found and one missing
+  2204.05155 2022-04-11 Characterising eclipsing white dwarf M dwarf binaries from multi-band eclipse photometry
+  2203.01650 2022-03-03 Euclid preparation. XVIII. The NISP photometric system
+  2110.10162 2021-10-19 HST/WFC3 Complete Phase-resolved Spectroscopy of White Dwarf-Brown Dwarf Binaries WD 0137 and EPIC 2122
+  2110.10158 2021-10-19 Mapping the pressure-dependent day-night temperature contrast of a strongly irradiated atmosphere with HST spe
+  2109.11947 2021-09-24 Interferometric visibility of single-lens models: the thin-arcs approximation
+  2008.06396 2020-08-14 Spitzer Follow-up of Extremely Cold Brown Dwarfs Discovered by the Backyard Worlds: Planet 9 Citizen Science P
+  1901.07120 2019-01-21 Constraints on Earth-mass primordial black holes from OGLE 5-year microlensing events
+### abs:"white dwarf" AND abs:"brown dwarf" AND abs:companion: 60 entries (relevant, 2019+ listed)
+  2611.14703 2026-11-10 Dwarfs of Fire and Ice: UV-Irradiation-Driven Thermal Inversion, Disequilibrium Chemistry, and a Cloud-Free At
+  2609.03017 2026-09-02 The scarcity of white dwarf-brown dwarf binaries in the solar neighbourhood: A population synthesis study
+  2604.11175 2026-04-13 White Dwarfs with Infrared Excess from DESI EDR
+  2603.24740 2026-03-25 The Coldest Known Y Dwarfs: Estimates of their Effective Temperatures
+  2603.12888 2026-03-13 ZTF J021804.16+071152.93: a dead cataclysmic variable and potential solution to the missing period bouncers
+  2603.10481 2026-03-11 White Dwarfs with Infrared Excess from LAMOST Data Release 11
+  2601.19531 2026-01-27 Predicted incidence of Jupiter-like planets around white dwarfs
+  2601.12861 2026-01-19 Fates of the sub-stellar objects (FOSSO) I. Fates of the known brown dwarfs in main-sequence--BD binaries
+  2512.11956 2025-12-12 The Brown-dwarf Desert Persists as a Mass-ratio Desert around Low-mass Stars
+  2510.13064 2025-10-15 First Demonstration of Kernel Phase Interferometry on JWST/MIRI: Prospects for Future Planet Searches Around P
+  2510.12601 2025-10-14 The MIRI Excesses around Degenerates (MEAD) Survey I: A candidate cold brown dwarf in orbit around the nearby 
+  2509.03216 2025-09-03 Circumstellar interaction in the extreme white dwarf merger remnant ZTF\,J1901+1458: A new class of white dwar
+  2507.13850 2025-07-18 A half-ring of ionized circumstellar material trapped in the magnetosphere of a white dwarf merger remnant
+  2501.14333 2025-01-24 Two almost planetary mass survivors of common envelope evolution
+  2412.15153 2024-12-19 Cyclotron emitting magnetic white dwarfs in post common envelope binaries discovered with the Zwicky Transient
+  2412.06920 2024-12-09 ESPRESSO observations of the debris-accreting white dwarf WD\,0141--675
+  2412.04599 2024-12-05 SDSS J100711.74+193056.2: A Candidate Common Motion Substellar Companion to the Nearest B-Type Star Regulus
+  2410.03288 2024-10-04 Novel Constraints on Companions to the Helix Nebula Central Star
+  2409.02157 2024-09-03 An Earth-Mass Planet and a Brown Dwarf in Orbit Around a White Dwarf
+  2407.13525 2024-07-18 Short-period Post-Common Envelope Binaries with Balmer Emission from SDSS and LAMOST Based on ZTF Photometric 
+  2407.08578 2024-07-11 Discovery of a Hypervelocity L Subdwarf at the Star/Brown Dwarf Mass Limit
+  2404.06845 2024-04-10 Probing the shape of the brown dwarf desert around main-sequence A-F-G-type stars using post-common-envelope W
+  2404.05488 2024-04-08 PHL 5038AB: Is the brown dwarf causing pollution of its white dwarf host star?
+  2310.05778 2023-10-09 WD0141-675: A case study on how to follow-up astrometric planet candidates around white dwarfs
+  2309.05716 2023-09-11 New evidence about HW Vir's circumbinary planets from Hipparcos-Gaia astrometry and a reanalysis of the eclips
+  2306.11806 2023-06-20 Measurement of stellar and substellar winds using white dwarf hosts
+  2306.08672 2023-06-14 An irradiated-Jupiter analogue hotter than the Sun
+  2303.16330 2023-03-28 Disk or Companion: Characterizing Excess Infrared Flux in Seven White Dwarf Systems with Near-Infrared Spectro
+  2302.12507 2023-02-24 Hot subdwarfs in close binaries observed from space II: Analysis of the light curves
+  2301.02101 2023-01-05 Discovery of a resolved white dwarf-brown dwarf binary with a small projected separation: SDSS J222551.65+0016
+  2301.00705 2023-01-02 White Dwarfs with Infrared Excess from LAMOST Data Release 5
+  2212.06161 2022-12-12 Common envelope evolution and triple dynamics as potential pathways to form the inner white dwarf + brown dwar
+  2211.14945 2022-11-27 CSS1603+19: a low-mass polar near the cataclysmic variable period minimum
+  2207.07022 2022-07-14 Two substellar survivor candidates; one found and one missing
+  2206.05595 2022-06-11 Gaia Data Release 3: Stellar multiplicity, a teaser for the hidden treasure
+  2205.12922 2022-05-25 The POKEMON Speckle Survey of Nearby M Dwarfs. I. New Discoveries
+  2205.03431 2022-05-06 Four new deeply-eclipsing white dwarfs in ZTF
+  2204.13715 2022-04-28 Close detached white dwarf + brown dwarf binaries: further evidence for low values of the common envelope effi
+  2204.09739 2022-04-20 Discovery of 34 low-mass comoving systems using NOIRLab Source Catalog DR2
+  2204.05330 2022-04-11 Near-infrared spectra of the inflated post-common envelope brown dwarf NLTT 5306B
+  2204.05155 2022-04-11 Characterising eclipsing white dwarf M dwarf binaries from multi-band eclipse photometry
+  2109.06899 2021-09-14 Where to find over-massive brown dwarfs: new benchmark systems for binary evolution
+  2107.06303 2021-07-13 White dwarf-main sequence binaries from Gaia EDR3: the unresolved 100pc volume-limited sample
+  2105.14770 2021-05-31 The CARMENES search for exoplanets around M dwarfs: Spectroscopic orbits of nine M-dwarf multiple systems, inc
+  2105.14028 2021-05-28 Eclipsing White Dwarf Binaries in Gaia and the Zwicky Transient Facility
+  2105.08687 2021-05-18 ZTFJ0038+2030: a long period eclipsing white dwarf and a substellar companion
+  2105.03750 2021-05-08 Studies of RR Lyrae Variables in Binary Systems. I.: Evidence of a Trimodal Companion Mass Distribution
+  2105.00077 2021-04-30 The Formation of Discs in the Interior of AGB Stars from the Tidal Disruption of Planets and Brown Dwarfs
+  2102.05035 2021-02-09 Hard X-ray Emission Associated with White Dwarfs. IV. Signs of Accretion from Sub-stellar Companions
+  2102.04385 2021-02-08 Search for (sub)stellar companions of exoplanet hosts by exploring the second ESA-Gaia data release
+  2009.07282 2020-09-15 A Giant Planet Candidate Transiting a White Dwarf
+  2008.06396 2020-08-14 Spitzer Follow-up of Extremely Cold Brown Dwarfs Discovered by the Backyard Worlds: Planet 9 Citizen Science P
+  2005.09273 2020-05-19 Hybrid star HD 81817 accompanied by brown dwarf or substellar companion
+  2004.09077 2020-04-20 On the role of reduced wind mass-loss rate in enabling exoplanets to shape planetary nebulae
+  1911.00125 2019-10-31 Eclipse time variations and the continued search for companions to short period eclipsing binary systems
+  1909.05606 2019-09-12 Weighing the Darkness: Astrometric Mass Measurement of Hidden Stellar Companions using Gaia
+  1908.11176 2019-08-29 Infrared-excess white dwarfs in the Gaia 100 pc sample
+  1901.05485 2019-01-16 Signs of accretion in the white dwarf + brown dwarf binary NLTT5306
+### abs:"white dwarf" AND abs:"T dwarf": 17 entries (relevant, 2019+ listed)
+  2606.30112 2026-06-29 Asymmetric nightside CO2 features, inefficient heat transport, and precise evolutionary constraints: Spectrosc
+  2412.04599 2024-12-05 SDSS J100711.74+193056.2: A Candidate Common Motion Substellar Companion to the Nearest B-Type Star Regulus
+  2305.06079 2023-05-10 Temperature and density dependence of line profiles of sodium perturbed by helium
+  2204.09739 2022-04-20 Discovery of 34 low-mass comoving systems using NOIRLab Source Catalog DR2
+  2112.11314 2021-12-17 Discovery of 16 New Members of the Solar Neighborhood using Proper Motions from CatWISE2020
+  2002.05723 2020-02-13 COol Companions ON Ultrawide orbiTS (COCONUTS). I. A High-Gravity T4 Benchmark around an Old White Dwarf and A
+### abs:"white dwarf" AND abs:ultracool AND abs:companion: 20 entries (relevant, 2019+ listed)
+  2511.05248 2025-11-06 Multiplicity of stellar systems in the solar neighbourhood, wide binaries, and planet-hosting stars
+  2507.05078 2025-07-07 Strongly polarised radio pulses from a new white-dwarf-hosting long-period transient
+  2412.04597 2024-12-05 New Ultracool Companions to Nearby White Dwarfs
+  2410.03288 2024-10-04 Novel Constraints on Companions to the Helix Nebula Central Star
+  2408.07024 2024-08-13 The Gaia Ultracool Dwarf Sample -- V: The Ultracool Dwarf Companion catalogue
+  2403.04592 2024-03-07 89 New Ultracool Dwarf Co-Moving Companions Identified With The Backyard Worlds: Planet 9 Citizen Science Proj
+  2312.10158 2023-12-15 A Benchmark White Dwarf-Ultracool Dwarf Wide Field Binary
+  2206.05595 2022-06-11 Gaia Data Release 3: Stellar multiplicity, a teaser for the hidden treasure
+  2107.04188 2021-07-09 On the effect of pulsar evaporation on the cooling of white dwarfs
+  2007.15389 2020-07-30 Confirming new white dwarf-ultracool dwarf binary candidates
+  1902.11150 2019-02-28 The ultracool helium-atmosphere white dwarf companion of PSR J0740+6620?
+### abs:"white dwarf" AND abs:"ultracool" AND abs:binar*: 19 entries (relevant, 2019+ listed)
+  2603.17038 2026-03-17 A Mass Transferring Brown Dwarf Binary on a 57 Minute Orbit
+  2511.05248 2025-11-06 Multiplicity of stellar systems in the solar neighbourhood, wide binaries, and planet-hosting stars
+  2507.05078 2025-07-07 Strongly polarised radio pulses from a new white-dwarf-hosting long-period transient
+  2407.19219 2024-07-27 Primeval very low-mass stars and brown dwarfs -- VIII. The first age benchmark L subdwarf, a wide companion to
+  2403.04592 2024-03-07 89 New Ultracool Dwarf Co-Moving Companions Identified With The Backyard Worlds: Planet 9 Citizen Science Proj
+  2312.10158 2023-12-15 A Benchmark White Dwarf-Ultracool Dwarf Wide Field Binary
+  2206.05595 2022-06-11 Gaia Data Release 3: Stellar multiplicity, a teaser for the hidden treasure
+  2107.04188 2021-07-09 On the effect of pulsar evaporation on the cooling of white dwarfs
+  2007.15389 2020-07-30 Confirming new white dwarf-ultracool dwarf binary candidates
+  2006.00323 2020-05-30 The 100 pc White Dwarf Sample in the SDSS Footprint
+  1902.11150 2019-02-28 The ultracool helium-atmosphere white dwarf companion of PSR J0740+6620?
+### abs:COCONUTS: 60 entries (relevant, 2019+ listed)
+  2604.26850 2026-04-29 Oxygen and nitrogen isotopologues on cold COCONUTS-2b observed with MIRI/MRS
+  2604.07176 2026-04-08 Panchromatic View of the Frigid Jovian Exoplanet COCONUTS-2 b
+  2511.20923 2025-11-25 The Diversity of Cold Worlds: Age and Characterization of the Exoplanet COCONUTS-2b
+  2509.04460 2025-08-28 CoCoNUTS: Concentrating on Content while Neglecting Uninformative Textual Styles for AI-Generated Peer Review 
+  2411.03549 2024-11-05 Redshifting the Study of Cold Brown Dwarfs and Exoplanets: the Mid-Infrared Wavelength Region as an Indicator 
+  2410.10939 2024-10-14 Disequilibrium Chemistry, Diabatic Thermal Structure, and Clouds in the Atmosphere of COCONUTS-2b
+### abs:"Backyard Worlds" AND abs:"white dwarf": 4 entries (relevant, 2019+ listed)
+  2407.08578 2024-07-11 Discovery of a Hypervelocity L Subdwarf at the Star/Brown Dwarf Mass Limit
+  2403.04592 2024-03-07 89 New Ultracool Dwarf Co-Moving Companions Identified With The Backyard Worlds: Planet 9 Citizen Science Proj
+  2008.06396 2020-08-14 Spitzer Follow-up of Extremely Cold Brown Dwarfs Discovered by the Backyard Worlds: Planet 9 Citizen Science P
+### abs:benchmark AND abs:"brown dwarf" AND abs:"white dwarf": 9 entries (relevant, 2019+ listed)
+  2606.03737 2026-06-02 J0404+1112: A 3-Hour Eclipsing White Dwarf-Brown Dwarf Probing Multiple Atmospheric Regimes
+  2602.09680 2026-02-10 A Deep Precursor-Dip-Main Superoutburst Sequence in VW Hydri Observed with TESS: High-Cadence Constraints on t
+  2207.07022 2022-07-14 Two substellar survivor candidates; one found and one missing
+### ti:"benchmark brown dwarfs": 20 entries (relevant, 2019+ listed)
+  2608.26029 2026-08-26 Benchmark Brown Dwarfs as Chemical Laboratories: Linking System Bulk Properties to Atmospheric Retrievals
+  2505.24560 2025-05-30 Benchmark brown dwarfs -- I. A blue M2 + T5 wide binary and a probable young [M4 + M4] + [T7 + T8] hierarchica
+  2402.04230 2024-02-06 Medium Resolution 0.97-5.3 micron spectra of Very Young Benchmark Brown Dwarfs with NIRSpec onboard the James 
+  2401.10058 2024-01-18 The discovery of two new benchmark brown dwarfs with precise dynamical masses at the stellar-substellar bounda
+  2207.02865 2022-07-06 COol Companions ON Ultrawide orbiTS (COCONUTS). III. A Very Red L6 Benchmark Brown Dwarf around a Young M5 Dwa
+### abs:magnetic AND abs:DZ AND abs:"white dwarf" AND abs:companion: 3 entries (relevant, 2019+ listed)
+### abs:"white dwarf" AND abs:"wide binar*" AND abs:"40 pc": 0 entries (relevant, 2019+ listed)
+
+### full-text grep of 106 papers (arxiv.org/html, falling back to /abs); patterns ['2354-81', '2354−81', '2354–81', '2354$-$81', '235447', '235448', '235419', '235420', 'J2354', '6350786278796634112', '358.58', '358.70', '358.69']
+1804.00362 [html, 442077 chars] hits=['2354-81', '235447', 'J2354'] :: Tinney+2018 New Y and T dwarfs from WISE identified by methane imaging
+    2354-81: ...break"><img src="1804.00362v1/W2354-8140_chart_copy.png" id="S4.F3.g10" class="ltx_graphics ltx_figure_panel ltx_img_s...
+    2354-81: ...28-8057, W2017-3421, W2211-4758) and 3 early T dwarfs (W0042-5840, W2302-7134, W2354-8140) with methane identifications, for which typing spectroscopy is required. <br...
+    235447: ...="S2.T2.12.37.1" class="ltx_td ltx_align_right" style="padding-bottom: 6.0pt;">J235447.80<math id="S2.T2.m149" class="ltx_Math" alttext="-" display="inline" intent=":...
+    J2354: ...T2.12.36" class="ltx_tr"> J235425.33<math id="S2.T2.m147" class="ltx_Math" alttext="-" display="inline" intent=...
+    J2354: ...d="S2.T2.12.37.1" class="ltx_td ltx_align_right" style="padding-bottom: 6.0pt;">J235447.80<math id="S2.T2.m149" class="ltx_Math" alttext="-" display="inline" intent=...
+    J2354: ...ss="ltx_tr">  J235425.33<math id="S5.T6.m23" class="ltx_Math" alttext="-" display="inline" intent="...
+2011.11616 [html, 3050918 chars] hits=['235448', 'J2354'] :: Kirkpatrick+2021 20-pc census
+    235448: ...tx_tr"> CWISE J235448.04<math id="S3.T1.m53" class="ltx_Math" alttext="-" display="inline" intent=":l...
+    J2354: ...ltx_tr"> CWISE J235448.04<math id="S3.T1.m53" class="ltx_Math" alttext="-" display="inline" intent="...
+    J2354: ...299" class="ltx_tr"> WISEA J235402.79+024014.1 358.512...
+    J2354: ...25" class="ltx_tr"> WISEA J235402.79+024014.1 9</t...
+2106.07669 [html, 464991 chars] hits=[] :: Gentile Fusillo+2021 Gaia EDR3 WD catalogue
+2012.02061 [html, 952353 chars] hits=[] :: Gaia Collaboration 2021 GCNS
+2210.01608 [html, 832382 chars] hits=['235419', 'J2354'] :: O'Brien+2023 Gaia WDs within 40 pc III (south)
+    235419: ..._align_left">235419.41<math id="S4.T3c.m29" class="ltx_Math" alttext="-" display="inline" intent=":...
+    235419: ... id="S4.T4.2.31.1" class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b">235419.41<math id="S4.T4.m35" class="ltx_Math" alttext="-" display="inline" intent=":l...
+    J2354: ...lluted white dwarfs. WD J2354<math id="S4.SS2.p6.m1" class="ltx_Math" alttext="-" display="inline" intent=":l...
+    J2354: ...math>7507 and WD J2354<math id="S4.SS6.p1.m2" class="ltx_Math" alttext="-" display="inline" intent=":l...
+2312.02735 [html, 495867 chars] hits=[] :: O'Brien+2024 The 40 pc sample of white dwarfs from Gaia
+2401.15158 [html, 429800 chars] hits=['235419', 'J2354'] :: Hernandez+2024 Rotation and magnetic fields in single WDs
+    235419: ...5.8.31" class="ltx_tr"> WD J235419.41-814104.96 TIC 41025...
+    J2354: ...T5.8.31" class="ltx_tr"> WD J235419.41-814104.96 TIC 410...
+2308.05572 [html, 276215 chars] hits=[] :: Vincent+2024 XP classification of Gaia WDs
+2505.24560 [html, 296498 chars] hits=[] :: Zhang+2025 Benchmark brown dwarfs I
+2403.04592 [html, 1652949 chars] hits=[] :: Rothermich+2024 89 new UCD companions (Backyard Worlds)
+2609.03017 [html, 396466 chars] hits=[] :: The scarcity of white dwarf-brown dwarf binaries in the solar neighbourhood: A population 
+2603.10481 [html, 568777 chars] hits=['358.58'] :: White Dwarfs with Infrared Excess from LAMOST Data Release 11
+    358.58: ...lign_center">358.58 <span id="S5...
+2511.15993 [html, 105000 chars] hits=[] :: Formation of Extremely Low-Mass White Dwarfs in Wide Orbits
+2510.10821 [html, 594785 chars] hits=[] :: Co-evolution of Nuclear Star Clusters and Massive Black Holes: Extreme Mass-Ratio Inspiral
+2412.04599 [html, 119837 chars] hits=[] :: SDSS J100711.74+193056.2: A Candidate Common Motion Substellar Companion to the Nearest B-
+2409.06874 [html, 365578 chars] hits=[] :: The only inflated brown dwarf in an eclipsing white dwarf-brown dwarf binary: WD1032+011B
+2405.05312 [html, 461821 chars] hits=[] :: Optimal Celestial Bodies for Dark Matter Detection
+2405.02393 [html, 441280 chars] hits=[] :: Dark Kinetic Heating of Exoplanets and Brown Dwarfs
+2404.08087 [html, 319943 chars] hits=[] :: Time-resolved Hubble Space Telescope Wide Field Camera 3 Spectrophotometry Reveals Ineffic
+2404.05488 [html, 174740 chars] hits=[] :: PHL 5038AB: Is the brown dwarf causing pollution of its white dwarf host star?
+2305.06079 [html, 283521 chars] hits=[] :: Temperature and density dependence of line profiles of sodium perturbed by helium
+2207.07022 [html, 293596 chars] hits=[] :: Two substellar survivor candidates; one found and one missing
+2204.05155 [html, 431901 chars] hits=[] :: Characterising eclipsing white dwarf M dwarf binaries from multi-band eclipse photometry
+2203.01650 [html, 937048 chars] hits=[] :: Euclid preparation. XVIII. The NISP photometric system
+2110.10162 [html, 409394 chars] hits=[] :: HST/WFC3 Complete Phase-resolved Spectroscopy of White Dwarf-Brown Dwarf Binaries WD 0137 
+2110.10158 [html, 308612 chars] hits=[] :: Mapping the pressure-dependent day-night temperature contrast of a strongly irradiated atm
+2109.11947 [html, 407894 chars] hits=[] :: Interferometric visibility of single-lens models: the thin-arcs approximation
+2008.06396 [html, 1403724 chars] hits=['J2354'] :: Spitzer Follow-up of Extremely Cold Brown Dwarfs Discovered by the Backyard Worlds: Planet
+    J2354: ...tx_tr"> WISEA J235456.63<math id="S12.T2.m594" class="ltx_Math" alttext="-" display="inline" intent...
+    J2354: ...15" class="ltx_tr"> WISEA J235456.63<math id="S12.T4.m212" class="ltx_Math" alttext="-" display="inline" intent...
+    J2354: ...tx_tr"> WISEA J235456.63<math id="S12.T5.m102" class="ltx_Math" alttext="-" display="inline" intent...
+1901.07120 [html, 375011 chars] hits=[] :: Constraints on Earth-mass primordial black holes from OGLE 5-year microlensing events
+2611.14703 [html, 578284 chars] hits=[] :: Dwarfs of Fire and Ice: UV-Irradiation-Driven Thermal Inversion, Disequilibrium Chemistry,
+2604.11175 [html, 257387 chars] hits=[] :: White Dwarfs with Infrared Excess from DESI EDR
+2603.24740 [html, 471497 chars] hits=['J2354'] :: The Coldest Known Y Dwarfs: Estimates of their Effective Temperatures
+    J2354: ...ltx_tr"> WISEA J235402.79+024014.1 <td id="A1.T7.7.27.2" class="ltx_td ltx_align_center ltx_bor...
+2603.12888 [html, 349279 chars] hits=[] :: ZTF J021804.16+071152.93: a dead cataclysmic variable and potential solution to the missin
+2601.19531 [html, 376258 chars] hits=[] :: Predicted incidence of Jupiter-like planets around white dwarfs
+2601.12861 [html, 973751 chars] hits=[] :: Fates of the sub-stellar objects (FOSSO) I. Fates of the known brown dwarfs in main-sequen
+2512.11956 [html, 196282 chars] hits=[] :: The Brown-dwarf Desert Persists as a Mass-ratio Desert around Low-mass Stars
+2510.13064 [html, 159398 chars] hits=[] :: First Demonstration of Kernel Phase Interferometry on JWST/MIRI: Prospects for Future Plan
+2510.12601 [html, 222474 chars] hits=[] :: The MIRI Excesses around Degenerates (MEAD) Survey I: A candidate cold brown dwarf in orbi
+2509.03216 [html, 635563 chars] hits=[] :: Circumstellar interaction in the extreme white dwarf merger remnant ZTF\,J1901+1458: A new
+2507.13850 [html, 593473 chars] hits=[] :: A half-ring of ionized circumstellar material trapped in the magnetosphere of a white dwar
+2501.14333 [html, 288181 chars] hits=[] :: Two almost planetary mass survivors of common envelope evolution
+2412.15153 [html, 316146 chars] hits=[] :: Cyclotron emitting magnetic white dwarfs in post common envelope binaries discovered with 
+2412.06920 [html, 146034 chars] hits=[] :: ESPRESSO observations of the debris-accreting white dwarf WD\,0141--675
+2410.03288 [html, 158392 chars] hits=[] :: Novel Constraints on Companions to the Helix Nebula Central Star
+2409.02157 [html, 216077 chars] hits=[] :: An Earth-Mass Planet and a Brown Dwarf in Orbit Around a White Dwarf
+2407.13525 [html, 384638 chars] hits=[] :: Short-period Post-Common Envelope Binaries with Balmer Emission from SDSS and LAMOST Based
+2407.08578 [html, 224192 chars] hits=[] :: Discovery of a Hypervelocity L Subdwarf at the Star/Brown Dwarf Mass Limit
+2404.06845 [html, 231414 chars] hits=[] :: Probing the shape of the brown dwarf desert around main-sequence A-F-G-type stars using po
+2310.05778 [html, 282696 chars] hits=[] :: WD0141-675: A case study on how to follow-up astrometric planet candidates around white dw
+2309.05716 [html, 217940 chars] hits=[] :: New evidence about HW Vir's circumbinary planets from Hipparcos-Gaia astrometry and a rean
+2306.11806 [html, 289413 chars] hits=[] :: Measurement of stellar and substellar winds using white dwarf hosts
+2306.08672 [html, 329370 chars] hits=[] :: An irradiated-Jupiter analogue hotter than the Sun
+2303.16330 [html, 322674 chars] hits=[] :: Disk or Companion: Characterizing Excess Infrared Flux in Seven White Dwarf Systems with N
+2302.12507 [html, 487001 chars] hits=[] :: Hot subdwarfs in close binaries observed from space II: Analysis of the light curves
+2301.02101 [abs-only (HTTPError), 44421 chars] hits=[] :: Discovery of a resolved white dwarf-brown dwarf binary with a small projected separation: 
+2301.00705 [html, 275389 chars] hits=[] :: White Dwarfs with Infrared Excess from LAMOST Data Release 5
+2212.06161 [html, 165784 chars] hits=[] :: Common envelope evolution and triple dynamics as potential pathways to form the inner whit
+2211.14945 [html, 245890 chars] hits=[] :: CSS1603+19: a low-mass polar near the cataclysmic variable period minimum
+2206.05595 [html, 1410758 chars] hits=[] :: Gaia Data Release 3: Stellar multiplicity, a teaser for the hidden treasure
+2205.12922 [html, 313679 chars] hits=[] :: The POKEMON Speckle Survey of Nearby M Dwarfs. I. New Discoveries
+2205.03431 [html, 303275 chars] hits=[] :: Four new deeply-eclipsing white dwarfs in ZTF
+2204.13715 [html, 211168 chars] hits=[] :: Close detached white dwarf + brown dwarf binaries: further evidence for low values of the 
+2204.09739 [abs-only (HTTPError), 46293 chars] hits=[] :: Discovery of 34 low-mass comoving systems using NOIRLab Source Catalog DR2
+2204.05330 [html, 207030 chars] hits=[] :: Near-infrared spectra of the inflated post-common envelope brown dwarf NLTT 5306B
+2109.06899 [html, 188918 chars] hits=[] :: Where to find over-massive brown dwarfs: new benchmark systems for binary evolution
+2107.06303 [html, 237899 chars] hits=[] :: White dwarf-main sequence binaries from Gaia EDR3: the unresolved 100pc volume-limited sam
+2105.14770 [html, 905863 chars] hits=[] :: The CARMENES search for exoplanets around M dwarfs: Spectroscopic orbits of nine M-dwarf m
+2105.14028 [html, 315682 chars] hits=[] :: Eclipsing White Dwarf Binaries in Gaia and the Zwicky Transient Facility
+2105.08687 [html, 192564 chars] hits=[] :: ZTFJ0038+2030: a long period eclipsing white dwarf and a substellar companion
+2105.03750 [html, 522927 chars] hits=[] :: Studies of RR Lyrae Variables in Binary Systems. I.: Evidence of a Trimodal Companion Mass
+2105.00077 [html, 128857 chars] hits=[] :: The Formation of Discs in the Interior of AGB Stars from the Tidal Disruption of Planets a
+2102.05035 [html, 204039 chars] hits=[] :: Hard X-ray Emission Associated with White Dwarfs. IV. Signs of Accretion from Sub-stellar 
+2102.04385 [html, 838550 chars] hits=[] :: Search for (sub)stellar companions of exoplanet hosts by exploring the second ESA-Gaia dat
+2009.07282 [html, 469233 chars] hits=[] :: A Giant Planet Candidate Transiting a White Dwarf
+2005.09273 [html, 147114 chars] hits=[] :: Hybrid star HD 81817 accompanied by brown dwarf or substellar companion
+2004.09077 [html, 153145 chars] hits=[] :: On the role of reduced wind mass-loss rate in enabling exoplanets to shape planetary nebul
+1911.00125 [abs-only (HTTPError), 41918 chars] hits=[] :: Eclipse time variations and the continued search for companions to short period eclipsing 
+1909.05606 [html, 227296 chars] hits=[] :: Weighing the Darkness: Astrometric Mass Measurement of Hidden Stellar Companions using Gai
+1908.11176 [html, 434238 chars] hits=[] :: Infrared-excess white dwarfs in the Gaia 100 pc sample
+1901.05485 [html, 221370 chars] hits=[] :: Signs of accretion in the white dwarf + brown dwarf binary NLTT5306
+2606.30112 [html, 540637 chars] hits=[] :: Asymmetric nightside CO2 features, inefficient heat transport, and precise evolutionary co
+2112.11314 [html, 220855 chars] hits=[] :: Discovery of 16 New Members of the Solar Neighborhood using Proper Motions from CatWISE202
+2002.05723 [html, 1144838 chars] hits=[] :: COol Companions ON Ultrawide orbiTS (COCONUTS). I. A High-Gravity T4 Benchmark around an O
+2511.05248 [html, 9545513 chars] hits=['J2354'] :: Multiplicity of stellar systems in the solar neighbourhood, wide binaries, and planet-host
+    J2354: ..._left">WISEA J235402.79+024014.1    <td id="A6.T1.8.428.2" class="ltx_td ltx_nopad_l l...
+2507.05078 [html, 292551 chars] hits=[] :: Strongly polarised radio pulses from a new white-dwarf-hosting long-period transient
+2412.04597 [html, 971309 chars] hits=['J2354'] :: New Ultracool Companions to Nearby White Dwarfs
+    J2354: ... encoding="application/x-tex">-060947.02 and WD J235432.47<math id="S2.SS1.SSS2.p5.m2" class="ltx_Math" alttext="+" display="inline" ...
+    J2354: ...href="#bib.bib51" title="" class="ltx_ref">51] sample. We suggest WD J235432.47<math id="S2.SS1.SSS2.p5.m4" class="ltx_Math" alttext="+" display="inline" ...
+    J2354: ...ication/x-tex">-060947.02 and UKIDSS LAS for WD J235432.47<math id="S2.SS1.SSS2.p5.m6" class="ltx_Math" alttext="+" display="inline" ...
+2408.07024 [html, 867296 chars] hits=['J2354'] :: The Gaia Ultracool Dwarf Sample -- V: The Ultracool Dwarf Companion catalogue
+    J2354: ...n_center" style="padding-bottom: 4.30554pt;padding-top:1pt;padding-bottom:1pt;">J2354-3316B <td id="S4.T8.6.13.2" class="ltx_td ltx_align_center" style="padding...
+    J2354: ...n_center" style="padding-bottom: 4.30554pt;padding-top:1pt;padding-bottom:1pt;">J2354-3316 <td id="S4.T8.6.13.9" class="ltx_td ltx_align_center" style="padding-...
+2312.10158 [html, 230508 chars] hits=[] :: A Benchmark White Dwarf-Ultracool Dwarf Wide Field Binary
+2107.04188 [html, 159297 chars] hits=[] :: On the effect of pulsar evaporation on the cooling of white dwarfs
+2007.15389 [html, 314073 chars] hits=[] :: Confirming new white dwarf-ultracool dwarf binary candidates
+1902.11150 [html, 154130 chars] hits=[] :: The ultracool helium-atmosphere white dwarf companion of PSR J0740+6620?
+2603.17038 [html, 274954 chars] hits=[] :: A Mass Transferring Brown Dwarf Binary on a 57 Minute Orbit
+2407.19219 [html, 326985 chars] hits=[] :: Primeval very low-mass stars and brown dwarfs -- VIII. The first age benchmark L subdwarf,
+2006.00323 [html, 416112 chars] hits=[] :: The 100 pc White Dwarf Sample in the SDSS Footprint
+2604.26850 [html, 608756 chars] hits=[] :: Oxygen and nitrogen isotopologues on cold COCONUTS-2b observed with MIRI/MRS
+2604.07176 [html, 432040 chars] hits=[] :: Panchromatic View of the Frigid Jovian Exoplanet COCONUTS-2 b
+2511.20923 [html, 563405 chars] hits=[] :: The Diversity of Cold Worlds: Age and Characterization of the Exoplanet COCONUTS-2b
+2509.04460 [html, 301796 chars] hits=[] :: CoCoNUTS: Concentrating on Content while Neglecting Uninformative Textual Styles for AI-Ge
+2411.03549 [html, 373461 chars] hits=[] :: Redshifting the Study of Cold Brown Dwarfs and Exoplanets: the Mid-Infrared Wavelength Reg
+2410.10939 [html, 738091 chars] hits=[] :: Disequilibrium Chemistry, Diabatic Thermal Structure, and Clouds in the Atmosphere of COCO
+2606.03737 [html, 238846 chars] hits=[] :: J0404+1112: A 3-Hour Eclipsing White Dwarf-Brown Dwarf Probing Multiple Atmospheric Regime
+2602.09680 [html, 278562 chars] hits=[] :: A Deep Precursor-Dip-Main Superoutburst Sequence in VW Hydri Observed with TESS: High-Cade
+2608.26029 [html, 654880 chars] hits=[] :: Benchmark Brown Dwarfs as Chemical Laboratories: Linking System Bulk Properties to Atmosph
+2402.04230 [html, 323811 chars] hits=[] :: Medium Resolution 0.97-5.3 micron spectra of Very Young Benchmark Brown Dwarfs with NIRSpe
+2401.10058 [html, 254560 chars] hits=[] :: The discovery of two new benchmark brown dwarfs with precise dynamical masses at the stell
+2207.02865 [html, 670670 chars] hits=[] :: COol Companions ON Ultrawide orbiTS (COCONUTS). III. A Very Red L6 Benchmark Brown Dwarf a

@@ -1,0 +1,17 @@
+## bibcodes oid 18628314
+bibcode	title
+"2018ApJS..236...28T"	"New Y- and T dwarfs from WISE identified by methane imaging."
+"2021ApJS..253....7K"	"The field substellar mass function based on the full-sky 20 pc census of 525 L, T, and Y dwarfs."
+
+## bibcodes oid 15893936
+bibcode	title
+"2019MNRAS.482.4570G"	"A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+"2019MNRAS.485.5573T"	"Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+"2021A&A...649A...6G"	"Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+"2021MNRAS.508.3877G"	"A catalogue of white dwarfs in Gaia EDR3."
+"2023A&A...679A.127G"	"White dwarf Random Forest classification through {\em Gaia} spectral coefficients."
+"2023MNRAS.518.3055O"	"Gaia white dwarfs within 40 pc - III. Spectroscopic observations of new candidates in the Southern hemisphere."
+"2024A&A...682A...5V"	"Classification and parameterization of a large {\em Gaia} sample of white dwarfs using XP spectra."
+"2024MNRAS.527.8687O"	"The 40 pc sample of white dwarfs from {\em Gaia}."
+"2024MNRAS.528.6056H"	"Rotation plays a role in the generation of magnetic fields in single white dwarfs."
+

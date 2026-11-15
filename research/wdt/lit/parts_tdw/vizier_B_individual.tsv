@@ -1,0 +1,557 @@
+#### B/vsx/vsx
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:55 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:55	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/vsx/vsx&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102027
+#Name: B/vsx
+#Title: AAVSO International Variable Star Index VSX (Watson+, 2006-)
+#INFO	ivoid=ivo://cds.vizier/b/vsx	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/vsx	    IVOID of underlying data collection
+#INFO	creator=Watson C.	    First author or institution
+#INFO	cites=bibcode:2006SASS...25...47W	    Article or Data origin sources
+#INFO	journal=SASS	    Journal name
+#INFO	original_date=2006	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/vsx	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_vsx_vsx:
+#Name: B/vsx/vsx
+#Title: Variable Star indeX, Version 2026-10-18 (\originalcolumnnames)
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	OID	(I8)	Internal identifier, can be used to link out to the VSX database (1)	[ucd=meta.id]
+#Column	Name	(A30)	Variable star identifier	[ucd=meta.id;meta.main]
+#Column	V	(I1)	Variability flag (2) (VarFlag)	[ucd=src.var]
+#Column	RAJ2000	(F9.5)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Type	(A30)	? Variability type, ariability type, as in GCVS catalog Variability type (see details of VSX type list)	[ucd=src.class]
+#Column	l_max	(A1)	? Limit flag on max (LimitFlagOnMax)	[ucd=meta.code.error;src.var.amplitude]
+#Column	max	(F7.3)	[-6.0/25.2]? Magnitude at maximum, or amplitude (MagMax)	[ucd=src.var.amplitude]
+#Column	u_max	(A1)	? Uncertainty flag on max (MaxUncertaintyFlag)	[ucd=meta.code.error;src.var.amplitude]
+#Column	n_max	(A10)	? Passband on max magnitude (4) (MaxPassband)	[ucd=meta.note;src.var.amplitude]
+#Column	f_min	(A1)	? Flag to indicate an amplitude (MinIsAmplitude)	[ucd=meta.code;src.var.amplitude]
+#Column	l_min	(A1)	? Limit flag on min (LimitFlagOnMin)	[ucd=meta.code.error;src.var.amplitude]
+#Column	min	(F7.3)	[-0.02/28.0]? Magnitude at minimum, or amplitude (MagMin)	[ucd=src.var.amplitude]
+#Column	u_min	(A1)	? Uncertainty flag on min (MinUncertaintyFlag)	[ucd=meta.code.error;src.var.amplitude]
+#Column	n_min	(A8)	? Passband on min magnitude (MinPassband)	[ucd=meta.note;src.var.amplitude]
+#Column	l_Period	(A1)	? Limit flag on period (3) (LimitFlagOnPeriod)	[ucd=time.period]
+#Column	Period	(F19.12)	[0.0/27400.0]? Period of the variable in days	[ucd=time.period]
+#Column	u_Period	(A1)	? Uncertainty flag on Period (3) (PeriodUncertaintyFlag)	[ucd=meta.code.error]
+#Column	Sp	(A29)	? Spectral type (SpectralType)	[ucd=src.spType]
+#### B/wds/wds
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:55 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:55	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/wds/wds&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102026
+#Name: B/wds
+#Title: The Washington Visual Double Star Catalog (Mason+ 2001-) Supersedes {\bf I/237}
+#INFO	ivoid=ivo://cds.vizier/b/wds	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/wds	    IVOID of underlying data collection
+#INFO	creator=Mason B.D.	    First author or institution
+#INFO	cites=bibcode:2001AJ....122.3466M	    Article or Data origin sources
+#INFO	journal=AJ	    Journal name
+#INFO	original_date=2001	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/wds	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	B_wds_wds:
+#Name: B/wds/wds
+#Title: The Washington Double Star Catalog (main part)
+#Column	_r	(F5.2)	Distance from center (23 54 48.04-81 40 44.7)[FK5/J2000], at Epoch=J2000.0	[ucd=pos.angDistance]
+#Column	WDS	(A10)	WDS name (based on J2000 position)	[ucd=meta.id;meta.main]
+#Column	Disc	(A7)	Discoverer Code (1 to 4 letters) and Number (5)	[ucd=meta.id]
+#Column	Comp	(A5)	Components when more than 2 (1)	[ucd=meta.code.multip]
+#Column	Obs1	(I4)	? Date of first satisfactory observation	[ucd=time]
+#Column	pa1	(I3)	? Position Angle at date Obs1 (2)	[ucd=pos.posAng]
+#Column	pa2	(I3)	? Position Angle at date Obs2 (2)	[ucd=pos.posAng]
+#Column	sep1	(F5.1)	? Separation at date Obs1	[ucd=pos.angDistance;src.orbital]
+#Column	sep2	(F6.2)	? Separation at date Obs12	[ucd=pos.angDistance;src.orbital]
+#Column	mag1	(F6.3)	? Magnitude of First Component	[ucd=phot.mag;em.opt]
+#Column	mag2	(F5.2)	? Magnitude of Second Component	[ucd=phot.mag;em.opt]
+#Column	DM	(A9)	Durchmusterung Number (3)	[ucd=meta.id]
+#Column	Notes	(A4)	[B-Z ] Notes about the binary (4)	[ucd=meta.note]
+#Column	n_RAh	(A1)	[!P] indicates a position derived from WDS name	[ucd=meta.note]
+#Column	RAJ2000	(A11)	? Right Ascension J2000 (Ep=J2000, hours)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination J2000 (Ep=J2000, sign)	[ucd=pos.eq.dec;meta.main]
+#### B/mk/mktypes
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:55 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:55	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/mk/mktypes&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102023
+#Name: B/mk
+#Title: Catalogue of Stellar Spectral Classifications (Skiff, 2009- )
+#INFO	ivoid=ivo://cds.vizier/b/mk	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/mk	    IVOID of underlying data collection
+#INFO	creator=Skiff B.A.	    First author or institution
+#INFO	cites=bibcode:2014yCat....1.2023S	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2014	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/mk	    Dataset landing page
+#INFO	publication_date=2022-05-13	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_mk_mktypes:
+#Name: B/mk/mktypes
+#Title: The catalog of MK Spectral Types
+#Column	_r	(F5.2)	Distance from center (23 54 48.04-81 40 44.7)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Name	(a27)	Star name as published or valid SIMBAD name (Lortet et al.)	[ucd=meta.id]
+#Column	Mag	(F5.2)	? Magnitude, see passband in n_Mag	[ucd=phot.mag]
+#Column	n_Mag	(A2)	Color passband of magnitude (2)	[ucd=meta.note]
+#Column	n_SpType	(A1)	[+] if spectral type is an MK standard	[ucd=meta.note]
+#Column	SpType	(a26)	spectral type (MK, HD, or other)	[ucd=src.spType]
+#Column	Remarks	(a31)	Comments (3)	[ucd=meta.note]
+#Column	Bibcode	(A19)	Publication Source	[ucd=meta.bib.bibcode]
+#Column	RAJ2000	(A11)	Right Ascension (J2000) hour	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination (J2000) degree	[ucd=pos.eq.dec;meta.main]
+#Column	rc	(A1)	Source of coordinates (1)	[ucd=meta.ref;pos.frame]
+#Column	Simbad	(a6)	VizieR added column, not part of original data	[ucd=meta.ref]
+#### B/gcvs/gcvs_cat
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:55 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:55	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/gcvs/gcvs_cat&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102025
+#Name: B/gcvs
+#Title: General Catalogue of Variable Stars (Samus+, 2007-2017)
+#INFO	ivoid=ivo://cds.vizier/b/gcvs	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/gcvs	    IVOID of underlying data collection
+#INFO	creator=Samus N.N.	    First author or institution
+#INFO	cites=bibcode:2017ARep...61...80S	    Article or Data origin sources
+#INFO	journal=ARep	    Journal name
+#INFO	original_date=2017	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/gcvs	    Dataset landing page
+#INFO	publication_date=2025-04-23	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_gcvs_gcvs_cat:
+#Name: B/gcvs/gcvs_cat
+#Title: GCVS catalog (GCVS 5.1, version Oct, 2020)
+#Column	_r	(F5.2)	Distance from center (23 54 48.04-81 40 44.7)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	GCVS	(A10)	Variable star designation (2)	[ucd=meta.id;meta.main]
+#Column	n_GCVS	(A1)	[*] indicates a remark in "gcvs_rem.dat" file	[ucd=meta.note]
+#Column	RAJ2000	(A11)	? Hours RA, equinox J2000.0 (G1)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	? Degrees Dec, equinox J2000.0 (G1)	[ucd=pos.eq.dec;meta.main]
+#Column	VarType	(a10)	Type of variability (see file "vartype.txt")	[ucd=meta.code;src.var]
+#Column	magMax	(F6.3)	? Magnitude at maximum brightness	[ucd=phot.mag]
+#Column	Period	(F16.10)	? Period of the variable star	[ucd=time.period]
+#Column	SpType	(a17)	Spectral type	[ucd=src.spType]
+#Column	Exists	(A12)	Cases of non-existence of the variable etc. (12)	[ucd=meta.note]
+#Column	VarName	(A11)	Variable star designation (17)	[ucd=meta.id]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#### B/sb9/main
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:55 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:55	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/sb9/main&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102020
+#Name: B/sb9
+#Title: SB9: 9th Catalogue of Spectroscopic Binary Orbits (Pourbaix+ 2004-2014)
+#INFO	ivoid=ivo://cds.vizier/b/sb9	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/sb9	    IVOID of underlying data collection
+#INFO	creator=Pourbaix D.	    First author or institution
+#INFO	cites=bibcode:2004A&A...424..727P	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2004	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/sb9	    Dataset landing page
+#INFO	publication_date=2024-07-01	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_sb9_main:
+#Name: B/sb9/main
+#Title: Position, magnitudes and spectral types
+#Column	_r	(F5.2)	Distance from center (23 54 48.04-81 40 44.7)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Seq	(I4)	System Number (SB8 number when Seq<=1469)	[ucd=meta.id;meta.main]
+#Column	N	(A1)	VizieR added column, not part of original data	[ucd=phot.mag;em.IR.8-15um]
+#Column	RAJ2000	(A11)	Right Ascension J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination J2000	[ucd=pos.eq.dec;meta.main]
+#Column	Comp	(a7)	? Component	[ucd=meta.code.multip]
+#Column	mag1	(F6.3)	? Magnitude of component 1	[ucd=phot.mag]
+#Column	n_mag1	(A1)	[GJPBVRyrIK] Filter in which mag1 is given	[ucd=meta.note]
+#Column	mag2	(F6.3)	? Magnitude of component 2	[ucd=phot.mag]
+#Column	n_mag2	(A1)	[PBVRyrIK] Filter in which mag2 is given	[ucd=meta.note]
+#Column	Sp1	(a32)	MK Spectral type component 1	[ucd=src.spType]
+#Column	Sp2	(a10)	MK Spectral type component 2	[ucd=src.spType]
+#Column	Name	(a29)	Name of the source (HIP when existing)	[ucd=meta.id]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#### B/pastel/pastel
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:56 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:56	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/pastel/pastel&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102029
+#Name: B/pastel
+#Title: The PASTEL catalogue (Soubiran+, 2016-)
+#INFO	ivoid=ivo://cds.vizier/b/pastel	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/pastel	    IVOID of underlying data collection
+#INFO	creator=Soubiran C.	    First author or institution
+#INFO	cites=bibcode:2016A&A...591A.118S	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2016	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/pastel	    Dataset landing page
+#INFO	publication_date=2020-03-11	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_pastel_pastel:
+#Name: B/pastel/pastel
+#Title: The catalogue of stellar atmospheric parameters (Version 2020-01-30)
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	ID	(a33)	Designation	[ucd=meta.id;phys.atmol.configuration]
+#Column	RAdeg	(F15.11)	? Right Ascension (J2000) from Simbad or 2MASS	[ucd=pos.eq.ra]
+#Column	DEdeg	(F15.11)	? Declination (J2000) from Simbad or 2MASS	[ucd=pos.eq.dec]
+#Column	o_coo	(A1)	[ST?] Origin of coordinates (1)	[ucd=meta.number]
+#Column	Bmag	(F6.3)	? Johnson B magnitude from Simbad	[ucd=phot.mag;em.opt.B]
+#Column	Vmag	(F6.3)	? Johnson V magnitude from Simbad	[ucd=phot.mag;em.opt.V]
+#Column	Jmag	(F6.3)	? 2MASS J apparent magnitude	[ucd=phot.mag;em.IR.J]
+#Column	Ksmag	(F6.3)	? 2MASS Ks apparent magnitude	[ucd=phot.mag;em.IR.K]
+#Column	Teff	(I5)	? Effective temperature	[ucd=phys.temperature.effective]
+#Column	logg	(F6.3)	? Logarithm of gravity	[ucd=phys.gravity]
+#Column	[Fe/H]	(F6.3)	? Iron abundance relative to the Sun	[ucd=phys.abund.Fe]
+#Column	e_[Fe/H]	(F6.3)	? Standard error on iron abundance	[ucd=stat.error;phys.abund.Fe]
+#Column	n_[Fe/H]	(A1)	? [2M] Metal abundance, Fe2 (2)	[ucd=meta.note]
+#Column	f_[Fe/H]	(A1)	? [N] NLTE analysis (3)	[ucd=meta.code]
+#Column	_RA	(F9.5)	Right Ascension (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Declination (J2000) from SIMBAD (not part of the original data)	[ucd=pos.eq.dec;meta.main]
+#### B/eso/eso_arc
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:56 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:56	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/eso/eso_arc&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102011
+#Name: B/eso
+#Title: ESO Science Archive Catalog (ESO, 1991-2026)
+#INFO	ivoid=ivo://cds.vizier/b/eso	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/eso	    IVOID of underlying data collection
+#INFO	creator=ESO	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/eso	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_eso_eso_arc:
+#Name: B/eso/eso_arc
+#Title: Full ESO science archive log from 1991
+#Column	_r	(F6.3)	Distance from center (358.700150000000-81.679080000000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	TelID	(I3)	Code which refers to the ESO telescope	[ucd=meta.id;instr.tel]
+#Column	ProgID	(A20)	Program identification	[ucd=meta.id]
+#Column	tExp	(F7.1)	? Exposure time	[ucd=time]
+#Column	RAJ2000	(F15.12)	Right Ascension in mas (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F15.12)	Declination in mas (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Ask	(A3)	Ask for the observation from the ESO Archive (column added by CDS)	[ucd=meta.ref.url]
+#Column	Target	(A32)	Target name (3)	[ucd=meta.id]
+#### B/hst/hstlog
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:56 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:56	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/hst/hstlog&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102004
+#Name: B/hst
+#Title: HST Archived Exposures Catalog (STScI, 2007)
+#INFO	ivoid=ivo://cds.vizier/b/hst	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/hst	    IVOID of underlying data collection
+#INFO	creator=STScI Team	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/hst	    Dataset landing page
+#INFO	publication_date=2021-04-14	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_hst_hstlog:
+#Name: B/hst/hstlog
+#Title: Merged log of HST Observations
+#Column	_r	(F5.2)	Distance from center (23 54 48.04-81 40 44.7)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Target	(a30)	Target Name, as given by the proposer	[ucd=]
+#Column	RAJ2000	(A11)	Right Ascension J2000	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination J2000	[ucd=pos.eq.dec;meta.main]
+#Column	config	(a15)	Instrument configuration	[ucd=]
+#Column	wave	(I5)	"Central" wavelength of the observation	[ucd=]
+#Column	Dataset	(A9)	Dataset name, uniquely identifies the data for a given exposure.	[ucd=meta.ref]
+#Column	ObsDate	(A16)	? Observation starting time	[ucd=time.start;obs]
+#Column	Sp	(A1)	[S] Existence of Spectrum Preview	[ucd=meta.note]
+#Column	Im	(A1)	[I] Existence of Image Preview	[ucd=meta.note]
+#### B/jwst/jwstlog
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:56 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:56	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/jwst/jwstlog&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	Error=Table or Catalog not found: B/jwst/jwstlog	
+#### B/gemini/obscore
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:56 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:56	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/gemini/obscore&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102037
+#Name: B/gemini
+#Title: The Gemini Observation Log (CADC, 2001-)
+#INFO	ivoid=ivo://cds.vizier/b/gemini	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/gemini	    IVOID of underlying data collection
+#INFO	creator=Association of Universities for Research in Astronomy	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/gemini	    Dataset landing page
+#INFO	publication_date=2024-03-10	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H:	ICRS
+#Table	B_gemini_obscore:
+#Name: B/gemini/obscore
+#Title: Gemini Observations
+#Column	_r	(F6.3)	Distance from center (358.7001500000000078-81.6790799999999990)[ICRS]	[ucd=pos.angDistance]
+#Column	obs_publisher_did	(a256)	? publisher dataset identifier (caomPlaneURI)	[ucd=meta.id;meta.dataset]
+#Column	dataproduct_type	(a128)	? type of product	[ucd=meta.note]
+#Column	target_name	(a64)	? name of intended target	[ucd=meta.id]
+#Column	RA_ICRS	(F20.16)	? RA of central coordinates (ICRS) (s_ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F20.16)	? DEC of central coordinates (ICRS) (s_dec)	[ucd=pos.eq.dec;meta.main]
+#Column	s_fov	(F20.16)	? size of the region covered (~diameter of minimum bounding circle)	[ucd=instr.fov;instr.pixel]
+#Column	t_min	(F13.7)	? Time min in MJD	[ucd=time.epoch]
+#Column	t_max	(F13.7)	? Time max in MJD	[ucd=time.epoch]
+#Column	access_format	(a128)	? format of the data files	[ucd=meta.note]
+#Column	access_estsize	(I4)	? estimated size of the download	[ucd=meta.number]
+#Column	access_url	(a8)	Access url (datalink/XML)	[ucd=meta.ref.url]
+#### B/chandra/chandra
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:57 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:57	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/chandra/chandra&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102007
+#Name: B/chandra
+#Title: The Chandra Archive Log (CXC, 1999-2014) Regularly updated
+#INFO	ivoid=ivo://cds.vizier/b/chandra	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/chandra	    IVOID of underlying data collection
+#INFO	creator=CXC	    First author or institution
+#INFO	cites=bibcode:2002yCat....102007C	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2002	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/chandra	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_chandra_chandra:
+#Name: B/chandra/chandra
+#Title: The Chandra Log (2026-10-18)
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	ObsID	(I5)	Observation ID (2)	[ucd=meta.id;obs]
+#Column	Instr	(A6)	Instrument (3)	[ucd=meta.id;instr]
+#Column	Grat	(A4)	Grating (5)	[ucd=instr.setup]
+#Column	ExpTime	(F9.3)	? Exposure time (ks)	[ucd=time.duration;obs.exposure]
+#Column	Target	(A40)	Target Name as specified in proposal	[ucd=meta.id]
+#Column	RAJ2000	(F9.5)	? RA in J2000 decimal degrees	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	? Dec in J2000 decimal degrees	[ucd=pos.eq.dec;meta.main]
+#Column	Status	(A18)	Status of the observation (6)	[ucd=meta.code;obs]
+#### B/xmm/xmmlog
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:57 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:57	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/xmm/xmmlog&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102009
+#Name: B/xmm
+#Title: XMM-Newton Observation Log (XMM-Newton Science Operation Center, 2012-)
+#INFO	ivoid=ivo://cds.vizier/b/xmm	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/xmm	    IVOID of underlying data collection
+#INFO	creator=XMM-Newton Science Operation Center	    First author or institution
+#INFO	cites=bibcode:2002yCat....102009X	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2002	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/xmm	    Dataset landing page
+#INFO	publication_date=2026-10-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_xmm_xmmlog:
+#Name: B/xmm/xmmlog
+#Title: The XMM-Newton Observation log (2026-10-19)
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	Obsno	(A10)	Observation identifier (1)	[ucd=meta.id;meta.main]
+#Column	XSAlink	(A1)	[YN] XMM-Newton Science Archive link available for this observation (yes/no)	[ucd=meta.ref]
+#Column	PropDate	(A10)	Proprietary period expiry date	[ucd=time]
+#Column	Object	(A30)	Target as specified in proposal	[ucd=meta.id]
+#Column	RAJ2000	(F9.5)	? Median pointing RA (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	? Median pointing Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Obs0	(A19)	? Observation start date (UT)	[ucd=time.epoch]
+#Column	ObsDur	(I7)	? Observation on-time	[ucd=time.expo]
+#Column	Image	(A1)	[YN] Epic image of this observation (FITS)	[ucd=meta.ref.url]
+#Column	FITS	(A4)	FITS: retrieve the FITS image from the XMM Archive (column added by CDS)	[ucd=meta.ref.url]
+#Column	PPSp	(A4)	Retrieve PPS products at XMM for this exposure	[ucd=]
+#### B/swift/swiftlog
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:57 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:57	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/swift/swiftlog&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_102039
+#Name: B/swift
+#Title: Swift Master Catalog (HEASARC, 2004-)
+#INFO	ivoid=ivo://cds.vizier/b/swift	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/swift	    IVOID of underlying data collection
+#INFO	creator=Nasa	    First author or institution
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/swift	    Dataset landing page
+#INFO	publication_date=2026-08-02	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	B_swift_swiftlog:
+#Name: B/swift/swiftlog
+#Title: SWIFT logs
+#Column	_r	(F6.3)	Distance from center (358.70015000-81.67908000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	name	(a60)	? The pointed target name (1)	[ucd=meta.id;src]
+#Column	obsid	(A11)	? numerical value assigned automatically (2)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F12.8)	? Right ascension (J2000) (ra) (3)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F12.8)	? Declination (J2000) (de) (4)	[ucd=pos.eq.dec;meta.main]
+#Column	start_time	(A23)	Start time of the observation (MJD)(start_time) (5)	[ucd=time.start;obs]
+#Column	ID	(I7)	Uniq identifier for each target (target_id) (12)	[ucd=meta.id]
+#Column	stop_time	(A23)	Stop time of the observation (MJD) (stop_time)(14)	[ucd=time.end;obs]
+#Column	prnb	(I8)	Proposal number of the observation (43)	[ucd=meta.number]
+#Column	cycle	(I2)	? Proposal cycle number of the observation (55)	[ucd=meta.number]
+#Column	links	(a7)	Full Swift Observation directory (HEASARC)	[ucd=meta.ref.url]
+#### B/cb/cbdat
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:33:57 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:33:57	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B/cb/cbdat&-c=358.70015+-81.67908&-c.rs=60&-out.max=50&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	Error=Table or Catalog not found: B/cb/cbdat	

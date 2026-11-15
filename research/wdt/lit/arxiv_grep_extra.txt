@@ -1,0 +1,15 @@
+
+### full-text grep of 10 papers (arxiv.org/html, falling back to PDF text, then /abs); patterns ['2354-81', '2354−81', '2354–81', '2354$-$81', '235447', '235448', '235419', '235420', 'J2354', '6350786278796634112', '358.58', '358.70', '358.69']
+2604.09845 [html, 235388 chars] hits=[] :: (given on command line)
+2607.09851 [html, 1054061 chars] hits=[] :: (given on command line)
+2609.13433 [html, 666633 chars] hits=[] :: (given on command line)
+2609.03017 [html, 396466 chars] hits=[] :: (given on command line)
+2412.04597 [html, 971309 chars] hits=['J2354'] :: (given on command line)
+    J2354: ... encoding="application/x-tex">-060947.02 and WD J235432.47<math id="S2.SS1.SSS2.p5.m2" class="ltx_Math" alttext="+" display="inline" ...
+    J2354: ...href="#bib.bib51" title="" class="ltx_ref">51] sample. We suggest WD J235432.47<math id="S2.SS1.SSS2.p5.m4" class="ltx_Math" alttext="+" display="inline" ...
+    J2354: ...ication/x-tex">-060947.02 and UKIDSS LAS for WD J235432.47<math id="S2.SS1.SSS2.p5.m6" class="ltx_Math" alttext="+" display="inline" ...
+2312.10158 [html, 230508 chars] hits=[] :: (given on command line)
+2007.15389 [html, 314073 chars] hits=[] :: (given on command line)
+2301.02101 [pdf-text (html HTTPError), 51361 chars] hits=[] :: (given on command line)
+2204.09739 [pdf-text (html HTTPError), 108197 chars] hits=[] :: (given on command line)
+1911.00125 [pdf-text (html HTTPError), 48937 chars] hits=[] :: (given on command line)

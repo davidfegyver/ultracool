@@ -1,0 +1,82 @@
+# Rothermich+2024 (2024AJ....167..253R) local copies: match counts per file, 2026-11-15T08:26:16Z
+ 45840 discovery2/raw/rothermich_table1.tsv
+ 35411 discovery2/raw/rothermich_table2.tsv
+ 14185 discovery2/raw/rothermich_table11.tsv
+ 10289 discovery2/raw/rothermich_tables_list.tsv
+  5224 discovery2/raw/rothermich_table3_lowprob.txt
+  3624 discovery2/raw/rothermich_table4_spectra.txt
+246144 verification/rothermich_text.txt
+360717 total
+## '2354'
+  discovery2/raw/rothermich_table1.tsv               0
+  discovery2/raw/rothermich_table2.tsv               0
+  discovery2/raw/rothermich_table11.tsv              0
+  discovery2/raw/rothermich_tables_list.tsv          0
+  discovery2/raw/rothermich_table3_lowprob.txt       0
+  discovery2/raw/rothermich_table4_spectra.txt       0
+  verification/rothermich_text.txt                   0
+## '235447'
+  discovery2/raw/rothermich_table1.tsv               0
+  discovery2/raw/rothermich_table2.tsv               0
+  discovery2/raw/rothermich_table11.tsv              0
+  discovery2/raw/rothermich_tables_list.tsv          0
+  discovery2/raw/rothermich_table3_lowprob.txt       0
+  discovery2/raw/rothermich_table4_spectra.txt       0
+  verification/rothermich_text.txt                   0
+## '235448'
+  discovery2/raw/rothermich_table1.tsv               0
+  discovery2/raw/rothermich_table2.tsv               0
+  discovery2/raw/rothermich_table11.tsv              0
+  discovery2/raw/rothermich_tables_list.tsv          0
+  discovery2/raw/rothermich_table3_lowprob.txt       0
+  discovery2/raw/rothermich_table4_spectra.txt       0
+  verification/rothermich_text.txt                   0
+## '235419'
+  discovery2/raw/rothermich_table1.tsv               0
+  discovery2/raw/rothermich_table2.tsv               0
+  discovery2/raw/rothermich_table11.tsv              0
+  discovery2/raw/rothermich_tables_list.tsv          0
+  discovery2/raw/rothermich_table3_lowprob.txt       0
+  discovery2/raw/rothermich_table4_spectra.txt       0
+  verification/rothermich_text.txt                   0
+## '6350786278796634112'
+  discovery2/raw/rothermich_table1.tsv               0
+  discovery2/raw/rothermich_table2.tsv               0
+  discovery2/raw/rothermich_table11.tsv              0
+  discovery2/raw/rothermich_tables_list.tsv          0
+  discovery2/raw/rothermich_table3_lowprob.txt       0
+  discovery2/raw/rothermich_table4_spectra.txt       0
+  verification/rothermich_text.txt                   0
+## '358.7'
+  discovery2/raw/rothermich_table1.tsv               0
+  discovery2/raw/rothermich_table2.tsv               0
+  discovery2/raw/rothermich_table11.tsv              0
+  discovery2/raw/rothermich_tables_list.tsv          0
+  discovery2/raw/rothermich_table3_lowprob.txt       0
+  discovery2/raw/rothermich_table4_spectra.txt       0
+  verification/rothermich_text.txt                   0
+## '358.58'
+  discovery2/raw/rothermich_table1.tsv               0
+  discovery2/raw/rothermich_table2.tsv               0
+  discovery2/raw/rothermich_table11.tsv              0
+  discovery2/raw/rothermich_tables_list.tsv          0
+  discovery2/raw/rothermich_table3_lowprob.txt       0
+  discovery2/raw/rothermich_table4_spectra.txt       0
+  verification/rothermich_text.txt                   0
+## 'J2354'
+  discovery2/raw/rothermich_table1.tsv               0
+  discovery2/raw/rothermich_table2.tsv               0
+  discovery2/raw/rothermich_table11.tsv              0
+  discovery2/raw/rothermich_tables_list.tsv          0
+  discovery2/raw/rothermich_table3_lowprob.txt       0
+  discovery2/raw/rothermich_table4_spectra.txt       0
+  verification/rothermich_text.txt                   0
+## '2358'
+  discovery2/raw/rothermich_table1.tsv               3
+  discovery2/raw/rothermich_table2.tsv               2
+  discovery2/raw/rothermich_table11.tsv              1
+  discovery2/raw/rothermich_tables_list.tsv          0
+  discovery2/raw/rothermich_table3_lowprob.txt       0
+  discovery2/raw/rothermich_table4_spectra.txt       0
+  verification/rothermich_text.txt                   5
+# '2358' is the positive control (J2358-5218 is a Rothermich Table 1 pair).

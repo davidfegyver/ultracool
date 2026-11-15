@@ -1,0 +1,431 @@
+#### J/A+A/649/A6/* @ 358.70015 -81.67908
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:39 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:39	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fA%2bA%2f649%2fA6%2f%2a&-c=358.70015+-81.67908&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=8	
+#  8 catalogues with potential matches were examined.
+#
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_36490006
+#Name: J/A+A/649/A6
+#Title: Gaia Catalogue of Nearby Stars - GCNS (Gaia collaboration, 2021)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/649/a6	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/649/a6	    IVOID of underlying data collection
+#INFO	creator=Gaia collaboration	    First author or institution
+#INFO	cites=bibcode:2021A&A...649A...6G	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2021	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/649/A6	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36490006	    Dataset identifier that can be used for citation
+#INFO	publication_date=2021-12-07	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2016.000:	ICRS
+#Table	J_A_A_649_A6_table1c:
+#Name: J/A+A/649/A6/table1c
+#Title: Selected objects
+#Column	_r	(F6.3)	Distance from center (358.7001500-81.6790800)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	GaiaEDR3	(I19)	Gaia EDR3 source ID (source_id)	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F11.7)	Right ascension (ICRS) at Ep=2016.0 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F8.5)	Error on RAdeg (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F11.7)	Declination (ICRS) at Ep=2016.0 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F8.5)	Error on DEdeg (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	Plx	(F9.3)	Parallax (parallax)	[ucd=pos.parallax]
+#Column	e_Plx	(F8.5)	Parallax error (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F9.3)	Proper motion in RA, pmRA*cosDE (pmra)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F8.5)	RA proper motion error (pmra_error)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	Proper motion in DE (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F8.5)	DE proper motion error (pmdec_error)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Gmag	(F8.4)	? Gaia G Band magnitude (phot_g_mean_mag)	[ucd=phot.mag;stat.mean;em.opt]
+#Column	RFG	(F9.2)	? Flux to flux error ratio in G band (phot_g_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	BPmag	(F8.4)	? Gaia BP Band magnitude (phot_bp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.B]
+#Column	RFBP	(F9.2)	? Flux to flux error ratio in BP band (phot_bp_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	RPmag	(F8.4)	? Gaia RP Band magnitude (phot_rp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.R]
+#Column	RFRP	(F9.2)	? Flux to flux error ratio in RP band (phot_rp_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	E(BP/RP)	(F8.4)	? BP/RP excess factor (phot_bp_rp_excess_factor)	[ucd=stat.value]
+#Column	RUWE	(F5.2)	Renormalised Error (ruwe)	[ucd=stat.error]
+#Column	IPDfmp	(I3)	Double peak flag (ipd_frac_multi_peak)	[ucd=meta.code]
+#Column	RV	(F8.3)	? Adopted Radial Velocity (adoptedRV)	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F8.4)	? Error in adopted RV (adoptedRV_error)	[ucd=stat.error]
+#Column	r_RV	(A19)	Reference bibcode for RV (adoptedRV_refname)	[ucd=meta.ref;pos.frame]
+#Column	f_RV	(A1)	? T/F if eDR3 RV (radial_velocity_is_valid)	[ucd=meta.code]
+#Column	GCNSprob	(F6.3)	? Good astrometry probability (GCNS_prob)	[ucd=stat.fit.goodness]
+#Column	WDprob	(F6.3)	? White dwarf probability (WD_prob)	[ucd=stat.fit.goodness]
+#Column	Dist1	(F12.5)	? 1% distance (dist_1)	[ucd=pos.distance;stat.error;stat.min]
+#Column	Dist16	(F12.5)	? 16% distance (dist_16)	[ucd=pos.distance;stat.error;stat.min]
+#Column	Dist50	(F12.5)	? 50% distance (dist_50)	[ucd=pos.distance]
+#Column	Dist84	(F12.5)	? 84% distance (dist_84)	[ucd=pos.distance;stat.error;stat.max]
+#Column	xcoord50	(F12.5)	? x in Galactic frame (xcoord_50)	[ucd=pos.cartesian.x;pos.galactic]
+#Column	xcoord16	(F12.5)	? x 1 sigma lower bound (xcoord_16)	[ucd=stat.stdev;pos.cartesian.x;stat.min]
+#Column	xcoord84	(F12.5)	? x 1 sigma upper bound (xcoord_84)	[ucd=stat.stdev;pos.cartesian.x;stat.max]
+#Column	ycoord50	(F12.5)	? y in Galactic frame (ycoord_50)	[ucd=pos.cartesian.y;pos.galactic]
+#Column	ycoord16	(F12.5)	? y 1 sigma lower bound (ycoord_16)	[ucd=stat.stdev;pos.cartesian.y;stat.min]
+#Column	ycoord84	(F12.5)	? y 1 sigma upper bound (ycoord_84)	[ucd=stat.stdev;pos.cartesian.y;stat.max]
+#Column	zcoord50	(F12.5)	? z in Galactic frame (zcoord_50)	[ucd=pos.cartesian.z;pos.galactic]
+#Column	zcoord16	(F12.5)	? z 1 sigma lower bound (zcoord_16)	[ucd=stat.stdev;pos.cartesian.z;stat.min]
+#Column	zcoord84	(F12.5)	? z 1 sigma upper bound (zcoord_84)	[ucd=stat.stdev;pos.cartesian.z;stat.max]
+#Column	Uvel50	(F8.3)	? U in Galactic frame (uvel_50)	[ucd=phys.veloc;pos.cartesian.x]
+#Column	Uvel16	(F8.3)	? U 1 sigma lower bound (uvel_16)	[ucd=phys.veloc;pos.cartesian.x;stat.error]
+#Column	Uvel84	(F8.3)	? U 1 sigma upper bound (uvel_84)	[ucd=phys.veloc;pos.cartesian.x;stat.error]
+#Column	Vvel50	(F8.3)	? V in Galactic frame (vvel_50)	[ucd=phys.veloc;pos.cartesian.y]
+#Column	Vvel16	(F8.3)	? V 1 sigma lower bound (vvel_16)	[ucd=phys.veloc;pos.cartesian.y;stat.error]
+#Column	Vvel84	(F8.3)	? V 1 sigma upper bound (vvel_84)	[ucd=phys.veloc;pos.cartesian.y;stat.error]
+#Column	Wvel50	(F8.3)	? W in Galactic frame (wvel_50)	[ucd=phys.veloc;pos.cartesian.z]
+#Column	Wvel16	(F8.3)	? W 1 sigma lower bound (wvel_16)	[ucd=phys.veloc;pos.cartesian.z;stat.error]
+#Column	Wvel84	(F8.3)	? W 1 sigma upper bound (wvel_84)	[ucd=phys.veloc;pos.cartesian.z;stat.error]
+#Column	GUNN	(A20)	? Name in external catalogue, HHMMSS.ss+DDMMSS.s, PSO JHHMMSS.ss+DDMMSS.s or NNNNNNNNNNNNNNNNNNN (Gaia DR2 source_id) (NAME_GUNN)	[ucd=meta.id]
+#Column	r_GUNN	(A19)	? GUNN reference bibcode (REFNAME_GUNN) (1)	[ucd=meta.ref;pos.frame]
+#Column	gmag	(F7.3)	? GUNN g magnitude (gmag_GUNN)	[ucd=phot.mag;em.opt.B]
+#Column	e_gmag	(F7.3)	? Error on gmag (e_gmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	rmag	(F7.3)	? GUNN r magnitude (rmag_GUNN)	[ucd=phot.mag;em.opt.R]
+#Column	e_rmag	(F7.3)	? Error on rmag (e_rmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	imag	(F7.3)	? GUNN i magnitude (imag_GUNN)	[ucd=phot.mag;em.opt.I]
+#Column	e_imag	(F7.3)	? Error on imag (e_imag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	zmag	(F7.3)	? GUNN z magnitude (zmag_GUNN)	[ucd=phot.mag;em.opt.I]
+#Column	e_zmag	(F7.3)	? Error on zmag (e_zmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	2MASS	(A17)	? 2MASS name, HHMMSSss+DDMMSSs (NAME_2MASS) (2)	[ucd=meta.id]
+#Column	Jmag	(F7.3)	? J magnitude (j_m_2MASS)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag	(F7.3)	? Error on Jmag (j_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	Hmag	(F7.3)	? H magnitude (h_m_2MASS)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hmag	(F7.3)	? Error on Hmag (h_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	Ksmag	(F7.3)	? Ks magnitude (k_m_2MASS)	[ucd=phot.mag;em.IR.K]
+#Column	e_Ksmag	(F7.3)	? Error on Ksmag (k_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	WISE	(A20)	? CATWISE name, JHHMMSS.ss+DDMMSS.s (NAME_WISE) (3)	[ucd=meta.id]
+#Column	W1mag	(F7.3)	? CATWISE W1 magnitude (w1mpro_pm_WISE)	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1mag	(F7.3)	? Error on W1mag (w1sigmpro_pm_WISE)	[ucd=stat.error;phot.mag]
+#Column	W2mag	(F7.3)	? CATWISE W2 magnitude (w2mpro_pm_WISE)	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2mag	(F7.3)	? Error on W2mag (w2sigmpro_pm_WISE)	[ucd=stat.error;phot.mag]
+#Column	W3mag	(F7.3)	? ALLWISE W3 magnitude (w3mpro_WISE)	[ucd=phot.flux.density;em.IR.8-15um]
+#Column	e_W3mag	(F7.3)	? Error on W3mag (w3sigmpro_WISE)	[ucd=stat.error;phot.mag]
+#Column	W4mag	(F7.3)	? ALLWISE W4 magnitude (w4mpro_WISE)	[ucd=phot.flux.density;em.IR.15-30um]
+#Column	e_W4mag	(F7.3)	? Error on W4mag (w4sigmpro_WISE)	[ucd=stat.error;phot.mag]
+#Column	GAIAEDR3Cat	(a11)	Display the Gaia EDR3 (Cat. I/350) data	[ucd=meta.ref.url]
+#Column	_RA.icrs	(F11.7)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F11.7)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Table	J_A_A_649_A6_table1r:
+#Name: J/A+A/649/A6/table1r
+#Title: Rejected objects
+#Column	_r	(F6.3)	Distance from center (358.7001500-81.6790800)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	GaiaEDR3	(I19)	Gaia EDR3 source ID (source_id)	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F11.7)	Right ascension (ICRS) at Ep=2016.0 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F8.5)	Error on RAdeg (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F11.7)	Declination (ICRS) at Ep=2016.0 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F8.5)	Error on DEdeg (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	Plx	(F9.3)	Parallax (parallax)	[ucd=pos.parallax]
+#Column	e_Plx	(F8.5)	Parallax error (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F9.3)	Proper motion in RA, pmRA*cosDE (pmra)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F8.5)	RA proper motion error (pmra_error)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	Proper motion in DE (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F8.5)	DE proper motion error (pmdec_error)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Gmag	(F8.4)	? Gaia G Band magnitude (phot_g_mean_mag)	[ucd=phot.mag;stat.mean;em.opt]
+#Column	RFG	(F9.2)	? Flux to flux error ratio in G band (phot_g_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	BPmag	(F8.4)	? Gaia BP Band magnitude (phot_bp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.B]
+#Column	RFBP	(F9.2)	? Flux to flux error ratio in BP band (phot_bp_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	RPmag	(F8.4)	? Gaia RP Band magnitude (phot_rp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.R]
+#Column	RFRP	(F9.2)	? Flux to flux error ratio in RP band (phot_rp_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	E(BP/RP)	(F8.4)	? BP/RP excess factor (phot_bp_rp_excess_factor)	[ucd=stat.value]
+#Column	RUWE	(F5.2)	Renormalised Error (ruwe)	[ucd=stat.error]
+#Column	IPDfmp	(I3)	Double peak flag (ipd_frac_multi_peak)	[ucd=meta.code]
+#Column	RV	(F8.3)	? Adopted Radial Velocity (adoptedRV)	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F8.4)	? Error in adopted RV (adoptedRV_error)	[ucd=stat.error]
+#Column	r_RV	(A19)	Reference bibcode for RV (adoptedRV_refname)	[ucd=meta.ref;pos.frame]
+#Column	f_RV	(A1)	? T/F if eDR3 RV (radial_velocity_is_valid)	[ucd=meta.code]
+#Column	GCNSprob	(F6.3)	? Good astrometry probability (GCNS_prob)	[ucd=stat.fit.goodness]
+#Column	WDprob	(F6.3)	? White dwarf probability (WD_prob)	[ucd=stat.fit.goodness]
+#Column	Dist1	(F12.5)	? 1% distance (dist_1)	[ucd=pos.distance;stat.error;stat.min]
+#Column	Dist16	(F12.5)	? 16% distance (dist_16)	[ucd=pos.distance;stat.error;stat.min]
+#Column	Dist50	(F12.5)	? 50% distance (dist_50)	[ucd=pos.distance]
+#Column	Dist84	(F12.5)	? 84% distance (dist_84)	[ucd=pos.distance;stat.error;stat.max]
+#Column	xcoord50	(F12.5)	? x in Galactic frame (xcoord_50)	[ucd=pos.cartesian.x;pos.galactic]
+#Column	xcoord16	(F12.5)	? x 1 sigma lower bound (xcoord_16)	[ucd=stat.stdev;pos.cartesian.x;stat.min]
+#Column	xcoord84	(F12.5)	? x 1 sigma upper bound (xcoord_84)	[ucd=stat.stdev;pos.cartesian.x;stat.max]
+#Column	ycoord50	(F12.5)	? y in Galactic frame (ycoord_50)	[ucd=pos.cartesian.y;pos.galactic]
+#Column	ycoord16	(F12.5)	? y 1 sigma lower bound (ycoord_16)	[ucd=stat.stdev;pos.cartesian.y;stat.min]
+#Column	ycoord84	(F12.5)	? y 1 sigma upper bound (ycoord_84)	[ucd=stat.stdev;pos.cartesian.y;stat.max]
+#Column	zcoord50	(F12.5)	? z in Galactic frame (zcoord_50)	[ucd=pos.cartesian.z;pos.galactic]
+#Column	zcoord16	(F12.5)	? z 1 sigma lower bound (zcoord_16)	[ucd=stat.stdev;pos.cartesian.z;stat.min]
+#Column	zcoord84	(F12.5)	? z 1 sigma upper bound (zcoord_84)	[ucd=stat.stdev;pos.cartesian.z;stat.max]
+#Column	Uvel50	(F8.3)	? U in Galactic frame (uvel_50)	[ucd=phys.veloc;pos.cartesian.x]
+#Column	Uvel16	(F8.3)	? U 1 sigma lower bound (uvel_16)	[ucd=phys.veloc;pos.cartesian.x;stat.error]
+#Column	Uvel84	(F8.3)	? U 1 sigma upper bound (uvel_84)	[ucd=phys.veloc;pos.cartesian.x;stat.error]
+#Column	Vvel50	(F8.3)	? V in Galactic frame (vvel_50)	[ucd=phys.veloc;pos.cartesian.y]
+#Column	Vvel16	(F8.3)	? V 1 sigma lower bound (vvel_16)	[ucd=phys.veloc;pos.cartesian.y;stat.error]
+#Column	Vvel84	(F8.3)	? V 1 sigma upper bound (vvel_84)	[ucd=phys.veloc;pos.cartesian.y;stat.error]
+#Column	Wvel50	(F8.3)	? W in Galactic frame (wvel_50)	[ucd=phys.veloc;pos.cartesian.z]
+#Column	Wvel16	(F8.3)	? W 1 sigma lower bound (wvel_16)	[ucd=phys.veloc;pos.cartesian.z;stat.error]
+#Column	Wvel84	(F8.3)	? W 1 sigma upper bound (wvel_84)	[ucd=phys.veloc;pos.cartesian.z;stat.error]
+#Column	GUNN	(A20)	? Name in external catalogue, HHMMSS.ss+DDMMSS.s, PSO JHHMMSS.ss+DDMMSS.s or NNNNNNNNNNNNNNNNNNN (Gaia DR2 source_id) (NAME_GUNN)	[ucd=meta.id]
+#Column	r_GUNN	(A19)	? GUNN reference bibcode (REFNAME_GUNN) (1)	[ucd=meta.ref;pos.frame]
+#Column	gmag	(F7.3)	? GUNN g magnitude (gmag_GUNN)	[ucd=phot.mag;em.opt.B]
+#Column	e_gmag	(F7.3)	? Error on gmag (e_gmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	rmag	(F7.3)	? GUNN r magnitude (rmag_GUNN)	[ucd=phot.mag;em.opt.R]
+#Column	e_rmag	(F7.3)	? Error on rmag (e_rmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	imag	(F7.3)	? GUNN i magnitude (imag_GUNN)	[ucd=phot.mag;em.opt.I]
+#Column	e_imag	(F7.3)	? Error on imag (e_imag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	zmag	(F7.3)	? GUNN z magnitude (zmag_GUNN)	[ucd=phot.mag;em.opt.I]
+#Column	e_zmag	(F7.3)	? Error on zmag (e_zmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	2MASS	(A17)	? 2MASS name, HHMMSSss+DDMMSSs (NAME_2MASS) (2)	[ucd=meta.id]
+#Column	Jmag	(F7.3)	? J magnitude (j_m_2MASS)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag	(F7.3)	? Error on Jmag (j_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	Hmag	(F7.3)	? H magnitude (h_m_2MASS)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hmag	(F7.3)	? Error on Hmag (h_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	Ksmag	(F7.3)	? Ks magnitude (k_m_2MASS)	[ucd=phot.mag;em.IR.K]
+#Column	e_Ksmag	(F7.3)	? Error on Ksmag (k_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	WISE	(A20)	? CATWISE name, JHHMMSS.ss+DDMMSS.s (NAME_WISE) (3)	[ucd=meta.id]
+#Column	W1mag	(F7.3)	? CATWISE W1 magnitude (w1mpro_pm_WISE)	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1mag	(F7.3)	? Error on W1mag (w1sigmpro_pm_WISE)	[ucd=stat.error;phot.mag]
+#Column	W2mag	(F7.3)	? CATWISE W2 magnitude (w2mpro_pm_WISE)	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2mag	(F7.3)	? Error on W2mag (w2sigmpro_pm_WISE)	[ucd=stat.error;phot.mag]
+#Column	W3mag	(F7.3)	? ALLWISE W3 magnitude (w3mpro_WISE)	[ucd=phot.flux.density;em.IR.8-15um]
+#Column	e_W3mag	(F7.3)	? Error on W3mag (w3sigmpro_WISE)	[ucd=stat.error;phot.mag]
+#Column	W4mag	(F7.3)	? ALLWISE W4 magnitude (w4mpro_WISE)	[ucd=phot.flux.density;em.IR.15-30um]
+#Column	e_W4mag	(F7.3)	? Error on W4mag (w4sigmpro_WISE)	[ucd=stat.error;phot.mag]
+#Column	GAIAEDR3Cat	(a11)	Display the Gaia EDR3 (Cat. I/350) data	[ucd=meta.ref.url]
+#Column	_RA.icrs	(F11.7)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F11.7)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Coosys	H_2000.000:	ICRS
+#Table	J_A_A_649_A6_missing:
+#Name: J/A+A/649/A6/missing
+#Title: Objects with parallax > 10mas
+#Column	_r	(F6.3)	Distance from center (358.700150-81.679080)[ICRS], at Epoch=J2000.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Name	(a26)	Simbad source name (main_id)	[ucd=meta.id;meta.main]
+#Column	RAICRS	(F10.6)	Right ascension (ICRS, epoch 2000.0) (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DEICRS	(F10.6)	Declination (ICRS, epoch 2000.0) (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	plx	(F7.3)	Parallax (plx_value)	[ucd=pos.parallax.trig]
+#Column	r_plx	(A19)	Reference bibcode for parallax (plx_bibcode)	[ucd=meta.ref;pos.frame]
+#Column	Type	(A4)	Simbad object type (otype_txt)	[ucd=src.class]
+#Column	SimbadName	(f)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA.icrs	(F10.6)	Right ascension (ICRS) at Epoch=J2000. (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F10.6)	Declination (ICRS) at Epoch=J2000. (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.dec]
+#### J/A+A/649/A6/* @ 358.58383 -81.68455
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:39 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:39	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fA%2bA%2f649%2fA6%2f%2a&-c=358.58383+-81.68455&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=8	
+#  8 catalogues with potential matches were examined.
+#
+#INFO	-c=358.583830-81.684550,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_36490006
+#Name: J/A+A/649/A6
+#Title: Gaia Catalogue of Nearby Stars - GCNS (Gaia collaboration, 2021)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/649/a6	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/649/a6	    IVOID of underlying data collection
+#INFO	creator=Gaia collaboration	    First author or institution
+#INFO	cites=bibcode:2021A&A...649A...6G	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2021	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/649/A6	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36490006	    Dataset identifier that can be used for citation
+#INFO	publication_date=2021-12-07	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2016.000:	ICRS
+#Table	J_A_A_649_A6_table1c:
+#Name: J/A+A/649/A6/table1c
+#Title: Selected objects
+#Column	_r	(F6.3)	Distance from center (358.5838300-81.6845500)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	GaiaEDR3	(I19)	Gaia EDR3 source ID (source_id)	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F11.7)	Right ascension (ICRS) at Ep=2016.0 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F8.5)	Error on RAdeg (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F11.7)	Declination (ICRS) at Ep=2016.0 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F8.5)	Error on DEdeg (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	Plx	(F9.3)	Parallax (parallax)	[ucd=pos.parallax]
+#Column	e_Plx	(F8.5)	Parallax error (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F9.3)	Proper motion in RA, pmRA*cosDE (pmra)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F8.5)	RA proper motion error (pmra_error)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	Proper motion in DE (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F8.5)	DE proper motion error (pmdec_error)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Gmag	(F8.4)	? Gaia G Band magnitude (phot_g_mean_mag)	[ucd=phot.mag;stat.mean;em.opt]
+#Column	RFG	(F9.2)	? Flux to flux error ratio in G band (phot_g_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	BPmag	(F8.4)	? Gaia BP Band magnitude (phot_bp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.B]
+#Column	RFBP	(F9.2)	? Flux to flux error ratio in BP band (phot_bp_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	RPmag	(F8.4)	? Gaia RP Band magnitude (phot_rp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.R]
+#Column	RFRP	(F9.2)	? Flux to flux error ratio in RP band (phot_rp_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	E(BP/RP)	(F8.4)	? BP/RP excess factor (phot_bp_rp_excess_factor)	[ucd=stat.value]
+#Column	RUWE	(F5.2)	Renormalised Error (ruwe)	[ucd=stat.error]
+#Column	IPDfmp	(I3)	Double peak flag (ipd_frac_multi_peak)	[ucd=meta.code]
+#Column	RV	(F8.3)	? Adopted Radial Velocity (adoptedRV)	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F8.4)	? Error in adopted RV (adoptedRV_error)	[ucd=stat.error]
+#Column	r_RV	(A19)	Reference bibcode for RV (adoptedRV_refname)	[ucd=meta.ref;pos.frame]
+#Column	f_RV	(A1)	? T/F if eDR3 RV (radial_velocity_is_valid)	[ucd=meta.code]
+#Column	GCNSprob	(F6.3)	? Good astrometry probability (GCNS_prob)	[ucd=stat.fit.goodness]
+#Column	WDprob	(F6.3)	? White dwarf probability (WD_prob)	[ucd=stat.fit.goodness]
+#Column	Dist1	(F12.5)	? 1% distance (dist_1)	[ucd=pos.distance;stat.error;stat.min]
+#Column	Dist16	(F12.5)	? 16% distance (dist_16)	[ucd=pos.distance;stat.error;stat.min]
+#Column	Dist50	(F12.5)	? 50% distance (dist_50)	[ucd=pos.distance]
+#Column	Dist84	(F12.5)	? 84% distance (dist_84)	[ucd=pos.distance;stat.error;stat.max]
+#Column	xcoord50	(F12.5)	? x in Galactic frame (xcoord_50)	[ucd=pos.cartesian.x;pos.galactic]
+#Column	xcoord16	(F12.5)	? x 1 sigma lower bound (xcoord_16)	[ucd=stat.stdev;pos.cartesian.x;stat.min]
+#Column	xcoord84	(F12.5)	? x 1 sigma upper bound (xcoord_84)	[ucd=stat.stdev;pos.cartesian.x;stat.max]
+#Column	ycoord50	(F12.5)	? y in Galactic frame (ycoord_50)	[ucd=pos.cartesian.y;pos.galactic]
+#Column	ycoord16	(F12.5)	? y 1 sigma lower bound (ycoord_16)	[ucd=stat.stdev;pos.cartesian.y;stat.min]
+#Column	ycoord84	(F12.5)	? y 1 sigma upper bound (ycoord_84)	[ucd=stat.stdev;pos.cartesian.y;stat.max]
+#Column	zcoord50	(F12.5)	? z in Galactic frame (zcoord_50)	[ucd=pos.cartesian.z;pos.galactic]
+#Column	zcoord16	(F12.5)	? z 1 sigma lower bound (zcoord_16)	[ucd=stat.stdev;pos.cartesian.z;stat.min]
+#Column	zcoord84	(F12.5)	? z 1 sigma upper bound (zcoord_84)	[ucd=stat.stdev;pos.cartesian.z;stat.max]
+#Column	Uvel50	(F8.3)	? U in Galactic frame (uvel_50)	[ucd=phys.veloc;pos.cartesian.x]
+#Column	Uvel16	(F8.3)	? U 1 sigma lower bound (uvel_16)	[ucd=phys.veloc;pos.cartesian.x;stat.error]
+#Column	Uvel84	(F8.3)	? U 1 sigma upper bound (uvel_84)	[ucd=phys.veloc;pos.cartesian.x;stat.error]
+#Column	Vvel50	(F8.3)	? V in Galactic frame (vvel_50)	[ucd=phys.veloc;pos.cartesian.y]
+#Column	Vvel16	(F8.3)	? V 1 sigma lower bound (vvel_16)	[ucd=phys.veloc;pos.cartesian.y;stat.error]
+#Column	Vvel84	(F8.3)	? V 1 sigma upper bound (vvel_84)	[ucd=phys.veloc;pos.cartesian.y;stat.error]
+#Column	Wvel50	(F8.3)	? W in Galactic frame (wvel_50)	[ucd=phys.veloc;pos.cartesian.z]
+#Column	Wvel16	(F8.3)	? W 1 sigma lower bound (wvel_16)	[ucd=phys.veloc;pos.cartesian.z;stat.error]
+#Column	Wvel84	(F8.3)	? W 1 sigma upper bound (wvel_84)	[ucd=phys.veloc;pos.cartesian.z;stat.error]
+#Column	GUNN	(A20)	? Name in external catalogue, HHMMSS.ss+DDMMSS.s, PSO JHHMMSS.ss+DDMMSS.s or NNNNNNNNNNNNNNNNNNN (Gaia DR2 source_id) (NAME_GUNN)	[ucd=meta.id]
+#Column	r_GUNN	(A19)	? GUNN reference bibcode (REFNAME_GUNN) (1)	[ucd=meta.ref;pos.frame]
+#Column	gmag	(F7.3)	? GUNN g magnitude (gmag_GUNN)	[ucd=phot.mag;em.opt.B]
+#Column	e_gmag	(F7.3)	? Error on gmag (e_gmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	rmag	(F7.3)	? GUNN r magnitude (rmag_GUNN)	[ucd=phot.mag;em.opt.R]
+#Column	e_rmag	(F7.3)	? Error on rmag (e_rmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	imag	(F7.3)	? GUNN i magnitude (imag_GUNN)	[ucd=phot.mag;em.opt.I]
+#Column	e_imag	(F7.3)	? Error on imag (e_imag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	zmag	(F7.3)	? GUNN z magnitude (zmag_GUNN)	[ucd=phot.mag;em.opt.I]
+#Column	e_zmag	(F7.3)	? Error on zmag (e_zmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	2MASS	(A17)	? 2MASS name, HHMMSSss+DDMMSSs (NAME_2MASS) (2)	[ucd=meta.id]
+#Column	Jmag	(F7.3)	? J magnitude (j_m_2MASS)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag	(F7.3)	? Error on Jmag (j_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	Hmag	(F7.3)	? H magnitude (h_m_2MASS)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hmag	(F7.3)	? Error on Hmag (h_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	Ksmag	(F7.3)	? Ks magnitude (k_m_2MASS)	[ucd=phot.mag;em.IR.K]
+#Column	e_Ksmag	(F7.3)	? Error on Ksmag (k_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	WISE	(A20)	? CATWISE name, JHHMMSS.ss+DDMMSS.s (NAME_WISE) (3)	[ucd=meta.id]
+#Column	W1mag	(F7.3)	? CATWISE W1 magnitude (w1mpro_pm_WISE)	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1mag	(F7.3)	? Error on W1mag (w1sigmpro_pm_WISE)	[ucd=stat.error;phot.mag]
+#Column	W2mag	(F7.3)	? CATWISE W2 magnitude (w2mpro_pm_WISE)	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2mag	(F7.3)	? Error on W2mag (w2sigmpro_pm_WISE)	[ucd=stat.error;phot.mag]
+#Column	W3mag	(F7.3)	? ALLWISE W3 magnitude (w3mpro_WISE)	[ucd=phot.flux.density;em.IR.8-15um]
+#Column	e_W3mag	(F7.3)	? Error on W3mag (w3sigmpro_WISE)	[ucd=stat.error;phot.mag]
+#Column	W4mag	(F7.3)	? ALLWISE W4 magnitude (w4mpro_WISE)	[ucd=phot.flux.density;em.IR.15-30um]
+#Column	e_W4mag	(F7.3)	? Error on W4mag (w4sigmpro_WISE)	[ucd=stat.error;phot.mag]
+#Column	GAIAEDR3Cat	(a11)	Display the Gaia EDR3 (Cat. I/350) data	[ucd=meta.ref.url]
+#Column	_RA.icrs	(F11.7)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F11.7)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+_r	recno	GaiaEDR3	RA_ICRS	e_RA_ICRS	DE_ICRS	e_DE_ICRS	Plx	e_Plx	pmRA	e_pmRA	pmDE	e_pmDE	Gmag	RFG	BPmag	RFBP	RPmag	RFRP	E(BP/RP)	RUWE	IPDfmp	RV	e_RV	r_RV	f_RV	GCNSprob	WDprob	Dist1	Dist16	Dist50	Dist84	xcoord50	xcoord16	xcoord84	ycoord50	ycoord16	ycoord84	zcoord50	zcoord16	zcoord84	Uvel50	Uvel16	Uvel84	Vvel50	Vvel16	Vvel84	Wvel50	Wvel16	Wvel84	GUNN	r_GUNN	gmag	e_gmag	rmag	e_rmag	imag	e_imag	zmag	e_zmag	2MASS	Jmag	e_Jmag	Hmag	e_Hmag	Ksmag	e_Ksmag	WISE	W1mag	e_W1mag	W2mag	e_W2mag	W3mag	e_W3mag	W4mag	e_W4mag	GAIAEDR3Cat	_RA.icrs	_DE.icrs
+arcsec	 	 	deg	mas	deg	mas	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	mag	 	mag	 	mag	 	 	 	 	km/s	km/s	 	 	 	 	kpc	kpc	kpc	kpc	pc	pc	pc	pc	pc	pc	pc	pc	pc	km/s	km/s	km/s	km/s	km/s	km/s	km/s	km/s	km/s	 	 	mag	mag	mag	mag	mag	mag	mag	mag	 	mag	mag	mag	mag	mag	mag	 	mag	mag	mag	mag	mag	mag	mag	mag	 	deg	deg
+------	--------	-------------------	-----------	--------	-----------	--------	---------	--------	---------	--------	---------	--------	--------	---------	--------	---------	--------	---------	--------	-----	---	--------	--------	-------------------	-	------	------	------------	------------	------------	------------	------------	------------	------------	------------	------------	------------	------------	------------	------------	--------	--------	--------	--------	--------	--------	--------	--------	--------	--------------------	-------------------	-------	-------	-------	-------	-------	-------	-------	-------	-----------------	-------	-------	-------	-------	-------	-------	--------------------	-------	-------	-------	-------	-------	-------	-------	-------	-----------	-----------	-----------
+ 0.002	  330002	6350786278796634112	358.5838287	 0.05216	-81.6845506	 0.05365	   37.105	 0.06101	   96.033	 0.06587	   36.288	 0.06923	 17.2226	  1387.05	 17.8206	   142.82	 16.5146	   148.62	  1.2261	 1.01	  0	        	        	                   	F	 1.000	 0.965	     0.02685	     0.02691	     0.02695	     0.02700	    12.77429	    12.75411	    12.79506	   -17.95383	   -17.92546	   -17.98302	   -15.52333	   -15.49881	   -15.54857	        	        	        	        	        	        	        	        	        	  235420.06-814104.4	2018PASA...35...10W	 17.675	  0.011	 17.175	  0.014	 16.904	  0.013	 16.710	  0.007	23541939-8141049 	 15.772	  0.076	 15.543	  0.131	 15.068	       	J235420.08-814104.3 	 15.362	  0.016	 15.373	  0.027	 12.997	       	  9.403	       	GAIAEDR3Cat	358.5808774	-81.6847119
+
+#Table	J_A_A_649_A6_table1r:
+#Name: J/A+A/649/A6/table1r
+#Title: Rejected objects
+#Column	_r	(F6.3)	Distance from center (358.5838300-81.6845500)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	GaiaEDR3	(I19)	Gaia EDR3 source ID (source_id)	[ucd=meta.id;meta.main]
+#Column	RA_ICRS	(F11.7)	Right ascension (ICRS) at Ep=2016.0 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F8.5)	Error on RAdeg (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F11.7)	Declination (ICRS) at Ep=2016.0 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F8.5)	Error on DEdeg (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	Plx	(F9.3)	Parallax (parallax)	[ucd=pos.parallax]
+#Column	e_Plx	(F8.5)	Parallax error (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F9.3)	Proper motion in RA, pmRA*cosDE (pmra)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F8.5)	RA proper motion error (pmra_error)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F9.3)	Proper motion in DE (pmdec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F8.5)	DE proper motion error (pmdec_error)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Gmag	(F8.4)	? Gaia G Band magnitude (phot_g_mean_mag)	[ucd=phot.mag;stat.mean;em.opt]
+#Column	RFG	(F9.2)	? Flux to flux error ratio in G band (phot_g_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	BPmag	(F8.4)	? Gaia BP Band magnitude (phot_bp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.B]
+#Column	RFBP	(F9.2)	? Flux to flux error ratio in BP band (phot_bp_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	RPmag	(F8.4)	? Gaia RP Band magnitude (phot_rp_mean_mag)	[ucd=phot.mag;stat.mean;em.opt.R]
+#Column	RFRP	(F9.2)	? Flux to flux error ratio in RP band (phot_rp_mean_flux_over_error)	[ucd=arith.ratio]
+#Column	E(BP/RP)	(F8.4)	? BP/RP excess factor (phot_bp_rp_excess_factor)	[ucd=stat.value]
+#Column	RUWE	(F5.2)	Renormalised Error (ruwe)	[ucd=stat.error]
+#Column	IPDfmp	(I3)	Double peak flag (ipd_frac_multi_peak)	[ucd=meta.code]
+#Column	RV	(F8.3)	? Adopted Radial Velocity (adoptedRV)	[ucd=phys.veloc;pos.heliocentric]
+#Column	e_RV	(F8.4)	? Error in adopted RV (adoptedRV_error)	[ucd=stat.error]
+#Column	r_RV	(A19)	Reference bibcode for RV (adoptedRV_refname)	[ucd=meta.ref;pos.frame]
+#Column	f_RV	(A1)	? T/F if eDR3 RV (radial_velocity_is_valid)	[ucd=meta.code]
+#Column	GCNSprob	(F6.3)	? Good astrometry probability (GCNS_prob)	[ucd=stat.fit.goodness]
+#Column	WDprob	(F6.3)	? White dwarf probability (WD_prob)	[ucd=stat.fit.goodness]
+#Column	Dist1	(F12.5)	? 1% distance (dist_1)	[ucd=pos.distance;stat.error;stat.min]
+#Column	Dist16	(F12.5)	? 16% distance (dist_16)	[ucd=pos.distance;stat.error;stat.min]
+#Column	Dist50	(F12.5)	? 50% distance (dist_50)	[ucd=pos.distance]
+#Column	Dist84	(F12.5)	? 84% distance (dist_84)	[ucd=pos.distance;stat.error;stat.max]
+#Column	xcoord50	(F12.5)	? x in Galactic frame (xcoord_50)	[ucd=pos.cartesian.x;pos.galactic]
+#Column	xcoord16	(F12.5)	? x 1 sigma lower bound (xcoord_16)	[ucd=stat.stdev;pos.cartesian.x;stat.min]
+#Column	xcoord84	(F12.5)	? x 1 sigma upper bound (xcoord_84)	[ucd=stat.stdev;pos.cartesian.x;stat.max]
+#Column	ycoord50	(F12.5)	? y in Galactic frame (ycoord_50)	[ucd=pos.cartesian.y;pos.galactic]
+#Column	ycoord16	(F12.5)	? y 1 sigma lower bound (ycoord_16)	[ucd=stat.stdev;pos.cartesian.y;stat.min]
+#Column	ycoord84	(F12.5)	? y 1 sigma upper bound (ycoord_84)	[ucd=stat.stdev;pos.cartesian.y;stat.max]
+#Column	zcoord50	(F12.5)	? z in Galactic frame (zcoord_50)	[ucd=pos.cartesian.z;pos.galactic]
+#Column	zcoord16	(F12.5)	? z 1 sigma lower bound (zcoord_16)	[ucd=stat.stdev;pos.cartesian.z;stat.min]
+#Column	zcoord84	(F12.5)	? z 1 sigma upper bound (zcoord_84)	[ucd=stat.stdev;pos.cartesian.z;stat.max]
+#Column	Uvel50	(F8.3)	? U in Galactic frame (uvel_50)	[ucd=phys.veloc;pos.cartesian.x]
+#Column	Uvel16	(F8.3)	? U 1 sigma lower bound (uvel_16)	[ucd=phys.veloc;pos.cartesian.x;stat.error]
+#Column	Uvel84	(F8.3)	? U 1 sigma upper bound (uvel_84)	[ucd=phys.veloc;pos.cartesian.x;stat.error]
+#Column	Vvel50	(F8.3)	? V in Galactic frame (vvel_50)	[ucd=phys.veloc;pos.cartesian.y]
+#Column	Vvel16	(F8.3)	? V 1 sigma lower bound (vvel_16)	[ucd=phys.veloc;pos.cartesian.y;stat.error]
+#Column	Vvel84	(F8.3)	? V 1 sigma upper bound (vvel_84)	[ucd=phys.veloc;pos.cartesian.y;stat.error]
+#Column	Wvel50	(F8.3)	? W in Galactic frame (wvel_50)	[ucd=phys.veloc;pos.cartesian.z]
+#Column	Wvel16	(F8.3)	? W 1 sigma lower bound (wvel_16)	[ucd=phys.veloc;pos.cartesian.z;stat.error]
+#Column	Wvel84	(F8.3)	? W 1 sigma upper bound (wvel_84)	[ucd=phys.veloc;pos.cartesian.z;stat.error]
+#Column	GUNN	(A20)	? Name in external catalogue, HHMMSS.ss+DDMMSS.s, PSO JHHMMSS.ss+DDMMSS.s or NNNNNNNNNNNNNNNNNNN (Gaia DR2 source_id) (NAME_GUNN)	[ucd=meta.id]
+#Column	r_GUNN	(A19)	? GUNN reference bibcode (REFNAME_GUNN) (1)	[ucd=meta.ref;pos.frame]
+#Column	gmag	(F7.3)	? GUNN g magnitude (gmag_GUNN)	[ucd=phot.mag;em.opt.B]
+#Column	e_gmag	(F7.3)	? Error on gmag (e_gmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	rmag	(F7.3)	? GUNN r magnitude (rmag_GUNN)	[ucd=phot.mag;em.opt.R]
+#Column	e_rmag	(F7.3)	? Error on rmag (e_rmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	imag	(F7.3)	? GUNN i magnitude (imag_GUNN)	[ucd=phot.mag;em.opt.I]
+#Column	e_imag	(F7.3)	? Error on imag (e_imag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	zmag	(F7.3)	? GUNN z magnitude (zmag_GUNN)	[ucd=phot.mag;em.opt.I]
+#Column	e_zmag	(F7.3)	? Error on zmag (e_zmag_GUNN)	[ucd=stat.error;phot.mag]
+#Column	2MASS	(A17)	? 2MASS name, HHMMSSss+DDMMSSs (NAME_2MASS) (2)	[ucd=meta.id]
+#Column	Jmag	(F7.3)	? J magnitude (j_m_2MASS)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag	(F7.3)	? Error on Jmag (j_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	Hmag	(F7.3)	? H magnitude (h_m_2MASS)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hmag	(F7.3)	? Error on Hmag (h_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	Ksmag	(F7.3)	? Ks magnitude (k_m_2MASS)	[ucd=phot.mag;em.IR.K]
+#Column	e_Ksmag	(F7.3)	? Error on Ksmag (k_msig_2MASS)	[ucd=stat.error;phot.mag]
+#Column	WISE	(A20)	? CATWISE name, JHHMMSS.ss+DDMMSS.s (NAME_WISE) (3)	[ucd=meta.id]
+#Column	W1mag	(F7.3)	? CATWISE W1 magnitude (w1mpro_pm_WISE)	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1mag	(F7.3)	? Error on W1mag (w1sigmpro_pm_WISE)	[ucd=stat.error;phot.mag]
+#Column	W2mag	(F7.3)	? CATWISE W2 magnitude (w2mpro_pm_WISE)	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2mag	(F7.3)	? Error on W2mag (w2sigmpro_pm_WISE)	[ucd=stat.error;phot.mag]
+#Column	W3mag	(F7.3)	? ALLWISE W3 magnitude (w3mpro_WISE)	[ucd=phot.flux.density;em.IR.8-15um]
+#Column	e_W3mag	(F7.3)	? Error on W3mag (w3sigmpro_WISE)	[ucd=stat.error;phot.mag]
+#Column	W4mag	(F7.3)	? ALLWISE W4 magnitude (w4mpro_WISE)	[ucd=phot.flux.density;em.IR.15-30um]
+#Column	e_W4mag	(F7.3)	? Error on W4mag (w4sigmpro_WISE)	[ucd=stat.error;phot.mag]
+#Column	GAIAEDR3Cat	(a11)	Display the Gaia EDR3 (Cat. I/350) data	[ucd=meta.ref.url]
+#Column	_RA.icrs	(F11.7)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F11.7)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+#Coosys	H_2000.000:	ICRS
+#Table	J_A_A_649_A6_missing:
+#Name: J/A+A/649/A6/missing
+#Title: Objects with parallax > 10mas
+#Column	_r	(F6.3)	Distance from center (358.583830-81.684550)[ICRS], at Epoch=J2000.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Name	(a26)	Simbad source name (main_id)	[ucd=meta.id;meta.main]
+#Column	RAICRS	(F10.6)	Right ascension (ICRS, epoch 2000.0) (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DEICRS	(F10.6)	Declination (ICRS, epoch 2000.0) (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	plx	(F7.3)	Parallax (plx_value)	[ucd=pos.parallax.trig]
+#Column	r_plx	(A19)	Reference bibcode for parallax (plx_bibcode)	[ucd=meta.ref;pos.frame]
+#Column	Type	(A4)	Simbad object type (otype_txt)	[ucd=src.class]
+#Column	SimbadName	(f)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA.icrs	(F10.6)	Right ascension (ICRS) at Epoch=J2000. (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F10.6)	Declination (ICRS) at Epoch=J2000. (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)	[ucd=pos.eq.dec]

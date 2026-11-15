@@ -1,0 +1,27 @@
+# Rows for WDJ235419.41-814104.96 (= Gaia DR3 6350786278796634112) in arXiv HTML tables, fetched 2026-11-15 from arxiv.org/html/<id>
+
+## arXiv:2210.01608: 2 matches for 235419|2354-81|2354−81|6350786278796634112 (832382 chars HTML)
+  CAPTION: Table 3: Spectral types and parameters of the white dwarf sample (continued)
+  HEADER: WD J name SpT Parallax (mas) T eff T_{\rm eff} [K] log ⁡ ( g ) \log(g) T eff T_{\rm eff} [K] log ⁡ ( g ) \log(g) Note
+  ROW: 235419.41 − - 814104.96 DZH 37.10 (0.06) – – 4480 (40) 7.77 (0.04)
+
+  CAPTION: Table 4: Magnetic field strengths for newly identified magnetic white dwarfs in the 40 pc sample
+  HEADER: WD J name SpT ⟨ B ⟩ \langle B\rangle (MG)
+  ROW: 235419.41 − - 814104.96 DZH 0.6 (0.2)
+
+
+## arXiv:2401.15158: 1 matches for 235419|2354-81|2354−81|6350786278796634112 (429800 chars HTML)
+  CAPTION: Table 5: List of magnetic white dwarfs with TESS observations from the 40 pc sample. Targets for which we found clear periodic variations are marked with a ✓symbol. For these systems, we provide the identification number for all the analyzed TESS sectors. For those targets without clear variations (marked with × \times ) we only provide the total number of TESS sectors available for each white dwa
+  HEADER: Name TIC name Variation Distance [pc] FluxCT Exposure time [s]
+  ROW: WD J235419.41-814104.96 TIC 410255721 × \times 26.95 1(22.9 %)
+
+
+## arXiv:2312.02735: 0 matches for 235419|2354-81|2354−81|6350786278796634112 (495867 chars HTML)
+
+## arXiv:2505.24560: 0 matches for 235419|2354-81|2354−81|6350786278796634112 (296498 chars HTML)
+
+## arXiv:2210.01608 (O'Brien+2023) body-text mentions of 'WD J2354' (math alttext inlined)
+  ... There is a broad feature at \approx 4400–4600 Å. There is also a narrower, stationary component at 4140 Å. The field strength is estimated to be 250 <B< 750 MG from these components, although H \alpha spectroscopy is needed to confirm this. Fig. A8 shows seven magnetic metal-polluted white dwarfs. WD J2354-8141 and WD J1132-3602 show splitting of the Ca ii H line into two groups of two, and the Ca ii K line into six because of the large spin-orbit effect for the 4p state of Ca ii ( Kawka & Vennes, 2011 ) . WD J0916-4215 is potentially a highly magnetic DZH white dwarf with complex splitting of its spectral features. The field strengths of new DZH white dwarfs have been estimated and are displayed i...
+
+  ...errors. We recommend adding systematics of 1 per cent in T_{\rm eff} to account for data calibration errors. 4.6 DZ and DZA white dwarfs We show 24 DZ, DZA, DZH and DZAH white dwarf spectra in Figs. A7 – A9 . We fit the combined spectroscopy and photometry for 19 of these objects. WD J0548-7507 and WD J2354-8141 are DZH white dwarfs and are not fitted due to the complexity of the splitting of their lines. We also do not fit the potentially high-field DZH WD J0916-4215 . The X-Shooter spectra of WD J2147-4035 and WD J1214-0234 have already been fitted by Elms et al. (2022) and Hollands et al. (2021) , respectively. In this section, we discuss all DZ and DZA white dwarfs for which we fit their combine...
+

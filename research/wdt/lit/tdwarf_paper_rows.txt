@@ -1,0 +1,43 @@
+# Rows/text for WISE J235447.80-814044.9 (= CWISE J235448.04-814044.6) in arXiv HTML, fetched 2026-11-15 (math alttext inlined)
+
+## arXiv:1804.00362: 6 raw-HTML matches for /235447|2354-8140|2354−8140|W2354/
+  TABLE: Table 2: WISE , J MKO and CH 4 s–CH 4 lphotometry for candidate cool WISE brown dwarfs
+  HEADER: WISE Desig. a a WISE object designations and photometry are from the March 2012 release of the All-sky Source Catalog, unless an “A” prefix is used in which case they come from the November 2013 AllWISE Source Catalog release. The All-Sky WISE designation combines the prefix ”WISE” with the position designation (i.e. WISE J001505.87-461517.6 for an All-sky Source and WISEA J030237.53-581740 for an AllWISE Source). These are abbreviated with the first four digits of the right ascension and declination throughout this paper – e.g. W0015-4615. W1 W2 W1-W2 J MKO b b IRIS2 J photometry was obtained through a J MKO filter, differentially calibrated using J 2MASS photometry converted to J MKO in each field. CH 4 s c c IRIS2 CH 4 sand CH 4 s–CH 4 lphotometry calibrated (as described in the text) on the system of Tinney et al. [41] . CH 4 s–CH 4 l c c IRIS2 CH 4 sand CH 4 s–CH 4 lphotometry calib
+  ROW: J235447.80-814044.9 18.23 0.33 15.03 0.07 >3.20 17.64 0.05 17.68 0.06 -1.04 0.12 T6.4 0.5 2.61 0.09 2.65 0.10 \cdots
+
+  TABLE: Table 5: Apparent (\mu^{\prime}) and Proper (\mu) Motions for new cool brown dwarfs from WISE
+  HEADER: Object a a WISE designations follow Table 2 WISE –IRIS2/FouStar FourStar alone \mu^{\prime}_{\alpha} \mu^{\prime}_{\delta} Unc. \mu_{\alpha} \mu_{\delta} Unc. (mas yr -1 ) (mas yr -1 )
+  ROW: W2354-5649 +390 -330 ±160
+
+  TABLE: Table 5: Apparent (\mu^{\prime}) and Proper (\mu) Motions for new cool brown dwarfs from WISE
+  HEADER: Object a a WISE designations follow Table 2 WISE –IRIS2/FouStar FourStar alone \mu^{\prime}_{\alpha} \mu^{\prime}_{\delta} Unc. \mu_{\alpha} \mu_{\delta} Unc. (mas yr -1 ) (mas yr -1 )
+  ROW: W2354-8140 +30 -15 ±230
+
+  TEXT: ...ell ltx_flex_size_1"> Figure 1 (cont):...
+
+  TEXT: ...ell ltx_flex_size_1"> Figure 1 (cont): <img src="1804.00362v1/W1141-3326_Hband_chart_copy.png" id="S4.F2a.g1" class="ltx_graphics ltx_figure_panel ltx_img_square" style="aspect-ratio:275/258;" w...
+
+  TEXT: ...sing a 4m-class telescope (the AAT) for objects at J\gtrsim20 – magnitudes at which near-infrared spectroscopy on such a telescope would be either impossible or prohibitively expensive. We present a further 5 late T dwarfs (W0309-5016, W0628-8057, W2017-3421, W2211-4758) and 3 early T dwarfs (W0042-5840, W2302-7134, W2354-8140) with methane identifications, for which typing spectroscopy is required. CGT gratefully acknowledges the support of ARC Australian Professorial Fellowship grant DP0774000 and ARC Discovery Outstanding Researcher Award DP130102695. We are grateful for the extraordinary support we have received from the AAT’s technical staff – K. Fiegert, Y. Kondrat, S. Lee, R. Paterson...
+
+
+## arXiv:2011.11616: 1 raw-HTML matches for /235448|235447|2354-8140|2354−8140/
+  TABLE: Table 1: New L, T, and Y Dwarf Candidates
+  HEADER: Object Note a a Codes for Note: “astrom” = Object was observed as part of our Spitzer astrometric monitoring program; “color” = Object was observed as part of Spitzer photometry program 14329 (Marocco, PI); “—” = Object was ultimately dropped from Spitzer follow-up after the time awarded for program 14224 was cut in half; “new” = Object was discovered after final Spitzer target lists were selected. Discoverer Code (1) (2) (3)
+  ROW: CWISE J235448.04-814044.6 — G, J, K, N
+
+
+## arXiv:2011.11616 cleaned-text matches for 2354-8140 / 235448.04 / 235447.8: 1
+  [nearest preceding 'Table ' at -4131 chars: Table 1: New L, T, and Y Dwarf Candidates Object Note a a Co]
+  ...Q CWISE J200121.21-413606.8 — A, B, C, F, J, Q, T CWISE J201221.32+701740.2 astrom D, J, L CWISE J201342.27-032643.7 new B, F, G, J, K CWISE J203859.15-570110.3 color F CWISE J205701.64-170407.3 astrom J, N, S, V CWISE J234426.81-475502.6 — G CWISE J235448.04-814044.6 — G, J, K, N Note. — Reference code for discoverer: A = Andersen, B = Beaulieu, C = Colin, D = Caselden, E = Stenner, F = Marocco, G = Goodman, H = Hamlet, I = Voloshin, J = Kirkpatrick, K = Khalil, L = Gramaize, M = D. Martin, N = Ammar, P = Pendrill, Q = Hong, R = Rothermich, S = Sainio, T = Tanner, U = Hinckley, V = Thévenot, W = Walla, X = Jonkeren, Y = Pumphrey, Z = Wędracki. Note. — Discoveries in this table were scrutinized using...
+
+
+## arXiv:1804.00362 cleaned-text matches for 2354-8140 / 235448.04 / 235447.8: 3
+  [nearest preceding 'Table ' at -6889 chars: Table 2: WISE , J MKO and CH 4 s–CH 4 lphotometry for candid]
+  ...233226.49-432510.6 >17.88 14.99 0.09 >2.89 \cdots 19.14 0.04 <-2.59 >T9.5 \cdots 4.15 0.09 T9: NIRSPEC, this paper J235425.33-564928.6 16.93 0.13 14.84 0.08 2.09 0.15 17.09 0.04 16.98 0.04 -0.55 0.07 T7.8 0.5 2.25 0.09 2.14 0.09 T6 FIRE, this paper J235447.80-814044.9 18.23 0.33 15.03 0.07 >3.20 17.64 0.05 17.68 0.06 -1.04 0.12 T6.4 0.5 2.61 0.09 2.65 0.10 \cdots T/Y dwarfs : Position matches (<1″) with an extended source, sources showing no methane absorption and/or non-detections. J012102.92-190656.9 16.47 0.09 14.71 0.07 1.76 0.11 19.67 0.16 18.87 0.13 +0.17 0.17 \cdots 4.96 0.17 4.16 0.15 \cdots i i J012102.92-190656.9, J074551.79-015122.1, J164445.19-645628.9 and J185709.40-315345.5: a bright s...
+
+  [nearest preceding 'Table ' at -1032 chars: Table 2 WISE –IRIS2/FouStar FourStar alone \mu^{\prime}_{\al]
+  ...40 ±240 +41 -354 ±3 W2159-4808 +275 -1380 ±240 W2211-4758 -170 -160 ±240 W2212-6931 +600 +200 ±240 W2220-3628 +320 +60 ±250 +283 -94 ±4 W2232-5730 +240 +80 ±170 W2302-7134 -220 0 ±160 W2332-4325 +200 -315 ±250 +248 -256 ±4 W2354-5649 +390 -330 ±160 W2354-8140 +30 -15 ±230 Figure 1: Pairs of finding charts in CH 4 s/CH 4 l or J3/J2 for the imaging observations tabulated in Tables 2 and 4 . All charts are 40″ on a side, N top the top, W to the right, centred on the WISE source position and with a 3″ circle drawn at the WISE position. Methane absorbing objects are brighter in the left panel of each pair of images. In ambiguous cases, an arrow is used to identify the cool brown dwarf. Figure 1 (cont): Th...
+
+  [nearest preceding 'Table ' at -2538 chars: Table 10: Comparison with Extant Spectroscopy Object CH 4 s-]
+  ...tudes at which near-infrared spectroscopy on such a telescope would be either impossible or prohibitively expensive. We present a further 5 late T dwarfs (W0309-5016, W0628-8057, W2017-3421, W2211-4758) and 3 early T dwarfs (W0042-5840, W2302-7134, W2354-8140) with methane identifications, for which typing spectroscopy is required. CGT gratefully acknowledges the support of ARC Australian Professorial Fellowship grant DP0774000 and ARC Discovery Outstanding Researcher Award DP130102695. We are grateful for the extraordinary support we have received from the AAT’s technical staff – K. Fiegert, Y. Kondrat, S. Lee, R. Paterson, and D. Stafford. Australian access to the Magellan Telescopes was supported ...
+

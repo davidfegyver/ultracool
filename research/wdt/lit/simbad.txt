@@ -1,0 +1,100 @@
+######## oid 18628314
+## basic
+oid	main_id	otype	sp_type	ra	dec	plx_value	plx_err	pmra	pmdec	nbref
+18628314	"WISE J235447.80-814044.9"	"BD?"		358.699206	-81.679152					2
+
+## ident
+id
+"CWISE J235448.04-814044.6"
+"WISEA J235447.85-814044.9"
+"WISE J235447.80-814044.9"
+
+## bibcodes
+<?xml version="1.0" encoding="utf-8"?>
+<VOTABLE version="1.3" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/votable-1.3.xsd">
+<RESOURCE type="results">
+<INFO name="QUERY_STATUS" value="ERROR">Incorrect ADQL query:  Encountered ".". Was expecting one of: &lt;EOF&gt; "," ";" "ASC" "DESC" </INFO>
+<INFO name="PROVIDER" value="CDS">SIMBAD TAP Service</INFO>
+<INFO  name="REQ_ID" value="S1794731046854"/>
+<INFO  name="ERROR_TYPE" value="fatal"/>
+<INFO  name="USER" value="172.234.40.166 (anonymous)"/>
+<INFO  name="ACTION" value="sync"/>
+</RESOURCE>
+</VOTABLE>
+
+## otypes
+otype	origin
+"BD?"	"from bibcode ; bibcode=2018ApJS..236...28T"
+"MIR"	"from id WISE J235447.80-814044.9"
+
+## mesSpT
+bibcode	dispsystem	mssnote	sptype	oidref	mespos
+
+## mesPM
+bibcode	coosystem	pmde	pmde_err	pmde_err_prec	pmde_prec	pmra	pmra_err	pmra_err_prec	pmra_prec	oidref	mespos
+
+## mesPlx
+bibcode	obscode	plx	plx_err	plx_prec	oidref	mespos
+
+## h_link (as child)
+child	link_bibcode	membership	parent	parent_name
+
+## h_link (as parent)
+child	link_bibcode	membership	parent	child_name
+
+######## oid 15893936
+## basic
+oid	main_id	otype	sp_type	ra	dec	plx_value	plx_err	pmra	pmdec	nbref
+15893936	"Gaia DR3 6350786278796634112"	"WD*"	"DZH"	358.58087740008	-81.68471182841	37.1045	0.061	96.033	36.288	9
+
+## ident
+id
+"Gaia DR3 6350786278796634112"
+"Gaia DR2 6350786278796634112"
+
+## bibcodes
+<?xml version="1.0" encoding="utf-8"?>
+<VOTABLE version="1.3" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/votable-1.3.xsd">
+<RESOURCE type="results">
+<INFO name="QUERY_STATUS" value="ERROR">Incorrect ADQL query:  Encountered ".". Was expecting one of: &lt;EOF&gt; "," ";" "ASC" "DESC" </INFO>
+<INFO name="PROVIDER" value="CDS">SIMBAD TAP Service</INFO>
+<INFO  name="REQ_ID" value="S1794731047641"/>
+<INFO  name="ERROR_TYPE" value="fatal"/>
+<INFO  name="USER" value="172.234.40.166 (anonymous)"/>
+<INFO  name="ACTION" value="sync"/>
+</RESOURCE>
+</VOTABLE>
+
+## otypes
+otype	origin
+"*"	"from id Gaia DR2 6350786278796634112"
+"PM*"	"from bibcode ; bibcode=2018yCat.1345....0G"
+"WD*"	"from bibcode ; bibcode=2023MNRAS.518.3055O"
+"WD?"	"from bibcode ; bibcode=2019MNRAS.482.4570G"
+
+## mesSpT
+bibcode	dispsystem	mssnote	sptype	oidref	mespos
+"2023MNRAS.518.3055O"			"DZH                                 "	15893936	2
+"2024A&A...682A...5V"			"DC:                                 "	15893936	1
+
+## mesPM
+bibcode	coosystem	pmde	pmde_err	pmde_err_prec	pmde_prec	pmra	pmra_err	pmra_err_prec	pmra_prec	oidref	mespos
+"2018yCat.1345....0G"	"ICRS"	36.264	0.115	3	3	96.268	0.146	3	3	15893936	2
+"2020yCat.1350....0G"	"ICRS"	36.288	0.069	3	3	96.033	0.066	3	3	15893936	1
+
+## mesPlx
+bibcode	obscode	plx	plx_err	plx_prec	oidref	mespos
+"2018yCat.1345....0G"		37.0283	0.0829	4	15893936	2
+"2020yCat.1350....0G"		37.1045	0.061	4	15893936	1
+
+## h_link (as child)
+child	link_bibcode	membership	parent	parent_name
+
+## h_link (as parent)
+child	link_bibcode	membership	parent	child_name
+
+######## basic cone 120" around midpoint (358.64, -81.682)
+oid	main_id	otype	sp_type	ra	dec	plx_value	pmra	pmdec	nbref	sep
+15893936	"Gaia DR3 6350786278796634112"	"WD*"	"DZH"	358.58087740008	-81.68471182841	37.1045	96.033	36.288	9	32.29698064753838
+18628314	"WISE J235447.80-814044.9"	"BD?"		358.699206	-81.679152				2	32.49944191864224
+17315801	"UCAC4 042-017920"	"*"		358.43830063012786	-81.68257962183195	0.5829	15.005	-0.48	1	105.06235531189915

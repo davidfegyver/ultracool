@@ -1,0 +1,544 @@
+{
+ "positions_offsets_arcsec": {
+  "AllWISE": [
+   [
+    2010.5558,
+    -0.4037,
+    -0.2653,
+    0.1667,
+    0.1543
+   ]
+  ],
+  "CatWISE": [
+   [
+    2015.4018,
+    0.0023,
+    0.0155,
+    0.0749,
+    0.0677
+   ]
+  ],
+  "VHS": [
+   [
+    2016.4541,
+    0.0547,
+    -0.1368,
+    0.1,
+    0.1
+   ],
+   [
+    2015.8702,
+    -0.0318,
+    -0.1872,
+    0.1,
+    0.1
+   ]
+  ],
+  "pipeline_WISE": [
+   [
+    2010.2739,
+    -0.6409,
+    -0.5508,
+    0.2688,
+    0.2688
+   ],
+   [
+    2010.2739,
+    0.324,
+    -0.5184,
+    0.7742,
+    0.7742
+   ],
+   [
+    2015.2683,
+    2.2807,
+    0.235,
+    0.5516,
+    0.5516
+   ],
+   [
+    2015.2683,
+    -0.0071,
+    0.1563,
+    0.2688,
+    0.2688
+   ],
+   [
+    2017.0036,
+    1.1993,
+    0.6131,
+    0.6128,
+    0.6128
+   ],
+   [
+    2017.0036,
+    0.3763,
+    0.2598,
+    0.2563,
+    0.2563
+   ],
+   [
+    2018.9983,
+    0.7176,
+    -0.1025,
+    0.254,
+    0.254
+   ],
+   [
+    2018.9983,
+    0.8868,
+    0.2355,
+    0.5565,
+    0.5565
+   ],
+   [
+    2020.9963,
+    1.0107,
+    -0.0664,
+    0.263,
+    0.263
+   ],
+   [
+    2020.9963,
+    0.602,
+    1.3489,
+    0.5121,
+    0.5121
+   ],
+   [
+    2022.9948,
+    0.8217,
+    0.1277,
+    0.2603,
+    0.2603
+   ],
+   [
+    2022.9948,
+    1.3738,
+    1.1233,
+    0.5746,
+    0.5746
+   ],
+   [
+    2024.2735,
+    1.242,
+    0.3289,
+    0.3133,
+    0.3133
+   ],
+   [
+    2024.2735,
+    -0.0409,
+    0.8065,
+    0.5444,
+    0.5444
+   ]
+  ],
+  "SPHEREx_D5D6": [
+   [
+    2025.7192,
+    1.2741,
+    0.2477,
+    0.655,
+    0.655
+   ],
+   [
+    2026.2892,
+    1.2719,
+    0.6282,
+    0.642,
+    0.642
+   ],
+   [
+    2026.6995,
+    1.229,
+    0.5469,
+    0.678,
+    0.678
+   ]
+  ]
+ },
+ "estimates": {
+  "pipeline_summary(WISE 2010-2024, catalog-prior search)": {
+   "pmra": 101.9,
+   "e_pmra": 27.2,
+   "pmdec": 54.8,
+   "e_pmdec": 27.2,
+   "baseline_yr": 14.0,
+   "n": 14
+  },
+  "CatWISE2020 corrected (VizieR II/365)": {
+   "pmra": 121.8,
+   "e_pmra": 25.8,
+   "pmdec": 70.6,
+   "e_pmdec": 23.1
+  },
+  "CatWISE2020 uncorrected (IRSA catwise_2020)": {
+   "pmra": 141.8,
+   "e_pmra": 25.8,
+   "pmdec": 72.8,
+   "e_pmdec": 23.1
+  },
+  "ours WISE+SPHEREx (16.4 yr)": {
+   "pmra": 101.4,
+   "e_pmra": 22.6,
+   "pmdec": 55.3,
+   "e_pmdec": 22.6,
+   "chi2_red": 1.33,
+   "n": 17,
+   "baseline_yr": 16.43,
+   "plx_fixed_mas": 37.1045,
+   "uses": [
+    "pipeline_WISE",
+    "SPHEREx_D5D6"
+   ]
+  },
+  "ours WISE+SPHEREx (16.4 yr) [no parallax term]": {
+   "pmra": 100.0,
+   "e_pmra": 22.5,
+   "pmdec": 53.5,
+   "e_pmdec": 22.5,
+   "chi2_red": 1.31,
+   "n": 17,
+   "baseline_yr": 16.43,
+   "plx_fixed_mas": 0.0
+  },
+  "AllWISE->VHS (2 catalogues, no pipeline)": {
+   "pmra": 78.0,
+   "e_pmra": 32.0,
+   "pmdec": 17.4,
+   "e_pmdec": 30.0,
+   "chi2_red": 0.01,
+   "n": 3,
+   "baseline_yr": 5.9,
+   "plx_fixed_mas": 37.1045,
+   "uses": [
+    "AllWISE",
+    "VHS"
+   ]
+  },
+  "AllWISE->VHS (2 catalogues, no pipeline) [no parallax term]": {
+   "pmra": 75.3,
+   "e_pmra": 32.0,
+   "pmdec": 19.5,
+   "e_pmdec": 30.0,
+   "chi2_red": 0.08,
+   "n": 3,
+   "baseline_yr": 5.9,
+   "plx_fixed_mas": 0.0
+  },
+  "AllWISE+VHS+SPHEREx (no CatWISE)": {
+   "pmra": 96.9,
+   "e_pmra": 23.7,
+   "pmdec": 35.4,
+   "e_pmdec": 22.8,
+   "chi2_red": 0.22,
+   "n": 6,
+   "baseline_yr": 16.14,
+   "plx_fixed_mas": 37.1045,
+   "uses": [
+    "AllWISE",
+    "VHS",
+    "SPHEREx_D5D6"
+   ]
+  },
+  "AllWISE+VHS+SPHEREx (no CatWISE) [no parallax term]": {
+   "pmra": 95.5,
+   "e_pmra": 23.7,
+   "pmdec": 36.6,
+   "e_pmdec": 22.8,
+   "chi2_red": 0.25,
+   "n": 6,
+   "baseline_yr": 16.14,
+   "plx_fixed_mas": 0.0
+  },
+  "VHS->SPHEREx (no WISE at all)": {
+   "pmra": 121.4,
+   "e_pmra": 37.9,
+   "pmdec": 63.3,
+   "e_pmdec": 37.9,
+   "chi2_red": 0.04,
+   "n": 5,
+   "baseline_yr": 10.83,
+   "plx_fixed_mas": 37.1045,
+   "uses": [
+    "VHS",
+    "SPHEREx_D5D6"
+   ]
+  },
+  "VHS->SPHEREx (no WISE at all) [no parallax term]": {
+   "pmra": 124.3,
+   "e_pmra": 37.9,
+   "pmdec": 64.3,
+   "e_pmdec": 37.9,
+   "chi2_red": 0.03,
+   "n": 5,
+   "baseline_yr": 10.83,
+   "plx_fixed_mas": 0.0
+  },
+  "AllWISE+CatWISE+VHS+SPHEREx (catalogue positions)": {
+   "pmra": 96.8,
+   "e_pmra": 23.7,
+   "pmdec": 34.5,
+   "e_pmdec": 22.8,
+   "chi2_red": 0.45,
+   "n": 7,
+   "baseline_yr": 16.14,
+   "plx_fixed_mas": 37.1045,
+   "uses": [
+    "AllWISE",
+    "CatWISE",
+    "VHS",
+    "SPHEREx_D5D6"
+   ]
+  },
+  "AllWISE+CatWISE+VHS+SPHEREx (catalogue positions) [no parallax term]": {
+   "pmra": 95.0,
+   "e_pmra": 23.7,
+   "pmdec": 35.6,
+   "e_pmdec": 22.8,
+   "chi2_red": 0.59,
+   "n": 7,
+   "baseline_yr": 16.14,
+   "plx_fixed_mas": 0.0
+  },
+  "COMBINED: ours WISE+VHS+SPHEREx": {
+   "pmra": 123.3,
+   "e_pmra": 20.9,
+   "pmdec": 63.7,
+   "e_pmdec": 20.9,
+   "chi2_red": 1.4,
+   "n": 19,
+   "baseline_yr": 16.43,
+   "plx_fixed_mas": 37.1045,
+   "uses": [
+    "pipeline_WISE",
+    "VHS",
+    "SPHEREx_D5D6"
+   ]
+  },
+  "COMBINED: ours WISE+VHS+SPHEREx [no parallax term]": {
+   "pmra": 121.5,
+   "e_pmra": 20.8,
+   "pmdec": 64.2,
+   "e_pmdec": 20.8,
+   "chi2_red": 1.39,
+   "n": 19,
+   "baseline_yr": 16.43,
+   "plx_fixed_mas": 0.0
+  }
+ },
+ "vs_WD": {
+  "pipeline_summary(WISE 2010-2024, catalog-prior search)": {
+   "dpmra": 5.9,
+   "dpmdec": 18.5,
+   "sig_ra": 0.22,
+   "sig_dec": 0.68,
+   "chi2_2dof": 0.51,
+   "p_value": 0.775,
+   "dmu": 19.4,
+   "e_dmu": 27.2,
+   "dvtan_kms_at_WD_distance": 2.48,
+   "e_dvtan_kms": 3.48,
+   "dvtan_2sigma_upper_kms": 9.43
+  },
+  "CatWISE2020 corrected (VizieR II/365)": {
+   "dpmra": 25.8,
+   "dpmdec": 34.3,
+   "sig_ra": 1.0,
+   "sig_dec": 1.49,
+   "chi2_2dof": 3.2,
+   "p_value": 0.202,
+   "dmu": 42.9,
+   "e_dmu": 24.1,
+   "dvtan_kms_at_WD_distance": 5.48,
+   "e_dvtan_kms": 3.08,
+   "dvtan_2sigma_upper_kms": 11.64
+  },
+  "CatWISE2020 uncorrected (IRSA catwise_2020)": {
+   "dpmra": 45.8,
+   "dpmdec": 36.5,
+   "sig_ra": 1.77,
+   "sig_dec": 1.58,
+   "chi2_2dof": 5.65,
+   "p_value": 0.059,
+   "dmu": 58.5,
+   "e_dmu": 24.8,
+   "dvtan_kms_at_WD_distance": 7.48,
+   "e_dvtan_kms": 3.17,
+   "dvtan_2sigma_upper_kms": 13.81
+  },
+  "ours WISE+SPHEREx (16.4 yr)": {
+   "dpmra": 5.4,
+   "dpmdec": 19.0,
+   "sig_ra": 0.24,
+   "sig_dec": 0.84,
+   "chi2_2dof": 0.76,
+   "p_value": 0.682,
+   "dmu": 19.8,
+   "e_dmu": 22.6,
+   "dvtan_kms_at_WD_distance": 2.52,
+   "e_dvtan_kms": 2.89,
+   "dvtan_2sigma_upper_kms": 8.3
+  },
+  "ours WISE+SPHEREx (16.4 yr) [no parallax term]": {
+   "dpmra": 4.0,
+   "dpmdec": 17.2,
+   "sig_ra": 0.18,
+   "sig_dec": 0.76,
+   "chi2_2dof": 0.62,
+   "p_value": 0.735,
+   "dmu": 17.7,
+   "e_dmu": 22.5,
+   "dvtan_kms_at_WD_distance": 2.26,
+   "e_dvtan_kms": 2.87,
+   "dvtan_2sigma_upper_kms": 8.01
+  },
+  "AllWISE->VHS (2 catalogues, no pipeline)": {
+   "dpmra": -18.0,
+   "dpmdec": -18.9,
+   "sig_ra": -0.56,
+   "sig_dec": -0.63,
+   "chi2_2dof": 0.71,
+   "p_value": 0.7,
+   "dmu": 26.1,
+   "e_dmu": 31.0,
+   "dvtan_kms_at_WD_distance": 3.34,
+   "e_dvtan_kms": 3.96,
+   "dvtan_2sigma_upper_kms": 11.25
+  },
+  "AllWISE->VHS (2 catalogues, no pipeline) [no parallax term]": {
+   "dpmra": -20.7,
+   "dpmdec": -16.8,
+   "sig_ra": -0.65,
+   "sig_dec": -0.56,
+   "chi2_2dof": 0.73,
+   "p_value": 0.693,
+   "dmu": 26.7,
+   "e_dmu": 31.2,
+   "dvtan_kms_at_WD_distance": 3.41,
+   "e_dvtan_kms": 3.99,
+   "dvtan_2sigma_upper_kms": 11.39
+  },
+  "AllWISE+VHS+SPHEREx (no CatWISE)": {
+   "dpmra": 0.9,
+   "dpmdec": -0.9,
+   "sig_ra": 0.04,
+   "sig_dec": -0.04,
+   "chi2_2dof": 0.0,
+   "p_value": 0.999,
+   "dmu": 1.2,
+   "e_dmu": 23.2,
+   "dvtan_kms_at_WD_distance": 0.16,
+   "e_dvtan_kms": 2.97,
+   "dvtan_2sigma_upper_kms": 6.1
+  },
+  "AllWISE+VHS+SPHEREx (no CatWISE) [no parallax term]": {
+   "dpmra": -0.5,
+   "dpmdec": 0.3,
+   "sig_ra": -0.02,
+   "sig_dec": 0.01,
+   "chi2_2dof": 0.0,
+   "p_value": 1.0,
+   "dmu": 0.6,
+   "e_dmu": 23.5,
+   "dvtan_kms_at_WD_distance": 0.08,
+   "e_dvtan_kms": 3.0,
+   "dvtan_2sigma_upper_kms": 6.08
+  },
+  "VHS->SPHEREx (no WISE at all)": {
+   "dpmra": 25.4,
+   "dpmdec": 27.0,
+   "sig_ra": 0.67,
+   "sig_dec": 0.71,
+   "chi2_2dof": 0.96,
+   "p_value": 0.62,
+   "dmu": 37.1,
+   "e_dmu": 37.9,
+   "dvtan_kms_at_WD_distance": 4.73,
+   "e_dvtan_kms": 4.84,
+   "dvtan_2sigma_upper_kms": 14.42
+  },
+  "VHS->SPHEREx (no WISE at all) [no parallax term]": {
+   "dpmra": 28.3,
+   "dpmdec": 28.0,
+   "sig_ra": 0.75,
+   "sig_dec": 0.74,
+   "chi2_2dof": 1.1,
+   "p_value": 0.576,
+   "dmu": 39.8,
+   "e_dmu": 37.9,
+   "dvtan_kms_at_WD_distance": 5.08,
+   "e_dvtan_kms": 4.84,
+   "dvtan_2sigma_upper_kms": 14.77
+  },
+  "AllWISE+CatWISE+VHS+SPHEREx (catalogue positions)": {
+   "dpmra": 0.8,
+   "dpmdec": -1.8,
+   "sig_ra": 0.03,
+   "sig_dec": -0.08,
+   "chi2_2dof": 0.01,
+   "p_value": 0.996,
+   "dmu": 1.9,
+   "e_dmu": 22.9,
+   "dvtan_kms_at_WD_distance": 0.25,
+   "e_dvtan_kms": 2.93,
+   "dvtan_2sigma_upper_kms": 6.11
+  },
+  "AllWISE+CatWISE+VHS+SPHEREx (catalogue positions) [no parallax term]": {
+   "dpmra": -1.0,
+   "dpmdec": -0.7,
+   "sig_ra": -0.04,
+   "sig_dec": -0.03,
+   "chi2_2dof": 0.0,
+   "p_value": 0.999,
+   "dmu": 1.2,
+   "e_dmu": 23.4,
+   "dvtan_kms_at_WD_distance": 0.16,
+   "e_dvtan_kms": 2.99,
+   "dvtan_2sigma_upper_kms": 6.14
+  },
+  "COMBINED: ours WISE+VHS+SPHEREx": {
+   "dpmra": 27.3,
+   "dpmdec": 27.4,
+   "sig_ra": 1.3,
+   "sig_dec": 1.31,
+   "chi2_2dof": 3.42,
+   "p_value": 0.181,
+   "dmu": 38.7,
+   "e_dmu": 20.9,
+   "dvtan_kms_at_WD_distance": 4.94,
+   "e_dvtan_kms": 2.67,
+   "dvtan_2sigma_upper_kms": 10.28
+  },
+  "COMBINED: ours WISE+VHS+SPHEREx [no parallax term]": {
+   "dpmra": 25.5,
+   "dpmdec": 27.9,
+   "sig_ra": 1.22,
+   "sig_dec": 1.34,
+   "chi2_2dof": 3.3,
+   "p_value": 0.192,
+   "dmu": 37.8,
+   "e_dmu": 20.8,
+   "dvtan_kms_at_WD_distance": 4.83,
+   "e_dvtan_kms": 2.66,
+   "dvtan_2sigma_upper_kms": 10.14
+  }
+ },
+ "WD": {
+  "ra": 358.58382867379,
+  "dec": -81.68455055873,
+  "pmra": 96.033,
+  "e_pmra": 0.066,
+  "pmdec": 36.288,
+  "e_pmdec": 0.069,
+  "plx": 37.1045,
+  "e_plx": 0.061
+ },
+ "WD_distance_pc": 26.951,
+ "separation_2016": {
+  "arcsec": 63.79,
+  "au_projected": 1719.0,
+  "pa_deg": 72.0
+ }
+}

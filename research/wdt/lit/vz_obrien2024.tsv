@@ -1,0 +1,189 @@
+#### J/MNRAS/527/8687/* @ 358.70015 -81.67908
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:34 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:34	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fMNRAS%2f527%2f8687%2f%2a&-c=358.70015+-81.67908&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=2	
+#  2 catalogues with potential matches were examined.
+#
+#INFO	-c=358.700150-81.679080,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_75278687
+#Name: J/MNRAS/527/8687
+#Title: 40 parsec sample of white dwarfs from Gaia (O'Brien+, 2024)
+#INFO	ivoid=ivo://cds.vizier/j/mnras/527/8687	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/mnras/527/8687	    IVOID of underlying data collection
+#INFO	creator=O&apos;Brien M.W.	    First author or institution
+#INFO	cites=bibcode:2024MNRAS.527.8687O	    Article or Data origin sources
+#INFO	journal=MNRA	    Journal name
+#INFO	original_date=2024	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/527/8687	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier/bg-gf-8ff	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-08-03	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2016.000:	ICRS
+#Table	J_MNRAS_527_8687_tablea1:
+#Name: J/MNRAS/527/8687/tablea1
+#Title: All confirmed white dwarfs within 40pc of the Sun (updated version, 14/11/2024)
+#Column	_r	(F6.3)	Distance from center (358.70015000000-81.67908000000)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Name	(A22)	WDJ name (WDJHHMMSS.SS+DDMMSS.s) (WDJ_Name)	[ucd=meta.id;meta.main]
+#Column	GaiaDR3	(I19)	Gaia DR3 ID (DR3_source_id)	[ucd=meta.id]
+#Column	Plx	(F19.15)	Parallax (parallax)	[ucd=pos.parallax.trig]
+#Column	e_Plx	(F12.9)	Parallax error (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	RA_ICRS	(F15.11)	Right Ascension (ICRS) at Ep=2016.0 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F13.10)	Right Ascension error (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2016.0 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F13.10)	Declination error (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	GMAG	(F11.8)	Absolute Gaia G magnitude (absG)	[ucd=phys.magAbs]
+#Column	BP-RP	(F13.10)	Gaia DR3 BP minus Gaia DR3 RP colour index (bp_rp)	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	SpType	(a9)	Spectral Type (SpT)	[ucd=src.spType]
+#Column	Comp	(A2)	[H He] Atmospheric Composition (comp)	[ucd=meta.code]
+#Column	Teff	(I5)	? Adopted Gaia DR3 effective temperature (gaia_teff)	[ucd=phys.temperature.effective]
+#Column	e_Teff	(I4)	? Adopted Gaia DR3 effective temperature error (gaia_teff_err)	[ucd=stat.error;phys.temperature.effective]
+#Column	logg	(F7.4)	? Adopted Gaia DR3 surface gravity (gaia_logg)	[ucd=phys.gravity]
+#Column	e_logg	(F7.4)	? Adopted Gaia DR3 surface gravity error (gaia_logg_err)	[ucd=stat.error]
+#Column	Mass	(F7.4)	? Adopted Gaia DR3 mass (gaia_mass)	[ucd=phys.mass]
+#Column	e_Mass	(F7.4)	? Adopted Gaia DR3 mass error (gaia_mass_err)	[ucd=stat.error;phys.mass]
+#Column	Teffc	(I5)	? Effective temperature after low-mass correction (corrected_teff)	[ucd=arith.factor;phys.temperature.effective]
+#Column	Massc	(F6.3)	? Mass after low-mass correction (corrected_mass)	[ucd=phys.mass]
+#Column	Agec	(F5.2)	? Cooling age after low-mass correction (corrected_age)	[ucd=arith.factor;time.age]
+#Column	r_SpType	(A19)	Reference paper for spectral type (bibcode)	[ucd=meta.ref;pos.frame]
+#Column	Com	(a118)	Additional Comment (comment)	[ucd=meta.note]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+#Table	J_MNRAS_527_8687_tablea6:
+#Name: J/MNRAS/527/8687/tablea6
+#Title: Wide binary catalogue with all wide binaries within 40pc that contain at least one white dwarf
+#Column	_r	(F5.2)	Distance from center (358.70015-81.67908)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	BinType	(a8)	[WD MS BD] Type of binary (binary_type)	[ucd=src.class]
+#Column	GaiaDR3-Id1	(I19)	Gaia DR3 ID of white dwarf (dr3_source_id1)	[ucd=meta.id;meta.main]
+#Column	GaiaDR3-Id2	(I19)	? Gaia DR3 ID of first companion (dr3_source_id2)	[ucd=meta.id.assoc]
+#Column	GaiaDR3-Id3	(I19)	? Gaia DR3 ID of second companion (dr3_source_id3)	[ucd=meta.id.assoc]
+#Column	Name1	(A22)	Name of white dwarf (name_1)	[ucd=meta.id]
+#Column	Name2	(a25)	Name of companion (name_2)	[ucd=meta.id]
+#Column	Name3	(a17)	Name of second companion (name_3)	[ucd=meta.id]
+#Column	SpType1	(a6)	Spectral type of white dwarf (SpT_1)	[ucd=src.spType]
+#Column	r_SpType1	(A19)	Reference paper for spectral type of white dwarf (SpT_bibcode_1)	[ucd=meta.ref;pos.frame]
+#Column	SpType2	(a8)	Spectral type of companion (SpT_2)	[ucd=src.spType]
+#Column	r_SpType2	(A19)	Reference paper for spectral type of first companion (SpT_bibcode_2)	[ucd=meta.ref;pos.frame]
+#Column	SpType3	(A7)	Spectral type of second companion (SpT_3)	[ucd=src.spType]
+#Column	r_SpType3	(A19)	Reference paper for spectral type of second companion (SpT_bibcode_3)	[ucd=meta.ref;pos.frame]
+#Column	Plx	(F12.8)	Parallax in mas (wd_parallax)	[ucd=pos.parallax]
+#Column	Sep1pc	(F16.13)	? Projected separation between white dwarf and first companion in pc (projected_separation_1_pc)	[ucd=pos.distance;src.orbital]
+#Column	Sep1AU	(F15.8)	? Projected separation between white dwarf and first companion in AU (projected_separation_1_AU)	[ucd=pos.distance;src.orbital]
+#Column	dvtan1	(F14.11)	? Tangential velocity difference between white dwarf and first companion (delta_vtan_1)	[ucd=phys.veloc;arith.diff]
+#Column	Sep2pc	(F15.12)	? Projected separation between white dwarf and second companion in pc (projected_separation_2_pc)	[ucd=pos.distance;src.orbital]
+#Column	Sep2AU	(F12.7)	? Projected separation between white dwarf and second companion in AU (projected_separation_2_AU)	[ucd=pos.distance;src.orbital]
+#Column	dvtan2	(F13.10)	? Tangential velocity difference between white dwarf and second companion (delta_vtan_2)	[ucd=phys.veloc;arith.diff]
+#Column	Comment	(a74)	Additional comment (comment)	[ucd=meta.note]
+#Column	SimbadName	(A28)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Position of GaiaDR3-Id1 (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Position of GaiaDR3-Id1 (declination part)	[ucd=pos.eq.dec;meta.main]
+#### J/MNRAS/527/8687/* @ 358.58383 -81.68455
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:26:34 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:26:34	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2fMNRAS%2f527%2f8687%2f%2a&-c=358.58383+-81.68455&-c.rs=60&-out.all&-out.max=200&-out.add=_r	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	CatalogsExamined=2	
+#  2 catalogues with potential matches were examined.
+#
+#INFO	-c=358.583830-81.684550,rs=60.	
+#Constraint -out.add=_r
+
+#RESOURCE=yCat_75278687
+#Name: J/MNRAS/527/8687
+#Title: 40 parsec sample of white dwarfs from Gaia (O'Brien+, 2024)
+#INFO	ivoid=ivo://cds.vizier/j/mnras/527/8687	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/mnras/527/8687	    IVOID of underlying data collection
+#INFO	creator=O&apos;Brien M.W.	    First author or institution
+#INFO	cites=bibcode:2024MNRAS.527.8687O	    Article or Data origin sources
+#INFO	journal=MNRA	    Journal name
+#INFO	original_date=2024	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/527/8687	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier/bg-gf-8ff	    Dataset identifier that can be used for citation
+#INFO	publication_date=2026-08-03	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2016.000:	ICRS
+#Table	J_MNRAS_527_8687_tablea1:
+#Name: J/MNRAS/527/8687/tablea1
+#Title: All confirmed white dwarfs within 40pc of the Sun (updated version, 14/11/2024)
+#Column	_r	(F6.3)	Distance from center (358.58383000000-81.68455000000)[ICRS], at Epoch=J2016.0	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	Name	(A22)	WDJ name (WDJHHMMSS.SS+DDMMSS.s) (WDJ_Name)	[ucd=meta.id;meta.main]
+#Column	GaiaDR3	(I19)	Gaia DR3 ID (DR3_source_id)	[ucd=meta.id]
+#Column	Plx	(F19.15)	Parallax (parallax)	[ucd=pos.parallax.trig]
+#Column	e_Plx	(F12.9)	Parallax error (parallax_error)	[ucd=stat.error;pos.parallax]
+#Column	RA_ICRS	(F15.11)	Right Ascension (ICRS) at Ep=2016.0 (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	e_RA_ICRS	(F13.10)	Right Ascension error (ra_error)	[ucd=stat.error;pos.eq.ra]
+#Column	DE_ICRS	(F15.11)	Declination (ICRS) at Ep=2016.0 (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	e_DE_ICRS	(F13.10)	Declination error (dec_error)	[ucd=stat.error;pos.eq.dec]
+#Column	GMAG	(F11.8)	Absolute Gaia G magnitude (absG)	[ucd=phys.magAbs]
+#Column	BP-RP	(F13.10)	Gaia DR3 BP minus Gaia DR3 RP colour index (bp_rp)	[ucd=phot.color;em.opt.B;em.opt.R]
+#Column	SpType	(a9)	Spectral Type (SpT)	[ucd=src.spType]
+#Column	Comp	(A2)	[H He] Atmospheric Composition (comp)	[ucd=meta.code]
+#Column	Teff	(I5)	? Adopted Gaia DR3 effective temperature (gaia_teff)	[ucd=phys.temperature.effective]
+#Column	e_Teff	(I4)	? Adopted Gaia DR3 effective temperature error (gaia_teff_err)	[ucd=stat.error;phys.temperature.effective]
+#Column	logg	(F7.4)	? Adopted Gaia DR3 surface gravity (gaia_logg)	[ucd=phys.gravity]
+#Column	e_logg	(F7.4)	? Adopted Gaia DR3 surface gravity error (gaia_logg_err)	[ucd=stat.error]
+#Column	Mass	(F7.4)	? Adopted Gaia DR3 mass (gaia_mass)	[ucd=phys.mass]
+#Column	e_Mass	(F7.4)	? Adopted Gaia DR3 mass error (gaia_mass_err)	[ucd=stat.error;phys.mass]
+#Column	Teffc	(I5)	? Effective temperature after low-mass correction (corrected_teff)	[ucd=arith.factor;phys.temperature.effective]
+#Column	Massc	(F6.3)	? Mass after low-mass correction (corrected_mass)	[ucd=phys.mass]
+#Column	Agec	(F5.2)	? Cooling age after low-mass correction (corrected_age)	[ucd=arith.factor;time.age]
+#Column	r_SpType	(A19)	Reference paper for spectral type (bibcode)	[ucd=meta.ref;pos.frame]
+#Column	Com	(a118)	Additional Comment (comment)	[ucd=meta.note]
+#Column	Simbad	(a6)	Simbad column added by the CDS	[ucd=meta.ref.url]
+_r	recno	Name	GaiaDR3	Plx	e_Plx	RA_ICRS	e_RA_ICRS	DE_ICRS	e_DE_ICRS	GMAG	BP-RP	SpType	Comp	Teff	e_Teff	logg	e_logg	Mass	e_Mass	Teffc	Massc	Agec	r_SpType	Com	Simbad
+arcsec	 	 	 	mas	mas	deg	mas	deg	mas	mag	mag	 	 	K	K	[cm/s2]	[cm/s2]	Msun	Msun	K	K	Gyr	 	 	
+------	--------	----------------------	-------------------	-------------------	------------	---------------	-------------	---------------	-------------	-----------	-------------	---------	--	-----	----	-------	-------	-------	-------	-----	------	-----	-------------------	----------------------------------------------------------------------------------------------------------------------	------
+ 0.002	    1076	WDJ235419.41-814104.96	6350786278796634112	 37.104511374265748	 0.061009444	358.58382867379	 0.0521554240	-81.68455055900	 0.0536537950	15.06969658	 1.3060055000	DZH      	H 	 4476	  44	 7.7690	 0.0350	 0.4570	 0.0160	 4676	 0.594	 7.76	2023MNRAS.518.3055O	                                                                                                                      	Simbad
+
+#Table	J_MNRAS_527_8687_tablea6:
+#Name: J/MNRAS/527/8687/tablea6
+#Title: Wide binary catalogue with all wide binaries within 40pc that contain at least one white dwarf
+#Column	_r	(F5.2)	Distance from center (358.58383-81.68455)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	BinType	(a8)	[WD MS BD] Type of binary (binary_type)	[ucd=src.class]
+#Column	GaiaDR3-Id1	(I19)	Gaia DR3 ID of white dwarf (dr3_source_id1)	[ucd=meta.id;meta.main]
+#Column	GaiaDR3-Id2	(I19)	? Gaia DR3 ID of first companion (dr3_source_id2)	[ucd=meta.id.assoc]
+#Column	GaiaDR3-Id3	(I19)	? Gaia DR3 ID of second companion (dr3_source_id3)	[ucd=meta.id.assoc]
+#Column	Name1	(A22)	Name of white dwarf (name_1)	[ucd=meta.id]
+#Column	Name2	(a25)	Name of companion (name_2)	[ucd=meta.id]
+#Column	Name3	(a17)	Name of second companion (name_3)	[ucd=meta.id]
+#Column	SpType1	(a6)	Spectral type of white dwarf (SpT_1)	[ucd=src.spType]
+#Column	r_SpType1	(A19)	Reference paper for spectral type of white dwarf (SpT_bibcode_1)	[ucd=meta.ref;pos.frame]
+#Column	SpType2	(a8)	Spectral type of companion (SpT_2)	[ucd=src.spType]
+#Column	r_SpType2	(A19)	Reference paper for spectral type of first companion (SpT_bibcode_2)	[ucd=meta.ref;pos.frame]
+#Column	SpType3	(A7)	Spectral type of second companion (SpT_3)	[ucd=src.spType]
+#Column	r_SpType3	(A19)	Reference paper for spectral type of second companion (SpT_bibcode_3)	[ucd=meta.ref;pos.frame]
+#Column	Plx	(F12.8)	Parallax in mas (wd_parallax)	[ucd=pos.parallax]
+#Column	Sep1pc	(F16.13)	? Projected separation between white dwarf and first companion in pc (projected_separation_1_pc)	[ucd=pos.distance;src.orbital]
+#Column	Sep1AU	(F15.8)	? Projected separation between white dwarf and first companion in AU (projected_separation_1_AU)	[ucd=pos.distance;src.orbital]
+#Column	dvtan1	(F14.11)	? Tangential velocity difference between white dwarf and first companion (delta_vtan_1)	[ucd=phys.veloc;arith.diff]
+#Column	Sep2pc	(F15.12)	? Projected separation between white dwarf and second companion in pc (projected_separation_2_pc)	[ucd=pos.distance;src.orbital]
+#Column	Sep2AU	(F12.7)	? Projected separation between white dwarf and second companion in AU (projected_separation_2_AU)	[ucd=pos.distance;src.orbital]
+#Column	dvtan2	(F13.10)	? Tangential velocity difference between white dwarf and second companion (delta_vtan_2)	[ucd=phys.veloc;arith.diff]
+#Column	Comment	(a74)	Additional comment (comment)	[ucd=meta.note]
+#Column	SimbadName	(A28)	Simbad column added by the CDS	[ucd=meta.id]
+#Column	_RA	(F9.5)	Position of GaiaDR3-Id1 (right ascension part)	[ucd=pos.eq.ra;meta.main]
+#Column	_DE	(F9.5)	Position of GaiaDR3-Id1 (declination part)	[ucd=pos.eq.dec;meta.main]

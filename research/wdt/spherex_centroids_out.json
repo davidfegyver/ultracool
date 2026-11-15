@@ -1,0 +1,134 @@
+{
+ "D5D6": [
+  {
+   "epoch_yr": 2025.7192,
+   "mjd": 60938.42260453489,
+   "n_frames": 43,
+   "ra": 358.7025954913722,
+   "dec": -81.67901119423446,
+   "snr": 25.1,
+   "err_stat_arcsec": 0.263,
+   "err_arcsec": 0.655,
+   "offset_from_catwise_track_arcsec": [
+    -0.01,
+    -0.52
+   ]
+  },
+  {
+   "epoch_yr": 2026.2892,
+   "mjd": 61146.61723572881,
+   "n_frames": 59,
+   "ra": 358.702591254075,
+   "dec": -81.6789055042892,
+   "snr": 29.0,
+   "err_stat_arcsec": 0.228,
+   "err_arcsec": 0.642,
+   "offset_from_catwise_track_arcsec": [
+    -0.08,
+    -0.18
+   ]
+  },
+  {
+   "epoch_yr": 2026.6995,
+   "mjd": 61296.492425378376,
+   "n_frames": 37,
+   "ra": 358.7025090515094,
+   "dec": -81.67892807041292,
+   "snr": 21.0,
+   "err_stat_arcsec": 0.315,
+   "err_arcsec": 0.678,
+   "offset_from_catwise_track_arcsec": [
+    -0.17,
+    -0.29
+   ]
+  }
+ ],
+ "D6": [
+  {
+   "epoch_yr": 2025.7064,
+   "mjd": 60933.751553,
+   "n_frames": 19,
+   "ra": 358.70102286182697,
+   "dec": -81.67901835044019,
+   "snr": 10.3,
+   "err_stat_arcsec": 0.644,
+   "err_arcsec": 0.88,
+   "offset_from_catwise_track_arcsec": [
+    -0.82,
+    -0.55
+   ]
+  },
+  {
+   "epoch_yr": 2026.2985,
+   "mjd": 61150.03182776472,
+   "n_frames": 34,
+   "ra": 358.7027360805798,
+   "dec": -81.67886419028856,
+   "snr": 17.8,
+   "err_stat_arcsec": 0.37,
+   "err_arcsec": 0.705,
+   "offset_from_catwise_track_arcsec": [
+    -0.0,
+    -0.03
+   ]
+  },
+  {
+   "epoch_yr": 2026.6908,
+   "mjd": 61293.302242166676,
+   "n_frames": 18,
+   "ra": 358.70308675341903,
+   "dec": -81.67894434869555,
+   "snr": 9.4,
+   "err_stat_arcsec": 0.705,
+   "err_arcsec": 0.926,
+   "offset_from_catwise_track_arcsec": [
+    0.13,
+    -0.35
+   ]
+  }
+ ],
+ "all": [
+  {
+   "epoch_yr": 2025.7368,
+   "mjd": 60944.880004125,
+   "n_frames": 96,
+   "ra": 358.70324195203597,
+   "dec": -81.67905457537111,
+   "snr": 9.6,
+   "err_stat_arcsec": 0.686,
+   "err_arcsec": 0.911,
+   "offset_from_catwise_track_arcsec": [
+    0.33,
+    -0.68
+   ]
+  },
+  {
+   "epoch_yr": 2026.2761,
+   "mjd": 61141.84618117308,
+   "n_frames": 104,
+   "ra": 358.7027193385174,
+   "dec": -81.67896830332464,
+   "snr": 12.5,
+   "err_stat_arcsec": 0.528,
+   "err_arcsec": 0.799,
+   "offset_from_catwise_track_arcsec": [
+    -0.01,
+    -0.41
+   ]
+  },
+  {
+   "epoch_yr": 2026.7095,
+   "mjd": 61300.15945691463,
+   "n_frames": 82,
+   "ra": 358.70319086224913,
+   "dec": -81.67873101875314,
+   "snr": 6.7,
+   "err_stat_arcsec": 0.988,
+   "err_arcsec": 1.156,
+   "offset_from_catwise_track_arcsec": [
+    0.18,
+    0.42
+   ]
+  }
+ ]
+}

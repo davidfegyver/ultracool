@@ -1,0 +1,21 @@
+# Would WISE J235447.80-814044.9 + Gaia DR3 6350786278796634112 pass the Zhang+2025 (arXiv:2505.24560, Sect. 2) selection?
+# Criteria quoted from the HTML (zhang2025_bb1_grep.txt); values from the files named. [INFERENCE] throughout: we do not know
+# which CatWISE release/table or which exact columns they used.
+(1) W1-W2 > 1.8           : CatWISE2020 W1mproPM 17.239, W2mproPM 15.027 -> 2.21                      PASS  (vizier_specific_rows.txt, II/365)
+(2) W1,W2 SNR > 5         : snrW1pm 23.0, snrW2pm 47.7                                                 PASS  (II/365)
+(3) PM > 100 mas/yr       : IRSA CatWISE2020 pmra 141.83, pmdec 72.83 -> 159                           PASS  (../irsa_catwise_2020.tbl, WDTPair's file)
+                            VizieR II/365 pmRA 121.85, pmDE 70.60 -> 141                               PASS
+(4) PM errors < 50        : 25.8, 23.1                                                                 PASS
+(5) |b| > 10 deg          : b = -35.2 (WD GLAT -35.16, gf2019 row)                                     PASS
+(6) nb = 1                : IRSA nb = 1                                                                PASS
+(7) ab_flags = 00         : 00 (IRSA and II/365)                                                       PASS
+(8) |dPMRA|,|dPMDec| < 40 : WD (GCNS) 96.03, 36.29
+                            with IRSA CatWISE2020 / Kirkpatrick+2021 pmRAC2: dRA 45.8, dDec 36.5        FAIL (dRA by 5.8 mas/yr)
+                            with VizieR II/365 pmRA/pmDE:                 dRA 25.8, dDec 34.3           PASS
+(9) distance < 40 pc      : WD 26.95 pc (GCNS Dist50 0.02695 kpc)                                      PASS
+(10) separation < 10'     : 63.8"                                                                      PASS
+=> With the IRSA CatWISE2020 proper motion (the value Kirkpatrick+2021 also lists as CatWISE2020), the pair fails eq. 8 and would
+   not be one of Zhang's 15 candidate pairs. With the VizieR II/365 pmRA (which differs from the IRSA value by 20 mas/yr for this
+   source, unexplained here) it would pass every criterion and could have been one of the 7 candidates rejected at visual
+   inspection (those are not named in the paper). The paper names only the 8 retained systems; none is this pair, and the HTML
+   has no "white dwarf", "2354", "235447", "235448" or the WD Gaia ID (zhang2025_bb1_grep.txt).

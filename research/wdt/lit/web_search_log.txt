@@ -1,0 +1,27 @@
+2026-11-15 web_search (WDTLit agent). Result lists summarised; "none" = no result mentions either object or the pair.
+1. "WISE J235447.80-814044.9"
+   -> 10 results; WISE data-release / IRSA / NASA pages and unrelated "WISE" hardware brochures. None mentions the object.
+2. "CWISE J235448.04-814044.6"
+   -> 10 results; other CWISE objects (Rothermich+2026 "Sinking Silicates I" 2609.13433 on CWISE J210640.16+250729.0; CWISE J1055+5443; CWISE J0146-0508AB; L 262-74 companion). None mentions the object.
+3. "WISEA J235447.85-814044.9"
+   -> 10 results; NED pages for other WISEA objects only. None.
+4. "6350786278796634112"
+   -> stellarcatalog.com page "Gaia DR2 6350786278796634112": "white dwarf ... 88 light years ... It is a single star, ~60% of solar mass";
+      starcarta.app/o/LhjtZ: "Gaia DR3 6350786278796634112 - 87.9 ly ... DZ-type star, Teff ~4629 K" (Vincent+2024 Teff);
+      other stellarcatalog/starcarta map pages listing it among neighbours. No companion mentioned anywhere.
+5. J2354-8140 white dwarf
+   -> 10 results; all about LAMOST J235456.73+335625 ("J2354", Tucker+2024 2407.19004; 2601.01755; 2210.04685) and SCR J2354-6023. None.
+6. WISE 2354-8140 companion
+   -> 10 results; WISE J2354+0240 (Y dwarf), Luhman+2012 WISE companions, Wolf 1130. None.
+7. "WDJ235419.41-814104.96"
+   -> 10 results; appliance part numbers only. None.
+8. "Benchmark brown dwarfs" II Zhang 2025 OR 2026 arXiv T dwarf wide companion
+   -> Zhang+2025 Benchmark brown dwarfs I (2505.24560, MNRAS 542, 656) in several mirrors; Gonzales-group "Benchmark Brown Dwarf
+      Systems I" (2607.09851, FGK hosts, PEPSI). No "Benchmark brown dwarfs II" found.
+9. "Benchmark brown dwarfs - II" OR "... -- II" OR "... – II" Zhang
+   -> Paper I only (arXiv, OUP, Herts repository, RAS press release), 2607.09851, Zhang's NJU page. No paper II found.
+10. white dwarf T dwarf wide binary discovered 2026 arXiv Gaia DZ white dwarf brown dwarf companion
+   -> 2604.09845 (WD J000801.25-350450 and two co-moving companions, Backyard Worlds), 2601.15619, 2609.25216, 2308.03255,
+      2602.16550, A&A 2026 WD+MS. None mentions the object; 2604.09845, 2607.09851, 2609.13433 added to the arXiv full-text grep
+      (arxiv_grep_extra.txt).
+NASA ADS: no token -> ADS full text NOT searched (same as research/verification/J2358/ads_probe.txt). Google Scholar not searched.

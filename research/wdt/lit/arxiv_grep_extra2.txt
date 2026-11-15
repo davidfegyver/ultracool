@@ -1,0 +1,15 @@
+
+### full-text grep of 13 papers (arxiv.org/html, falling back to PDF text, then /abs); patterns ['2354-81', '2354−81', '2354–81', '2354$-$81', '235447', '235448', '235419', '235420', 'J2354', '6350786278796634112', '358.58', '358.70', '358.69']
+2604.01323 [html, 823673 chars] hits=[] :: (given on command line)
+2404.14324 [pdf-text (html HTTPError), 135462 chars] hits=[] :: (given on command line)
+2112.11314 [html, 220855 chars] hits=[] :: (given on command line)
+2312.03639 [pdf-text (html HTTPError), 526114 chars] hits=[] :: (given on command line)
+2107.02805 [html, 240223 chars] hits=[] :: (given on command line)
+2609.11798 [html, 233515 chars] hits=[] :: (given on command line)
+2408.14447 [html, 246700 chars] hits=[] :: (given on command line)
+2411.01378 [html, 2798861 chars] hits=[] :: (given on command line)
+2102.02815 [html, 68486 chars] hits=[] :: (given on command line)
+1902.07073 [html, 128321 chars] hits=[] :: (given on command line)
+2211.02288 [html, 105681 chars] hits=[] :: (given on command line)
+2108.05321 [html, 281317 chars] hits=[] :: (given on command line)
+2112.04678 [html, 302305 chars] hits=[] :: (given on command line)

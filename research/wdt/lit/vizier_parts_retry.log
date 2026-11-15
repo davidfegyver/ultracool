@@ -1,0 +1,12 @@
+gzip: parts_tdw/vizier_part_B__.tsv.gz: No such file or directory
+08:39:10 tdw V/* ok (attempt 1)
+08:39:13 tdw IV/* ok (attempt 1)
+08:39:15 tdw III/* ok (attempt 1)
+08:39:20 tdw VII/* ok (attempt 1)
+08:40:20 tdw II/* ok (attempt 1)
+08:40:39 wd J/ApJS/* ok (attempt 1)
+08:40:44 wd J/other/* ok (attempt 1)
+08:40:45 wd J/PASJ/* ok (attempt 1)
+gzip: parts_wd/vizier_part_B__.tsv.gz: No such file or directory
+08:40:46 wd IX/* failed attempt 1: #INFO	Error=The database is not currently reachable.	
+08:41:18 wd IX/* ok (attempt 2)
