@@ -79,7 +79,6 @@ export default function Workbench({ mode }: { mode: 'explore' | 'research' }) {
     ucdButton.current?.focus()
   }
 
-  // known asteroids from the summary as a sky catalog
   // known asteroids only matter when looking at single exposures or a short time window: hidden otherwise
   const timeWindow = opts.mjd_min !== undefined || opts.mjd_max !== undefined || !!opts.wise_exposures
   const asteroids = timeWindow ? summary.data?.asteroids : undefined

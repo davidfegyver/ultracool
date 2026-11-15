@@ -9,7 +9,7 @@ export type Resolved = {
   sptype: string | null
 }
 
-/** HTTP error with its status, so a 404 from a not-yet-deployed endpoint can read "not available yet". */
+/** HTTP error with its status (`isMissing`: 404). */
 export class ApiError extends Error {
   status: number
   constructor(message: string, status: number) {
@@ -42,7 +42,7 @@ export type Frame = {
   survey: 'spherex' | 'wise'
   band: string
   /** single SPHEREx frame, WISE visit median, or one WISE exposure */
-  kind?: 'single' | 'visit' | 'exposure'
+  kind: 'single' | 'visit' | 'exposure'
   mjd: number
   date: string
   wavelength_um: number | null
@@ -51,7 +51,7 @@ export type Frame = {
   flux_err_ujy: number | null
   flagged: boolean
   /** artifact flags hit at the target, e.g. GHOST, PERSIST, STREAK */
-  flag_names?: string[]
+  flag_names: string[]
   target_px: [number, number]
   png: string
 }
@@ -65,8 +65,8 @@ export type Sequence = {
   grid: { wcs: Record<string, string | number>; width: number; height: number }
   target: { ra: number; dec: number; pmra_masyr: number; pmdec_masyr: number; epoch_yr: number }
   frames: Frame[]
-  /** all WISE frames processed (SPHEREx may still be fetching); absent on older backends */
-  wise_done?: boolean
+  /** all WISE frames processed (SPHEREx may still be fetching) */
+  wise_done: boolean
   /** 1-based place in the line for a processing slot while waiting, else null */
   queue_position?: number | null
   /** estimated seconds until done, null when unknown */

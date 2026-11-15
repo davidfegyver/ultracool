@@ -56,7 +56,7 @@ export function useTarget(defaultTarget = DEFAULT_TARGET) {
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  return { resolved, lookup, goTo, busy, error, setError }
+  return { resolved, lookup, goTo, busy, error }
 }
 
 /** Start the sequence for a target and poll every 2 s until it settles. `priorityBands` (the bands on screen) are
@@ -125,7 +125,7 @@ export function useFlipbook(init: Partial<Flipbook> = {}) {
 }
 
 /** Result of a per-sequence endpoint, fetched once the sequence is done (with `afterWise`: as soon as every WISE frame
- * is in, if the backend reports `wise_done`). 404 = backend without that endpoint yet.
+ * is in, `wise_done`).
  * `busy`: still waiting (frames or the request), so callers can show a spinner next to `note`. */
 export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => Promise<T>, afterWise = false) {
   const [state, setState] = useState<{ id: string; data: T | null; note: string | null; busy: boolean } | null>(null)
@@ -137,7 +137,7 @@ export function useSeqResult<T>(seq: Sequence | null, fetcher: (id: string) => P
     setState({ id: ready, data: null, note: 'Asking the archives… (the first look at a field can take up to a minute)', busy: true })
     fetcher(ready)
       .then((data) => !stale && setState({ id: ready, data, note: null, busy: false }))
-      .catch((e) => !stale && setState({ id: ready, data: null, note: isMissing(e) ? 'Not available yet on this server' : (e as Error).message, busy: false }))
+      .catch((e) => !stale && setState({ id: ready, data: null, note: (e as Error).message, busy: false }))
     return () => {
       stale = true
     }
@@ -236,8 +236,7 @@ export function useProbe(seq: Sequence | null): ProbeCtl {
         if (id !== run.current) return
       }
     } catch (e) {
-      const msg = (e as Error).message
-      if (id === run.current) setResult((r) => ({ ...r, busy: false, progress: null, error: isMissing(e) && msg === 'Not Found' ? 'Probe measurements are not available on this server yet' : msg }))
+      if (id === run.current) setResult((r) => ({ ...r, busy: false, progress: null, error: (e as Error).message }))
     }
   }
 

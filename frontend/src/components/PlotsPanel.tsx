@@ -91,7 +91,7 @@ export default function PlotsPanel({ seq, periods = [], bands = ALL_BANDS, probe
     getSpectrum(seq.id).then(setSpec).catch(() => setSpec(null))
   }, [seq, n, settled])
 
-  // catalog photometry: once at start, again when the job settles; a 404 (older backend) just means no fallback
+  // catalog photometry: once at start, again when the job settles; a failure just means no fallback
   const sid = seq?.id
   useEffect(() => {
     if (!sid) return setCatalog(null)

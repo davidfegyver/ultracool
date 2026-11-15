@@ -1,6 +1,5 @@
-import { useState, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { exportCsvUrl, type KnownAsteroid, type Sequence, type Summary } from '../api'
-import { downloadBlob } from '../csv'
 import MotionPlot from './MotionPlot'
 import Pending from './Pending'
 
@@ -32,23 +31,19 @@ export default function ResearchPanel({ seq, summary, note, busy, showAsteroids 
   busy: boolean
   showAsteroids: boolean
 }) {
-  const [csvNote, setCsvNote] = useState<string | null>(null)
-  const download = async () => {
-    if (!seq) return
-    setCsvNote('Preparing…')
-    const r = await fetch(exportCsvUrl(seq.id)).catch(() => null)
-    if (!r?.ok) return setCsvNote(r?.status === 404 ? 'CSV export not available yet on this server' : `Export failed${r ? ` (${r.status})` : ''}`)
-    downloadBlob(await r.blob(), `ultracool_${seq.id}.csv`)
-    setCsvNote(null)
-  }
   const { motion: m, color: c, variability: v, spectrum: s } = summary ?? {}
   return (
     <div className="p-2 text-xs">
       <div className="flex items-center gap-2">
-        <button className="rounded bg-sky-700 px-2 py-1 enabled:hover:bg-sky-600 disabled:opacity-50" disabled={!seq} onClick={download}>
+        <a
+          className="rounded bg-sky-700 px-2 py-1 hover:bg-sky-600 aria-disabled:pointer-events-none aria-disabled:opacity-50"
+          aria-disabled={!seq}
+          href={seq ? exportCsvUrl(seq.id) : undefined}
+          download
+        >
           ⤓ Download CSV
-        </button>
-        <span className="text-slate-500">{csvNote ?? 'per-frame photometry with provenance'}</span>
+        </a>
+        <span className="text-slate-500">per-frame photometry with provenance</span>
       </div>
       {!summary && <Pending note={note} busy={busy} className="mt-2" />}
       {m && (

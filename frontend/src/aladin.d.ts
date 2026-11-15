@@ -18,7 +18,6 @@ declare module 'aladin-lite' {
   }
   export interface Aladin {
     gotoRaDec(ra: number, dec: number): void
-    setFoV(fov: number): void
     getFov(): [number, number]
     setBaseImageLayer(idOrLayer: string | ImageLayer): void
     getRaDec(): [number, number]

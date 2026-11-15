@@ -39,7 +39,7 @@ export type Lesson = {
   markers?: Marker[]
   /** predicted positions of a solar-system object; the point nearest each exposure is circled */
   track?: { mjd: number; ra: number; dec: number }[]
-  /** known period for "Fold at period" until the backend's own period search is available */
+  /** known period, offered first under "Fold at": WISE's 6-month cadence can make the periodogram pick an alias */
   period_days?: number
   /** light curve is the main view (shown above the flipbook) */
   light_curve_first?: boolean

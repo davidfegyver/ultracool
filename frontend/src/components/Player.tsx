@@ -269,9 +269,9 @@ export default function Player({ seq, fb, set, aladin, blink: canBlink, presets,
             <>
               <span>{cur.kind === 'exposure' ? cur.date.slice(0, 16).replace('T', ' ') : cur.date.slice(0, 10)}</span>·<span>{cur.survey === 'wise' ? 'WISE' : 'SPHEREx'}</span>·<span>{cur.band}</span>·
               <span>{cur.wavelength_um?.toFixed(2)} µm</span>
-              {(cur.flagged || !!cur.flag_names?.length) && (
-                <span className="truncate rounded bg-amber-700 px-1" title={cur.flag_names?.length ? `Artifact flags at the target: ${cur.flag_names.join(', ')}` : 'Bad-pixel flags at the target'}>
-                  {cur.flag_names?.length ? cur.flag_names.join(' ') : 'flagged'}
+              {(cur.flagged || !!cur.flag_names.length) && (
+                <span className="truncate rounded bg-amber-700 px-1" title={cur.flag_names.length ? `Artifact flags at the target: ${cur.flag_names.join(', ')}` : 'Bad-pixel flags at the target'}>
+                  {cur.flag_names.length ? cur.flag_names.join(' ') : 'flagged'}
                 </span>
               )}
             </>
