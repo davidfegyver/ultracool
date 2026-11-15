@@ -1,0 +1,485 @@
+{
+ "pair": {
+  "uid": "1931",
+  "ucd": "2MASS J11240487+3808054",
+  "ucd_spt_opt": "M8.5",
+  "ucd_spt_ir": "null",
+  "ucd_G": "17.2659",
+  "ucd_gaia": "764072693389251456",
+  "ucd_pmra": "125.68",
+  "ucd_pmdec": "-9.23",
+  "ucd_pmerr": "0.14/0.17",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "54.31",
+  "ucd_plxerr": "0.15",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "18.41",
+  "ucd_disterr": "0.05",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "764072689093638528",
+  "g_ra": "171.01885964390104",
+  "g_dec": "38.13629424820036",
+  "g_pmra": "121.32325744628906",
+  "g_pmdec": "-12.345216751098633",
+  "g_epm": "0.025172486901283264/0.03745013475418091",
+  "g_plx": "54.186920166015625",
+  "g_eplx": "0.0309887807816267",
+  "G": "13.007710456848145",
+  "BP_RP": "3.017",
+  "M_G": "11.68",
+  "RUWE": "1.405419111251831",
+  "RV": "-12.428669929504395",
+  "sep_arcsec": "8.21",
+  "sep_au": "152",
+  "dmu": "5.36",
+  "dmu_sig": "0.15",
+  "dmu_over_sig": "34.83",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "-0.8",
+  "dvtan_kms": "0.47",
+  "dvtan_err": "0.01",
+  "host_mass": "0.204",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "1.82",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "2MUCD 10984",
+  "ucs_ids": "2MASS J11240487+3808054|** RED   23B|GSC2.3 N6JE006314|2MASSI J1124048+380805|2MASSW J1124048+380805|2MUCD 10984|SDSS J112404.93+380805.4|TIC 17992447|WDS J11241+3808B|Gaia DR2 764072693389251456|Gaia DR3 764072693389251456",
+  "n_field": "1",
+  "expected_false": "5.20e-06"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 1799588,
+    "main_id": "RX J1124.1+3808",
+    "otype": "PM*",
+    "sp_type": "M4.5V",
+    "plx_value": 54.1869,
+    "pmra": 121.323,
+    "pmdec": -12.345,
+    "ra": 171.01817409435,
+    "dec": 38.13634911384
+   }
+  ],
+  "ids": [
+   "TIC 17992446",
+   "WISEA J112404.48+380810.6",
+   "Gaia DR3 764072689093638528",
+   "CNS5 2795",
+   "2MASS J11240434+3808108",
+   "FIRST J112404.3+380810",
+   "RX J1124.1+3808",
+   "1RXS J112405.0+380809",
+   "HAT 183-00824",
+   "** RED   23A",
+   "WDS J11241+3808A",
+   "UCAC4 641-047764",
+   "WISE J112404.46+380810.8",
+   "PM J11240+3808",
+   "Gaia DR2 764072689093638528",
+   "Karmn J11240+381"
+  ],
+  "refs": [
+   {
+    "bibcode": "2000A&A...356..445B",
+    "title": "Radio and X-ray bright AGN: the ROSAT - FIRST correlation."
+   },
+   {
+    "bibcode": "2006A&A...449..425M",
+    "title": "Optical identification of ROSAT-FSC sources."
+   },
+   {
+    "bibcode": "2007AJ....133.2825R",
+    "title": "Meeting the cool neighbors. XI. Beyond the NLTT catalog."
+   },
+   {
+    "bibcode": "2009ApJ...699..649S",
+    "title": "Identifying the young low-mass stars within 25 pc. I. Spectroscopic  observations."
+   },
+   {
+    "bibcode": "2011AJ....141..166H",
+    "title": "A photometric variability survey of field K and M dwarf stars with HATNet."
+   },
+   {
+    "bibcode": "2011AJ....142..138L",
+    "title": "An all-sky catalog of bright M dwarfs."
+   },
+   {
+    "bibcode": "2012ApJ...754...44J",
+    "title": "The AstraLux large M-dwarf multiplicity survey."
+   },
+   {
+    "bibcode": "2012ApJ...758...56S",
+    "title": "Identifying the young low-mass stars within 25 pc. II. Distances,  kinematics, and group membership."
+   },
+   {
+    "bibcode": "2014A&A...567A..52K",
+    "title": "Reliable probabilistic determination of membership in stellar kinematic groups in the young disk."
+   },
+   {
+    "bibcode": "2014AJ....148..119F",
+    "title": "UCAC4 nearby star survey: a search for our stellar neighbors."
+   },
+   {
+    "bibcode": "2015ApJS..216....7B",
+    "title": "Planets Around Low-Mass Stars (PALMS). IV. The outer architecture of M dwarf planetary systems."
+   },
+   {
+    "bibcode": "2015A&A...577A.128A",
+    "title": "CARMENES input catalogue of M dwarfs. I. Low-resolution spectroscopy with CAFOS."
+   },
+   {
+    "bibcode": "2015ApJ...806...62B",
+    "title": "Planets around low-mass stars (PALMS). V. Age-dating low-mass companions to members and interlopers of young moving groups."
+   },
+   {
+    "bibcode": "2015ApJS..220...16T",
+    "title": "A near-infrared spectroscopic survey of 886 nearby M dwarfs."
+   },
+   {
+    "bibcode": "2017A&A...604A..82C",
+    "title": "The discrepancy between dynamical and theoretical mass in the triplet-system 2MASS J10364483+1521394."
+   },
+   {
+    "bibcode": "2017AJ....154..245M",
+    "title": "A direct imaging survey of Spitzer-detected debris disks: occurrence of giant planets in dusty systems."
+   },
+   {
+    "bibcode": "2018A&A...614A..76J",
+    "title": "CARMENES input catalogue of M dwarfs. III. Rotation and activity from high-resolution spectroscopic observations."
+   },
+   {
+    "bibcode": "2020ApJS..247...11R",
+    "title": "Radial velocity photon limits for the dwarf stars of spectral classes F-M."
+   },
+   {
+    "bibcode": "2020A&A...642A.115C",
+    "title": "CARMENES input catalogue of M dwarfs. V. Luminosities, colours, and spectral energy distributions."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2021AJ....162..102S",
+    "title": "Large Adaptive optics Survey for Substellar Objects around young, nearby, low-mass stars with Robo-AO."
+   },
+   {
+    "bibcode": "2022ApJ...927..122H",
+    "title": "Chemical Properties of the Local Disk and Halo. II. Abundances of 3745 M Dwarfs and Subdwarfs from Improved Model Fitting of Low-resolution Spectra."
+   },
+   {
+    "bibcode": "2023A&A...670A..19G",
+    "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2024AJ....167...54C",
+    "title": "TESS Hunt for Young and Maturing Exoplanets (THYME). XI. An Earth-sized Planet Orbiting a Nearby, Solar-like Host in the 400 Myr Ursa Major Moving Group."
+   },
+   {
+    "bibcode": "2024AJ....167...56C",
+    "title": "The POKEMON Speckle Survey of Nearby M Dwarfs. II. Observations of 1125 Targets."
+   },
+   {
+    "bibcode": "2024A&A...692A.206C",
+    "title": "CARMENES input catalogue of M dwarfs VIII. Kinematics in the solar neighbourhood."
+   },
+   {
+    "bibcode": "2025A&A...693A.228C",
+    "title": "CARMENES input catalogue of M dwarfs IX. Multiplicity from close spectroscopic binaries to ultra-wide systems."
+   },
+   {
+    "bibcode": "2025ApJS..276...47G",
+    "title": "Metallicity Dependence of Giant Planets around M Dwarfs."
+   },
+   {
+    "bibcode": "2025A&A...699A.100D",
+    "title": "The {\\em Gaia} spectroscopic catalogue of exoplanets and host stars."
+   }
+  ],
+  "parents": [
+   {
+    "main_id": "NAME Ursa Major Moving Group",
+    "otype": "MGr",
+    "link_bibcode": "2012ApJ...758...56S"
+   },
+   {
+    "main_id": "NAME Ursa Major Moving Group",
+    "otype": "MGr",
+    "link_bibcode": "2014A&A...567A..52K"
+   }
+  ],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.009999999776482582,
+    "teff": 0.0,
+    "log_g": 0.0,
+    "bibcode": "2015ApJS..220...16T"
+   },
+   {
+    "fe_h": -0.17000000178813934,
+    "teff": 3229,
+    "log_g": 0.0,
+    "bibcode": "2015ApJS..220...16T"
+   },
+   {
+    "fe_h": 0.0,
+    "teff": 3285,
+    "log_g": 0.0,
+    "bibcode": "2015ApJS..220...16T"
+   },
+   {
+    "fe_h": 0.0,
+    "teff": 3200,
+    "log_g": 5.0,
+    "bibcode": "2022ApJ...927..122H"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 1799816,
+    "main_id": "RX J1124.1+3808B",
+    "otype": "LM*",
+    "sp_type": "M8.5V",
+    "plx_value": 54.3132,
+    "pmra": 125.68,
+    "pmdec": -9.228,
+    "ra": 171.02035997661,
+    "dec": 38.13484244298
+   }
+  ],
+  "ids": [
+   "TIC 17992447",
+   "Gaia DR3 764072693389251456",
+   "RX J1124.1+3808B",
+   "2MUCD 10984",
+   "2MASS J11240487+3808054",
+   "2MASSI J1124048+380805",
+   "2MASSW J1124048+380805",
+   "CNS5 2796",
+   "SDSS J112404.93+380805.4",
+   "GSC2.3 N6JE006314",
+   "** RED   23B",
+   "WDS J11241+3808B",
+   "Gaia DR2 764072693389251456"
+  ],
+  "refs": [
+   {
+    "bibcode": "2003AJ....126.2421C",
+    "title": "Meeting the cool neighbors. V. A 2MASS-Selected sample of ultracool dwarfs."
+   },
+   {
+    "bibcode": "2003ApJ...587..407C",
+    "title": "Detection of nine M8.0-L0.5 binaries: the very low binary population and its implications for brown dwarf and very low star formation."
+   },
+   {
+    "bibcode": "2004AJ....127.2856B",
+    "title": "The 2MASS wide-field T dwarf search. III. Seven new T dwarfs and other cool dwarf discoveries."
+   },
+   {
+    "bibcode": "2007AJ....133..439C",
+    "title": "Meeting the cool neighbors. IX. The luminosity function of M7-L8 ultracool dwarfs in the field."
+   },
+   {
+    "bibcode": "2007AJ....133.2825R",
+    "title": "Meeting the cool neighbors. XI. Beyond the NLTT catalog."
+   },
+   {
+    "bibcode": "2008ApJ...681..579B",
+    "title": "Subtle signatures of multiplicity in late-type dwarf spectra: the  unresolved M8.5 + T5 binary 2MASS J03202839-0446358."
+   },
+   {
+    "bibcode": "2009AJ....137....1F",
+    "title": "The brown dwarf kinematics project I. Proper motions and tangential velocities  for a large sample of late-type M, L, and T dwarfs."
+   },
+   {
+    "bibcode": "2009ApJ...705.1416R",
+    "title": "A volume-limited sample of 63 M7-M9.5 dwarfs. I. Space motion, kinematic  age, and lithium."
+   },
+   {
+    "bibcode": "2010ApJ...710..924R",
+    "title": "A volume-limited sample of 63 M7-M9.5 dwarfs. II. Activity, magnetism,  and the fade of the rotation-dominated dynamo."
+   },
+   {
+    "bibcode": "2011A&A...529A..44W",
+    "title": "Dust in brown dwarfs and extra-solar planets. III. Testing synthetic  spectra on observations."
+   },
+   {
+    "bibcode": "2012ApJ...746...23M",
+    "title": "The radio activity-rotation relation of ultracool dwarfs."
+   },
+   {
+    "bibcode": "2013A&A...549A.131A",
+    "title": "Volume-limited radio survey of ultracool dwarfs."
+   },
+   {
+    "bibcode": "2014A&A...566A.130C",
+    "title": "Doppler imaging of exoplanets and brown dwarfs."
+   },
+   {
+    "bibcode": "2015ApJS..216....7B",
+    "title": "Planets Around Low-Mass Stars (PALMS). IV. The outer architecture of M dwarf planetary systems."
+   },
+   {
+    "bibcode": "2015ApJ...806...62B",
+    "title": "Planets around low-mass stars (PALMS). V. Age-dating low-mass companions to members and interlopers of young moving groups."
+   },
+   {
+    "bibcode": "2017A&A...608A..70J",
+    "title": "Self-consistent atmosphere modeling with cloud formation for low-mass stars and exoplanets."
+   },
+   {
+    "bibcode": "2019ApJ...883..205B",
+    "title": "The ultracool SpeXtroscopic survey. I. Volume-limited spectroscopic sample and luminosity function of M7-L5 ultracool dwarfs."
+   },
+   {
+    "bibcode": "2020ApJS..247...11R",
+    "title": "Radial velocity photon limits for the dwarf stars of spectral classes F-M."
+   },
+   {
+    "bibcode": "2020AJ....160..153B",
+    "title": "TOI-824 b: a new planet on the lower edge of the hot Neptune desert."
+   },
+   {
+    "bibcode": "2021A&A...645A.100S",
+    "title": "SPECULOOS: Ultracool dwarf transit survey. Target list and strategy."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2022A&A...664A.111B",
+    "title": "Infrared spectroscopy of free-floating planet candidates in Upper Scorpius and Ophiuchus."
+   },
+   {
+    "bibcode": "2023A&A...670A..19G",
+    "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+   },
+   {
+    "bibcode": "2024MNRAS.527.6835K",
+    "title": "The occurrence rate of quiescent radio emission for ultracool dwarfs using a generalized semi-analytical Bayesian framework."
+   },
+   {
+    "bibcode": "2025A&A...693A.228C",
+    "title": "CARMENES input catalogue of M dwarfs IX. Multiplicity from close spectroscopic binaries to ultra-wide systems."
+   },
+   {
+    "bibcode": "2025A&A...699A.145D",
+    "title": "Star formation and accretion rates within 500 pc as traced by {\\em Gaia} DR3 XP spectra."
+   },
+   {
+    "bibcode": "2026ApJ...998...88I",
+    "title": "The SPHINX M Dwarf Spectral Grid. II. New Model Atmospheres and Spectra to Derive the Fundamental Properties of Mid-to-late Type M Dwarfs."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2007AJ....133.2825R",
+   "Meeting the cool neighbors. XI. Beyond the NLTT catalog."
+  ],
+  [
+   "2015ApJS..216....7B",
+   "Planets Around Low-Mass Stars (PALMS). IV. The outer architecture of M dwarf planetary systems."
+  ],
+  [
+   "2015ApJ...806...62B",
+   "Planets around low-mass stars (PALMS). V. Age-dating low-mass companions to members and interlopers of young moving groups."
+  ],
+  [
+   "2020ApJS..247...11R",
+   "Radial velocity photon limits for the dwarf stars of spectral classes F-M."
+  ],
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ],
+  [
+   "2023A&A...670A..19G",
+   "The Fifth Catalogue of Nearby Stars (CNS5)."
+  ],
+  [
+   "2025A&A...693A.228C",
+   "CARMENES input catalogue of M dwarfs IX. Multiplicity from close spectroscopic binaries to ultra-wide systems."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=764072689093638528&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "764072689093638528",
+     "Source2": "764072693389251456",
+     "sepAU": "152.246468908235755",
+     "R": "5.837347254791710652e-08"
+    }
+   ]
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=764072689093638528&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=764072693389251456&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=764072693389251456&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "764072689093638528",
+     "Source2": "764072693389251456",
+     "sepAU": "152.246468908235755",
+     "R": "5.837347254791710652e-08"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=171.01885964390104+38.13629424820036&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=171.01885964390104+38.13629424820036&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "11241+3808",
+    "Disc": "RED  23",
+    "Comp": "",
+    "Obs1": "1953",
+    "pa1": "134",
+    "pa2": "129",
+    "sep1": "8.2",
+    "sep2": "8.00",
+    "mag1": "13.950",
+    "mag2": "17.45",
+    "DM": "",
+    "Notes": "N",
+    "n_RAh": "",
+    "RAJ2000": "11 24 04.36",
+    "DEJ2000": "+38 08 10.8"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=171.01885964390104+38.13629424820036&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

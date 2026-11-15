@@ -1,0 +1,369 @@
+{
+ "pair": {
+  "uid": "3281",
+  "ucd": "CE 507",
+  "ucd_spt_opt": "M6",
+  "ucd_spt_ir": "null",
+  "ucd_G": "14.2671",
+  "ucd_gaia": "6735656923825448320",
+  "ucd_pmra": "-147.36",
+  "ucd_pmdec": "-368.39",
+  "ucd_pmerr": "0.06/0.05",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "62.24",
+  "ucd_plxerr": "0.06",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "16.067",
+  "ucd_disterr": "0.015",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "6735656923825446144",
+  "g_ra": "280.8014172914453",
+  "g_dec": "-33.38112796161168",
+  "g_pmra": "-129.326904296875",
+  "g_pmdec": "-371.1947021484375",
+  "g_epm": "0.08013730496168137/0.0647495687007904",
+  "g_plx": "62.05924987792969",
+  "g_eplx": "0.08127865940332413",
+  "G": "9.483536720275879",
+  "BP_RP": "2.044",
+  "M_G": "8.45",
+  "RUWE": "3.4829468727111816",
+  "RV": "-23.322927474975586",
+  "sep_arcsec": "14.89",
+  "sep_au": "240",
+  "dmu": "18.25",
+  "dmu_sig": "0.1",
+  "dmu_over_sig": "183.02",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "-1.79",
+  "dvtan_kms": "1.39",
+  "dvtan_err": "0.01",
+  "host_mass": "0.539",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "2.14",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "Wint17 find V-band parallax 66.10\u00b12.69 mas.",
+  "ucs_simbad": "CE 507",
+  "ucs_ids": "UCAC2  17822244|** JAO    6B|CE 507|2MASS J18431237-3322313|TIC 391099465|UCAC4 284-188812|WDS J18432-3323B|WISEA J184312.24-332235.3|Gaia DR2 6735656923825448320|Gaia DR3 6735656923825448320",
+  "n_field": "1",
+  "expected_false": "1.71e-05"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 2372174,
+    "main_id": "CD-33 13497",
+    "otype": "PM*",
+    "sp_type": "M2",
+    "plx_value": 62.0592,
+    "pmra": -129.327,
+    "pmdec": -371.195,
+    "ra": 280.80210562163825,
+    "dec": -33.37947820415528
+   }
+  ],
+  "ids": [
+   "TIC 391099484",
+   "Gaia DR3 6735656923825446144",
+   "CD-33 13497",
+   "CE 508",
+   "CNS5 4641",
+   "LTT  7419",
+   "PPM 749969",
+   "2MASS J18431250-3322462",
+   "** JAO    6A",
+   "WDS J18432-3323A",
+   "WISEA J184312.39-332249.8",
+   "UCAC4 284-188816",
+   "PM J18432-3322S",
+   "TYC 7411-768-1",
+   "Gaia DR2 6735656923825446144",
+   "NLTT 46886"
+  ],
+  "refs": [
+   {
+    "bibcode": "1985ApJS...59..197B",
+    "title": "G.P. Kuiper's spectral classifications of proper-motion stars."
+   },
+   {
+    "bibcode": "1989AJ.....98.1693R",
+    "title": "Subdwarf studies. I. UBVRI photometry of NLTT stars."
+   },
+   {
+    "bibcode": "2001ApJS..133..119R",
+    "title": "Calan-ESO proper-motion catalog."
+   },
+   {
+    "bibcode": "2003AJ....125..332J",
+    "title": "The solar neighborhood. VII. Discovery and characterization of nearby multiples in the CTIO parallax investigation."
+   },
+   {
+    "bibcode": "2011AJ....142..138L",
+    "title": "An all-sky catalog of bright M dwarfs."
+   },
+   {
+    "bibcode": "2011MNRAS.418.2548S",
+    "title": "Rotation, magnetism and metallicity of M dwarf systems."
+   },
+   {
+    "bibcode": "2013MNRAS.435.2161F",
+    "title": "A catalogue of bright (K < 9) M dwarfs."
+   },
+   {
+    "bibcode": "2014MNRAS.443.2561G",
+    "title": "Trumpeting M dwarfs with CONCH-SHELL: a catalogue of nearby cool host-stars for habitable exoplanets and life."
+   },
+   {
+    "bibcode": "2015AJ....149....5W",
+    "title": "The solar neighborhood. XXXV. Distances to 1404 M dwarf systems within 25 pc in the southern sky."
+   },
+   {
+    "bibcode": "2016ApJ...817..112S",
+    "title": "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+   },
+   {
+    "bibcode": "2017AJ....153...14W",
+    "title": "The solar neighborhood XXXVIII. Results from the CTIO/SMARTS 0.9M: trigonometric parallaxes for 151 nearby M dwarf systems."
+   },
+   {
+    "bibcode": "2017AJ....154..124C",
+    "title": "The solar neighborhood. XLI. A study of the wide main sequence for M dwarfs-long-term photometric variability."
+   },
+   {
+    "bibcode": "1995yCat.1098....0L",
+    "title": "New Luyten Catalogue of stars with proper motions larger than two tenths of an arcsecond (NLTT)."
+   },
+   {
+    "bibcode": "2020ApJS..247...11R",
+    "title": "Radial velocity photon limits for the dwarf stars of spectral classes F-M."
+   },
+   {
+    "bibcode": "2020AJ....160..215V",
+    "title": "The solar neighborhood. XLVI. Revealing new M dwarf binaries and their orbital architectures."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2021MNRAS.508.5148C",
+    "title": "M dwarf spectral indices at moderate resolution: accurate T_eff_ and [Fe/H] for 178 southern stars."
+   },
+   {
+    "bibcode": "2023A&A...670A..19G",
+    "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2024AJ....167..139T",
+    "title": "HPIC: The Habitable Worlds Observatory Preliminary Input Catalog."
+   },
+   {
+    "bibcode": "2024ApJS..271...55K",
+    "title": "The Initial Mass Function Based on the Full-sky 20 pc Census of \u223c3600 Stars and Brown Dwarfs."
+   },
+   {
+    "bibcode": "2025PASP..137j4402T",
+    "title": "HWO Target Stars and Systems: A Prioritized Community List of Potential Stellar Targets for the Habitable Worlds Observatory's ExoEarth Survey."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": -0.25,
+    "teff": 3727,
+    "log_g": 0.0,
+    "bibcode": "2014MNRAS.443.2561G"
+   },
+   {
+    "fe_h": 0.44999998807907104,
+    "teff": 4010,
+    "log_g": 0.0,
+    "bibcode": "2021MNRAS.508.5148C"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 11904271,
+    "main_id": "CD-33 13497B",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 62.2403,
+    "pmra": -147.356,
+    "pmdec": -368.391,
+    "ra": 280.80155776954746,
+    "dec": -33.37535982517972
+   }
+  ],
+  "ids": [
+   "TIC 391099465",
+   "Gaia DR3 6735656923825448320",
+   "CNS5 4639",
+   "WISEA J184312.24-332235.3",
+   "UCAC2  17822244",
+   "UCAC4 284-188812",
+   "2MASS J18431237-3322313",
+   "CE 507",
+   "** JAO    6B",
+   "WDS J18432-3323B",
+   "Gaia DR2 6735656923825448320",
+   "CD-33 13497B"
+  ],
+  "refs": [
+   {
+    "bibcode": "2001ApJS..133..119R",
+    "title": "Calan-ESO proper-motion catalog."
+   },
+   {
+    "bibcode": "2006AJ....132.1234C",
+    "title": "The solar neighborhood. XVI. Parallaxes from CTIOPI: final results from the 1.5m telescope program."
+   },
+   {
+    "bibcode": "2012ApJS..201...19D",
+    "title": "The Hawaii infrared parallax program. I. Ultracool binaries and the L/T  transition."
+   },
+   {
+    "bibcode": "2016ApJ...817..112S",
+    "title": "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+   },
+   {
+    "bibcode": "2017AJ....153...14W",
+    "title": "The solar neighborhood XXXVIII. Results from the CTIO/SMARTS 0.9M: trigonometric parallaxes for 151 nearby M dwarf systems."
+   },
+   {
+    "bibcode": "2020AJ....160..215V",
+    "title": "The solar neighborhood. XLVI. Revealing new M dwarf binaries and their orbital architectures."
+   },
+   {
+    "bibcode": "2021AJ....161..233K",
+    "title": "Around which stars can TESS detect Earth-like planets? The Revised TESS Habitable Zone Catalog."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2023A&A...670A..19G",
+    "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2024ApJS..271...55K",
+    "title": "The Initial Mass Function Based on the Full-sky 20 pc Census of \u223c3600 Stars and Brown Dwarfs."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2001ApJS..133..119R",
+   "Calan-ESO proper-motion catalog."
+  ],
+  [
+   "2016ApJ...817..112S",
+   "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+  ],
+  [
+   "2017AJ....153...14W",
+   "The solar neighborhood XXXVIII. Results from the CTIO/SMARTS 0.9M: trigonometric parallaxes for 151 nearby M dwarf systems."
+  ],
+  [
+   "2020AJ....160..215V",
+   "The solar neighborhood. XLVI. Revealing new M dwarf binaries and their orbital architectures."
+  ],
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ],
+  [
+   "2023A&A...670A..19G",
+   "The Fifth Catalogue of Nearby Stars (CNS5)."
+  ],
+  [
+   "2023AJ....165..267H",
+   "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+  ],
+  [
+   "2024ApJS..271...55K",
+   "The Initial Mass Function Based on the Full-sky 20 pc Census of \u223c3600 Stars and Brown Dwarfs."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=6735656923825446144&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "6735656923825446144",
+     "Source2": "6735656923825448320",
+     "sepAU": "241.646939247885712",
+     "R": "9.224598843254824831e-05"
+    }
+   ]
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=6735656923825446144&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=6735656923825448320&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=6735656923825448320&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "6735656923825446144",
+     "Source2": "6735656923825448320",
+     "sepAU": "241.646939247885712",
+     "R": "9.224598843254824831e-05"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=280.8014172914453+-33.38112796161168&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=280.8014172914453+-33.38112796161168&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "18432-3323",
+    "Disc": "JAO   6",
+    "Comp": "",
+    "Obs1": "1999",
+    "pa1": "354",
+    "pa2": "353",
+    "sep1": "14.8",
+    "sep2": "15.00",
+    "mag1": "10.620",
+    "mag2": "16.07",
+    "DM": "",
+    "Notes": "",
+    "n_RAh": "",
+    "RAJ2000": "18 43 12.59",
+    "DEJ2000": "-33 22 43.0"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=280.8014172914453+-33.38112796161168&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

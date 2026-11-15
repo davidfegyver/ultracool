@@ -1,0 +1,223 @@
+{
+ "pair": {
+  "uid": "3400",
+  "ucd": "PSO J306.0928-06.6429",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "L2.2 FLD-G",
+  "ucd_G": "18.5133",
+  "ucd_gaia": "4217710008397467392",
+  "ucd_pmra": "76.63",
+  "ucd_pmdec": "-234.2",
+  "ucd_pmerr": "0.26/0.18",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "13.78",
+  "ucd_plxerr": "0.23",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "72.6",
+  "ucd_disterr": "1.2",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "4217710012693268480",
+  "g_ra": "306.09553798038587",
+  "g_dec": "-6.640554646521324",
+  "g_pmra": "76.07926940917969",
+  "g_pmdec": "-233.3411407470703",
+  "g_epm": "0.034998372197151184/0.025272544473409653",
+  "g_plx": "13.976628303527832",
+  "g_eplx": "0.030879691243171692",
+  "G": "14.853981971740723",
+  "BP_RP": "2.833",
+  "M_G": "10.58",
+  "RUWE": "1.1990466117858887",
+  "RV": "-65.2692642211914",
+  "sep_arcsec": "13.37",
+  "sep_au": "956",
+  "dmu": "1.02",
+  "dmu_sig": "0.21",
+  "dmu_over_sig": "4.89",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "0.85",
+  "dvtan_kms": "0.35",
+  "dvtan_err": "0.07",
+  "host_mass": "0.305",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.85",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "YFLD. Photometric spectral type M7 (Schn16a; Reyl18).",
+  "ucs_simbad": "2MASS J20242222-0638319",
+  "ucs_ids": "2MASS J20242222-0638319|TIC 256570388|WISEA J202422.29-063833.9|Gaia DR2 4217710008397467392|Gaia DR3 4217710008397467392",
+  "n_field": "1",
+  "expected_false": "1.38e-05"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 8447239,
+    "main_id": "UPM J2024-0638",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 13.9766,
+    "pmra": 76.079,
+    "pmdec": -233.341,
+    "ra": 306.09519756725,
+    "dec": -6.639517574649999
+   }
+  ],
+  "ids": [
+   "TIC 256570382",
+   "Gaia DR3 4217710012693268480",
+   "UPM J2024-0638",
+   "2MASS J20242285-0638224",
+   "WISEA J202422.90-063824.7",
+   "Gaia DR2 4217710012693268480"
+  ],
+  "refs": [
+   {
+    "bibcode": "2012ApJ...745..118F",
+    "title": "UCAC3 proper motion survey. II. Discovery of new proper motion stars in UCAC3 with 0\".40/yr > {mu} >= 0\".18/yr between declinations -47{deg} and  00{deg}."
+   },
+   {
+    "bibcode": "2016ApJ...817..112S",
+    "title": "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+   },
+   {
+    "bibcode": "2016ApJS..224...36K",
+    "title": "The AllWISE motion survey, part 2."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 12498638,
+    "main_id": "2MASS J20242222-0638319",
+    "otype": "LM*",
+    "sp_type": "",
+    "plx_value": 13.7782,
+    "pmra": 76.631,
+    "pmdec": -234.196,
+    "ra": 306.0926011172,
+    "dec": -6.64215624947
+   }
+  ],
+  "ids": [
+   "TIC 256570388",
+   "Gaia DR3 4217710008397467392",
+   "WISEA J202422.29-063833.9",
+   "2MASS J20242222-0638319",
+   "Gaia DR2 4217710008397467392"
+  ],
+  "refs": [
+   {
+    "bibcode": "2016ApJ...817..112S",
+    "title": "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+   },
+   {
+    "bibcode": "2016ApJS..224...36K",
+    "title": "The AllWISE motion survey, part 2."
+   },
+   {
+    "bibcode": "2018A&A...619L...8R",
+    "title": "New ultra-cool and brown dwarf candidates in Gaia DR2."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2016ApJ...817..112S",
+   "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+  ],
+  [
+   "2016ApJS..224...36K",
+   "The AllWISE motion survey, part 2."
+  ],
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=4217710012693268480&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "4217710012693268480",
+     "Source2": "4217710008397467392",
+     "sepAU": "950.627707659450493",
+     "R": "3.610013816454833601e-08"
+    }
+   ]
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=4217710012693268480&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=4217710008397467392&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=4217710008397467392&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "4217710012693268480",
+     "Source2": "4217710008397467392",
+     "sepAU": "950.627707659450493",
+     "R": "3.610013816454833601e-08"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=306.09553798038587+-6.640554646521324&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=306.09553798038587+-6.640554646521324&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "20244-0638",
+    "Disc": "WIS 338",
+    "Comp": "",
+    "Obs1": "1999",
+    "pa1": "224",
+    "pa2": "224",
+    "sep1": "13.3",
+    "sep2": "13.30",
+    "mag1": "15.900",
+    "mag2": "16.30",
+    "DM": "",
+    "Notes": "V",
+    "n_RAh": "",
+    "RAJ2000": "20 24 22.85",
+    "DEJ2000": "-06 38 22.4"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=306.09553798038587+-6.640554646521324&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

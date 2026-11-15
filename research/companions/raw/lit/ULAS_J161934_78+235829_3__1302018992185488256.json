@@ -1,0 +1,114 @@
+{
+ "pair": {
+  "uid": "2989",
+  "ucd": "ULAS J161934.78+235829.3",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "T6",
+  "ucd_G": "NaN",
+  "ucd_gaia": "null",
+  "ucd_pmra": "-84.0",
+  "ucd_pmdec": "12.0",
+  "ucd_pmerr": "12.0/13.0",
+  "ucd_ref_pm": "Burn13",
+  "ucd_plx": "",
+  "ucd_plxerr": "",
+  "ucd_ref_plx": "null",
+  "ucd_dist": "58.0",
+  "ucd_disterr": "9.0",
+  "ucd_dist_src": "dist_W2_formula",
+  "gaia": "1302018992185488256",
+  "g_ra": "244.90522292436063",
+  "g_dec": "23.97973777170227",
+  "g_pmra": "-63.30340576171875",
+  "g_pmdec": "19.06534767150879",
+  "g_epm": "0.27741414308547974/0.45206063985824585",
+  "g_plx": "1.2626206874847412",
+  "g_eplx": "0.41015002131462097",
+  "G": "19.998794555664062",
+  "BP_RP": "2.535",
+  "M_G": "10.51",
+  "RUWE": "1.0244724750518799",
+  "RV": "",
+  "sep_arcsec": "37.63",
+  "sep_au": "2183",
+  "dmu": "21.87",
+  "dmu_sig": "12.11",
+  "dmu_over_sig": "1.81",
+  "plx_mode": "phot:dist_W2_formula",
+  "plx_dev_sigma": "2.85",
+  "dvtan_kms": "6.01",
+  "dvtan_err": "3.33",
+  "host_mass": "0.314",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.57",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "ULAS J161934.78+235829.3",
+  "ucs_ids": "ULAS J161934.78+235829.3|ULAS J161934.79+235829.2",
+  "n_field": "37",
+  "expected_false": "4.04e-03"
+ },
+ "host_simbad": {
+  "basic": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 9295639,
+    "main_id": "ULAS J161934.78+235829.3",
+    "otype": "BD*",
+    "sp_type": "T6",
+    "plx_value": 0.0,
+    "pmra": -84.43,
+    "pmdec": 11.54,
+    "ra": 244.895156,
+    "dec": 23.974773166666665
+   }
+  ],
+  "ids": [
+   "ULAS J161934.78+235829.3",
+   "ULAS J161934.79+235829.2"
+  ],
+  "refs": [
+   {
+    "bibcode": "2013MNRAS.433..457B",
+    "title": "76 T dwarfs from the UKIDSS LAS: benchmarks, kinematics and an updated  space density."
+   },
+   {
+    "bibcode": "2015MNRAS.450.2486C",
+    "title": "49 new T dwarfs identified using methane imaging."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=1302018992185488256&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=1302018992185488256&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=244.90522292436063+23.97973777170227&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=244.90522292436063+23.97973777170227&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=244.90522292436063+23.97973777170227&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

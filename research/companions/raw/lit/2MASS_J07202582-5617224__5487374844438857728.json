@@ -1,0 +1,386 @@
+{
+ "pair": {
+  "uid": "1115",
+  "ucd": "2MASS J07202582-5617224",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "M5.9 INT-G",
+  "ucd_G": "16.7220",
+  "ucd_gaia": "5487374844438858496",
+  "ucd_pmra": "-27.9",
+  "ucd_pmdec": "63.96",
+  "ucd_pmerr": "0.14/0.15",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "13.76",
+  "ucd_plxerr": "0.12",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "72.7",
+  "ucd_disterr": "0.6",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "5487374844438857728",
+  "g_ra": "110.09542318594075",
+  "g_dec": "-56.29437468943791",
+  "g_pmra": "-27.010452270507812",
+  "g_pmdec": "61.407737731933594",
+  "g_epm": "0.023867003619670868/0.025049176067113876",
+  "g_plx": "13.74088191986084",
+  "g_eplx": "0.021721843630075455",
+  "G": "6.55368185043335",
+  "BP_RP": "0.153",
+  "M_G": "2.24",
+  "RUWE": "0.8379461169242859",
+  "RV": "13.928252220153809",
+  "sep_arcsec": "30.07",
+  "sep_au": "2188",
+  "dmu": "2.7",
+  "dmu_sig": "0.15",
+  "dmu_over_sig": "17.9",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "-0.16",
+  "dvtan_kms": "0.93",
+  "dvtan_err": "0.05",
+  "host_mass": "1.797",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "1.23",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "Gagn15c also find near-IR spectral type M5.9 INT-G.",
+  "ucs_simbad": "2MASS J07202582-5617224",
+  "ucs_ids": "2MASS J07202582-5617224|TIC 339635295|Gaia DR2 5487374844438858496|Gaia DR3 5487374844438858496",
+  "n_field": "2",
+  "expected_false": "1.40e-04"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 3021573,
+    "main_id": "HD  57969",
+    "otype": "PM*",
+    "sp_type": "A1V",
+    "plx_value": 13.7409,
+    "pmra": -27.01,
+    "pmdec": 61.408,
+    "ra": 110.09563951621,
+    "dec": -56.29464761252999
+   }
+  ],
+  "ids": [
+   "TIC 339635291",
+   "WISEA J072022.92-561740.0",
+   "HIP 35567",
+   "Gaia DR3 5487374844438857728",
+   "2MASS J07202295-5617406",
+   "CD-56  1833",
+   "CPC 20  1850",
+   "CPD-56  1313",
+   "GC  9816",
+   "GSC 08559-01994",
+   "HD  57969",
+   "HIC  35567",
+   "N30 1644",
+   "PPM 335954",
+   "SAO 235114",
+   "SKY# 13334",
+   "TD1  9968",
+   "TYC 8559-1994-1",
+   "uvby98 100057969",
+   "WISE J072022.92-561740.1",
+   "Gaia DR1 5487374840144321152",
+   "GEN# +1.00057969",
+   "Gaia DR2 5487374844438857728"
+  ],
+  "refs": [
+   {
+    "bibcode": "1975MSS...C01....0H",
+    "title": "Catalogue of two dimentional spectral types for the HD stars, Vol. 1"
+   },
+   {
+    "bibcode": "1986PASP...98..423E",
+    "title": "Hyades and Sirius supercluster members brighter than magnitude (V) 7.1. II. Right ascension six to twelve hours."
+   },
+   {
+    "bibcode": "1987A&AS...71..539M",
+    "title": "Instrumental effects and the Stromgren photometric system."
+   },
+   {
+    "bibcode": "1991A&AS...87..481M",
+    "title": "Long-term photometry of variables at ESO. I. The first data catalogue (1982-1986)."
+   },
+   {
+    "bibcode": "1993A&AS..102...79S",
+    "title": "Long-term photometry of variables at ESO. II. The second data catalogue (1986-1990)"
+   },
+   {
+    "bibcode": "1997A&A...323L..49P",
+    "title": "The Hipparcos Catalogue."
+   },
+   {
+    "bibcode": "1998A&AS..129..431H",
+    "title": "uvby{beta} photoelectric photometric catalogue."
+   },
+   {
+    "bibcode": "2007A&A...474..653V",
+    "title": "Validation of the new Hipparcos reduction."
+   },
+   {
+    "bibcode": "2011MNRAS.410..190T",
+    "title": "A catalogue of young runaway Hipparcos stars within 3 kpc from the Sun."
+   },
+   {
+    "bibcode": "2012AJ....143...42H",
+    "title": "Speckle interferometry at SOAR in 2010 and 2011: measures, orbits, and  rectilinear fits."
+   },
+   {
+    "bibcode": "2012A&A...544A...9V",
+    "title": "The International Deep Planet Survey. I. The frequency of wide-orbit  massive planets around A-stars."
+   },
+   {
+    "bibcode": "2012A&A...546A..61D",
+    "title": "Radial velocities for the HIPPARCOS-Gaia Hundred-Thousand-Proper-Motion  project."
+   },
+   {
+    "bibcode": "2012MNRAS.427..343M",
+    "title": "Fundamental parameters and infrared excesses of Hipparcos stars."
+   },
+   {
+    "bibcode": "2014ApJS..212...10P",
+    "title": "A sensitive identification of warm debris disks in the solar neighborhood through precise calibration of saturated WISE photometry."
+   },
+   {
+    "bibcode": "1993yCat.3135....0C",
+    "title": "VizieR Online Data Catalog: Henry Draper Catalogue and Extension, published in Ann. Harvard Obs. 91-100 (1918-1925)"
+   },
+   {
+    "bibcode": "2015A&A...580A..23P",
+    "title": "A new catalogue of Stroemgren-Crawford uvby{beta} photometry."
+   },
+   {
+    "bibcode": "2016ApJS..225...15C",
+    "title": "A comprehensive census of nearby infrared excess stars."
+   },
+   {
+    "bibcode": "2016A&A...594A..63G",
+    "title": "The International Deep Planet Survey. II. The frequency of directly imaged giant exoplanets with stellar mass."
+   },
+   {
+    "bibcode": "2014ASPC..485..223B",
+    "title": "The JMMC stellar diameters catalog v2 (JSDC): a new release based on SearchCal improvements"
+   },
+   {
+    "bibcode": "2017AJ....154..115H",
+    "title": "Optimized trajectories to the nearest stars using lightweight high-velocity photon sails."
+   },
+   {
+    "bibcode": "2018A&A...609A.116R",
+    "title": "Empirical photometric calibration of the Gaia red clump: Colours, effective temperature, and absolute magnitude."
+   },
+   {
+    "bibcode": "2018A&A...620A.172Z",
+    "title": "3D mapping of young stars in the solar neighbourhood with Gaia DR2."
+   },
+   {
+    "bibcode": "2019A&A...623A..72K",
+    "title": "Stellar and substellar companions of nearby stars from Gaia DR2. Binarity from proper motion anomaly."
+   },
+   {
+    "bibcode": "2019AJ....158...13N",
+    "title": "The Gemini Planet Imager Exoplanet Survey: giant planet and brown dwarf demographics from 10 to 100 au."
+   },
+   {
+    "bibcode": "2019ApJS..244...15M",
+    "title": "Bright southern variable stars in the bRing survey."
+   },
+   {
+    "bibcode": "2019MNRAS.490.3158C",
+    "title": "A catalogue of stellar diameters and fluxes for mid-infrared interferometry."
+   },
+   {
+    "bibcode": "2020AJ....160...24E",
+    "title": "Debris disk results from the Gemini Planet Imager Exoplanet Survey's polarimetric imaging campaign."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2021ApJS..254...42B",
+    "title": "The Hipparcos-Gaia Catalog of Accelerations: Gaia EDR3 edition."
+   },
+   {
+    "bibcode": "2021ApJ...917...23K",
+    "title": "Stars with photometrically young Gaia luminosities around the solar system (SPYGLASS). I. Mapping Young stellar structures and their star formation histories."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2025A&A...693A..54S",
+    "title": "The COBREX archival survey: Improved constraints on the occurrence rate of wide-orbit substellar companions I. A uniform re-analysis of 400 stars from the GPIES survey."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 10670605,
+    "main_id": "2MASS J07202582-5617224",
+    "otype": "LM*",
+    "sp_type": "M6",
+    "plx_value": 13.7561,
+    "pmra": -27.903,
+    "pmdec": 63.957,
+    "ra": 110.10755686731,
+    "dec": -56.2895595558
+   }
+  ],
+  "ids": [
+   "TIC 339635295",
+   "Gaia DR3 5487374844438858496",
+   "2MASS J07202582-5617224",
+   "Gaia DR2 5487374844438858496"
+  ],
+  "refs": [
+   {
+    "bibcode": "2015ApJS..219...33G",
+    "title": "BANYAN. VII. A new population of young substellar candidate members of nearby moving groups from the BASS survey."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   }
+  ],
+  "parents": [
+   {
+    "main_id": "NAME beta Pic Moving Group",
+    "otype": "MGr",
+    "link_bibcode": "2015ApJS..219...33G"
+   }
+  ],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 2900,
+    "log_g": 5.0,
+    "bibcode": "2015ApJS..219...33G"
+   }
+  ]
+ },
+ "common_bibcodes": [
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ],
+  [
+   "2023AJ....165..267H",
+   "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=5487374844438857728&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "5487374844438857728",
+     "Source2": "5487374844438858496",
+     "sepAU": "2187.159822180014089",
+     "R": "1.421602055972214385e-04"
+    }
+   ]
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=5487374844438857728&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=5487374844438858496&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=5487374844438858496&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "5487374844438857728",
+     "Source2": "5487374844438858496",
+     "sepAU": "2187.159822180014089",
+     "R": "1.421602055972214385e-04"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=110.09542318594075+-56.29437468943791&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=110.09542318594075+-56.29437468943791&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "07204-5618",
+    "Disc": "VIG  10",
+    "Comp": "AB",
+    "Obs1": "2009",
+    "pa1": "8",
+    "pa2": "8",
+    "sep1": "4.2",
+    "sep2": "4.10",
+    "mag1": "6.570",
+    "mag2": "16.00",
+    "DM": "-56 1313",
+    "Notes": "N",
+    "n_RAh": "",
+    "RAJ2000": "07 20 22.95",
+    "DEJ2000": "-56 17 40.7"
+   },
+   {
+    "WDS": "07204-5618",
+    "Disc": "VIG  10",
+    "Comp": "AC",
+    "Obs1": "2009",
+    "pa1": "62",
+    "pa2": "67",
+    "sep1": "4.5",
+    "sep2": "4.50",
+    "mag1": "6.600",
+    "mag2": "17.80",
+    "DM": "",
+    "Notes": "NS",
+    "n_RAh": "",
+    "RAJ2000": "07 20 22.95",
+    "DEJ2000": "-56 17 40.7"
+   },
+   {
+    "WDS": "07204-5618",
+    "Disc": "VIG  10",
+    "Comp": "AD",
+    "Obs1": "2009",
+    "pa1": "9",
+    "pa2": "10",
+    "sep1": "5.5",
+    "sep2": "5.20",
+    "mag1": "6.600",
+    "mag2": "18.00",
+    "DM": "",
+    "Notes": "NS",
+    "n_RAh": "",
+    "RAJ2000": "07 20 22.95",
+    "DEJ2000": "-56 17 40.7"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=110.09542318594075+-56.29437468943791&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

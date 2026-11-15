@@ -1,0 +1,149 @@
+{
+ "pair": {
+  "uid": "1555",
+  "ucd": "ULAS J093744.66+071903.3",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "M9",
+  "ucd_G": "NaN",
+  "ucd_gaia": "null",
+  "ucd_pmra": "12.0",
+  "ucd_pmdec": "-87.0",
+  "ucd_pmerr": "25.0/29.0",
+  "ucd_ref_pm": "Maro21",
+  "ucd_plx": "",
+  "ucd_plxerr": "",
+  "ucd_ref_plx": "null",
+  "ucd_dist": "153.0",
+  "ucd_disterr": "15.0",
+  "ucd_dist_src": "dist_W2_formula",
+  "gaia": "3854303449567682944",
+  "g_ra": "144.43485703135156",
+  "g_dec": "7.319319782343314",
+  "g_pmra": "10.080485343933105",
+  "g_pmdec": "-63.971885681152344",
+  "g_epm": "0.38205352425575256/0.3512788414955139",
+  "g_plx": "6.347660541534424",
+  "g_eplx": "0.348753958940506",
+  "G": "19.15229606628418",
+  "BP_RP": "0.335",
+  "M_G": "13.17",
+  "RUWE": "1.038291573524475",
+  "RV": "",
+  "sep_arcsec": "8.56",
+  "sep_au": "1348",
+  "dmu": "23.11",
+  "dmu_sig": "28.98",
+  "dmu_over_sig": "0.8",
+  "plx_mode": "phot:dist_W2_formula",
+  "plx_dev_sigma": "0.26",
+  "dvtan_kms": "17.26",
+  "dvtan_err": "21.64",
+  "host_mass": "0.6",
+  "host_mass_src": "WD locus (adopted 0.6)",
+  "vesc_kms": "0.95",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "BRLT 104",
+  "ucs_ids": "BRLT 104|ULAS J093744.66+071903.3",
+  "n_field": "81",
+  "expected_false": "4.58e-04"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 23055596,
+    "main_id": "Gaia DR3 3854303449567682944",
+    "otype": "WD*",
+    "sp_type": "DC",
+    "plx_value": 6.3477,
+    "pmra": 10.08,
+    "pmdec": -63.972,
+    "ra": 144.43481186109832,
+    "dec": 7.319604101833055
+   }
+  ],
+  "ids": [
+   "Gaia DR3 3854303449567682944"
+  ],
+  "refs": [
+   {
+    "bibcode": "2021MNRAS.508.3877G",
+    "title": "A catalogue of white dwarfs in Gaia EDR3."
+   },
+   {
+    "bibcode": "2023A&A...677A.159T",
+    "title": "White dwarf spectral type-temperature distribution from {\\em Gaia} DR3 and the Virtual Observatory."
+   },
+   {
+    "bibcode": "2024A&A...682A...5V",
+    "title": "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 7728,
+    "log_g": 7.9770002365112305,
+    "bibcode": "2024A&A...682A...5V"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 10677065,
+    "main_id": "BRLT 104",
+    "otype": "LM*",
+    "sp_type": "M9.0",
+    "plx_value": 0.0,
+    "pmra": 0.0,
+    "pmdec": 0.0,
+    "ra": 144.4360916666667,
+    "dec": 7.317591666666667
+   }
+  ],
+  "ids": [
+   "ULAS J093744.66+071903.3",
+   "BRLT 104"
+  ],
+  "refs": [
+   {
+    "bibcode": "2015MNRAS.449.3651M",
+    "title": "A large spectroscopic sample of L and T dwarfs from UKIDSS LAS: peculiar objects, binaries, and space density."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=3854303449567682944&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=3854303449567682944&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=144.43485703135156+7.319319782343314&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=144.43485703135156+7.319319782343314&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=144.43485703135156+7.319319782343314&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

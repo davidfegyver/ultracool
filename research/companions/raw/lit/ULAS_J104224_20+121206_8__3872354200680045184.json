@@ -1,0 +1,194 @@
+{
+ "pair": {
+  "uid": "1773",
+  "ucd": "ULAS J104224.20+121206.8",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "T7.5",
+  "ucd_G": "NaN",
+  "ucd_gaia": "null",
+  "ucd_pmra": "-130.0",
+  "ucd_pmdec": "-350.0",
+  "ucd_pmerr": "80.0/90.0",
+  "ucd_ref_pm": "Maro21",
+  "ucd_plx": "",
+  "ucd_plxerr": "",
+  "ucd_ref_plx": "null",
+  "ucd_dist": "31.0",
+  "ucd_disterr": "5.0",
+  "ucd_dist_src": "dist_W2_formula",
+  "gaia": "3872354200680045184",
+  "g_ra": "160.6009443521154",
+  "g_dec": "12.20962008052978",
+  "g_pmra": "6.952085971832275",
+  "g_pmdec": "-260.06024169921875",
+  "g_epm": "0.03434509411454201/0.027940183877944946",
+  "g_plx": "22.046283721923828",
+  "g_eplx": "0.033357854932546616",
+  "G": "14.758567810058594",
+  "BP_RP": "2.858",
+  "M_G": "11.48",
+  "RUWE": "0.9613257050514221",
+  "RV": "55.9241943359375",
+  "sep_arcsec": "29.51",
+  "sep_au": "1338",
+  "dmu": "163.84",
+  "dmu_sig": "83.14",
+  "dmu_over_sig": "1.97",
+  "plx_mode": "phot:dist_W2_formula",
+  "plx_dev_sigma": "2.87",
+  "dvtan_kms": "35.23",
+  "dvtan_err": "17.88",
+  "host_mass": "0.215",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.63",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "ULAS J104224.20+121206.8",
+  "ucs_ids": "ULAS J104224.20+121206.8|ULAS J104224.19+121206.8",
+  "n_field": "0",
+  "expected_false": "0.00e+00"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 1750120,
+    "main_id": "LP  490-57",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 22.0463,
+    "pmra": 6.952,
+    "pmdec": -260.06,
+    "ra": 160.60091273874,
+    "dec": 12.21077590381
+   }
+  ],
+  "ids": [
+   "TIC 61322382",
+   "Gaia DR3 3872354200680045184",
+   "AP J10422422+1212390",
+   "LSPM J1042+1212",
+   "UCAC2  36119899",
+   "USNO-B1.0 1022-00224034",
+   "LP  490-57",
+   "NLTT 25110",
+   "2MASS J10422422+1212390",
+   "WISEA J104224.22+121235.9",
+   "Gaia DR2 3872354200680045184"
+  ],
+  "refs": [
+   {
+    "bibcode": "2003ApJ...582.1011S",
+    "title": "Improved astrometry and photometry for the Luyten catalog. II. Faint stars and the revised catalog."
+   },
+   {
+    "bibcode": "2005AJ....129.1483L",
+    "title": "A catalog of northern stars with annual proper motions larger than 0.15\" (LSPM-NORTH catalog)."
+   },
+   {
+    "bibcode": "2016ApJS..224...36K",
+    "title": "The AllWISE motion survey, part 2."
+   },
+   {
+    "bibcode": "1995yCat.1098....0L",
+    "title": "New Luyten Catalogue of stars with proper motions larger than two tenths of an arcsecond (NLTT)."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2022ApJS..259...35A",
+    "title": "The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar, and APOGEE-2 Data."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 9295582,
+    "main_id": "ULAS J104224.20+121206.8",
+    "otype": "BD*",
+    "sp_type": "T7.5",
+    "plx_value": 0.0,
+    "pmra": 0.0,
+    "pmdec": 0.0,
+    "ra": 160.60081599999998,
+    "dec": 12.201894
+   }
+  ],
+  "ids": [
+   "ULAS J104224.20+121206.8",
+   "ULAS J104224.19+121206.8"
+  ],
+  "refs": [
+   {
+    "bibcode": "2013MNRAS.433..457B",
+    "title": "76 T dwarfs from the UKIDSS LAS: benchmarks, kinematics and an updated  space density."
+   },
+   {
+    "bibcode": "2015MNRAS.450.2486C",
+    "title": "49 new T dwarfs identified using methane imaging."
+   },
+   {
+    "bibcode": "2019MNRAS.486.1260Z",
+    "title": "Primeval very low-mass stars and brown dwarfs - VI. Population properties of metal-poor degenerate brown dwarfs."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=3872354200680045184&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=3872354200680045184&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=160.6009443521154+12.20962008052978&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=160.6009443521154+12.20962008052978&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "10424+1213",
+    "Disc": "WIS 170",
+    "Comp": "",
+    "Obs1": "1998",
+    "pa1": "88",
+    "pa2": "88",
+    "sep1": "999.9",
+    "sep2": "999.90",
+    "mag1": "11.000",
+    "mag2": "14.30",
+    "DM": "",
+    "Notes": "V K",
+    "n_RAh": "",
+    "RAJ2000": "10 42 24.22",
+    "DEJ2000": "+12 12 38.6"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=160.6009443521154+12.20962008052978&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

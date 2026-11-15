@@ -1,0 +1,4 @@
+TAP https://dc.zah.uni-heidelberg.de/tap sync, one query per pair, template (pid, ra16, de16, pmra, pmdec, tol, plo, phi):
+SELECT COUNT(*) AS n FROM gaia.dr3lite AS g
+WHERE DISTANCE(POINT('ICRS', g.ra, g.dec), POINT('ICRS', {1}, {2})) < {8}
+ AND g.parallax > {6} AND g.parallax < {7} AND SQRT(POWER(g.pmra-({3}),2)+POWER(g.pmdec-({4}),2)) < {5}

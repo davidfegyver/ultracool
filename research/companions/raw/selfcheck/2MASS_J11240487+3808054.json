@@ -1,0 +1,93 @@
+{
+ "name": "2MASS J11240487+3808054",
+ "host": "764072689093638528",
+ "host_gaia": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&Source=764072689093638528&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV",
+  [
+   {
+    "Source": "764072689093638528",
+    "RA_ICRS": "171.01885964390",
+    "DE_ICRS": "+38.13629424820",
+    "Plx": "54.1869",
+    "e_Plx": "0.0310",
+    "pmRA": "121.323",
+    "e_pmRA": "0.025",
+    "pmDE": "-12.345",
+    "e_pmDE": "0.037",
+    "Gmag": "13.007710",
+    "BPmag": "14.764337",
+    "RPmag": "11.747661",
+    "RUWE": "1.405",
+    "RV": "-12.43",
+    "e_RV": "0.97"
+   }
+  ]
+ ],
+ "ucd_gaia_3as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&-c=171.02107822699946+38.13482436386694&-c.rs=3&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV+_r",
+  [
+   {
+    "Source": "764072693389251456",
+    "RA_ICRS": "171.02107012831",
+    "DE_ICRS": "+38.13480143282",
+    "Plx": "54.3132",
+    "e_Plx": "0.1492",
+    "pmRA": "125.680",
+    "e_pmRA": "0.135",
+    "pmDE": "-9.228",
+    "e_pmDE": "0.174",
+    "Gmag": "17.265873",
+    "BPmag": "20.874157",
+    "RPmag": "15.697709",
+    "RUWE": "1.087",
+    "RV": "",
+    "e_RV": "",
+    "_r": "0.086"
+   }
+  ]
+ ],
+ "ucd_catwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F365%2Fcatwise&-c=171.02105159627342+38.13482590220028&-c.rs=5&-out=Name+RAPMdeg+DEPMdeg+pmRA+e_pmRA+pmDE+e_pmDE+W1mproPM+W2mproPM+ab+_r",
+  []
+ ],
+ "ucd_allwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F328%2Fallwise&-c=171.02105159627342+38.13482590220028&-c.rs=6&-out=AllWISE+RAJ2000+DEJ2000+pmRA+e_pmRA+pmDE+e_pmDE+W1mag+W2mag+ccf+_r",
+  []
+ ],
+ "epoch_2mass_ucs": "1998-04-13",
+ "ucd_2mass_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F246%2Fout&-c=171.02029198109153+38.13486978164063&-c.rs=5&-out=2MASS+RAJ2000+DEJ2000+Jmag+Kmag+JD+_r",
+  [
+   {
+    "2MASS": "11240487+3808054",
+    "RAJ2000": "171.020301",
+    "DEJ2000": "+38.134853",
+    "Jmag": "12.713",
+    "Kmag": "11.570",
+    "JD": "2450916.7585",
+    "_r": "0.066"
+   }
+  ]
+ ],
+ "pm_2mass_gaia": [
+  122.9,
+  -10.5,
+  8.0,
+  17.72
+ ],
+ "ucs_pm": [
+  125.68,
+  -9.23,
+  "0.14",
+  "0.17",
+  "Gaia23"
+ ],
+ "ucs_plx": [
+  "54.31",
+  "0.15",
+  "Gaia23",
+  "18.41",
+  "0.05",
+  "dist_plx_formula"
+ ]
+}

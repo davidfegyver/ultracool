@@ -1,0 +1,9 @@
+TAP https://dc.zah.uni-heidelberg.de/tap (sync, chunks of 300 upload rows)
+upload raw/ucd_upload.csv as TAP_UPLOAD.ucd
+SELECT u.uid, g.source_id AS Source, g.ra AS RA_ICRS, g.dec AS DE_ICRS, g.parallax AS Plx, g.parallax_error AS e_Plx,
+ g.pmra AS pmRA, g.pmra_error AS e_pmRA, g.pmdec AS pmDE, g.pmdec_error AS e_pmDE,
+ g.phot_g_mean_mag AS Gmag, g.phot_bp_mean_mag AS BPmag, g.phot_rp_mean_mag AS RPmag, g.ruwe AS RUWE,
+ g.radial_velocity AS RV, g.radial_velocity_error AS e_RV,
+ DISTANCE(POINT('ICRS', g.ra, g.dec), POINT('ICRS', u.ra16, u.de16))*3600 AS sep
+FROM TAP_UPLOAD.ucd AS u JOIN gaia.dr3lite AS g
+ ON DISTANCE(POINT('ICRS', g.ra, g.dec), POINT('ICRS', u.ra16, u.de16)) < 120.0/3600

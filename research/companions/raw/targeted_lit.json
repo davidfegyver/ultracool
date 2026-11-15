@@ -1,0 +1,1086 @@
+{
+ "SDSS J134338.74-022044.6|ucd|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|ucd|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|ucd|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|ucd|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|ucd|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|ucd|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|ucd|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|ucd|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|ucd|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|ucd|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=205.9110+-2.3455&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "SDSS J134338.74-022044.6|host|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=205.9085765849743+-2.3335635738534295&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|ucd|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|ucd|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|ucd|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|ucd|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|ucd|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|ucd|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|ucd|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "Source1": "6236089829993254784",
+    "Source2": "6236113362117992832",
+    "RA_ICRS": "240.1101360051923734318",
+    "RA2deg": "2.401110279478289158e+02",
+    "e_RA_ICRS": "0.3486402300",
+    "e_RA2deg": "0.2938024000",
+    "DE_ICRS": "-24.9466048605338102107",
+    "DE2deg": "-2.493981941741235886e+01",
+    "e_DE_ICRS": "0.1976732300",
+    "e_DE2deg": "0.1677744200",
+    "Plx1": "17.7749063890638261",
+    "Plx2": "16.4327124031761507",
+    "PM1": "296.3459800000",
+    "PM2": "296.3018000000",
+    "pmRA1": "-3.585209979770353073e+01",
+    "pmRA2": "-3.842263881619113874e+01",
+    "pmDE1": "-2.941692800975903310e+02",
+    "pmDE2": "-2.938000179835090080e+02",
+    "Dup1": "false",
+    "Dup2": "false",
+    "Gmag1": "19.3520000",
+    "Gmag2": "19.4198150",
+    "BPmag1": "2.186727e+01",
+    "BPmag2": "2.019069e+01",
+    "RPmag1": "1.777648e+01",
+    "RPmag2": "1.868815e+01",
+    "theta": "6.833469931735633961e-03",
+    "sepAU": "1384.001198981501148",
+    "BinType": "WDMS",
+    "R": "1.953635236594731365e-08",
+    "dr2Source1": "6236089829993254784",
+    "dr2Source2": "6236113362117992832",
+    "dr2plx1": "1.759691639090380022e+01",
+    "dr2plx2": "1.698440063972610048e+01",
+    "dr2pmRA1": "-3.573909107231307303e+01",
+    "dr2pmRA2": "-3.868597285180264578e+01",
+    "dr2pmDE1": "-2.942575640286292469e+02",
+    "dr2pmDE2": "-2.935415833468218239e+02",
+    "_RA.icrs": "240.1103117422128434555",
+    "_DE.icrs": "-24.9452974414083179511"
+   },
+   {
+    "Source1": "6236113332060349952",
+    "Source2": "6236113332060348928",
+    "RA_ICRS": "240.1265179599347163730",
+    "RA2deg": "2.401261048540874015e+02",
+    "e_RA_ICRS": "0.0213364740",
+    "e_RA2deg": "0.0780239200",
+    "DE_ICRS": "-24.9345769943964441495",
+    "DE2deg": "-2.493774131766140201e+01",
+    "e_DE_ICRS": "0.0126144180",
+    "e_DE2deg": "0.0464147250",
+    "Plx1": "1.4394336315914196",
+    "Plx2": "1.5956420217602010",
+    "PM1": "23.3551460000",
+    "PM2": "23.5175460000",
+    "pmRA1": "-3.710269090229862066e+00",
+    "pmRA2": "-3.867155580201700360e+00",
+    "pmDE1": "-2.305855031335224936e+01",
+    "pmDE2": "-2.319741470751512225e+01",
+    "Dup1": "false",
+    "Dup2": "false",
+    "Gmag1": "14.5604850",
+    "Gmag2": "17.2276610",
+    "BPmag1": "1.498692e+01",
+    "BPmag2": "1.814912e+01",
+    "RPmag1": "1.396376e+01",
+    "RPmag2": "1.628931e+01",
+    "theta": "3.186418584615072821e-03",
+    "sepAU": "7969.180831166179814",
+    "BinType": "MSMS",
+    "R": "6.191246709308774986e-03",
+    "dr2Source1": "6236113332060349952",
+    "dr2Source2": "6236113332060348928",
+    "dr2plx1": "1.448455003730714896e+00",
+    "dr2plx2": "1.620940076830344134e+00",
+    "dr2pmRA1": "-3.760879935475821334e+00",
+    "dr2pmRA2": "-3.879367893004699752e+00",
+    "dr2pmDE1": "-2.308516889040012288e+01",
+    "dr2pmDE2": "-2.308564920695493328e+01",
+    "_RA.icrs": "240.1265361450442128444",
+    "_DE.icrs": "-24.9344745119495101449"
+   }
+  ]
+ },
+ "2MASS J16002647-2456424|ucd|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|ucd|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|ucd|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=240.1103+-24.9453&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "WDJname": "WDJ160026.69-245618.65",
+    "GaiaEDR3": "6236113362117992832",
+    "RA_ICRS": "240.11102794783",
+    "DE_ICRS": "-24.93981941741",
+    "Plx": "16.4327",
+    "Pwd": "0.999736",
+    "pmRA": "-38.423",
+    "pmDE": "-293.800",
+    "Gmag": "19.4198",
+    "BPmag": "20.1907",
+    "RPmag": "18.6882",
+    "TeffH": "4359.23",
+    "loggH": "7.989919",
+    "MassH": "0.571037",
+    "TeffHe": "4412.18",
+    "loggHe": "7.978054",
+    "MassHe": "0.554592",
+    "rgeo": "60.86561580",
+    "rpgeo": "60.93230820",
+    "SDSS12": "",
+    "umag": "",
+    "gmag": "",
+    "rmag": "",
+    "imag": "",
+    "zmag": "",
+    "_RA.icrs": "240.11121627632",
+    "_DE.icrs": "-24.93851363951"
+   }
+  ]
+ },
+ "2MASS J16002647-2456424|host|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|host|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|host|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|host|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|host|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|host|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|host|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "Source1": "6236089829993254784",
+    "Source2": "6236113362117992832",
+    "RA_ICRS": "240.1101360051923734318",
+    "RA2deg": "2.401110279478289158e+02",
+    "e_RA_ICRS": "0.3486402300",
+    "e_RA2deg": "0.2938024000",
+    "DE_ICRS": "-24.9466048605338102107",
+    "DE2deg": "-2.493981941741235886e+01",
+    "e_DE_ICRS": "0.1976732300",
+    "e_DE2deg": "0.1677744200",
+    "Plx1": "17.7749063890638261",
+    "Plx2": "16.4327124031761507",
+    "PM1": "296.3459800000",
+    "PM2": "296.3018000000",
+    "pmRA1": "-3.585209979770353073e+01",
+    "pmRA2": "-3.842263881619113874e+01",
+    "pmDE1": "-2.941692800975903310e+02",
+    "pmDE2": "-2.938000179835090080e+02",
+    "Dup1": "false",
+    "Dup2": "false",
+    "Gmag1": "19.3520000",
+    "Gmag2": "19.4198150",
+    "BPmag1": "2.186727e+01",
+    "BPmag2": "2.019069e+01",
+    "RPmag1": "1.777648e+01",
+    "RPmag2": "1.868815e+01",
+    "theta": "6.833469931735633961e-03",
+    "sepAU": "1384.001198981501148",
+    "BinType": "WDMS",
+    "R": "1.953635236594731365e-08",
+    "dr2Source1": "6236089829993254784",
+    "dr2Source2": "6236113362117992832",
+    "dr2plx1": "1.759691639090380022e+01",
+    "dr2plx2": "1.698440063972610048e+01",
+    "dr2pmRA1": "-3.573909107231307303e+01",
+    "dr2pmRA2": "-3.868597285180264578e+01",
+    "dr2pmDE1": "-2.942575640286292469e+02",
+    "dr2pmDE2": "-2.935415833468218239e+02",
+    "_RA.icrs": "240.1103117422128434555",
+    "_DE.icrs": "-24.9452974414083179511"
+   },
+   {
+    "Source1": "6236113332060349952",
+    "Source2": "6236113332060348928",
+    "RA_ICRS": "240.1265179599347163730",
+    "RA2deg": "2.401261048540874015e+02",
+    "e_RA_ICRS": "0.0213364740",
+    "e_RA2deg": "0.0780239200",
+    "DE_ICRS": "-24.9345769943964441495",
+    "DE2deg": "-2.493774131766140201e+01",
+    "e_DE_ICRS": "0.0126144180",
+    "e_DE2deg": "0.0464147250",
+    "Plx1": "1.4394336315914196",
+    "Plx2": "1.5956420217602010",
+    "PM1": "23.3551460000",
+    "PM2": "23.5175460000",
+    "pmRA1": "-3.710269090229862066e+00",
+    "pmRA2": "-3.867155580201700360e+00",
+    "pmDE1": "-2.305855031335224936e+01",
+    "pmDE2": "-2.319741470751512225e+01",
+    "Dup1": "false",
+    "Dup2": "false",
+    "Gmag1": "14.5604850",
+    "Gmag2": "17.2276610",
+    "BPmag1": "1.498692e+01",
+    "BPmag2": "1.814912e+01",
+    "RPmag1": "1.396376e+01",
+    "RPmag2": "1.628931e+01",
+    "theta": "3.186418584615072821e-03",
+    "sepAU": "7969.180831166179814",
+    "BinType": "MSMS",
+    "R": "6.191246709308774986e-03",
+    "dr2Source1": "6236113332060349952",
+    "dr2Source2": "6236113332060348928",
+    "dr2plx1": "1.448455003730714896e+00",
+    "dr2plx2": "1.620940076830344134e+00",
+    "dr2pmRA1": "-3.760879935475821334e+00",
+    "dr2pmRA2": "-3.879367893004699752e+00",
+    "dr2pmDE1": "-2.308516889040012288e+01",
+    "dr2pmDE2": "-2.308564920695493328e+01",
+    "_RA.icrs": "240.1265361450442128444",
+    "_DE.icrs": "-24.9344745119495101449"
+   }
+  ]
+ },
+ "2MASS J16002647-2456424|host|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|host|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J16002647-2456424|host|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=240.1112162765378+-24.9385136395532&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "WDJname": "WDJ160026.69-245618.65",
+    "GaiaEDR3": "6236113362117992832",
+    "RA_ICRS": "240.11102794783",
+    "DE_ICRS": "-24.93981941741",
+    "Plx": "16.4327",
+    "Pwd": "0.999736",
+    "pmRA": "-38.423",
+    "pmDE": "-293.800",
+    "Gmag": "19.4198",
+    "BPmag": "20.1907",
+    "RPmag": "18.6882",
+    "TeffH": "4359.23",
+    "loggH": "7.989919",
+    "MassH": "0.571037",
+    "TeffHe": "4412.18",
+    "loggHe": "7.978054",
+    "MassHe": "0.554592",
+    "rgeo": "60.86561580",
+    "rpgeo": "60.93230820",
+    "SDSS12": "",
+    "umag": "",
+    "gmag": "",
+    "rmag": "",
+    "imag": "",
+    "zmag": "",
+    "_RA.icrs": "240.11121627632",
+    "_DE.icrs": "-24.93851363951"
+   }
+  ]
+ },
+ "2MASS J20025265-1316418|ucd|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|ucd|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|ucd|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|ucd|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|ucd|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "Seq": "57112",
+    "Gaia": "6879016158977270784",
+    "RA_ICRS": "300.69423",
+    "DE_ICRS": "-13.26115",
+    "pmRA": "28.061",
+    "pmDE": "-129.162",
+    "plx": "17.7021",
+    "Gmag": "18.4652",
+    "BP-RP": "3.8302",
+    "RV": "",
+    "_RA.icrs": "300.69411",
+    "_DE.icrs": "-13.26059"
+   },
+   {
+    "Seq": "57112",
+    "Gaia": "6879015888398994944",
+    "RA_ICRS": "300.71953",
+    "DE_ICRS": "-13.27888",
+    "pmRA": "27.149",
+    "pmDE": "-128.219",
+    "plx": "15.0410",
+    "Gmag": "19.2326",
+    "BP-RP": "3.3709",
+    "RV": "",
+    "_RA.icrs": "300.71941",
+    "_DE.icrs": "-13.27833"
+   }
+  ]
+ },
+ "2MASS J20025265-1316418|ucd|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|ucd|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|ucd|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|ucd|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|ucd|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=300.7194+-13.2783&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|host|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|host|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|host|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|host|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|host|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "Seq": "57112",
+    "Gaia": "6879016158977270784",
+    "RA_ICRS": "300.69423",
+    "DE_ICRS": "-13.26115",
+    "pmRA": "28.061",
+    "pmDE": "-129.162",
+    "plx": "17.7021",
+    "Gmag": "18.4652",
+    "BP-RP": "3.8302",
+    "RV": "",
+    "_RA.icrs": "300.69411",
+    "_DE.icrs": "-13.26059"
+   },
+   {
+    "Seq": "57112",
+    "Gaia": "6879015888398994944",
+    "RA_ICRS": "300.71953",
+    "DE_ICRS": "-13.27888",
+    "pmRA": "27.149",
+    "pmDE": "-128.219",
+    "plx": "15.0410",
+    "Gmag": "19.2326",
+    "BP-RP": "3.3709",
+    "RV": "",
+    "_RA.icrs": "300.71941",
+    "_DE.icrs": "-13.27833"
+   }
+  ]
+ },
+ "2MASS J20025265-1316418|host|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|host|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|host|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|host|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "2MASS J20025265-1316418|host|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=300.69410324411564+-13.260591467714432&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|ucd|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=169.8726+0.3592&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J111929.43+002133.1|host|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=169.86943345942706+0.3615253861413791&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|ucd|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=144.4361+7.3177&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "WDJname": "WDJ093744.35+071910.57",
+    "GaiaEDR3": "3854303449567682944",
+    "RA_ICRS": "144.43485703135",
+    "DE_ICRS": "+07.31931978234",
+    "Plx": "6.3477",
+    "Pwd": "0.991690",
+    "pmRA": "10.080",
+    "pmDE": "-63.972",
+    "Gmag": "19.1523",
+    "BPmag": "19.2296",
+    "RPmag": "18.8945",
+    "TeffH": "8224.89",
+    "loggH": "8.201503",
+    "MassH": "0.720619",
+    "TeffHe": "8077.75",
+    "loggHe": "8.143845",
+    "MassHe": "0.665673",
+    "rgeo": "161.69155900",
+    "rpgeo": "179.92321800",
+    "SDSS12": "J093744.36+071910.4",
+    "umag": "19.543",
+    "gmag": "19.229",
+    "rmag": "19.172",
+    "imag": "19.231",
+    "zmag": "19.238",
+    "_RA.icrs": "144.43481186327",
+    "_DE.icrs": "+07.31960410234"
+   }
+  ]
+ },
+ "ULAS J093744.66+071903.3|host|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|host|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|host|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|host|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|host|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|host|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|host|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|host|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|host|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J093744.66+071903.3|host|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=144.43481186112675+7.31960410183523&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "WDJname": "WDJ093744.35+071910.57",
+    "GaiaEDR3": "3854303449567682944",
+    "RA_ICRS": "144.43485703135",
+    "DE_ICRS": "+07.31931978234",
+    "Plx": "6.3477",
+    "Pwd": "0.991690",
+    "pmRA": "10.080",
+    "pmDE": "-63.972",
+    "Gmag": "19.1523",
+    "BPmag": "19.2296",
+    "RPmag": "18.8945",
+    "TeffH": "8224.89",
+    "loggH": "8.201503",
+    "MassH": "0.720619",
+    "TeffHe": "8077.75",
+    "loggHe": "8.143845",
+    "MassHe": "0.665673",
+    "rgeo": "161.69155900",
+    "rpgeo": "179.92321800",
+    "SDSS12": "J093744.36+071910.4",
+    "umag": "19.543",
+    "gmag": "19.229",
+    "rmag": "19.172",
+    "imag": "19.231",
+    "zmag": "19.238",
+    "_RA.icrs": "144.43481186327",
+    "_DE.icrs": "+07.31960410234"
+   }
+  ]
+ },
+ "ULAS J104224.20+121206.8|ucd|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|ucd|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|ucd|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|ucd|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|ucd|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|ucd|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|ucd|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|ucd|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|ucd|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "WDS": "10424+1213",
+    "Disc": "WIS 170",
+    "Comp": "",
+    "Obs1": "1998",
+    "pa1": "88",
+    "pa2": "88",
+    "sep1": "999.9",
+    "sep2": "999.90",
+    "mag1": "11.000",
+    "mag2": "14.30",
+    "DM": "",
+    "Notes": "V K",
+    "n_RAh": "",
+    "RAJ2000": "10 42 24.22",
+    "DEJ2000": "+12 12 38.6"
+   }
+  ]
+ },
+ "ULAS J104224.20+121206.8|ucd|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=160.6015+12.2030&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|host|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|host|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|host|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|host|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|host|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|host|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|host|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|host|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "ULAS J104224.20+121206.8|host|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "WDS": "10424+1213",
+    "Disc": "WIS 170",
+    "Comp": "",
+    "Obs1": "1998",
+    "pa1": "88",
+    "pa2": "88",
+    "sep1": "999.9",
+    "sep2": "999.90",
+    "mag1": "11.000",
+    "mag2": "14.30",
+    "DM": "",
+    "Notes": "V K",
+    "n_RAh": "",
+    "RAJ2000": "10 42 24.22",
+    "DEJ2000": "+12 12 38.6"
+   }
+  ]
+ },
+ "ULAS J104224.20+121206.8|host|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=160.60091273887664+12.210775903826221&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|ucd|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|ucd|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|ucd|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|ucd|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|ucd|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "Gaia": "706176328081445888",
+    "RA_ICRS": "130.98089",
+    "DE_ICRS": "+30.12159",
+    "pmRA": "-55.866",
+    "pmDE": "-119.221",
+    "plx": "10.4485",
+    "Gmag": "15.7964",
+    "BP-RP": "2.8740",
+    "RV": "",
+    "_RA.icrs": "130.98117",
+    "_DE.icrs": "+30.12210"
+   },
+   {
+    "Gaia": "706176328081446272",
+    "RA_ICRS": "130.98431",
+    "DE_ICRS": "+30.11362",
+    "pmRA": "-55.643",
+    "pmDE": "-118.083",
+    "plx": "10.0543",
+    "Gmag": "20.3769",
+    "BP-RP": "2.3827",
+    "RV": "",
+    "_RA.icrs": "130.98459",
+    "_DE.icrs": "+30.11413"
+   }
+  ]
+ },
+ "PSO J130.9+030.1|ucd|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|ucd|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "Source1": "706176328081445888",
+    "Source2": "706176328081446272",
+    "RA_ICRS": "130.9808818398620928747",
+    "RA2deg": "1.309842991542427058e+02",
+    "e_RA_ICRS": "0.0349166730",
+    "e_RA2deg": "0.6995011000",
+    "DE_ICRS": "+30.1215698352688860950",
+    "DE2deg": "3.011360830374900033e+01",
+    "e_DE_ICRS": "0.0202903360",
+    "e_DE2deg": "0.3571520400",
+    "Plx1": "10.6275692399356476",
+    "Plx2": "10.3508297625806183",
+    "PM1": "131.5927400000",
+    "PM2": "130.9165800000",
+    "pmRA1": "-5.570661438031913804e+01",
+    "pmRA2": "-5.549031123181370617e+01",
+    "pmDE1": "-1.192200639727642795e+02",
+    "pmDE2": "-1.185747730644263100e+02",
+    "Dup1": "false",
+    "Dup2": "false",
+    "Gmag1": "15.7672860",
+    "Gmag2": "20.3617840",
+    "BPmag1": "1.741367e+01",
+    "BPmag2": "2.135885e+01",
+    "RPmag1": "1.453527e+01",
+    "RPmag2": "1.876380e+01",
+    "theta": "8.492569205135112181e-03",
+    "sepAU": "2876.786633729946971",
+    "BinType": "MSMS",
+    "R": "3.321936978024897901e-07",
+    "dr2Source1": "706176328081445888",
+    "dr2Source2": "706176328081446272",
+    "dr2plx1": "1.044849739983070336e+01",
+    "dr2plx2": "1.005429237646709595e+01",
+    "dr2pmRA1": "-5.586564243569117849e+01",
+    "dr2pmRA2": "-5.564258815524025437e+01",
+    "dr2pmDE1": "-1.192205709633737456e+02",
+    "dr2pmDE2": "-1.180831092342521345e+02",
+    "_RA.icrs": "130.9811680791667640733",
+    "_DE.icrs": "+30.1220997019095015901"
+   }
+  ]
+ },
+ "PSO J130.9+030.1|ucd|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|ucd|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|ucd|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=130.9846+30.1141&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|host|J/MNRAS/466/2983": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F466%2F2983&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|host|J/ApJ/792/119": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F792%2F119&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|host|J/AJ/139/2566": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F139%2F2566&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|host|J/AJ/150/57": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F150%2F57&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|host|J/ApJS/247/66": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F247%2F66&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "Gaia": "706176328081445888",
+    "RA_ICRS": "130.98089",
+    "DE_ICRS": "+30.12159",
+    "pmRA": "-55.866",
+    "pmDE": "-119.221",
+    "plx": "10.4485",
+    "Gmag": "15.7964",
+    "BP-RP": "2.8740",
+    "RV": "",
+    "_RA.icrs": "130.98117",
+    "_DE.icrs": "+30.12210"
+   },
+   {
+    "Gaia": "706176328081446272",
+    "RA_ICRS": "130.98431",
+    "DE_ICRS": "+30.11362",
+    "pmRA": "-55.643",
+    "pmDE": "-118.083",
+    "plx": "10.0543",
+    "Gmag": "20.3769",
+    "BP-RP": "2.3827",
+    "RV": "",
+    "_RA.icrs": "130.98459",
+    "_DE.icrs": "+30.11413"
+   }
+  ]
+ },
+ "PSO J130.9+030.1|host|J/MNRAS/485/4423/table5": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F485%2F4423%2Ftable5&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|host|J/MNRAS/506/2269": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": [
+   {
+    "Source1": "706176328081445888",
+    "Source2": "706176328081446272",
+    "RA_ICRS": "130.9808818398620928747",
+    "RA2deg": "1.309842991542427058e+02",
+    "e_RA_ICRS": "0.0349166730",
+    "e_RA2deg": "0.6995011000",
+    "DE_ICRS": "+30.1215698352688860950",
+    "DE2deg": "3.011360830374900033e+01",
+    "e_DE_ICRS": "0.0202903360",
+    "e_DE2deg": "0.3571520400",
+    "Plx1": "10.6275692399356476",
+    "Plx2": "10.3508297625806183",
+    "PM1": "131.5927400000",
+    "PM2": "130.9165800000",
+    "pmRA1": "-5.570661438031913804e+01",
+    "pmRA2": "-5.549031123181370617e+01",
+    "pmDE1": "-1.192200639727642795e+02",
+    "pmDE2": "-1.185747730644263100e+02",
+    "Dup1": "false",
+    "Dup2": "false",
+    "Gmag1": "15.7672860",
+    "Gmag2": "20.3617840",
+    "BPmag1": "1.741367e+01",
+    "BPmag2": "2.135885e+01",
+    "RPmag1": "1.453527e+01",
+    "RPmag2": "1.876380e+01",
+    "theta": "8.492569205135112181e-03",
+    "sepAU": "2876.786633729946971",
+    "BinType": "MSMS",
+    "R": "3.321936978024897901e-07",
+    "dr2Source1": "706176328081445888",
+    "dr2Source2": "706176328081446272",
+    "dr2plx1": "1.044849739983070336e+01",
+    "dr2plx2": "1.005429237646709595e+01",
+    "dr2pmRA1": "-5.586564243569117849e+01",
+    "dr2pmRA2": "-5.564258815524025437e+01",
+    "dr2pmDE1": "-1.192205709633737456e+02",
+    "dr2pmDE2": "-1.180831092342521345e+02",
+    "_RA.icrs": "130.9811680791667640733",
+    "_DE.icrs": "+30.1220997019095015901"
+   }
+  ]
+ },
+ "PSO J130.9+030.1|host|J/AJ/167/253": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|host|B/wds/wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ },
+ "PSO J130.9+030.1|host|J/MNRAS/508/3877/maincat": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F508%2F3877%2Fmaincat&-c=130.98116807763643+30.122099702212246&-c.rs=150&-out.max=50&-sort=_r",
+  "rows": []
+ }
+}

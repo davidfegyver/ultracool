@@ -1,0 +1,295 @@
+{
+ "pair": {
+  "uid": "1429",
+  "ucd": "PSO J135.0395+32.0845",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "L1.5 FLD-G",
+  "ucd_G": "20.6874",
+  "ucd_gaia": "712049330788147968",
+  "ucd_pmra": "-97.3",
+  "ucd_pmdec": "-25.1",
+  "ucd_pmerr": "1.6/1.4",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "14.4",
+  "ucd_plxerr": "1.2",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "69.0",
+  "ucd_disterr": "6.0",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "712049433864692352",
+  "g_ra": "135.0571088514191",
+  "g_dec": "32.09239141217699",
+  "g_pmra": "-95.66352081298828",
+  "g_pmdec": "-26.863615036010742",
+  "g_epm": "0.05821136385202408/0.05487557500600815",
+  "g_plx": "13.309868812561035",
+  "g_eplx": "0.06266524642705917",
+  "G": "7.515672206878662",
+  "BP_RP": "0.53",
+  "M_G": "3.14",
+  "RUWE": "2.186325788497925",
+  "RV": "20.8394775390625",
+  "sep_arcsec": "61.08",
+  "sep_au": "4589",
+  "dmu": "2.41",
+  "dmu_sig": "1.5",
+  "dmu_over_sig": "1.61",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "-0.91",
+  "dvtan_kms": "0.86",
+  "dvtan_err": "0.53",
+  "host_mass": "1.369",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.75",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "2MASS J09000957+3205045",
+  "ucs_ids": "2MASS J09000957+3205045|PSO J135.0395+32.0845|TIC 166556479|WISEA J090009.50+320504.2|WISE J090009.49+320504.2|Gaia DR2 712049330788147968|Gaia DR3 712049330788147968",
+  "n_field": "3",
+  "expected_false": "8.64e-04"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 1600762,
+    "main_id": "HD  76945",
+    "otype": "SB*",
+    "sp_type": "F2",
+    "plx_value": 13.3099,
+    "pmra": -95.664,
+    "pmdec": -26.864,
+    "ra": 135.05761071338,
+    "dec": 32.09251080558
+   }
+  ],
+  "ids": [
+   "TIC 166556474",
+   "Gaia DR3 712049433864692352",
+   "1RXS J090014.6+320535",
+   "** DAM 1516A",
+   "WDS J09002+3206A",
+   "AG+32  925",
+   "BD+32  1825",
+   "GSC 02492-00057",
+   "HD  76945",
+   "PPM  74163",
+   "SAO  61188",
+   "TD1 13373",
+   "TYC 2492-57-1",
+   "uvby98 100076945",
+   "2MASS J09001384+3205330",
+   "Gaia DR1 712049433864692352",
+   "GEN# +1.00076945",
+   "Gaia DR2 712049433864692352"
+  ],
+  "refs": [
+   {
+    "bibcode": "2004A&A...418..989N",
+    "title": "The Geneva-Copenhagen survey of the Solar neighbourhood. Ages, metallicities, and kinematic properties of ~14000 F and G  dwarfs."
+   },
+   {
+    "bibcode": "2009A&A...501..941H",
+    "title": "The Geneva-Copenhagen survey of the solar neighbourhood. III. Improved  distances, ages, and kinematics."
+   },
+   {
+    "bibcode": "2011A&A...530A.138C",
+    "title": "New constraints on the chemical evolution of the solar neighbourhood and Galactic disc(s). Improved astrophysical parameters for the  Geneva-Copenhagen survey."
+   },
+   {
+    "bibcode": "1993yCat.3135....0C",
+    "title": "VizieR Online Data Catalog: Henry Draper Catalogue and Extension, published in Ann. Harvard Obs. 91-100 (1918-1925)"
+   },
+   {
+    "bibcode": "2015A&A...580A..23P",
+    "title": "A new catalogue of Stroemgren-Crawford uvby{beta} photometry."
+   },
+   {
+    "bibcode": "2016A&A...591A.118S",
+    "title": "The PASTEL catalogue: 2016 version."
+   },
+   {
+    "bibcode": "2016ApJ...826..171G",
+    "title": "The correlation between metallicity and debris disk mass."
+   },
+   {
+    "bibcode": "2014ASPC..485..223B",
+    "title": "The JMMC stellar diameters catalog v2 (JSDC): a new release based on SearchCal improvements"
+   },
+   {
+    "bibcode": "2018A&A...609A.116R",
+    "title": "Empirical photometric calibration of the Gaia red clump: Colours, effective temperature, and absolute magnitude."
+   },
+   {
+    "bibcode": "2019MNRAS.490.3158C",
+    "title": "A catalogue of stellar diameters and fluxes for mid-infrared interferometry."
+   },
+   {
+    "bibcode": "2020ApJS..247...11R",
+    "title": "Radial velocity photon limits for the dwarf stars of spectral classes F-M."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2023A&A...674A..34G",
+    "title": "{\\em Gaia} Data Release 3 Stellar multiplicity, a teaser for the hidden treasure."
+   },
+   {
+    "bibcode": "2023AJ....166..103S",
+    "title": "Astrometry and Photometry for \u22481000 L, T, and Y Dwarfs from the UKIRT Hemisphere Survey."
+   },
+   {
+    "bibcode": "2024MNRAS.533.3784B",
+    "title": "The {\\em Gaia} ultracool dwarf sample - V: the ultracool dwarf companion catalogue."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 6803,
+    "log_g": 0.0,
+    "bibcode": "2011A&A...530A.138C"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 11486216,
+    "main_id": "HD  76945B",
+    "otype": "BD*",
+    "sp_type": "L1.5",
+    "plx_value": 14.3852,
+    "pmra": -97.253,
+    "pmdec": -25.077,
+    "ra": 135.03987261386,
+    "dec": 32.08459046342
+   }
+  ],
+  "ids": [
+   "TIC 166556479",
+   "WISEA J090009.50+320504.2",
+   "Gaia DR3 712049330788147968",
+   "SDSS J090009.53+320504.2",
+   "HD  76945B",
+   "** DAM 1516B",
+   "WDS J09002+3206B",
+   "2MASS J09000957+3205045",
+   "WISE J090009.49+320504.2",
+   "PSO J135.0395+32.0845",
+   "Gaia DR2 712049330788147968"
+  ],
+  "refs": [
+   {
+    "bibcode": "2015ApJ...814..118B",
+    "title": "A search for L/T transition dwarfs with Pan-STARRS1 and WISE. II. L/T transition atmospheres and young discoveries."
+   },
+   {
+    "bibcode": "2020AJ....159..257B",
+    "title": "The Hawaii infrared parallax program. IV. A comprehensive parallax survey of L0-T8 dwarfs with UKIRT."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2021MNRAS.507.4646K",
+    "title": "White dwarf and subdwarf stars in the Sloan Digital Sky Survey Data Release 16."
+   },
+   {
+    "bibcode": "2023AJ....166..103S",
+    "title": "Astrometry and Photometry for \u22481000 L, T, and Y Dwarfs from the UKIRT Hemisphere Survey."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ],
+  [
+   "2023AJ....166..103S",
+   "Astrometry and Photometry for \u22481000 L, T, and Y Dwarfs from the UKIRT Hemisphere Survey."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=712049433864692352&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=712049433864692352&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=712049330788147968&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=712049330788147968&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=135.0571088514191+32.09239141217699&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=135.0571088514191+32.09239141217699&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "09002+3206",
+    "Disc": "DVG  26",
+    "Comp": "AB",
+    "Obs1": "2013",
+    "pa1": "25",
+    "pa2": "25",
+    "sep1": "115.9",
+    "sep2": "115.90",
+    "mag1": "7.500",
+    "mag2": "16.30",
+    "DM": "",
+    "Notes": "",
+    "n_RAh": "",
+    "RAJ2000": "09 00 13.84",
+    "DEJ2000": "+32 05 53.3"
+   },
+   {
+    "WDS": "09002+3206",
+    "Disc": "DAM1516",
+    "Comp": "AC",
+    "Obs1": "1998",
+    "pa1": "242",
+    "pa2": "242",
+    "sep1": "61.3",
+    "sep2": "61.10",
+    "mag1": "7.500",
+    "mag2": "20.80",
+    "DM": "",
+    "Notes": "V",
+    "n_RAh": "",
+    "RAJ2000": "09 00 13.84",
+    "DEJ2000": "+32 05 53.3"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=135.0571088514191+32.09239141217699&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

@@ -1,0 +1,150 @@
+{
+ "pair": {
+  "uid": "1912",
+  "ucd": "ULAS J111929.43+002133.1",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "L4.5",
+  "ucd_G": "NaN",
+  "ucd_gaia": "null",
+  "ucd_pmra": "24.0",
+  "ucd_pmdec": "-55.0",
+  "ucd_pmerr": "12.0/18.0",
+  "ucd_ref_pm": "Best18",
+  "ucd_plx": "",
+  "ucd_plxerr": "",
+  "ucd_ref_plx": "null",
+  "ucd_dist": "59.0",
+  "ucd_disterr": "9.0",
+  "ucd_dist_src": "dist_W2_formula",
+  "gaia": "3798153658479923968",
+  "g_ra": "169.86951492922174",
+  "g_dec": "0.3612613221663628",
+  "g_pmra": "18.330339431762695",
+  "g_pmdec": "-59.41439437866211",
+  "g_epm": "0.02836424484848976/0.02140408381819725",
+  "g_plx": "14.532435417175293",
+  "g_eplx": "0.02491133287549019",
+  "G": "14.74300479888916",
+  "BP_RP": "2.617",
+  "M_G": "10.55",
+  "RUWE": "0.9936093091964722",
+  "RV": "3.051537275314331",
+  "sep_arcsec": "13.99",
+  "sep_au": "963",
+  "dmu": "7.19",
+  "dmu_sig": "14.56",
+  "dmu_over_sig": "0.49",
+  "plx_mode": "phot:dist_W2_formula",
+  "plx_dev_sigma": "1.09",
+  "dvtan_kms": "2.34",
+  "dvtan_err": "4.75",
+  "host_mass": "0.308",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.85",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "BRLT 137",
+  "ucs_ids": "BRLT 137|ULAS J111929.44+002133.1",
+  "n_field": "0",
+  "expected_false": "0.00e+00"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 11092568,
+    "main_id": "UCAC4 452-049871",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 14.5324,
+    "pmra": 18.33,
+    "pmdec": -59.414,
+    "ra": 169.86943345942,
+    "dec": 0.36152538614
+   }
+  ],
+  "ids": [
+   "2MASS J11192866+0021414",
+   "Gaia DR3 3798153658479923968",
+   "UCAC4 452-049871",
+   "EPIC 201489247",
+   "Gaia DR2 3798153658479923968"
+  ],
+  "refs": [
+   {
+    "bibcode": "2015A&A...579A..19A",
+    "title": "K2 Variable Catalogue: Variable stars and eclipsing binaries in K2 campaigns 1 and 0."
+   },
+   {
+    "bibcode": "2019MNRAS.485.4423S",
+    "title": "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 10677085,
+    "main_id": "BRLT 137",
+    "otype": "BD*",
+    "sp_type": "L4.5",
+    "plx_value": 0.0,
+    "pmra": 0.0,
+    "pmdec": 0.0,
+    "ra": 169.872625,
+    "dec": 0.3593472222222222
+   }
+  ],
+  "ids": [
+   "ULAS J111929.44+002133.1",
+   "BRLT 137"
+  ],
+  "refs": [
+   {
+    "bibcode": "2015MNRAS.449.3651M",
+    "title": "A large spectroscopic sample of L and T dwarfs from UKIDSS LAS: peculiar objects, binaries, and space density."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=3798153658479923968&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=3798153658479923968&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=169.86951492922174+0.3612613221663628&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=169.86951492922174+0.3612613221663628&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=169.86951492922174+0.3612613221663628&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

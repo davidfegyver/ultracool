@@ -1,0 +1,282 @@
+{
+ "pair": {
+  "uid": "3046",
+  "ucd": "SDSS J163256.13+350507.2",
+  "ucd_spt_opt": "L1",
+  "ucd_spt_ir": "L0.7",
+  "ucd_G": "19.4466",
+  "ucd_gaia": "1327719286210329344",
+  "ucd_pmra": "89.42",
+  "ucd_pmdec": "-61.8",
+  "ucd_pmerr": "0.24/0.3",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "29.16",
+  "ucd_plxerr": "0.27",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "34.3",
+  "ucd_disterr": "0.3",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "1327719256146852608",
+  "g_ra": "248.21931276584016",
+  "g_dec": "35.07509101268639",
+  "g_pmra": "87.52324676513672",
+  "g_pmdec": "-62.43712615966797",
+  "g_epm": "0.01790958270430565/0.023602712899446487",
+  "g_plx": "29.00309181213379",
+  "g_eplx": "0.01916685327887535",
+  "G": "8.039840698242188",
+  "BP_RP": "0.926",
+  "M_G": "5.35",
+  "RUWE": "1.0685750246047974",
+  "RV": "0.9355812072753906",
+  "sep_arcsec": "57.16",
+  "sep_au": "1971",
+  "dmu": "2.0",
+  "dmu_sig": "0.25",
+  "dmu_over_sig": "8.09",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "-0.58",
+  "dvtan_kms": "0.33",
+  "dvtan_err": "0.04",
+  "host_mass": "0.899",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.94",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "2MASS J16325610+3505076",
+  "ucs_ids": "2MASS J16325610+3505076|SDSS J163256.13+350507.2|TIC 8625177|Gaia DR2 1327719286210329344|Gaia DR3 1327719286210329344",
+  "n_field": "1",
+  "expected_false": "2.52e-04"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 2885123,
+    "main_id": "HD 149361",
+    "otype": "PM*",
+    "sp_type": "K0",
+    "plx_value": 29.0031,
+    "pmra": 87.523,
+    "pmdec": -62.437,
+    "ra": 248.21883745563997,
+    "dec": 35.07536851021
+   }
+  ],
+  "ids": [
+   "TIC 8625175",
+   "Gaia DR3 1327719256146852608",
+   "AG+35 1421",
+   "BD+35  2832",
+   "GSC 02587-01547",
+   "HD 149361",
+   "PPM  79418",
+   "SAO  65374",
+   "TYC 2587-1547-1",
+   "2MASS J16325251+3504313",
+   "Gaia DR1 1327719251850566656",
+   "Gaia DR2 1327719256146852608"
+  ],
+  "refs": [
+   {
+    "bibcode": "1985AJ.....90..341B",
+    "title": "Objective-prism discoveries in the northern sky. II."
+   },
+   {
+    "bibcode": "1993yCat.3135....0C",
+    "title": "VizieR Online Data Catalog: Henry Draper Catalogue and Extension, published in Ann. Harvard Obs. 91-100 (1918-1925)"
+   },
+   {
+    "bibcode": "2014ASPC..485..223B",
+    "title": "The JMMC stellar diameters catalog v2 (JSDC): a new release based on SearchCal improvements"
+   },
+   {
+    "bibcode": "2017AJ....153..257O",
+    "title": "Comoving stars in Gaia DR1: an abundance of very wide separation comoving pairs."
+   },
+   {
+    "bibcode": "2017MNRAS.469..401S",
+    "title": "The Gaia ultracool dwarf sample - I. Known L and T dwarfs and the first Gaia data release."
+   },
+   {
+    "bibcode": "2018A&A...609A.116R",
+    "title": "Empirical photometric calibration of the Gaia red clump: Colours, effective temperature, and absolute magnitude."
+   },
+   {
+    "bibcode": "2018AJ....155..149B",
+    "title": "Fundamental properties of co-moving stars observed by Gaia."
+   },
+   {
+    "bibcode": "2019MNRAS.485.4423S",
+    "title": "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+   },
+   {
+    "bibcode": "2019MNRAS.490.3158C",
+    "title": "A catalogue of stellar diameters and fluxes for mid-infrared interferometry."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2022ApJ...939...94M",
+    "title": "New Coronae and Stellar Associations Revealed by a Clustering Analysis of the Solar Neighborhood."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2024AJ....167..139T",
+    "title": "HPIC: The Habitable Worlds Observatory Preliminary Input Catalog."
+   },
+   {
+    "bibcode": "2025PASP..137j4402T",
+    "title": "HWO Target Stars and Systems: A Prioritized Community List of Potential Stellar Targets for the Habitable Worlds Observatory's ExoEarth Survey."
+   }
+  ],
+  "parents": [
+   {
+    "main_id": "NAME Ursa Major Moving Group",
+    "otype": "MGr",
+    "link_bibcode": "2022ApJ...939...94M"
+   }
+  ],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.09000000357627869,
+    "teff": 0.0,
+    "log_g": 0.0,
+    "bibcode": "2018AJ....155..149B"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 8997314,
+    "main_id": "HD 149361B",
+    "otype": "BD*",
+    "sp_type": "L0.7V",
+    "plx_value": 29.1583,
+    "pmra": 89.423,
+    "pmdec": -61.804,
+    "ra": 248.23381477203998,
+    "dec": 35.085410640730004
+   }
+  ],
+  "ids": [
+   "TIC 8625177",
+   "Gaia DR3 1327719286210329344",
+   "HD 149361B",
+   "SDSS J163256.13+350507.2",
+   "2MASS J16325610+3505076",
+   "Gaia DR2 1327719286210329344"
+  ],
+  "refs": [
+   {
+    "bibcode": "2014ApJ...794..143B",
+    "title": "SpeX spectroscopy of unresolved very low mass binaries. II. Identification of 14 candidate binaries with late-M/early-L and T dwarf components."
+   },
+   {
+    "bibcode": "2015AJ....149..158S",
+    "title": "BOSS ultracool dwarfs. I. Colors and magnetic activity of M and l dwarfs."
+   },
+   {
+    "bibcode": "2019MNRAS.485.4423S",
+    "title": "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+   },
+   {
+    "bibcode": "2019AJ....157..231K",
+    "title": "Exploring the age-dependent properties of M and L dwarfs using Gaia and SDSS."
+   },
+   {
+    "bibcode": "2020MNRAS.499.5302D",
+    "title": "Increasing the census of ultracool dwarfs in wide binary and multiple systems using Dark Energy Survey DR1 and Gaia DR2 data."
+   },
+   {
+    "bibcode": "2021A&A...645A.100S",
+    "title": "SPECULOOS: Ultracool dwarf transit survey. Target list and strategy."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2022AJ....163..253T",
+    "title": "The Perkins INfrared Exosatellite Survey (PINES) I. Survey Overview, Reduction Pipeline, and Early Results."
+   },
+   {
+    "bibcode": "2022A&A...664A.111B",
+    "title": "Infrared spectroscopy of free-floating planet candidates in Upper Scorpius and Ophiuchus."
+   },
+   {
+    "bibcode": "2023AJ....166..103S",
+    "title": "Astrometry and Photometry for \u22481000 L, T, and Y Dwarfs from the UKIRT Hemisphere Survey."
+   },
+   {
+    "bibcode": "2025A&A...696A..80B",
+    "title": "Free-floating planetary mass objects in LDN 1495 from Euclid Early Release Observations."
+   },
+   {
+    "bibcode": "2025ApJ...992...93Z",
+    "title": "Classifying Cool Dwarfs: Comprehensive Spectral Typing of Field and Peculiar Dwarfs Using Machine Learning."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2019MNRAS.485.4423S",
+   "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+  ],
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=1327719256146852608&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=1327719256146852608&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=1327719286210329344&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=1327719286210329344&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "1327719256146852608",
+     "Source2": "1327719286210329344",
+     "sepAU": "1967.817696155532531",
+     "R": "6.158518207406670755e-05"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=248.21931276584016+35.07509101268639&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=248.21931276584016+35.07509101268639&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=248.21931276584016+35.07509101268639&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

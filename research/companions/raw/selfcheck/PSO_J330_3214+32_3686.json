@@ -1,0 +1,82 @@
+{
+ "name": "PSO J330.3214+32.3686",
+ "host": "1899518079153250560",
+ "host_gaia": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&Source=1899518079153250560&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV",
+  [
+   {
+    "Source": "1899518079153250560",
+    "RA_ICRS": "330.30850510959",
+    "DE_ICRS": "+32.38698978167",
+    "Plx": "32.4180",
+    "e_Plx": "0.0832",
+    "pmRA": "106.218",
+    "e_pmRA": "0.040",
+    "pmDE": "53.835",
+    "e_pmDE": "0.075",
+    "Gmag": "12.930964",
+    "BPmag": "",
+    "RPmag": "",
+    "RUWE": "2.017",
+    "RV": "-21.75",
+    "e_RV": "1.06"
+   }
+  ]
+ ],
+ "ucd_gaia_3as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&-c=330.32175372379237+32.368542941486105&-c.rs=3&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV+_r",
+  []
+ ],
+ "ucd_catwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F365%2Fcatwise&-c=330.32173185993+32.36853302481944&-c.rs=5&-out=Name+RAPMdeg+DEPMdeg+pmRA+e_pmRA+pmDE+e_pmDE+W1mproPM+W2mproPM+ab+_r",
+  []
+ ],
+ "ucd_allwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F328%2Fallwise&-c=330.32173185993+32.36853302481944&-c.rs=6&-out=AllWISE+RAJ2000+DEJ2000+pmRA+e_pmRA+pmDE+e_pmDE+W1mag+W2mag+ccf+_r",
+  [
+   {
+    "AllWISE": "J220117.11+322206.9",
+    "RAJ2000": "330.3213063",
+    "DEJ2000": "+32.3685885",
+    "pmRA": "141",
+    "e_pmRA": "162",
+    "pmDE": "86",
+    "e_pmDE": "165",
+    "W1mag": "14.690",
+    "W2mag": "13.707",
+    "ccf": "0h00",
+    "_r": "1.309"
+   }
+  ]
+ ],
+ "epoch_2mass_ucs": "1998-06-16",
+ "ucd_2mass_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F246%2Fout&-c=330.3211145874267+32.36825305206961&-c.rs=5&-out=2MASS+RAJ2000+DEJ2000+Jmag+Kmag+JD+_r",
+  [
+   {
+    "2MASS": "22011701+3222062",
+    "RAJ2000": "330.320906",
+    "DEJ2000": "+32.368393",
+    "Jmag": "16.351",
+    "Kmag": "15.233",
+    "JD": "2450980.8863",
+    "_r": "0.810"
+   }
+  ]
+ ],
+ "ucs_pm": [
+  110.8,
+  59.5,
+  "2.1",
+  "1.7",
+  "Best20"
+ ],
+ "ucs_plx": [
+  "38",
+  "4",
+  "Kirk21",
+  "26.3",
+  "2.8",
+  "dist_plx_formula"
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "name": "WISEA J124014.80+204752.7",
+ "host": "3954536956780305792",
+ "host_gaia": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&Source=3954536956780305792&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV",
+  [
+   {
+    "Source": "3954536956780305792",
+    "RA_ICRS": "190.03030998203",
+    "DE_ICRS": "+20.80747204489",
+    "Plx": "18.8805",
+    "e_Plx": "0.0393",
+    "pmRA": "205.359",
+    "e_pmRA": "0.043",
+    "pmDE": "-369.366",
+    "e_pmDE": "0.030",
+    "Gmag": "8.703531",
+    "BPmag": "9.139407",
+    "RPmag": "8.096934",
+    "RUWE": "1.919",
+    "RV": "",
+    "e_RV": ""
+   }
+  ]
+ ],
+ "ucd_gaia_3as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&-c=190.0620175187034+20.79747376278611&-c.rs=3&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV+_r",
+  [
+   {
+    "Source": "3954537059859521792",
+    "RA_ICRS": "190.06200263642",
+    "DE_ICRS": "+20.79744489190",
+    "Plx": "18.8920",
+    "e_Plx": "0.1607",
+    "pmRA": "206.290",
+    "e_pmRA": "0.170",
+    "pmDE": "-368.903",
+    "e_pmDE": "0.131",
+    "Gmag": "18.019587",
+    "BPmag": "20.913510",
+    "RPmag": "16.535412",
+    "RUWE": "0.992",
+    "RV": "",
+    "e_RV": "",
+    "_r": "0.115"
+   }
+  ]
+ ],
+ "ucd_catwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F365%2Fcatwise&-c=190.06198074086365+20.797535246119445&-c.rs=5&-out=Name+RAPMdeg+DEPMdeg+pmRA+e_pmRA+pmDE+e_pmDE+W1mproPM+W2mproPM+ab+_r",
+  []
+ ],
+ "ucd_allwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F328%2Fallwise&-c=190.06198074086365+20.797535246119445&-c.rs=6&-out=AllWISE+RAJ2000+DEJ2000+pmRA+e_pmRA+pmDE+e_pmDE+W1mag+W2mag+ccf+_r",
+  [
+   {
+    "AllWISE": "J124014.80+204752.7",
+    "RAJ2000": "190.0616708",
+    "DEJ2000": "+20.7979864",
+    "pmRA": "426",
+    "e_pmRA": "63",
+    "pmDE": "-381",
+    "e_pmDE": "67",
+    "W1mag": "13.020",
+    "W2mag": "12.803",
+    "ccf": "0000",
+    "_r": "1.930"
+   }
+  ]
+ ],
+ "epoch_2mass_ucs": "2000-03-11",
+ "ucd_2mass_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F246%2Fout&-c=190.06104883840058+20.79909315354777&-c.rs=5&-out=2MASS+RAJ2000+DEJ2000+Jmag+Kmag+JD+_r",
+  [
+   {
+    "2MASS": "12401465+2047566",
+    "RAJ2000": "190.061051",
+    "DEJ2000": "+20.799078",
+    "Jmag": "14.106",
+    "Kmag": "13.215",
+    "JD": "2451614.7736",
+    "_r": "0.055"
+   }
+  ]
+ ],
+ "pm_2mass_gaia": [
+  202.6,
+  -371.9,
+  8.9,
+  15.81
+ ],
+ "ucs_pm": [
+  206.29,
+  -368.9,
+  "0.17",
+  "0.13",
+  "Gaia23"
+ ],
+ "ucs_plx": [
+  "18.89",
+  "0.16",
+  "Gaia23",
+  "52.9",
+  "0.4",
+  "dist_plx_formula"
+ ]
+}

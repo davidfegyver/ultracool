@@ -1,0 +1,72 @@
+{
+ "name": "2MASS J07202582-5617224",
+ "host": "5487374844438857728",
+ "host_gaia": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&Source=5487374844438857728&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV",
+  [
+   {
+    "Source": "5487374844438857728",
+    "RA_ICRS": "110.09542318594",
+    "DE_ICRS": "-56.29437468944",
+    "Plx": "13.7409",
+    "e_Plx": "0.0217",
+    "pmRA": "-27.010",
+    "e_pmRA": "0.024",
+    "pmDE": "61.408",
+    "e_pmDE": "0.025",
+    "Gmag": "6.553682",
+    "BPmag": "6.597819",
+    "RPmag": "6.445241",
+    "RUWE": "0.838",
+    "RV": "13.93",
+    "e_RV": "0.39"
+   }
+  ]
+ ],
+ "ucd_gaia_3as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&-c=110.10733269471743+-56.28926883130333&-c.rs=3&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV+_r",
+  []
+ ],
+ "ucd_catwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F365%2Fcatwise&-c=110.10734107305521+-56.28927949130333&-c.rs=5&-out=Name+RAPMdeg+DEPMdeg+pmRA+e_pmRA+pmDE+e_pmDE+W1mproPM+W2mproPM+ab+_r",
+  []
+ ],
+ "ucd_allwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F328%2Fallwise&-c=110.10734107305521+-56.28927949130333&-c.rs=6&-out=AllWISE+RAJ2000+DEJ2000+pmRA+e_pmRA+pmDE+e_pmDE+W1mag+W2mag+ccf+_r",
+  [
+   {
+    "AllWISE": "J072025.76-561721.8",
+    "RAJ2000": "110.1073583",
+    "DEJ2000": "-56.2893902",
+    "pmRA": "48",
+    "e_pmRA": "29",
+    "pmDE": "-27",
+    "e_pmDE": "31",
+    "W1mag": "11.603",
+    "W2mag": "11.382",
+    "ccf": "dd00",
+    "_r": "0.400"
+   }
+  ]
+ ],
+ "epoch_2mass_ucs": "1999-12-12",
+ "ucd_2mass_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F246%2Fout&-c=110.10755682194358+-56.28955399481576&-c.rs=5&-out=2MASS+RAJ2000+DEJ2000+Jmag+Kmag+JD+_r",
+  []
+ ],
+ "ucs_pm": [
+  -27.9,
+  63.96,
+  "0.14",
+  "0.15",
+  "Gaia23"
+ ],
+ "ucs_plx": [
+  "13.76",
+  "0.12",
+  "Gaia23",
+  "72.7",
+  "0.6",
+  "dist_plx_formula"
+ ]
+}

@@ -1,0 +1,179 @@
+{
+ "pair": {
+  "uid": "3873",
+  "ucd": "WISE J235447.80-814044.9",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "T6.4",
+  "ucd_G": "NaN",
+  "ucd_gaia": "null",
+  "ucd_pmra": "122.0",
+  "ucd_pmdec": "71.0",
+  "ucd_pmerr": "26.0/23.0",
+  "ucd_ref_pm": "Maro21",
+  "ucd_plx": "",
+  "ucd_plxerr": "",
+  "ucd_ref_plx": "null",
+  "ucd_dist": "25.0",
+  "ucd_disterr": "4.0",
+  "ucd_dist_src": "dist_W2_formula",
+  "gaia": "6350786278796634112",
+  "g_ra": "358.58382867378697",
+  "g_dec": "-81.68455055872617",
+  "g_pmra": "96.03312683105469",
+  "g_pmdec": "36.288124084472656",
+  "g_epm": "0.06587168574333191/0.06922835111618042",
+  "g_plx": "37.10451126098633",
+  "g_eplx": "0.061009444296360016",
+  "G": "17.222562789916992",
+  "BP_RP": "1.306",
+  "M_G": "15.07",
+  "RUWE": "1.0073862075805664",
+  "RV": "",
+  "sep_arcsec": "63.76",
+  "sep_au": "1718",
+  "dmu": "43.35",
+  "dmu_sig": "24.12",
+  "dmu_over_sig": "1.8",
+  "plx_mode": "phot:dist_W2_formula",
+  "plx_dev_sigma": "0.49",
+  "dvtan_kms": "5.54",
+  "dvtan_err": "3.08",
+  "host_mass": "0.086",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.41",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "Spectral type is photometric from CH4s-CH4l (Tinn18).",
+  "ucs_simbad": "WISE J235447.80-814044.9",
+  "ucs_ids": "CWISE J235448.04-814044.6|WISEA J235447.85-814044.9|WISE J235447.80-814044.9",
+  "n_field": "0",
+  "expected_false": "0.00e+00"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 15893936,
+    "main_id": "Gaia DR3 6350786278796634112",
+    "otype": "WD*",
+    "sp_type": "DZH",
+    "plx_value": 37.1045,
+    "pmra": 96.033,
+    "pmdec": 36.288,
+    "ra": 358.58087740008,
+    "dec": -81.68471182841
+   }
+  ],
+  "ids": [
+   "Gaia DR3 6350786278796634112",
+   "Gaia DR2 6350786278796634112"
+  ],
+  "refs": [
+   {
+    "bibcode": "2019MNRAS.482.4570G",
+    "title": "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   },
+   {
+    "bibcode": "2019MNRAS.485.5573T",
+    "title": "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2021MNRAS.508.3877G",
+    "title": "A catalogue of white dwarfs in Gaia EDR3."
+   },
+   {
+    "bibcode": "2023MNRAS.518.3055O",
+    "title": "Gaia white dwarfs within 40 pc - III. Spectroscopic observations of new candidates in the Southern hemisphere."
+   },
+   {
+    "bibcode": "2023A&A...679A.127G",
+    "title": "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   },
+   {
+    "bibcode": "2024MNRAS.527.8687O",
+    "title": "The 40 pc sample of white dwarfs from {\\em Gaia}."
+   },
+   {
+    "bibcode": "2024MNRAS.528.6056H",
+    "title": "Rotation plays a role in the generation of magnetic fields in single white dwarfs."
+   },
+   {
+    "bibcode": "2024A&A...682A...5V",
+    "title": "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 4629,
+    "log_g": 7.870999813079834,
+    "bibcode": "2024A&A...682A...5V"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 18628314,
+    "main_id": "WISE J235447.80-814044.9",
+    "otype": "BD?",
+    "sp_type": "",
+    "plx_value": 0.0,
+    "pmra": 0.0,
+    "pmdec": 0.0,
+    "ra": 358.699206,
+    "dec": -81.679152
+   }
+  ],
+  "ids": [
+   "CWISE J235448.04-814044.6",
+   "WISEA J235447.85-814044.9",
+   "WISE J235447.80-814044.9"
+  ],
+  "refs": [
+   {
+    "bibcode": "2018ApJS..236...28T",
+    "title": "New Y- and T dwarfs from WISE identified by methane imaging."
+   },
+   {
+    "bibcode": "2021ApJS..253....7K",
+    "title": "The field substellar mass function based on the full-sky 20 pc census of 525 L, T, and Y dwarfs."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=6350786278796634112&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=6350786278796634112&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=358.58382867378697+-81.68455055872617&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=358.58382867378697+-81.68455055872617&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=358.58382867378697+-81.68455055872617&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

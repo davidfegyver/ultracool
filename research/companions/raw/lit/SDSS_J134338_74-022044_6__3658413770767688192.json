@@ -1,0 +1,188 @@
+{
+ "pair": {
+  "uid": "2435",
+  "ucd": "SDSS J134338.74-022044.6",
+  "ucd_spt_opt": "L0",
+  "ucd_spt_ir": "null",
+  "ucd_G": "20.9279",
+  "ucd_gaia": "3658413667689105920",
+  "ucd_pmra": "-139.0",
+  "ucd_pmdec": "121.0",
+  "ucd_pmerr": "5.0/5.0",
+  "ucd_ref_pm": "Best18",
+  "ucd_plx": "",
+  "ucd_plxerr": "",
+  "ucd_ref_plx": "null",
+  "ucd_dist": "84.0",
+  "ucd_disterr": "6.0",
+  "ucd_dist_src": "dist_W2_formula",
+  "gaia": "3658413770767688192",
+  "g_ra": "205.90795064967355",
+  "g_dec": "-2.3330207309375766",
+  "g_pmra": "-140.7187042236328",
+  "g_pmdec": "122.13965606689453",
+  "g_epm": "0.09737874567508698/0.06365755200386047",
+  "g_plx": "12.006402969360352",
+  "g_eplx": "0.08212047070264816",
+  "G": "12.315579414367676",
+  "BP_RP": "1.997",
+  "M_G": "7.71",
+  "RUWE": "6.6534576416015625",
+  "RV": "-49.63797378540039",
+  "sep_arcsec": "44.13",
+  "sep_au": "3676",
+  "dmu": "2.06",
+  "dmu_sig": "5.0",
+  "dmu_over_sig": "0.41",
+  "plx_mode": "phot:dist_W2_formula",
+  "plx_dev_sigma": "-0.12",
+  "dvtan_kms": "0.81",
+  "dvtan_err": "1.97",
+  "host_mass": "0.623",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.58",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "2MASS J13433872-0220446",
+  "ucs_ids": "2MASS J13433872-0220446|EPIC 251551345|SDSS J134338.73-022044.5|SDSS J134338.74-022044.6|TIC 270466794|ULAS J134338.63-022043.3|ULAS J134338.64-022043.3|WISEA J134338.64-022043.4|WISE J134338.64-022043.4|Gaia DR2 3658413667689105920",
+  "n_field": "0",
+  "expected_false": "0.00e+00"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 8447025,
+    "main_id": "UPM J1343-0220",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 12.0064,
+    "pmra": -140.719,
+    "pmdec": 122.14,
+    "ra": 205.90857657920998,
+    "dec": -2.33356356851
+   }
+  ],
+  "ids": [
+   "TIC 270466787",
+   "Gaia DR3 3658413770767688192",
+   "UPM J1343-0220",
+   "2MASS J13433803-0220006",
+   "WISEA J134337.96-021959.5",
+   "Gaia DR2 3658413770767688192"
+  ],
+  "refs": [
+   {
+    "bibcode": "2012ApJ...745..118F",
+    "title": "UCAC3 proper motion survey. II. Discovery of new proper motion stars in UCAC3 with 0\".40/yr > {mu} >= 0\".18/yr between declinations -47{deg} and  00{deg}."
+   },
+   {
+    "bibcode": "2016ApJS..224...36K",
+    "title": "The AllWISE motion survey, part 2."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 5112953,
+    "main_id": "2MASS J13433872-0220446",
+    "otype": "BD*",
+    "sp_type": "L0",
+    "plx_value": 0.0,
+    "pmra": 0.0,
+    "pmdec": 0.0,
+    "ra": 205.91140499999997,
+    "dec": -2.3457090000000003
+   }
+  ],
+  "ids": [
+   "TIC 270466794",
+   "EPIC 251551345",
+   "WISEA J134338.64-022043.4",
+   "2MASS J13433872-0220446",
+   "SDSS J134338.73-022044.5",
+   "SDSS J134338.74-022044.6",
+   "ULAS J134338.63-022043.3",
+   "Gaia DR2 3658413667689105920",
+   "WISE J134338.64-022043.4",
+   "ULAS J134338.64-022043.3",
+   "SDSS J134338.67-022044.0"
+  ],
+  "refs": [
+   {
+    "bibcode": "2008AJ....135..785W",
+    "title": "Constraining the age-activity relation for cool stars: the Sloan Digital  Sky Survey Data Release 5 low-mass star spectroscopic sample."
+   },
+   {
+    "bibcode": "2010AJ....139.1808S",
+    "title": "Colors and kinematics of L dwarfs from the Sloan Digital Sky Survey."
+   },
+   {
+    "bibcode": "2016A&A...589A..49S",
+    "title": "Photometric brown-dwarf classification. II. A homogeneous sample of 1361 L and T dwarfs brighter than J = 17.5 with accurate spectral types."
+   },
+   {
+    "bibcode": "2019AJ....157..231K",
+    "title": "Exploring the age-dependent properties of M and L dwarfs using Gaia and SDSS."
+   },
+   {
+    "bibcode": "2020MNRAS.494.5751P",
+    "title": "K2 Ultracool Dwarfs Survey - VI. White light superflares observed on an L5 dwarf and flare rates of L dwarfs."
+   },
+   {
+    "bibcode": "2020AJ....160...19S",
+    "title": "Upper limits on planet occurrence around ultracool dwarfs with K2."
+   },
+   {
+    "bibcode": "2020A&A...641A.170S",
+    "title": "Occurrence rate of exoplanets orbiting ultracool dwarfs as probed by K2."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=3658413770767688192&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=3658413770767688192&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=3658413667689105920&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=3658413667689105920&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=205.90795064967355+-2.3330207309375766&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=205.90795064967355+-2.3330207309375766&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=205.90795064967355+-2.3330207309375766&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

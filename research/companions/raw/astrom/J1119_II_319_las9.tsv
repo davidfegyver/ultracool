@@ -1,0 +1,126 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:30:06 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:30:06	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/319/las9&-c=169.87265%200.35912&-c.rs=5&-out.all	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=169.872650+00.359120,rs=5.	
+#Constraint -out.all
+
+#RESOURCE=yCat_2319
+#Name: II/319
+#Title: UKIDSS-DR9 LAS, GCS and DXS Surveys (Lawrence+ 2012)
+#INFO	ivoid=ivo://cds.vizier/ii/319	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/ii/319	    IVOID of underlying data collection
+#INFO	creator=Lawrence A.	    First author or institution
+#INFO	cites=bibcode:2007MNRAS.379.1599L	    Article or Data origin sources
+#INFO	journal=MNRA	    Journal name
+#INFO	original_date=2007	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/II/319	    Dataset landing page
+#INFO	publication_date=2025-01-04	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	II_319_las9:
+#Name: II/319/las9
+#Title: the UKIDSS-DR9 Large Area Survey (on a total of 82,655,526 sources)
+#Column	_r	(F5.3)	Distance from center (169.872650+00.359120)[FK5/J2000], at Epoch of catalog (Epoch)	[ucd=pos.angDistance]
+#Column	ULAS	(a19)	Name of source in survey (G5)	[ucd=meta.id;meta.main]
+#Column	m	(I1)	[1/2] "2" indicates a duplicated source (G6)	[ucd=meta.code.multip]
+#Column	RAJ2000	(F10.6)	Right ascension (J2000), at Epoch	[ucd=pos.eq.ra;meta.main]
+#Column	e_RAJ2000	(I6)	? Uncertainty in RA (sigRa)	[ucd=stat.error;pos.eq.ra]
+#Column	DEJ2000	(F10.6)	Declination (J2000), at Epoch	[ucd=pos.eq.dec;meta.main]
+#Column	e_DEJ2000	(I6)	? Uncertainty in Dec (sigDec)	[ucd=stat.error;pos.eq.dec]
+#Column	Ymag	(F6.3)	? UKIDSS Y default magnitude (yAperMag3) (G1)	[ucd=phot.mag;em.IR.J]
+#Column	e_Ymag	(F6.3)	? Mean error on Ymag (yAperMag3Err)	[ucd=stat.error;phot.mag]
+#Column	Jmag1	(F7.3)	? UKIDSS J magnitude in the first epoch (j_1AperMag3) (G1)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag1	(F6.3)	? Mean error on Jmag1 (j_1AperMag3Err)	[ucd=stat.error;phot.mag]
+#Column	Jmag2	(F6.3)	? UKIDSS J magnitude in the second epoch (j_2AperMag3) (G1)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag2	(F6.3)	? Mean error on Jmag2 (j_2AperMag3Err)	[ucd=stat.error;phot.mag]
+#Column	Hmag	(F6.3)	? UKIDSS H default magnitude (hAperMag3) (G1)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hmag	(F6.3)	? Mean error on Hmag (hAperMag3Err)	[ucd=stat.error;phot.mag]
+#Column	Kmag	(F6.3)	? UKIDSS K default magnitude (kAperMag3) (G1)	[ucd=phot.mag;em.IR.K]
+#Column	e_Kmag	(F6.3)	? Mean error on Kmag (kAperMag3Err)	[ucd=stat.error;phot.mag]
+#Column	ID	(I12)	Unique ID of this merged detection (sourceID)	[ucd=meta.id]
+#Column	Epoch	(F9.4)	Epoch of position measurement (epoch)	[ucd=time.epoch]
+#Column	pmRA	(F7.1)	? Proper motion in RA direction (muRa)	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F5.1)	? Error on RA proper motion (sigMuRa)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F7.1)	? Proper motion in Dec direction (muDec)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F5.1)	? Error on Dec proper motion (sigMuDec)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	chi2	(F9.4)	? {chi}-squared value of proper motion solution (chi2)	[ucd=stat.fit.chi2]
+#Column	nf	(I1)	Number of frames (nFrames)	[ucd=meta.number]
+#Column	mStat	(F7.2)	Merged profile class statistic (mergedClassStat)	[ucd=stat]
+#Column	cl	(I2)	[-3,1] Merged source class (mergedClass) (G2)	[ucd=meta.code.class;src.class.starGalaxy]
+#Column	p*	(F5.2)	[0,1] Probability of being a star (pStar)	[ucd=stat.fit.goodness]
+#Column	pG	(F5.2)	[0,1] Probability of being a galaxy (pGalaxy)	[ucd=stat.fit.goodness]
+#Column	pN	(F5.2)	[0,1] Probability of being noise (pNoise)	[ucd=stat.fit.goodness]
+#Column	Ytot	(F6.3)	? Total point source Y magnitude (yHallMag)	[ucd=phot.mag;em.IR.J]
+#Column	e_Ytot	(F10.3)	? Mean error on Ytot (yHallMagErr)	[ucd=stat.error]
+#Column	pYmag	(F6.3)	? Petrosian Y magnitude (yPetroMag)	[ucd=phot.mag;em.IR.J]
+#Column	e_pYmag	(F10.3)	? Mean error on pYmag (yPetroMagErr)	[ucd=stat.error;phot.mag]
+#Column	Ydiam	(F7.3)	? Y-band RMS of ellipse fit (yGausig)	[ucd=phys.angSize;src]
+#Column	Yell	(F5.2)	[0,1]? Source ellipticity in Y-band (yEll)	[ucd=src.ellipticity]
+#Column	Ypa	(F5.1)	[0,180]? Position angle of Y-band ellipse (yPA)	[ucd=pos.posAng;instr.det]
+#Column	Ybad	(I2)	Y-band zero confidence pixels (yErrBits) (G3)	[ucd=meta.code]
+#Column	Ycl	(I2)	[-3,1]? Y-band source class (yClass) (G2)	[ucd=meta.code.class;src.class.starGalaxy]
+#Column	Yflags	(I7)	[0,8388607]? Y-band flags (yppErrBits) (G4)	[ucd=meta.code.error]
+#Column	Jtot1	(F7.3)	? Total point source J magnitude (j_1HallMag)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jtot1	(F10.3)	? Mean error on Jtot (j_1HallMagErr)	[ucd=stat.error]
+#Column	pJmag1	(F7.3)	? Petrosian J magnitude (j_1PetroMag)	[ucd=phot.mag;em.IR.J]
+#Column	e_pJmag1	(F11.3)	? Mean error on pJmag (j_1PetroMagErr)	[ucd=stat.error;phot.mag]
+#Column	Jdiam1	(F7.3)	? J-band RMS of ellipse fit (j_1Gausig)	[ucd=phys.angSize;src]
+#Column	Jell1	(F5.2)	[0/1]? J-band ellipticity (G1-b/a) (j_1Ell)	[ucd=src.ellipticity]
+#Column	Jpa1	(F5.1)	[0,180]? J-band position angle (j_1PA)	[ucd=pos.posAng]
+#Column	Jbad1	(I2)	J-band zero confidence pixels (j_1ErrBits) (G3)	[ucd=meta.code]
+#Column	Jcl1	(I2)	[-3,1]? J-band source class (j_1Class) (G2)	[ucd=meta.code.class]
+#Column	Jflags1	(I7)	[0,8388607] J-band flags (j_1ppErrBits) (G4)	[ucd=meta.code.error]
+#Column	Jdx1	(F6.3)	? {xi} offset to Y-band source (j_1Xi)	[ucd=pos;arith.diff]
+#Column	Jdy1	(F6.3)	? {eta} offset to Y-band source (j_1Eta)	[ucd=pos;arith.diff]
+#Column	Jtot2	(F6.3)	? Total point source J magnitude (j_2HallMag)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jtot2	(F9.3)	? Mean error on Jtot (j_2HallMagErr)	[ucd=stat.error]
+#Column	pJmag2	(F6.3)	? Petrosian J magnitude (j_2PetroMag)	[ucd=phot.mag;em.IR.J]
+#Column	e_pJmag2	(F8.3)	? Mean error on pJmag (j_2PetroMagErr)	[ucd=stat.error;phot.mag]
+#Column	Jdiam2	(F7.3)	? J-band RMS of ellipse fit (j_2Gausig)	[ucd=phys.angSize;src]
+#Column	Jell2	(F5.2)	[0/1]? J-band ellipticity (G1-b/a) (j_2Ell)	[ucd=src.ellipticity]
+#Column	Jpa2	(F5.1)	[0,180]? J-band position angle (j_2PA)	[ucd=pos.posAng]
+#Column	Jbad2	(I2)	J-band zero confidence pixels (j_2ErrBits) (G3)	[ucd=meta.code]
+#Column	Jcl2	(I2)	[-3,1]? J-band source class (j_2Class) (G2)	[ucd=meta.code.class]
+#Column	Jflags2	(I7)	band flags (j_2ppErrBits) (G4)	[ucd=meta.code.error]
+#Column	Jdx2	(F6.3)	? {xi} offset to Y-band source (j_2Xi)	[ucd=pos;arith.diff]
+#Column	Jdy2	(F6.3)	? {eta} offset to Y-band source (j_2Eta)	[ucd=pos;arith.diff]
+#Column	Htot	(F6.3)	? Total point source H magnitude (hHallMag)	[ucd=phot.mag;em.IR.H]
+#Column	e_Htot	(F9.3)	? Mean error on Htot (hHallMagErr)	[ucd=stat.error]
+#Column	pHmag	(F6.3)	? Petrosian H magnitude (hPetroMag)	[ucd=phot.mag;em.IR.H]
+#Column	e_pHmag	(F10.3)	? Mean error on Hpag (hPetroMagErr)	[ucd=stat.error;phot.mag]
+#Column	Hdiam	(F7.3)	? RMS of ellipse fit in H-band (hGausig)	[ucd=phys.angSize;src]
+#Column	Hell	(F5.2)	? Ellipticity in H-band (hEll)	[ucd=src.ellipticity]
+#Column	Hpa	(F5.1)	[0,180]? H-band position angle (hPA)	[ucd=pos.posAng]
+#Column	Hbad	(I2)	H-band zero confidence pixels (hErrBits) (G3)	[ucd=meta.code]
+#Column	Hcl	(I2)	[-3,1] H-band source class (hClass) (G2)	[ucd=meta.code.class;src.class.starGalaxy]
+#Column	Hflags	(I7)	[0,8388607] flags (hppErrBits) (G4)	[ucd=meta.code.error]
+#Column	Hdx	(F6.3)	? {xi} offset to Y-band source (hXi)	[ucd=pos;arith.diff]
+#Column	Hdy	(F6.3)	? {eta} offset to Y-band source (hEta)	[ucd=pos;arith.diff]
+#Column	Ktot	(F6.3)	? Total point source K magnitude (kHallMag)	[ucd=phot.mag;em.IR.K]
+#Column	e_Ktot	(F10.3)	? Mean error on Ktot (kHallMagErr)	[ucd=stat.error]
+#Column	pKmag	(F6.3)	? Petrosian K magnitude (kPetroMag)	[ucd=phot.mag;em.IR.K]
+#Column	e_pKmag	(F10.3)	? Mean error on pKmag (kPetroMagErr)	[ucd=stat.error;phot.mag]
+#Column	Kdiam	(F7.3)	? RMS of ellipse fit in K-band (kGausig)	[ucd=phys.angSize;src]
+#Column	Kell	(F5.2)	? K-band ellipticity (kEll)	[ucd=src.ellipticity]
+#Column	Kpa	(F5.1)	[0,180]? K-band position angle (kPA)	[ucd=pos.posAng]
+#Column	Kbad	(I2)	K-band zero confidence pixels (kErrBits) (G3)	[ucd=meta.code]
+#Column	Kcl	(I2)	[-3,1] K-band source class (kClass) (G2)	[ucd=meta.code.class;src.class.starGalaxy]
+#Column	Kflags	(I7)	[0,8388607] flags (kppErrBits) (G4)	[ucd=meta.code.error]
+#Column	Kdx	(F6.3)	? {xi} offset to Y-band source (kXi)	[ucd=pos;arith.diff]
+#Column	Kdy	(F6.3)	? {eta} offset to Y-band source (kEta)	[ucd=pos;arith.diff]
+_r	ULAS	m	RAJ2000	e_RAJ2000	DEJ2000	e_DEJ2000	Ymag	e_Ymag	Jmag1	e_Jmag1	Jmag2	e_Jmag2	Hmag	e_Hmag	Kmag	e_Kmag	ID	Epoch	pmRA	e_pmRA	pmDE	e_pmDE	chi2	nf	mStat	cl	p*	pG	pN	Ytot	e_Ytot	pYmag	e_pYmag	Ydiam	Yell	Ypa	Ybad	Ycl	Yflags	Jtot1	e_Jtot1	pJmag1	e_pJmag1	Jdiam1	Jell1	Jpa1	Jbad1	Jcl1	Jflags1	Jdx1	Jdy1	Jtot2	e_Jtot2	pJmag2	e_pJmag2	Jdiam2	Jell2	Jpa2	Jbad2	Jcl2	Jflags2	Jdx2	Jdy2	Htot	e_Htot	pHmag	e_pHmag	Hdiam	Hell	Hpa	Hbad	Hcl	Hflags	Hdx	Hdy	Ktot	e_Ktot	pKmag	e_pKmag	Kdiam	Kell	Kpa	Kbad	Kcl	Kflags	Kdx	Kdy
+arcsec	 	 	deg	mas	deg	mas	mag	mag	mag	mag	mag	mag	mag	mag	mag	mag	 	yr	mas/yr	mas/yr	mas/yr	mas/yr	 	 	 	 	 	 	 	mag	mag	mag	mag	pix	 	deg	 	 	 	mag	mag	mag	mag	pix	 	deg	 	 	 	arcsec	arcsec	mag	mag	mag	mag	pix	 	deg	 	 	 	arcsec	arcsec	mag	mag	mag	mag	pix	 	deg	 	 	 	arcsec	arcsec	mag	mag	mag	mag	pix	 	deg	 	 	 	arcsec	arcsec
+-----	-------------------	-	----------	------	----------	------	------	------	-------	------	------	------	------	------	------	------	------------	---------	-------	-----	-------	-----	---------	-	-------	--	-----	-----	-----	------	----------	------	----------	-------	-----	-----	--	--	-------	-------	----------	-------	-----------	-------	-----	-----	--	--	-------	------	------	------	---------	------	--------	-------	-----	-----	--	--	-------	------	------	------	---------	------	----------	-------	-----	-----	--	--	-------	------	------	------	----------	------	----------	-------	-----	-----	--	--	-------	------	------
+0.359	J111929.44+002133.1	2	169.872697	      	+00.359208	      	18.795	 0.054	 17.517	 0.029	      	      	16.657	 0.044	16.012	 0.038	433858673961	2008.3419	       	     	       	     	         	0	   1.05	-1	 1.00	 0.00	 0.00	18.781	     0.081	18.551	     0.105	  1.635	 0.20	137.5	 0	-1	      0	 17.570	     0.045	 17.617	      0.074	  2.864	 0.12	 13.4	 0	-1	      0	-0.086	-0.035	      	         	      	        	       	     	     	-1	-1	      0	      	      	16.755	    0.076	16.783	     0.110	  1.654	 0.07	 85.5	 0	-1	      0	-0.079	-0.073	16.213	     0.077	16.283	     0.109	  1.875	 0.16	 54.3	 0	-1	      0	-0.079	-0.017
+0.330	J111929.44+002133.1	1	169.872668	     7	+00.359210	     7	18.806	 0.049	 17.502	 0.032	      	      	16.653	 0.029	15.936	 0.023	433858702632	2007.7045	   20.4	 16.2	  -64.5	 16.2	   0.6791	4	   0.13	-1	 1.00	 0.00	 0.00	18.850	     0.084	18.913	     0.122	  1.524	 0.14	 31.6	 0	-1	      0	 17.591	     0.048	 17.619	      0.074	  2.754	 0.19	102.2	 0	-1	      0	 0.053	-0.029	      	         	      	        	       	     	     	-1	-1	      0	      	      	16.691	    0.043	16.644	     0.059	  1.573	 0.11	108.6	 0	-1	      0	-0.005	 0.039	16.065	     0.034	16.053	     0.050	  1.402	 0.06	 38.2	 0	-1	      0	-0.004	 0.048
+

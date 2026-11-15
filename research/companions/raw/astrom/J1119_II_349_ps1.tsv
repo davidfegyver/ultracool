@@ -1,0 +1,105 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:30:08 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:30:08	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/349/ps1&-c=169.87265%200.35912&-c.rs=5&-out.all	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=169.872650+00.359120,rs=5.	
+#Constraint -out.all
+
+#RESOURCE=yCat_2349
+#Name: II/349
+#Title: The Pan-STARRS release 1 (PS1) Survey - DR1 (Chambers+, 2016)
+#INFO	ivoid=ivo://cds.vizier/ii/349	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/ii/349	    IVOID of underlying data collection
+#INFO	creator=Chambers K.C. et al.	    First author or institution
+#INFO	cites=bibcode:2016arXiv161205560C	    Article or Data origin sources
+#INFO	journal=arXi	    Journal name
+#INFO	original_date=2016	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/II/349	    Dataset landing page
+#INFO	publication_date=2024-06-25	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	II_349_ps1:
+#Name: II/349/ps1
+#Title: Pan-STARRS DR1 catalogue, output (on a total of 1,919,106,885 sources)
+#Column	_r	(F5.3)	Distance from center (169.872650000+00.359120000)[FK5/J2000], at Epoch of catalog (Epoch)	[ucd=pos.angDistance]
+#Column	RAJ2000	(F13.9)	Right ascension (J2000) (weighted mean) at epoch "Epoch" (raMean) (1)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F13.9)	Declination (J2000) (weighted mean) at epoch "Epoch" (decMean) (1)	[ucd=pos.eq.dec;meta.main]
+#Column	objID	(I18)	Unique object identifier (objID)	[ucd=meta.id;meta.main]
+#Column	cell	(I4)	[559/2643] Projection cell identifier (projectionID)	[ucd=meta.id]
+#Column	sky	(I2)	[0/99] Skycell region identifier (skyCellID)	[ucd=meta.id]
+#Column	f_objID	(I10)	Information flag bitmask indicating details of the photometry (objInfoFlag) (2)	[ucd=meta.code]
+#Column	Qual	(I3)	Subset of objInfoFlag denoting whether this object is real or a likely false positive (qualityFlag) (3)	[ucd=meta.code.qual]
+#Column	e_RAJ2000	(F12.4)	? Right ascension standard deviation from single epoch detections (raMeanErr)	[ucd=stat.error;pos.eq.ra]
+#Column	e_DEJ2000	(F12.4)	? Declination standard deviation from single epoch detections (decMeanErr)	[ucd=stat.error;pos.eq.dec]
+#Column	Epoch	(F15.9)	? Modified Julian Date (MJD) of the mean epoch (epochMean)	[ucd=time.epoch]
+#Column	Ns	(I2)	[0/50] Number of stack detections (nStackDetections)	[ucd=meta.number]
+#Column	Nd	(I3)	[3/369] Number of single epoch detections in all filters (nDetections)	[ucd=meta.number]
+#Column	Ng	(I2)	[0/52] Number of single epoch detections in g filter (ng)	[ucd=meta.number]
+#Column	Nr	(I3)	[0/368] Number of single epoch detections in r filter (nr)	[ucd=meta.number]
+#Column	Ni	(I2)	[0/88] Number of single epoch detections in i filter (ni)	[ucd=meta.number]
+#Column	Nz	(I2)	[0/44] Number of single epoch detections in z filter (nz)	[ucd=meta.number]
+#Column	Ny	(I2)	[0/53] Number of single epoch detections in y filter (ny)	[ucd=meta.number]
+#Column	gPSFf	(F9.6)	? Maximum PSF weighted fraction of pixels totally unmasked from g filter detections (gQfPerfect)	[ucd=instr.det.psf]
+#Column	gmag	(F8.4)	[-33/33]? Mean PSF AB magnitude from g filter (4866{AA}) detections (gMeanPSFMag)	[ucd=phot.mag;em.opt.B]
+#Column	e_gmag	(F7.4)	[0/0.5]? Error in gmag (gMeanPSFMagErr)	[ucd=stat.error;phot.mag]
+#Column	gmagStd	(F7.4)	? Standard deviation of PSF AB magnitudes from g filter detections (gMeanPSFMagStd)	[ucd=stat.stdev]
+#Column	o_gmag	(I2)	[0/49] Number of measurements included in mean PSF magnitude from g filter detections (gMeanPSFMagNpt)	[ucd=meta.number]
+#Column	b_gmag	(F7.4)	? Minimum PSF AB magnitude from g filter detections (gMeanPSFMagMin)	[ucd=stat.error;phot.mag;em.opt.B]
+#Column	B_gmag	(F7.4)	? Maximum PSF AB magnitude from g filter detections (gMeanPSFMagMax)	[ucd=stat.error;phot.mag;em.opt.B]
+#Column	gKmag	(F7.4)	? Mean Kron (1980) AB magnitude from g filter detections (gMeanKronMag)	[ucd=phot.mag;em.opt.B]
+#Column	e_gKmag	(F7.4)	? Error in gKmag (gMeanKronMagErr)	[ucd=stat.error;phot.mag]
+#Column	gFlags	(I8)	Information flag bitmask for mean object from g filter detections (gFlags) (4)	[ucd=meta.code]
+#Column	rPSFf	(F9.6)	? Maximum PSF weighted fraction of pixels totally unmasked from r filter detections (rQfPerfect)	[ucd=instr.det.psf]
+#Column	rmag	(F7.4)	[-6/30]? Mean PSF AB magnitude from r filter (6215{AA}) detections (rMeanPSFMag)	[ucd=phot.mag;em.opt.R]
+#Column	e_rmag	(F7.4)	[0/0.5]? Error in rmag (rMeanPSFMagErr)	[ucd=stat.error;phot.mag]
+#Column	rmagStd	(F7.4)	? Standard deviation of PSF AB magnitudes from r filter detections (rMeanPSFMagStd)	[ucd=stat.stdev]
+#Column	o_rmag	(I3)	[0/179] Number of measurements included in mean PSF magnitude from r filter detections (rMeanPSFMagNpt)	[ucd=meta.number]
+#Column	b_rmag	(F7.4)	? Minimum PSF AB magnitude from r filter detections (rMeanPSFMagMin)	[ucd=stat.error;phot.mag;em.opt.R]
+#Column	B_rmag	(F7.4)	? Maximum PSF AB magnitude from r filter detections (rMeanPSFMagMax)	[ucd=stat.error;phot.mag;em.opt.R]
+#Column	rKmag	(F7.4)	? Mean Kron (1980) AB magnitude from r filter detections (rMeanKronMag)	[ucd=phot.mag;em.opt.R]
+#Column	e_rKmag	(F7.4)	? Error in rKmag (rMeanKronMagErr)	[ucd=stat.error;phot.mag]
+#Column	rFlags	(I8)	Information flag bitmask for mean object from r filter detections (rFlags) (4)	[ucd=meta.code]
+#Column	iPSFf	(F9.6)	? Maximum PSF weighted fraction of pixels totally unmasked from i filter detections (iQfPerfect)	[ucd=instr.det.psf]
+#Column	imag	(F7.4)	[-5/30]? Mean PSF AB magnitude from i filter (7545{AA}) detections (iMeanPSFMag)	[ucd=phot.mag;em.opt.I]
+#Column	e_imag	(F7.4)	[0/0.5]? Error in imag (iMeanPSFMagErr)	[ucd=stat.error;phot.mag]
+#Column	imagStd	(F7.4)	? Standard deviation of PSF AB magnitudes from i filter detections (iMeanPSFMagStd)	[ucd=stat.stdev]
+#Column	o_imag	(I2)	[0/85] Number of measurements included in mean PSF magnitude from i filter detections (iMeanPSFMagNpt)	[ucd=meta.number]
+#Column	b_imag	(F7.4)	? Minimum PSF AB magnitude from i filter detections (iMeanPSFMagMin)	[ucd=stat.error;phot.mag;em.opt.I]
+#Column	B_imag	(F7.4)	? Maximum PSF AB magnitude from i filter detections (iMeanPSFMagMax)	[ucd=stat.error;phot.mag;em.opt.I]
+#Column	iKmag	(F7.4)	? Mean Kron (1980) AB magnitude from i filter detections (iMeanKronMag)	[ucd=phot.mag;em.opt.I]
+#Column	e_iKmag	(F7.4)	? Error in iKmag (iMeanKronMagErr)	[ucd=stat.error;phot.mag]
+#Column	iFlags	(I8)	Information flag bitmask for mean object from i filter detections (iFlags) (4)	[ucd=meta.code]
+#Column	zPSFf	(F9.6)	? Maximum PSF weighted fraction of pixels totally unmasked from z filter detections (zQfPerfect)	[ucd=instr.det.psf]
+#Column	zmag	(F7.4)	[-5/29]? Mean PSF AB magnitude from z filter (8679{AA}) detections (zMeanPSFMag)	[ucd=phot.mag;em.opt.I]
+#Column	e_zmag	(F7.4)	[0/0.5]? Error in zmag (zMeanPSFMagErr)	[ucd=stat.error;phot.mag]
+#Column	zmagStd	(F7.4)	? Standard deviation of PSF AB magnitudes from z filter detections (zMeanPSFMagStd)	[ucd=stat.stdev]
+#Column	o_zmag	(I2)	[0-37] Number of measurements included in mean PSF magnitude from z filter detections (zMeanPSFMagNpt)	[ucd=meta.number]
+#Column	b_zmag	(F7.4)	? Minimum PSF AB magnitude from z filter detections (zMeanPSFMagMin)	[ucd=stat.error;phot.mag;em.opt.I]
+#Column	B_zmag	(F7.4)	? Maximum PSF AB magnitude from z filter detections (zMeanPSFMagMax)	[ucd=stat.error;phot.mag;em.opt.I]
+#Column	zKmag	(F7.4)	? Mean Kron (1980) AB magnitude from z filter detections (zMeanKronMag)	[ucd=phot.mag;em.opt.I]
+#Column	e_zKmag	(F7.4)	? Error in zKmag (zMeanKronMagErr)	[ucd=stat.error;phot.mag]
+#Column	zFlags	(I8)	Information flag bitmask for mean object from z filter detections (zFlags) (4)	[ucd=meta.code]
+#Column	yPSFf	(F9.6)	? Maximum PSF weighted fraction of pixels totally unmasked from y filter detections (yQfPerfect)	[ucd=instr.det.psf]
+#Column	ymag	(F7.4)	[-5/29]? Mean PSF AB magnitude from y filter (9633{AA}) detections (yMeanPSFMag)	[ucd=phot.mag;em.IR.J]
+#Column	e_ymag	(F7.4)	[0/0.5]? Error in ymag (yMeanPSFMagErr)	[ucd=stat.error;phot.mag;em.IR.J]
+#Column	ymagStd	(F7.4)	? Standard deviation of PSF AB magnitudes from y filter detections (yMeanPSFMagStd)	[ucd=stat.stdev]
+#Column	o_ymag	(I2)	[0/51] Number of measurements included in mean PSF magnitude from y filter detections (yMeanPSFMagNpt)	[ucd=meta.number]
+#Column	b_ymag	(F7.4)	? Minimum PSF AB magnitude from y filter detections (yMeanPSFMagMin)	[ucd=stat.error;phot.mag;em.IR.J]
+#Column	B_ymag	(F7.4)	? Maximum PSF AB magnitude from y filter detections (yMeanPSFMagMax)	[ucd=stat.error;phot.mag;em.IR.J]
+#Column	yKmag	(F7.4)	? Mean Kron (1980) AB magnitude from y filter detections (yMeanKronMag)	[ucd=phot.mag;em.IR.J]
+#Column	e_yKmag	(F7.4)	? Error in yKmag (yMeanKronMagErr)	[ucd=stat.error;phot.mag]
+#Column	yFlags	(I8)	Information flag bitmask for mean object from y filter detections (yFlags) (4)	[ucd=meta.code]
+_r	RAJ2000	DEJ2000	objID	cell	sky	f_objID	Qual	e_RAJ2000	e_DEJ2000	Epoch	Ns	Nd	Ng	Nr	Ni	Nz	Ny	gPSFf	gmag	e_gmag	gmagStd	o_gmag	b_gmag	B_gmag	gKmag	e_gKmag	gFlags	rPSFf	rmag	e_rmag	rmagStd	o_rmag	b_rmag	B_rmag	rKmag	e_rKmag	rFlags	iPSFf	imag	e_imag	imagStd	o_imag	b_imag	B_imag	iKmag	e_iKmag	iFlags	zPSFf	zmag	e_zmag	zmagStd	o_zmag	b_zmag	B_zmag	zKmag	e_zKmag	zFlags	yPSFf	ymag	e_ymag	ymagStd	o_ymag	b_ymag	B_ymag	yKmag	e_yKmag	yFlags
+arcsec	deg	deg	 	 	 	 	 	arcsec	arcsec	d	 	 	 	 	 	 	 	 	mag	mag	mag	 	mag	mag	mag	mag	 	 	mag	mag	mag	 	mag	mag	mag	mag	 	 	mag	mag	mag	 	mag	mag	mag	mag	 	 	mag	mag	mag	 	mag	mag	mag	mag	 	 	mag	mag	mag	 	mag	mag	mag	mag	
+-----	-------------	-------------	------------------	----	--	----------	---	------------	------------	---------------	--	---	--	---	--	--	--	---------	--------	-------	-------	--	-------	-------	-------	-------	--------	---------	-------	-------	-------	---	-------	-------	-------	-------	--------	---------	-------	-------	-------	--	-------	-------	-------	-------	--------	---------	-------	-------	-------	--	-------	-------	-------	-------	--------	---------	-------	-------	-------	--	-------	-------	-------	-------	--------
+0.044	169.872662020	+00.359117700	108431698726591344	1364	 0	 436527104	 52	      0.0399	      0.0501	56050.162326390	 3	 18	 0	  0	 0	12	 6	         	        	       	       	 0	       	       	       	       	   16416	         	       	       	       	  0	       	       	       	       	   16416	         	       	       	       	 0	       	       	       	       	  114720	 0.999285	20.5409	 0.0318	 0.1157	12	20.3787	20.7485	20.5353	 0.0672	  115000	 0.999003	19.5639	 0.0699	 0.1448	 6	19.2725	19.6688	19.5613	 0.2380	  115000
+

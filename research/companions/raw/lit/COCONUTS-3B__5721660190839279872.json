@@ -1,0 +1,163 @@
+{
+ "pair": {
+  "uid": "1235",
+  "ucd": "COCONUTS-3B",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "L6",
+  "ucd_G": "NaN",
+  "ucd_gaia": "null",
+  "ucd_pmra": "-121.0",
+  "ucd_pmdec": "93.0",
+  "ucd_pmerr": "7.0/8.0",
+  "ucd_ref_pm": "Maro21",
+  "ucd_plx": "",
+  "ucd_plxerr": "",
+  "ucd_ref_plx": "null",
+  "ucd_dist": "33.0",
+  "ucd_disterr": "8.0",
+  "ucd_dist_src": "dist_W2_formula_young",
+  "gaia": "5721660190839279872",
+  "g_ra": "123.32788033401751",
+  "g_dec": "-15.37724742457848",
+  "g_pmra": "-131.02255249023438",
+  "g_pmdec": "93.3918228149414",
+  "g_epm": "0.02057720720767975/0.016943031921982765",
+  "g_plx": "32.326141357421875",
+  "g_eplx": "0.02059626765549183",
+  "G": "14.012418746948242",
+  "BP_RP": "3.084",
+  "M_G": "11.56",
+  "RUWE": "1.1428166627883911",
+  "RV": "31.90723991394043",
+  "sep_arcsec": "61.33",
+  "sep_au": "1897",
+  "dmu": "10.03",
+  "dmu_sig": "7.0",
+  "dmu_over_sig": "1.43",
+  "plx_mode": "phot:dist_W2_formula_young",
+  "plx_dev_sigma": "-0.26",
+  "dvtan_kms": "1.47",
+  "dvtan_err": "1.03",
+  "host_mass": "0.211",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.52",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "87% probability of Argus membership from BANYAN II (Schn17).",
+  "ucs_simbad": "2MASS J08132232-1522043",
+  "ucs_ids": "2MASS J08132232-1522043|NAME COCONUTS-3B|TIC 125245434|WISEA J081322.19-152203.2|WISE J081322.20-152203.3",
+  "n_field": "0",
+  "expected_false": "0.00e+00"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 17639789,
+    "main_id": "UCAC4 374-046899",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 32.3261,
+    "pmra": -131.023,
+    "pmdec": 93.392,
+    "ra": 123.32848427838502,
+    "dec": -15.377662498534447
+   }
+  ],
+  "ids": [
+   "UCAC4 374-046899",
+   "Gaia DR2 5721660190839279872",
+   "2MASS J08131884-1522397",
+   "Gaia DR3 5721660190839279872",
+   "NAME COCONUTS-3A",
+   "TIC 125245420"
+  ],
+  "refs": [
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2022ApJ...935...15Z",
+    "title": "COol Companions ON Ultrawide orbiTS (COCONUTS). III. A Very Red L6 Benchmark Brown Dwarf around a Young M5 Dwarf."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 13376925,
+    "main_id": "2MASS J08132232-1522043",
+    "otype": "BD*",
+    "sp_type": "L7:",
+    "plx_value": 0.0,
+    "pmra": -164.5,
+    "pmdec": 98.8,
+    "ra": 123.34303,
+    "dec": -15.367885000000001
+   }
+  ],
+  "ids": [
+   "TIC 125245434",
+   "2MASS J08132232-1522043",
+   "WISE J081322.20-152203.3",
+   "WISEA J081322.19-152203.2",
+   "NAME COCONUTS-3B"
+  ],
+  "refs": [
+   {
+    "bibcode": "2017AJ....153..196S",
+    "title": "A 2MASS/AllWISE search for extremely red L dwarfs: the discovery of several likely L type members of {beta} Pic, AB Dor, Tuc-Hor, Argus, and the Hyades."
+   },
+   {
+    "bibcode": "2022ApJ...935...15Z",
+    "title": "COol Companions ON Ultrawide orbiTS (COCONUTS). III. A Very Red L6 Benchmark Brown Dwarf around a Young M5 Dwarf."
+   },
+   {
+    "bibcode": "2026AJ....171..198M",
+    "title": "Uniform Forward-modeling Analysis of Ultracool Dwarfs. IV. Benchmarking the Sonora Diamondback and D. Saumon & M. S. Marley () Atmospheric Models Across Late M, L, and T Types with Low-resolution 0.8-2.5 {\\em \u03bc}m Spectroscopy."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2022ApJ...935...15Z",
+   "COol Companions ON Ultrawide orbiTS (COCONUTS). III. A Very Red L6 Benchmark Brown Dwarf around a Young M5 Dwarf."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=5721660190839279872&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=5721660190839279872&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=123.32788033401751+-15.37724742457848&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=123.32788033401751+-15.37724742457848&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=123.32788033401751+-15.37724742457848&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

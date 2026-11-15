@@ -1,0 +1,203 @@
+{
+ "pair": {
+  "uid": "3801",
+  "ucd": "LSPM J2331+4607N",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "d/sdM7",
+  "ucd_G": "19.7453",
+  "ucd_gaia": "1938388181717307648",
+  "ucd_pmra": "-19.8",
+  "ucd_pmdec": "-205.33",
+  "ucd_pmerr": "0.3/0.28",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "6.8",
+  "ucd_plxerr": "0.4",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "147.0",
+  "ucd_disterr": "9.0",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "1938388186014795776",
+  "g_ra": "352.8256629075546",
+  "g_dec": "46.12327995762183",
+  "g_pmra": "-19.978981018066406",
+  "g_pmdec": "-205.05227661132812",
+  "g_epm": "0.06396915018558502/0.058978371322155",
+  "g_plx": "6.647177696228027",
+  "g_eplx": "0.07718457281589508",
+  "G": "17.37954330444336",
+  "BP_RP": "2.823",
+  "M_G": "11.49",
+  "RUWE": "1.0290968418121338",
+  "RV": "",
+  "sep_arcsec": "4.01",
+  "sep_au": "604",
+  "dmu": "0.33",
+  "dmu_sig": "0.29",
+  "dmu_over_sig": "1.13",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "-0.38",
+  "dvtan_kms": "0.24",
+  "dvtan_err": "0.21",
+  "host_mass": "0.214",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.93",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "LSPM J2331+4607N",
+  "ucs_ids": "2MASS J23311807+4607310|LSPM J2331+4607N|TIC 176545857|Gaia DR2 1938388181717307648|Gaia DR3 1938388181717307648",
+  "n_field": "1",
+  "expected_false": "1.24e-06"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 4025618,
+    "main_id": "LSPM J2331+4607S",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 6.6472,
+    "pmra": -19.979,
+    "pmdec": -205.052,
+    "ra": 352.82579102151,
+    "dec": 46.124191300979994
+   }
+  ],
+  "ids": [
+   "TIC 176545858",
+   "Gaia DR3 1938388186014795776",
+   "2MASS J23311819+4607273",
+   "LSPM J2331+4607S",
+   "USNO-B1.0 1361-00505673",
+   "Gaia DR2 1938388186014795776"
+  ],
+  "refs": [
+   {
+    "bibcode": "2005AJ....129.1483L",
+    "title": "A catalog of northern stars with annual proper motions larger than 0.15\" (LSPM-NORTH catalog)."
+   },
+   {
+    "bibcode": "2025ApJ...992...93Z",
+    "title": "Classifying Cool Dwarfs: Comprehensive Spectral Typing of Field and Peculiar Dwarfs Using Machine Learning."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 4025617,
+    "main_id": "LSPM J2331+4607N",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 6.7736,
+    "pmra": -19.839,
+    "pmdec": -205.332,
+    "ra": 352.82532659484,
+    "dec": 46.125213181570004
+   }
+  ],
+  "ids": [
+   "TIC 176545857",
+   "Gaia DR3 1938388181717307648",
+   "2MASS J23311807+4607310",
+   "LSPM J2331+4607N",
+   "Gaia DR2 1938388181717307648"
+  ],
+  "refs": [
+   {
+    "bibcode": "2005AJ....129.1483L",
+    "title": "A catalog of northern stars with annual proper motions larger than 0.15\" (LSPM-NORTH catalog)."
+   },
+   {
+    "bibcode": "2014ApJ...794..143B",
+    "title": "SpeX spectroscopy of unresolved very low mass binaries. II. Identification of 14 candidate binaries with late-M/early-L and T dwarf components."
+   },
+   {
+    "bibcode": "2025ApJ...992...93Z",
+    "title": "Classifying Cool Dwarfs: Comprehensive Spectral Typing of Field and Peculiar Dwarfs Using Machine Learning."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2005AJ....129.1483L",
+   "A catalog of northern stars with annual proper motions larger than 0.15\" (LSPM-NORTH catalog)."
+  ],
+  [
+   "2025ApJ...992...93Z",
+   "Classifying Cool Dwarfs: Comprehensive Spectral Typing of Field and Peculiar Dwarfs Using Machine Learning."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=1938388186014795776&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "1938388186014795776",
+     "Source2": "1938388181717307648",
+     "sepAU": "579.498053371904803",
+     "R": "3.364633223018095625e-18"
+    }
+   ]
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=1938388186014795776&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=1938388181717307648&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=1938388181717307648&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "1938388186014795776",
+     "Source2": "1938388181717307648",
+     "sepAU": "579.498053371904803",
+     "R": "3.364633223018095625e-18"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=352.8256629075546+46.12327995762183&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=352.8256629075546+46.12327995762183&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "23313+4607",
+    "Disc": "KPP2694",
+    "Comp": "",
+    "Obs1": "1998",
+    "pa1": "342",
+    "pa2": "343",
+    "sep1": "3.9",
+    "sep2": "3.90",
+    "mag1": "18.300",
+    "mag2": "21.40",
+    "DM": "",
+    "Notes": "V",
+    "n_RAh": "",
+    "RAJ2000": "23 31 18.19",
+    "DEJ2000": "+46 07 27.3"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=352.8256629075546+46.12327995762183&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

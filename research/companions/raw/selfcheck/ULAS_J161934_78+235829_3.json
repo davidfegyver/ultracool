@@ -1,0 +1,54 @@
+{
+ "name": "ULAS J161934.78+235829.3",
+ "host": "1302018992185488256",
+ "host_gaia": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&Source=1302018992185488256&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV",
+  [
+   {
+    "Source": "1302018992185488256",
+    "RA_ICRS": "244.90522292436",
+    "DE_ICRS": "+23.97973777170",
+    "Plx": "1.2626",
+    "e_Plx": "0.4102",
+    "pmRA": "-63.303",
+    "e_pmRA": "0.277",
+    "pmDE": "19.065",
+    "e_pmDE": "0.452",
+    "Gmag": "19.998795",
+    "BPmag": "21.290783",
+    "RPmag": "18.755390",
+    "RUWE": "1.024",
+    "RV": "",
+    "e_RV": ""
+   }
+  ]
+ ],
+ "ucd_gaia_3as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&-c=244.89534266527636+23.974468324333333&-c.rs=3&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV+_r",
+  []
+ ],
+ "ucd_catwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F365%2Fcatwise&-c=244.89535798714968+23.97446632433333&-c.rs=5&-out=Name+RAPMdeg+DEPMdeg+pmRA+e_pmRA+pmDE+e_pmDE+W1mproPM+W2mproPM+ab+_r",
+  []
+ ],
+ "ucd_allwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F328%2Fallwise&-c=244.89535798714968+23.97446632433333&-c.rs=6&-out=AllWISE+RAJ2000+DEJ2000+pmRA+e_pmRA+pmDE+e_pmDE+W1mag+W2mag+ccf+_r",
+  []
+ ],
+ "epoch_2mass_ucs": "null",
+ "ucs_pm": [
+  -84.0,
+  12.0,
+  "12",
+  "13",
+  "Burn13"
+ ],
+ "ucs_plx": [
+  "NaN",
+  "NaN",
+  "null",
+  "58",
+  "9",
+  "dist_W2_formula"
+ ]
+}

@@ -1,0 +1,222 @@
+{
+ "pair": {
+  "uid": "2913",
+  "ucd": "2MASS J16002647-2456424",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "M7.5 pec",
+  "ucd_G": "19.3520",
+  "ucd_gaia": "6236089829993254784",
+  "ucd_pmra": "-35.9",
+  "ucd_pmdec": "-294.17",
+  "ucd_pmerr": "0.5/0.27",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "17.8",
+  "ucd_plxerr": "0.4",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "56.2",
+  "ucd_disterr": "1.3",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "6236113362117992832",
+  "g_ra": "240.11102794782892",
+  "g_dec": "-24.93981941741236",
+  "g_pmra": "-38.422637939453125",
+  "g_pmdec": "-293.8000183105469",
+  "g_epm": "0.4011854827404022/0.231376051902771",
+  "g_plx": "16.43271255493164",
+  "g_eplx": "0.304405152797699",
+  "G": "19.41869354248047",
+  "BP_RP": "1.503",
+  "M_G": "15.5",
+  "RUWE": "0.9393572211265564",
+  "RV": "",
+  "sep_arcsec": "24.68",
+  "sep_au": "1502",
+  "dmu": "2.55",
+  "dmu_sig": "0.64",
+  "dmu_over_sig": "4.01",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "-2.72",
+  "dvtan_kms": "0.74",
+  "dvtan_err": "0.18",
+  "host_mass": "0.085",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.44",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "SIPS J1600-2456",
+  "ucs_ids": "2MASS J16002647-2456424|EPIC 203783521|SIPS J1600-2456|TIC 66861722|Gaia DR2 6236089829993254784|Gaia DR3 6236089829993254784",
+  "n_field": "1",
+  "expected_false": "4.70e-05"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 15884320,
+    "main_id": "Gaia DR3 6236113362117992832",
+    "otype": "WD*",
+    "sp_type": "DZ:",
+    "plx_value": 16.4327,
+    "pmra": -38.423,
+    "pmdec": -293.8,
+    "ra": 240.11121627454997,
+    "dec": -24.93851363944
+   }
+  ],
+  "ids": [
+   "Gaia DR3 6236113362117992832",
+   "Gaia DR2 6236113362117992832"
+  ],
+  "refs": [
+   {
+    "bibcode": "2019MNRAS.482.4570G",
+    "title": "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   },
+   {
+    "bibcode": "2019MNRAS.485.5573T",
+    "title": "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2021MNRAS.508.3877G",
+    "title": "A catalogue of white dwarfs in Gaia EDR3."
+   },
+   {
+    "bibcode": "2023A&A...679A.127G",
+    "title": "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   },
+   {
+    "bibcode": "2024A&A...682A...5V",
+    "title": "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 4237,
+    "log_g": 7.914000034332275,
+    "bibcode": "2024A&A...682A...5V"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 6142702,
+    "main_id": "SIPS J1600-2456",
+    "otype": "PM*",
+    "sp_type": "M7.5p",
+    "plx_value": 17.7749,
+    "pmra": -35.852,
+    "pmdec": -294.169,
+    "ra": 240.11031174221003,
+    "dec": -24.94529744141
+   }
+  ],
+  "ids": [
+   "TIC 66861722",
+   "SIPS J1600-2456",
+   "Gaia DR3 6236089829993254784",
+   "2MASS J16002647-2456424",
+   "EPIC 203783521",
+   "Gaia DR2 6236089829993254784"
+  ],
+  "refs": [
+   {
+    "bibcode": "2007A&A...468..163D",
+    "title": "Southern infrared proper motion survey. II. A sample of low mass stars  with {mu}>=0.1\"/yr."
+   },
+   {
+    "bibcode": "2010ApJS..190..100K",
+    "title": "Discoveries from a near-infrared proper motion survey using multi-epoch  Two Micron All-Sky Survey data."
+   },
+   {
+    "bibcode": "2014ApJ...783..121G",
+    "title": "BANYAN. II. Very low mass and substellar candidate members to nearby, young kinematic groups with previously known signs of youth."
+   },
+   {
+    "bibcode": "2016ApJS..224....2H",
+    "title": "The K2 ecliptic plane input catalog (EPIC) and stellar classifications of 138,600 targets in campaigns 1-8."
+   },
+   {
+    "bibcode": "2018AJ....156...76L",
+    "title": "New young stars and brown dwarfs in the Upper Scorpius association."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2025A&A...696A..80B",
+    "title": "Free-floating planetary mass objects in LDN 1495 from Euclid Early Release Observations."
+   },
+   {
+    "bibcode": "2025ApJ...992...93Z",
+    "title": "Classifying Cool Dwarfs: Comprehensive Spectral Typing of Field and Peculiar Dwarfs Using Machine Learning."
+   }
+  ],
+  "parents": [
+   {
+    "main_id": "NAME AB Dor Moving Group",
+    "otype": "MGr",
+    "link_bibcode": "2014ApJ...783..121G"
+   },
+   {
+    "main_id": "NAME Upper Sco Association",
+    "otype": "As*",
+    "link_bibcode": "2018AJ....156...76L"
+   }
+  ],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=6236113362117992832&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=6236113362117992832&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=6236089829993254784&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=6236089829993254784&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=240.11102794782892+-24.93981941741236&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=240.11102794782892+-24.93981941741236&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=240.11102794782892+-24.93981941741236&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

@@ -1,0 +1,250 @@
+{
+ "pair": {
+  "uid": "2219",
+  "ucd": "SDSS J124514.95+120442.0",
+  "ucd_spt_opt": "L1",
+  "ucd_spt_ir": "null",
+  "ucd_G": "20.9275",
+  "ucd_gaia": "3928077690494407936",
+  "ucd_pmra": "-7.3",
+  "ucd_pmdec": "-52.6",
+  "ucd_pmerr": "2.1/2.4",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "12.2",
+  "ucd_plxerr": "2.3",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "82.0",
+  "ucd_disterr": "15.0",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "3928077827935031168",
+  "g_ra": "191.3358352903058",
+  "g_dec": "12.091840283828923",
+  "g_pmra": "-6.3527140617370605",
+  "g_pmdec": "-54.61917495727539",
+  "g_epm": "0.1930888295173645/0.1629725843667984",
+  "g_plx": "12.28030776977539",
+  "g_eplx": "0.170949786901474",
+  "G": "18.277597427368164",
+  "BP_RP": "0.604",
+  "M_G": "13.72",
+  "RUWE": "1.0101184844970703",
+  "RV": "",
+  "sep_arcsec": "96.36",
+  "sep_au": "7847",
+  "dmu": "2.23",
+  "dmu_sig": "2.35",
+  "dmu_over_sig": "0.95",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "0.03",
+  "dvtan_kms": "0.86",
+  "dvtan_err": "0.91",
+  "host_mass": "0.6",
+  "host_mass_src": "WD locus (adopted 0.6)",
+  "vesc_kms": "0.39",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "2MASS J12451496+1204423",
+  "ucs_ids": "2MASS J12451496+1204423|SDSS J124514.95+120442.0|TIC 92024500|ULAS J124514.96+120441.9|Gaia DR2 3928077690494407936|Gaia DR3 3928077690494407936",
+  "n_field": "2",
+  "expected_false": "1.43e-03"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 9348375,
+    "main_id": "GALEX J124520.5+120529",
+    "otype": "WD*",
+    "sp_type": "DA",
+    "plx_value": 12.2803,
+    "pmra": -6.353,
+    "pmdec": -54.619,
+    "ra": 191.33586416525998,
+    "dec": 12.09208303572
+   }
+  ],
+  "ids": [
+   "GALEX J124520.5+120529",
+   "Gaia DR3 3928077827935031168",
+   "SDSS J124520.60+120531.3",
+   "Gaia DR2 3928077827935031168",
+   "SDSS J124520.60+120531.4"
+  ],
+  "refs": [
+   {
+    "bibcode": "2013ApJS..204....5K",
+    "title": "SDSS DR7 white dwarf catalog."
+   },
+   {
+    "bibcode": "2015MNRAS.448.2260G",
+    "title": "A photometric selection of white dwarf candidates in Sloan Digital Sky Survey Data Release 10."
+   },
+   {
+    "bibcode": "2017MNRAS.469.2102A",
+    "title": "The kinematics of the white dwarf population from the SDSS DR12."
+   },
+   {
+    "bibcode": "2018MNRAS.480.4505J",
+    "title": "A white dwarf catalogue from Gaia-DR2 and the Virtual Observatory."
+   },
+   {
+    "bibcode": "2019MNRAS.482.4570G",
+    "title": "A Gaia Data Release 2 catalogue of white dwarfs and a comparison with SDSS."
+   },
+   {
+    "bibcode": "2019MNRAS.485.4423S",
+    "title": "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+   },
+   {
+    "bibcode": "2019MNRAS.485.5573T",
+    "title": "Random Forest identification of the thin disc, thick disc, and halo Gaia-DR2 white dwarf population."
+   },
+   {
+    "bibcode": "2019MNRAS.486.2169K",
+    "title": "White dwarf and subdwarf stars in the Sloan Digital Sky Survey Data Release 14."
+   },
+   {
+    "bibcode": "2020ApJ...898...84K",
+    "title": "The 100 pc white dwarf sample in the SDSS footprint."
+   },
+   {
+    "bibcode": "2021MNRAS.508.3877G",
+    "title": "A catalogue of white dwarfs in Gaia EDR3."
+   },
+   {
+    "bibcode": "2023MNRAS.518.5106J",
+    "title": "Spectral classification of the 100 pc white dwarf population from Gaia-DR3 and the virtual observatory."
+   },
+   {
+    "bibcode": "2023A&A...679A.127G",
+    "title": "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   },
+   {
+    "bibcode": "2024A&A...682A...5V",
+    "title": "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 6681,
+    "log_g": 8.072999954223633,
+    "bibcode": "2024A&A...682A...5V"
+   },
+   {
+    "fe_h": 0.0,
+    "teff": 6549,
+    "log_g": 7.639999866485596,
+    "bibcode": "2013ApJS..204....5K"
+   },
+   {
+    "fe_h": 0.0,
+    "teff": 6309,
+    "log_g": 7.328000068664551,
+    "bibcode": "2017MNRAS.469.2102A"
+   },
+   {
+    "fe_h": 0.0,
+    "teff": 6573,
+    "log_g": 8.03600025177002,
+    "bibcode": "2020ApJ...898...84K"
+   },
+   {
+    "fe_h": 0.0,
+    "teff": 6499,
+    "log_g": 7.763000011444092,
+    "bibcode": "2019MNRAS.486.2169K"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 6121377,
+    "main_id": "2MASS J12451496+1204423",
+    "otype": "BD*",
+    "sp_type": "L1",
+    "plx_value": 12.2131,
+    "pmra": -7.25,
+    "pmdec": -52.633,
+    "ra": 191.31231958977997,
+    "dec": 12.07838687818
+   }
+  ],
+  "ids": [
+   "TIC 92024500",
+   "Gaia DR3 3928077690494407936",
+   "SDSS J124514.95+120442.0",
+   "2MASS J12451496+1204423",
+   "ULAS J124514.96+120441.9",
+   "Gaia DR2 3928077690494407936"
+  ],
+  "refs": [
+   {
+    "bibcode": "2010AJ....139.1808S",
+    "title": "Colors and kinematics of L dwarfs from the Sloan Digital Sky Survey."
+   },
+   {
+    "bibcode": "2010MNRAS.404.1817Z",
+    "title": "Discovery of the first wide L dwarf + giant binary system and eight other  ultracool dwarfs in wide binaries."
+   },
+   {
+    "bibcode": "2016A&A...589A..49S",
+    "title": "Photometric brown-dwarf classification. II. A homogeneous sample of 1361 L and T dwarfs brighter than J = 17.5 with accurate spectral types."
+   },
+   {
+    "bibcode": "2019MNRAS.485.4423S",
+    "title": "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+   },
+   {
+    "bibcode": "2019AJ....157..231K",
+    "title": "Exploring the age-dependent properties of M and L dwarfs using Gaia and SDSS."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2019MNRAS.485.4423S",
+   "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=3928077827935031168&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=3928077827935031168&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=3928077690494407936&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=3928077690494407936&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=191.3358352903058+12.091840283828923&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=191.3358352903058+12.091840283828923&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=191.3358352903058+12.091840283828923&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

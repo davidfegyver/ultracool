@@ -1,0 +1,166 @@
+{
+ "pair": {
+  "uid": "3364",
+  "ucd": "2MASS J20025265-1316418",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "M8.9 FLD-G",
+  "ucd_G": "19.3095",
+  "ucd_gaia": "6879015888398994944",
+  "ucd_pmra": "29.8",
+  "ucd_pmdec": "-128.3",
+  "ucd_pmerr": "0.7/0.5",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "15.7",
+  "ucd_plxerr": "0.7",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "63.7",
+  "ucd_disterr": "2.8",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "6879016158977270784",
+  "g_ra": "300.6942361462672",
+  "g_dec": "-13.261168156828473",
+  "g_pmra": "29.105607986450195",
+  "g_pmdec": "-129.7550506591797",
+  "g_epm": "0.23151881992816925/0.14795757830142975",
+  "g_plx": "17.862709045410156",
+  "g_eplx": "0.2143603265285492",
+  "G": "18.432910919189453",
+  "BP_RP": "3.931",
+  "M_G": "14.69",
+  "RUWE": "1.0320570468902588",
+  "RV": "",
+  "sep_arcsec": "109.11",
+  "sep_au": "6108",
+  "dmu": "1.61",
+  "dmu_sig": "0.57",
+  "dmu_over_sig": "2.84",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "2.95",
+  "dvtan_kms": "0.43",
+  "dvtan_err": "0.15",
+  "host_mass": "0.09",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.22",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "Gagn15c also find near-IR spectral type M8.9 FLD-G.",
+  "ucs_simbad": "2MASS J20025265-1316418",
+  "ucs_ids": "2MASS J20025265-1316418|TIC 13488613|Gaia DR2 6879015888398994944|Gaia DR3 6879015888398994944",
+  "n_field": "1",
+  "expected_false": "9.19e-04"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 14861920,
+    "main_id": "2MASS J20024658-1315379",
+    "otype": "LM*",
+    "sp_type": "",
+    "plx_value": 17.8627,
+    "pmra": 29.106,
+    "pmdec": -129.755,
+    "ra": 300.69410324443,
+    "dec": -13.26059146768
+   }
+  ],
+  "ids": [
+   "Gaia DR3 6879016158977270784",
+   "2MASS J20024658-1315379",
+   "Gaia DR2 6879016158977270784"
+  ],
+  "refs": [
+   {
+    "bibcode": "2018A&A...619L...8R",
+    "title": "New ultra-cool and brown dwarf candidates in Gaia DR2."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 10670633,
+    "main_id": "2MASS J20025265-1316418",
+    "otype": "LM*",
+    "sp_type": "M8.5",
+    "plx_value": 15.7132,
+    "pmra": 29.847,
+    "pmdec": -128.283,
+    "ra": 300.71939998588,
+    "dec": -13.278332349349999
+   }
+  ],
+  "ids": [
+   "TIC 13488613",
+   "Gaia DR3 6879015888398994944",
+   "2MASS J20025265-1316418",
+   "Gaia DR2 6879015888398994944"
+  ],
+  "refs": [
+   {
+    "bibcode": "2015ApJS..219...33G",
+    "title": "BANYAN. VII. A new population of young substellar candidate members of nearby moving groups from the BASS survey."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 2300,
+    "log_g": 5.5,
+    "bibcode": "2015ApJS..219...33G"
+   }
+  ]
+ },
+ "common_bibcodes": [
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=6879016158977270784&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=6879016158977270784&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=6879015888398994944&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=6879015888398994944&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=300.6942361462672+-13.261168156828473&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=300.6942361462672+-13.261168156828473&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=300.6942361462672+-13.261168156828473&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

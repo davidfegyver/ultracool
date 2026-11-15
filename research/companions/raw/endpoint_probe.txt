@@ -1,0 +1,12 @@
+2026-11-15 curl -m 15/20 probes from this host (HTTP code, seconds):
+https://tapvizier.cds.unistra.fr/TAPVizieR/tap/capabilities 000 20.0 (timeout; also 3 pyvo async attempts timed out)
+http://tapvizier.cds.unistra.fr/TAPVizieR/tap/capabilities 000 20.0
+http://tapvizier.u-strasbg.fr/TAPVizieR/tap/capabilities 000 20.0
+http://cdsxmatch.u-strasbg.fr/xmatch/api/v1/sync 000 20.0
+http://cdsxmatch.cds.unistra.fr/xmatch/api/v1/sync 000 15.0
+https://simbad.cds.unistra.fr/simbad/sim-tap/capabilities 404
+https://gea.esac.esa.int/tap-server/tap/capabilities 000 15.0
+https://vizier.cfa.harvard.edu/viz-bin/VizieR 200 0.39
+https://vizier.cfa.harvard.edu/TAPVizieR/tap/capabilities 404
+https://simbad.harvard.edu/simbad/sim-tap/capabilities 200 0.09
+https://dc.zah.uni-heidelberg.de/tap/capabilities 200 1.17  -> used for Gaia DR3 (gaia.dr3lite)

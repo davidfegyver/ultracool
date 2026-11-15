@@ -1,0 +1,258 @@
+{
+ "pair": {
+  "uid": "2266",
+  "ucd": "VVV J12564163-6202039",
+  "ucd_spt_opt": "sdL3",
+  "ucd_spt_ir": "sdL3",
+  "ucd_G": "20.7199",
+  "ucd_gaia": "5863122429178232704",
+  "ucd_pmra": "-1123.8",
+  "ucd_pmdec": "24.6",
+  "ucd_pmerr": "1.0/1.7",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "14.2",
+  "ucd_plxerr": "1.3",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "70.0",
+  "ucd_disterr": "6.0",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "5863122429179888000",
+  "g_ra": "194.1812246704677",
+  "g_dec": "-62.03559791438614",
+  "g_pmra": "-1124.0440673828125",
+  "g_pmdec": "24.140911102294922",
+  "g_epm": "0.26835763454437256/0.3245515823364258",
+  "g_plx": "13.236653327941895",
+  "g_eplx": "0.3261933922767639",
+  "G": "19.580623626708984",
+  "BP_RP": "1.322",
+  "M_G": "15.19",
+  "RUWE": "1.0338941812515259",
+  "RV": "",
+  "sep_arcsec": "18.19",
+  "sep_au": "1374",
+  "dmu": "0.52",
+  "dmu_sig": "1.6",
+  "dmu_over_sig": "0.32",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "-0.72",
+  "dvtan_kms": "0.19",
+  "dvtan_err": "0.57",
+  "host_mass": "0.085",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.46",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "2MASS J12564352-6202041",
+  "ucs_ids": "2MASS J12564352-6202041|TIC 437107469|VVV J125643.52-620204.1|VVV J125641.63-620203.9|Gaia DR2 5863122429178232704|Gaia DR3 5863122429178232704",
+  "n_field": "1",
+  "expected_false": "4.08e-04"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 18065345,
+    "main_id": "VVV J125644.42-620208.1",
+    "otype": "WD*",
+    "sp_type": "DC",
+    "plx_value": 13.2367,
+    "pmra": -1124.044,
+    "pmdec": 24.141,
+    "ra": 194.19187838109164,
+    "dec": -62.03570479709251
+   }
+  ],
+  "ids": [
+   "Gaia DR3 5863122429179888000",
+   "VVV J125644.42-620208.1"
+  ],
+  "refs": [
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2021MNRAS.508.3877G",
+    "title": "A catalogue of white dwarfs in Gaia EDR3."
+   },
+   {
+    "bibcode": "2023MNRAS.518.6223I",
+    "title": "Hyper-runaway and hypervelocity white dwarf candidates in {\\em Gaia} Data Release 3: Possible remnants from Ia/Iax supernova explosions or dynamical encounters."
+   },
+   {
+    "bibcode": "2023A&A...679A.127G",
+    "title": "White dwarf Random Forest classification through {\\em Gaia} spectral coefficients."
+   },
+   {
+    "bibcode": "2024A&A...682A...5V",
+    "title": "Classification and parameterization of a large {\\em Gaia} sample of white dwarfs using XP spectra."
+   },
+   {
+    "bibcode": "2024MNRAS.533.1654Z",
+    "title": "Primeval very low-mass stars and brown dwarfs - VIII. The first age benchmark L subdwarf, a wide companion to a halo white dwarf."
+   },
+   {
+    "bibcode": "2025AJ....169..100B",
+    "title": "New Ultracool Companions to Nearby White Dwarfs."
+   },
+   {
+    "bibcode": "2026A&A...707A.312C",
+    "title": "Fates of the sub-stellar objects (FOSSO) I. Fates of the known brown dwarfs in main-sequence-BD binaries."
+   },
+   {
+    "bibcode": "2026A&A...711A.181Z",
+    "title": "Halo stars harbour few wide ultracool companions."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 4408,
+    "log_g": 7.849999904632568,
+    "bibcode": "2024A&A...682A...5V"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 12166803,
+    "main_id": "2MASS J12564352-6202041",
+    "otype": "BD*",
+    "sp_type": "sdL3",
+    "plx_value": 14.1994,
+    "pmra": -1123.815,
+    "pmdec": 24.645,
+    "ra": 194.1813912433962,
+    "dec": -62.03452832563056
+   }
+  ],
+  "ids": [
+   "TIC 437107469",
+   "VVV J125643.52-620204.1",
+   "Gaia DR3 5863122429178232704",
+   "VVV J125641.09-620203.8",
+   "VVV J125641.63-620203.9",
+   "2MASS J12564352-6202041",
+   "Gaia DR2 5863122429178232704"
+  ],
+  "refs": [
+   {
+    "bibcode": "2018MNRAS.474.1826S",
+    "title": "VIRAC: the VVV Infrared Astrometric Catalogue."
+   },
+   {
+    "bibcode": "2018MNRAS.479.1383Z",
+    "title": "Primeval very low-mass stars and brown dwarfs - III. The halo transitional brown dwarfs."
+   },
+   {
+    "bibcode": "2018MNRAS.480.5447Z",
+    "title": "Primeval very low-mass stars and brown dwarfs - IV. New L subdwarfs, Gaia astrometry, population properties, and a blue brown dwarf binary."
+   },
+   {
+    "bibcode": "2019MNRAS.485.4423S",
+    "title": "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+   },
+   {
+    "bibcode": "2019MNRAS.486.1840Z",
+    "title": "Primeval very low-mass stars and brown dwarfs - V. A halo L3 subdwarf with prograde eccentric orbit in the Galactic plane."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2023MNRAS.518.6223I",
+    "title": "Hyper-runaway and hypervelocity white dwarf candidates in {\\em Gaia} Data Release 3: Possible remnants from Ia/Iax supernova explosions or dynamical encounters."
+   },
+   {
+    "bibcode": "2024MNRAS.533.1654Z",
+    "title": "Primeval very low-mass stars and brown dwarfs - VIII. The first age benchmark L subdwarf, a wide companion to a halo white dwarf."
+   },
+   {
+    "bibcode": "2025AJ....169..100B",
+    "title": "New Ultracool Companions to Nearby White Dwarfs."
+   },
+   {
+    "bibcode": "2026A&A...711A.181Z",
+    "title": "Halo stars harbour few wide ultracool companions."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ],
+  [
+   "2023MNRAS.518.6223I",
+   "Hyper-runaway and hypervelocity white dwarf candidates in {\\em Gaia} Data Release 3: Possible remnants from Ia/Iax supernova explosions or dynamical encounters."
+  ],
+  [
+   "2024MNRAS.533.1654Z",
+   "Primeval very low-mass stars and brown dwarfs - VIII. The first age benchmark L subdwarf, a wide companion to a halo white dwarf."
+  ],
+  [
+   "2025AJ....169..100B",
+   "New Ultracool Companions to Nearby White Dwarfs."
+  ],
+  [
+   "2026A&A...711A.181Z",
+   "Halo stars harbour few wide ultracool companions."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=5863122429179888000&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "5863122429179888000",
+     "Source2": "5863122429178232704",
+     "sepAU": "1375.053762460437156",
+     "R": "2.945052109123123138e-16"
+    }
+   ]
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=5863122429179888000&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=5863122429178232704&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=5863122429178232704&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "5863122429179888000",
+     "Source2": "5863122429178232704",
+     "sepAU": "1375.053762460437156",
+     "R": "2.945052109123123138e-16"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=194.1812246704677+-62.03559791438614&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=194.1812246704677+-62.03559791438614&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=194.1812246704677+-62.03559791438614&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

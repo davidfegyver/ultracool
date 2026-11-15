@@ -1,0 +1,4360 @@
+{
+ "pair": {
+  "uid": "311",
+  "ucd": "L 726-8",
+  "ucd_spt_opt": "M6",
+  "ucd_spt_ir": "null",
+  "ucd_G": "10.5075",
+  "ucd_gaia": "5140693571158739840",
+  "ucd_pmra": "3385.3",
+  "ucd_pmdec": "544.4",
+  "ucd_pmerr": "0.7/0.4",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "367.7",
+  "ucd_plxerr": "0.7",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "2.72",
+  "ucd_disterr": "0.005",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "5140693571158946048",
+  "g_ra": "24.771674208211856",
+  "g_dec": "-17.947682860008488",
+  "g_pmra": "3178.6943359375",
+  "g_pmdec": "584.0613403320312",
+  "g_epm": "0.42692017555236816/0.30229246616363525",
+  "g_plx": "373.84429931640625",
+  "g_eplx": "0.5008712410926819",
+  "G": "10.817837715148926",
+  "BP_RP": "3.829",
+  "M_G": "13.68",
+  "RUWE": "10.453166961669922",
+  "RV": "10.249532699584961",
+  "sep_arcsec": "2.42",
+  "sep_au": "6",
+  "dmu": "210.38",
+  "dmu_sig": "0.81",
+  "dmu_over_sig": "259.49",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "7.14",
+  "dvtan_kms": "2.67",
+  "dvtan_err": "0.01",
+  "host_mass": "0.115",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "7.31",
+  "bound_ok": "True",
+  "ucs_multi_unres": "Y: Joy_74",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "G 272-61",
+  "ucs_ids": "CCDM J01388-1758AB|** LUY  726|AKARI-IRC-V1 J0139031-175658|1AXG J013901-1757|BPS CS 31086-0027|CCDM J01390-1756AB|DENIS J013901.4-175702|1E 0136.5-1813|2E 0136.5-1812|2E   455|1ES 0136-18.2|2EUVE J0138-17.9|EUVE J0139-17.9|EUVE J0138-17.9|GCRV   921|G 272-61|GJ    65|IDS 01340-1828 AB|IRAS 01365-18",
+  "n_field": "1",
+  "expected_false": "4.52e-07"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 1297613,
+    "main_id": "G 272-61B",
+    "otype": "Em*",
+    "sp_type": "M6V",
+    "plx_value": 373.8443,
+    "pmra": 3178.694,
+    "pmdec": 584.061,
+    "ra": 24.756823827312502,
+    "dec": -17.950278122424443
+   }
+  ],
+  "ids": [
+   "Cl* Melotte   25    EGG       8",
+   "GJ 65 B",
+   "TIC 632499595",
+   "Gaia DR3 5140693571158946048",
+   "CNS5 425",
+   "8pc 373.70B",
+   "CSI-18-01364  2",
+   "CSI-18-01364  1",
+   "G 272-61B",
+   "IDS 01340-1828 B",
+   "L  726-8 B",
+   "LFT  145",
+   "LHS    10",
+   "LP  768-26",
+   "LTT   893",
+   "NLTT  5504",
+   "V* UV Cet",
+   "Zkh  28",
+   "[RHG95]   302",
+   "CCDM J01390-1756B",
+   "WDS J01388-1758B",
+   "** LDS  838B",
+   "Gaia DR2 5140693571158739712",
+   "[GKL99] 45",
+   "WEB  1642"
+  ],
+  "refs": [
+   {
+    "bibcode": "1888MmRAS..49....1D",
+    "title": "A New General Catalogue of Nebulae and Clusters of Stars, being the Catalogue of the late Sir John F.W. Herschel, Bart.,  revised, corrected, and enlarged."
+   },
+   {
+    "bibcode": "1950AJ.....55...15L",
+    "title": "New stars with proper motions exceeding 0.5\" annually."
+   },
+   {
+    "bibcode": "1950MNRAS.110...45T",
+    "title": "5 southern stars with emission-line spectra."
+   },
+   {
+    "bibcode": "1950PASP...62...47V",
+    "title": "The parallax of L 726-8."
+   },
+   {
+    "bibcode": "1950PASP...62..156G",
+    "title": "A possible energy source for T Tauri stars."
+   },
+   {
+    "bibcode": "1950PASP...62..274L",
+    "title": "Notes on proper motion stars."
+   },
+   {
+    "bibcode": "1952ApJ...115..582L",
+    "title": "Search for flares of dM stars on the Sproul astrometric program."
+   },
+   {
+    "bibcode": "1952PASP...64..129L",
+    "title": "Another flare of the dM4e star BD +20 2465."
+   },
+   {
+    "bibcode": "1953PASP...65...73V",
+    "title": "Stars nearer than five parsecs."
+   },
+   {
+    "bibcode": "1954PASP...66..337L",
+    "title": "On the orbit and mass of L 726-8."
+   },
+   {
+    "bibcode": "1954BAICz...5....4S",
+    "title": "A note on the dwarf flare stars."
+   },
+   {
+    "bibcode": "1955PASP...67...34R",
+    "title": "A search for flare stars."
+   },
+   {
+    "bibcode": "1955JO.....38..354P",
+    "title": "Association Francaise d'Observateurs d'Etoiles Variables. UV Cet."
+   },
+   {
+    "bibcode": "1955LFT...C......0L",
+    "title": "Luyten's Five Tenths."
+   },
+   {
+    "bibcode": "1956AJ.....61..405E",
+    "title": "The nearest visual binaries."
+   },
+   {
+    "bibcode": "1956PASP...68..531H",
+    "title": "Obervations of the spectrum of the companion to BD +04 4048."
+   },
+   {
+    "bibcode": "1956JO.....39...51P",
+    "title": "Surveillance photographique d'etoiles naines rouges."
+   },
+   {
+    "bibcode": "1957JO.....40...92P",
+    "title": "Fluctuations secondaires observees sur les variables du type UV Cet."
+   },
+   {
+    "bibcode": "1957SvA.....1..719G",
+    "title": "The non-thermal component of the radiation of unstable stars and the main features of their spectra."
+   },
+   {
+    "bibcode": "1957SvA.....1..783P",
+    "title": "On the international cooperation for the study of flare variable stars."
+   },
+   {
+    "bibcode": "1957ZA.....43..245B",
+    "title": "Das intensive Ultraviolett-Kontinuum im Spektrum von T-Tauri- Sternen."
+   },
+   {
+    "bibcode": "1958MNRAS.118...65E",
+    "title": "Stellar groups. I. The Hyades and Sirius groups."
+   },
+   {
+    "bibcode": "1958PASP...70..310R",
+    "title": "Observations of dMe stars with small fluctuations."
+   },
+   {
+    "bibcode": "1958PASP...70..505J",
+    "title": "A spectrographic observation of a flare of UV Ceti."
+   },
+   {
+    "bibcode": "1958ZA.....45..149B",
+    "title": "Besprechungen."
+   },
+   {
+    "bibcode": "1959AJ.....64..236V",
+    "title": "Parallax, orbital motion and mass of the visual binary L 726-8."
+   },
+   {
+    "bibcode": "1959MNRAS.119..359S",
+    "title": "Proceedings of Royal Observatory, Cape of Good Hope."
+   },
+   {
+    "bibcode": "1959PASP...71..517A",
+    "title": "Three-color observations of a flare on AD Leonis."
+   },
+   {
+    "bibcode": "1959JO.....42...17C",
+    "title": "Mesures d'etoiles doubles faites au refracteur de 38cm de l'Observatoire de Nice."
+   },
+   {
+    "bibcode": "1960MNRAS.120..540E",
+    "title": "Stellar groups. VII. The structure of the Hyades group."
+   },
+   {
+    "bibcode": "1962AJ.....67..403W",
+    "title": "Measures of 278 double stars."
+   },
+   {
+    "bibcode": "1962JO.....45...43C",
+    "title": "Mesures d'etoiles doubles faites au refracteur de 38cm de l'Observatoire de Nice."
+   },
+   {
+    "bibcode": "1962JO.....45..117B",
+    "title": "Catalogue d'etoiles doubles ayant une composante variable."
+   },
+   {
+    "bibcode": "1963ApJ...137.1126K",
+    "title": "The Helmholtz-Kelvin time scale for stars of very low mass."
+   },
+   {
+    "bibcode": "1963ApJS....8..125E",
+    "title": "The empirical mass-luminosity relation."
+   },
+   {
+    "bibcode": "1963SvA.....7..153B",
+    "title": "Symposium on non-stable stars."
+   },
+   {
+    "bibcode": "1963SvA.....7..182F",
+    "title": "Radiative transfer in the continuous spectrum in the absence of thermal equilibrium."
+   },
+   {
+    "bibcode": "1964AJ.....69..251M",
+    "title": "A photoelectric search for ultra-short-period variable stars."
+   },
+   {
+    "bibcode": "1964Obs....84...18K",
+    "title": "On the nature of red stars of low luminosity."
+   },
+   {
+    "bibcode": "1964PZ.....15..287K",
+    "title": "UV Ceti in October 1963."
+   },
+   {
+    "bibcode": "1964PZ.....15..400M",
+    "title": "Visual observations of three flare stars."
+   },
+   {
+    "bibcode": "1964SvA.....8..104I",
+    "title": "Photographic photometry of star trails."
+   },
+   {
+    "bibcode": "1964SvA.....8..134K",
+    "title": "Spectral energy distribution near the Balmer limit for nonstable stars."
+   },
+   {
+    "bibcode": "1965AJ.....70...19E",
+    "title": "Masses, luminosities, colors, and space motions of 228 visual binaries."
+   },
+   {
+    "bibcode": "1965SvA.....9...50K",
+    "title": "Enhancement of ionization equilibrium in a stellar atmosphere."
+   },
+   {
+    "bibcode": "1965SvA.....9..526P",
+    "title": "The radio-source 3C 386, a supernova remnant."
+   },
+   {
+    "bibcode": "1966MNSSA..25..167E",
+    "title": "Photoelectric observations of the flare star UV Ceti."
+   },
+   {
+    "bibcode": "1967AJ.....72..957W",
+    "title": "Photographic determinations of the parallaxes of 67 stars with the Thaw refractor."
+   },
+   {
+    "bibcode": "1967JO.....50..381E",
+    "title": "Observations d'etoiles variables effectuees a l'Observatoire National d'Athenes en 1960-1962."
+   },
+   {
+    "bibcode": "1967SvA....11...33Z",
+    "title": "A coherent synchrotron mechanism for radio emission from cosmic sources."
+   },
+   {
+    "bibcode": "1967SvA....11..205G",
+    "title": "Photoelectric and spectrographic observations of the flares of UV Cet in 1965."
+   },
+   {
+    "bibcode": "1968IBVS..296....1S",
+    "title": "UV Ceti observations at Boyden Observatory."
+   },
+   {
+    "bibcode": "1968IBVS..297....1S",
+    "title": "Baker-Nunn observations of UV Ceti September-October 1967."
+   },
+   {
+    "bibcode": "1968IBVS..310....1O",
+    "title": "UV Ceti."
+   },
+   {
+    "bibcode": "1968IBVS..315....1K",
+    "title": "Flares of UV Ceti, 1967."
+   },
+   {
+    "bibcode": "1968IBVS..317....1C",
+    "title": "Photoelectric observations of UV Ceti."
+   },
+   {
+    "bibcode": "1968MNSSA..27..145E",
+    "title": "Unusual activity of the flare star UV Ceti."
+   },
+   {
+    "bibcode": "1968TokAB.188.2205O",
+    "title": "Continual photoelectric monitoring of the flare star UV Cet."
+   },
+   {
+    "bibcode": "1969AJ.....74.1038S",
+    "title": "Trigonometric parallaxes of 17 stars."
+   },
+   {
+    "bibcode": "1969ApJ...156..117W",
+    "title": "Photoelectric scanner observations of CH Cygni for August 3, 1967."
+   },
+   {
+    "bibcode": "1969IBVS..338....1C",
+    "title": "Photoelectric observations of UV Cet and YZ CMi."
+   },
+   {
+    "bibcode": "1969IBVS..343....1C",
+    "title": "Photoelectric observations of UV Ceti."
+   },
+   {
+    "bibcode": "1969IBVS..349....1J",
+    "title": "Photoelectric observations of UV Ceti."
+   },
+   {
+    "bibcode": "1969IBVS..354....1B",
+    "title": "The flare star UV Cet."
+   },
+   {
+    "bibcode": "1969IBVS..404....1C",
+    "title": "Observations of UV Cet during the international campaign October 3-18, 1969."
+   },
+   {
+    "bibcode": "1969IBVS..405....1O",
+    "title": "UV Cet."
+   },
+   {
+    "bibcode": "1969IBVS..406....1J",
+    "title": "Flare activity of UV Cet."
+   },
+   {
+    "bibcode": "1969IBVS..411....1C",
+    "title": "Photoelectric observations of UV Cet."
+   },
+   {
+    "bibcode": "1970A&AS....2..223C",
+    "title": "Photoelectric observations of flare stars. I."
+   },
+   {
+    "bibcode": "1970ApJ...162..187G",
+    "title": "Flare stars as X-ray sources."
+   },
+   {
+    "bibcode": "1970ApJS...19..387A",
+    "title": "Catalog of individual radial velocities, 0h-12h, measured by astronomers of the Mount Wilson Observatory."
+   },
+   {
+    "bibcode": "1970PASP...82.1341K",
+    "title": "On the existence of an upper limit in the activity of solar neighborhood flare stars."
+   },
+   {
+    "bibcode": "1970IBVS..412....1J",
+    "title": "Flare activity of UV Ceti."
+   },
+   {
+    "bibcode": "1970IBVS..416....1A",
+    "title": "Programme of cooperative observations of flare stars for 1970."
+   },
+   {
+    "bibcode": "1970IBVS..425....1M",
+    "title": "Photographic observations of UV Ceti."
+   },
+   {
+    "bibcode": "1970IBVS..430....1P",
+    "title": "Frequence des sursauts des etoiles du type UV Ceti."
+   },
+   {
+    "bibcode": "1970IBVS..434....1J",
+    "title": "Flare photometry of UV Ceti."
+   },
+   {
+    "bibcode": "1970IBVS..450....1B",
+    "title": "Flare activity of UV Ceti."
+   },
+   {
+    "bibcode": "1970IBVS..450....2B",
+    "title": "Flare activity of UV Ceti."
+   },
+   {
+    "bibcode": "1970IBVS..479....1O",
+    "title": "UV Ceti."
+   },
+   {
+    "bibcode": "1970IBVS..484....1J",
+    "title": "Flares of UV Ceti."
+   },
+   {
+    "bibcode": "1970IBVS..486....1C",
+    "title": "Photoelectric observations of UV Cet during the international campaign 22 September - 9 October 1970."
+   },
+   {
+    "bibcode": "1970MNSSA..29..115J",
+    "title": "Flare activity of UV Ceti."
+   },
+   {
+    "bibcode": "1970VA.....12..367E",
+    "title": "Stellar kinematics and evolution."
+   },
+   {
+    "bibcode": "1971A&A....13..348G",
+    "title": "On the X-ray emission of flare stars."
+   },
+   {
+    "bibcode": "1971PASP...83..210R",
+    "title": "Parallax of the large proper-motion star G 158-27."
+   },
+   {
+    "bibcode": "1971BITon...6..143E",
+    "title": "Infrared photometry of UV Cet stars."
+   },
+   {
+    "bibcode": "1971IBVS..526....1C",
+    "title": "Photoelectric observations of the flare star UV Cet during the 1970 September 22 - October 9 international patrol."
+   },
+   {
+    "bibcode": "1971IBVS..535....1O",
+    "title": "Some remarks concerning the time-distribution of flares of UV Ceti type stars."
+   },
+   {
+    "bibcode": "1971IBVS..538....1B",
+    "title": "Observations of the flare star UV Cet during the 1970 September 22 - October 9 international patrol."
+   },
+   {
+    "bibcode": "1971IBVS..601....1C",
+    "title": "Photoelectric observations of the flare star UV Cet during the 1971 October 11-27 international patrol."
+   },
+   {
+    "bibcode": "1972A&A....17...97L",
+    "title": "Brightness gradients for intrinsically variable celestial objects."
+   },
+   {
+    "bibcode": "1972A&AS....7..103J",
+    "title": "Photometric studies of UV Ceti."
+   },
+   {
+    "bibcode": "1972AJ.....77..679L",
+    "title": "Orbit, mass ratio, and parallax of the visual binary Ross 614."
+   },
+   {
+    "bibcode": "1972AJ.....77..878W",
+    "title": "Micrometer measures of 401 double stars."
+   },
+   {
+    "bibcode": "1972BOBeo.125...53A",
+    "title": "Photoelectric observations of some flare stars."
+   },
+   {
+    "bibcode": "1972IBVS..608....1O",
+    "title": "EV Lac and UV Cet."
+   },
+   {
+    "bibcode": "1972IBVS..615....1C",
+    "title": "Photoelectric observations of the flare star UV Cet."
+   },
+   {
+    "bibcode": "1972IBVS..620....1J",
+    "title": "Some recent observations of UV Ceti."
+   },
+   {
+    "bibcode": "1972IBVS..654....1A",
+    "title": "Photoelectric observations of the flare star UV Cet."
+   },
+   {
+    "bibcode": "1972IBVS..736....1M",
+    "title": "Observations of UV Ceti during the 1972 October 1-15 international patrol."
+   },
+   {
+    "bibcode": "1972IBVS..744....1C",
+    "title": "Programme of cooperative flare star observations for 1973."
+   },
+   {
+    "bibcode": "1972IBVS..747....2O",
+    "title": "UV Cet."
+   },
+   {
+    "bibcode": "1972SvA....15..536G",
+    "title": "Origin of the outbursts of U Gem stars."
+   },
+   {
+    "bibcode": "1973A&AS...10...47C",
+    "title": "Photoelectric observations of flare stars. II."
+   },
+   {
+    "bibcode": "1973AJ.....78..650W",
+    "title": "Orbit and mass of the visual binary L 726-8."
+   },
+   {
+    "bibcode": "1973AJ.....78.1096H",
+    "title": "The mass ratio of L 726-8."
+   },
+   {
+    "bibcode": "1973ApJ...183..923S",
+    "title": "Scanner observations of M dwarfs."
+   },
+   {
+    "bibcode": "1973ApJ...185..239B",
+    "title": "High time resolution studies of UV Ceti."
+   },
+   {
+    "bibcode": "1973ApJS...25....1K",
+    "title": "Activity in flare stars of the solar neighborhood."
+   },
+   {
+    "bibcode": "1973MNRAS.164..343B",
+    "title": "The spotted flare stars BY Dra, CC Eri: a model for the spots, some astrophysical implications."
+   },
+   {
+    "bibcode": "1973IBVS..760....1C",
+    "title": "Photoelectric observations of the flare star UV Ceti during the 1972 October 1-15 international patrol."
+   },
+   {
+    "bibcode": "1973IBVS..833....1M",
+    "title": "A new flare star near HZ Her."
+   },
+   {
+    "bibcode": "1973IBVS..853....1O",
+    "title": "UV Cet."
+   },
+   {
+    "bibcode": "1973JAVSO...2...60N",
+    "title": "A study of some flare stars."
+   },
+   {
+    "bibcode": "1974AJ.....79..702V",
+    "title": "Old disk flare stars."
+   },
+   {
+    "bibcode": "1974AJ.....79.1056V",
+    "title": "Luminosities and temperatures of M dwarf stars from infrared photometry."
+   },
+   {
+    "bibcode": "1974ApJ...190L.129S",
+    "title": "Short-duration radio flares of UV Ceti stars."
+   },
+   {
+    "bibcode": "1974ApJ...192..149M",
+    "title": "Starspots on flare stars."
+   },
+   {
+    "bibcode": "1974ApJS...28....1J",
+    "title": "Spectral types of M dwarf stars."
+   },
+   {
+    "bibcode": "1974ApJS...29....1M",
+    "title": "UV Cet flare stars : Observational data."
+   },
+   {
+    "bibcode": "1974MNRAS.166...79B",
+    "title": "Emission-line variability in quiescent flare stars."
+   },
+   {
+    "bibcode": "1974IBVS..857....1C",
+    "title": "Photoelectric observations of the flare star UV Cet during the 1973, September 20 - October 5 International patrol."
+   },
+   {
+    "bibcode": "1974IBVS..879....1K",
+    "title": "Flares of UV Ceti in 1970."
+   },
+   {
+    "bibcode": "1974IBVS..920....1C",
+    "title": "Recommendation for the flare star observers."
+   },
+   {
+    "bibcode": "1974IBVS..949....1G",
+    "title": "Request to flare star observers."
+   },
+   {
+    "bibcode": "1974Natur.250..125K",
+    "title": "Model for a flare on the star UV Ceti."
+   },
+   {
+    "bibcode": "1974Natur.252..659G",
+    "title": "X-rays predicted from flares of UV Ceti stars."
+   },
+   {
+    "bibcode": "1974S&T....48...94M",
+    "title": "Photometry of UV Ceti stars."
+   },
+   {
+    "bibcode": "1974IAUS...60..377B",
+    "title": "Radio continuum observations of stellar sources."
+   },
+   {
+    "bibcode": "1975A&A....41..459A",
+    "title": "Search for stellar flare activity."
+   },
+   {
+    "bibcode": "1975A&A....44..273T",
+    "title": "Upper limits on stellar flare X-ray emission from OSO-3."
+   },
+   {
+    "bibcode": "1975ApJ...202L..73H",
+    "title": "Evidence for X-ray emission from flare stars observed by ANS."
+   },
+   {
+    "bibcode": "1975MNRAS.171p..19G",
+    "title": "Intermediate infrared colours of M-dwarf stars."
+   },
+   {
+    "bibcode": "1975IBVS..979....1J",
+    "title": "Further observations of UV Ceti."
+   },
+   {
+    "bibcode": "1975IBVS..995....1M",
+    "title": "Proposed ground-base observations of UV Ceti flare stars in coordination with the MIT/SAS-C satellite."
+   },
+   {
+    "bibcode": "1975IBVS..997....1M",
+    "title": "Optical observations of UV Ceti flare stars simultaneous with radio coverage."
+   },
+   {
+    "bibcode": "1975IBVS.1006....1K",
+    "title": "Flare activity on UV Ceti 1975.01."
+   },
+   {
+    "bibcode": "1975IBVS.1017....1J",
+    "title": "Flares observed from UV Ceti."
+   },
+   {
+    "bibcode": "1975IBVS.1020....1C",
+    "title": "Photoelectric observations of the star UV Cet in 1972."
+   },
+   {
+    "bibcode": "1975IzKry..53..150M",
+    "title": "Radio and optical observations of some flare stars."
+   },
+   {
+    "bibcode": "1975MNSSA..34...23J",
+    "title": "Reports from Universities."
+   },
+   {
+    "bibcode": "1975MNSSA..34...51E",
+    "title": "Flare stars."
+   },
+   {
+    "bibcode": "1976ApJ...203..497S",
+    "title": "Simultaneous radio and optical observations of UV Ceti-type flare stars."
+   },
+   {
+    "bibcode": "1976ApJ...204..530M",
+    "title": "Sympathetic stellar flares and electron precipitation as probes of coronal structure in flare stars."
+   },
+   {
+    "bibcode": "1976ApJ...206L.135B",
+    "title": "The discovery of X-ray bursts from a region in the constellation Norma."
+   },
+   {
+    "bibcode": "1976ApJ...209..171M",
+    "title": "Properties of minimum-flux coronae in dwarfs and giants."
+   },
+   {
+    "bibcode": "1976ApJ...210..702M",
+    "title": "Mean colors of stellar flare continuum."
+   },
+   {
+    "bibcode": "1976ApJS...30...85L",
+    "title": "UV Ceti stars : statistical analysis of observational data."
+   },
+   {
+    "bibcode": "1976ApJS...31...61M",
+    "title": "High time-resolution observations of UV Ceti stars."
+   },
+   {
+    "bibcode": "1976IBVS.1105....1J",
+    "title": "Flare summary for UV Ceti September- 27 October 14,1975."
+   },
+   {
+    "bibcode": "1976IBVS.1193....1M",
+    "title": "Programme of cooperative flare star observations for 1976."
+   },
+   {
+    "bibcode": "1976IBVS.1210....1S",
+    "title": "Photoelectric observations of UV Ceti."
+   },
+   {
+    "bibcode": "1976IzKry..55..179G",
+    "title": "On the possible mecanism of the negative bursts of the flare stars radiation."
+   },
+   {
+    "bibcode": "1976PASJ...28..665K",
+    "title": "High-speed five-color photometry of the flare star EV Lac."
+   },
+   {
+    "bibcode": "1976SvAL....2...61L",
+    "title": "Time distribution of the flares of UV Cet."
+   },
+   {
+    "bibcode": "1977A&A....58..105W",
+    "title": "Observations of radio stars at 10.6 GHz."
+   },
+   {
+    "bibcode": "1977A&AS...30..381W",
+    "title": "Positions of radio stars."
+   },
+   {
+    "bibcode": "1977ApJ...213L.119H",
+    "title": "Extreme-ultraviolet observations of a flare on Proxima Centauri and implications concerning flare-star scaling theory."
+   },
+   {
+    "bibcode": "1977ApJ...216..479K",
+    "title": "Coordinated X-ray, optical and radio observations of YZ Canis Minoris."
+   },
+   {
+    "bibcode": "1977ApJ...216..659W",
+    "title": "Confirmation of the presence of iron hydride in sunspots and cool stars."
+   },
+   {
+    "bibcode": "1977ApJS...34..479L",
+    "title": "Radii of nearby stars: an application of the Barnes-Evans relation."
+   },
+   {
+    "bibcode": "1977MNRAS.178..149M",
+    "title": "Variations of the H beta-emission line during a large flare on UV Ceti."
+   },
+   {
+    "bibcode": "1977Ap.....13..310G",
+    "title": "Flare activity of UV Cet."
+   },
+   {
+    "bibcode": "1977Ap&SS..48..313G",
+    "title": "Flare stars and the fast electron hypothesis."
+   },
+   {
+    "bibcode": "1977Ap&SS..52...51G",
+    "title": "Chromospheres of flare stars."
+   },
+   {
+    "bibcode": "1977IBVS.1234....1M",
+    "title": "Programme of cooperative flare star observations for 1977."
+   },
+   {
+    "bibcode": "1977IBVS.1263....1S",
+    "title": "Statistics on flare observations of UV Cet, YZ CMi and AD Leo at the Uttar Pradesh State Observatory."
+   },
+   {
+    "bibcode": "1977IBVS.1366....1M",
+    "title": "Supplementary programme of cooperative flare star observations for 1977."
+   },
+   {
+    "bibcode": "1977IBVS.1375....1M",
+    "title": "Programme of cooperative flare star observations for 1978."
+   },
+   {
+    "bibcode": "1977SSRv...20..687M",
+    "title": "Sco X-1."
+   },
+   {
+    "bibcode": "1978A&A....65..301W",
+    "title": "Hot white dwarfs as soft X-ray sources."
+   },
+   {
+    "bibcode": "1978A&A....66..175R",
+    "title": "Flare active binary systems EQ Peg and its brighter companion BD +19 5116 A."
+   },
+   {
+    "bibcode": "1978A&A....70..431A",
+    "title": "Upper limits on extreme ultraviolet radiation from nearby main sequence and subgiant stars."
+   },
+   {
+    "bibcode": "1978ApJ...221..788C",
+    "title": "Near-infrared luminosity-sensitive features in M dwarfs and giants, and in M31 and M32."
+   },
+   {
+    "bibcode": "1978ApJ...226..144G",
+    "title": "Chromospheric emission lines in the red spectrum of AD Leonis. I. The non flare spectrum."
+   },
+   {
+    "bibcode": "1978ApJS...37..313L",
+    "title": "Anomalous flare activity on UV Ceti."
+   },
+   {
+    "bibcode": "1978Ap&SS..55..147D",
+    "title": "Excited cosmic plasmas."
+   },
+   {
+    "bibcode": "1978IBVS.1504....1A",
+    "title": "Photoelectric observations of the flare star UV Cet in 1973."
+   },
+   {
+    "bibcode": "1978IBVS.1520....1M",
+    "title": "Programme of cooperative flare star observations for 1979."
+   },
+   {
+    "bibcode": "1978PZ.....21....3K",
+    "title": "High-velocity photometry of UV Ceti and EV Lacertae flares in the near infrared."
+   },
+   {
+    "bibcode": "1978SvAL....4..122K",
+    "title": "Infrared flare amplitudes of UV Cet stars."
+   },
+   {
+    "bibcode": "1978TokAB.255.2929I",
+    "title": "Photoelectric monitoring of flare stars from 1974 to 1976."
+   },
+   {
+    "bibcode": "1979A&A....76..242R",
+    "title": "On \"negative flares\" and \"dips\" of UV Cet-type stars."
+   },
+   {
+    "bibcode": "1979AJ.....84..633K",
+    "title": "A set faint equatorial standard stars for BVRI photometry."
+   },
+   {
+    "bibcode": "1979ApJ...231L.137C",
+    "title": "Discovery of X-rays from the 40 Eridani system."
+   },
+   {
+    "bibcode": "1979ApJ...231..148S",
+    "title": "Chromospheric emission lines in the red spectrum of AD Leonis. II. Physical conditions in flares."
+   },
+   {
+    "bibcode": "1979ApJ...234L.107K",
+    "title": "HEAO 1 observations of X-ray emission from flares on dMe stars."
+   },
+   {
+    "bibcode": "1979ApJ...234..588M",
+    "title": "Can flare stars Be the source of galactic cosmic rays ?"
+   },
+   {
+    "bibcode": "1979ApJS...39...89E",
+    "title": "Catalogs of proper-motion stars. I. Stars brighter than visual magnitude 15 and with annual proper motion of 1\" or more."
+   },
+   {
+    "bibcode": "1979ApJS...41..327A",
+    "title": "A catalog of X-ray sources."
+   },
+   {
+    "bibcode": "1979MNRAS.187..405N",
+    "title": "A combined radio and optical study of flare R stars. The long-duration events."
+   },
+   {
+    "bibcode": "1979MNRAS.187..829P",
+    "title": "Electronographic UBV photometry of close visual double stars."
+   },
+   {
+    "bibcode": "1979Ap.....15..287K",
+    "title": "Synchronous UBV observations of UV Cet flares. I."
+   },
+   {
+    "bibcode": "1979BAAS...11..419C",
+    "title": "Survey of the ultraviolet spectra of late-type stars."
+   },
+   {
+    "bibcode": "1979IBVS.1546....1M",
+    "title": "Synchronous U, B, V flare observations of UV Ceti."
+   },
+   {
+    "bibcode": "1979IBVS.1585....1J",
+    "title": "Some intense flares of UV Cet."
+   },
+   {
+    "bibcode": "1979IBVS.1588....1J",
+    "title": "Flare observations of UV Cet during November 1975."
+   },
+   {
+    "bibcode": "1979IBVS.1612....1J",
+    "title": "Spike flares of UV Cet."
+   },
+   {
+    "bibcode": "1979IBVS.1654....1C",
+    "title": "Photoelectric observations of the flare star UV Cet in 1974, 1975."
+   },
+   {
+    "bibcode": "1979IzKry..60...14S",
+    "title": "The statistical properties of the UV Cet type stars."
+   },
+   {
+    "bibcode": "1979VKha..190...52Z",
+    "title": "Nearest stars."
+   },
+   {
+    "bibcode": "1979LHS...C......0L",
+    "title": "A catalogue of stars with proper motions exceeding 0\".5 annually (2nd edition)."
+   },
+   {
+    "bibcode": "1980A&A....82...53P",
+    "title": "Physical parameters of solar neighbourhood flare stars."
+   },
+   {
+    "bibcode": "1980A&A....89..123C",
+    "title": "Photometric features near the initial phase of flares on UV Cet-type stars."
+   },
+   {
+    "bibcode": "1980AJ.....85..454H",
+    "title": "Summary of U.S. Naval Observatory parallaxes."
+   },
+   {
+    "bibcode": "1980ApJ...236L..33H",
+    "title": "Observations of the quiescent corona, transition region, and chromosphere in the dMe flare star Proxima Centauri."
+   },
+   {
+    "bibcode": "1980ApJ...239L..27M",
+    "title": "Multichannel spectrophotometry of stellar flares."
+   },
+   {
+    "bibcode": "1980ARA&A..18..115P",
+    "title": "Stellar masses."
+   },
+   {
+    "bibcode": "1980Ap.....15..405K",
+    "title": "Synchronous UBV observations of UV Cet flares. II."
+   },
+   {
+    "bibcode": "1980IBVS.1727....1M",
+    "title": "Slow brightness variation of the star UV Cet."
+   },
+   {
+    "bibcode": "1980IBVS.1792....1A",
+    "title": "Photoelectric observations of the flare star UV Cet in 1978."
+   },
+   {
+    "bibcode": "1980IBVS.1804....1A",
+    "title": "Photoelectric observations of the flare star UV Cet in 1976."
+   },
+   {
+    "bibcode": "1980IBVS.1806....1A",
+    "title": "Photoelectric observations of the flare star UV Cet in 1975."
+   },
+   {
+    "bibcode": "1980IzKry..61...90B",
+    "title": "Synchronous photoelectrical observations of flare stars in the visible and the near infrared regions."
+   },
+   {
+    "bibcode": "1980IzKry..62...54G",
+    "title": "On the origin of the anomalous Balmer decrement in the spectra of the eruptive stars."
+   },
+   {
+    "bibcode": "1980MNSSA..39...96W",
+    "title": "The reddest red dwarf ?"
+   },
+   {
+    "bibcode": "1980S&T....60..111O",
+    "title": "Searching for other planetary systems."
+   },
+   {
+    "bibcode": "1980S&T....60..180M",
+    "title": "Variable stars and the AAVSO."
+   },
+   {
+    "bibcode": "1980IUE80......279G",
+    "title": "The Mg II h and k lines in a sample of dMe and dM stars."
+   },
+   {
+    "bibcode": "1981A&A....95..135P",
+    "title": "Discovery of flare activity on the very low luminosity red dwarf G 51-15."
+   },
+   {
+    "bibcode": "1981A&AS...44..179P",
+    "title": "A catalogue of variable-visual binary stars."
+   },
+   {
+    "bibcode": "1981A&AS...46..193H",
+    "title": "Empirical bolometric corrections for the main-sequence."
+   },
+   {
+    "bibcode": "1981ApJ...245..163V",
+    "title": "Results from an extensive Einstein stellar survey."
+   },
+   {
+    "bibcode": "1981ApJ...250..284G",
+    "title": "First detection of nonflare microwave emission from the coronae of single late-type dwarf stars."
+   },
+   {
+    "bibcode": "1981ApJ...251..113G",
+    "title": "IUE observations of pre-main-sequence stars. I. MG II and CA II resonance line fluxes for T Tauri stars."
+   },
+   {
+    "bibcode": "1981ATsir1154....1K",
+    "title": "Outer atmospheres and rotation of the late-type stars."
+   },
+   {
+    "bibcode": "1981Ap&SS..77..347P",
+    "title": "Time distribution of flare events on UV Cet stars."
+   },
+   {
+    "bibcode": "1981IBVS.2038....1M",
+    "title": "Synchronous UBV flare observations of UV Cet."
+   },
+   {
+    "bibcode": "1981LowOB...9..254R",
+    "title": "The faint object camera."
+   },
+   {
+    "bibcode": "1981PZ.....21..465K",
+    "title": "On the classification of variable stars."
+   },
+   {
+    "bibcode": "1982ApJ...252..239K",
+    "title": "Coordinated X-ray, optical and radio observations of flaring activityon YZ Canis Minoris."
+   },
+   {
+    "bibcode": "1982ApJ...258..740G",
+    "title": "Stellar model chromospheres. XIII. M dwarf stars."
+   },
+   {
+    "bibcode": "1982ApJ...259..844M",
+    "title": "Electron-cyclotron masers as the source of certain solar and stellar radio bursts."
+   },
+   {
+    "bibcode": "1982ApJ...260..670L",
+    "title": "Outer atmospheres of cool stars. XII. A survey of IUE ultraviolet emission line spectra of cool dwarf stars."
+   },
+   {
+    "bibcode": "1982ApJ...262..282S",
+    "title": "A search for magnetic fields in the symbiotic and VV Cephei variables."
+   },
+   {
+    "bibcode": "1982ApJ...263L..79G",
+    "title": "An unusual microwave flare with 56 second oscillations on the M dwarf L 726-8A."
+   },
+   {
+    "bibcode": "1982PASP...94..821W",
+    "title": "Observations of nearby M dwarf stars in VRI colors."
+   },
+   {
+    "bibcode": "1982BICDS..23...53H",
+    "title": "Variable stars in the General Catalogue of trigonometric parallaxes."
+   },
+   {
+    "bibcode": "1982IBVS.2254....1A",
+    "title": "Detection of 5-6 day outbursts in flare acticity in EV Lac, interpreted as a rotational effect, and a tentative report of temporal relationships between flare events."
+   },
+   {
+    "bibcode": "1982IzKry..65..155C",
+    "title": "On intrinsic (U-B), (B-V) colours in maxima of flares of UV Cet type stars."
+   },
+   {
+    "bibcode": "1982IUE82.......17L",
+    "title": "The structure and energy balance of cool star atmospheres."
+   },
+   {
+    "bibcode": "1982IUE3r........3L",
+    "title": "The structure, energy balance, and winds of cool stars."
+   },
+   {
+    "bibcode": "1983A&A...120..192P",
+    "title": "The flare activity of V780 Tau."
+   },
+   {
+    "bibcode": "1983AJ.....88..532Z",
+    "title": "The short-period eclipsing system XY UMa: 1982 UBV light curves and a flare-like event."
+   },
+   {
+    "bibcode": "1983ApJ...266..747V",
+    "title": "Studies of late-type dwarfs. V. Theoretical models for lower main-sequence stars."
+   },
+   {
+    "bibcode": "1983ApJ...271..255S",
+    "title": "Destruction of ice grains in T Tauri stars."
+   },
+   {
+    "bibcode": "1983ApJ...273..702J",
+    "title": "Origins and ages of X-ray-luminous dwarf M stars."
+   },
+   {
+    "bibcode": "1983ApJ...274..776L",
+    "title": "Microwave emission from the coronae of late-type dwarf stars."
+   },
+   {
+    "bibcode": "1983ApJS...52..121G",
+    "title": "Stellar spectrophotometric Atlas, 3130 <lambda <10800 A."
+   },
+   {
+    "bibcode": "1983ApJS...53..335P",
+    "title": "An infrared search for very low mass stars : JHK photometry and results for composite systems."
+   },
+   {
+    "bibcode": "1983ApJS...53..643J",
+    "title": "Predicted infrared brightness of stars within 25 parsecs of the Sun."
+   },
+   {
+    "bibcode": "1983Afz....19..835M",
+    "title": "Synchronous UBV-observations of the UV Ceti flares."
+   },
+   {
+    "bibcode": "1983Ap&SS..95..235G",
+    "title": "Characteristics of activity energetics of the UV Cet-type flare stars."
+   },
+   {
+    "bibcode": "1983Ap&SS..96..125C",
+    "title": "The empirical mass-luminosity relation."
+   },
+   {
+    "bibcode": "1983IBVS.2322....1R",
+    "title": "Coordinated ultraviolet, optical and radio observations of RS CVn and flare stars in October 1983 and March 1984."
+   },
+   {
+    "bibcode": "1983IBVS.2359....1P",
+    "title": "Photoelectric observations of the flare star UV Cet in 1982."
+   },
+   {
+    "bibcode": "1983IBVS.2437....1T",
+    "title": "Photoelectric observations of UV Ceti."
+   },
+   {
+    "bibcode": "1983S&W....22..479S",
+    "title": "Die Massen der Hauptreihensterne."
+   },
+   {
+    "bibcode": "1984A&A...132L...9R",
+    "title": "X-ray coronal activity of M dwarfs."
+   },
+   {
+    "bibcode": "1984AJ.....89..839E",
+    "title": "A systematic search for members of the Hyades supercluster. II. The visual binaries."
+   },
+   {
+    "bibcode": "1984ApJ...276..270W",
+    "title": "The response of chromospheric emission lines to flares on YZ Canis Minoris."
+   },
+   {
+    "bibcode": "1984ApJ...282..603M",
+    "title": "On the possibility of resonant electrodynamic coupling in the coronae of red dwarfs."
+   },
+   {
+    "bibcode": "1984ApJS...54..375P",
+    "title": "The flare activity of AD Leonis."
+   },
+   {
+    "bibcode": "1984ApJS...55..289W",
+    "title": "Photometric parallaxes for selected stars of color class m from the NLTT catalog."
+   },
+   {
+    "bibcode": "1984MNRAS.209....1C",
+    "title": "Optical positions and proper motions of radio stars"
+   },
+   {
+    "bibcode": "1984AZh....61..143S",
+    "title": "On the mass-spectrum relation for the main-sequence stars."
+   },
+   {
+    "bibcode": "1984Ap&SS.106....1G",
+    "title": "Flare stars : postflare behaviour of emission lines."
+   },
+   {
+    "bibcode": "1984BAAS...16..892K",
+    "title": "Microwave emission from late type dwarf UV Ceti and YZ CMi."
+   },
+   {
+    "bibcode": "1984IBVS.2484....1I",
+    "title": "Photoelectric observation of the flare star UV Cet in October 1983."
+   },
+   {
+    "bibcode": "1984IBVS.2630....1M",
+    "title": "UV Ceti : synchronous UBV flare obervations."
+   },
+   {
+    "bibcode": "1984IBVS.2638....1M",
+    "title": "On the time distribution of flares on UV Ceti."
+   },
+   {
+    "bibcode": "1984IzKry..69....3P",
+    "title": "The observations of Hbeta and He II lambda 4686 lines in the spectra UV Ceti-type stars during the flares."
+   },
+   {
+    "bibcode": "1985A&A...145..449W",
+    "title": "Coronal heating and stellar flares."
+   },
+   {
+    "bibcode": "1985A&A...148..151P",
+    "title": "Discovery of flare activity on the low luminosity red dwarf system G9-38 AB."
+   },
+   {
+    "bibcode": "1985A&A...149...95P",
+    "title": "Microwave observations of late-type stars with the Very Large Array."
+   },
+   {
+    "bibcode": "1985AJ.....90...74E",
+    "title": "Systematic search for members of the Hyades supercluster. VI. The lower main sequence."
+   },
+   {
+    "bibcode": "1985AJ.....90.2296P",
+    "title": "Spectra of very low-luminosity red dwarfs."
+   },
+   {
+    "bibcode": "1985ApJ...297..644K",
+    "title": "Microwave emission from late-type dwarf stars UV Ceti and YZ Canis Minoris."
+   },
+   {
+    "bibcode": "1985MNRAS.214..119B",
+    "title": "Optical photometry and spectroscopy of the flare star Gliese 229 (=HD42581)."
+   },
+   {
+    "bibcode": "1985ARA&A..23..169D",
+    "title": "Radio emission from the Sun and stars."
+   },
+   {
+    "bibcode": "1985Ap&SS.113..213G",
+    "title": "The activity of stellar aggregates and the origin of cosmic rays."
+   },
+   {
+    "bibcode": "1985BAAS...17..589K",
+    "title": "Observations of flares at 6 and 20 cm wavelengths from late type dwarf stars UV Ceti and AT Mic."
+   },
+   {
+    "bibcode": "1985IBVS.2785....1O",
+    "title": "Photoelectric observations of two major flares on UV Ceti in october 1983."
+   },
+   {
+    "bibcode": "1985IrAJ...17..131B",
+    "title": "EXOSAT observations of flare stars and coronal heating."
+   },
+   {
+    "bibcode": "1985Natur.313..378D",
+    "title": "Ultraviolet radiation from stellar flares and the coronal X-ray emission for dwarf-Me stars."
+   },
+   {
+    "bibcode": "1985RMxAA..10..221P",
+    "title": "Flare stars in stellar associations and clusters and their place in star evolution."
+   },
+   {
+    "bibcode": "1985IAUS..111..163S",
+    "title": "Determination of stellar rotaional velocities."
+   },
+   {
+    "bibcode": "1986A&A...154..185O",
+    "title": "Magnetic structure in cool stars. IX. Ultraviolet emission lines from chromospheres and transition regions."
+   },
+   {
+    "bibcode": "1986A&A...156..283D",
+    "title": "Flare activity and BY-Draconis-type variability on the late-type dMe star Gliese 867B."
+   },
+   {
+    "bibcode": "1986A&A...165..211L",
+    "title": "A new mechanism for stellar radio bursts: the fully relativistic electron maser."
+   },
+   {
+    "bibcode": "1986AJ.....91..621D",
+    "title": "LHS 292 and the luminosity function of the nearby M dwarfs."
+   },
+   {
+    "bibcode": "1986AJ.....91..626W",
+    "title": "Photometric parallaxes for selected stars of color class m from the NLTT catalog. II. The declination zone 0 to +20."
+   },
+   {
+    "bibcode": "1986AJ.....92..139S",
+    "title": "Dwarf K and M stars of high proper motion found in a hemispheric survey."
+   },
+   {
+    "bibcode": "1986ApJ...302L..17L",
+    "title": "Narrow-band, slowly varying decimetric radiation from the dwarf M flare star YZ Canis minoris."
+   },
+   {
+    "bibcode": "1986ApJ...309..858S",
+    "title": "Some evidence on the evolution of the flare mechanism in dwarf stars."
+   },
+   {
+    "bibcode": "1986ApJ...311..226N",
+    "title": "The evolution of very low mass stars."
+   },
+   {
+    "bibcode": "1986ApJ...311..814W",
+    "title": "Narrow-band radio flares from red dwarf stars."
+   },
+   {
+    "bibcode": "1986MNRAS.219..225A",
+    "title": "Study of quiescent state X-ray emission from flare stars."
+   },
+   {
+    "bibcode": "1986MNRAS.220.1021B",
+    "title": "Flares on dMe stars : IUE and optical observations of AT Mic and comparison of far-ultraviolet stellar and solar flares."
+   },
+   {
+    "bibcode": "1986MNRAS.221...77S",
+    "title": "X-ray and optical observations of a dMe flare star in the T Tauri field."
+   },
+   {
+    "bibcode": "1986Ap&SS.125..127G",
+    "title": "Flares on opposite sides of the star : observational aspects."
+   },
+   {
+    "bibcode": "1986BICDS..30...61H",
+    "title": "Finding charts of radio stars for the Hipparcos mission."
+   },
+   {
+    "bibcode": "1986BAAS...18..984K",
+    "title": "Microwave observations of red dwarf flare stars."
+   },
+   {
+    "bibcode": "1986BAAS...18..985B",
+    "title": "Dynamic spectra of microwave outbursts on dMe flare stars."
+   },
+   {
+    "bibcode": "1986CoKon..86..409M",
+    "title": "Flare stars - physics and evolution."
+   },
+   {
+    "bibcode": "1986Icar...65..152V",
+    "title": "A search for the tritium hyperfine line from nearby stars."
+   },
+   {
+    "bibcode": "1986Natur.321..679B",
+    "title": "Coordinated EXOSAT and spectroscopic observations of flare stars and coronal heating."
+   },
+   {
+    "bibcode": "1986PASAu...6..319V",
+    "title": "A search for 843 MHz radio emission from active stars."
+   },
+   {
+    "bibcode": "1986S&T....72..130K",
+    "title": "The K stars : orange giants and dwarfs."
+   },
+   {
+    "bibcode": "1986SSRv...43..211V",
+    "title": "Dark companions of stars."
+   },
+   {
+    "bibcode": "1987A&A...179..193S",
+    "title": "A comparison of coronal X-ray emission observed with the Einstein and EXOSAT observatories."
+   },
+   {
+    "bibcode": "1987A&A...188...95M",
+    "title": "The flare energy spectrum of EV Lac."
+   },
+   {
+    "bibcode": "1987AJ.....93..451W",
+    "title": "Photometric parallaxes for selected stars of color class m from the NLTT catalog. III. The declination zone +20 to +45."
+   },
+   {
+    "bibcode": "1987AJ.....93..688M",
+    "title": "ICCD speckle observations of binary stars. II. Measurements during 1982-1985 from the Kitt Peak 4 m telescope."
+   },
+   {
+    "bibcode": "1987AJ.....93.1484M",
+    "title": "A systematic search for long-term variability in a large sample of X-ray sources."
+   },
+   {
+    "bibcode": "1987AJ.....93.1535M",
+    "title": "Gliese 866 : a new, low-mass binary in the solar neighborhood."
+   },
+   {
+    "bibcode": "1987AJ.....94.1077H",
+    "title": "Photographic astrometry of binary and proper-motion stars. III."
+   },
+   {
+    "bibcode": "1987ApJ...312..822K",
+    "title": "Microwave observations of the flare stars UV Ceti, AT Microscopii and AU Microscopii."
+   },
+   {
+    "bibcode": "1987ApJ...316L..85J",
+    "title": "Dynamic spectrum of a radio flare on UV Ceti."
+   },
+   {
+    "bibcode": "1987ApJS...65..161H",
+    "title": "Micrometer observations of double stars and new pairs. XIII."
+   },
+   {
+    "bibcode": "1987ApJS...65..273A",
+    "title": "Rapid, low-level X-ray variablity in active late-type dwarfs."
+   },
+   {
+    "bibcode": "1987MNRAS.224p...1D",
+    "title": "An activity-rotation relationship in F-M dwarfs from Mg II h and k flux."
+   },
+   {
+    "bibcode": "1987ARA&A..25..473L",
+    "title": "Very low mass stars."
+   },
+   {
+    "bibcode": "1987AZh....64.1243K",
+    "title": "X-ray emission and structure of coronae of active late-type dwarfs."
+   },
+   {
+    "bibcode": "1987Ast....15a..16C",
+    "title": "Visit the nearest stars."
+   },
+   {
+    "bibcode": "1987IBVS.2985....1I",
+    "title": "Photoelectric observation of the flare star UV Cet in December 1985."
+   },
+   {
+    "bibcode": "1987KFNT....3e...3G",
+    "title": "Energetics of activity of flare stars and the sun : a synergetical approach."
+   },
+   {
+    "bibcode": "1987MitAG..70..300S",
+    "title": "Optical positions of radio stars"
+   },
+   {
+    "bibcode": "1987Natur.326..643B",
+    "title": "Spectra of stellar radio flares."
+   },
+   {
+    "bibcode": "1987Natur.326..678B",
+    "title": "First dynamic spectra of stellar microwave flares."
+   },
+   {
+    "bibcode": "1987PASAu...7...42V",
+    "title": "Observations of active stars at 843 MHz."
+   },
+   {
+    "bibcode": "1987PASAu...7..197L",
+    "title": "A multi-purpose, multi-channel radiospectrograph for the Parkes telescope."
+   },
+   {
+    "bibcode": "1987RMxAA..14..149S",
+    "title": "Nuclear stellar population of NGC 772 (Arp 78)."
+   },
+   {
+    "bibcode": "1987LNP87.291...72D",
+    "title": "Nonthermal phenomena in stellar coronae : evidence from radio observations."
+   },
+   {
+    "bibcode": "1987LNP87.291..100K",
+    "title": "Microwave observations of red dwarf flare stars."
+   },
+   {
+    "bibcode": "1987LNP87.291..103J",
+    "title": "A VLA survey of dMe flare stars."
+   },
+   {
+    "bibcode": "1987LNP87.291..161N",
+    "title": "Chromospheric and coronal heating in a volume-limited sample of K dwarfs."
+   },
+   {
+    "bibcode": "1988A&A...191..109P",
+    "title": "Stellar coronae with EXOSAT : broad band spectroscopy of nearby coronal sources."
+   },
+   {
+    "bibcode": "1988A&A...195..159K",
+    "title": "Co-ordinated VLA and EXOSAT observations of the flrae stars UV Ceti, EQ Pegasi, YZ Canis Minoris and AD Leonis."
+   },
+   {
+    "bibcode": "1988A&A...199..255W",
+    "title": "VLA observations of dwarf M flare stars and magnetic stars."
+   },
+   {
+    "bibcode": "1988A&A...205..197C",
+    "title": "Time variability in the X-ray emission of dM stars observed by EXOSAT."
+   },
+   {
+    "bibcode": "1988A&A...206L...1B",
+    "title": "A correlation between Balmer and soft X-ray emission from stellar and solar flares."
+   },
+   {
+    "bibcode": "1988AJ.....95..887C",
+    "title": "A VLA survey of BY Draconis variables."
+   },
+   {
+    "bibcode": "1988AJ.....95.1841G",
+    "title": "Parallax, orbit and mass of the visual binary L 726-8."
+   },
+   {
+    "bibcode": "1988AJ.....96.1710W",
+    "title": "Photometric parallaxes for selected stars of color class m from the NLTT CATALOG. IV. The declination zone +45 to +90."
+   },
+   {
+    "bibcode": "1988ApJ...328..610L",
+    "title": "Ultraviolet and radio flares from UX Arietis and HR 1099."
+   },
+   {
+    "bibcode": "1988ApJ...328..809W",
+    "title": "Fine structure of microwave spike bursts and associated cross-field energy transport."
+   },
+   {
+    "bibcode": "1988ApJ...334.1001K",
+    "title": "Detection of the dMe flare star YZ Canis Minoris simultaneously at 20and 90 centimeter wavelengths."
+   },
+   {
+    "bibcode": "1988MNRAS.234.1065L",
+    "title": "The infrared luminosity function for low-mass stars."
+   },
+   {
+    "bibcode": "1988MNRAS.235..573P",
+    "title": "Flare activity on UV Ceti: visible and IUE observations."
+   },
+   {
+    "bibcode": "1988Afz....28..375M",
+    "title": "Statistical study of flare stars. I. The UV Ceti stars of solar vicinity and the flare stars in clusters and associations."
+   },
+   {
+    "bibcode": "1988Afz....29...44M",
+    "title": "Statistical study of flare stars. II. On the origin of the UV Ceti type stars."
+   },
+   {
+    "bibcode": "1988ApL....27..247S",
+    "title": "Microwave spectra and polarization of active stars."
+   },
+   {
+    "bibcode": "1988BICDS..34...35B",
+    "title": "On the IRAS 12-mu fluxes of M dwarfs."
+   },
+   {
+    "bibcode": "1988BAICz..39..329H",
+    "title": "Stellar masses and radii based on modern binary data."
+   },
+   {
+    "bibcode": "1988IrAJ...18..198B",
+    "title": "Multiwavelength observations of stellar flares."
+   },
+   {
+    "bibcode": "1988IzKry..79...71B",
+    "title": "Photometrical investigations of the UV Cet type flare stars with the 3X10-7 sec time resolution at the 6-meter telescope."
+   },
+   {
+    "bibcode": "1988MmSAI..59...71P",
+    "title": "Stellar coronae : ther EXOSAT picture."
+   },
+   {
+    "bibcode": "1988PAZh...14..156B",
+    "title": "A study of the structure of flares of UV Ceti type stars with a time resolution of 3.10exp -7S."
+   },
+   {
+    "bibcode": "1988PAZh...14..233S",
+    "title": "Minimum times of the brightness increase in the flares of UV Ceti type stars."
+   },
+   {
+    "bibcode": "1988PAZh...14..940P",
+    "title": "On possible explanation of frequency-energy relation of flare of red dwarf stars."
+   },
+   {
+    "bibcode": "1988IUE88...1..311P",
+    "title": "Chromospheric mass motions during a flare on UV Ceti."
+   },
+   {
+    "bibcode": "1989A&A...208..159B",
+    "title": "Activity in late-type dwarfs. III. Chromospheric and transition region line fluxes for two dM stars."
+   },
+   {
+    "bibcode": "1989A&A...209..279P",
+    "title": "Chromospheric lines in red dwarf flare stars. III."
+   },
+   {
+    "bibcode": "1989A&A...210..284J",
+    "title": "Quiescent and flaring radio emission from the flare stars AD Leonis, EQ Pegasi, UV Ceti, Wolf 630, YY Geminorum and YZ Canis Minoris."
+   },
+   {
+    "bibcode": "1989A&A...210..303A",
+    "title": "Investigation of micro-flaring and secular and quasi-periodic variations in dMe flare stars. I. Suspected ultra-short \"waves\" in the dM2-3e star V1285 Aquilae."
+   },
+   {
+    "bibcode": "1989A&A...211L...5G",
+    "title": "Broad-band spectrum of dMe star radio emission."
+   },
+   {
+    "bibcode": "1989A&A...211..157D",
+    "title": "Coordinated observations of a large impulsive flare on UV Ceti."
+   },
+   {
+    "bibcode": "1989A&A...214..258D",
+    "title": "An estimate of the total chromospheric, transition region and coronal radiative losses in late-type stars."
+   },
+   {
+    "bibcode": "1989A&A...218..195D",
+    "title": "H-alpha versus X-ray luminosity in dwarf M stars."
+   },
+   {
+    "bibcode": "1989A&A...219..239R",
+    "title": "Magnetic structure in cool stars. XVI. Emissions from the outer atmospheres of M-type dwarfs."
+   },
+   {
+    "bibcode": "1989A&A...220L...5G",
+    "title": "Broadband spectral observations of a dMe star radio flare."
+   },
+   {
+    "bibcode": "1989A&A...220..221V",
+    "title": "Variable X-ray emission from the dMe star EXO 040830-7134.7."
+   },
+   {
+    "bibcode": "1989A&A...224..179M",
+    "title": "Flux-flux relation: Mg II h and k versus X-rays in dwarf M and K stars."
+   },
+   {
+    "bibcode": "1989A&A...225..112W",
+    "title": "Simple non-thermal models for the quiescent radio emission of dMe flare stars."
+   },
+   {
+    "bibcode": "1989A&AS...77..497B",
+    "title": "Etoiles doubles orbitales a composantes variables."
+   },
+   {
+    "bibcode": "1989AJ.....98..279F",
+    "title": "Radio observations of a complete sample of nearby stars."
+   },
+   {
+    "bibcode": "1989AJ.....98..290T",
+    "title": "IRAS observations of chromospherically active dwarf stars."
+   },
+   {
+    "bibcode": "1989AJ.....98.1409S",
+    "title": "An infrared search for low-mass companions of stars near the sun."
+   },
+   {
+    "bibcode": "1989AJ.....98.1842E",
+    "title": "Very active chromosphere stars and the age, chromospere activity relation."
+   },
+   {
+    "bibcode": "1989ApJ...341..961M",
+    "title": "The extremely low mass companion to Gliese 623."
+   },
+   {
+    "bibcode": "1989ApJ...344..427Y",
+    "title": "A study of excess H-alpha emission in chromospherically active M dwarf stars."
+   },
+   {
+    "bibcode": "1989ApJ...345..939B",
+    "title": "Theoretical models of very low mass stars and brown dwarfs."
+   },
+   {
+    "bibcode": "1989PASP..101..787G",
+    "title": "Bolometric luminosities and colors for K and M dwarfs and the subluminous stars of the Halo."
+   },
+   {
+    "bibcode": "1989AcApS...9..201L",
+    "title": "A possible mechanism for the microwave radiation from the quiescent coronae of late-type stars."
+   },
+   {
+    "bibcode": "1989Afz....31..259M",
+    "title": "Statistical study of flare stars. IV. Relative number of flare stars in the Orion association, Pleiades cluster and in the solar vicinity."
+   },
+   {
+    "bibcode": "1989BAAS...21..710H",
+    "title": "VLA observations of six dMe stars."
+   },
+   {
+    "bibcode": "1989ComAp..13..257J",
+    "title": "Progress in flare research: report on IAU Colloquium No 104."
+   },
+   {
+    "bibcode": "1989IBVS.3338....1M",
+    "title": "Flare observations of UV Ceti."
+   },
+   {
+    "bibcode": "1989MmSAI..60..263G",
+    "title": "Time scales and energy of flares on red dwarf stars (a review)."
+   },
+   {
+    "bibcode": "1989Mercu..18....2T",
+    "title": "Dark matter in our galaxy. Part one."
+   },
+   {
+    "bibcode": "1989SAAOC..13...29L",
+    "title": "UBV (RI)c photometry of faint nearby stars."
+   },
+   {
+    "bibcode": "1990A&A...228..403P",
+    "title": "X-ray emission from solar neighbourhood flare stars: a comprehensive survey of EXOSAT results."
+   },
+   {
+    "bibcode": "1990A&A...228..443D",
+    "title": "Lyman-alpha and Mg II h and k fluxes in a sample of dwarf M stars."
+   },
+   {
+    "bibcode": "1990A&A...232..387H",
+    "title": "Rotational modulation and flares on RS Canum Venaticorum and BY Draconis-type stars. XV. Observations of Proxima Centauri and solar calibration data."
+   },
+   {
+    "bibcode": "1990A&A...238..249H",
+    "title": "Dynamics of flares on late-type dMe stars. I. Flare mass ejections and stellar evolution."
+   },
+   {
+    "bibcode": "1990A&A...240..357M",
+    "title": "Chromospheric/coronal emission correlations in \"quiescent\" and eruptive phenomena in M-dwarf stars."
+   },
+   {
+    "bibcode": "1990A&AS...83..235C",
+    "title": "Optical positions of radiostars. II."
+   },
+   {
+    "bibcode": "1990A&AS...83..357B",
+    "title": "BVRI photometry of the Gliese catalogue stars."
+   },
+   {
+    "bibcode": "1990A&AS...85..971P",
+    "title": "Catalogue des etoiles variables ou suspectes dans le voisinage du soleil."
+   },
+   {
+    "bibcode": "1990A&AS...86..403D",
+    "title": "Discovery of flare activity on the dwarf M stars, Gl 375 and Gl 431."
+   },
+   {
+    "bibcode": "1990ApJ...357..621M",
+    "title": "Detection of the secondary star in HT Cassiopeiae."
+   },
+   {
+    "bibcode": "1990ApJ...365..704S",
+    "title": "Einstein Observatory coronal temperatures of late-type stars."
+   },
+   {
+    "bibcode": "1990ApJS...74..275H",
+    "title": "Observations of double stars and new pairs. XIV."
+   },
+   {
+    "bibcode": "1990PASP..102..166E",
+    "title": "K- and M-type dwarf stars within 25 parsecs of the Sun. I. The age-chromospheric activity relation from H-alpha equivalent  widths."
+   },
+   {
+    "bibcode": "1990AcASn..31..267X",
+    "title": "Optical positions of the radio stars and the radio sources."
+   },
+   {
+    "bibcode": "1990BAAS...22.1204B",
+    "title": "Near-infrared spectroscopy of cool M dwarfs and suspected sub-stellar objects."
+   },
+   {
+    "bibcode": "1990IBVS.3429....1M",
+    "title": "Photoelectric observations of the flare star UV Cet in 1983."
+   },
+   {
+    "bibcode": "1990IrAJ...19..125D",
+    "title": "Armagh Observatory in 1988/89."
+   },
+   {
+    "bibcode": "1990IrAJ...19..157B",
+    "title": "Balmer and soft X-ray emission from solar and stellar flares."
+   },
+   {
+    "bibcode": "1990IAUS..142...77P",
+    "title": "Energy release in stellar flares."
+   },
+   {
+    "bibcode": "1991A&A...244..155M",
+    "title": "Rotational modulation and flares on RS Canum Venaticorum and BY Draconis stars. XVI. IUE spectroscopy and VLA observations of Gl 182 (=V1005 Orionis) in October 1983."
+   },
+   {
+    "bibcode": "1991A&A...244..433M",
+    "title": "Active M-type stars from the ultraviolet to the infrared."
+   },
+   {
+    "bibcode": "1991A&AS...87...33H",
+    "title": "Cooling curves of stellar flare plasmas from time resolved optical spectroscopy."
+   },
+   {
+    "bibcode": "1991AJ....101..662B",
+    "title": "The late-M stars."
+   },
+   {
+    "bibcode": "1991AJ....102..267D",
+    "title": "The near-infrared spectrum of the suspected brown dwarf binary system Gliese 473."
+   },
+   {
+    "bibcode": "1991AJ....102.1428R",
+    "title": "Unresolved binaries and the stellar luminosity function."
+   },
+   {
+    "bibcode": "1991ApJ...368..264A",
+    "title": "Search for Vega-like nearby stars with 12 micron excess."
+   },
+   {
+    "bibcode": "1991ApJ...378..725H",
+    "title": "The great flare of 1985 April 12 on AD Leonis."
+   },
+   {
+    "bibcode": "1991ApJ...381..234C",
+    "title": "Numerical simulations of flares on M dwarf stars. I. Hydrodynamics and coronal X-ray emission."
+   },
+   {
+    "bibcode": "1991ApJS...77..417K",
+    "title": "A standard stellar spectral sequence in the red/near-infrared: classes K5 to M9."
+   },
+   {
+    "bibcode": "1991MNRAS.253..449P",
+    "title": "Theorical colours and isochrones for some Hubble Space Telescope colour systems - II."
+   },
+   {
+    "bibcode": "1991PASP..103..694K",
+    "title": "Weighted slit extraction of low-dispersion IUE spectral data."
+   },
+   {
+    "bibcode": "1991ARA&A..29..275H",
+    "title": "Flares on the sun and other stars."
+   },
+   {
+    "bibcode": "1991AZh....68..131K",
+    "title": "Stellar flares: impulsive processes in atmospheres of late-type dwarf stars."
+   },
+   {
+    "bibcode": "1991IzKry..83..152B",
+    "title": "Diagnostic possibilities of Walrawen system."
+   },
+   {
+    "bibcode": "1991MmSAI..62..217P",
+    "title": "The nearby flare stars."
+   },
+   {
+    "bibcode": "1991MmSAI..62..243B",
+    "title": "Flares in the optical and the near infrared."
+   },
+   {
+    "bibcode": "1991MmSAI..62..307L",
+    "title": "X-rays from stellar flares."
+   },
+   {
+    "bibcode": "1991MmSAI..62..321B",
+    "title": "Observational aspects of stellar radio flares."
+   },
+   {
+    "bibcode": "1992A&A...254..116H",
+    "title": "Red/infrared observations of Wolf 424AB : are the components substellar ?"
+   },
+   {
+    "bibcode": "1992AJ....104.1161E",
+    "title": "Spectroscopic and photometric observations of a five-magnitude flare event on UV Ceti."
+   },
+   {
+    "bibcode": "1992ApJ...385..731P",
+    "title": "The origin of the far-ultraviolet continuum in solar and stellar flares."
+   },
+   {
+    "bibcode": "1992ApJS...80..257E",
+    "title": "The Einstein Slew Survey."
+   },
+   {
+    "bibcode": "1992ApJS...82..351L",
+    "title": "Infrared colors of low-mass stars."
+   },
+   {
+    "bibcode": "1992ARA&A..30..391B",
+    "title": "X-ray astronomy missions."
+   },
+   {
+    "bibcode": "1992IrAJ...20..213H",
+    "title": "Investigating the spectroscopic signatures of stellar flares."
+   },
+   {
+    "bibcode": "1993A&A...272..495B",
+    "title": "Activity in late-type stars. VIII. The nature of the dM(e) or \"zero\" H-alpha stars."
+   },
+   {
+    "bibcode": "1993A&A...272..507B",
+    "title": "An extended correlation between the Balmer and soft X-ray emission from solar and stellar flares."
+   },
+   {
+    "bibcode": "1993A&A...273L..53L",
+    "title": "Possible stellar flare contributions to the BATSE gamma-ray burst database."
+   },
+   {
+    "bibcode": "1993A&A...275..670L",
+    "title": "Dynamic spectra of radio sources from 4.5 to 5.0 GHz."
+   },
+   {
+    "bibcode": "1993A&A...280..181M",
+    "title": "Far infrared properties of late type dwarfs. Infrared fluxes of K and M dwarfs."
+   },
+   {
+    "bibcode": "1993A&AS..100..343P",
+    "title": "The importance of surface inhomogeneities for K and M dwarf chromospheric fluxes."
+   },
+   {
+    "bibcode": "1993AJ....105..563W",
+    "title": "A 1.5 GHz radio survey of the Hyades open stellar cluster."
+   },
+   {
+    "bibcode": "1993AJ....105.1571H",
+    "title": "U.S. Naval Observatory photographic parallaxes. List IX."
+   },
+   {
+    "bibcode": "1993AJ....105.1945S",
+    "title": "PG 0308+096 and PG 1026+002: two new short period binary stars resulting from common-envelope evolution."
+   },
+   {
+    "bibcode": "1993AJ....106..773H",
+    "title": "The mass-luminosity relation for stars of mass 1.0 to 0.08m.solar."
+   },
+   {
+    "bibcode": "1993AJ....106.1885E",
+    "title": "The low mass Hyads and the evaporation of clusters."
+   },
+   {
+    "bibcode": "1993ApJ...402..643K",
+    "title": "M dwarf spectra from O.6 to 1.5 microns: a spectral sequence, model atmosphere fitting and the temperature scale."
+   },
+   {
+    "bibcode": "1993ApJ...403L..47D",
+    "title": "The spectroscopic properties of extreme M dwarfs in the 2 micron region."
+   },
+   {
+    "bibcode": "1993ApJ...404L..17M",
+    "title": "A spectroscopic test for substellar objects."
+   },
+   {
+    "bibcode": "1993ApJ...405L..33L",
+    "title": "Discovery of remarkably intense radio emission from a young and rapidly rotating dMe star."
+   },
+   {
+    "bibcode": "1993ApJ...406..701K",
+    "title": "The unique spectrum of the brown dwarf candidate GD 165B and comparison of other low-luminosity objects."
+   },
+   {
+    "bibcode": "1993ApJ...408..305L",
+    "title": "A catalog of stellar Lyman-alpha fluxes."
+   },
+   {
+    "bibcode": "1993ApJ...410..387F",
+    "title": "Stellar coronae at the end of the main sequence : a ROSAT survey of the late M dwarfs."
+   },
+   {
+    "bibcode": "1993ApJ...415..236G",
+    "title": "A tight correlation between radio and X-ray luminosities of M dwarfs."
+   },
+   {
+    "bibcode": "1993ApJ...419L..81S",
+    "title": "Simultaneous optical and ROSAT soft X-ray observations of impulsive bursts on the flare star UV Ceti."
+   },
+   {
+    "bibcode": "1993MNRAS.260...77P",
+    "title": "The ROSAT Wide Field Camera all-sky survey of extreme-ultraviolet sources. I. The bright source catalogue."
+   },
+   {
+    "bibcode": "1993MNRAS.262..545K",
+    "title": "The distribution of low-mass stars in the Galactic disc."
+   },
+   {
+    "bibcode": "1993MNRAS.265..231S",
+    "title": "Microwave radio emission from the red dwarf star YZ CMi."
+   },
+   {
+    "bibcode": "1993PASP..105..387S",
+    "title": "An optical atlas of ROSAT wide field camara EUV sources."
+   },
+   {
+    "bibcode": "1993PASP..105..821S",
+    "title": "Optical photometry of the emission-line M star PC 0025+0447."
+   },
+   {
+    "bibcode": "1993Afz....36..277M",
+    "title": "Flare stars and the evolution of red dwarf stars."
+   },
+   {
+    "bibcode": "1993Ap&SS.208..217M",
+    "title": "Long-term behaviour of three well-known flare stars of the UV Ceti type."
+   },
+   {
+    "bibcode": "1993Ap&SS.209..237M",
+    "title": "Short-term variations of some UV-Ceti type flare stars."
+   },
+   {
+    "bibcode": "1993BICDS..42...27M",
+    "title": "Catalogue of astrophysical parameters of binary systems."
+   },
+   {
+    "bibcode": "1993BAAS...25Q1475H",
+    "title": "Impulsive soft X-ray bursts on the flare star UV Ceti."
+   },
+   {
+    "bibcode": "1993IrAJ...21...83A",
+    "title": "Tuned solar and stellar oscillations ?"
+   },
+   {
+    "bibcode": "1993IrAJ...21..138D",
+    "title": "Armagh Observatory in 1991/92."
+   },
+   {
+    "bibcode": "1994A&A...281..161A",
+    "title": "Radio emission from stars: a survey at 250 GHz"
+   },
+   {
+    "bibcode": "1994A&A...288..219A",
+    "title": "High sensitivity dynamic spectral search for flare star radio bursts."
+   },
+   {
+    "bibcode": "1994A&A...289..185H",
+    "title": "Observation and modelling of main sequence star chromospheres II. Modelling of the AU Mic (dM2.5e) hydrogen spectrum."
+   },
+   {
+    "bibcode": "1994AJ....107..751M",
+    "title": "Extreme ultraviolet Explorer bright source list."
+   },
+   {
+    "bibcode": "1994AJ....107.1135W",
+    "title": "Long term variability in dwarf M stars."
+   },
+   {
+    "bibcode": "1994AJ....108.1437H",
+    "title": "The solar neighborhood. I. Standard spectral types (K5-M8) for northern dwarfs within eight parsecs."
+   },
+   {
+    "bibcode": "1994ApJ...422..293W",
+    "title": "Radio constraints on coronal models for dMe stars."
+   },
+   {
+    "bibcode": "1994ApJS...90..735S",
+    "title": "ROSAT observations of stellar flares."
+   },
+   {
+    "bibcode": "1994ApJS...90..753L",
+    "title": "Radio evidence for nonthermal particle acceleration on stars of late spectral type."
+   },
+   {
+    "bibcode": "1994ApJS...93..287W",
+    "title": "A volume-limited ROSAT survey of extreme ultraviolet emission from all nondegenerate stars within 10 parsecs."
+   },
+   {
+    "bibcode": "1994ApJS...94..749K",
+    "title": "The luminosity function at the end of the main sequence: results of a deep, large-area, CCD survey for cool dwarfs."
+   },
+   {
+    "bibcode": "1994MNRAS.267..840H",
+    "title": "ROSAT EUV luminosity functions of nearby late-type stars."
+   },
+   {
+    "bibcode": "1994Icar..109..382G",
+    "title": "Light echo detection of circumstellar disks around flaring stars."
+   },
+   {
+    "bibcode": "1994IBVS.4048....1P",
+    "title": "Optical spectroscopy of a flare on Proxima Centauri."
+   },
+   {
+    "bibcode": "1994IrAJ...21..263A",
+    "title": "Photometric oscillations and instrumental characteristics. I. Spurious signals during photometric monitoring."
+   },
+   {
+    "bibcode": "1994IrAJ...21..277A",
+    "title": "Photometric oscillations and instrumental characteristics. III. K-band cumulative periodogram montages and 4.5 second oscillations in UV Cet."
+   },
+   {
+    "bibcode": "1994IzKry..91....5G",
+    "title": "Some problems of the solar-stellar physics."
+   },
+   {
+    "bibcode": "1994KFNT...10f...3Z",
+    "title": "On the problems of physics of solar and stellar flares."
+   },
+   {
+    "bibcode": "1994KFNT...10a..32Z",
+    "title": "Observations of short-lived flare activity of EV Lacertae."
+   },
+   {
+    "bibcode": "1994KFNT...10b..68Z",
+    "title": "The masses of the nearest stars."
+   },
+   {
+    "bibcode": "1994QJRAS..35....1M",
+    "title": "The close approach of stars in the solar neighbourhood."
+   },
+   {
+    "bibcode": "1994IAUCo.151...55M",
+    "title": "The red dwarf star population in the Galaxy."
+   },
+   {
+    "bibcode": "1994IAUCo.151...57P",
+    "title": "Kinematics and ages of UV Ceti stars."
+   },
+   {
+    "bibcode": "1994IAUCo.151...61S",
+    "title": "Flare activity among nearby stars."
+   },
+   {
+    "bibcode": "1994IAUCo.151...89S",
+    "title": "Multifrequency analysis of a UV Ceti flare on 1991 December 31."
+   },
+   {
+    "bibcode": "1994IAUCo.151...91G",
+    "title": "A large amplitude flaring dMe star in the 1978 October 6B gamma-ray burst error box."
+   },
+   {
+    "bibcode": "1994IAUCo.151..115S",
+    "title": "Monitoring of flare stars at Nainital Observatory."
+   },
+   {
+    "bibcode": "1994IAUCo.151..148P",
+    "title": "Flares in late-type stars : X-ray."
+   },
+   {
+    "bibcode": "1995A&A...294..177G",
+    "title": "A large amplitude flaring dMe star in the 1978 October 6B {gamma}-ray burst error box."
+   },
+   {
+    "bibcode": "1995A&A...295..123S",
+    "title": "Radio sources in the vicinity of flare stars."
+   },
+   {
+    "bibcode": "1995A&A...299..739S",
+    "title": "Multifrequency observations of a flare on UV Ceti."
+   },
+   {
+    "bibcode": "1995A&AS..109..177W",
+    "title": "Radio continuum emission from stars: a catalogue update."
+   },
+   {
+    "bibcode": "1995A&AS..111..259B",
+    "title": "The long-term variability in active red dwarfs."
+   },
+   {
+    "bibcode": "1995A&AS..114..269D",
+    "title": "Vitesses radiales. Catalogue WEB: Wilson Evans Batten. Radial velocities: The Wilson-Evans-Batten catalogue."
+   },
+   {
+    "bibcode": "1995A&AS..114..465K",
+    "title": "A ROSAT XUV pointed phase source catalogue."
+   },
+   {
+    "bibcode": "1995AJ....110.1248G",
+    "title": "Low-mass binaries in the Hyades."
+   },
+   {
+    "bibcode": "1995AJ....110.1838R",
+    "title": "The Palomar/MSU nearby-star spectroscopic survey. I. The northern M dwarfs-band strengths and kinematics."
+   },
+   {
+    "bibcode": "1995ApJ...438..350W",
+    "title": "Determination of plasma temperatures and luminosities using multiple extreme-ultraviolet and X-ray filters."
+   },
+   {
+    "bibcode": "1995ApJ...444..350M",
+    "title": "Coronal heating in flare stars: resonant MHD absorption?"
+   },
+   {
+    "bibcode": "1995ApJ...446..267L",
+    "title": "A search for stellar flares in gamma-ray bursts observed by BATSE and Ulysses."
+   },
+   {
+    "bibcode": "1995ApJ...450..392S",
+    "title": "The X-ray view of the low-mass stars in the solar neighborhood."
+   },
+   {
+    "bibcode": "1995ApJ...450..401F",
+    "title": "Correlations of coronal X-ray emission with activity, mass, and age of the nearby K and M dwarfs."
+   },
+   {
+    "bibcode": "1995MNRAS.272..630S",
+    "title": "Optical spectroscopy of low-mass stars and brown dwarfs in the Pleiades."
+   },
+   {
+    "bibcode": "1995MNRAS.274.1165P",
+    "title": "The ROSAT Wide Field Camera all-sky survey of extreme-ultraviolet sources - II. The 2RE Source Catalogue."
+   },
+   {
+    "bibcode": "1995MNRAS.277..423P",
+    "title": "U-band flares and sympathetic flaring on Gl 65."
+   },
+   {
+    "bibcode": "1995Ast....23l..46C",
+    "title": "Epsilon Eridani : the once and future sun."
+   },
+   {
+    "bibcode": "1995Ap.....38..206P",
+    "title": "Determination of the age of stellar aggregates and flare stars of the galactic field."
+   },
+   {
+    "bibcode": "1995Ap.....38..276M",
+    "title": "Optical observations of flare stars in the Galaxy."
+   },
+   {
+    "bibcode": "1995ExA.....5....9S",
+    "title": "IBVS and the long-term monitoring of behaviour of variable stars."
+   },
+   {
+    "bibcode": "1995S&W....34..268W",
+    "title": "Zur Entdeckungsgeschichte der Flare-Sterne."
+   },
+   {
+    "bibcode": "1996A&A...310..908V",
+    "title": "Flare energetics: analysis of a large flare on YZ Canis Minoris observed simultaneously in the ultraviolet, optical and radio."
+   },
+   {
+    "bibcode": "1996AJ....111..466E",
+    "title": "Distribution and correlation of age, abundance, and motion of lower main sequence stars."
+   },
+   {
+    "bibcode": "1996AJ....111.1615E",
+    "title": "The stellar content of star stream I."
+   },
+   {
+    "bibcode": "1996AJ....112.1188B",
+    "title": "Additional emission-line candidates from the HK survey."
+   },
+   {
+    "bibcode": "1996AJ....112.2238S",
+    "title": "The solar neighborhood. III. A near-infrared search for widely separated low-mass binaries."
+   },
+   {
+    "bibcode": "1996AJ....112.2300W",
+    "title": "Photometry of stars with large proper motion."
+   },
+   {
+    "bibcode": "1996AJ....112.2799H",
+    "title": "The Palomar/MSU nearby star spectroscopic survey. II. The southern M dwarfs and investigations of magnetic activity."
+   },
+   {
+    "bibcode": "1996ApJ...460..976L",
+    "title": "The radio properties of the dMe flare star proxima Centauri."
+   },
+   {
+    "bibcode": "1996ApJ...469..706M",
+    "title": "Spectroscopy of new substellar candidates in the Pleiades: toward a spectral sequence for young brown dwarfs."
+   },
+   {
+    "bibcode": "1996ApJ...471.1002G",
+    "title": "The Neupert effect in active stellar coronae: chromospheric evaporation and coronal heating in the dMe flare star binary UV Ceti."
+   },
+   {
+    "bibcode": "1996ApJS..102..129B",
+    "title": "The second Extreme Ultraviolet Explorer source catalog."
+   },
+   {
+    "bibcode": "1996ApJS..104..117L",
+    "title": "Infrared spectra of low-mass stars: toward a temperature scale for red dwarfs."
+   },
+   {
+    "bibcode": "1996MNRAS.278..565M",
+    "title": "A detached white dwarf/M dwarf binary with an orbital period of 2.47 h."
+   },
+   {
+    "bibcode": "1996PASP..108..113H",
+    "title": "Advances in solar-stellar astrophysics."
+   },
+   {
+    "bibcode": "1996PASP..108..510S",
+    "title": "Searching for faint companions to nearby stars with the Hubble Space Telescope."
+   },
+   {
+    "bibcode": "1996BAAS...28Q.920S",
+    "title": "Hubble Space Telescope FGS transfer function observations of L726-8."
+   },
+   {
+    "bibcode": "1996IBVS.4321....1D",
+    "title": "Accurate positions of variable stars near the South Galactic Pole."
+   },
+   {
+    "bibcode": "1996IBVS.4322....1D",
+    "title": "Accurate positions of suspected variable stars near the South Galactic Pole."
+   },
+   {
+    "bibcode": "1996IrAJ...23..171A",
+    "title": "K-band observations of the flare star UV Cet."
+   },
+   {
+    "bibcode": "1996IzKry..93..111B",
+    "title": "Search for long-term variations of dKe-dMe stars."
+   },
+   {
+    "bibcode": "1996P&SS...44..501A",
+    "title": "Comparison of the observational data on flare stars, solar and planetary radio emissions."
+   },
+   {
+    "bibcode": "1996S&T....92d..32R",
+    "title": "Our nearest celestial neighbors."
+   },
+   {
+    "bibcode": "1997A&A...318..835D",
+    "title": "The intrinsic Ly {alpha} to H {alpha} ratio in M dwarf stars."
+   },
+   {
+    "bibcode": "1997A&A...325..159L",
+    "title": "A search for companions to nearby southern M dwarfs with near-infrared speckle interferometry."
+   },
+   {
+    "bibcode": "1997A&AS..124..437R",
+    "title": "Astrometric positions of stars with high proper motions in the Southern Hemisphere."
+   },
+   {
+    "bibcode": "1997A&AS..125..511A",
+    "title": "Radio burst statistics for M dwarf flare stars."
+   },
+   {
+    "bibcode": "1997AJ....113.2246R",
+    "title": "Low-mass binaries and the stellar luminosity function."
+   },
+   {
+    "bibcode": "1997AJ....114..388H",
+    "title": "The solar neighborhood. IV. Discovery of the twentieth nearest star system."
+   },
+   {
+    "bibcode": "1997ApJS..108..545L",
+    "title": "An all-sky catalog of faint extreme ultraviolet sources."
+   },
+   {
+    "bibcode": "1997MNRAS.284..507T",
+    "title": "Lithium detection in a field brown dwarf candidate."
+   },
+   {
+    "bibcode": "1997MNRAS.285..759T",
+    "title": "EUV activity in late-type stars during the ROSAT WFC All-Sky Survey - I. Techniques and initial results."
+   },
+   {
+    "bibcode": "1997MNRAS.288..411K",
+    "title": "EUV activity in late-type stars during the ROSAT WFC All-Sky Survey. II. Comparisons with other observations."
+   },
+   {
+    "bibcode": "1997PASP..109..998S",
+    "title": "An optical atlas of extreme ultraviolet explorer (EUVE) sources."
+   },
+   {
+    "bibcode": "1997Ap.....40..125M",
+    "title": "Spectroscopic observations of red dwarfs. III. Observations of red stars in the solar neighborhood."
+   },
+   {
+    "bibcode": "1997ExA.....7..413B",
+    "title": "The investigation of optical variability on time scales of 10^-7^ - 10^2^ s : hardware, software, results."
+   },
+   {
+    "bibcode": "1997VA.....41..203I",
+    "title": "Radio-wave diagnostics of interstellar flares in binary systems."
+   },
+   {
+    "bibcode": "1997BSAO...44...43B",
+    "title": "Investigation of relativistic and fast variable objects with high time resolution."
+   },
+   {
+    "bibcode": "1998A&A...331..596B",
+    "title": "First VLBI images of a main-sequence star."
+   },
+   {
+    "bibcode": "1998A&A...335..467T",
+    "title": "Identification of soft high galactic latitude RASS X-ray sources. I. A complete count-rate limited sample."
+   },
+   {
+    "bibcode": "1998AJ....116..284E",
+    "title": "The age range of Hyades stars."
+   },
+   {
+    "bibcode": "1998ApJ...509..836L",
+    "title": "Infrared colors at the stellar/substellar boundary."
+   },
+   {
+    "bibcode": "1998ApJS..119..121L",
+    "title": "Photometric separation of stellar properties using SDSS Filters."
+   },
+   {
+    "bibcode": "1998PASP..110...31S",
+    "title": "Hubble Space Telescope/Faint Object Spectrograph imaging of Wolf 424 AB : is this binary a double brown dwarf?"
+   },
+   {
+    "bibcode": "1998PASP..110..425C",
+    "title": "Separate spectra of the components of the low-mass binaries Ross 614A,B and L722-22A,B."
+   },
+   {
+    "bibcode": "1998RMxAA..34...37A",
+    "title": "The Galactic orbits of nearby UV Ceti stars."
+   },
+   {
+    "bibcode": "1998ARep...42..793G",
+    "title": "Determination of empirical mass-luminosity and mass-radius relations for main-sequence stars that are the components of eclipsing binary systems."
+   },
+   {
+    "bibcode": "1999A&A...348..524B",
+    "title": "Barnes-Evans relations for late-type giants and dwarfs."
+   },
+   {
+    "bibcode": "1999A&A...348.1040D",
+    "title": "Astrometric radial velocities. I. Non-spectroscopic methods for measuring stellar radial velocity."
+   },
+   {
+    "bibcode": "1999A&A...349..475S",
+    "title": "Radio counterparts to extreme X-ray YSO's."
+   },
+   {
+    "bibcode": "1999A&AS..135..319H",
+    "title": "The ROSAT all-sky survey catalogue of the nearby stars."
+   },
+   {
+    "bibcode": "1999A&AS..139..555G",
+    "title": "Catalogue and bibliography of the UV Cet-type flare stars and related objects in the solar vicinity."
+   },
+   {
+    "bibcode": "1999AJ....117..469W",
+    "title": "Spectroscopy of brown dwarf candidates in the {rho} Ophiuchi molecular core."
+   },
+   {
+    "bibcode": "1999AJ....117..562T",
+    "title": "The nearby low-mass visual binary Wolf 424."
+   },
+   {
+    "bibcode": "1999AJ....118.1005M",
+    "title": "The lithium test in young brown dwarf candidates."
+   },
+   {
+    "bibcode": "1999AJ....118.1369K",
+    "title": "A search for radio emission at the bottom of the main sequence and beyond."
+   },
+   {
+    "bibcode": "1999AJ....118.2466M",
+    "title": "Spectroscopic classification of late-M and L field dwarfs."
+   },
+   {
+    "bibcode": "1999ApJ...512..864H",
+    "title": "The optical mass-luminosity relation at the end of the main sequence (0.08-0.20 m_{sun}_)."
+   },
+   {
+    "bibcode": "1999ApJ...519..345L",
+    "title": "A 2MASS ultracool M dwarf observed in a spectacular flare."
+   },
+   {
+    "bibcode": "1999ApJ...524..961S",
+    "title": "Second-harmonic plasma radiation of magnetically trapped electrons in stellar coronae."
+   },
+   {
+    "bibcode": "1999ApJ...525..466L",
+    "title": "Young low-mass stars and brown dwarfs in IC 348."
+   },
+   {
+    "bibcode": "1999ApJ...527L.105R",
+    "title": "BRI 0021-0214: another surprise at the bottom of the main sequence."
+   },
+   {
+    "bibcode": "1999MNRAS.302...59M",
+    "title": "Utrecht echelle spectroscopy of a flare in VB 8."
+   },
+   {
+    "bibcode": "1999MNRAS.310.1023A",
+    "title": "Photometric modelling of starspots - I. A Barnes-Evans-like surface brightness-colour relation using (I_c_-K)."
+   },
+   {
+    "bibcode": "1999PASP..111..385T",
+    "title": "Astrophysics in 1998. (Invited review)."
+   },
+   {
+    "bibcode": "1999Ap.....42..419A",
+    "title": "Variation of the flare frequency of flare stars."
+   },
+   {
+    "bibcode": "1999ARep...43..521G",
+    "title": "Empirical L-M, R-M, and M-T_eff_ relations for main-sequence stars : components of close binary systems and low-mass stars."
+   },
+   {
+    "bibcode": "1999PABei..17..244S",
+    "title": "Progress in the X-ray observation and study of solar like stars."
+   },
+   {
+    "bibcode": "2000A&A...353..177M",
+    "title": "A systematic analysis of X-ray variability of dM stars."
+   },
+   {
+    "bibcode": "2000A&A...353..569P",
+    "title": "VLBI observations of two single dMe stars: spatial resolution and astrometry."
+   },
+   {
+    "bibcode": "2000A&A...353..691L",
+    "title": "The multiple system LHS 1070: a case study for the onset of dust formation in the atmospheres of very low mass stars."
+   },
+   {
+    "bibcode": "2000A&A...356..627M",
+    "title": "Twin X-ray flares and the active corona of AB Dor observed with BeppoSAX."
+   },
+   {
+    "bibcode": "2000A&A...359.1035L",
+    "title": "VLA observation of dMe stars."
+   },
+   {
+    "bibcode": "2000A&A...364..217D",
+    "title": "Accurate masses of very low mass stars. IV. Improved mass-luminosity relations."
+   },
+   {
+    "bibcode": "2000AJ....119..906S",
+    "title": "A search for faint companions to nearby stars using the wide field planetary camera 2."
+   },
+   {
+    "bibcode": "2000MNRAS.319.1136T",
+    "title": "Simultaneous ROSAT XRT and WFC observations of a sample of active dwarf stars."
+   },
+   {
+    "bibcode": "2000AN....321....1S",
+    "title": "The ROSAT Bright Survey: II. Catalogue of all high-galactic latitude RASS sources with PSPC countrate CR > 0.2/s."
+   },
+   {
+    "bibcode": "2001A&A...367..183L",
+    "title": "Dynamical mass determination for the very low mass stars LHS 1070 B and C."
+   },
+   {
+    "bibcode": "2001A&A...370.1000B",
+    "title": "Coherent cyclotron maser radiation from UV Ceti."
+   },
+   {
+    "bibcode": "2001A&A...375..670R",
+    "title": "The comparative accuracy of photographic observations of radio stars observed at the Engelhardt Astronomical Observatory."
+   },
+   {
+    "bibcode": "2001AJ....121.2189O",
+    "title": "A coronagraphic survey for companions of stars within 8 parsecs."
+   },
+   {
+    "bibcode": "2001ApJS..133....1U",
+    "title": "The ASCA medium sensitivity survey (the GIS catalog project): source catalog."
+   },
+   {
+    "bibcode": "2001MNRAS.328...45M",
+    "title": "Late-type members of young stellar kinematic groups - I. Single stars."
+   },
+   {
+    "bibcode": "2001PASP..113..814K",
+    "title": "Three newly discovered M-dwarf companions of solar neighborhood stars."
+   },
+   {
+    "bibcode": "2001ARep...45..482A",
+    "title": "The flux deficits in star spots."
+   },
+   {
+    "bibcode": "2002A&A...383..548G",
+    "title": "Observations and modelling of a large optical flare on AT Microscopii."
+   },
+   {
+    "bibcode": "2002A&A...396..203A",
+    "title": "Starspots and active regions on the emission red dwarf star LQ Hydrae."
+   },
+   {
+    "bibcode": "2002AJ....123.2002H",
+    "title": "The solar neighborhood. VI. New southern nearby stars identified by optical spectroscopy."
+   },
+   {
+    "bibcode": "2002AJ....123.2027H",
+    "title": "A near-infrared, wide-field, proper-motion search for brown dwarfs."
+   },
+   {
+    "bibcode": "2002AJ....123.2828C",
+    "title": "Meeting the cool neighbors. III. Spectroscopy of northern NLTT stars."
+   },
+   {
+    "bibcode": "2002ApJ...577..371G",
+    "title": "Detection of the Neupert effect in the corona of an RS Canum Venaticorum binary system by XMM-Newton and the Very Large Array."
+   },
+   {
+    "bibcode": "2002ApJS..141..187B",
+    "title": "Revised coordinates and proper motions of the stars in the Luyten half-second catalog."
+   },
+   {
+    "bibcode": "2002MNRAS.329..102K",
+    "title": "Can late-type active stars be explained by a dipole magnetic trap."
+   },
+   {
+    "bibcode": "2002ARA&A..40..217G",
+    "title": "Stellar radio astronomy : probing stellar atmospheres from protostars to giants."
+   },
+   {
+    "bibcode": "2002AN....323..265W",
+    "title": "New radio instrumentation for the study of sunspots and starspots."
+   },
+   {
+    "bibcode": "2002IBVS.5250....1P",
+    "title": "The flare activity of UV Ceti 1982-1984."
+   },
+   {
+    "bibcode": "2002KFNT...18f.535Z",
+    "title": "The radii and spectra of the nearest stars."
+   },
+   {
+    "bibcode": "2003A&A...397.1019H",
+    "title": "Dynamics of flares on late type dMe stars. IV. Constraints from spectrophotometry in the visible."
+   },
+   {
+    "bibcode": "2003A&A...399..983W",
+    "title": "Nearby young stars."
+   },
+   {
+    "bibcode": "2003A&A...403..247F",
+    "title": "A systematic study of X-ray variability in the ROSAT all-sky survey."
+   },
+   {
+    "bibcode": "2003A&A...403..613G",
+    "title": "VLA multifrequency observations of RS CVn binaries."
+   },
+   {
+    "bibcode": "2003ApJ...582.1011S",
+    "title": "Improved astrometry and photometry for the Luyten catalog. II. Faint stars and the revised catalog."
+   },
+   {
+    "bibcode": "2003ApJ...583..451M",
+    "title": "Rotation and activity in Mid-M to L field dwarfs."
+   },
+   {
+    "bibcode": "2003ApJ...589..983A",
+    "title": "Separating the X-ray emissions of UV Ceti A and B with Chandra."
+   },
+   {
+    "bibcode": "2003ApJ...596.1142C",
+    "title": "Searches for fast radio transients."
+   },
+   {
+    "bibcode": "2003ApJS..149..423T",
+    "title": "Target selection for SETI. II. Tycho-2 dwarfs, old open clusters, and the nearest 100 stars."
+   },
+   {
+    "bibcode": "2003MNRAS.341..129W",
+    "title": "Roche tomography of cataclysmic variables - II. Images of the secondary stars in AM Her, QQ Vul, IP Peg and HU Aqr."
+   },
+   {
+    "bibcode": "2003Ap.....46..506P",
+    "title": "T Tauri stars."
+   },
+   {
+    "bibcode": "2003SSRv..108..577F",
+    "title": "Stellar coronal astronomy."
+   },
+   {
+    "bibcode": "2004A&A...417..651S",
+    "title": "NEXXUS: A comprehensive ROSAT survey of coronal X-ray emission among nearby solar-like stars."
+   },
+   {
+    "bibcode": "2004A&A...417..701F",
+    "title": "Fe XIII coronal line emission in cool M dwarfs."
+   },
+   {
+    "bibcode": "2004AJ....128..463R",
+    "title": "Meeting the cool neighbors. VIII. A preliminary 20 parsec census from the NLTT catalogue."
+   },
+   {
+    "bibcode": "2004ApJ...602..363A",
+    "title": "Are coronae of magnetically active stars heated by flares? III. Analytical distribution of superposed flares."
+   },
+   {
+    "bibcode": "2004ApJ...604..741H",
+    "title": "An assessment of dynamical mass constraints on pre-main-sequence evolutionary tracks."
+   },
+   {
+    "bibcode": "2004PASP..116..554W",
+    "title": "Near-ultraviolet spectra of nine M dwarf stars, or a second effort to find optical coronal lines in M dwarf stars."
+   },
+   {
+    "bibcode": "2004A&ARv..12...71G",
+    "title": "X-ray astronomy of stellar coronae."
+   },
+   {
+    "bibcode": "2004NewAR..48.1459C",
+    "title": "The dynamic radio sky."
+   },
+   {
+    "bibcode": "2004NewAR..48.1551W",
+    "title": "The exploration of the unknown."
+   },
+   {
+    "bibcode": "2004PASA...21...23O",
+    "title": "From the solar corona to clusters of galaxies : the radio astronomy of Bruce Slee."
+   },
+   {
+    "bibcode": "2005A&A...431..679M",
+    "title": "Relationship between X-ray and ultraviolet emission of flares from dMe stars observed by XMM-Newton."
+   },
+   {
+    "bibcode": "2005A&A...436..241S",
+    "title": "Flares observed with XMM-Newton and the VLA."
+   },
+   {
+    "bibcode": "2005A&A...437..717G",
+    "title": "The influence of stellar wind conditions on the detectability of planetary radio emissions."
+   },
+   {
+    "bibcode": "2005A&A...439.1127S",
+    "title": "Three active M dwarfs within 8 pc: L 449-1, L 43-72, and LP 949-15."
+   },
+   {
+    "bibcode": "2005A&A...439.1137F",
+    "title": "PHOENIX model chromospheres of mid- to late-type M dwarfs."
+   },
+   {
+    "bibcode": "2005ApJ...621..398O",
+    "title": "From radio to X-ray: flares on the dMe flare star EV Lacertae."
+   },
+   {
+    "bibcode": "2005ApJ...624..463G",
+    "title": "A map of the Universe."
+   },
+   {
+    "bibcode": "2005ApJ...626..486B",
+    "title": "Quiescent radio emission from southern late-type M dwarfs and a spectacular radio flare from the M8 dwarf DENIS 1048-3956."
+   },
+   {
+    "bibcode": "2005MNRAS.358..105J",
+    "title": "Carbon monoxide in low-mass dwarf stars."
+   },
+   {
+    "bibcode": "2005AstL...31..612S",
+    "title": "Oscillations of optical emission from flare stars and coronal loop diagnostics."
+   },
+   {
+    "bibcode": "2006ApJ...644..484A",
+    "title": "Radiative hydrodynamic models of optical and ultraviolet emission from M dwarf flares."
+   },
+   {
+    "bibcode": "2006ApJ...648..614C",
+    "title": "A Spitzer infrared spectrograph spectral sequence of M, L, and T dwarfs."
+   },
+   {
+    "bibcode": "2006ApJS..164..173M",
+    "title": "A comparative study of flaring loops in active stars."
+   },
+   {
+    "bibcode": "2006MNRAS.368.1392P",
+    "title": "Flare variability in the close binary FL Vir."
+   },
+   {
+    "bibcode": "2006BAVSR..55...86S",
+    "title": "UV Ceti - Sterne."
+   },
+   {
+    "bibcode": "2006A&ARv..13..229T",
+    "title": "The electron-cyclotron maser for astrophysical application."
+   },
+   {
+    "bibcode": "2006A&A...458..921W",
+    "title": "GALEX high time-resolution ultraviolet observations of dMe flare events."
+   },
+   {
+    "bibcode": "2006ApJ...653..690H",
+    "title": "Rotational modulation of the radio emission from the M9 dwarf TVLM 513-46546: broadband coherent emission at the substellar boundary?"
+   },
+   {
+    "bibcode": "2006A&A...460L..35S",
+    "title": "Simultaneous optical and X-ray observations of a giant flare on the ultracool dwarf LP 412-31."
+   },
+   {
+    "bibcode": "2006A&A...460..783B",
+    "title": "Barnes-Evans relations for dwarfs with an application to the determination of distances to cataclysmic variables."
+   },
+   {
+    "bibcode": "2007PASP..119...67H",
+    "title": "Near-ultraviolet spectra of flares on YZ CMi."
+   },
+   {
+    "bibcode": "2007ApJ...657L..37N",
+    "title": "A 3 Jy radio burst at a high galactic latitude."
+   },
+   {
+    "bibcode": "2007A&A...464.1003F",
+    "title": "Simultaneous X-ray, radio, near-infrared, and optical monitoring of young  stellar objects in the Coronet cluster."
+   },
+   {
+    "bibcode": "2007A&A...465..235Z",
+    "title": "Fast colorimetry of the flare star EV Lacertae from UBVRI observations in  2004."
+   },
+   {
+    "bibcode": "1983SAAOC...7..106W",
+    "title": "A spectroscopic survey of 113 nearby red dwarf stars."
+   },
+   {
+    "bibcode": "2007ApJ...662.1245M",
+    "title": "Moderate-resolution Spitzer infrared spectrograph observations of M, L, and T dwarfs."
+   },
+   {
+    "bibcode": "2007A&A...468..221F",
+    "title": "Simultaneous XMM-Newton and VLT/UVES observations of the flare star CN  Leonis."
+   },
+   {
+    "bibcode": "2007MNRAS.377.1488H",
+    "title": "The coronal structure of AB Doradus determined from contemporaneous Doppler imaging and X-ray spectroscopy."
+   },
+   {
+    "bibcode": "2007A&A...472..257A",
+    "title": "Sporadic long-term variability in radio activity from a brown dwarf."
+   },
+   {
+    "bibcode": "2007ApJ...667..520C",
+    "title": "Southern very low mass stars and brown dwarfs in wide binary and multiple  systems."
+   },
+   {
+    "bibcode": "2007ApJ...667..527G",
+    "title": "Far-infrared properties of M dwarfs."
+   },
+   {
+    "bibcode": "2006CoKon.104..133J",
+    "title": "Flare star investigation - two decades of cooperative observational study in Budapest and Byurakan."
+   },
+   {
+    "bibcode": "2007ApJS..173..673W",
+    "title": "The detection of M dwarf UV flare events in the GALEX data archives."
+   },
+   {
+    "bibcode": "2008ApJ...673.1080B",
+    "title": "Simultaneous multiwavelength observations of magnetic activity in ultracool dwarfs. I. The complex behavior of the M8.5 dwarf TVLM  513-46546."
+   },
+   {
+    "bibcode": "2008ApJ...676..610W",
+    "title": "X-ray flaring on the dMe star, Ross 154."
+   },
+   {
+    "bibcode": "2006JAVSO..35..194S",
+    "title": "Flare Star Research: A New Field of Astronomy for Photometrists Observing  With CCD Cameras."
+   },
+   {
+    "bibcode": "2008MNRAS.387.1627P",
+    "title": "A study of X-ray flares - I. Active late-type dwarfs."
+   },
+   {
+    "bibcode": "2008A&A...487..293F",
+    "title": "Multiwavelength observations of a giant flare on CN Leonis. I. The  chromosphere as seen in the optical spectra."
+   },
+   {
+    "bibcode": "2008ApJ...684..644H",
+    "title": "Confirmation of the electron cyclotron maser instability as the dominant  source of radio emission from very low mass stars and brown dwarfs."
+   },
+   {
+    "bibcode": "2008A&A...489L..45R",
+    "title": "The moderate magnetic field of the flare star Proxima Centauri."
+   },
+   {
+    "bibcode": "2006Ap.....49..488M",
+    "title": "Spectral Study of the Flare Star EV Lac."
+   },
+   {
+    "bibcode": "2008ApJ...688..437G",
+    "title": "X-ray flares in Orion young stars. II. Flares, magnetospheres, and  protoplanetary disks."
+   },
+   {
+    "bibcode": "2009ApJ...696..870D",
+    "title": "First results from the Catalina real-time transient survey."
+   },
+   {
+    "bibcode": "2009ApJ...701.1922B",
+    "title": "Radio interferometric planet search. I. First constraints on planetary  companions for nearby, low-mass stars from radio astrometry."
+   },
+   {
+    "bibcode": "2009ApJ...702..759M",
+    "title": "Flares on a Bp star."
+   },
+   {
+    "bibcode": "2009ApJS..184..138H",
+    "title": "XID II: statistical cross-association of ROSAT bright source catalog  X-ray sources with 2MASS point source catalog near-infrared sources."
+   },
+   {
+    "bibcode": "2009ApJ...704..975J",
+    "title": "Rotational velocities for M dwarfs."
+   },
+   {
+    "bibcode": "2010ApJ...712L...5R",
+    "title": "Circularly polarized emission from the transient bursting radio source  GCRT J1745-3009."
+   },
+   {
+    "bibcode": "2010ApJ...714L..98K",
+    "title": "A white light megaflare on the dM4.5e star YZ CMi."
+   },
+   {
+    "bibcode": "2010MNRAS.403.1089P",
+    "title": "Target selection for the SUNS and DEBRIS surveys for debris discs in the  solar neighbourhood."
+   },
+   {
+    "bibcode": "2010ARep...54..367Z",
+    "title": "Plasma heating during the parametric excitation of acoustic waves in coronal magnetic loops."
+   },
+   {
+    "bibcode": "2010AJ....140..483D",
+    "title": "A new method for classifying flares of UV Ceti type stars: differences  between slow and fast flares."
+   },
+   {
+    "bibcode": "2010ApJ...721L.189S",
+    "title": "Was an outburst of Aquila X-1 a magnetic flare?"
+   },
+   {
+    "bibcode": "2010AstL...36..816B",
+    "title": "Stars outside the Hipparcos list closely encountering the Solar system."
+   },
+   {
+    "bibcode": "2010ApJS..191..301A",
+    "title": "The Spitzer atlas of stellar spectra (SASS)."
+   },
+   {
+    "bibcode": "2011A&A...525A..84A",
+    "title": "Identification of strong photometric activity in the components of LHS  1070."
+   },
+   {
+    "bibcode": "2011AJ....141...33D",
+    "title": "Saturation levels for white-light flares of flare stars: variation of  minimum flare duration for saturation."
+   },
+   {
+    "bibcode": "2010ARA&A..48..241B",
+    "title": "Physical process in magnetically driven flares on the Sun, stars, and young stellar objects."
+   },
+   {
+    "bibcode": "2011AJ....141..129H",
+    "title": "TGCat: the Chandra Transmission Grating Data Catalog and Archive."
+   },
+   {
+    "bibcode": "2005yCat.3244....0G",
+    "title": "Catalog of Stellar Rotational Velocities"
+   },
+   {
+    "bibcode": "2009Ap.....52..512K",
+    "title": "Starspot and flare activity of the dwarf system CM Dra."
+   },
+   {
+    "bibcode": "2011MNRAS.415.1105S",
+    "title": "Distance limits to intermediate- and high-velocity clouds."
+   },
+   {
+    "bibcode": "2011ApJ...741...27M",
+    "title": "Periodic radio emission from the M7 dwarf 2MASS J13142039+1320011:  implications for the magnetic field topology."
+   },
+   {
+    "bibcode": "2011MNRAS.418.1272J",
+    "title": "Effect of different stellar galactic environments on planetary discs --  I. The solar neighbourhood and the birth cloud of the Sun."
+   },
+   {
+    "bibcode": "2011ApJS..197...19K",
+    "title": "The first hundred brown dwarfs discovered by the Wide-field Infrared  Survey Explorer (WISE)."
+   },
+   {
+    "bibcode": "2011ApJ...743..141C",
+    "title": "A Spitzer IRAC imaging survey for T dwarf companions around M, L, and T dwarfs: observations, results, and Monte Carlo population analyses."
+   },
+   {
+    "bibcode": "2011BASI...39..387M",
+    "title": "Discovery, classification, and scientific exploration of transient events from the Catalina Real-time Transient Survey."
+   },
+   {
+    "bibcode": "2012A&A...538A.143K",
+    "title": "Stellar population models in the UV. I. Characterisation of the new  generation stellar library."
+   },
+   {
+    "bibcode": "2012NewA...17..399D",
+    "title": "The statistical analyses of flares detected in B band photometry of UV Ceti type stars."
+   },
+   {
+    "bibcode": "2012ApJ...753..156K",
+    "title": "Further defining spectral type \"Y\" and exploring the low-mass end of the  field brown dwarf mass function."
+   },
+   {
+    "bibcode": "2010Ap.....53..544A",
+    "title": "Cyclic flaring activity of flare stars."
+   },
+   {
+    "bibcode": "2011Ap.....54..469M",
+    "title": "Variation in the flare activity of the star UV Ceti."
+   },
+   {
+    "bibcode": "2012AJ....144...64D",
+    "title": "The solar neighborhood. XXVIII. The multiplicity fraction of nearby stars from 5 to 70 AU and the brown dwarf desert around M dwarfs."
+   },
+   {
+    "bibcode": "2012ApJS..201...19D",
+    "title": "The Hawaii infrared parallax program. I. Ultracool binaries and the L/T  transition."
+   },
+   {
+    "bibcode": "2012PASJ...64...82D",
+    "title": "Statistical analyses of white-light flares: Two main results about flare behaviour."
+   },
+   {
+    "bibcode": "2012A&A...546A..69M",
+    "title": "Dynamical masses of a selected sample of orbital binaries."
+   },
+   {
+    "bibcode": "2012A&A...548A.105A",
+    "title": "The nearby population of M-dwarfs with WISE: a search for warm  circumstellar dust."
+   },
+   {
+    "bibcode": "2013PASP..125..313M",
+    "title": "Radio stars and their lives in the Galaxy. (Conference summary)."
+   },
+   {
+    "bibcode": "2013ApJ...768...93F",
+    "title": "Disk-related bursts and fades in young stars."
+   },
+   {
+    "bibcode": "2013MNRAS.431.2063S",
+    "title": "The UV and X-ray activity of the M dwarfs within 10pc of the Sun."
+   },
+   {
+    "bibcode": "2013ApJS..207...15K",
+    "title": "Time-resolved properties and global trends in dMe flares from  simultaneous photometry and spectra."
+   },
+   {
+    "bibcode": "2013AJ....146...99C",
+    "title": "The solar neighborhood XXIX: the habitable real estate of our nearest  stellar neighbors."
+   },
+   {
+    "bibcode": "2013MNRAS.434.2451R",
+    "title": "Short-duration high-amplitude flares detected on the M dwarf star KIC  5474065."
+   },
+   {
+    "bibcode": "2013ApJ...779..172G",
+    "title": "Kepler monitoring of an L dwarf I. The photometric period and white light flares."
+   },
+   {
+    "bibcode": "2013A&A...560A..69L",
+    "title": "A multi-wavelength view of AB Doradus outer atmosphere. Simultaneous X-ray and optical spectroscopy at high cadence."
+   },
+   {
+    "bibcode": "2014ARep...58...98G",
+    "title": "The initial fast decay phase of stellar flares."
+   },
+   {
+    "bibcode": "2014ApJ...785....9W",
+    "title": "Trends in ultracool dwarf magnetism. I. X-ray suppression and radio enhancement."
+   },
+   {
+    "bibcode": "2014AJ....148...64S",
+    "title": "HAZMAT. I. The evolution of Far-UV and Near-UV emission from early M stars."
+   },
+   {
+    "bibcode": "2014A&A...570A..95W",
+    "title": "Masses and activity of AB Doradus B a/b. The age of the AB Dor quadruple system revisited."
+   },
+   {
+    "bibcode": "2015MNRAS.446.3687P",
+    "title": "The variability time-scales and brightness temperatures of radio flares from stars to supermassive black holes."
+   },
+   {
+    "bibcode": "2015MNRAS.446.4205B",
+    "title": "A multiwavelength study of the M dwarf binary YY Geminorum."
+   },
+   {
+    "bibcode": "2014AcA....64..359T",
+    "title": "Catalogue of binary UV Ceti type flare stars."
+   },
+   {
+    "bibcode": "2015RAA....15..617L",
+    "title": "Extending the correlation of L_R_ - L_X_ to gamma-ray bursts."
+   },
+   {
+    "bibcode": "2015AJ....149..166H",
+    "title": "HATS-6b: a warm Saturn transiting an early M dwarf star, and a set of empirical relations for characterizing K and M dwarf planet hosts."
+   },
+   {
+    "bibcode": "2012ATel.4586....1M",
+    "title": "An unusual fast transient detected by CRTS."
+   },
+   {
+    "bibcode": "2012ATel.4671....1N",
+    "title": "MAXI/GSC detection of a large X-ray flare from the active star binary UV Ceti."
+   },
+   {
+    "bibcode": "2015MNRAS.452.4195C",
+    "title": "Early optical follow-up of the nearby active star DG CVn during its 2014 superflare."
+   },
+   {
+    "bibcode": "2014ATel.6026....1I",
+    "title": "A big flare from UV Ceti."
+   },
+   {
+    "bibcode": "2016A&A...589A..48S",
+    "title": "Optical microflaring on the nearby flare star binary UV Ceti."
+   },
+   {
+    "bibcode": "2016A&A...589A.112C",
+    "title": "Pseudomagnitudes and differential surface brightness: Application to the apparent diameter of stars."
+   },
+   {
+    "bibcode": "2016MNRAS.458.1041V",
+    "title": "Flash ionization signature in coherent cyclotron emission from brown dwarfs."
+   },
+   {
+    "bibcode": "2016AstL...42..260P",
+    "title": "On possible circumbinary configurations of the planetary systems of {alpha} Centauri and EZ Aquarii."
+   },
+   {
+    "bibcode": "2016PASJ...68S...1N",
+    "title": "The MAXI/GSC Nova-Alert System and results of its first 68 months."
+   },
+   {
+    "bibcode": "2016A&A...590A..11V",
+    "title": "Investigating magnetic activity in very stable stellar magnetic fields. Long-term photometric and spectroscopic study of the fully convective M4 dwarf V374 Pegasi ."
+   },
+   {
+    "bibcode": "2016ApJ...826..171G",
+    "title": "The correlation between metallicity and debris disk mass."
+   },
+   {
+    "bibcode": "2016A&A...593A.127K",
+    "title": "The red dwarf pair GJ65 AB: inflated, spinning twins of Proxima Fundamental parameters from PIONIER, NACO, and UVES observations."
+   },
+   {
+    "bibcode": "2016ApJ...829L..31D",
+    "title": "MOST observations of our nearest neighbor: flares on Proxima Centauri."
+   },
+   {
+    "bibcode": "2016ApJ...830...24C",
+    "title": "The search for signatures of transient mass loss in active stars."
+   },
+   {
+    "bibcode": "2016AJ....152..141B",
+    "title": "The solar neighborhood. XXXVII: the mass-luminosity relation for main-sequence M dwarfs."
+   },
+   {
+    "bibcode": "2017ApJ...835L...4K",
+    "title": "The global and small-scale magnetic fields of fully convective, rapidly spinning M dwarf pair GJ65 A and B."
+   },
+   {
+    "bibcode": "2016A&A...596A..49B",
+    "title": "A database of synthetic photometry in the GALEX ultraviolet bands for the stellar sources observed with the International Ultraviolet Explorer."
+   },
+   {
+    "bibcode": "2017MNRAS.465.1995M",
+    "title": "Modelling the environment around five ultracool dwarfs via the radio domain."
+   },
+   {
+    "bibcode": "2017ApJ...836L..30L",
+    "title": "154 MHz detection of faint, polarized flares from UV Ceti."
+   },
+   {
+    "bibcode": "2017A&A...602A..94G",
+    "title": "First light for GRAVITY: Phase referencing optical interferometry for the Very Large Telescope Interferometer."
+   },
+   {
+    "bibcode": "2017MNRAS.466.4211G",
+    "title": "Physical properties and astrometry of radio-emitting brown dwarf TVLM513-46546 revisited."
+   },
+   {
+    "bibcode": "2017ApJ...843..115R",
+    "title": "Is WISEP j060738.65+242953.4 really a magnetically active, pole-on L dwarf?"
+   },
+   {
+    "bibcode": "2017ApJ...845...33G",
+    "title": "K2 ultracool dwarfs survey. II. The white light flare rate of young brown dwarfs."
+   },
+   {
+    "bibcode": "2017AJ....154...67M",
+    "title": "HAZMAT. II. Ultraviolet variability of low-mass stars in the GALEX archive."
+   },
+   {
+    "bibcode": "2017ApJ...845..149M",
+    "title": "Kepler data on KIC 7341653: a nearby M dwarf with monster flares and a phase-coherent variability."
+   },
+   {
+    "bibcode": "2017AJ....154..115H",
+    "title": "Optimized trajectories to the nearest stars using lightweight high-velocity photon sails."
+   },
+   {
+    "bibcode": "2017MNRAS.471..811B",
+    "title": "Surprisingly different star-spot distributions on the near equal-mass equal-rotation-rate stars in the M dwarf binary GJ 65 AB."
+   },
+   {
+    "bibcode": "2017ApJ...850...58M",
+    "title": "Magnetic modeling of inflated low-mass stars using interior fields no larger than ~10 kG."
+   },
+   {
+    "bibcode": "2018ApJ...854...14M",
+    "title": "Frequencies of flare occurrence: interaction between convection and coronal loops."
+   },
+   {
+    "bibcode": "2018A&A...610L..11D",
+    "title": "Investigating the dynamical history of the interstellar object 'Oumuamua."
+   },
+   {
+    "bibcode": "2018MNRAS.475.1960F",
+    "title": "SPIRou Input Catalogue: global properties of 440 M dwarfs observed with ESPaDOnS at CFHT."
+   },
+   {
+    "bibcode": "2018AJ....155..215M",
+    "title": "Speckle interferometry of red dwarf stars."
+   },
+   {
+    "bibcode": "2017AcA....67..345K",
+    "title": "Cool Spot and Flare Activities of a RS CVn Binary KIC 7885570."
+   },
+   {
+    "bibcode": "2018ApJ...858...55P",
+    "title": "K2 ultracool dwarfs survey. III. White light flares are ubiquitous in M6-l0 dwarfs."
+   },
+   {
+    "bibcode": "2018ApJ...860...15M",
+    "title": "The magnetic binary GJ 65: a test of magnetic diffusivity effects."
+   },
+   {
+    "bibcode": "2018MNRAS.478.2835L",
+    "title": "An all-sky survey of circular polarization at 200 MHz."
+   },
+   {
+    "bibcode": "2017NatAs...1..184S",
+    "title": "Strong dipole magnetic fields in fast rotating fully convective stars."
+   },
+   {
+    "bibcode": "2018AJ....156..178Z",
+    "title": "The near-infrared transmission spectra of TRAPPIST-1 planets b, c, d, e, f, and g and stellar contamination in multi-epoch transit spectra."
+   },
+   {
+    "bibcode": "2018AJ....156..200M",
+    "title": "A framework for planet detection with faint light-curve echoes."
+   },
+   {
+    "bibcode": "1995yCat.1098....0L",
+    "title": "New Luyten Catalogue of stars with proper motions larger than two tenths of an arcsecond (NLTT)."
+   },
+   {
+    "bibcode": "2018ApJ...869..149M",
+    "title": "Magnetic fields on the flare star Trappist-1: consequences for radius inflation and planetary habitability."
+   },
+   {
+    "bibcode": "2019ApJ...871..214V",
+    "title": "Ultra-wideband detection of 22 coherent radio bursts on M dwarfs."
+   },
+   {
+    "bibcode": "2019PASP..131a6001M",
+    "title": "Radio Stars: from kHz to THz."
+   },
+   {
+    "bibcode": "2019MNRAS.484.2514C",
+    "title": "Eclipsing binary search in the QUEST low-latitude catalogue and the ELLISA light-curve simulator."
+   },
+   {
+    "bibcode": "2019ApJ...873....1M",
+    "title": "Origin of radio-quiet coronal mass ejections in flare stars."
+   },
+   {
+    "bibcode": "2019ApJ...873...69K",
+    "title": "Magnetic field of the eclipsing M-dwarf binary YY Gem."
+   },
+   {
+    "bibcode": "2019ApJ...876..127Z",
+    "title": "Complex rotational modulation of rapidly rotating M stars observed with TESS."
+   },
+   {
+    "bibcode": "2019ApJ...877..105M",
+    "title": "The Stellar CME-Flare relation: what do historic observations reveal?"
+   },
+   {
+    "bibcode": "2019AJ....157..216W",
+    "title": "The solar neighborhood. XLV. The stellar multiplicity rate of M dwarfs within 25 pc."
+   },
+   {
+    "bibcode": "2019A&A...626A..86S",
+    "title": "Magnetic fields in M dwarfs from the CARMENES survey."
+   },
+   {
+    "bibcode": "2019AJ....158...31T",
+    "title": "Multi-epoch low-radio-frequency surveys of the Kepler K2 mission campaign fields 3, 4, and 5 with the Murchison Widefield Array."
+   },
+   {
+    "bibcode": "2019ApJ...879...94F",
+    "title": "Evolutionary models for ultracool dwarfs."
+   },
+   {
+    "bibcode": "2019AJ....158...56H",
+    "title": "The mass-activity relationships in M and K dwarfs. I. Stellar parameters of our sample of M and K dwarfs."
+   },
+   {
+    "bibcode": "2019MNRAS.488..559Z",
+    "title": "ASKAP detection of periodic and elliptically polarized radio pulses from UV Ceti."
+   },
+   {
+    "bibcode": "2019MNRAS.489..437D",
+    "title": "Probing the origin of stellar flares on M dwarfs using TESS data sectors 1-3."
+   },
+   {
+    "bibcode": "2019A&A...630A..96A",
+    "title": "Colour-dependent accurate modelling of dynamical parallaxes and masses of visual binaries. Application to the VB+SB2 systems with definitive orbits."
+   },
+   {
+    "bibcode": "2019MNRAS.489.4338N",
+    "title": "Soft X-ray heating as a mechanism of optical continuum generation in solar-type star superflares."
+   },
+   {
+    "bibcode": "2019MNRAS.490.4154S",
+    "title": "MOBSTER - III. HD 62658: a magnetic Bp star in an eclipsing binary with a non-magnetic 'identical twin'."
+   },
+   {
+    "bibcode": "2019ApJ...887..229R",
+    "title": "ROME (Radio Observations of Magnetized Exoplanets). II. HD 189733 does not accrete significant material from its exoplanet like a T Tauri star from a disk."
+   },
+   {
+    "bibcode": "2020A&A...633A.130Q",
+    "title": "Differences in radio emission from similar M dwarfs in the binary system Ross 867-8."
+   },
+   {
+    "bibcode": "2020MNRAS.491..560D",
+    "title": "MKT J170456.2-482100: the first transient discovered by MeerKAT."
+   },
+   {
+    "bibcode": "2020ApJS..247...11R",
+    "title": "Radial velocity photon limits for the dwarf stars of spectral classes F-M."
+   },
+   {
+    "bibcode": "2020MNRAS.494.2449D",
+    "title": "Constraining properties of neutron star merger outflows with radio observations."
+   },
+   {
+    "bibcode": "2020MNRAS.494.3342L",
+    "title": "Deriving stellar parameters from GALANTE photometry: bias and precision."
+   },
+   {
+    "bibcode": "2020MNRAS.494.4848D",
+    "title": "Observing flare stars below 100 MHz with the LWA."
+   },
+   {
+    "bibcode": "2020MNRAS.494.5751P",
+    "title": "K2 Ultracool Dwarfs Survey - VI. White light superflares observed on an L5 dwarf and flare rates of L dwarfs."
+   },
+   {
+    "bibcode": "2020MNRAS.495.4529D",
+    "title": "The flare cumulative frequencies of UV Ceti stars from different spectral types."
+   },
+   {
+    "bibcode": "2020AJ....160....7T",
+    "title": "Speckle interferometry at SOAR in 2019."
+   },
+   {
+    "bibcode": "2020A&A...641A..90C",
+    "title": "The milliarcsecond-scale radio structure of AB Doradus A."
+   },
+   {
+    "bibcode": "2020ApJ...902..115H",
+    "title": "EvryFlare. III. Temperature evolution and habitability impacts of dozens of superflares observed simultaneously by Evryscope and TESS."
+   },
+   {
+    "bibcode": "2021MNRAS.500.3898V",
+    "title": "On the mechanism of polarized metre-wave stellar emission."
+   },
+   {
+    "bibcode": "2021A&A...645A..18D",
+    "title": "Onboard catalogue of known X-ray sources for SVOM/ECLAIRs."
+   },
+   {
+    "bibcode": "2021A&A...645A..42I",
+    "title": "Flares in open clusters with K2. II. Pleiades, Hyades, Praesepe, Ruprecht 147, and M 67."
+   },
+   {
+    "bibcode": "2021MNRAS.501.3568C",
+    "title": "MEGARA-GTC stellar spectral library - II. MEGASTAR first release."
+   },
+   {
+    "bibcode": "2021RAA....21....7B",
+    "title": "Photometric and spectroscopic study of flares on Ross 15."
+   },
+   {
+    "bibcode": "2021ApJ...910...41A",
+    "title": "Self-organized criticality in stellar flares."
+   },
+   {
+    "bibcode": "2021A&A...648A..13C",
+    "title": "Low-frequency monitoring of flare star binary CR Draconis: long-term electron-cyclotron maser emission."
+   },
+   {
+    "bibcode": "2021A&A...648A.104D",
+    "title": "The LOFAR LBA Sky Survey. I. Survey description and preliminary data release."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2021A&A...649A..96J",
+    "title": "The active lives of stars: A complete description of the rotation and XUV evolution of F, G, K, and M dwarfs."
+   },
+   {
+    "bibcode": "2021MNRAS.504.3203S",
+    "title": "NGC 6611 601: a hot pre-main-sequence spectroscopic binary containing a centrifugal magnetosphere host star."
+   },
+   {
+    "bibcode": "2021RAA....21...92S",
+    "title": "Precision of the Chinese Space Station Telescope (CSST) stellar radial velocities."
+   },
+   {
+    "bibcode": "2021A&A...650A.201R",
+    "title": "The 10 parsec sample in the Gaia era."
+   },
+   {
+    "bibcode": "2021ApJ...915...37W",
+    "title": "New observational constraints on the winds of M dwarf stars."
+   },
+   {
+    "bibcode": "2021A&A...652A..31B",
+    "title": "Catalog of averaged magnetic phase curves of stars. Second edition."
+   },
+   {
+    "bibcode": "2021MNRAS.506.6160M",
+    "title": "eBASCS: Disentangling overlapping astronomical sources II, using spatial, spectral, and temporal information."
+   },
+   {
+    "bibcode": "2021A&A...653A.101F",
+    "title": "Detection of coherent low-frequency radio bursts from weak-line T Tauri stars."
+   },
+   {
+    "bibcode": "2021MNRAS.507.1723I",
+    "title": "Giant white-light flares on fully convective stars occur at high latitudes."
+   },
+   {
+    "bibcode": "2021A&A...655A..75S",
+    "title": "Brown dwarfs as ideal candidates for detecting UV aurora outside the Solar System: Hubble Space Telescope observations of 2MASS J1237+6526."
+   },
+   {
+    "bibcode": "2021A&A...655A.113M",
+    "title": "EMISSA (Exploring Millimeter Indicators of Solar-Stellar Activity). I. The initial millimeter-centimeter main-sequence star sample."
+   },
+   {
+    "bibcode": "2021ApJ...922..164M",
+    "title": "Mechanical energy deposition in cool star atmospheres: resonant coupling to coronal loops in M dwarfs."
+   },
+   {
+    "bibcode": "2022MNRAS.509.3247K",
+    "title": "AstroSat observations of long-duration X-ray superflares on active M-dwarf binary EQ Peg."
+   },
+   {
+    "bibcode": "2021ApJ...923..119G",
+    "title": "GTC/CanariCam deep mid-infrared imaging survey of northern stars within 5 pc."
+   },
+   {
+    "bibcode": "2022MNRAS.510.1083D",
+    "title": "The detection of radio emission from known X-ray flaring star EXO 040830-7134.7."
+   },
+   {
+    "bibcode": "2022A&A...657A...7K",
+    "title": "Stellar and substellar companions from Gaia EDR3. Proper-motion anomaly and resolved common proper-motion pairs."
+   },
+   {
+    "bibcode": "2022MNRAS.511.2755R",
+    "title": "The puzzling story of flare inactive ultra fast rotating M dwarfs. II. Searching for radial velocity variations."
+   },
+   {
+    "bibcode": "2022ApJ...928....8F",
+    "title": "New Time-resolved, Multi-band Flares in the GJ 65 System with gPhoton."
+   },
+   {
+    "bibcode": "2022PASJ...74..477K",
+    "title": "X-ray/H{alpha} scaling relationships in stellar flares."
+   },
+   {
+    "bibcode": "2022ApJ...925..125D",
+    "title": "Discovery of Eight \"Main-sequence Radio Pulse Emitters\" Using the GMRT: Clues to the Onset of Coherent Radio Emission in Hot Magnetic Stars."
+   },
+   {
+    "bibcode": "2022A&A...660A..65C",
+    "title": "Radio emission in a nearby, ultra-cool dwarf binary: A multifrequency study."
+   },
+   {
+    "bibcode": "2022MNRAS.513.3482A",
+    "title": "Serendipitous discovery of radio flaring behaviour from a nearby M dwarf with MeerKAT."
+   },
+   {
+    "bibcode": "2022MNRAS.513.5611F",
+    "title": "Influence of magnetic cycles on stellar prominences and their mass-loss rates."
+   },
+   {
+    "bibcode": "2022MNRAS.513.6058L",
+    "title": "Modeling Balmer line signatures of stellar CMEs."
+   },
+   {
+    "bibcode": "2022ApJ...934...33A",
+    "title": "The Fractality and Size Distributions of Astrophysical Self-Organized Criticality Systems."
+   },
+   {
+    "bibcode": "2022A&A...664A.102S",
+    "title": "System equivalent flux density of Stokes I, Q, U, and V of a polarimetric interferometer."
+   },
+   {
+    "bibcode": "2022ApJ...935...99B",
+    "title": "Radio Emission from UV Cet: Auroral Emission from a Stellar Magnetosphere."
+   },
+   {
+    "bibcode": "2022ApJ...936...49K",
+    "title": "Solar and Stellar Flares: Frequency, Active Regions, and Stellar Dynamo."
+   },
+   {
+    "bibcode": "2022MNRAS.516..540R",
+    "title": "Searching for stellar flares from low-mass stars using ASKAP and TESS."
+   },
+   {
+    "bibcode": "2022A&A...665A..75G",
+    "title": "First light for GRAVITY Wide. Large separation fringe tracking for the Very Large Telescope Interferometer."
+   },
+   {
+    "bibcode": "2022ApJ...938..103H",
+    "title": "The Mouse That Squeaked: A Small Flare from Proxima Cen Observed in the Millimeter, Optical, and Soft X-Ray with Chandra and ALMA."
+   },
+   {
+    "bibcode": "2022MNRAS.517.1937Y",
+    "title": "The first OPEA model for solar X-ray flares."
+   },
+   {
+    "bibcode": "2023MNRAS.519.5472M",
+    "title": "MEGASTAR - III. Stellar parameters and data products for DR1 late-type stars."
+   },
+   {
+    "bibcode": "2023ApJ...944...25T",
+    "title": "Evolving Morphology of Resolved Stellar Einstein Rings."
+   },
+   {
+    "bibcode": "2023A&A...670A..19G",
+    "title": "The Fifth Catalogue of Nearby Stars (CNS5)."
+   },
+   {
+    "bibcode": "2022MNRAS.517.2842C",
+    "title": "Spatially dependent photometric activity of M dwarfs in the solar cylinder."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2023ApJS..266...41P",
+    "title": "HST Low-resolution Stellar Library."
+   },
+   {
+    "bibcode": "2023AJ....166...35B",
+    "title": "The MUSCLES Extension for Atmospheric Transmission Spectroscopy: UV and X-Ray Host-star Observations for JWST ERS & GTO Targets."
+   },
+   {
+    "bibcode": "2023MNRAS.519.4684D",
+    "title": "Radio transients and variables in the tenth Deeper, Wider, Faster observing run."
+   },
+   {
+    "bibcode": "2023A&A...674A..20D",
+    "title": "{\\em Gaia} Data Release 3 Rotational modulation and patterns of colour variation in solar-like variables."
+   },
+   {
+    "bibcode": "2023A&A...674A..22G",
+    "title": "{\\em Gaia} Data Release 3 Cross-match of {\\em Gaia} sources with variable objects from the literature."
+   },
+   {
+    "bibcode": "2023MNRAS.523.4326I",
+    "title": "Flaring latitudes in ensembles of low-mass stars."
+   },
+   {
+    "bibcode": "2023Natur.619..272K",
+    "title": "Resolved imaging confirms a radiation belt around an ultracool dwarf."
+   },
+   {
+    "bibcode": "2023MNRAS.524.5954I",
+    "title": "The first evidence of tidally induced activity in a brown dwarf-M dwarf pair: a {\\em Chandra} study of the NLTT 41135/41136 system."
+   },
+   {
+    "bibcode": "2023A&A...676A.139B",
+    "title": "The space weather around the exoplanet GJ 436b I. The large-scale stellar magnetic field."
+   },
+   {
+    "bibcode": "2023Sci...381.1120C",
+    "title": "Evidence for a radiation belt around a brown dwarf."
+   },
+   {
+    "bibcode": "2024AJ....167..139T",
+    "title": "HPIC: The Habitable Worlds Observatory Preliminary Input Catalog."
+   },
+   {
+    "bibcode": "2024A&A...682A.170B",
+    "title": "Phenomenology and periodicity of radio emission from the stellar system AU Microscopii."
+   },
+   {
+    "bibcode": "2024MNRAS.529.2443C",
+    "title": "The MeerKAT 1.3 GHz Survey of the Small Magellanic Cloud."
+   },
+   {
+    "bibcode": "2024A&A...684A...3Y",
+    "title": "Radio emission as a stellar activity indicator."
+   },
+   {
+    "bibcode": "2024A&A...685L...9G",
+    "title": "Astrometric detection of a Neptune-mass candidate planet in the nearest M-dwarf binary system GJ65 with VLTI/GRAVITY."
+   },
+   {
+    "bibcode": "2024MNRAS.531.1765L",
+    "title": "The first low-mass eclipsing binary within the fully convective zone from TMTS."
+   },
+   {
+    "bibcode": "2024A&A...686A.164W",
+    "title": "Magnetic activity of radio stars based on TESS and LAMOST surveys."
+   },
+   {
+    "bibcode": "2024ApJ...970...56P",
+    "title": "Radio Emission from the Magnetically Active M Dwarf UV Ceti from 1 to 105 GHz."
+   },
+   {
+    "bibcode": "2024ApJ...971...24P",
+    "title": "A Multiwavelength Survey of Nearby M Dwarfs: Optical and Near-ultraviolet Flares and Activity with Contemporaneous TESS, Kepler/K2, Swift, and HST Observations."
+   },
+   {
+    "bibcode": "2024A&A...688A..49J",
+    "title": "Simultaneous X-ray and optical variability of M dwarfs observed with eROSITA and TESS."
+   },
+   {
+    "bibcode": "2024AJ....168..168Y",
+    "title": "SPRITEly: Time-domain Millimeter Interferometry at the Owens Valley Radio Observatory."
+   },
+   {
+    "bibcode": "2024MNRAS.535.1000Y",
+    "title": "Variations of flare energy release behaviour and magnetic loop characteristics versus absolute stellar parameters."
+   },
+   {
+    "bibcode": "2024PASA...41...84D",
+    "title": "The Sydney Radio Star Catalogue: Properties of radio stars at megahertz to gigahertz frequencies."
+   },
+   {
+    "bibcode": "2024A&A...691A.208F",
+    "title": "Coronal and chromospheric activity of Teegarden's star."
+   },
+   {
+    "bibcode": "2024A&A...691L..17K",
+    "title": "Hints of auroral and magnetospheric polarized radio emission from the scallop-shell star 2MASS J05082729-2101444."
+   },
+   {
+    "bibcode": "2024AJ....168..288A",
+    "title": "Demography of Stellar Radio Population within 500 pc: A VLASS-Gaia DR3 Study."
+   },
+   {
+    "bibcode": "2024ApJ...976..102G",
+    "title": "The First Catalog of Candidate White Dwarf-Main-sequence Binaries in Open Star Clusters: A New Window into Common Envelope Evolution."
+   },
+   {
+    "bibcode": "2025AJ....169...41C",
+    "title": "The Solar Neighborhood. LII. M Dwarf Twin Binaries-Presumed Identical Twins Appear Fraternal in Variability, Rotation, H{\\em \u03b1}, and X-Rays."
+   },
+   {
+    "bibcode": "2025A&A...693A.228C",
+    "title": "CARMENES input catalogue of M dwarfs IX. Multiplicity from close spectroscopic binaries to ultra-wide systems."
+   },
+   {
+    "bibcode": "2025A&A...694A..93Z",
+    "title": "X-ray activity of nearby G-, K-, and M-type stars and implications for planet habitability around M stars."
+   },
+   {
+    "bibcode": "2025A&A...695A..96R",
+    "title": "Spectral features and variable circular polarisation in the radio emission from the pre-cataclysmic variable QS Vir."
+   },
+   {
+    "bibcode": "2025A&A...696A..27J",
+    "title": "The CARMENES search for exoplanets around M dwarfs Understanding the wavelength dependence of radial velocity measurements."
+   },
+   {
+    "bibcode": "2025AJ....170...22L",
+    "title": "A Demonstration of Interstellar Navigation Using New Horizons."
+   },
+   {
+    "bibcode": "2025ApJ...988L..73D",
+    "title": "First Robust Detection of Linear Polarization from Metric Solar Emissions: Challenging Established Paradigms."
+   },
+   {
+    "bibcode": "2025A&A...699A.145D",
+    "title": "Star formation and accretion rates within 500 pc as traced by {\\em Gaia} DR3 XP spectra."
+   },
+   {
+    "bibcode": "2025ApJ...989...20M",
+    "title": "Role of Nonthermal Processes in the Quiescent and Active Millimeter Spectrum of a Young M Dwarf."
+   },
+   {
+    "bibcode": "2025ApJ...989..186F",
+    "title": "A Radio Flaring, Chromospherically Inactive K Dwarf."
+   },
+   {
+    "bibcode": "2025ApJ...990...32S",
+    "title": "Polka-dotted Stars: A Hierarchical Model for Mapping Stellar Surfaces Using Occultation Light Curves and the Case of TOI-3884."
+   },
+   {
+    "bibcode": "2025MNRAS.542.1208A",
+    "title": "ASKAP J144834-685644: a newly discovered long period radio transient detected from radio to X-rays."
+   },
+   {
+    "bibcode": "2025ApJ...990L..32L",
+    "title": "Simultaneous Optical and Radio Observations of a Large Stellar Flare on EV Lac."
+   },
+   {
+    "bibcode": "2025A&A...701A..69K",
+    "title": "Polarized, variable radio emission from the scallop-shell binary system DG CVn."
+   },
+   {
+    "bibcode": "2025PASP..137j4402T",
+    "title": "HWO Target Stars and Systems: A Prioritized Community List of Potential Stellar Targets for the Habitable Worlds Observatory's ExoEarth Survey."
+   },
+   {
+    "bibcode": "2025AJ....170..311G",
+    "title": "PCA-enhanced Speckle Interferometry with Bicubic Interpolation at the OAN-SPM M\u00e9xico."
+   },
+   {
+    "bibcode": "2025ApJS..281...36W",
+    "title": "Planets Across Space and Time (PAST). VIII. Kinematic Characterization and Identification of Radial Velocity Variables for the LAMOST-Gaia-TESS Stars."
+   },
+   {
+    "bibcode": "2025A&A...704A..48H",
+    "title": "The impact of stellar winds and tidal locking effects on the habitability of Earth-like exoplanets around M-dwarf stars."
+   },
+   {
+    "bibcode": "2025A&A...704A.298B",
+    "title": "A magnetic field study of two fast-rotating, radio-bright M dwarfs StKM 1-1262 and V374 Peg."
+   },
+   {
+    "bibcode": "2026ApJ...998..173C",
+    "title": "Stellar Flares in the TESS Light Curves of Planet-hosting M Dwarfs."
+   },
+   {
+    "bibcode": "2026MNRAS.546f2274Y",
+    "title": "Flare behaviour in single and binary F and G stars - II. Cumulative flare frequency variation over stellar evolution."
+   },
+   {
+    "bibcode": "2026A&A...708A.225S",
+    "title": "Sub-second cadence structure of optical flares on AD Leo."
+   },
+   {
+    "bibcode": "2026MNRAS.546g..42B",
+    "title": "Electron cyclotron maser emission from ejected stellar prominences on V374 Peg."
+   },
+   {
+    "bibcode": "2026A&A...709A.273D",
+    "title": "Magnetic geometry of M dwarfs in the southern PLATO field."
+   },
+   {
+    "bibcode": "2026AJ....172...17S",
+    "title": "First Detection of an Ultracool Dwarf at 340 MHz: VLITE Observations of EI Cancri AB."
+   },
+   {
+    "bibcode": "2026ApJ..1007L..23V",
+    "title": "Observation of a Solar-like Magnetic Reconnection Event in an AGN Corona with XRISM."
+   },
+   {
+    "bibcode": "2026MNRAS.551g1420M",
+    "title": "Discovery of a radio-flaring M dwarf in a commensal transient search of the LADUMA field."
+   }
+  ],
+  "parents": [
+   {
+    "main_id": "NAME Hyades Moving Group",
+    "otype": "MGr",
+    "link_bibcode": "2001MNRAS.328...45M"
+   },
+   {
+    "main_id": "G 272-61",
+    "otype": "**",
+    "link_bibcode": "2001AJ....122.3466M"
+   }
+  ],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": -0.41999998688697815,
+    "teff": 3167,
+    "log_g": 5.340000152587891,
+    "bibcode": "2023ApJS..266...41P"
+   },
+   {
+    "fe_h": -0.41999998688697815,
+    "teff": 3167,
+    "log_g": 5.340000152587891,
+    "bibcode": "2012A&A...538A.143K"
+   },
+   {
+    "fe_h": 0.0,
+    "teff": 2842,
+    "log_g": 0.0,
+    "bibcode": "2018MNRAS.475.1960F"
+   },
+   {
+    "fe_h": 0.0,
+    "teff": 3750,
+    "log_g": 4.0,
+    "bibcode": "2023MNRAS.519.5472M"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 1297617,
+    "main_id": "G 272-61",
+    "otype": "**",
+    "sp_type": "M5.5V+M6V",
+    "plx_value": 375.0,
+    "pmra": 3296.2,
+    "pmdec": 563.9,
+    "ra": 24.756053899999998,
+    "dec": -17.950568099999998
+   }
+  ],
+  "ids": [
+   "TIC 29928567",
+   "IDS 01340-1828 AB",
+   "CCDM J01388-1758AB",
+   "IRAS 01365-1812",
+   "CCDM J01390-1756AB",
+   "EUVE J0139-17.9",
+   "WDS J01388-1758AB",
+   "** LUY  726",
+   "WISE J013903.93-175655.7",
+   "AKARI-IRC-V1 J0139031-175658",
+   "2E 0136.5-1812",
+   "EUVE J0138-17.9",
+   "PM 01364-1813",
+   "2RE J013859-175648",
+   "RX J0139.0-1757",
+   "[GS83]  71",
+   "1E 0136.5-1813",
+   "1ES 0136-18.2",
+   "2MASS J01390120-1757026",
+   "RBS   227",
+   "RE J0139-175",
+   "1RXS J013859.7-175715",
+   "1XRS 01364-182",
+   "1AXG J013901-1757",
+   "2E   455",
+   "2EUVE J0138-17.9",
+   "PLX  343.1",
+   "2RE J0138-175",
+   "RE J013900-175648",
+   "DENIS J013901.4-175702",
+   "L  726-8",
+   "[FS2003] 0059",
+   "UCAC2  24998154",
+   "UCAC4 361-001858",
+   "GCRV   921",
+   "G 272-61",
+   "NSV   577",
+   "BPS CS 31086-0027",
+   "JP11  5422",
+   "GJ 65",
+   "StKM 2-145",
+   "WISEA J013903.94-175655.8",
+   "Karmn J01390-179AB"
+  ],
+  "refs": [
+   {
+    "bibcode": "1953GCRV..C......0W",
+    "title": "General Catalogue of Stellar Radial Velocities"
+   },
+   {
+    "bibcode": "1979SvAL....5..188S",
+    "title": "Absolute magnitudes and masses for three types of variable stars."
+   },
+   {
+    "bibcode": "1986AJ.....92..139S",
+    "title": "Dwarf K and M stars of high proper motion found in a hemispheric survey."
+   },
+   {
+    "bibcode": "1988AJ.....95.1841G",
+    "title": "Parallax, orbit and mass of the visual binary L 726-8."
+   },
+   {
+    "bibcode": "1988IRASP.C......0J",
+    "title": "Infrared Astronomical Satellite Catalogs, 1988. The Point Source Catalog, version 2.0, NASA RP-1190"
+   },
+   {
+    "bibcode": "1994ApJS...93..569B",
+    "title": "The first Extreme Ultraviolet Explorer source catalog."
+   },
+   {
+    "bibcode": "1996AJ....112.1188B",
+    "title": "Additional emission-line candidates from the HK survey."
+   },
+   {
+    "bibcode": "2007ApJ...667..520C",
+    "title": "Southern very low mass stars and brown dwarfs in wide binary and multiple  systems."
+   },
+   {
+    "bibcode": "2010PASP..122..885S",
+    "title": "Accurate coordinates and 2MASS cross identifications for (almost) all  Gliese catalog star."
+   },
+   {
+    "bibcode": "2012ApJ...745..147R",
+    "title": "Binaries among debris disk stars."
+   },
+   {
+    "bibcode": "2012AJ....144...64D",
+    "title": "The solar neighborhood. XXVIII. The multiplicity fraction of nearby stars from 5 to 70 AU and the brown dwarf desert around M dwarfs."
+   },
+   {
+    "bibcode": "2012A&A...546A..69M",
+    "title": "Dynamical masses of a selected sample of orbital binaries."
+   },
+   {
+    "bibcode": "2015AJ....149....5W",
+    "title": "The solar neighborhood. XXXV. Distances to 1404 M dwarf systems within 25 pc in the southern sky."
+   },
+   {
+    "bibcode": "2015AJ....149..106D",
+    "title": "A 3D search for companions to 12 nearby M dwarfs."
+   },
+   {
+    "bibcode": "2014NewA...29...36S",
+    "title": "On motion around the collinear libration points in the elliptic R3BP with a bigger triaxial primary."
+   },
+   {
+    "bibcode": "2014AcA....64..359T",
+    "title": "Catalogue of binary UV Ceti type flare stars."
+   },
+   {
+    "bibcode": "2015A&A...577A.128A",
+    "title": "CARMENES input catalogue of M dwarfs. I. Low-resolution spectroscopy with CAFOS."
+   },
+   {
+    "bibcode": "2015MNRAS.449.3160R",
+    "title": "Stellar multiplicity and debris discs: an unbiased sample."
+   },
+   {
+    "bibcode": "2016ApJ...817..112S",
+    "title": "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+   },
+   {
+    "bibcode": "2016A&A...589A..48S",
+    "title": "Optical microflaring on the nearby flare star binary UV Ceti."
+   },
+   {
+    "bibcode": "2016AstL...42..260P",
+    "title": "On possible circumbinary configurations of the planetary systems of {alpha} Centauri and EZ Aquarii."
+   },
+   {
+    "bibcode": "2016A&A...593A.127K",
+    "title": "The red dwarf pair GJ65 AB: inflated, spinning twins of Proxima Fundamental parameters from PIONIER, NACO, and UVES observations."
+   },
+   {
+    "bibcode": "2016AJ....152..141B",
+    "title": "The solar neighborhood. XXXVII: the mass-luminosity relation for main-sequence M dwarfs."
+   },
+   {
+    "bibcode": "2016ApJ...831..166L",
+    "title": "The long-term dynamical evolution of disk-fragmented multiple systems in the solar neighborhood."
+   },
+   {
+    "bibcode": "2017ApJ...835L...4K",
+    "title": "The global and small-scale magnetic fields of fully convective, rapidly spinning M dwarf pair GJ65 A and B."
+   },
+   {
+    "bibcode": "2017A&A...602A..94G",
+    "title": "First light for GRAVITY: Phase referencing optical interferometry for the Very Large Telescope Interferometer."
+   },
+   {
+    "bibcode": "2017MNRAS.471..811B",
+    "title": "Surprisingly different star-spot distributions on the near equal-mass equal-rotation-rate stars in the M dwarf binary GJ 65 AB."
+   },
+   {
+    "bibcode": "2018AJ....155..122S",
+    "title": "HAZMAT. III. The UV evolution of mid- to late-M stars with GALEX."
+   },
+   {
+    "bibcode": "2018A&A...610L..11D",
+    "title": "Investigating the dynamical history of the interstellar object 'Oumuamua."
+   },
+   {
+    "bibcode": "2018MNRAS.475.2842D",
+    "title": "Stellar flare oscillations: evidence for oscillatory reconnection and evolution of MHD modes."
+   },
+   {
+    "bibcode": "2018AJ....155..215M",
+    "title": "Speckle interferometry of red dwarf stars."
+   },
+   {
+    "bibcode": "2018MNRAS.476..459A",
+    "title": "Methods for multiple-telescope beam imaging and guiding in the near-infrared."
+   },
+   {
+    "bibcode": "2018ApJ...860...15M",
+    "title": "The magnetic binary GJ 65: a test of magnetic diffusivity effects."
+   },
+   {
+    "bibcode": "2018A&A...614A..76J",
+    "title": "CARMENES input catalogue of M dwarfs. III. Rotation and activity from high-resolution spectroscopic observations."
+   },
+   {
+    "bibcode": "2018ApJ...869..149M",
+    "title": "Magnetic fields on the flare star Trappist-1: consequences for radius inflation and planetary habitability."
+   },
+   {
+    "bibcode": "2019ApJ...870...10M",
+    "title": "An increased rate of large flares at intermediate rotation periods for mid-to-late M dwarfs."
+   },
+   {
+    "bibcode": "2019ApJ...871...63M",
+    "title": "How to constrain your M dwarf. II. The Mass-Luminosity-Metallicity relation from 0.075 to 0.70 solar masses."
+   },
+   {
+    "bibcode": "2019ApJ...873....1M",
+    "title": "Origin of radio-quiet coronal mass ejections in flare stars."
+   },
+   {
+    "bibcode": "2019ApJ...873...69K",
+    "title": "Magnetic field of the eclipsing M-dwarf binary YY Gem."
+   },
+   {
+    "bibcode": "2019A&A...624A..99L",
+    "title": "The GRAVITY fringe tracker."
+   },
+   {
+    "bibcode": "2019A&A...626A..86S",
+    "title": "Magnetic fields in M dwarfs from the CARMENES survey."
+   },
+   {
+    "bibcode": "2019ApJ...879...94F",
+    "title": "Evolutionary models for ultracool dwarfs."
+   },
+   {
+    "bibcode": "2019MNRAS.488..559Z",
+    "title": "ASKAP detection of periodic and elliptically polarized radio pulses from UV Ceti."
+   },
+   {
+    "bibcode": "2019MNRAS.488.3588Y",
+    "title": "A statistically significant lack of debris discs in medium separation binary systems."
+   },
+   {
+    "bibcode": "2019MNRAS.489..437D",
+    "title": "Probing the origin of stellar flares on M dwarfs using TESS data sectors 1-3."
+   },
+   {
+    "bibcode": "2019A&A...630A..96A",
+    "title": "Colour-dependent accurate modelling of dynamical parallaxes and masses of visual binaries. Application to the VB+SB2 systems with definitive orbits."
+   },
+   {
+    "bibcode": "2019MNRAS.490.3158C",
+    "title": "A catalogue of stellar diameters and fluxes for mid-infrared interferometry."
+   },
+   {
+    "bibcode": "2020AJ....159...85H",
+    "title": "Interstellar communication network. I. Overview and assumptions."
+   },
+   {
+    "bibcode": "2020A&A...642A.115C",
+    "title": "CARMENES input catalogue of M dwarfs. V. Luminosities, colours, and spectral energy distributions."
+   },
+   {
+    "bibcode": "2021AJ....161...63W",
+    "title": "The volume-complete sample of M dwarfs with masses 0.1 {\\leq} M/M_{\\sun}_ {\\leq} 0.3 within 15 parsecs."
+   },
+   {
+    "bibcode": "2021AJ....161..285B",
+    "title": "Dissecting the quadruple binary hyad vA 351 masses for three M dwarfs and a white dwarf."
+   },
+   {
+    "bibcode": "2021MNRAS.506.6160M",
+    "title": "eBASCS: Disentangling overlapping astronomical sources II, using spatial, spectral, and temporal information."
+   },
+   {
+    "bibcode": "2021MNRAS.507.1723I",
+    "title": "Giant white-light flares on fully convective stars occur at high latitudes."
+   },
+   {
+    "bibcode": "2021A&A...654A..42C",
+    "title": "Short-term variations of surface magnetism and prominences of the young Sun-like star V530 Per."
+   },
+   {
+    "bibcode": "2021ApJ...923..119G",
+    "title": "GTC/CanariCam deep mid-infrared imaging survey of northern stars within 5 pc."
+   },
+   {
+    "bibcode": "2022A&A...657A...7K",
+    "title": "Stellar and substellar companions from Gaia EDR3. Proper-motion anomaly and resolved common proper-motion pairs."
+   },
+   {
+    "bibcode": "2022MNRAS.511.2755R",
+    "title": "The puzzling story of flare inactive ultra fast rotating M dwarfs. II. Searching for radial velocity variations."
+   },
+   {
+    "bibcode": "2022MNRAS.512..979D",
+    "title": "The puzzling story of flare inactive ultra fast rotating M dwarfs - I. Exploring their magnetic fields."
+   },
+   {
+    "bibcode": "2022ApJ...928....8F",
+    "title": "New Time-resolved, Multi-band Flares in the GJ 65 System with gPhoton."
+   },
+   {
+    "bibcode": "2022MNRAS.513.5701S",
+    "title": "Ultracool dwarfs observed with the Spitzer infrared spectrograph - II. Emergence and sedimentation of silicate clouds in L dwarfs, and analysis of the full M5-T9 field dwarf spectroscopic sample."
+   },
+   {
+    "bibcode": "2022MNRAS.513.6058L",
+    "title": "Modeling Balmer line signatures of stellar CMEs."
+   },
+   {
+    "bibcode": "2022MNRAS.516.2864R",
+    "title": "Simulations of astrometric planet detection in Alpha Centauri by intensity interferometry."
+   },
+   {
+    "bibcode": "2023AJ....165..265M",
+    "title": "The Occurrence Rate of Terrestrial Planets Orbiting Nearby Mid-to-late M Dwarfs from TESS Sectors 1-42."
+   },
+   {
+    "bibcode": "2023MNRAS.524.5954I",
+    "title": "The first evidence of tidally induced activity in a brown dwarf-M dwarf pair: a {\\em Chandra} study of the NLTT 41135/41136 system."
+   },
+   {
+    "bibcode": "2023ApJ...955...24R",
+    "title": "A Census of Near-UV M-dwarf Flares Using Archival GALEX Data and the gPHOTON2 Pipeline."
+   },
+   {
+    "bibcode": "2023ApJS..268...41M",
+    "title": "The GFCAT: A Catalog of Ultraviolet Variables Observed by GALEX with Subminute Resolution."
+   },
+   {
+    "bibcode": "2023A&A...678A..19C",
+    "title": "Binary masses and luminosities with {\\em Gaia} DR3."
+   },
+   {
+    "bibcode": "2023A&A...678A.204S",
+    "title": "Survival of fossil fields during the pre-main sequence evolution of intermediate-mass stars."
+   },
+   {
+    "bibcode": "2024AJ....167..139T",
+    "title": "HPIC: The Habitable Worlds Observatory Preliminary Input Catalog."
+   },
+   {
+    "bibcode": "2024ApJ...963...43M",
+    "title": "On the Possibility of an Upper Limit on Magnetically Induced Radius Inflation in Low-mass Stars."
+   },
+   {
+    "bibcode": "2024A&A...682A..77T",
+    "title": "The large-scale magnetic field of the M dwarf double-line spectroscopic binary FK Aqr."
+   },
+   {
+    "bibcode": "2024ApJS..271...55K",
+    "title": "The Initial Mass Function Based on the Full-sky 20 pc Census of \u223c3600 Stars and Brown Dwarfs."
+   },
+   {
+    "bibcode": "2024A&A...685L...9G",
+    "title": "Astrometric detection of a Neptune-mass candidate planet in the nearest M-dwarf binary system GJ65 with VLTI/GRAVITY."
+   },
+   {
+    "bibcode": "2024A&A...686A.239B",
+    "title": "Detailed cool star flare morphology with CHEOPS and TESS."
+   },
+   {
+    "bibcode": "2024MNRAS.532.4436B",
+    "title": "Stellar flares are far-ultraviolet luminous."
+   },
+   {
+    "bibcode": "2024PASA...41...84D",
+    "title": "The Sydney Radio Star Catalogue: Properties of radio stars at megahertz to gigahertz frequencies."
+   },
+   {
+    "bibcode": "2025A&A...699A.242P",
+    "title": "Enhancing the detection of low-energy M dwarf flares: Wavelet-based denoising of CHEOPS data."
+   },
+   {
+    "bibcode": "2025PASP..137j4402T",
+    "title": "HWO Target Stars and Systems: A Prioritized Community List of Potential Stellar Targets for the Habitable Worlds Observatory's ExoEarth Survey."
+   },
+   {
+    "bibcode": "2025AJ....170..311G",
+    "title": "PCA-enhanced Speckle Interferometry with Bicubic Interpolation at the OAN-SPM M\u00e9xico."
+   },
+   {
+    "bibcode": "2025PASP..137l1001F",
+    "title": "Are We There Yet? Challenges in Quantifying the Frequency of Earth Analogs in the Habitable Zone."
+   },
+   {
+    "bibcode": "2026A&A...708A.302P",
+    "title": "Extending TESS flare frequency distributions with CHEOPS: Power-law versus lognormal."
+   }
+  ],
+  "parents": [],
+  "children": [
+   {
+    "main_id": "G 272-61A",
+    "otype": "PM*",
+    "link_bibcode": "2001AJ....122.3466M"
+   },
+   {
+    "main_id": "G 272-61B",
+    "otype": "Em*",
+    "link_bibcode": "2001AJ....122.3466M"
+   },
+   {
+    "main_id": "G 272-61C",
+    "otype": "*",
+    "link_bibcode": ""
+   }
+  ],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "1986AJ.....92..139S",
+   "Dwarf K and M stars of high proper motion found in a hemispheric survey."
+  ],
+  [
+   "1988AJ.....95.1841G",
+   "Parallax, orbit and mass of the visual binary L 726-8."
+  ],
+  [
+   "1996AJ....112.1188B",
+   "Additional emission-line candidates from the HK survey."
+  ],
+  [
+   "2007ApJ...667..520C",
+   "Southern very low mass stars and brown dwarfs in wide binary and multiple  systems."
+  ],
+  [
+   "2012AJ....144...64D",
+   "The solar neighborhood. XXVIII. The multiplicity fraction of nearby stars from 5 to 70 AU and the brown dwarf desert around M dwarfs."
+  ],
+  [
+   "2012A&A...546A..69M",
+   "Dynamical masses of a selected sample of orbital binaries."
+  ],
+  [
+   "2014AcA....64..359T",
+   "Catalogue of binary UV Ceti type flare stars."
+  ],
+  [
+   "2016A&A...589A..48S",
+   "Optical microflaring on the nearby flare star binary UV Ceti."
+  ],
+  [
+   "2016AstL...42..260P",
+   "On possible circumbinary configurations of the planetary systems of {alpha} Centauri and EZ Aquarii."
+  ],
+  [
+   "2016A&A...593A.127K",
+   "The red dwarf pair GJ65 AB: inflated, spinning twins of Proxima Fundamental parameters from PIONIER, NACO, and UVES observations."
+  ],
+  [
+   "2016AJ....152..141B",
+   "The solar neighborhood. XXXVII: the mass-luminosity relation for main-sequence M dwarfs."
+  ],
+  [
+   "2017ApJ...835L...4K",
+   "The global and small-scale magnetic fields of fully convective, rapidly spinning M dwarf pair GJ65 A and B."
+  ],
+  [
+   "2017A&A...602A..94G",
+   "First light for GRAVITY: Phase referencing optical interferometry for the Very Large Telescope Interferometer."
+  ],
+  [
+   "2017MNRAS.471..811B",
+   "Surprisingly different star-spot distributions on the near equal-mass equal-rotation-rate stars in the M dwarf binary GJ 65 AB."
+  ],
+  [
+   "2018A&A...610L..11D",
+   "Investigating the dynamical history of the interstellar object 'Oumuamua."
+  ],
+  [
+   "2018AJ....155..215M",
+   "Speckle interferometry of red dwarf stars."
+  ],
+  [
+   "2018ApJ...860...15M",
+   "The magnetic binary GJ 65: a test of magnetic diffusivity effects."
+  ],
+  [
+   "2018ApJ...869..149M",
+   "Magnetic fields on the flare star Trappist-1: consequences for radius inflation and planetary habitability."
+  ],
+  [
+   "2019ApJ...873....1M",
+   "Origin of radio-quiet coronal mass ejections in flare stars."
+  ],
+  [
+   "2019ApJ...873...69K",
+   "Magnetic field of the eclipsing M-dwarf binary YY Gem."
+  ],
+  [
+   "2019A&A...626A..86S",
+   "Magnetic fields in M dwarfs from the CARMENES survey."
+  ],
+  [
+   "2019ApJ...879...94F",
+   "Evolutionary models for ultracool dwarfs."
+  ],
+  [
+   "2019MNRAS.488..559Z",
+   "ASKAP detection of periodic and elliptically polarized radio pulses from UV Ceti."
+  ],
+  [
+   "2019MNRAS.489..437D",
+   "Probing the origin of stellar flares on M dwarfs using TESS data sectors 1-3."
+  ],
+  [
+   "2019A&A...630A..96A",
+   "Colour-dependent accurate modelling of dynamical parallaxes and masses of visual binaries. Application to the VB+SB2 systems with definitive orbits."
+  ],
+  [
+   "2021MNRAS.506.6160M",
+   "eBASCS: Disentangling overlapping astronomical sources II, using spatial, spectral, and temporal information."
+  ],
+  [
+   "2021MNRAS.507.1723I",
+   "Giant white-light flares on fully convective stars occur at high latitudes."
+  ],
+  [
+   "2021ApJ...923..119G",
+   "GTC/CanariCam deep mid-infrared imaging survey of northern stars within 5 pc."
+  ],
+  [
+   "2022A&A...657A...7K",
+   "Stellar and substellar companions from Gaia EDR3. Proper-motion anomaly and resolved common proper-motion pairs."
+  ],
+  [
+   "2022MNRAS.511.2755R",
+   "The puzzling story of flare inactive ultra fast rotating M dwarfs. II. Searching for radial velocity variations."
+  ],
+  [
+   "2022ApJ...928....8F",
+   "New Time-resolved, Multi-band Flares in the GJ 65 System with gPhoton."
+  ],
+  [
+   "2022MNRAS.513.6058L",
+   "Modeling Balmer line signatures of stellar CMEs."
+  ],
+  [
+   "2023MNRAS.524.5954I",
+   "The first evidence of tidally induced activity in a brown dwarf-M dwarf pair: a {\\em Chandra} study of the NLTT 41135/41136 system."
+  ],
+  [
+   "2024AJ....167..139T",
+   "HPIC: The Habitable Worlds Observatory Preliminary Input Catalog."
+  ],
+  [
+   "2024A&A...685L...9G",
+   "Astrometric detection of a Neptune-mass candidate planet in the nearest M-dwarf binary system GJ65 with VLTI/GRAVITY."
+  ],
+  [
+   "2024PASA...41...84D",
+   "The Sydney Radio Star Catalogue: Properties of radio stars at megahertz to gigahertz frequencies."
+  ],
+  [
+   "2025PASP..137j4402T",
+   "HWO Target Stars and Systems: A Prioritized Community List of Potential Stellar Targets for the Habitable Worlds Observatory's ExoEarth Survey."
+  ],
+  [
+   "2025AJ....170..311G",
+   "PCA-enhanced Speckle Interferometry with Bicubic Interpolation at the OAN-SPM M\u00e9xico."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=5140693571158946048&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=5140693571158946048&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=5140693571158739840&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=5140693571158739840&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=24.771674208211856+-17.947682860008488&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=24.771674208211856+-17.947682860008488&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "01388-1758",
+    "Disc": "LDS 838",
+    "Comp": "",
+    "Obs1": "1935",
+    "pa1": "118",
+    "pa2": "151",
+    "sep1": "2.0",
+    "sep2": "1.00",
+    "mag1": "12.700",
+    "mag2": "13.20",
+    "DM": "",
+    "Notes": "NO P",
+    "n_RAh": "",
+    "RAJ2000": "01 39 01.54",
+    "DEJ2000": "-17 57 01.8"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=24.771674208211856+-17.947682860008488&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": [
+  [
+   "LHS 102BC",
+   "GJ 1001A",
+   "aka GJ 1001BC. binary: a=0.087+/-0.006\" @ 48.1+/-5.2(+/-180)deg (Goli04b); BC located 18.2\" @ 259deg from LHS 102A on 20 Aug. 2003 (Goli04b). Target for PARSEC program (Andr11a)."
+  ]
+ ]
+}

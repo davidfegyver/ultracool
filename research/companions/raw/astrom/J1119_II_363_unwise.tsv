@@ -1,0 +1,87 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:30:09 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:30:09	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/363/unwise&-c=169.87265%200.35912&-c.rs=5&-out.all	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=169.872650+00.359120,rs=5.	
+#Constraint -out.all
+
+#RESOURCE=yCat_2363
+#Name: II/363
+#Title: The band-merged unWISE Catalog (Schlafly+, 2019)
+#INFO	ivoid=ivo://cds.vizier/ii/363	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/ii/363	    IVOID of underlying data collection
+#INFO	creator=Schlafly E.F.	    First author or institution
+#INFO	cites=bibcode:2019ApJS..240...30S	    Article or Data origin sources
+#INFO	journal=ApJS	    Journal name
+#INFO	original_date=2019	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/II/363	    Dataset landing page
+#INFO	publication_date=2023-12-20	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	II_363_unwise:
+#Name: II/363/unwise
+#Title: the band-merged unWISE catalog (among 2,214,734,224 sources)
+#Column	_r	(F5.3)	Distance from center (169.8726500+00.3591200)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	objID	(a16)	Unique object identifier (unwise_objid)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F11.7)	W1 right ascension, if available; otherwise W2 right ascension (J2000) (ra)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F11.7)	W1 declination, if available; otherwise W2 declination (J2000) (dec)	[ucd=pos.eq.dec;meta.main]
+#Column	XposW1	(F8.3)	[-0.5/2048] x coordinate in the W1 band (xW1)	[ucd=pos.cartesian.x;instr.det]
+#Column	XposW2	(F8.3)	[-0.5/2048] x coordinate in the W2 band (xW2)	[ucd=pos.cartesian.x;instr.det]
+#Column	YposW1	(F8.3)	[-0.5/2048] y coordinate in the W1 band (yW1)	[ucd=pos.cartesian.y;instr.det]
+#Column	YposW2	(F8.3)	[-0.5/2048] y coordinate in the W2 band (yW2)	[ucd=pos.cartesian.y;instr.det]
+#Column	FW1	(E11.4)	[-1337840/5.3E10] Flux in the W1 (3.4um) band in "Vega nMgy" (fluxW1) (1)	[ucd=phot.flux;em.IR.3-4um]
+#Column	FW2	(E11.4)	[-4367380/7E10] Flux in the W2 (4.6um) band in "Vega nMgy" (fluxW2) (1)	[ucd=phot.flux;em.IR.4-8um]
+#Column	e_XposW1	(F25.3)	[0/1E20] Uncertainty in XposW1 (dxW1)	[ucd=stat.error;pos.cartesian.x]
+#Column	e_XposW2	(F25.3)	[0/1E20] Uncertainty in XposW2 (dxW2)	[ucd=stat.error;pos.cartesian.x]
+#Column	e_YposW1	(F25.3)	[0/1E20] Uncertainty in YposW1 (dyW1)	[ucd=stat.error;pos.cartesian.y]
+#Column	e_YposW2	(F25.3)	[0/1E20] Uncertainty in YposW2 (dyW2)	[ucd=stat.error;pos.cartesian.y]
+#Column	e_FW1	(E11.4)	[0/1E10] Uncertainty in FW1 (statistical only) (dfluxW1) (1)	[ucd=stat.error;phot.flux;em.IR.3-4um]
+#Column	e_FW2	(E11.4)	[0/1E10] Uncertainty in FW2 (statistical only) (dflxW2) (1)	[ucd=stat.error;phot.flux;em.IR.4-8um]
+#Column	q_W1	(F8.5)	[0/1] Quality factor on W1 (1=good detection) (qfW1) (2)	[ucd=meta.code.qual]
+#Column	q_W2	(F8.5)	[0/1] Quality factor on W2 (1=good detection) (qfW2) (2)	[ucd=meta.code.qual]
+#Column	rchi2W1	(E10.3)	[0/3271100] Average chi square per pixel on W1, weighted by PSF	[ucd=stat.fit.chi2]
+#Column	rchi2W2	(E10.3)	[0/172620] Average {xi}^2^ per pixel on W2, weighted by PSF	[ucd=stat.fit.chi2]
+#Column	fFW1	(F8.4)	[-64/564] Fraction of W1 flux in this object's PSF that comes from this object (fracfluxW1)	[ucd=meta.number]
+#Column	fFW2	(F8.4)	[-29.1/156.5] Fraction of W2 flux in this object's PSF that comes from this object (fracfluxW2)	[ucd=meta.number]
+#Column	FW1lbs	(E11.4)	[-2.6E9/1.9E9] Local-background-subtracted W1 flux in "Vega nMgy" (fluxlbsW1) (1)	[ucd=phot.flux;em.IR.3-4um]
+#Column	FW2lbs	(E11.4)	[-1.2E10/2E10] Local-background-subtracted W2 flux in "Vega nMgy" (fluxlbsW2) (1)	[ucd=phot.flux;em.IR.4-8um]
+#Column	e_FW1lbs	(E11.4)	[0/2.5E9] Uncertainty in FW1lbs (dfluxlbsW1) (1)	[ucd=stat.error;phot.flux;em.IR.3-4um]
+#Column	e_FW2lbs	(E11.4)	[0/8E9] Uncertainty in FW2lbs (dfluxlbsW2) (1)	[ucd=stat.error;phot.flux;em.IR.4-8um]
+#Column	fwhmW1	(F7.4)	[0/3] Full-width at half-maximum of PSF in W1	[ucd=phys.size]
+#Column	fwhmW2	(F7.4)	[0/3] Full-width at half-maximum of PSF in W2	[ucd=phys.size]
+#Column	SpModW1	(D12.5)	[-2844/2819] SExtractor spread_model parameter on W1 (~0=point source) (spread_modelW1)	[ucd=meta.modelled]
+#Column	SpModW2	(D12.5)	[-20259/7281] SExtractor spread_model parameter on W2 (~0=point source) (spread_modelW2)	[ucd=meta.modelled]
+#Column	e_SpModW1	(D12.5)	[0/3.1E8] Uncertainty in SpModW1 (dspread_modelW1)	[ucd=stat.error;meta.modelled]
+#Column	e_SpModW2	(F16.6)	[0/5.3E8] Uncertainty in SpModW2 (dspread_modelW2)	[ucd=stat.error;meta.modelled]
+#Column	skyW1	(E11.4)	[-7572/52355] Sky in W1 in "Vega nMgy" (1)	[ucd=phot.flux;em.IR.3-4um]
+#Column	skyW2	(E11.4)	[-8322/54067] Sky in W2 in "Vega nMgy" (1)	[ucd=phot.flux;em.IR.4-8um]
+#Column	RAW1deg	(F11.7)	Right Ascension from individual-image catalogs in W1 (ra12W1)	[ucd=pos.eq.ra]
+#Column	RAW2deg	(F11.7)	Right Ascension from individual-image catalogs in W2 (ra12W2)	[ucd=pos.eq.ra]
+#Column	DEW1deg	(F11.7)	Declination from individual-image catalogs in W1 (dec12W1)	[ucd=pos.eq.dec]
+#Column	DEW2deg	(F11.7)	Declination from individual-image catalogs in W2 (dec12W2)	[ucd=pos.eq.dec]
+#Column	coaddID	(a8)	Coadd unique ID (coadd_id)	[ucd=meta.id]
+#Column	detIDW1	(a18)	? Unique detection ID in W1 (unwise_detidW1)	[ucd=meta.id]
+#Column	detIDW2	(a18)	? Unique detection ID in W2 (unwise_detidW2)	[ucd=meta.id]
+#Column	nmW1	(I5)	[0/23582] Number of single-exposure images of this part of sky in coadd in W1	[ucd=meta.number]
+#Column	nmW2	(I5)	[0/23187] Number of single-exposure images of this part of sky in coadd in W2	[ucd=meta.number]
+#Column	PrimW1	(I1)	[0/1] The center of this source is in the primary region of its coadd in W1 (primary12W1)	[ucd=meta.code]
+#Column	PrimW2	(I1)	[0/1] The center of this source is in the primary region of its coadd in W2 (primary12W2)	[ucd=meta.code]
+#Column	FlagsW1	(I3)	[0/249] unWISE Coadd Flags flags at central pixel in W1 (flags_unwiseW1) (3)	[ucd=meta.code]
+#Column	FlagsW2	(I3)	[0/243] unWISE Coadd Flags flags at central pixel W2 (flags_unwiseW2) (3)	[ucd=meta.code]
+#Column	f_FlagsW1	(I3)	[0/250] Additional informational flags at central pixel in W1 (flags_infoW1) (4)	[ucd=meta.code]
+#Column	f_FlagsW2	(I3)	[0/250] Additional informational flags at central pixel in W2 (flags_infoW2) (4)	[ucd=meta.code]
+#Column	Prim	(I1)	[0/1] W1 primary status, if available; otherwise W2 primary status (primary1)	[ucd=meta.code]
+_r	objID	RAJ2000	DEJ2000	XposW1	XposW2	YposW1	YposW2	FW1	FW2	e_XposW1	e_XposW2	e_YposW1	e_YposW2	e_FW1	e_FW2	q_W1	q_W2	rchi2W1	rchi2W2	fFW1	fFW2	FW1lbs	FW2lbs	e_FW1lbs	e_FW2lbs	fwhmW1	fwhmW2	SpModW1	SpModW2	e_SpModW1	e_SpModW2	skyW1	skyW2	RAW1deg	RAW2deg	DEW1deg	DEW2deg	coaddID	detIDW1	detIDW2	nmW1	nmW2	PrimW1	PrimW2	FlagsW1	FlagsW2	f_FlagsW1	f_FlagsW2	Prim
+arcsec	 	deg	deg	pix	pix	pix	pix	309.05nJy	167.66nJy	pix	pix	pix	pix	309.05nJy	167.66nJy	 	 	 	 	 	 	309.05nJy	167.66nJy	309.05nJy	167.66nJy	pix	pix	 	 	 	 	309.05nJy	167.66nJy	deg	deg	deg	deg	 	 	 	 	 	 	 	 	 	 	 	
+-----	----------------	-----------	-----------	--------	--------	--------	--------	-----------	-----------	-------------------------	-------------------------	-------------------------	-------------------------	-----------	-----------	--------	--------	----------	----------	--------	--------	-----------	-----------	-----------	-----------	-------	-------	------------	------------	------------	----------------	-----------	-----------	-----------	-----------	-----------	-----------	--------	------------------	------------------	-----	-----	-	-	---	---	---	---	-
+0.121	1694p000o0025214	169.8726221	+00.3591015	1493.618	1493.660	 421.021	 420.873	 7.4975e+02	 1.1565e+03	                    0.022	                    0.055	                    0.021	                    0.052	 9.8052e+00	 3.4522e+01	 1.00000	 1.00000	 4.537e+00	 1.034e+00	  0.4330	  0.4727	 7.6531e+02	 1.1538e+03	 9.9950e+00	 3.5392e+01	 2.6309	 2.8511	-3.35926e-03	-2.03973e-03	 5.08138e-04	        0.001157	-1.4009e+00	-9.6840e-01	169.8726221	169.8727352	  0.3591015	  0.3591335	1694p000	1694p000w1o0058767	1694p000w2o0027205	  112	  107	1	1	  0	  0	  0	  0	1
+

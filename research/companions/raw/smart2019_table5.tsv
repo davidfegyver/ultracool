@@ -1,0 +1,76 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:25:20 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:25:21	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J/MNRAS/485/4423/table5&-out.max=unlimited&-out=Name,rho,RA_ICRS,DE_ICRS,SpType,Gmag,plx,pm	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+
+#RESOURCE=yCat_74854423
+#Name: J/MNRAS/485/4423
+#Title: The Gaia ultracool dwarf sample (Smart+, 2019)
+#INFO	ivoid=ivo://cds.vizier/j/mnras/485/4423	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/mnras/485/4423	    IVOID of underlying data collection
+#INFO	creator=Smart R.L.	    First author or institution
+#INFO	cites=bibcode:2019MNRAS.485.4423S	    Article or Data origin sources
+#INFO	journal=MNRA	    Journal name
+#INFO	original_date=2019	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/485/4423	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.74854423	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-08-19	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_2015.500:	ICRS
+#Table	J_MNRAS_485_4423_table5:
+#Name: J/MNRAS/485/4423/table5
+#Title: New candidate binary systems containing LT dwarfs, identified in Gaia DR2
+#Column	Name	(a27)	Discovery name	[ucd=meta.id;meta.main]
+#Column	rho	(F6.1)	? Separation on the sky of the two components	[ucd=pos.angDistance]
+#Column	RA_ICRS	(F11.7)	Right ascension (ICRS) at Ep=2015.5 (G1)	[ucd=pos.eq.ra;meta.main]
+#Column	DE_ICRS	(F11.7)	Declination (ICRS) at Ep=2015.5 (G1)	[ucd=pos.eq.dec;meta.main]
+#Column	SpType	(a5)	? Spectral type	[ucd=src.spType]
+#Column	Gmag	(F5.2)	Gaia DR2 G-band magnitude (G1)	[ucd=phot.mag;em.opt]
+#Column	plx	(F4.1)	Gaia DR2 parallax (G1)	[ucd=pos.parallax.trig]
+#Column	pm	(F5.1)	Total proper motion	[ucd=pos.pm]
+Name	rho	RA_ICRS	DE_ICRS	SpType	Gmag	plx	pm
+ 	arcsec	deg	deg	 	mag	mas	mas/yr
+---------------------------	------	-----------	-----------	-----	-----	----	-----
+2MASS J01415823-4633574    	2377.2	025.4933685	-46.5661305	L2.0 	20.02	27.4	124.7
+4954453580066220800        	      	026.1336010	-46.0756886	-    	15.67	25.9	117.3
+2MASS J02235464-5815067    	      	035.9785858	-58.2519130	L1.5 	20.22	24.4	105.6
+UCAC4 159-002053           	1532.6	035.2149151	-58.3948241	M3   	12.57	22.7	 97.2
+2MASS J02251947-5837295    	1499.0	036.3319895	-58.6249554	M9   	18.41	24.3	102.0
+2MASSI J0518461-275645     	1007.2	079.6925197	-27.9460523	L1.0 	20.48	17.3	 32.6
+2954995674982867968        	      	079.8573963	-28.1850235	-    	15.11	17.6	 32.6
+2MASS J08430796+3141297    	 819.5	130.7828536	+31.6913490	L2.5 	20.91	14.8	 67.9
+709905940243414400         	      	130.6127152	+31.8671235	-    	17.47	10.2	 73.1
+2MASS J09073765+4509359    	 301.1	136.9073579	+45.1597676	M9.0 	18.99	26.3	 76.8
+TYC 3424-215-1             	      	137.0239116	+45.1753675	-    	 9.22	27.0	 80.2
+2MASS J09175035+2944455    	1684.7	139.4595607	+29.7456267	L0.0 	20.74	18.5	 81.2
+698766581783119872         	      	139.8773149	+29.4505981	-    	17.65	12.8	 74.4
+2MASS J11414410+4116568    	 163.5	175.4341457	+41.2822985	L0.0 	20.36	13.2	 60.1
+HD101620                   	      	175.4433423	+41.2374147	F5   	 6.79	12.7	 58.7
+SDSS J124514.95+120442.0   	  96.4	191.3122876	+12.0781604	L1.0 	20.98	12.3	 54.8
+SDSS J124520.60+120531.3   	      	191.3358362	+12.0918479	DA   	18.29	12.2	 54.8
+ULAS J124531.54+015630.9   	   8.2	191.3813059	+01.9418705	-    	20.61	13.5	 76.0
+3702489721592680832        	      	191.3791501	+01.9411384	-    	12.86	13.2	 75.6
+WDS J15200-4423A           	   1.0	230.0053261	-44.3801380	L1.5 	18.29	54.5	736.7
+WDS J15200-4423B           	      	230.0054769	-44.3798731	L4.5 	19.82	53.7	753.4
+2MASS J16325610+3505076    	  57.1	248.2342852	+35.0851446	L1.0 	19.47	28.6	107.8
+HD149361                   	      	248.2192979	+35.0750997	K0V  	 8.03	29.0	107.4
+2MASS J21265040-8140293    	      	321.7115878	-81.6752636	L3.0 	20.72	29.2	128.5
+TYC 9486-927-1             	 217.5	321.3662989	-81.6414894	M1.0V	10.81	29.3	123.2
+2MASS J21192028-8145446    	1022.2	319.8360962	-81.7628668	-    	14.65	29.0	126.0
+2MASS J21121598-8128452    	2045.7	318.0681165	-81.4797055	M5.5 	14.04	28.6	123.8
+DENIS-PJ220002.05-303832.9A	   1.0	330.0096692	-30.6428312	M9.0 	18.44	25.4	247.2
+DENIS-PJ220002.05-303832.9B	      	330.0096946	-30.6425580	L0.0 	19.04	25.3	253.7
+ULAS J230818.73+062951.4   	   3.8	347.0781929	+06.4973599	-    	18.06	24.7	118.5
+2665079816223169664        	      	347.0788922	+06.4981654	-    	13.47	24.1	119.8
+2MASS J23225299-6151275    	  16.6	350.7215915	-61.8579914	L2.5 	20.68	23.2	114.6
+2MASS J23225240-6151114    	      	350.7191431	-61.8535236	M5   	14.90	23.6	110.3
+

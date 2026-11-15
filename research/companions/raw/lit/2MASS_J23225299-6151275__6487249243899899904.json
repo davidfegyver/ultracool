@@ -1,0 +1,467 @@
+{
+ "pair": {
+  "uid": "3766",
+  "ucd": "2MASS J23225299-6151275",
+  "ucd_spt_opt": "L2 gamma",
+  "ucd_spt_ir": "L1.8 VL-G",
+  "ucd_G": "20.6212",
+  "ucd_gaia": "6487248865942846336",
+  "ucd_pmra": "79.3",
+  "ucd_pmdec": "-80.2",
+  "ucd_pmerr": "0.8/1.1",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "23.3",
+  "ucd_plxerr": "1.0",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "42.9",
+  "ucd_disterr": "1.8",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "6487249243899899904",
+  "g_ra": "350.7191660756568",
+  "g_dec": "-61.853534460454966",
+  "g_pmra": "78.1216812133789",
+  "g_pmdec": "-78.25238800048828",
+  "g_epm": "0.02758678048849106/0.03273972123861313",
+  "g_plx": "23.562583923339844",
+  "g_eplx": "0.02959814853966236",
+  "G": "14.873591423034668",
+  "BP_RP": "3.39",
+  "M_G": "11.73",
+  "RUWE": "1.2608020305633545",
+  "RV": "7.7322564125061035",
+  "sep_arcsec": "16.54",
+  "sep_au": "702",
+  "dmu": "2.28",
+  "dmu_sig": "1.03",
+  "dmu_over_sig": "2.21",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "0.26",
+  "dvtan_kms": "0.46",
+  "dvtan_err": "0.21",
+  "host_mass": "0.201",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.84",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "Suspected young object (Reid08b). Gagn15c also find near-IR spectral type L1 gamma. Fahe16 find near-IR spectral type L3 gamma.",
+  "ucs_simbad": "2MASS J23225299-6151275",
+  "ucs_ids": "2MASS J23225299-6151275|DENIS J232252.9-615127|TIC 234997087|Gaia DR2 6487248865942846336|Gaia DR3 6487248865942846336",
+  "n_field": "1",
+  "expected_false": "2.11e-05"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 8586241,
+    "main_id": "2MASS J23225240-6151114",
+    "otype": "LM*",
+    "sp_type": "M5",
+    "plx_value": 23.5626,
+    "pmra": 78.122,
+    "pmdec": -78.252,
+    "ra": 350.71843004944,
+    "dec": -61.85318667007999
+   }
+  ],
+  "ids": [
+   "TIC 234997090",
+   "Gaia DR3 6487249243899899904",
+   "2MASS J23225240-6151114",
+   "Gaia DR2 6487249243899899904"
+  ],
+  "refs": [
+   {
+    "bibcode": "2014ApJ...783..121G",
+    "title": "BANYAN. II. Very low mass and substellar candidate members to nearby, young kinematic groups with previously known signs of youth."
+   },
+   {
+    "bibcode": "2015ApJ...798...73G",
+    "title": "BANYAN. V. A systematic all-sky survey for new very late-type low-mass stars and brown dwarfs in nearby young moving groups."
+   },
+   {
+    "bibcode": "2015ApJS..219...33G",
+    "title": "BANYAN. VII. A new population of young substellar candidate members of nearby moving groups from the BASS survey."
+   },
+   {
+    "bibcode": "2019MNRAS.485.4423S",
+    "title": "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+   },
+   {
+    "bibcode": "2019A&A...627A.167C",
+    "title": "Spectral characterization of newly detected young substellar binaries with SINFONI."
+   },
+   {
+    "bibcode": "2020AJ....159..166U",
+    "title": "Analysis of membership probability in nearby young moving groups with Gaia DR2."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2022ApJ...924...68V",
+    "title": "Let the great world spin: revealing the stormy, turbulent nature of young giant exoplanet analogs with the Spitzer Space Telescope."
+   },
+   {
+    "bibcode": "2023ApJ...945..114P",
+    "title": "Examining the Rotation Period Distribution of the 40 Myr Tucana-Horologium Association with TESS."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2024A&A...686A..42H",
+    "title": "Improving the open cluster census III. Using cluster masses, radii, and dynamics to create a cleaned open cluster catalogue."
+   },
+   {
+    "bibcode": "2024AJ....168..159L",
+    "title": "A Census of the {\\em \u03b2} Pic Moving Group and Other Nearby Associations with Gaia."
+   }
+  ],
+  "parents": [
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2015ApJ...798...73G"
+   },
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2015ApJS..219...33G"
+   },
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2020AJ....159..166U"
+   },
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2023ApJ...945..114P"
+   },
+   {
+    "main_id": "NAME beta Tuc Group",
+    "otype": "MGr",
+    "link_bibcode": "2024A&A...686A..42H"
+   },
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2024AJ....168..159L"
+   }
+  ],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 4699932,
+    "main_id": "2MASS J23225299-6151275",
+    "otype": "BD*",
+    "sp_type": "L2gamma",
+    "plx_value": 23.3266,
+    "pmra": 79.293,
+    "pmdec": -80.17,
+    "ra": 350.72086741767,
+    "dec": -61.85764613188999
+   }
+  ],
+  "ids": [
+   "TIC 234997087",
+   "Gaia DR3 6487248865942846336",
+   "2MASS J23225299-6151275",
+   "DENIS J232252.9-615127",
+   "Gaia DR2 6487248865942846336"
+  ],
+  "refs": [
+   {
+    "bibcode": "2009AJ....137.3345C",
+    "title": "Young L dwarfs identified in the field: a preliminary low-gravity,  optical spectral sequence from L0 to L5."
+   },
+   {
+    "bibcode": "2008AJ....136.1290R",
+    "title": "Meeting the cool neighbors. X. Ultracool dwarfs from the 2MASS all-sky data release."
+   },
+   {
+    "bibcode": "2013AJ....145....2F",
+    "title": "2MASS J035523.37+113343.7: a young, dusty, nearby, isolated brown dwarf  resembling a giant exoplanet."
+   },
+   {
+    "bibcode": "2014ApJ...783..121G",
+    "title": "BANYAN. II. Very low mass and substellar candidate members to nearby, young kinematic groups with previously known signs of youth."
+   },
+   {
+    "bibcode": "2014A&A...564A..55M",
+    "title": "New constraints on the formation and settling of dust in the atmospheres of young M and L dwarfs."
+   },
+   {
+    "bibcode": "2015ApJ...798...73G",
+    "title": "BANYAN. V. A systematic all-sky survey for new very late-type low-mass stars and brown dwarfs in nearby young moving groups."
+   },
+   {
+    "bibcode": "2015ApJS..219...33G",
+    "title": "BANYAN. VII. A new population of young substellar candidate members of nearby moving groups from the BASS survey."
+   },
+   {
+    "bibcode": "2015ApJ...810..158F",
+    "title": "Fundamental parameters and spectral energy distributions of young and field age objects with masses spanning the stellar to planetary regime."
+   },
+   {
+    "bibcode": "2016ApJ...821L..15K",
+    "title": "The nearest isolated member of the TW Hydrae association is a giant planet analog."
+   },
+   {
+    "bibcode": "2016ApJS..225...10F",
+    "title": "Population properties of brown dwarf analogs to exoplanets."
+   },
+   {
+    "bibcode": "2017AJ....153...92T",
+    "title": "The Late-Type Extension to MoVeRS (LaTE-MoVeRS): proper Motion Verified low-mass Stars and brown dwarfs from SDSS, 2MASS, and WISE."
+   },
+   {
+    "bibcode": "2017MNRAS.465.4723K",
+    "title": "Optical spectra of ultracool dwarfs with the Southern African Large Telescope."
+   },
+   {
+    "bibcode": "2017MNRAS.466.3184M",
+    "title": "Optical and near-infrared linear polarization of low and intermediate-gravity ultracool dwarfs."
+   },
+   {
+    "bibcode": "2018ApJ...852...55D",
+    "title": "Banyan. X. Discovery of a wide, low-gravity L-type companion to a fast-rotating M3 dwarf."
+   },
+   {
+    "bibcode": "2018ApJ...853...75T",
+    "title": "2MASS J11151597+1937266 a young, dusty, isolated, planetary-mass object with a potential wide stellar companion."
+   },
+   {
+    "bibcode": "2018AJ....156..291C",
+    "title": "SCExAO/CHARIS near-infrared direct imaging, spectroscopy, and forward-modeling of {kappa} And b: a likely young, low-gravity superjovian companion."
+   },
+   {
+    "bibcode": "2019MNRAS.483..480V",
+    "title": "A search for variability in exoplanet analogues and low-gravity brown dwarfs."
+   },
+   {
+    "bibcode": "2019MNRAS.485.4423S",
+    "title": "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+   },
+   {
+    "bibcode": "2019A&A...627A.167C",
+    "title": "Spectral characterization of newly detected young substellar binaries with SINFONI."
+   },
+   {
+    "bibcode": "2019MNRAS.489.2189L",
+    "title": "Evaluation of nearby young moving groups based on unsupervised machine learning."
+   },
+   {
+    "bibcode": "2020AJ....159..166U",
+    "title": "Analysis of membership probability in nearby young moving groups with Gaia DR2."
+   },
+   {
+    "bibcode": "2020MNRAS.499.5302D",
+    "title": "Increasing the census of ultracool dwarfs in wide binary and multiple systems using Dark Energy Survey DR1 and Gaia DR2 data."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2022ApJ...924...68V",
+    "title": "Let the great world spin: revealing the stormy, turbulent nature of young giant exoplanet analogs with the Spitzer Space Telescope."
+   },
+   {
+    "bibcode": "2023A&A...669A.139S",
+    "title": "Ultracool dwarfs in Gaia DR3."
+   },
+   {
+    "bibcode": "2023ApJ...945..114P",
+    "title": "Examining the Rotation Period Distribution of the 40 Myr Tucana-Horologium Association with TESS."
+   },
+   {
+    "bibcode": "2024A&A...684A..69G",
+    "title": "Implications of the discovery of AF Lep b The mass-luminosity relation for planets in the {\\em \u03b2} Pic Moving Group and the L-T transition for young companions and free-floating planets."
+   },
+   {
+    "bibcode": "2024A&A...686A..37P",
+    "title": "Spectral characterization of young LT dwarfs."
+   },
+   {
+    "bibcode": "2024A&A...686A..42H",
+    "title": "Improving the open cluster census III. Using cluster masses, radii, and dynamics to create a cleaned open cluster catalogue."
+   },
+   {
+    "bibcode": "2024AJ....168...54L",
+    "title": "Occurrence Rates of Exosatellites Orbiting 3-30 {\\em M}_Jup_ Hosts from 44 Spitzer Light Curves."
+   },
+   {
+    "bibcode": "2024AJ....168..159L",
+    "title": "A Census of the {\\em \u03b2} Pic Moving Group and Other Nearby Associations with Gaia."
+   },
+   {
+    "bibcode": "2025A&A...701A.208P",
+    "title": "X-SHYNE: X-Shooter spectra of young exoplanet analogs II. Presentation and analysis of the full library."
+   }
+  ],
+  "parents": [
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2014ApJ...783..121G"
+   },
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2015ApJ...798...73G"
+   },
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2015ApJS..219...33G"
+   },
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2020AJ....159..166U"
+   },
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2023ApJ...945..114P"
+   },
+   {
+    "main_id": "NAME beta Tuc Group",
+    "otype": "MGr",
+    "link_bibcode": "2024A&A...686A..42H"
+   },
+   {
+    "main_id": "NAME THA",
+    "otype": "MGr",
+    "link_bibcode": "2024AJ....168..159L"
+   }
+  ],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 1700,
+    "log_g": 5.0,
+    "bibcode": "2015ApJS..219...33G"
+   }
+  ]
+ },
+ "common_bibcodes": [
+  [
+   "2014ApJ...783..121G",
+   "BANYAN. II. Very low mass and substellar candidate members to nearby, young kinematic groups with previously known signs of youth."
+  ],
+  [
+   "2015ApJ...798...73G",
+   "BANYAN. V. A systematic all-sky survey for new very late-type low-mass stars and brown dwarfs in nearby young moving groups."
+  ],
+  [
+   "2015ApJS..219...33G",
+   "BANYAN. VII. A new population of young substellar candidate members of nearby moving groups from the BASS survey."
+  ],
+  [
+   "2019MNRAS.485.4423S",
+   "The Gaia ultracool dwarf sample - II. Structure at the end of the main sequence."
+  ],
+  [
+   "2019A&A...627A.167C",
+   "Spectral characterization of newly detected young substellar binaries with SINFONI."
+  ],
+  [
+   "2020AJ....159..166U",
+   "Analysis of membership probability in nearby young moving groups with Gaia DR2."
+  ],
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ],
+  [
+   "2022ApJ...924...68V",
+   "Let the great world spin: revealing the stormy, turbulent nature of young giant exoplanet analogs with the Spitzer Space Telescope."
+  ],
+  [
+   "2023ApJ...945..114P",
+   "Examining the Rotation Period Distribution of the 40 Myr Tucana-Horologium Association with TESS."
+  ],
+  [
+   "2024A&A...686A..42H",
+   "Improving the open cluster census III. Using cluster masses, radii, and dynamics to create a cleaned open cluster catalogue."
+  ],
+  [
+   "2024AJ....168..159L",
+   "A Census of the {\\em \u03b2} Pic Moving Group and Other Nearby Associations with Gaia."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=6487249243899899904&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "6487249243899899904",
+     "Source2": "6487248865942846336",
+     "sepAU": "705.076942173508996",
+     "R": "2.029778953553709313e-05"
+    }
+   ]
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=6487249243899899904&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=6487248865942846336&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=6487248865942846336&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "6487249243899899904",
+     "Source2": "6487248865942846336",
+     "sepAU": "705.076942173508996",
+     "R": "2.029778953553709313e-05"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=350.7191660756568+-61.853534460454966&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=350.7191660756568+-61.853534460454966&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "23229-6151",
+    "Disc": "SKF2857",
+    "Comp": "",
+    "Obs1": "1999",
+    "pa1": "166",
+    "pa2": "166",
+    "sep1": "16.6",
+    "sep2": "16.60",
+    "mag1": "16.600",
+    "mag2": "21.00",
+    "DM": "",
+    "Notes": "V",
+    "n_RAh": "",
+    "RAJ2000": "23 22 52.42",
+    "DEJ2000": "-61 51 11.5"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=350.7191660756568+-61.853534460454966&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

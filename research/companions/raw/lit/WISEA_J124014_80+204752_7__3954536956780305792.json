@@ -1,0 +1,504 @@
+{
+ "pair": {
+  "uid": "2207",
+  "ucd": "WISEA J124014.80+204752.7",
+  "ucd_spt_opt": "M7",
+  "ucd_spt_ir": "null",
+  "ucd_G": "18.0196",
+  "ucd_gaia": "3954537059859521792",
+  "ucd_pmra": "206.29",
+  "ucd_pmdec": "-368.9",
+  "ucd_pmerr": "0.17/0.13",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "18.89",
+  "ucd_plxerr": "0.16",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "52.9",
+  "ucd_disterr": "0.4",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "3954536956780305792",
+  "g_ra": "190.03030998203258",
+  "g_dec": "20.807472044890847",
+  "g_pmra": "205.35897827148438",
+  "g_pmdec": "-369.3660583496094",
+  "g_epm": "0.042593859136104584/0.029801364988088608",
+  "g_plx": "18.880475997924805",
+  "g_eplx": "0.039269912987947464",
+  "G": "8.703531265258789",
+  "BP_RP": "1.042",
+  "M_G": "5.08",
+  "RUWE": "1.9192873239517212",
+  "RV": "",
+  "sep_arcsec": "112.61",
+  "sep_au": "5965",
+  "dmu": "1.04",
+  "dmu_sig": "0.17",
+  "dmu_over_sig": "6.21",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "-0.06",
+  "dvtan_kms": "0.26",
+  "dvtan_err": "0.04",
+  "host_mass": "0.942",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.55",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "null",
+  "ucs_simbad": "2MASS J12401465+2047566",
+  "ucs_ids": "2MASS J12401465+2047566|** OSO   47C|SDSS J124014.72+204754.7|TIC 462541605|WDS J12401+2049C|WISEA J124014.80+204752.7|WISE J124014.80+204752.8|Gaia DR3 3954537059859521792|Gaia DR2 3954537059859521792",
+  "n_field": "1",
+  "expected_false": "9.78e-04"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 1959345,
+    "main_id": "BD+21  2442",
+    "otype": "SB*",
+    "sp_type": "K2",
+    "plx_value": 18.8805,
+    "pmra": 205.359,
+    "pmdec": -369.366,
+    "ra": 190.0293335842308,
+    "dec": 20.80911366904417
+   }
+  ],
+  "ids": [
+   "TIC 462541612",
+   "HIP 61816",
+   "Gaia DR3 3954536956780305792",
+   "SBC9 1694",
+   "LSPM J1240+2048",
+   "TYC 1448-1391-1",
+   "ASCC  779018",
+   "UCAC2  39150593",
+   "USNO-B1.0 1108-00211917",
+   "AG+21 1307",
+   "AGKR 11341",
+   "BD+21  2442",
+   "Ci 20  728",
+   "G  61-7",
+   "G  59-32",
+   "GEN# +0.02102442",
+   "HIC  61816",
+   "LTT 13598",
+   "NLTT 31465",
+   "PPM 102068",
+   "SAO  82428",
+   "UBV M   1084",
+   "YZ  21  4577",
+   "YZC 25  4577",
+   "uvby98 002102442",
+   "2MASS J12400703+2048327",
+   "WISEA J124007.18+204828.9",
+   "Gaia DR1 3954536952484879872",
+   "Gaia DR2 3954536956780305792",
+   "LTT 13596",
+   "** OSO   47A",
+   "WDS J12401+2049A",
+   "1RXS J124008.9+204814",
+   "UCAC4 555-050406",
+   "WISE J124007.20+204829.0"
+  ],
+  "refs": [
+   {
+    "bibcode": "1961LowOB...5...61G",
+    "title": "Lowell proper motions. III."
+   },
+   {
+    "bibcode": "1985ApJS...59..197B",
+    "title": "G.P. Kuiper's spectral classifications of proper-motion stars."
+   },
+   {
+    "bibcode": "1986AJ.....91.1140S",
+    "title": "New subdwarfs. IV. UBV photometry of 1690 high-proper-motion stars."
+   },
+   {
+    "bibcode": "1986AJ.....91.1189F",
+    "title": "New subdwarfs. V. Radial velocities for 889 high-proper-motion stars measured with the Mount Wilson 100 inch reflector."
+   },
+   {
+    "bibcode": "1987A&AS...71..413M",
+    "title": "UBV Photoelectric Photometry Catalogue (1986): I. The Original data."
+   },
+   {
+    "bibcode": "1987AJ.....93...74S",
+    "title": "New subdwarfs. VI. Kinematics of 1125 high-proper-motion stars and the collapse of the galaxy."
+   },
+   {
+    "bibcode": "1987AJ.....93..116C",
+    "title": "A survey of proper-motion stars. I. UBV photometry and radial velocities."
+   },
+   {
+    "bibcode": "1987AJ.....93..592S",
+    "title": "U, V, W velocity components for the old disk using radial velocities of 1295 stars in the three cardinal galactic directions."
+   },
+   {
+    "bibcode": "1987AJ.....94.1066C",
+    "title": "A survey of proper-motion stars. II. Extracting metallicities from high-resolution, low-S/N spectra."
+   },
+   {
+    "bibcode": "1988AJ.....95.1843L",
+    "title": "A survey of proper-motion stars. III. Reddenings, distances and metallicities."
+   },
+   {
+    "bibcode": "1992AJ....104..774L",
+    "title": "A survey of proper motion stars. XI. Orbits for the second 40 spectroscopic binaries."
+   },
+   {
+    "bibcode": "1993A&AS...97..951S",
+    "title": "uvby-beta photometry of high-velocity and metal-poor stars. VI. A second catalogue, and stellar populations of the Galaxy."
+   },
+   {
+    "bibcode": "1994AJ....107.2240C",
+    "title": "A survey of proper motion stars. XII. An expanded sample."
+   },
+   {
+    "bibcode": "1997A&A...322..785O",
+    "title": "ROSAT all-sky survey observations of PopII field binaries: X-ray activity of old, metal-poor stellar coronae."
+   },
+   {
+    "bibcode": "1997A&A...323L..49P",
+    "title": "The Hipparcos Catalogue."
+   },
+   {
+    "bibcode": "1998A&AS..129..431H",
+    "title": "uvby{beta} photoelectric photometric catalogue."
+   },
+   {
+    "bibcode": "2000A&A...360..997T",
+    "title": "On the origin of binaries with twin components."
+   },
+   {
+    "bibcode": "2000A&AS..144....1M",
+    "title": "Bibliographic catalogue of stellar radial velocities: (1991-1994)."
+   },
+   {
+    "bibcode": "2002A&A...394..927I",
+    "title": "HIPPARCOS age-metallicity relation of the solar neighbourhood disc stars."
+   },
+   {
+    "bibcode": "2002AJ....124.1132G",
+    "title": "A survey of proper-motion stars. XV. Orbital solutions for 34 double-lined spectroscopic binaries."
+   },
+   {
+    "bibcode": "2002MNRAS.336..879K",
+    "title": "K dwarfs and the chemical evolution of the solar cylinder."
+   },
+   {
+    "bibcode": "2003ApJ...582.1011S",
+    "title": "Improved astrometry and photometry for the Luyten catalog. II. Faint stars and the revised catalog."
+   },
+   {
+    "bibcode": "2003ApJ...591..397G",
+    "title": "On the mass-ratio distribution of spectroscopic binaries."
+   },
+   {
+    "bibcode": "2003ApJ...599.1344M",
+    "title": "The mass ratio distribution in main-sequence spectroscopic binaries measured by infrared spectroscopy."
+   },
+   {
+    "bibcode": "2004A&A...419..167Z",
+    "title": "A CCD imaging search for wide metal-poor binaries."
+   },
+   {
+    "bibcode": "2004A&A...424..727P",
+    "title": "S_B_^9^: The ninth catalogue of spectroscopic binary orbits."
+   },
+   {
+    "bibcode": "2005AJ....129.1483L",
+    "title": "A catalog of northern stars with annual proper motions larger than 0.15\" (LSPM-NORTH catalog)."
+   },
+   {
+    "bibcode": "2006A&A...450..735M",
+    "title": "Effective temperature scale and bolometric corrections from 2MASS photometry."
+   },
+   {
+    "bibcode": "2006AstL...32..759G",
+    "title": "Pulkovo compilation of radial velocities for 35495 stars in a common system."
+   },
+   {
+    "bibcode": "2007A&A...474..653V",
+    "title": "Validation of the new Hipparcos reduction."
+   },
+   {
+    "bibcode": "2010A&A...515A.111S",
+    "title": "The PASTEL catalogue of stellar parameters."
+   },
+   {
+    "bibcode": "2011MNRAS.411..435B",
+    "title": "Bayesian inference of stellar parameters and interstellar extinction  using parallaxes and multiband photometry."
+   },
+   {
+    "bibcode": "2012A&A...546A..61D",
+    "title": "Radial velocities for the HIPPARCOS-Gaia Hundred-Thousand-Proper-Motion  project."
+   },
+   {
+    "bibcode": "2013A&A...553A..95M",
+    "title": "A PCA approach to stellar effective temperatures."
+   },
+   {
+    "bibcode": "2014ApJ...783..122K",
+    "title": "The AllWISE motion survey and the quest for cold subdwarfs."
+   },
+   {
+    "bibcode": "2014ApJ...787..126L",
+    "title": "Characterization of high proper motion objects from the wide-field infrared survey explorer."
+   },
+   {
+    "bibcode": "2014ApJ...790..158A",
+    "title": "An improved catalog of halo wide binary candidates."
+   },
+   {
+    "bibcode": "2015A&A...575A..42G",
+    "title": "Optical counterparts of ROSAT X-ray sources in two selected fields at low vs. high Galactic latitudes."
+   },
+   {
+    "bibcode": "2015A&A...580A..23P",
+    "title": "A new catalogue of Stroemgren-Crawford uvby{beta} photometry."
+   },
+   {
+    "bibcode": "2016ApJ...817..112S",
+    "title": "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+   },
+   {
+    "bibcode": "2016ApJS..224...36K",
+    "title": "The AllWISE motion survey, part 2."
+   },
+   {
+    "bibcode": "2016A&A...591A.118S",
+    "title": "The PASTEL catalogue: 2016 version."
+   },
+   {
+    "bibcode": "2016ApJ...832...62F",
+    "title": "Discovery of a possible cool white dwarf companion from the AllWISE motion survey."
+   },
+   {
+    "bibcode": "2014ASPC..485..223B",
+    "title": "The JMMC stellar diameters catalog v2 (JSDC): a new release based on SearchCal improvements"
+   },
+   {
+    "bibcode": "2017AJ....154..115H",
+    "title": "Optimized trajectories to the nearest stars using lightweight high-velocity photon sails."
+   },
+   {
+    "bibcode": "1995yCat.1098....0L",
+    "title": "New Luyten Catalogue of stars with proper motions larger than two tenths of an arcsecond (NLTT)."
+   },
+   {
+    "bibcode": "2019A&A...623A..72K",
+    "title": "Stellar and substellar companions of nearby stars from Gaia DR2. Binarity from proper motion anomaly."
+   },
+   {
+    "bibcode": "2019MNRAS.490.3158C",
+    "title": "A catalogue of stellar diameters and fluxes for mid-infrared interferometry."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2021ApJS..254...42B",
+    "title": "The Hipparcos-Gaia Catalog of Accelerations: Gaia EDR3 edition."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   },
+   {
+    "bibcode": "2023A&A...674A..34G",
+    "title": "{\\em Gaia} Data Release 3 Stellar multiplicity, a teaser for the hidden treasure."
+   },
+   {
+    "bibcode": "2023A&A...678A..19C",
+    "title": "Binary masses and luminosities with {\\em Gaia} DR3."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": [
+   {
+    "fe_h": 0.0,
+    "teff": 5101,
+    "log_g": 0.0,
+    "bibcode": "2006A&A...450..735M"
+   }
+  ]
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 9211335,
+    "main_id": "2MASS J12401465+2047566",
+    "otype": "LM*",
+    "sp_type": "M8V",
+    "plx_value": 18.892,
+    "pmra": 206.29,
+    "pmdec": -368.903,
+    "ra": 190.06102187748584,
+    "dec": 20.79908445890028
+   }
+  ],
+  "ids": [
+   "TIC 462541605",
+   "Gaia DR3 3954537059859521792",
+   "SDSS J124014.72+204754.7",
+   "2MASS J12401465+2047566",
+   "WISEA J124014.80+204752.7",
+   "WISE J124014.80+204752.8",
+   "Gaia DR2 3954537059859521792",
+   "** OSO   47C",
+   "WDS J12401+2049C"
+  ],
+  "refs": [
+   {
+    "bibcode": "2011AJ....141...97W",
+    "title": "The Sloan Digital Sky Survey Data Release 7 spectroscopic M dwarf  catalog. I. Data."
+   },
+   {
+    "bibcode": "2014ApJ...781....4L",
+    "title": "A search for a distant companion to the Sun with the wide-field infrared survey explorer."
+   },
+   {
+    "bibcode": "2014ApJ...783..122K",
+    "title": "The AllWISE motion survey and the quest for cold subdwarfs."
+   },
+   {
+    "bibcode": "2014ApJ...787..126L",
+    "title": "Characterization of high proper motion objects from the wide-field infrared survey explorer."
+   },
+   {
+    "bibcode": "2016ApJ...817..112S",
+    "title": "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+   },
+   {
+    "bibcode": "2016ApJS..224...36K",
+    "title": "The AllWISE motion survey, part 2."
+   },
+   {
+    "bibcode": "2019AJ....157..231K",
+    "title": "Exploring the age-dependent properties of M and L dwarfs using Gaia and SDSS."
+   },
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   },
+   {
+    "bibcode": "2023AJ....165..267H",
+    "title": "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2014ApJ...783..122K",
+   "The AllWISE motion survey and the quest for cold subdwarfs."
+  ],
+  [
+   "2014ApJ...787..126L",
+   "Characterization of high proper motion objects from the wide-field infrared survey explorer."
+  ],
+  [
+   "2016ApJ...817..112S",
+   "A proper motion survey using the first sky pass of NEOWISE-reactivation data."
+  ],
+  [
+   "2016ApJS..224...36K",
+   "The AllWISE motion survey, part 2."
+  ],
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ],
+  [
+   "2023AJ....165..267H",
+   "Bioverse: A Comprehensive Assessment of the Capabilities of Extremely Large Telescopes to Probe Earth-like O_2_ Levels in Nearby Transiting Habitable-zone Exoplanets."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=3954536956780305792&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "3954536956780305792",
+     "Source2": "3954537059859521792",
+     "sepAU": "5963.775729719407536",
+     "R": "1.571458503617751055e-08"
+    }
+   ]
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=3954536956780305792&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=3954537059859521792&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=3954537059859521792&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "3954536956780305792",
+     "Source2": "3954537059859521792",
+     "sepAU": "5963.775729719407536",
+     "R": "1.571458503617751055e-08"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=190.03030998203258+20.807472044890847&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=190.03030998203258+20.807472044890847&-c.rs=90&-out.max=50",
+  "rows": [
+   {
+    "WDS": "12401+2049",
+    "Disc": "OSO  47",
+    "Comp": "AB",
+    "Obs1": "1994",
+    "pa1": "71",
+    "pa2": "35",
+    "sep1": "13.2",
+    "sep2": "14.70",
+    "mag1": "9.000",
+    "mag2": "17.40",
+    "DM": "+21 2442",
+    "Notes": "NL",
+    "n_RAh": "",
+    "RAJ2000": "12 40 07.03",
+    "DEJ2000": "+20 48 32.8"
+   },
+   {
+    "WDS": "12401+2049",
+    "Disc": "OSO  47",
+    "Comp": "AC",
+    "Obs1": "1955",
+    "pa1": "110",
+    "pa2": "108",
+    "sep1": "111.8",
+    "sep2": "112.80",
+    "mag1": "9.000",
+    "mag2": "20.90",
+    "DM": "",
+    "Notes": "NT",
+    "n_RAh": "",
+    "RAJ2000": "12 40 07.03",
+    "DEJ2000": "+20 48 32.8"
+   }
+  ]
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=190.03030998203258+20.807472044890847&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

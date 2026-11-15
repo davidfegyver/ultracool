@@ -1,0 +1,95 @@
+{
+ "name": "2MASS J16002647-2456424",
+ "host": "6236113362117992832",
+ "host_gaia": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&Source=6236113362117992832&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV",
+  [
+   {
+    "Source": "6236113362117992832",
+    "RA_ICRS": "240.11102794783",
+    "DE_ICRS": "-24.93981941741",
+    "Plx": "16.4327",
+    "e_Plx": "0.3044",
+    "pmRA": "-38.423",
+    "e_pmRA": "0.401",
+    "pmDE": "-293.800",
+    "e_pmDE": "0.231",
+    "Gmag": "19.418694",
+    "BPmag": "20.190687",
+    "RPmag": "18.688152",
+    "RUWE": "0.939",
+    "RV": "",
+    "e_RV": ""
+   }
+  ]
+ ],
+ "ucd_gaia_3as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=I%2F355%2Fgaiadr3&-c=240.11010451474385+-24.946623497428053&-c.rs=3&-out=Source+RA_ICRS+DE_ICRS+Plx+e_Plx+pmRA+e_pmRA+pmDE+e_pmDE+Gmag+BPmag+RPmag+RUWE+RV+e_RV+_r",
+  [
+   {
+    "Source": "6236089829993253760",
+    "RA_ICRS": "240.11043291049",
+    "DE_ICRS": "-24.94725921204",
+    "Plx": "",
+    "e_Plx": "",
+    "pmRA": "",
+    "e_pmRA": "",
+    "pmDE": "",
+    "e_pmDE": "",
+    "Gmag": "20.742720",
+    "BPmag": "",
+    "RPmag": "",
+    "RUWE": "",
+    "RV": "",
+    "e_RV": "",
+    "_r": "2.527"
+   },
+   {
+    "Source": "6236089829993254784",
+    "RA_ICRS": "240.11013600519",
+    "DE_ICRS": "-24.94660486053",
+    "Plx": "17.7749",
+    "e_Plx": "0.3757",
+    "pmRA": "-35.852",
+    "e_pmRA": "0.475",
+    "pmDE": "-294.169",
+    "e_pmDE": "0.270",
+    "Gmag": "19.326502",
+    "BPmag": "21.867268",
+    "RPmag": "17.776480",
+    "RUWE": "1.078",
+    "RV": "",
+    "e_RV": "",
+    "_r": "0.123"
+   }
+  ]
+ ],
+ "ucd_catwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F365%2Fcatwise&-c=240.11011111379955+-24.94657446909472&-c.rs=5&-out=Name+RAPMdeg+DEPMdeg+pmRA+e_pmRA+pmDE+e_pmDE+W1mproPM+W2mproPM+ab+_r",
+  []
+ ],
+ "ucd_allwise_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F328%2Fallwise&-c=240.11011111379955+-24.94657446909472&-c.rs=6&-out=AllWISE+RAJ2000+DEJ2000+pmRA+e_pmRA+pmDE+e_pmDE+W1mag+W2mag+ccf+_r",
+  []
+ ],
+ "epoch_2mass_ucs": "1998-07-03",
+ "ucd_2mass_5as": [
+  "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II%2F246%2Fout&-c=240.11029689686475+-24.945194175533803&-c.rs=5&-out=2MASS+RAJ2000+DEJ2000+Jmag+Kmag+JD+_r",
+  []
+ ],
+ "ucs_pm": [
+  -35.9,
+  -294.17,
+  "0.5",
+  "0.27",
+  "Gaia23"
+ ],
+ "ucs_plx": [
+  "17.8",
+  "0.4",
+  "Gaia23",
+  "56.2",
+  "1.3",
+  "dist_plx_formula"
+ ]
+}

@@ -1,0 +1,160 @@
+{
+ "pair": {
+  "uid": "1361",
+  "ucd": "PSO J130.9+030.1",
+  "ucd_spt_opt": "null",
+  "ucd_spt_ir": "M9.4 INT-G",
+  "ucd_G": "20.3618",
+  "ucd_gaia": "706176328081446272",
+  "ucd_pmra": "-55.5",
+  "ucd_pmdec": "-118.6",
+  "ucd_pmerr": "0.9/0.6",
+  "ucd_ref_pm": "Gaia23",
+  "ucd_plx": "10.4",
+  "ucd_plxerr": "0.8",
+  "ucd_ref_plx": "Gaia23",
+  "ucd_dist": "96.0",
+  "ucd_disterr": "7.0",
+  "ucd_dist_src": "dist_plx_formula",
+  "gaia": "706176328081445888",
+  "g_ra": "130.9808818398621",
+  "g_dec": "30.121569835268886",
+  "g_pmra": "-55.70661544799805",
+  "g_pmdec": "-119.22006225585938",
+  "g_epm": "0.042304784059524536/0.032555434852838516",
+  "g_plx": "10.627569198608398",
+  "g_eplx": "0.04391710087656975",
+  "G": "15.76728630065918",
+  "BP_RP": "2.878",
+  "M_G": "10.9",
+  "RUWE": "1.0606132745742798",
+  "RV": "-27.235279083251953",
+  "sep_arcsec": "30.53",
+  "sep_au": "2872",
+  "dmu": "0.65",
+  "dmu_sig": "0.64",
+  "dmu_over_sig": "1.03",
+  "plx_mode": "trig",
+  "plx_dev_sigma": "0.28",
+  "dvtan_kms": "0.29",
+  "dvtan_err": "0.28",
+  "host_mass": "0.267",
+  "host_mass_src": "Mamajek M_G",
+  "vesc_kms": "0.46",
+  "bound_ok": "True",
+  "ucs_multi_unres": "N",
+  "ucs_multi_res": "N",
+  "ucs_higher_mass_comp": "N",
+  "ucs_sep_comp": "NaN",
+  "ucs_note": "YFLD",
+  "ucs_simbad": "null",
+  "ucs_ids": "null",
+  "n_field": "1",
+  "expected_false": "7.19e-05"
+ },
+ "host_simbad": {
+  "basic": [
+   {
+    "oid": 24976126,
+    "main_id": "Gaia DR3 706176328081445888",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 10.6276,
+    "pmra": -55.707,
+    "pmdec": -119.22,
+    "ra": 130.98116807916665,
+    "dec": 30.122099701909445
+   }
+  ],
+  "ids": [
+   "Gaia DR3 706176328081445888"
+  ],
+  "refs": [
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "ucd_simbad": {
+  "basic": [
+   {
+    "oid": 24976127,
+    "main_id": "Gaia DR3 706176328081446272",
+    "otype": "PM*",
+    "sp_type": "",
+    "plx_value": 10.3508,
+    "pmra": -55.49,
+    "pmdec": -118.575,
+    "ra": 130.98458425911835,
+    "dec": 30.1141353024325
+   }
+  ],
+  "ids": [
+   "Gaia DR3 706176328081446272"
+  ],
+  "refs": [
+   {
+    "bibcode": "2021A&A...649A...6G",
+    "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+   }
+  ],
+  "parents": [],
+  "children": [],
+  "feh": []
+ },
+ "common_bibcodes": [
+  [
+   "2021A&A...649A...6G",
+   "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars."
+  ]
+ ],
+ "elbadry": [
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=706176328081445888&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "706176328081445888",
+     "Source2": "706176328081446272",
+     "sepAU": "2876.786633729946971",
+     "R": "3.321936978024897901e-07"
+    }
+   ]
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=706176328081445888&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source1=706176328081446272&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": []
+  },
+  {
+   "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FMNRAS%2F506%2F2269&Source2=706176328081446272&-out=Source1+Source2+sepAU+R&-out.max=50",
+   "rows": [
+    {
+     "Source1": "706176328081445888",
+     "Source2": "706176328081446272",
+     "sepAU": "2876.786633729946971",
+     "R": "3.321936978024897901e-07"
+    }
+   ]
+  }
+ ],
+ "rothermich": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F167%2F253&-c=130.9808818398621+30.121569835268886&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "wds": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-c=130.9808818398621+30.121569835268886&-c.rs=90&-out.max=50",
+  "rows": []
+ },
+ "coconuts_zhang21": {
+  "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F916%2F53&-c=130.9808818398621+30.121569835268886&-c.rs=150&-out.max=50",
+  "rows": []
+ },
+ "ucs_mentions_host": []
+}

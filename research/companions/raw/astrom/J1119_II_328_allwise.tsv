@@ -1,0 +1,109 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-15T08:30:10 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-15T08:30:10	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=II/328/allwise&-c=169.87265%200.35912&-c.rs=5&-out.all	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=169.872650+00.359120,rs=5.	
+#Constraint -out.all
+
+#RESOURCE=yCat_2328
+#Name: II/328
+#Title: AllWISE Data Release (Cutri+ 2013)
+#INFO	ivoid=ivo://cds.vizier/ii/328	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/ii/328	    IVOID of underlying data collection
+#INFO	creator=Cutri R.M.	    First author or institution
+#INFO	cites=bibcode:2014yCat.2328....0C	    Bibcode of the dataset
+#INFO	journal=yCat	    Journal name
+#INFO	original_date=2014	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/II/328	    Dataset landing page
+#INFO	publication_date=2024-07-15	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	II_328_allwise:
+#Name: II/328/allwise
+#Title: *the AllWISE data release (among 747,634,026 sources) (updated version, 16-Feb-2021)
+#Column	_r	(F5.3)	Distance from center (169.8726500+00.3591200)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	AllWISE	(a19)	WISE All-Sky Release Catalog name, based on J2000 position, <WISEA JHHMMSS.ss+DDMMSS.s> (designation)	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F11.7)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F11.7)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	eeMaj	(F7.4)	Semi-major axis of the error ellipse (1)	[ucd=stat.error]
+#Column	eeMin	(F7.4)	Semi-minor axis of the error ellipse (1)	[ucd=stat.error]
+#Column	eePA	(F5.1)	Position angle of the error ellipse (1)	[ucd=pos.posAng;pos.errorEllipse]
+#Column	Im	(A2)	Image of the 4 bands from the IRSA server (IPAC)	[ucd=meta.ref.url]
+#Column	W1mag	(F6.3)	? W1 magnitude (3.35um)	[ucd=phot.mag;em.IR.3-4um]
+#Column	e_W1mag	(F6.3)	? Mean error on W1 magnitude	[ucd=stat.error;phot.mag]
+#Column	W2mag	(F6.3)	? W2 magnitude (4.6um)	[ucd=phot.mag;em.IR.4-8um]
+#Column	e_W2mag	(F6.3)	? Mean error on W2 magnitude	[ucd=stat.error;phot.mag]
+#Column	W3mag	(F6.3)	? W3 magnitude (11.6um)	[ucd=phot.flux.density;em.IR.8-15um]
+#Column	e_W3mag	(F6.3)	? Mean error on W3 magnitude	[ucd=stat.error;phot.mag]
+#Column	W4mag	(F6.3)	? W4 magnitude (22.1um)	[ucd=phot.flux.density;em.IR.15-30um]
+#Column	e_W4mag	(F6.3)	? Mean error on W4 magnitude	[ucd=stat.error;phot.mag]
+#Column	Jmag	(F6.3)	? 2MASS J magnitude (1.25um)	[ucd=phot.mag;em.IR.J]
+#Column	e_Jmag	(F6.3)	? Mean error on J magnitude	[ucd=stat.error;phot.mag]
+#Column	Hmag	(F6.3)	? 2MASS H magnitude (1.65um)	[ucd=phot.mag;em.IR.H]
+#Column	e_Hmag	(F6.3)	? Mean error on H magnitude	[ucd=stat.error;phot.mag]
+#Column	Kmag	(F6.3)	? 2MASS Ks magnitude (2.17um)	[ucd=phot.mag;em.IR.K]
+#Column	e_Kmag	(F6.3)	? Mean error on Ks magnitude	[ucd=stat.error;phot.mag]
+#Column	wx	(F8.3)	x-pixel coordinate on the Atlas Image	[ucd=pos.cartesian.x;instr.det]
+#Column	wy	(F8.3)	y-pixel coordinate on the Atlas Image	[ucd=pos.cartesian.y;instr.det]
+#Column	ID	(I19)	Unique source ID	[ucd=meta.id.part;meta.main]
+#Column	snr1	(F7.1)	? Signal to noise ratio for W1 filter	[ucd=stat.snr]
+#Column	chi2W1	(E9.2)	? Reduced {chi}^2^ of the W1 profile fit	[ucd=stat.fit.chi2]
+#Column	snr2	(F7.1)	? Signal to noise ratio for W2 filter	[ucd=stat.snr]
+#Column	chi2W2	(E9.2)	? Reduced {chi}^2^ of the W2 profile fit	[ucd=stat.fit.chi2]
+#Column	snr3	(F7.1)	? Signal to noise ratio for W3 filter	[ucd=stat.snr]
+#Column	chi2W3	(E9.2)	? Reduced {chi}^2^ of the W3 profile fit	[ucd=stat.fit.chi2]
+#Column	snr4	(F8.1)	? Signal to noise ratio for W4 filter	[ucd=stat.snr]
+#Column	chi2W4	(E9.2)	? Reduced {chi}^2^ of the W4 profile fit	[ucd=stat.fit.chi2]
+#Column	chi2	(E9.2)	All-band combined reduced {chi}^2^	[ucd=stat.fit.chi2]
+#Column	nb	(I1)	[1/4] Number of PSF components used simultaneously in the profile-fitting	[ucd=meta.number]
+#Column	na	(I1)	[0/1] Active deblending flag (1 if a detection was split into multiple sources)	[ucd=meta.number]
+#Column	sat1	(F6.3)	? Saturated pixel fraction in W1 (w1sat)	[ucd=instr.saturation]
+#Column	sat2	(F6.3)	? Saturated pixel fraction in W2 (w2sat)	[ucd=instr.saturation]
+#Column	sat3	(F6.3)	? Saturated pixel fraction in W3 (w3sat)	[ucd=instr.saturation]
+#Column	sat4	(F6.3)	? Saturated pixel fraction in W4 (w4sat)	[ucd=instr.saturation]
+#Column	ccf	(A4)	[0DHOPdhop] Contamination and confusion flag, one per band (cc_flags) (2)	[ucd=meta.code]
+#Column	ex	(I1)	[0-5] Extended source flag (ext_flg) (3)	[ucd=meta.code]
+#Column	var	(A4)	Variability flag, one per band (var_flg) (4)	[ucd=meta.code;src.var]
+#Column	nW1	(I3)	? Frame detection count in W1 (w1nm) (5)	[ucd=meta.number]
+#Column	mW1	(I3)	? Integer frame coverage in W1 (w1m) (6)	[ucd=meta.number]
+#Column	nW2	(I3)	? Frame detection count in W2 (w2nm) (5)	[ucd=meta.number]
+#Column	mW2	(I3)	? Integer frame coverage in W2 (w2m) (6)	[ucd=meta.number]
+#Column	nW3	(I3)	? Frame detection count in W3 (w3nm) (5)	[ucd=meta.number]
+#Column	mW3	(I3)	? Integer frame coverage in W3 (w3m) (6)	[ucd=meta.number]
+#Column	nW4	(I3)	? Frame detection count in W4 (w4nm) (5)	[ucd=meta.number]
+#Column	mW4	(I3)	? Integer frame coverage in W4 (w4m) (6)	[ucd=meta.number]
+#Column	satnum	(I4)	Minimum sample at which saturation occurs in each band	[ucd=instr.saturation]
+#Column	RA_pm	(F11.7)	? Right ascension at epoch MJD=55400.0 (2010.5589) from the profile-fitting measurement model that includes motion.	[ucd=pos.eq.ra]
+#Column	e_RA_pm	(F7.4)	? Error on RA_pm	[ucd=stat.error;pos.eq.ra]
+#Column	DE_pm	(F11.7)	? Declination at epoch MJD=55400.0 (2010.5589) from the profile-fitting measurement model that includes motion.	[ucd=pos.eq.dec]
+#Column	e_DE_pm	(F7.4)	? Error on DE_pm	[ucd=stat.error;pos.eq.dec]
+#Column	cosig_pm	(F8.4)	? co-sigma of the equatorial position uncertainties	[ucd=pos.posAng]
+#Column	pmRA	(I7)	? Apparent motion in RA (9)	[ucd=pos.pm]
+#Column	e_pmRA	(I7)	? Mean error on pmRA (9)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(I7)	? Apparent motion in DE (9)	[ucd=pos.pm]
+#Column	e_pmDE	(I7)	? Mean error on pmDE (9)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	chi2W1_pm	(E9.2)	? Reduced {chi}^2^ of the W1 profile fit including motion estimation	[ucd=stat.fit.chi2]
+#Column	chi2W2_pm	(E9.2)	? Reduced {chi}^2^ of the W2 profile fit including motion estimation	[ucd=stat.fit.chi2]
+#Column	chi2W3_pm	(E9.2)	? Reduced {chi}^2^ of the W3 profile fit including motion estimation	[ucd=stat.fit.chi2]
+#Column	chi2W4_pm	(E9.2)	? Reduced {chi}^2^ of the W4 profile fit including motion estimation	[ucd=stat.fit.chi2]
+#Column	chi2pm	(E9.2)	? Combined reduced {chi}^2^ profile fit including motion estimation	[ucd=stat.fit.chi2]
+#Column	qpm	(a5)	? Motion estimation quality (pmcode) (7)	[ucd=meta.code.qual]
+#Column	qph	(A4)	[ABCUXZ] Photometric quality flag (8)	[ucd=meta.code.qual;phot]
+#Column	fdet	(I2)	[0/15] Bit-encoded integer indicating bands in which a source has a w?snr>2 detection	[ucd=meta.code]
+#Column	fmoon	(I4)	Scattered moonlight contamination flag	[ucd=meta.code]
+#Column	covW1	(F7.3)	? Mean pixel coverage in W1	[ucd=src.sample;stat.mean]
+#Column	covW2	(F7.3)	? Mean pixel coverage in W2	[ucd=src.sample;stat.mean]
+#Column	covW3	(F7.3)	? Mean pixel coverage in W3	[ucd=src.sample;stat.mean]
+#Column	covW4	(F7.3)	? Mean pixel coverage in W4	[ucd=src.sample;stat.mean]
+#Column	2Mkey	(I10)	? 2MASS PSC association (not identification)	[ucd=meta.id.assoc]
+#Column	d2M	(F6.3)	? Distance separating the positions of the WISE source and associated 2MASS PSC source	[ucd=pos;arith.diff]
+#Column	2M	(A2)	Display the 2MASS data (Cutri et al. 2003, Cat. II/246)	[ucd=meta.ref.url]
